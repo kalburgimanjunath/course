@@ -1,0 +1,11 @@
+name: ""
+description: ""
+
+url: "http://localhost:4000"
+
+paginator: 5
+
+
+markdown: rdiscount
+permalink: pretty
+pygments: true

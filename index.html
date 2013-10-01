@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+	<div class="row-fluid">
+	  <div class="span12">
+		<h2>{{ post.title | truncatewords: 10 | capitalize}}</h2>
+		<h4>{{ post.date | date_to_long_string }}</h4>
+		<p>
+		  <a href="{{ post.url }}">Read Post</a>
+		</p>
+	  </div>
+	</div>
+	
+
+{% endfor %}
+<div class="row-fluid">
+  <div class="span12">
+    <div class="pagination">
+      <ul>
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <li><a href="/">Prev</a></li>
+          {% else %}
+          <li><a href="/page{{ paginator.previous_page }}">Prev</a></li>
+          {% endif %}
+        {% else %}
+        <li><span class="disabled">Prev</span></li>
+        {% endif %}
+        {% if paginator.page == 1 %}
+        <li><span class="active">1</span></li>
+        {% else %}
+        <li><a href="/">1</a></li>
+        {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+          {% if count == paginator.page %}
+          <li><span class="active">{{ count }}</span></li>
+          {% else %}
+          <li><a href="/page{{ count }}">{{ count }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+        <li><a href="/page{{ paginator.next_page }}">Next</a></li>
+        {% else %}
+        <li><span class="disabled">Next</span></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- START: Livefyre Embed -->
+<div id="livefyre-comments"></div>
+<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<script type="text/javascript">
+(function () {
+    var articleId = fyre.conv.load.makeArticleId(null);
+    fyre.conv.load({}, [{
+        el: 'livefyre-comments',
+        network: "livefyre.com",
+        siteId: "344231",
+        articleId: articleId,
+        signed: false,
+        collectionMeta: {
+            articleId: articleId,
+            url: fyre.conv.load.makeCollectionUrl(),
+        }
+    }], function() {});
+}());
+</script>
+<!-- END: Livefyre Embed -->
+            
