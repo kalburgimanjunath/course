@@ -1,12 +1,13 @@
 {% include header.html %}
 
       <div class="row-fluid">
-		  <div class="span8">
+		  
+		  <div class="span6">
+			{% include aboutme.html %}
+		  </div>
+		  <div class="span6">
 			{{ content }}
 		  </div>
-		  <div class="span4">
-			{% include sidebar.html %}
-		  </div>
-		</div>
+	  </div>
 	  
 {% include footer.html %}
