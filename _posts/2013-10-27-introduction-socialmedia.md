@@ -1,4 +1,9 @@
-GETTING STARTED WITH SOCIAL MEDIA
+---
+title: SOCIAL MEDIA TRAINING
+layout: default
+---
+
+#GETTING STARTED WITH SOCIAL MEDIA
 
 Before you optimize
 Web 2.0 Defined

@@ -1,3 +1,8 @@
+---
+title: SEO
+layout: default
+---
+#SEO
 SEO Training: Getting Started with SEO
 
 SEO Training: Basics of Search Engine Optimization

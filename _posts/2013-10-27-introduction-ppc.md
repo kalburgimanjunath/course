@@ -1,4 +1,8 @@
-BASICS OF PPC
+---
+title: PPC
+layout: default
+---
+#BASICS OF PPC
 
 Google Adwords Account Creation
 Campaign creation basics

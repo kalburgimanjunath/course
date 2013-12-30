@@ -1,4 +1,8 @@
-Basics of eMarketing
+---
+title:  Affiliate Marketing TRAINING
+layout: default
+---
+#Basics of eMarketing
 Understanding Affiliate Marketing
 Intelligent Keyword Research & Analysis
 Choosing Right Products: Clickbank, CJ

@@ -1,4 +1,8 @@
-GETTING STARTED WITH GOOGLE ANALYTICS
+---
+title: GOOGLE ANALYTICS
+layout: default
+---
+#GETTING STARTED WITH GOOGLE ANALYTICS
 
 Introduction to Google Analytics
 Interface Navigation

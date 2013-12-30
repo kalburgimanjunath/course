@@ -1,4 +1,8 @@
-Introduction To Email Marketing
+---
+title: Email Marketing TRAINING
+layout: default
+---
+#Introduction To Email Marketing
 
 Why is email marketing important?
 Benefits of email marketing
