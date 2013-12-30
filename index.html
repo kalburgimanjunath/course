@@ -13,7 +13,7 @@ layout: default
                          {% for post in site.posts %}
                                       <div class="well color1 span4 pull-left vspace30 swatch ">
                                         <div class="container">
-                                          <h2>{{ post.title | truncatewords: 10 | capitalize}}</h2>
+                                          <h2><a href="/course{{ post.url }}" >{{ post.title | truncatewords: 10 | capitalize}}</a></h2>
                                           <h6 class="date"><i class="fa fa-calendar-o"></i> {{ post.date | date_to_long_string }}</h6>
                                           <p>{{ post.excerpt }}</p>
                                           <p>
