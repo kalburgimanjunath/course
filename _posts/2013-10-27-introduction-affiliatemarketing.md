@@ -1,6 +1,6 @@
 ---
 title:  Affiliate Marketing TRAINING
-layout: posts
+layout: default
 ---
 #Basics of eMarketing
 Understanding Affiliate Marketing
