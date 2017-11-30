@@ -1,0 +1,1214 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        Eagle
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    @*<ul data-bind="foreach: $data.pages">
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <div>
+                                <header class="count">
+                                    <span data-bind="css: PageIcon"></span>
+                                </header>
+                                <p data-bind="text: $data.PageName"></p>
+                            </div>
+                        </li>
+                    </ul>*@
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <img src="~/Content/images/Honeywell-logo-Wht-sm.png" width="120" />
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                @*
+                                <li class="dropdown-header">Dropdown heading</li>*@
+                                <li><a href="#" onclick="onMenuItemSelect('AddSite')">Add New Account</a></li>
+                                <li><a href="#" onclick="onMenuItemSelect('SiteOverview')">Account Overview</a></li>
+                            </ul>
+                            @*$('#menu-close').click();*@
+                        </li>
+                        <li>
+                            <a href="#about" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span>
+                            <button class="btn btn-default" type="submit"><i class="ispicon ispicon_search"></i></button>
+                        </span>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </li>
+        </ul>
+
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="#" class="list-group-item ">Site Overview</a></li>
+                        <li><a href="#" class="list-group-item">Controllers</a></li>
+                        <li><a href="#" class="list-group-item active">Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Edge Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Areas</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                People & Badges
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">People<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Access Personas<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="dcm-root">
+            <div id="dcm-view" class="dcmView">
+                <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Devices
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addDevice" title="Add New"></a>
+                            <a class="ispicon ispicon_more dropdown-toggle" data-toggle="dropdown" title="More">
+                                
+                            </a>
+                            <ul class="dropdown-menu ispmenu rightalign">
+                                <li><a href="#">Menu 1</a></li>
+                                <li><a href="#">Menu 2</a></li>
+                                <li><a href="#">Delete</a></li>
+                              </ul>
+                        </span>
+                    </h2>
+                     <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#schedule" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">Peripherals</a></li>
+                        <li role="presentation" class=""><a href="#holidays" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Edge</a></li>
+                    </ul>
+                    <div>
+                        <div class="input-group selectController">
+                            <!-- <label class="control-label">Select Controller</label> -->
+                            <select class="form-control">
+                                <option> Eagle P150</option>
+                                <option> Eagle P250</option>
+                            </select>
+                        </div>
+                        <ul class="liststylesearch-container hide">
+                            
+                            <li>
+                                <a class="ispicon ispicon_filter dropdown-toggle pull-right " data-toggle="dropdown" title="filter">
+                                
+                                </a>
+                                <ul class="dropdown-menu ispmenu rightalign filter">
+                                    <li><a href="#">Device Type</a></li>
+                                    <li><a href="#">Recently Added</a></li>
+                                    <li><a href="#">Missing Devices</a></li>
+                                    <li><a href="#">Status</a></li>
+                                  </ul>
+                            </li>
+                        </ul>
+
+                        
+                        
+                    </div>
+                    <div>
+                        <ul class="list-group scroll-x scroll-y hide">
+                           
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    <span class="name">Main Entrance</span> <br />
+                                    <span class="controllerList">Reception Area</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Reception Area</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-10">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            
+
+                        </ul>
+
+                        <div class="panel-group listgrouppane" id="accordion">
+
+        <!-- panel1  -->
+        <div class="panel panel-default" id="panel1">
+          <div class="panel-heading" data-toggle="collapse" data-target="#collapse1">
+            <h4 class="panel-title"><span data-toggle="collapse" data-target="#collapse1" href="#collapse1">1 Zone Expanders</span> <span class="ispicon ispicon_downarrow pull-right"></h4>
+
+            
+          </div>
+
+          <div id="collapse1" class="panel-collapse collapse in fade">
+            <div class="panel-body">
+              <ul class="list-group scroll-x scroll-y">
+                          
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    <span class="name">Zone Expander Name</span> <br />
+
+                                    <span class="controllerList">16 Sensors</span><br/>
+                                    <span class="status">Connected</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- panel2 -->
+
+        <div class="panel panel-default" id="panel2" data-toggle="collapse" data-target="#collapse2">
+          <div class="panel-heading" data-toggle="collapse" data-target="#collapse2">
+            <h4 class="panel-title"><span data-toggle="collapse" data-target="#collapse2" href="#collapse2" class="collapsed">4 Doors</span><span class="ispicon ispicon_downarrow pull-right"></h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse fade">
+            <div class="panel-body">
+             <ul class="list-group scroll-x scroll-y">
+                           
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    <span class="name">Main Entrance</span> <br />
+                                    <span class="controllerList">Reception Area | 2 Cameras</span><br/>
+                                    <span class="status">OPEN & NORMAL</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    <span class="name">East Entrance</span> <br />
+                                    <span class="controllerList">HUE Area | 1 Camera</span><br/>
+                                    <span class="status">OPEN & NORMAL</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">West Entrance</span> <br />
+                                    <span class="controllerList">Flr 1: Conf Room</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Main Lab Entrance</span> <br />
+                                    <span class="controllerList">Area Name</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            
+
+                        </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel3 -->
+
+        <div class="panel panel-default" id="panel3" data-toggle="collapse" data-target="#collapse3">
+          <div class="panel-heading" data-toggle="collapse" data-target="#collapse3">
+            <h4 class="panel-title"><span data-toggle="collapse" data-target="#collapse3" href="#collapse3" class="collapsed">12 Cameras</span</h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse  fade">
+            <div class="panel-body"><ul class="list-group scroll-x scroll-y">
+                           
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    <span class="name">Main Entrance</span> <br />
+                                    <span class="controllerList">Reception Area</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Reception Area</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <span class="ispicon ispicon_access pull-left"></span>
+                                <div class="col-md-9">
+                                    
+                                    <span class="name">Door Name</span> <br />
+                                    <span class="controllerList">Not Defined</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            
+
+                        </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview DcmOverview isptabs pull-left ">
+                    <div class="row isptabs">
+                        <div class="row">
+                            <h2 class="isppagetitle">
+                                Main Entrance
+                                <span class="pull-right">
+                                    <span class="ispicon ispicon_plus" data-toggle="tooltip" ></span>
+                                    <span class="ispicon ispicon_more" data-toggle="tooltip" ></span>
+                                    <span class="ispicon ispicon_edit" data-toggle="tooltip" ></span>
+                                </span>
+
+                            </h2>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+                                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                                 <li role="presentation"><a href="#IO" aria-controls="IO" role="tab" data-toggle="tab">IO</a></li>
+                                 <li role="presentation"><a href="#zone" aria-controls="zone" role="tab" data-toggle="tab">Zones</a></li>
+                                <li role="presentation"><a href="#Floor" aria-controls="Floor" role="tab" data-toggle="tab">Floor Plan</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content viewmode">
+                            <div id="overview" class="tab-pane active">
+                                <div class="row scroll-x scroll-y overviewTab">
+                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                                        <form id="doorForm" class="dcmOverview" data-validationkey="door" novalidate="novalidate">
+                                            <div class="row">
+                                                <div class="form-group col-sm-6">
+                                                    <label class="control-label">Name<span class="star">*</span></label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label class="control-label">Associations</label>
+                                                    <select class="form-control" multiselect="multiselect">
+                                                        <option value="">Lobby Cam</option>
+                                                        <option value="">HUE Cam</option>
+                                                        <option value="">Lab</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+
+                                            <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+                                               <!--  <li class="doorBehaviour">
+                                                    <div class="doorBehaviourButton secondary-button1" >
+                                                        <span class="doorSettingsButtonTxt">Door Behavior</span>
+                                                        <span>Pulse Time: </span><span>0:0:10.0</span><br>
+                                                        <span>Shunt Time: </span><span>0:0:15.0</span><br>
+                                                    </div>
+                                                </li> -->
+                                                <span class="doorcurveline1"></span>
+                                                <li class="doorReaderRight" id="doorReaderRightId">
+                                                    <!-- <div class="doorReaderRightButton disabled-button" data-toggle="modal" role="button">
+                                                        <span class="doorSettingsButtonTxt" >Reader B</span>
+                                                        <span class="doorSettingsButtonTxt"></span>
+                                                        <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                                                        <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                                                        <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+                                                    </div> -->
+                                                </li>
+
+
+                                                <li class="egressSwitch" id="doorEgressId">
+                                                    <div class="egressSwitchButton secondary-button1 hide">
+                                                        <span class="doorSettingsButtonTxt">Engress Switch</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                           <!--  <ul class="doorSettingsWrapperTop">
+                                                <li>
+                                                    <div class="associationButton secondary-button1">
+                                                        <span class="doorSettingsAssociationButtonTxt" >Associations: </span>
+                                                        <span class="doorSettingsAssociationButtonTxt">0</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+ -->
+                                            <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+                                                <li>
+                                                    <div class="stripe leftNoBorder"></div>
+                                                    <div class="doorLeftLine"></div>
+
+                                                </li>
+                                                <li class="connecterLeft"></li>
+                                                <li>
+                                                    <div class="arrowUpEnabled" data-toggle="tooltip" data-html="true" 
+     data-title="<table class='table doortooltipstyle'>
+    <thead>
+        <tr>
+            <td class='head pull-left'><b>Reader 1 (IN)</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pulse Time:</td><td>12 Sec</td>
+        </tr>
+        <tr>
+            <td>Shunt Time:</td><td>10 Sec</td>
+        </tr>
+        <tr>
+            <td>Associated Output:</td><td>10 </td>
+        </tr>
+    </tbody>
+</table>">
+                                                      
+                                                        <div class="arrow_head_up"></div>
+                                                        <div class="arrow_body_up" data-toggle="modal" data-target="#addReader">
+                                                            <ul>
+                                                                <li class="arrowText">R1</li>
+                                                              <!--   <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addReader" title="Add New"></a> -->
+                                                                <li class="arrowTextIN">IN</li>
+                                                                <li style="display: none;">OUT</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="arrow_head_down" style="display: none;"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="connecterMiddle"></li>
+                                                <li>
+                                                    <div class="arrowDownDisabled" data-toggle="tooltip" data-placement="bottom" data-html="true" 
+     data-title="<table class='table doortooltipstyle'>
+    <thead>
+        <tr>
+            <td class='head pull-left'><b>Reader 2 (OUT)</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Inactive</td><td></td>
+        </tr>
+    </tbody>
+</table>">
+                                                        <div class="arrow_head_up" style="display: none;"></div>
+                                                        <div class="arrow_body_down">
+                                                            <ul>
+                                                                <li class="arrowText" style="display: none;">IN</li>
+                                                                <li class="arrowTextOut">OUT</li>
+                                                                <li class="arrowText">R2</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="arrow_head_down"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="connecterRight"></li>
+                                                <li>
+                                                    <div class="egressSwitchTopEnable" data-placement="top" data-toggle="tooltip" data-html="true" 
+     data-title="<div class='engressswitch'>Engress Switch</div>"></div>
+                                                    <div class="stripe rightNoBorder"></div>
+                                                    <div class="doorRightLine"></div>
+                                                    <div class="egressSwitchBottom"></div>
+                                                </li>
+                                            </ul>
+                                           
+
+                                            <div class="doorReaderLeft" id="doorReaderLeftId">
+                                               <!--  <div class="doorReaderLeftButton secondary-button1" data-toggle="modal" role="button">
+                                                    <span class="doorSettingsButtonTxt">Door 1 - Reader A</span>
+                                                    <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                                                    <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                                                    <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+                                                </div> -->
+                                            </div>
+                                             <span class="doorcurveline2"></span>
+
+                                           <!--  <div class="buttonGroup antipassback">
+                                                <button class="primary-button" data-bind="click:$data.saveDoor" data-original-title="" title="">Save</button>
+                                                <button class="secondary-button" data-bind="click:$data.resetDoor" data-original-title="" title="">Reset</button>
+                                                <span class="class2 errorDetail" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="display: none;"></span>
+                                            </div> -->
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+                            <div id="settings" class="tab-pane">
+                                <div class="col-md-12 scroll-x scroll-y overviewTab">
+                                    <form action="" method="POST" role="form">
+                                        <h3 class="row">
+                                            General Settings
+                                        </h3>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Name*</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                         <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Description</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                         <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Panel Address</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                         <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Firmware</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                         <div class="form-group col-md-4">
+                                            <label class="control-label" for="">I/O Poll Interval</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Loop Verification Interval</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Panel CMD Retry Count</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label" for="">Regional Time Zone</label>
+                                            <input type="text" class="form-control" id="" placeholder="Input field">
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Set Date Time</span>
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Anti Passback</span>
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Duress Detect</span>
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Reverse LED</span>
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Continuous Card Reads</span>
+                                        </div>
+                                        <div class="checkbox col-md-12">
+                                            <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                            <span for="checkbox7">Free Egress Inputs</span>
+                                        </div>
+                                         <h3 class="row col-md-12 clearfix">
+                                            Reader Settings
+                                        </h3>
+                                        
+
+                                    
+                                        
+                                    
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="IO" class="tab-pane">
+                                <div class="row scroll-x scroll-y overviewTab">
+                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                                        
+                                        <div class="tab-pane">
+                                            <div class="table-responsive panel-body isptable">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <!-- <th class="severityCheck"><input type="checkbox" value=""></th> -->
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Parameter 1</th>
+                                                    <th>Parameter 2</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                   <!--  <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td> -->
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">Reader Tamper</span> <br>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!-- <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td> -->
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">Reader Tamper</span> <br>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!-- <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td> -->
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">Reader Tamper</span> <br>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!-- <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td> -->
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">Reader Tamper</span> <br>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span class="pull-left">Value </span> 
+                                                       <a class="ispicon ispicon_edit col-md-2"  data-toggle="modal" data-target="#addReaderBuzzer"></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div id="zone" class="tab-pane">
+                                <div class="row scroll-x scroll-y overviewTab">
+                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                                        
+                                        <div class="tab-pane">
+                                            <div class="table-responsive panel-body isptable">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="severityCheck"><input type="checkbox" value=""></th>
+                                                    <th>Zone Name</th>
+                                                    <th>Response Type<span class="ispicon ispicon_downarrow"></span></th>
+                                                    <th>Zone</th>
+                                                    <th>Area</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td>
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">User dened name</span> <br>
+                                                        <span class="controllerList">01:23:45:67:89:bc</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td>
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">User dened name</span> <br>
+                                                        <span class="controllerList">01:23:45:67:89:bc</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td>
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">User dened name</span> <br>
+                                                        <span class="controllerList">01:23:45:67:89:bc</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span>Value</span> 
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="">
+                                                        </span>
+                                                    </td>
+                                                    <td class="col-md-4">
+                                                        
+                                                        <span class="name">User dened name</span> <br>
+                                                        <span class="controllerList">01:23:45:67:89:bc</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>22</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Value</span>
+                                                    </td>
+                                                    <td>
+                                                       <span class="pull-left">Value </span> 
+                                                       <a class="ispicon ispicon_edit col-md-2"  data-toggle="modal" data-target="#addReaderBuzzer"></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                        </div>
+                         <div class="btn-footer">
+                                        <div class="btn-group pull-right" role="group" aria-label="group button">
+                                            <button type="button" class="btn btn-default">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+                <!-- AREA OVERVIEW-->
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="addReader" class="modal fade ispmodal addReader" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Reader 1 settings</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="radio"/>
+                                <label>In</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="radio">
+                                <span for="checkbox7">Out</span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="control-label" for="">Pulse Time*</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="checkbox">
+                                <span for="checkbox7">Apply to Reader 2</span>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="control-label" for="">Shunt Time*</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+                             <div class="col-md-12">
+                                <input type="checkbox">
+                                <span for="checkbox7">Apply to Reader 2</span>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label class="control-label">Associated output</label>
+                                <select class="form-control">
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                       
+                     
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     <div id="addReaderBuzzer" class="modal fade ispmodal addReaderBuzzer" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Reader Buzzer
+
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            List all parameters here
+                        </div>
+                       
+                     
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="addDevice" class="modal fade ispmodal addDevice" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Add Device
+
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form-group col-md-4 ispselect">
+                                <label class="control-label" for="">Device Type</label>
+                                <select class="SlectBox form-control">
+                                    <option selected="selected">selected</option>
+                                    <option>Volvo</option>
+                                    <option>Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="">Device Name</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="">Device Serial Number</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="">Bus ID</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label" for="">Bus Slot ID</label>
+                                <input type="text" class="form-control" id="" placeholder="Input field">
+                            </div>
+
+                        </div>
+                       
+                     
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save and add another</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

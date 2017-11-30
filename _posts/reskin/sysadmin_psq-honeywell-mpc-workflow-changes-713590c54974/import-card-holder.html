@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Import card holder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+    <link href="content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css">
+    <link href="content/css/base.css" rel="stylesheet" type="text/css">
+    <link href="content/css/master.css" rel="stylesheet" type="text/css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <!-- <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css"> -->
+    <link href="content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+    <link href="content/css/importholder1.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="content/css/importcardholder.css">
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/jquery.jscrollpane.min.js"></script>
+    <script src="scripts/jquery.mousewheel.js"></script>
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="scripts/selectize.js"></script>
+    <script src="scripts/jquery.slimscroll.min.js"></script>
+    <script src="scripts/master.js"></script>
+</head>
+    
+<body class="ps-card-holder">
+    <header>
+        <nav class="masterhead navbar navbar-default">
+            <div class="header_left navbar-header">
+                <a href="#" class="hamburger close_menu pull-left key_cntrl"> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> </a>
+                <!--Navigation starts-->
+                <!--Navigation ends-->
+                <div class="masterhead_logo pull-right">
+                    <p></p>
+                </div>
+            </div>
+            <div class="header_right nav navbar-nav navbar-right">
+                <a href="#" class="alarm pull-left hdr_alrm pw_icon"></a>
+                <a href="#" class="help pull-left hdr_hlp pw_icon"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="people_group col-md-3 col-lg-3">
+        <div id="people_group" class="tab-pane people_group_one fade"> [No Data] </div>
+    </div>
+    <div class="row ps-card-holder-detail col-md-9 col-sm-9">
+        <div class="import-card-header">
+            <div class="col-md-6 card-header">
+                <h1>Settings</h1>
+            </div>
+            <div class="col-md-6 card-header">
+                <a data-toggle="modal" data-target="#import-details"><span class="icon icon-dwonload pull-right"></span></a>
+                <a><span class="icon icon-add pull-right"></span></a>
+                <span class="icon-search pull-right">
+					<input type="search" class="form-control" />
+					<span class="foucs-icon-search"></span>
+                </span>
+            </div>
+        </div>
+        <div class="row contant-wrapper">
+            <div class="wrap-header">
+                <div class="col-sm-3 text-left  table-label Picture-name-details">
+                    <a class="picture" href="#">Picture</a>
+                    <a class="name" href="#">Name</a>
+                </div>
+                <div class="col-sm-4  table-label display-name-details">
+                    <a href="#">
+                        <span class="display-name">Display Name</span>
+                    </a>
+                </div>
+                <div class="col-sm-4 table-label assigend-Cards-details">
+                    <a href="#">
+                        <span class="title-name">Assigned Cards</span>
+                        <span class="dorpup-arrow"></span>
+                        <span class="dorpdown-arrow"></span>
+                    </a>
+                </div>
+                <div class="col-sm-1 table-label text-center">
+                    <a href="#"></a>
+                </div>
+            </div>
+            <div class="card-details-title">
+                <div class="col-sm-7 text-left unassociated">
+                    <label><a href="#">Unassociated Cards</a></label>
+                </div>
+                <div class="col-sm-5 text-left create-new">
+                    <label><a href="#">Create New</a></label>
+                </div>
+            </div>
+            <div class="table-body">
+                <div class="wrapper-details scroll-x scroll-y shadow-scroll">
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="row card-details">
+                        <div class="col-sm-3 user-image">
+                            <figure class="details-image">
+                                <img class="" src="images/img1.jpg">
+                            </figure>
+                            <span class="name-reference"><a class="ps-a" href="#">Alia james</a></span>
+                        </div>
+                        <div class="col-sm-4 text-left short-name">
+                            <span class="name-reference"><a class="ps-a" href="#">Alia</a></span>
+                        </div>
+                        <div class="col-sm-3 text-left assigend-cards-list">
+                            <span class="name-reference"><a class="ps-a" href="#">504248</a></span>
+                        </div>
+                        <div class="col-sm-2 pull-right icon-delete">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- wrapper-details -->
+        </div>
+        <!-- contant wrapper -->
+    </div>
+    <!-- container div -->
+    <script src="scripts/custom.js"></script>
+    <!--    modal structure-->
+    <div class="modal fade" id="import-details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--        <div class="modal-dialog" role="document">-->
+        <div class="modal-dialog ps-import-card-holder-details">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header import-holder-card-heading">
+                    <h1>Import card holder details</h1>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs pw_tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#associate" aria-controls="associate" role="tab" data-toggle="tab">Associate</a></li>
+                            <li role="presentation"><a href="#conflict" aria-controls="conflict" role="tab" data-toggle="tab">Conflicts: <span>0</span></a></li>
+                            <li role="presentation"><a href="#conflict2" aria-controls="conflict2" role="tab" data-toggle="tab">Conflicts2: <span>0</span></a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active associate-shadow" id="associate">
+                                <div class="import-holder-form">
+                                    <div class="row csv-file-title">
+                                        <div class="form-group">
+                                            <label class="control-label pull-left">Select a .csv file*</label>
+                                            <input id="uploadFile" class="form-control" value="Contact.csv" disabled="disabled" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-10 heading-table">
+                                                <h2>Associate Access Persona</h2>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="table-background">
+                                    <div class="table-header-download">
+                                        <div class="import-screen-table">
+                                            <div class="activity_card_table ">
+                                                <div class="table-border">
+                                                    <table class="table header_tableevent event_card_table_content_assocoate ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Current Holder Count</th>
+                                                                <th>External Access Persona</th>
+                                                                <th class="temp-access">MPC Access Persona</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                                <div class="event_card_table_content popup-scroll shadow-scroll">
+                                                    <table class="table activity_card_table_body">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>9</td>
+                                                                <td>EB12312123</td>
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default " data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary pull-right">Next</button>
+                                </div>
+                            </div>
+
+
+                            <div role="tabpanel" class="tab-pane conflict1-shadow" id="conflict2">
+                                <div class="import-holder-form">
+                                    <div class="row csv-file-title">
+                                        <div class="form-group">
+                                            <label class="control-label pull-left">Conflicting records are listed below. Please take appropriate action in conflicts column.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-background">
+                                    <div class="table-header-download">
+                                        <div class="import-screen-table">
+                                            <div class="activity_card_table ">
+                                                <div class="table-border">
+                                                    <table class="table header_tableevent event_card_table_content ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Card Number</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Conflicts</tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                                <div class="event_card_table_content popup-scroll shadow-scroll">
+                                                    <table class="table activity_card_table_body">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td>visitor</td>
+
+                                                                <td>
+                                                                    <select class="form-control">
+                                                                        <option>None</option>
+                                                                        <option>opt 1</option>
+                                                                        <option>opt 2</option>
+                                                                        <option>opt 3</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" modal-footer">
+                                    <button class="btn btn-default " data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary btn-save">Save</button>
+                                    <button class="btn btn-primary pull-right">Previous</button>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane conflict-shadow" id="conflict">
+                                <div class="import-holder-form">
+                                    <div class="row csv-file-title">
+                                        <div class="form-group">
+                                            <label class="control-label pull-left">There are no records to upload</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-background">
+                                    <div class="table-header-download">
+                                        <div class="import-screen-table">
+                                            <div class="activity_card_table">
+                                                <div class="table-border">
+                                                    <table class="table header_tableevent event_card_table_content ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Card Number</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Card Type</th>
+                                                                <th>External Acess Persona</th>
+                                                                <th>Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                                <div class="event_card_table_content popup-scroll shadow-scroll">
+                                                    <table class="table activity_card_table_body">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td> 444522</td>
+                                                                <td>Ben</td>
+                                                                <td> </td>
+                                                                <td>visitor
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td><span class="error-status">Last Name Required</span></td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <p class="popup_info_footer">Click Download to download and correct the .csv file. Then delete the Error column in the csv File and upload it again.</p>
+                                    <button class="btn btn-default " data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary btn-save">Previous</button>
+                                    <button class="btn btn-primary pull-right">Download</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!--    </div>-->
+            <!--    modal structure-->
+</body>
+
+</html>

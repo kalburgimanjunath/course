@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="../css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        Eagle
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    @*<ul data-bind="foreach: $data.pages">
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <div>
+                                <header class="count">
+                                    <span data-bind="css: PageIcon"></span>
+                                </header>
+                                <p data-bind="text: $data.PageName"></p>
+                            </div>
+                        </li>
+                    </ul>*@
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <img src="~/Content/images/Honeywell-logo-Wht-sm.png" width="120" />
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                @*
+                                <li class="dropdown-header">Dropdown heading</li>*@
+                                <li><a href="#" onclick="onMenuItemSelect('AddSite')">Add New Account</a></li>
+                                <li><a href="#" onclick="onMenuItemSelect('SiteOverview')">Account Overview</a></li>
+                            </ul>
+                            @*$('#menu-close').click();*@
+                        </li>
+                        <li>
+                            <a href="#about" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span>
+                            <button class="btn btn-default" type="submit"><i class="ispicon ispicon_search"></i></button>
+                        </span>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </li>
+        </ul>
+
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="#" class="list-group-item ">Site Overview</a></li>
+                        <li><a href="#" class="list-group-item">Controllers</a></li>
+                        <li><a href="#" class="list-group-item active">Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Edge Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Areas</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                People & Badges
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">People<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Access Personas<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+<div class="dcm-root">
+    <link href="~/Content/DeviceMgmtPlugin/dcm.css" rel="stylesheet" />
+    <link href="~/Content/DeviceMgmtPlugin/dcmoverview.css" rel="stylesheet" />
+    <div id="device-view" data-bind="busyIndicator: {show: $data.IsLoading, blockAll: true}">
+       <!-- LIST VIEW-->
+<div id="device-list-view" class="dcmView">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+        <span class="ispicon ispicon_collapse inverse pull-left" data-bind="click: $data.toggleAccordionMenu"></span>
+        <h2 class="isppagetitle">
+            @Resources.Devices
+            <span class="pull-right">
+                <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addReader" title="Add New"></a>
+                <a class="ispicon ispicon_more dropdown-toggle" data-toggle="dropdown" title="More">
+
+                </a>
+                <ul class="dropdown-menu ispmenu rightalign">
+                    <li><a href="#">@Resources.Delete</a></li>
+                </ul>
+            </span>
+        </h2>
+        <div>
+            <div class="input-group selectController">
+                <select class="form-control" data-bind="options: $data.controllers, optionsText: 'Name', optionsValue: 'Id',optionsCaption: '--Select--', value:$data.controllerId, event:{change:$data.onControllerChange}"></select>
+            </div>
+            <ul class="listsearchbuttons-container hide">
+                <li>
+                    <a class="ispicon ispicon_filter dropdown-toggle pull-right listsearchbuttons" data-toggle="dropdown" title="filter"></a>
+                    <ul class="dropdown-menu ispmenu rightalign">
+                        <li><a href="#">Device Type</a></li>
+                        <li><a href="#">Recently Added</a></li>
+                        <li><a href="#">Missing Devices</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="panel-group listgrouppane scroll-x scroll-y" id="accordion">
+                <div class="panel panel-default hide" id="panel1">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#collapse1">
+                        <h4 class="panel-title">
+                            <span data-toggle="collapse" data-target="#collapse1" href="#collapse1">1 Zone Expanders</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y">
+                                <li class="list-group-item">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_door_default pull-left"></span>
+                                    <div class="col-md-10">
+                                        <span class="name">Zone Expander Name</span> <br />
+                                        <span class="controllerList">16 Sensors</span><br />
+                                        <span class="status">Connected</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ko if: $data.hasDeviceGroup('DOOR') -->
+                <div class="panel panel-default" id="panel2" data-bind="with: $data.getDeviceGroup('DOOR'), accordion: $data.getDeviceGroup('DOOR').IsExpanded">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span class="collapsed" data-bind="text: $data.Devices().length"></span><span> @Resources.Doors</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y" data-bind="foreach: $data.Devices">
+                                <li class="list-group-item" data-bind="click: $root.onDeviceItemSelect, css: {active: $data.IsSelected()}">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_Door pull-left"></span>
+                                    <div class="col-md-9">                                       
+                                        <span class="name" data-bind="text: $data.Name" /> <br />
+                                        <span class="controllerList" data-bind="text: $data.Description" /><br/>
+                                        <span class="status">@Resources.OpenAndNormal</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="panel panel-default hide" id="panel3" data-toggle="collapse" data-target="#collapse3">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#collapse3">
+                        <h4 class="panel-title">
+                            <span data-toggle="collapse" data-target="#collapse3" href="#collapse3" class="collapsed">12 Cameras</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse  fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y">
+                                <li class="list-group-item">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_door_default pull-left"></span>
+                                    <div class="col-md-10">
+                                        <span class="name">Main Entrance</span> <br />
+                                        <span class="controllerList">Reception Area</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <!-- AREA OVERVIEW-->
+<form id="device-overview-view" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview DcmOverview isptabs pull-left">
+    <div class="row isptabs">
+        <div class="row">
+            <h2 class="isppagetitle">
+                <span id="PeripheralNameDisplay" data-bind="text: $data.model.Name"></span>
+                <span class="pull-right">
+                    <span class="ispicon ispicon_edit col-md-2" data-toggle="tooltip" title="Edit" data-bind="click: $data.switchToEdit, css: {hide: !$data.isReadOnly()}"></span>
+                </span>
+            </h2>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" id="OverviewHeader" class="active" data-bind="click: $data.switchTab.bind($data, 'overview')"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">@Resources.Overview</a></li>
+                <li role="presentation" id="SettingsHeader" data-bind="click: $data.switchTab.bind($data, 'settings')"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">@Resources.Settings</a></li>
+                <li role="presentation" class="hide"><a href="#IO" aria-controls="IO" role="tab" data-toggle="tab">@Resources.IO</a></li>
+                <li role="presentation" class="hide"><a href="#Floor" aria-controls="Floor" role="tab" data-toggle="tab">@Resources.FloorPlan</a></li>
+            </ul>
+        </div>
+        <div class="tab-content viewmode" data-bind="css: {viewmode: $data.isReadOnly}">
+            <div id="overview" class="tab-pane dcmOverview active">
+                <div class="row scroll-x scroll-y overviewTab">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label class="control-label">@Resources.Name</label>
+                                <input class="form-control" id="PeripheralName" name="PeripheralName" type="text" data-bind="value: $data.model.Name">
+                            </div>
+                        </div>
+                        <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+                            <span class="doorcurveline1"></span>
+                            <li class="doorReaderRight" id="doorReaderRightId">
+                            </li>
+                        </ul>
+                        <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+                            <li>
+                                <div class="stripe leftNoBorder"></div>
+                                <div class="doorLeftLine"></div>
+                            </li>
+                            <li class="connecterLeft"></li>
+                            <li>
+                                <div class="arrowUpEnabled enabled" data-bind="click: $data.showDoorSettings, tooltip: { template: 'readerInToolTip', data: $data.doorSettings(), options: {placement: 'top'} }" data-toggle="tooltip" data-html="true">
+
+                                    <div class="arrow_head_up"></div>
+                                    <div class="arrow_body_up">
+                                        <ul>
+                                            <li class="arrowText">@Resources.R1</li>
+                                            <li class="arrowTextIN">@Resources.In</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="connecterMiddle"></li>
+                            <li>
+                                <div data-bind="click: $data.showReaderOutSettings, css: $data.readerOutStatus, tooltip: { template: 'readerOutToolTip', data: $data.doorSettings(), options: {placement: 'bottom'} }" data-toggle="tooltip" data-html="true" class="arrowDownDisabled enabled">
+                                    <div class="arrow_body_down">
+                                        <ul>
+                                            <li class="arrowText">@Resources.R2</li>
+                                            <li class="arrowTextOut">@Resources.Out</li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrow_head_down"></div>
+                                </div>
+                            </li>
+                            <li class="connecterRight"></li>
+                            <li>
+                                <div data-bind="click: $data.showEgressSettings, css: $data.egressInStatus, tooltip: { template: 'egressToolTip', data: $data.doorSettings(), options: {placement: 'bottom'} }" data-toggle="tooltip" data-html="true"></div>
+                                <div class="stripe rightNoBorder"></div>
+                                <div class="egressSwitchBottom"></div>
+                            </li>
+                        </ul>
+                        <div class="doorReaderLeft" id="doorReaderLeftId"></div>
+                        <span class="doorcurveline2"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="settings" class="tab-pane">
+                <div class="col-md-12">
+                    <h3 class="row"></h3>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.Description</label>
+                        <input type="text" class="form-control" id="DCMDescription" name="DCMDescription" data-bind="value: $data.model.Description">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.SerialNumber</label>
+                        <input type="text" class="form-control" id="DCMSerialNumber" name="DCMSerialNumber" data-bind="value: $data.model.SerialNumber">
+                    </div>
+                    <div class="form-group col-md-4 hide">
+                        <label class="control-label" for="">@Resources.Bus_ID</label>
+                        <select name="BusID" id="BusID" class="form-control" data-bind="options: BusIDs"></select>
+                    </div>
+                    <div class="form-group col-md-4 hide">
+                        <label class="control-label" for="">@Resources.Bus_Slot_ID</label>
+                        <select name="Bus_Slot_ID" id="Bus_Slot_ID" class="form-control" data-bind="options: BusSlotIDs"></select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.Door_Input_Reader_Mode</label>
+                        <select id="DCMReaderMode" name="DCMReaderMode" class="form-control" data-bind="options: DoorInputReaderModes, optionsText: 'Text', optionsValue: 'Value', value:$data.model.Door.ReaderIn.ReaderMode"></select>
+                    </div>
+
+                    @*<div class="col-md-12" id="Radio_Door_Mode" >
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:0, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_Only</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:1, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_PIN_Only</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:2, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_and_PIN</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:3, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_or_PIN</span>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+            <div id="IO" class="tab-pane hide">
+                <div class="row scroll-x scroll-y overviewTab">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                        <div class="tab-pane">
+                            <div class="table-responsive panel-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Parameter 1</th>
+                                            <th>Parameter 2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span class="pull-left">Value </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-footer" data-bind="css: {hide: $data.isReadOnly}">
+            <div class="btn-group pull-right" role="group" aria-label="group button">
+                <button type="button" class="btn btn-default" data-bind="click: $data.cancelSettings">@Resources.Cancel</button>
+                <button type="button" class="btn btn-primary" data-bind="click: $data.saveSettings">@Resources.Save</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/html" id="readerInToolTip">
+        <table class='table doortooltipstyle'>
+            <thead>
+                <tr>
+                    <td class='head pull-left'><b>@Resources.DoorSettings</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Resources.DoorOpenTime:</td>
+                    <td id="RInDoorOpenTime" data-bind="text: $data.DoorOpenDurationDisplay()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.DoorLockReleaseTime:</td>
+                    <td id="RInDoorUnlockDuration" data-bind="text: $data.DoorUnlockDurationDisplay()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputResistorValue:</td>
+                    <td id="RInResistanceTemplate" data-bind="text: $data.ResistanceTemplate()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputZoneType:</td>
+                    <td id="RInZoneMode" data-bind="text: $data.ZoneMode()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/html" id="egressToolTip">
+        <!-- ko if: $data.IsEgressEnabled -->
+        <table class='table doortooltipstyle'>
+            <thead>
+                <tr>
+                    <td class='head pull-left'><b>@Resources.Egress</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Resources.InputResistorValue:</td>
+                    <td id="EgResistanceTemplate" data-bind="text: $data.ResistanceTemplate()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputZoneType:</td>
+                    <td id="EgZoneMode" data-bind="text: $data.ZoneMode()"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /ko -->
+        <!-- ko ifnot: $data.IsEgressEnabled -->
+        <table class='table doortooltipstyle'>
+            <tbody>
+                <tr>
+                    <td>@Resources.Egress</td>
+                </tr>
+                <tr>
+                    <td>@Resources.Disabled</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /ko -->
+    </script>
+    <script type="text/html" id="readerOutToolTip">
+        <table class='table doortooltipstyle'>
+            <tbody>
+                <tr>
+                    <td>@Resources.Reader2Out</td>
+                </tr>
+                <!-- ko if: $data.IsEgressEnabled -->
+                <tr>
+                    <td>@Resources.Disabled</td>
+                </tr>
+                <!-- /ko -->
+                <!-- ko ifnot: $data.IsEgressEnabled -->
+                <tr>
+                    <td>@Resources.Enabled</td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+    </script>
+</form>
+<!-- AREA OVERVIEW-->
+    @{
+        Html.RenderPartial("_DoorSettings");
+    }
+    <input type="hidden" id="devicemgmturl" value='@Url.Action("", "DeviceMgmt")' />
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-common.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-validation-context.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-model.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-datacontext.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-uicontext.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-bootstrap.js"></script>
+</div>

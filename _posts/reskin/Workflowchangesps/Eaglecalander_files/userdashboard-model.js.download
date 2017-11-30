@@ -1,0 +1,16 @@
+﻿Honeywell.ISP.UserDashboard.UserDashboardModel = Honeywell.ISP.WebUIFramework.BaseModel.inherits({
+    initialize: function (data) {
+        this.ShowMap = ko.observable();
+        if (data) {
+            this.dataSource(data);
+        }
+    },
+    dataSource: function (data) {
+        data = data || {};
+        this.ShowMap(data.ShowMap);
+    },
+    toJson: function () {
+        var returnjs = ko.mapping.toJS(this);
+        return returnjs;
+    }
+});

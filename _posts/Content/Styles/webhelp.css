@@ -1,0 +1,1421 @@
+    body {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+    @font-face {
+        font-family: 'HoneywellSansWeb-Bold';
+        src: url('fonts/HoneywellSans-Bold.woff') format('woff'), url('fonts/HoneywellSans-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/HoneywellSans-Bold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'HoneywellSansWeb-Medium';
+        src: url('fonts/HoneywellSans-Medium.woff') format('woff'), url('fonts/HoneywellSans-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/HoneywellSans-Medium.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Honeywell Sans Bold';
+        src: url('fonts/HoneywellSans-Bold.woff') format('woff'), url('fonts/HoneywellSans-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/HoneywellSans-Bold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'Honeywell Sans Medium';
+        src: url('fonts/HoneywellSans-Medium.woff') format('woff'), url('fonts/HoneywellSans-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/HoneywellSans-Medium.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'HoneywellSansWeb-Book';
+        src: url('fonts/HoneywellSans-Book.otf') format('opentype');
+    }
+    /* #onlineHelpWrap .navbar {
+    max-width: 25%;
+    width: 25%;
+    margin: 0;
+    line-height: 46px;
+    border-bottom: 1px solid #d3d3d3;
+    font-size: 16px;
+    border-right: 1px solid #bababb;
+    background-color: #f5f5f5;
+    color: #606060;
+    font-size: 16px;
+    text-indent: 24px;
+}
+
+#onlineHelpWrap .leftTree {
+    width: 25%;
+    background-color: #fff;
+    border-right: 1px solid #bababb;
+    height: 100%;
+    top: 47px;
+    overflow: hidden;
+}
+
+    #onlineHelpWrap .leftTree:hover {
+        overflow: scroll;
+    }
+
+    #onlineHelpWrap .leftTree header {
+        margin: 0;
+        font-size: 16px;
+        color: #606060;
+        font-size: 16px;
+        text-indent: 24px;
+        position: fixed;
+        width: 25%;
+        top: 109px;
+    }
+
+    #onlineHelpWrap .leftTree .content {
+        /* margin: 90px 0 0; */
+    
+    #onlineHelpWrap .leftTree header input {
+        color: #0889c4;
+        font-size: 14px;
+        /*    border: 1px solid #d3d3d3;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 5px 5px;*/
+        margin: 8px 0;
+        /*    width: 90%;*/
+        background: #fff url(../images/icon_search.png) no-repeat 10px 7px/16px;
+        text-indent: 30px;
+    }
+    #onlineHelpWrap .leftTree header input:focus {
+        outline: none;
+    }
+    #onlineHelpWrap #page-body {
+        overflow: hidden;
+    }
+    #onlineHelpWrap .contentarea {
+        left: 26%;
+        position: absolute;
+        top: 0;
+        width: 74%;
+        height: 95%;
+    }
+    #onlineHelpWrap .pagetitle a,
+    #onlineHelpWrap .pagetitle a:hover {
+        color: #fff;
+        font-size: inherit;
+        text-decoration: none;
+    }
+    #onlineHelp .titleheader {
+        font-size: 22px;
+        color: #606060;
+        margin: 0 0 15px 14px;
+        font-weight: normal;
+        border-bottom: 1px solid #e7e7e7;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    #onlineHelp .subtitle {
+        font-size: 18px;
+        color: #606060;
+        padding-bottom: 10px;
+        display: block;
+        padding-left: 13px;
+    }
+    #onlineHelp p {
+        font-size: 14px;
+        line-height: 20px;
+        color: #3B3B3D;
+        padding: 0 0 15px 13px;
+    }
+    #onlineHelp a {
+        color: #0088cc;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    #onlineHelp a:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+    #onlineHelp ol,
+    #onlineHelp ul {
+        padding: 0 0 0 34px;
+        font-size: 14px;
+    }
+    #onlineHelp .bodyCont {
+        min-height: 418px;
+    }
+    #onlineHelp ol ul {
+        padding: 5px 0 0 17px;
+    }
+    .ps-webhelp .header-menu-three .tabcontainer #configtab {
+        border: none;
+        margin: 0 0 0 7px;
+    }
+    #onlineHelp ul li {
+        padding: 0 0 5px;
+        list-style: none;
+        color: #606060;
+    }
+    #onlineHelp ol li {
+        padding: 0 0 5px;
+        color: #606060;
+    }
+    #onlineHelp ul li {
+        list-style-type: disc;
+    }
+    #onlineHelp ul li li {
+        list-style-type: circle;
+    }
+    #onlineHelp strong {
+        font-family: "HoneywellSansWeb-Medium" !important;
+    }
+    #onlineHelp .controlButt {
+        position: absolute;
+        right: 0;
+        top: 7px;
+    }
+    #onlineHelp .controlButt a {
+        padding-left: 24px;
+    }
+    #onlineHelp .note {
+        padding: 13px 0 13px 20px;
+    }
+    #onlineHelp .note img {
+        vertical-align: middle;
+        margin: -2px 0 0;
+    }
+    #onlineHelp .nomargintop {
+        padding: 0 0 13px 0;
+    }
+    #onlineHelp .note ol {
+        padding: 5px 0 0 34px;
+    }
+    #onlineHelp .note .subtitle {
+        color: #707070;
+        padding: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    #onlineHelp .note p,
+    #onlineHelp .note li {
+        color: #707070;
+        padding: 0;
+        font-size: 12px;
+    }
+    #onlineHelp ol .note {
+        padding: 13px 0;
+    }
+    #onlineHelp table {
+        border-collapse: collapse;
+        width: 98%;
+        margin: 5px 0 20px 14px;
+    }
+    #onlineHelp ol table,
+    #onlineHelp ul table {
+        margin: 10px 0 14px;
+    }
+    #onlineHelp table thead tr {
+        font-size: 14px;
+        background-color: #f5f5f5;
+        color: #606060;
+    }
+    #onlineHelp table tbody tr {
+        font-size: 14px;
+        color: #606060;
+    }
+    #onlineHelp table td {
+        padding: 7px 0 7px 8px;
+        vertical-align: top;
+        border: 1px solid #d3d3d3;
+    }
+    #onlineHelp table td.col-equal {
+        width: 50%;
+    }
+    #onlineHelp table td.col-one {
+        width: 10%;
+    }
+    #onlineHelp table td.col-two {
+        width: 20%;
+    }
+    #onlineHelp table td.col-three {
+        width: 70%;
+    }
+    #onlineHelp .bottControl {
+        border-top: 1px solid #d3d3d3;
+        padding-top: 12px;
+        margin-top: 12px;
+        margin-left: 15px;
+    }
+    #onlineHelp .helpprev {
+        float: left;
+        padding: 0;
+    }
+    #onlineHelp .helpnext {
+        float: right;
+        margin-right: 16px;
+    }
+    #onlineHelp span {
+        display: block;
+        font-size: 12px;
+    }
+    #onlineHelp .helpnext span {
+        display: block;
+        font-size: 12px;
+        text-align: right;
+        margin: 0 26px 0 0;
+    }
+    #onlineHelp .helpprev span {
+        display: block;
+        font-size: 12px;
+        text-align: left;
+        margin: 0 0 0 25px;
+    }
+    #onlineHelp a {
+        color: #0889c4;
+        font-size: 14px;
+    }
+    #onlineHelp .prev_icon,
+    #onlineHelp .next_icon,
+    #onlineHelp .create-icon,
+    #onlineHelp .person-icon,
+    #onlineHelp .grid-icon,
+    #onlineHelp .pane-icon,
+    #onlineHelp .calendar-icon,
+    #onlineHelp .sortasc-icon,
+    #onlineHelp .sortdesc-icon,
+    #onlineHelp .clip-icon,
+    #onlineHelp .camred-icon,
+    #onlineHelp .play-icon,
+    #onlineHelp .netaxs-icon {
+        width: 24px;
+        height: 24px;
+    }
+    #onlineHelp .prev_icon {
+        float: left;
+        background: url('../images/sprite_icons.png') no-repeat -308px -400px;
+    }
+    #onlineHelp .next_icon {
+        float: right;
+        background: url('../images/sprite_icons.png') no-repeat -308px -430px;
+    }
+    #onlineHelp .create-icon {
+        background: url('../images/sprite_icons.png') no-repeat -337px -490px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .person-icon {
+        background: url('../images/sprite_icons.png') no-repeat -277px -100px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .grid-icon {
+        background: url('../images/sprite_icons.png') no-repeat -430px -520px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .pane-icon {
+        background: url('../images/sprite_icons.png') no-repeat -190px -42px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .calendar-icon {
+        background: url('../images/sprite_icons.png') no-repeat -187px -130px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .sortasc-icon {
+        background: url('../images/sprite_icons.png') no-repeat -187px -98px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .sortdesc-icon {
+        background: url('../images/sprite_icons.png') no-repeat -187px -69px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .clip-icon {
+        background: url('../images/sprite_icons.png') no-repeat -427px -221px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .camred-icon {
+        background: url('../images/sprite_icons.png') no-repeat -157px -399px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .play-icon {
+        background: url('../images/sprite_icons.png') no-repeat -336px -460px;
+        padding: 3px 28px 3px 1px;
+    }
+    #onlineHelp .netaxs-icon {
+        background: url('../images/sprite_icons.png') no-repeat -517px -250px;
+        padding: 3px 28px 3px 1px;
+    }
+    iframe {
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+        height: 95%;
+    }
+    body#onlineHelp {
+        overflow: auto !important;
+        margin-right: 20px !important;
+    }
+    /* tree */
+    
+    .ps-webhelp #onlineHelpWrap .leftTree ul li {
+        list-style: none;
+        border-bottom: 1px solid #e7e7e7;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul li span {
+        margin-left: 0;
+        padding-left: 29px;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul.list-level1 li span {
+        margin-left: 0;
+        padding-left: 40px;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul.list-level3 li span {
+        margin-left: 0;
+        padding-left: 50px;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul.list-level2 li span {
+        margin-left: 0;
+        padding-left: 60px;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul.list-level4 li span {
+        margin-left: 0;
+        padding-left: 62px;
+    }
+    #onlineHelpWrap .leftTree ul li.search-item ul {
+        margin-left: 0;
+        border-top: 1px solid #e7e7e7;
+    }
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign,
+    #onlineHelpWrap .tree-open-icon,
+    .tree-open-icon.icon-minus-sign {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 14px 0 0;
+        padding: 0 0 10px;
+        margin-left: 30px;
+        /*border-bottom:1px solid #d3d3d3*/
+    }
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign,
+    #onlineHelpWrap .tree-open-icon {
+        background: url('../images/sprite_icons.png') no-repeat -433px -462px;
+    }
+    #onlineHelpWrap .tree-open-icon.icon-minus-sign {
+        background: url('../images/sprite_icons.png') no-repeat -433px -490px;
+    }
+    #onlineHelpWrap .tree a {
+        color: #707070;
+        text-decoration: none;
+    }
+    #onlineHelpWrap .tree-label {
+        /*padding: 12px 0;*/
+        display: -webkit-box;
+        text-indent: 12px;
+        /*border-bottom: 1px solid #d3d3d3;*/
+        font-size: 14px;
+        color: #606060;
+        line-height: 44px;
+        display: block;
+    }
+    #onlineHelpWrap .tree li .linkwrap {
+        display: block;
+        padding: 0 0 0 18px;
+        cursor: pointer;
+    }
+    #onlineHelpWrap .tree li li .linkwrap {
+        padding: 0 0 0 48px;
+    }
+    #onlineHelpWrap .tree li li li .linkwrap {
+        padding: 0 0 0 81px;
+    }
+    #onlineHelpWrap .tree li li li li .linkwrap {
+        padding: 0 0 0 110px;
+    }
+    #onlineHelpWrap .tree ul ul ul .tree-label,
+    #onlineHelpWrap .tree ul ul ul li.level_three ul .tree-label {
+        text-indent: 3px;
+    }
+    .ps-webhelp #onlineHelpWrap .tree ul ul ul li.level_three .tree-label {
+        text-indent: 4px;
+    }
+    .ps-webhelp #onlineHelpWrap .tree ul ul ul.list-level1 li.level_three .tree-label {
+        text-indent: 4px;
+    }
+    .ps-webhelp #onlineHelpWrap .linkwrap:hover,
+    .ps-webhelp #onlineHelpWrap .treeitemactive {
+        background: none;
+        /*border-bottom: 1px solid #e7e7e7;*/
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li span:hover {
+        background-color: #fafafa;
+        color: #1792e5 !important;
+    }
+    #onlineHelpWrap .linkwrap a:hover,
+    #onlineHelpWrap .treeitemactive a,
+    #onlineHelpWrap .treeitemactive span {
+        color: #0889c4;
+    }
+    #onlineHelpWrap ol li {
+        list-style: decimal;
+    }
+    #onlineHelp .helplist th {
+        border-bottom: 1px solid #A7A7A8;
+        border-right: 1px solid #D3D3D3;
+        border-left: 1px solid #D3D3D3;
+        border-top: 1px solid #BABABB !important;
+        font-size: 14px;
+        color: #707070;
+        vertical-align: middle;
+        font-weight: normal;
+        padding: 0 14px;
+        word-break: break-all;
+        height: 42px;
+    }
+    #onlineHelp .time_conditions img {
+        vertical-align: middle;
+    }
+    .bodyCont .downloadHolder li {
+        list-style-type: disc !important;
+    }
+    .bodyCont .downloadHolder li .down-content {
+        display: inline-block !important;
+        font-size: 14px !important;
+        color: #606060;
+        text-decoration: underline;
+    }
+    .downloadHolder span {
+        display: block;
+        color: #606060;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    #onlineHelpWrap .navbar {
+        max-width: 25%;
+        width: 25%;
+        margin: 0;
+        line-height: 46px;
+        border-bottom: 1px solid #d3d3d3;
+        font-size: 16px;
+        border-right: 1px solid #bababb;
+        background-color: #f5f5f5;
+        color: #606060;
+        font-size: 16px;
+        text-indent: 24px;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree {
+        /*    width: 26%;*/
+        background-color: #fff;
+        border-right: 1px solid #bababb;
+        height: 100%;
+        top: 47px;
+        overflow: auto;
+        background-color: #fff;
+        border-right: 1px solid #bababb;
+        height: 100%;
+        top: 47px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    @media(min-width:1024px) {
+        .ps-webhelp #onlineHelpWrap .leftTree {
+            /*width: 26%; */
+            background-color: #fff;
+            height: 100%;
+            top: 47px;
+            overflow: auto;
+            background-color: #fff;
+            border-right: 1px solid #e7e7e7;
+            height: 100%;
+            top: 47px;
+            padding-right: 0;
+            padding-left: 0;
+            /*min-height: 660px;*/
+            max-width: calc(100% - 341px);
+            width: 341px;
+        }
+    }
+    @media(min-width:1200px) {
+        .ps-webhelp #onlineHelpWrap .leftTree {
+            /*    width: 26%;*/
+            background-color: #fff;
+            height: 100%;
+            top: 47px;
+            overflow: auto;
+            background-color: #fff;
+            border-right: 1px solid #e7e7e7;
+            height: 100%;
+            top: 47px;
+            padding-right: 0;
+            padding-left: 0;
+            /*min-height: 660px;*/
+            max-width: calc(100% - 340px);
+            width: 340px;
+        }
+    }
+    @media(min-width:1900px) {
+        .ps-webhelp #onlineHelpWrap .leftTree {
+            /*    width: 26%;*/
+            background-color: #fff;
+            height: 100%;
+            top: 47px;
+            overflow: auto;
+            background-color: #fff;
+            border-right: 1px solid #e7e7e7;
+            height: 100%;
+            top: 47px;
+            padding-right: 0;
+            padding-left: 0;
+            min-height: 912px;
+            max-width: calc(100% - 440px);
+            width: 440px;
+        }
+    }
+    #onlineHelpWrap .leftTree:hover {
+        overflow: auto;
+    }
+    @media (min-width:1024px) {
+        .ps-webhelp #onlineHelpWrap .leftTree header {
+            position: relative;
+            /*width: 87%;*/
+            max-width: calc(100% - 45px);
+            width: 340px;
+            background-color: #fff;
+            box-shadow: 0 0 6px #e7e7e7;
+            /* max-width: 330px; */
+            padding: 7px 23px 9px 22px;
+        }
+    }
+    @media (min-width:1200px) {
+        .ps-webhelp #onlineHelpWrap .leftTree header {
+            position: relative;
+            max-width: calc(100% - 45px);
+            width: 340px;
+            background-color: #fff;
+            box-shadow: 0 0 6px #e7e7e7;
+            padding: 7px 23px 9px 22px;
+        }
+    }
+    @media (min-width:1900px) {
+        .ps-webhelp #onlineHelpWrap .leftTree header {
+            position: static;
+            width: 90%;
+            /*top: 108px;*/
+            background-color: #fff;
+            box-shadow: 0 0 6px #e7e7e7;
+            max-width: 435px;
+            padding: 7px 23px 9px 22px;
+        }
+    }
+    /*.ps-webhelp #onlineHelpWrap .leftTree header {
+    position: fixed;
+    width: 25%;
+    top: 108px;
+    background-color: #fff;
+    box-shadow: 0 0 6px #e7e7e7;
+    max-width: 297px;
+    padding: 7px 23px 9px 22px;
+}*/
+    
+    .ps-webhelp #onlineHelpWrap .leftTree .content {
+        margin: 0 0 0;
+    }
+    
+    #onlineHelpWrap #installation .leftTree .content .help_installation {
+        margin-left: 0;
+        margin-top: -43px;
+    }
+    #onlineHelpWrap #tools .leftTree .content {
+        margin: 47px 0 0;
+    }
+    #onlineHelpWrap #tools .leftTree .content-tools {
+        margin: 0 0 0;
+    }
+    #onlineHelpWrap #tools .leftTree .content-install {
+        margin: 0 0 0;
+    }
+    #onlineHelpWrap #tools .leftTree .content .help_parent {
+        margin-left: 0;
+    }
+    #onlineHelpWrap .leftTree header input {
+        color: #0889c4;
+        font-size: 14px;
+        /*    border: 1px solid #d3d3d3;*/
+        /*    border-radius: 5px;*/
+        /*    padding: 5px 5px;*/
+        /*    margin: 8px 0;*/
+        /*    width: 90%;*/
+        background: #fff url(../images/icon_search.png) no-repeat 10px 7px/16px;
+        /*    text-indent: 30px;*/
+    }
+    #onlineHelpWrap .leftTree header input:focus {
+        outline: none;
+    }
+    #onlineHelpWrap #page-body {
+        overflow: hidden;
+    }
+    #onlineHelpWrap .contentarea {
+        left: 26%;
+        position: absolute;
+        top: 0;
+        width: calc(100% - 321px);
+        height: 95%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    @media(min-width:1024px) {
+        #onlineHelpWrap .contentarea {
+            left: 340px;
+            position: absolute;
+            top: 0;
+            width: calc(100% - 341px);
+            height: 95%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    @media(min-width:1200px) {
+        #onlineHelpWrap .contentarea {
+            left: 340px;
+            position: absolute;
+            top: 0;
+            height: 95%;
+            width: calc(100% - 341px);
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    @media(min-width:1900px) {
+        #onlineHelpWrap .contentarea {
+            left: 440px;
+            position: absolute;
+            ;
+            top: 0;
+            width: calc(100% - 441px);
+            height: 95%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .embed-responsive-16by9 {
+        height: 100%;
+        overflow-y: auto;
+    }
+    /*@media (min-width:1024px) {
+    .embed-responsive-16by9 {
+        padding-bottom: 88.25%;
+    }
+}
+
+@media (min-width:1200px) {
+    .embed-responsive-16by9 {
+        padding-bottom: 60.25%;
+    }
+}*/
+    
+    .ps-webhelp #onlineHelpWrap .pagetitle a,
+    .ps-webhelp #onlineHelpWrap .pagetitle a:hover {
+        color: #707070;
+        font-size: inherit;
+        text-decoration: none;
+    }
+    #onlineHelp .titleheader {
+        font-size: 22px;
+        color: #606060;
+        margin: 0 0 15px 0;
+        font-weight: normal;
+        border-bottom: 1px solid #e7e7e7;
+        padding: 12px 0 8px 24px;
+    }
+    #onlineHelp .subtitle {
+        font-size: 18px;
+        color: #606060;
+        padding-bottom: 10px;
+        display: block;
+        padding-left: 13px;
+    }
+    #onlineHelp p {
+        font-size: 14px;
+        line-height: 20px;
+        color: #606060;
+        padding: 0 0 15px 13px;
+    }
+    #onlineHelp a {
+        color: #0088cc;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    #onlineHelp a:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+    #onlineHelp ol,
+    #onlineHelp ul {
+        padding: 0 0 0 34px;
+        font-size: 14px;
+    }
+    #onlineHelp .bodyCont {
+        min-height: 418px;
+    }
+    #onlineHelp ol ul {
+        padding: 5px 0 0 17px;
+    }
+    #onlineHelp ul li {
+        padding: 0 0 5px;
+        list-style: none;
+        color: #606060;
+    }
+    #onlineHelp ol li {
+        padding: 0 0 5px;
+        color: #606060;
+    }
+    #onlineHelp ul li {
+        list-style-type: disc;
+    }
+    #onlineHelp ul li li {
+        list-style-type: circle;
+    }
+    #onlineHelp strong {
+        font-family: "HoneywellSansWeb-Medium" !important;
+    }
+    #onlineHelp .controlButt {
+        position: absolute;
+        right: 0;
+        top: 7px;
+    }
+    #onlineHelp .controlButt a {
+        padding-left: 24px;
+    }
+    #onlineHelp .note {
+        padding: 13px 0 13px 20px;
+    }
+    #onlineHelp .note img {
+        vertical-align: middle;
+        margin: -2px 0 0;
+    }
+    #onlineHelp .nomargintop {
+        padding: 0 0 13px 20px;
+    }
+    #onlineHelp .note ol {
+        padding: 5px 0 0 34px;
+    }
+    #onlineHelp .note .subtitle {
+        color: #707070;
+        padding: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    #onlineHelp .note p,
+    #onlineHelp .note li {
+        color: #707070;
+        padding: 0;
+        font-size: 12px;
+    }
+    #onlineHelp ol .note {
+        padding: 13px 0;
+    }
+    #onlineHelp table {
+        border-collapse: collapse;
+        width: 98%;
+        margin: 5px 0 20px 14px;
+    }
+    #onlineHelp ol table,
+    #onlineHelp ul table {
+        margin: 10px 0 14px;
+    }
+    #onlineHelp table thead tr {
+        font-size: 14px;
+        background-color: #f5f5f5;
+        color: #606060;
+    }
+    #onlineHelp table tbody tr {
+        font-size: 14px;
+        color: #606060;
+    }
+    #onlineHelp table td {
+        padding: 7px 0 7px 8px;
+        vertical-align: top;
+        border: 1px solid #d3d3d3;
+    }
+    #onlineHelp table td.col-equal {
+        width: 50%;
+    }
+    #onlineHelp table td.col-one {
+        width: 10%;
+    }
+    #onlineHelp table td.col-two {
+        width: 20%;
+    }
+    #onlineHelp table td.col-three {
+        width: 70%;
+    }
+
+#onlineHelp .bottControl {
+        border-top: 1px solid #e7e7e7;
+    padding-top: 12px;
+    margin-top: 12px;
+        margin-left: 0;
+}
+
+#onlineHelp .helpprev {
+    float: left;
+    padding: 0;
+        padding-left: 20px;
+}
+
+#onlineHelp .helpnext {
+    float: right;
+}
+
+#onlineHelp span {
+    display: block;
+    font-size: 12px;
+}
+
+#onlineHelp .helpnext span {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+    margin: 0 26px 0 0;
+}
+
+#onlineHelp .helpprev span {
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin: 0 0 0 25px;
+}
+
+#onlineHelp a {
+    color: #0889c4;
+    font-size: 14px;
+}
+    #onlineHelp .prev_icon,
+    #onlineHelp .next_icon,
+    #onlineHelp .create-icon,
+    #onlineHelp .person-icon,
+    #onlineHelp .grid-icon,
+    #onlineHelp .pane-icon,
+    #onlineHelp .calendar-icon,
+    #onlineHelp .sortasc-icon,
+    #onlineHelp .sortdesc-icon,
+    #onlineHelp .clip-icon,
+    #onlineHelp .camred-icon,
+    #onlineHelp .play-icon,
+    #onlineHelp .netaxs-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#onlineHelp .prev_icon {
+    float: left;
+    background: url('../images/sprite_icons.png') no-repeat -308px -400px;
+}
+
+#onlineHelp .next_icon {
+    float: right;
+    background: url('../images/sprite_icons.png') no-repeat -308px -430px;
+}
+
+#onlineHelp .create-icon {
+    background: url('../images/sprite_icons.png') no-repeat -337px -490px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .person-icon {
+    background: url('../images/sprite_icons.png') no-repeat -277px -100px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .grid-icon {
+    background: url('../images/sprite_icons.png') no-repeat -430px -520px;
+        padding: 3px 28px 3px 1px;
+        margin-left: 4px;
+}
+
+#onlineHelp .pane-icon {
+    background: url('../images/sprite_icons.png') no-repeat -190px -42px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .calendar-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -130px;
+        padding: 5px 28px 3px 1px;
+}
+
+#onlineHelp .sortasc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -98px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .sortdesc-icon {
+    background: url('../images/sprite_icons.png') no-repeat -187px -69px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .clip-icon {
+    background: url('../images/sprite_icons.png') no-repeat -427px -221px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .camred-icon {
+    background: url('../images/sprite_icons.png') no-repeat -157px -399px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .play-icon {
+    background: url('../images/sprite_icons.png') no-repeat -336px -460px;
+        padding: 3px 28px 3px 1px;
+}
+
+#onlineHelp .netaxs-icon {
+    background: url('../images/sprite_icons.png') no-repeat -517px -250px;
+        padding: 3px 28px 3px 1px;
+}
+
+
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 95%;
+}
+
+body#onlineHelp {
+    overflow: auto !important;
+        margin-right: 0 !important;
+}
+/* tree */
+    .ps-webhelp #onlineHelpWrap .leftTree ul li {
+    list-style: none;
+        border-bottom: 1px solid #e7e7e7;
+}
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign,
+    #onlineHelpWrap .tree-open-icon,
+    .tree-open-icon.icon-minus-sign {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 14px 0 0;
+    padding: 0 0 10px;
+        margin-left: 43px;
+    /*border-bottom:1px solid #d3d3d3*/
+}
+
+    #onlineHelpWrap .tree-open-icon.icon-plus-sign,
+    #onlineHelpWrap .tree-open-icon {
+        background: url('../images/sprite_icons.png') no-repeat -433px -462px;
+    }
+
+        #onlineHelpWrap .tree-open-icon.icon-minus-sign {
+            background: url('../images/sprite_icons.png') no-repeat -433px -490px;
+        }
+
+#onlineHelpWrap .tree a {
+    color: #707070;
+    text-decoration: none;
+}
+
+    .ps-webhelp #onlineHelpWrap .tree-label {
+    /*padding: 12px 0;*/
+    display: -webkit-box;
+        text-indent: 4px;
+        /*border-bottom: 1px solid #d3d3d3;*/
+    font-size: 14px;
+        color: #606060;
+    line-height: 44px;
+    display: block;
+}
+    .ps-webhelp ul.list-level1 #onlineHelpWrap .tree-label {
+        /*padding: 12px 0;*/
+        display: -webkit-box;
+        text-indent: -4px;
+        /*border-bottom: 1px solid #d3d3d3;*/
+        font-size: 14px;
+        color: #606060;
+        line-height: 44px;
+        display: block;
+    }
+    .ps-webhelp #onlineHelpWrap .tree li .linkwrap {
+    display: block;
+        /*padding: 0 0 0 0;*/
+    cursor: pointer;
+}
+
+#onlineHelpWrap .tree li li .linkwrap {
+    padding: 0 0 0 48px;
+}
+
+#onlineHelpWrap .tree li li li .linkwrap {
+    padding: 0 0 0 81px;
+}
+
+#onlineHelpWrap .tree li li li li .linkwrap {
+    padding: 0 0 0 110px;
+}
+    #onlineHelpWrap .tree ul ul ul .tree-label,
+    #onlineHelpWrap .tree ul ul ul li.level_three ul .tree-label {
+        text-indent: 3px;
+}
+
+#onlineHelpWrap .tree ul ul ul li.level_three .tree-label {
+    text-indent: 12px;
+}
+    #onlineHelpWrap .linkwrap:hover,
+    #onlineHelpWrap .treeitemactive {
+    background: rgba(185, 221, 243, 0.3);
+}
+    #onlineHelpWrap .linkwrap a:hover,
+    #onlineHelpWrap .treeitemactive a,
+    #onlineHelpWrap .treeitemactive span {
+        color: #0889c4;
+    }
+
+#onlineHelpWrap ol li {
+    list-style: decimal;
+}
+
+#onlineHelp .helplist th {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    border-left: 1px solid #D3D3D3;
+    border-top: 1px solid #BABABB !important;
+    font-size: 14px;
+    color: #707070;
+    vertical-align: middle;
+    font-weight: normal;
+    padding: 0 14px;
+    word-break: break-all;
+    height: 42px;
+}
+
+#onlineHelp .time_conditions img {
+    vertical-align: middle;
+}
+
+.bodyCont .downloadHolder li {
+    list-style-type: disc !important;    
+}
+.bodyCont .downloadHolder li .down-content {
+    display: inline-block !important;       
+    font-size: 14px !important;
+        color: #606060;
+    text-decoration: underline;
+}
+    .downloadHolder span {
+    display: block;   
+        color: #606060;
+    font-size: 14px;
+    line-height: 20px;
+    }
+    /**** css for help s **/
+    * {
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+        box-sizing: initial;
+    }
+    .row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    #onlineHelpWrap .pagetitle a,
+    #onlineHelpWrap .pagetitle a:hover {
+        line-height: 20px;
+    }
+    .ps-webhelp #onlineHelpWrap #configtab li a {
+        padding-right: 0;
+        line-height: 24px;
+    }
+    #onlineHelpWrap .leftTree header input {
+        box-sizing: border-box;
+    }
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+        * {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+    }
+    @media (min-width:1024px) {
+        .ps-webhelp .header-menu-three {
+            top: 0;
+            width: 342px;
+            max-width: calc(342px - 100%);
+            min-height: 46px;
+            height: 46px;
+            position: relative;
+            border-bottom: 1px solid #e7e7e7;
+            font-size: 14px;
+            background-color: #ffffff;
+            z-index: 1;
+            line-height: 40px;
+            display: table-cell;
+            padding-left: 0;
+            left: 0;
+            color: gray;
+        }
+    }
+    @media (min-width:1200px) {
+        .ps-webhelp .header-menu-three {
+            top: 0;
+            width: 0;
+            min-height: 46px;
+            height: 46px;
+            position: relative;
+            border-bottom: 1px solid #e7e7e7;
+            font-size: 16px;
+            background-color: #ffffff;
+            z-index: 1;
+            line-height: 40px;
+            display: table-cell;
+            padding-left: 0;
+            left: 0;
+            min-width: 340px;
+        }
+    }
+    @media (min-width:1900px) {
+        .ps-webhelp .header-menu-three {
+            top: 0;
+            width: 440px;
+            max-width: calc(440px - 100%);
+            min-height: 46px;
+            height: 46px;
+            position: relative;
+            border-bottom: 1px solid #e7e7e7;
+            font-size: 16px;
+            background-color: #ffffff;
+            z-index: 1;
+            line-height: 40px;
+            display: table-cell;
+            padding-left: 0;
+            left: 0;
+        }
+    }
+    .ps-webhelp .tabcontainer #configtab li.active a {
+        color: #1792e5;
+        background-color: #ffffff;
+        border-top-color: #ffffff;
+        border-right-color: #ffffff;
+        border-left-color: #ffffff;
+        height: 25px;
+        padding-bottom: 8px;
+        font-family: "HoneywellSansWeb-Medium" !important;
+        font-size: 16px;
+        outline: none;
+        border-bottom: 2px solid #1792e5;
+    }
+    .ps-webhelp #configtab li a:hover {
+        background-color: #ffffff;
+        border: 1px solid transparent;
+        color: #1792e5 !important;
+    }
+    .ps-webhelp #onlineHelpWrap #configtab li.active a {
+        color: #1792e5 !important;
+    }
+    .ps-webhelp #onlineHelpWrap #configtab li a:hover {
+        color: #1792e5 !important;
+    }
+    .ps-webhelp #onlineHelpWrap #configtab li a {
+        color: #606060 !important;
+        font-size: 14px;
+    }
+    .ps-webhelp #configtab li a {
+        padding-left: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 0;
+    }
+    p.helpnext a {
+        float: right;
+    }
+    div.note p > img {
+        padding-left: 0 !important;
+    }
+    .pageHeader {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #dfdfdf;
+        color: #707070;
+        font-size: 22px;
+    }
+    .ps-webhelp .pagetitle {
+        float: left;
+        padding-top: 14px;
+        padding-left: 26px;
+    }
+    .ps-webhelp #configtab li {
+        padding-left: 15px;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-radius: 0;
+        padding-right: 15px;
+    }
+    .ps-webhelp .header-menu-three .tabcontainer {
+        width: 100%;
+        position: relative;
+        float: left;
+        height: 46px;
+        border-left: none;
+        border-right: 1px solid #e7e7e7;
+    }
+    @media (min-width: 1024px) {
+        .ps-webhelp .header-menu-three .tabcontainer {
+            width: 99.8%;
+            position: absolute;
+            float: left;
+            height: 46px;
+            border-left: none;
+            border-right: 1px solid #e7e7e7;
+        }
+    }
+    @media (min-width: 1200px) {
+        .ps-webhelp .header-menu-three .tabcontainer {
+            /* left: 26%; */
+            width: 99.9%;
+            position: absolute;
+            float: left;
+            height: 46px;
+            border-left: none;
+            border-right: 1px solid #e7e7e7;
+        }
+    }
+    .ps-webhelp .leftTree .form-group {
+        margin-bottom: 0;
+    }
+    .ps-webhelp .form-group label.error {
+        color: #ee3124;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+    .form-group .form-control.error {
+        border: 1px solid #ee3124 !important;
+        color: #303030;
+    }
+    .ps-webhelp .form-control {
+        border: 1px solid #d0d0d0 !important;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        Color: #606060 !important;
+        font-weight: normal;
+        text-align: left;
+        line-height: 16.8px;
+        letter-spacing: 0;
+        opacity: 1;
+        height: 32px;
+        border-radius: 0 !important;
+    }
+    .ps-webhelp .form-control:hover {
+        border: 1px solid #1792e5 !important;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+        font-weight: normal;
+        text-align: left;
+        line-height: 16.8px;
+        letter-spacing: 0;
+        opacity: 1;
+    }
+    .ps-webhelp .form-control:active {
+        border: 1px solid #1792e5 !important;
+    }
+    .ps-webhelp .form-group.disabled .control-label {
+        color: #e1e1e1;
+    }
+    .ps-webhelp .form-group.disabled .form-control {
+        color: #e1e1e1 !important;
+        border: 1px solid #e1e1e1 !important;
+    }
+    .ps-webhelp #page-body {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li:last-child {
+        border-bottom: none;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul {
+        border-bottom: none;
+    }
+    .ps-webhelp #onlineHelpWrap .leftTree ul li.search-item ul.list-level3 li span i.tree-open-icon{
+        margin-left: 63px !important;
+    }
+    div.bodyCont p,
+    div.bodyCont h4,
+    div.bodyCont img,
+    div.bodyCont ul {
+        padding-left: 24px !important;
+    }
+    div.bodyCont ul,
+    div.bodyCont ol,
+    div.bodyCont table {
+        padding-left: 40px !important;
+    }
+    div.bodyCont table {
+        margin-left: 24px !important;
+    }
+    @-moz-document url-prefix() {
+        #onlineHelp .titleheader {
+            font-size: 22px;
+            color: #606060;
+            margin: 0 0 15px 0;
+            font-weight: normal;
+            border-bottom: 1px solid #e7e7e7;
+            padding-bottom: 10px;
+            padding-top: 8px;
+            font-family: "HoneywellSansWeb-Medium" !important;
+            padding-left: 24px
+        }
+        @media (min-width: 1200px) {
+            .ps-webhelp .header-menu-three .tabcontainer {
+                width: 100%;
+                position: relative;
+                float: left;
+                height: 46px;
+                border-left: none;
+                border-right: 1px solid #e7e7e7;
+            }
+        }
+        #onlineHelpWrap .contentarea {
+            left: 0;
+            position: relative;
+            top: 0;
+            width: 76.5%;
+            height: 95%;
+            padding-right: 0;
+            padding-left: 0;
+        }
+        @media (min-width: 1024px) {
+            #onlineHelpWrap .contentarea {
+                left: 0;
+                position: relative;
+                top: 0;
+                height: 95%;
+                width: calc(100% - 342px);
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+        @media (min-width: 1200px) {
+            #onlineHelpWrap .contentarea {
+                left: 0;
+                position: relative;
+                top: 0;
+                height: 95%;
+                width: calc(100% - 341px);
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+        @media (min-width: 1300px) {
+            #onlineHelpWrap .contentarea {
+                left: 0;
+                position: relative;
+                top: 0;
+                height: 95%;
+                width: calc(100% - 341px);
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+        @media (min-width: 1900px) {
+            #onlineHelpWrap .contentarea {
+                left: 0;
+                position: relative;
+                top: 0;
+                height: 95%;
+                width: calc(100% - 441px);
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    }

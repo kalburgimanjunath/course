@@ -1,0 +1,285 @@
+﻿<!-- AREA OVERVIEW-->
+<form id="device-overview-view" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview DcmOverview isptabs pull-left">
+    <div class="row isptabs">
+        <div class="row">
+            <h2 class="isppagetitle">
+                <span id="PeripheralNameDisplay" data-bind="text: $data.model.Name"></span>
+                <span class="pull-right">
+                    <span class="ispicon ispicon_edit col-md-2" data-toggle="tooltip" title="Edit" data-bind="click: $data.switchToEdit, css: {hide: !$data.isReadOnly()}"></span>
+                </span>
+            </h2>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" id="OverviewHeader" class="active" data-bind="click: $data.switchTab.bind($data, 'overview')"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">@Resources.Overview</a></li>
+                <li role="presentation" id="SettingsHeader" data-bind="click: $data.switchTab.bind($data, 'settings')"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">@Resources.Settings</a></li>
+                <li role="presentation" class="hide"><a href="#IO" aria-controls="IO" role="tab" data-toggle="tab">@Resources.IO</a></li>
+                <li role="presentation" class="hide"><a href="#Floor" aria-controls="Floor" role="tab" data-toggle="tab">@Resources.FloorPlan</a></li>
+            </ul>
+        </div>
+        <div class="tab-content" data-bind="css: {viewmode: $data.isReadOnly}">
+            <div id="overview" class="tab-pane dcmOverview active">
+                <div class="row scroll-x scroll-y overviewTab">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label class="control-label">@Resources.Name</label>
+                                <input class="form-control" id="PeripheralName" name="PeripheralName" type="text" data-bind="value: $data.model.Name">
+                            </div>
+                        </div>
+                        <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+                            <span class="doorcurveline1"></span>
+                            <li class="doorReaderRight" id="doorReaderRightId">
+                            </li>
+                        </ul>
+                        <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+                            <li>
+                                <div class="stripe leftNoBorder"></div>
+                                <div class="doorLeftLine"></div>
+                            </li>
+                            <li class="connecterLeft"></li>
+                            <li>
+                                <div class="arrowUpEnabled" data-bind="click: $data.showDoorSettings, tooltip: { template: 'readerInToolTip', data: $data.doorSettings(), options: {placement: 'top'} }" data-toggle="tooltip" data-html="true">
+
+                                    <div class="arrow_head_up"></div>
+                                    <div class="arrow_body_up">
+                                        <ul>
+                                            <li class="arrowText">@Resources.R1</li>
+                                            <li class="arrowTextIN">@Resources.In</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="connecterMiddle"></li>
+                            <li>
+                                <div data-bind="click: $data.showReaderOutSettings, css: $data.readerOutStatus, tooltip: { template: 'readerOutToolTip', data: $data.doorSettings(), options: {placement: 'bottom'} }" data-toggle="tooltip" data-html="true">
+                                    <div class="arrow_body_down">
+                                        <ul>
+                                            <li class="arrowText">@Resources.R2</li>
+                                            <li class="arrowTextOut">@Resources.Out</li>
+                                        </ul>
+                                    </div>
+                                    <div class="arrow_head_down"></div>
+                                </div>
+                            </li>
+                            <li class="connecterRight"></li>
+                            <li>
+                                <div data-bind="click: $data.showEgressSettings, css: $data.egressInStatus, tooltip: { template: 'egressToolTip', data: $data.doorSettings(), options: {placement: 'bottom'} }" data-toggle="tooltip" data-html="true"></div>
+                                <div class="stripe rightNoBorder"></div>
+                                <div class="egressSwitchBottom"></div>
+                            </li>
+                        </ul>
+                        <div class="doorReaderLeft" id="doorReaderLeftId"></div>
+                        <span class="doorcurveline2"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="settings" class="tab-pane">
+                <div class="col-md-12">
+                    <h3 class="row"></h3>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.Description</label>
+                        <input type="text" class="form-control" id="DCMDescription" name="DCMDescription" data-bind="value: $data.model.Description">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.SerialNumber</label>
+                        <input type="text" class="form-control" id="DCMSerialNumber" name="DCMSerialNumber" data-bind="value: $data.model.SerialNumber">
+                    </div>
+                    <div class="form-group col-md-4 hide">
+                        <label class="control-label" for="">@Resources.Bus_ID</label>
+                        <select name="BusID" id="BusID" class="form-control" data-bind="options: BusIDs"></select>
+                    </div>
+                    <div class="form-group col-md-4 hide">
+                        <label class="control-label" for="">@Resources.Bus_Slot_ID</label>
+                        <select name="Bus_Slot_ID" id="Bus_Slot_ID" class="form-control" data-bind="options: BusSlotIDs"></select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="">@Resources.Door_Input_Reader_Mode</label>
+                        <select id="DCMReaderMode" name="DCMReaderMode" class="form-control" data-bind="options: DoorInputReaderModes, optionsText: 'Text', optionsValue: 'Value', value:$data.model.Door.ReaderIn.ReaderMode"></select>
+                    </div>
+
+                    @*<div class="col-md-12" id="Radio_Door_Mode" >
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:0, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_Only</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:1, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_PIN_Only</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:2, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_and_PIN</span>
+                            </div>
+                            <div class="cal-md-4">
+                                <input type="radio" class="radio" name="Door_Mode" readonly data-bind="checkedValue:3, checked: $data.model.Door.ReaderIn.ReaderMode" />
+                                <span>@Resources.Door_Mode_Card_or_PIN</span>
+                            </div>
+                        </div>*@
+                </div>
+            </div>
+            <div id="IO" class="tab-pane hide">
+                <div class="row scroll-x scroll-y overviewTab">
+                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                        <div class="tab-pane">
+                            <div class="table-responsive panel-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Parameter 1</th>
+                                            <th>Parameter 2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-md-4">
+                                                <span class="name">Reader Tamper</span> <br>
+                                            </td>
+                                            <td>
+                                                <span>22</span>
+                                            </td>
+                                            <td>
+                                                <span>Value</span>
+                                            </td>
+                                            <td>
+                                                <span class="pull-left">Value </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-footer" data-bind="css: {hide: $data.isReadOnly}">
+            <div class="btn-group pull-right" role="group" aria-label="group button">
+                <button type="button" class="btn btn-default" data-bind="click: $data.cancelSettings">@Resources.Cancel</button>
+                <button type="button" class="btn btn-primary" data-bind="click: $data.saveSettings">@Resources.Save</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/html" id="readerInToolTip">
+        <table class='table doortooltipstyle'>
+            <thead>
+                <tr>
+                    <td class='head pull-left'><b>@Resources.DoorSettings</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Resources.DoorOpenTime:</td>
+                    <td id="RInDoorOpenTime" data-bind="text: $data.DoorOpenDurationDisplay()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.DoorLockReleaseTime:</td>
+                    <td id="RInDoorUnlockDuration" data-bind="text: $data.DoorUnlockDurationDisplay()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputResistorValue:</td>
+                    <td id="RInResistanceTemplate" data-bind="text: $data.ResistanceTemplate()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputZoneType:</td>
+                    <td id="RInZoneMode" data-bind="text: $data.ZoneMode()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/html" id="egressToolTip">
+        <!-- ko if: $data.IsEgressEnabled -->
+        <table class='table doortooltipstyle'>
+            <thead>
+                <tr>
+                    <td class='head pull-left'><b>@Resources.Egress</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Resources.InputResistorValue:</td>
+                    <td id="EgResistanceTemplate" data-bind="text: $data.ResistanceTemplate()"></td>
+                </tr>
+                <tr>
+                    <td>@Resources.InputZoneType:</td>
+                    <td id="EgZoneMode" data-bind="text: $data.ZoneMode()"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /ko -->
+        <!-- ko ifnot: $data.IsEgressEnabled -->
+        <table class='table doortooltipstyle'>
+            <tbody>
+                <tr>
+                    <td>@Resources.Egress</td>
+                </tr>
+                <tr>
+                    <td>@Resources.Disabled</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /ko -->
+    </script>
+    <script type="text/html" id="readerOutToolTip">
+        <table class='table doortooltipstyle'>
+            <tbody>
+                <tr>
+                    <td>@Resources.Reader2Out</td>
+                </tr>
+                <!-- ko if: $data.IsEgressEnabled -->
+                <tr>
+                    <td>@Resources.Disabled</td>
+                </tr>
+                <!-- /ko -->
+                <!-- ko ifnot: $data.IsEgressEnabled -->
+                <tr>
+                    <td>@Resources.Enabled</td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+    </script>
+</form>
+<!-- AREA OVERVIEW-->

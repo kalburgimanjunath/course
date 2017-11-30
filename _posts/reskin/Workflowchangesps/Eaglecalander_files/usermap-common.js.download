@@ -1,0 +1,43 @@
+﻿Honeywell.ISP.UserMap = {
+    form:{
+        userlistmapview: "usermap-view"
+    },
+    events: {
+        tab_change_event: 'ontabchangeevent',
+        show_map: 'showmapplugin',
+        onLiveAlarmReceived: 'onLiveAlarmReceived',
+        systemeventreceived: 'systemeventreceived',
+    },
+    messages: {
+        Controller_saved_success: Resources.Successfully_saved,
+        Area_saved_success: Resources.Successfully_saved
+    },
+    status: {
+        Critical: 'Critical',
+        Major: 'Major',
+        Moderate: 'Moderate',
+        Offline: 'offline',
+        Alarm: 'alarm',
+        Intrusion: 'intrusion',
+        Normal: 'Normal'
+    },
+    map: {
+        GridSize: 40,
+        MinClusterSize: 4,
+        Zoom:15
+    },
+    filter: {
+        Normal: 5
+    },
+    filtertyple:{
+        Alarm: 'alarm',
+        All:'all'
+    },
+    sitestatusid:{
+        Critical:1,
+        Major: 2,
+        Moderate:3,
+        Normal:5
+    }
+
+};

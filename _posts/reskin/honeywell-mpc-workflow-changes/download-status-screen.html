@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MPC</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+    <link href="content/css/master.css" rel="stylesheet" type="text/css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+    <link href="content/css/base.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="content/css/page.css">
+    <!-- link rel="stylesheet" type="text/css" href="content/css/selectize.css"> -->
+    <link rel="stylesheet" type="text/css" href="content/css/header.css">
+    <link rel="stylesheet" type="text/css" href="content/css/checkbox.css">
+    <link rel="stylesheet" type="text/css" href="content/css/radio.css">
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/jquery.slimscroll.min.js"></script>
+    <script src="scripts/selectize.js"></script>
+    
+</head>
+<body>
+    <!--header starts here-->
+    <header>
+     <div class="row ps-global-header" id="page-header">
+        <div class="pagetitle" id="wrapper">
+            <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+              <span class="main-icon-bar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+               </span>
+               <span class="page-header-title"></span>
+            </a>
+
+            <div class="main-menu-navigation" id="overlay-menu">
+                <div class="topmenucontent">
+                    <div class="nav_img">
+                        <a href="" class="close_btn key_cntrl">×</a>
+                    </div>
+                    <ul class="main-menu-ul">
+                        <!-- ko foreach: $data.pages -->
+                        <li class="card-item">
+                            <header class="count">
+                                <span></span>
+                            </header>
+                            <p>Insight</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_1"></span>
+                            </header>
+                            <p>Create &amp; Edit</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_2"></span>
+                            </header>
+                            <p>Viewer</p>
+                        </li>                        
+                        <li class="card-item active">
+                            <header class="count">
+                                <span class="icon_3"></span>
+                            </header>
+                            <p>Alarms</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_4"></span>
+                            </header>
+                            <p>Reports</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_5"></span>
+                            </header>
+                            <p>Rules</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_6"></span>
+                            </header>
+                            <p>Calendar</p>
+                        </li>                        
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_7"></span>
+                            </header>
+                            <p>Maps</p>
+                        </li>                       
+                        <li class="card-item">
+                            <header class="count">
+                                <span class="icon_8"></span>
+                            </header>
+                            <p>Controller</p>
+                        </li>
+                        <!--/ko-->
+                        <li>Eagle Menus</li>
+                        <li class="dropdown">
+                            <p class="dropdown-toggle">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                            </p>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                                    <header class="count">
+                                        <span class="ispicon ispicon_plus"></span>
+                                    </header>
+                                    <p>Add New Account</p>
+                                </li>
+                                <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                                    <header class="count">
+                                        <span class="ispicon ispicon_overview"></span>
+                                    </header>
+                                    <p>Account Overview</p>
+                                </li>
+                                <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                                    <header class="count">
+                                        <span></span>
+                                    </header>
+                                    <p>Customer List</p>
+                                </li>                               
+                            </ul>
+                        </li>                      
+                        <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                            <header class="count">
+                                <span class="icon_3"></span>
+                            </header>
+                            <p>Alarms</p>
+
+                        </li>
+                    </ul>
+                    <ul class="handbar-profile">
+                        <li>
+                            <div class="col-xs-12 col-sm-8">
+                                <span class="name">Scott Stevens</span><br>
+                                <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right" id="notification-menu">
+        <div id="navigation-menu">
+            <div class="navbar" style="display: block;">
+                <ul class="nav navbar-nav">
+                    <li id="notifications" class="dropdown">
+                        <a href="" class="dropdown notification-icon">
+                    </a>
+                        <ul class="dropdown-menu dashboard-message" id="dash-message">
+                            <li class="msg-header">
+                                <span class="header" id="header">
+                                    Today's Notifications
+                                </span>
+                            </li>
+                            <!-- ko foreach: $data.messages --><!-- /ko -->
+                            <li id="ShowAllNotifications" class="msg" style="display: none;">
+                                <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                            </li>
+                            <li id="msgTitle" class="msg">
+                                <span class="dropdown-menu-sub-footer">Loading</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="profileoptions" class="dropdown">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle profile-icon">
+                                    <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                                </a>
+                                <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile" data-bind="foreach: $data.userProfileMenu">
+                                    <li>
+                                        <span class="profile-icon">
+                                            <span data-bind="attr: { 'class': icon }" class="icon_userNormal"></span>
+                                        </span>
+                                        <span class="profile-item-content">
+                                            <a href="#" data-bind="click: itemclick, text: title">Profile Details</a>
+                                            <span class="menu-divider"></span>
+                                        </span>
+                                    </li>
+                                
+                                    <li>
+                                        <span class="profile-icon">
+                                            <span data-bind="attr: { 'class': icon }" class="icon_helpNormal"></span>
+                                        </span>
+                                        <span class="profile-item-content">
+                                            <a href="#" data-bind="click: itemclick, text: title">Help</a>
+                                            <span class="menu-divider"></span>
+                                        </span>
+                                    </li>
+                                
+                                    <li>
+                                        <span class="profile-icon">
+                                            <span data-bind="attr: { 'class': icon }" class="icon_logoutNormal"></span>
+                                        </span>
+                                        <span class="profile-item-content">
+                                            <a href="#" data-bind="click: itemclick, text: title">Logout</a>
+                                            <span class="menu-divider"></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</div>
+    <input type="hidden" id="siteurl" value="/MPCNEW/">
+
+</div>     
+    </header>
+    <!--header ends here-->
+    <!--Main layout starts-->
+    <div class="main_container clearfix people_container row">
+        <!--People and Card left tab starts-->
+        <div class="people_group col-md-3 col-lg-3">
+            <div class="people_title">
+                <div class="people_grp_list">
+                    <ul class="nav nav-tabs pw_tabs">
+                        <li class="active"> <a href="#people_search" data-toggle="tab">People</a> </li>
+                    </ul>
+                </div>
+                <div class="people_group_right">
+                    <a class="add_sm pw_icon"></a>
+                    <a class="opt_sm pw_icon"></a>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div id="people_group" class="tab-pane people_group_one fade"> [No Data] </div>
+            </div>
+        </div>
+        <!--People and Card right tab starts-->
+        <div class="people_details people_deails_tab col-md-9 col-lg-9 download-screen-list">
+            <div class="ppl_main_tab">
+                <ul class="nav nav-tabs pw_tabs">
+                    <li><a href="#ppl_profile" data-toggle="tab">Maps</a></li>
+                    <li><a href="#ppl_cred" data-toggle="tab">Settings</a></li>
+                    <li><a href="#ppl_assets" data-toggle="tab">Operators</a></li>
+                    <li class="active"><a href="#ppl_access" data-toggle="tab">Download Status</a></li>
+                </ul>
+                <div class="tab-content ">
+                    <div id="ps_download_status" class="fade in active tab-pane ps-download-screen">
+                        <form class="download-screen-form clearfix">
+                            <div class="row">
+                              <div class="col-md-5 col-lg-5 pull-left padding-20">
+                                    <div class="form-group">
+                                        <label class="control-label pull-left">Panels*</label>
+                                        <select  class="pw_select selectbox">
+                                            <option value="0">000034322</option>
+                                            <option value="5">0000045344</option>
+                                            <option value="6">00000003t553</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5 pull-left padding-20">
+                                    <div class="form-group">
+                                        <label class="control-label pull-left">Configuration Type*</label>
+                                        <select class="pw_select selectbox">
+                                            <option value="0">000034322</option>
+                                            <option value="5">0000045344</option>
+                                            <option value="6">00000003t553</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-5 col-lg-5 pull-left padding-20">
+                                    <div class="form-group">
+                                        <label class="control-label pull-left">Status*</label>
+                                        <select class="pw_select selectbox">
+                                            <option value="0">000034322</option>
+                                            <option value="1">0000045344</option>
+                                            <option value=2>00000003t553</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-lg-5 pull-left padding-20">
+                                    <div class="form-group">
+                                        <label class="control-label pull-left">Name*</label>
+                                        <!-- <select class="pw_select selectbox">
+                                            <option value="0">000034322</option>
+                                            <option value="1">0000045344</option>
+                                            <option value="2">00000003t553</option>
+                                        </select> -->
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10 col-lg-10 buttonGroup btn-download-status">
+                                  <button class="btn btn-primary pull-left">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="table-background">
+                        <div class="table-header-download">
+                        <div class="download-screen-table scroll-x scroll-y">
+                            <table class="table table-striped download-status-table">
+                              <thead>
+                                <tr>
+                                   <th class="col-md-3 col-lg-3"><div>Configuration Type</div></th>
+                                   <th class="col-md-3 col-lg-3"><div>Name</div></th>
+                                   <th class="col-lg-2 col-md-2"><div>Card Number</div></th>
+                                   <th class="col-lg-2 col-md-2"><div>Status</div></th>
+                                   <th class="col-lg-2 col-md-2"><div>Last Update</div></th>
+                               </tr>
+                              </thead>
+                              <tbody class="">
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                                 <tr>
+                                    <td class="col-md-3 col-lg-3"><div>ssss</div></td> 
+                                    <td class="col-md-3 col-lg-3"><div></div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>hhhh</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>iiii</div></td> 
+                                    <td class="col-lg-2 col-md-2"><div>oooooo</div></td> 
+                                 </tr> 
+                              </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Main layout ends-->
+    <script src="scripts/custom.js"></script>
+</body>
+
+</html>

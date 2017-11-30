@@ -1,0 +1,266 @@
+/*version 1.0.0*/
+.profile {
+    padding: 0;
+}
+/* css for Change Password screen*/
+
+.profile .container.profile {
+    padding: 0;
+    background: #fff;
+}
+
+.profile .profilemenu {
+    position: relative;
+    z-index: 10;
+    padding-top: 23px;
+    background: #fff;
+}
+
+.profile .profilemenu ul {
+    padding: 0 20px;
+}
+
+.profile .profilemenu ul li {
+     padding: 0 15px 0 4px;
+}
+
+.profile .profilemenu li a {
+    margin: 0;
+    padding: 10px 0;
+    color: #808080;
+    border: none;
+}
+
+.profile .profilemenu li a:hover {
+    margin: 0;
+    padding: 10px 0 8px;
+    border-top: none;
+    border-right: none;
+    border-bottom: 3px solid #1792e5;
+    border-left: none;
+    background: none;
+}
+.profile .BrandingMessage {
+    height: auto !important;
+}
+.profile .profilemenu li.active a, .profile .profilemenu li.active a:hover, .profile .profilemenu li a:focus, .profile .profilemenu li.active a:focus {
+    margin: 0;
+    padding: 10px 0 8px;
+    color: #1792e5;
+    border-top: none;
+    border-right: none;
+    border-bottom: 3px solid #1792e5;
+    border-left: none;
+    background: none;
+}
+
+.profile .profile-content {
+    display: block;
+    width: 100%;
+}
+
+
+.profile .mydealerleftpane, .profile .profile-password, .profile .myprofile-leftpane {
+    position: absolute;
+    top: auto !important;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 24px 24px 140px 26px;
+}
+
+.profile .profile-email {
+    color: #ccc;
+}
+
+.profile .form-control.email-profile {
+    color: #ccc;
+    border: 1px solid #e1e1e1 !important;
+}
+
+.profile .view_pwd {
+    position: absolute;
+    z-index: 1;
+    top: 31px;
+    right: 26px;
+    display: block;
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+    background: url('../images/password_icons.png') no-repeat center top;
+}
+.profile .password_show{
+    padding-right: 30px;
+}
+.profile .city{
+    background-image: none !important;
+}
+.profile .view_pwd:active {
+    height: 18px;
+    background: url('../images/password_icons.png') no-repeat 2px -18px;
+}
+
+.profile .pad-left {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.profile .profile-next-button, .profile .change-footer-password-wrapper, .profile .profile-save {
+    position: fixed;
+    bottom: 0;
+    clear: both;
+    width: 100%;
+    padding: 14px;
+    border-top: 1px solid #e7e7e7;
+    background: #fff;
+}
+
+
+/* css for my profile screen */
+
+.profile .profile-image-wrapper {
+    position: relative;
+    width: 205px;
+    height: 205px;
+    margin-right: 30px;
+    background-color: #f5f5f5;
+    border: 2px dashed #e7e7e7;
+}
+
+.profile .profile-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile img[src=""] {
+    visibility: hidden !important;
+}
+
+.profile .myprofile-name {
+    float: left;
+    width: calc((100%) - 345px);
+}
+
+.profile .profile-image-wrapper input {
+    position: absolute;
+    top: 0;
+    width: 205px;
+    height: 205px!important;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.profile .myprofile-edit {
+    float: left;
+    width: calc((75%) - 235px);
+}
+
+.profile .authorized-heading {
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+    color: #606060;
+}
+
+.profile .authorized-dealer .checkbox {
+    display: inline-block;
+    margin: 0;
+    padding: 4px 20px 0 0;
+}
+
+.profile .authorized-dealer .checkbox label {
+    width: 24px;
+    padding: 0;
+}
+
+.profile .authorized-dealer .checkbox label:before {
+    display: none;
+}
+
+.profile .authorized-dealer .checkbox span {
+    margin-top: 0;
+    padding: 0;
+}
+
+.profile .authorized-dealer .checkbox legand {
+    position: relative;
+    top: -4px;
+    display: inline-block;
+    padding-top: 0;
+    padding-left: 12px;
+}
+
+.profile .file-upload-msg {
+    display: block;
+    margin-top: 10px;
+    color: #707070;
+}
+
+.profile .upload-text:before {
+    position: absolute;
+    bottom: 18px;
+    left: 33px;
+    content: url('../images/upload.png');
+}
+
+.profile .upload-text {
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    top: 52%;
+    left: 28%;
+    text-align: center;
+    color: #606060;
+}
+
+.profile .contact-message {
+    float: left;
+    width: 100%;
+}
+
+.profile .form-seperator {
+    float: left;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .profile .contact-message {
+        float: left;
+        width: 46%;
+    }
+}
+
+@media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {
+    .profile .profile-image-wrapper input {
+        height: 175px !important;
+    }
+}
+
+.profile #proHeaderstart{
+    padding: 24px 0 16px 24px;
+    border-bottom: 1px solid #d6d6d6;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+.profile .form-group label.error{
+    color:#ee3124;
+    font-weight:normal;
+    margin-top:5px !important;
+    /*text-transform: capitalize;*/
+}
+.profile label{
+    font-size:14px !important;
+    color:#707070;
+    /*margin:0 0 8px 0 !important;*/
+    display:inline-block;
+
+    line-height: 100% !important;
+    font-weight: normal !important;
+}
+.BrandingMessage label:after {
+    content: none !important;
+    display: inline;
+}

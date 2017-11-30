@@ -1,0 +1,42 @@
+.masterhead {
+    border: none;
+    background: #f7f7f7;
+    border-bottom: 1px solid #dfdfdf;
+    border-radius: 0;
+    padding: 14px 25px 13px 25px;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+.masterhead .header_left {
+    padding: 8px 0 0 0;
+}
+
+.masterhead_logo p {
+    font-family: 'Honeywell Sans Medium';
+    font-size: 22px;
+    color: #fffdfd;
+    margin: -3px 0 0 0;
+    line-height: 100%;
+}
+
+.masterhead_logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.masterhead_logo a img {
+    display: block;
+}
+
+.masterhead .header_right {
+    margin: 0;
+}
+
+.device-srch-form {
+    margin: 0 0 0 0;
+}
+.sett-config-l .btn:first-child{
+    margin: 0;
+}

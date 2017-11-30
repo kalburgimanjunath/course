@@ -1,0 +1,256 @@
+﻿
+.visual_management_map {
+    padding: 2px !important;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.visual_management_map .mapOverview {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+}
+
+.visual_management_map .sitelistCard {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+    width: 25%;
+    background: #f5f5f5;
+}
+.visual_management_map  #visualManagementMap
+{
+    height:100%;
+}
+
+.siteList li {
+    float: left;
+    width: 100%;
+}
+
+
+.visual_management_map .cardlistview{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+.visual_management_map .cardlistview .panel-title>span{
+    font-family: 'HoneywellSansWeb-Medium';
+    color: #606060;
+    font-size: 14px;
+}
+
+
+
+.visual_management_map .cardlistview .site_list {
+    position:absolute;
+    top:40px;
+    bottom:53px;
+    left:0;
+    right:0;
+    overflow-y:auto;
+}
+
+.visual_management_map .cardlistview .recently_site_list {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow-y:auto;
+}
+
+
+.visual_management_map .cardlistview .sync_map {
+    position:absolute;
+    bottom:0;
+    height:53px;
+    left:0;
+    right:0;
+    padding: 10px 20px;
+    border-top: 1px solid #d0d0d0;
+    z-index: 100;
+}
+
+
+
+
+.visual_management_map .cardlistview .header {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.visual_management_map .cardlistview .nav-tabs{
+    border-bottom: 1px solid #d0d0d0 !important;
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.visual_management_map .cardlistview .tab-content{
+    position: absolute;  
+    top: 40px;
+    bottom: 0;  
+    right: 0;
+    left: 0;   
+}
+
+
+
+
+.visual_management_map .cardlistview .name{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.visual_management_map .cardlistview .description{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.visual_management_map .cardlistview .switch {
+    width:50px;
+}
+
+.visual_management_map .cardlistview .panel {
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+.visual_management_map .cardlistview .panel + .panel {
+    margin-top:0;
+}
+.visual_management_map .cardlistview .panel:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.visual_management_map .cardlistview .tab-content .panel .panel-heading {
+    cursor: pointer;
+}
+
+.visual_management_map .cardlistview .panel-body {
+    padding:0;
+}
+
+.visual_management_map .cardlistview .panel-body .list-group, .visual_management_map .listOverview .list-group {
+    margin-bottom:0;
+}
+
+
+
+
+                                
+
+
+
+
+.ispicon_vmgreen::before {
+    background-position: -139px -549px;
+    position: relative;
+    width:41px;
+    height:50px;  
+}
+
+.ispicon_vmgreen.zoom::before {
+    background-position: -300px -542px;
+    width:45px;
+    height:56px;
+}
+
+ .visual_management_map .listOverview .list-group-item {
+    padding: 10px 0px;
+    background-color: #fff;
+    border: 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    border-radius: 0;
+}
+
+ .visual_management_map .listOverview .list-group-item.item:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+ .clusterText {
+    position: relative;
+    font-size: 16px;
+    top: -9px;
+    color: #fff;
+    text-align: center;
+    right: 25px;
+}
+
+ .markerAlarmText {
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    color: #fff;
+}
+
+.zoom .markerAlarmText {
+    font-size: 20px;
+    right: 12px;
+    top: 12px;
+}
+
+ .markerText {
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    color: #5c5c5c;
+}
+
+.zoom .markerText {
+    font-size: 20px;
+    right: 12px;
+    top: 12px;
+}
+
+
+.mapText::first-letter {
+    text-transform: uppercase;
+}
+/*.cluster:hover {
+    transform: scale(1.1);
+}*/
+
+
+/* for beta1 */
+.visualmanagementview #VMSiteAlarmInfo {
+     visibility: hidden !important;
+}
+
+.visualmanagementview .ispheadersearch {
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+.visual_management_map .cardlistview .site_list {
+    top: 0 !important;
+}
+
+.visual_management_map .empty_site .description {
+    color:#606060;
+}
+
+.visual_management_map .site_list .panel {
+    box-shadow:none;
+}
+
+

@@ -1,0 +1,174 @@
+
+/* Timeout Dialog Styles */
+.timeout-dialog {
+    position: absolute;
+    background: #ffffff url(../images/icon_errorLightbox.png) no-repeat 28px 50px;
+    -moz-border-radius: 0px;
+    width: 390px !important;
+    margin-top: 0px !important;
+    border: 1px solid #e7e7e7 !important;
+    -webkit-box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+    outline:none;
+    z-index:9999;
+}
+.timeout-dialog :focus{
+ outline:none;
+}
+/* Some default button styles */
+.timeout-dialog button {font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle;}
+.timeout-dialog button {line-height: normal; *overflow: visible;}
+.timeout-dialog button {cursor: pointer; -webkit-appearance: button;}
+
+.timeout-dialog button {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0;
+    cursor: pointer;
+    color: #1792e5;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 9px 16px;
+    border: 1px #8bc9f2 solid;
+    background-color: #fff;
+    height: 32px;
+    outline:none;
+}
+.timeout-dialog button:hover {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0;
+    cursor: pointer;
+    color: #1792e5;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 9px 16px;
+    border: 1px #8bc9f2 solid;
+    background-color: #edf5f9;
+    height: 32px;
+    outline:none;
+}
+.timeout-dialog button:focus {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0;
+    cursor: pointer;
+    color: #1792e5;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 9px 16px;
+    border: 1px #8bc9f2 solid;
+    background-color: #edf5f9;
+    height: 32px;
+    outline:none !important;
+}
+.timeout-dialog button:active {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0;
+    cursor: pointer;
+    color: #1792e5;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 9px 16px;
+    border: 1px #45a8ea solid;
+    background-color: #d8e9fa;
+    height: 32px;
+    outline:none;
+}
+.timeout-dialog .button:hover, button:hover {
+  text-decoration: none;
+  background-position: 0 -15px;
+  outline:none;
+}
+
+.timeout-dialog .button:focus, button:focus {
+  outline: none;
+}
+
+.timeout-dialog .ui-dialog-title {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  padding: 0 0 15px 0;
+  margin-left: 80px;
+  color:#3B3B3B;
+}
+.timeout-dialog .ui-dialog-titlebar-close {
+  display: none;
+}
+.timeout-dialog .ui-dialog-buttonpane {
+    margin-top: 0;
+    margin-left: 0px;
+    border-top: 1px solid #e7e7e7;
+    padding: 16px 0 16px 61px;
+}
+.timeout-dialog  ~ .ui-widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+.timeout-dialog p {
+  margin: 0 0 5px 80px;
+}
+.timeout-dialog #timeout-keep-signin-btn {
+    color: #fff !important;
+    margin-right: 8px;
+    padding: 9px 16px;
+    height:32px;
+    background-color: #1792e5;
+}
+.timeout-dialog #timeout-keep-signin-btn:hover {
+    color: #fff !important;
+    margin-right: 8px;
+    padding: 9px 16px;
+    height:32px;
+    background-color: #1272b2;
+}
+
+.timeout-dialog #timeout-keep-signin-btn:active {
+    color: #fff !important;
+    margin-right: 8px;
+    padding: 9px 16px;
+    height:32px;
+    background-color: #23608c;
+}
+
+
+#timeout-countdown {
+  font-weight: bold;
+}
+.timeout-dialog .ui-dialog-titlebar #ui-id-1{
+  background: none;
+  border: none;
+  height: auto;
+  width: 248px !important;
+}
+
+.timeout-dialog .ui-widget-header {
+    border: none;
+    background: none;
+    padding-top: 32px;
+    padding-left: 12px;
+}
+
+#timeout-dialog {
+    margin-top: 0px;
+    width: auto;
+    min-height: 0px;
+    max-height: none;
+    height: auto;
+    padding-bottom: 17px;
+    padding-left: 12px;
+}
+}

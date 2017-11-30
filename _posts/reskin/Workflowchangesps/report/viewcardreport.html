@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Card Report</title>
+  <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+  <!-- <link href="../content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"> -->
+  <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/master.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+ <!--  <link href="../content/css/custom-bootstrap-datetimepicker.css" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+  <link href="../content/css/create-report.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <script src="../scripts/jquery-2.2.4.min.js"></script>
+  <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+  <!-- <script src="../scripts/jquery.mousewheel.js"></script> -->
+  <script src="../content/js/bootstrap.min.js"></script>
+  <script src="../content/js/bootstrap-multiselect.js"></script>
+  <script src="../scripts/jquery.slimscroll.min.js"></script>
+  <script src="../content/js/bootstrap-select.min.js"></script>
+  <script src="../scripts/selectize.js"></script>
+  <script src="../scripts/master.js"></script>
+</head>
+<body>
+  <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title"></span>
+        </a>
+        <div class="main-menu-navigation" id="overlay-menu">
+          <div class="topmenucontent">
+            <div class="nav_img">
+              <a href="" class="close_btn key_cntrl">×</a>
+            </div>
+            <ul class="main-menu-ul">
+              <!-- ko foreach: $data.pages -->
+              <li class="card-item">
+                <header class="count">
+                  <span></span>
+                </header>
+                <p>Insight</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_1"></span>
+                </header>
+                <p>Create &amp; Edit</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_2"></span>
+                </header>
+                <p>Viewer</p>
+              </li>                        
+              <li class="card-item active">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_4"></span>
+                </header>
+                <p>Reports</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_5"></span>
+                </header>
+                <p>Rules</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_6"></span>
+                </header>
+                <p>Calendar</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_7"></span>
+                </header>
+                <p>Maps</p>
+              </li>                       
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_8"></span>
+                </header>
+                <p>Controller</p>
+              </li>
+              <!--/ko-->
+              <li>Eagle Menus</li>
+              <li class="dropdown">
+                <p class="dropdown-toggle">
+                <span class="ispicon ispicon_accounts"></span>
+                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                </p>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                    <header class="count">
+                      <span class="ispicon ispicon_plus"></span>
+                    </header>
+                    <p>Add New Account</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                    <header class="count">
+                      <span class="ispicon ispicon_overview"></span>
+                    </header>
+                    <p>Account Overview</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                    <header class="count">
+                      <span></span>
+                    </header>
+                    <p>Customer List</p>
+                  </li>                               
+                </ul>
+              </li>                      
+              <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>
+            </ul>
+            <ul class="handbar-profile">
+              <li>
+                <div class="col-xs-12 col-sm-8">
+                  <span class="name">Scott Stevens</span><br>
+                  <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right" id="notification-menu">
+        <div id="navigation-menu">
+          <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li id="notifications" class="dropdown">
+                <a href="" class="dropdown notification-icon"></a>
+                <ul class="dropdown-menu dashboard-message" id="dash-message">
+                  <li class="msg-header">
+                    <span class="header" id="header">
+                    Today's Notifications
+                    </span>
+                  </li>
+                  <!-- ko foreach: $data.messages --><!-- /ko -->
+                  <li id="ShowAllNotifications" class="msg">
+                    <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                  </li>
+                  <li id="msgTitle" class="msg">
+                    <span class="dropdown-menu-sub-footer">Loading</span>
+                  </li>
+                </ul>
+              </li>
+              <li id="profileoptions" class="dropdown">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                    </a>
+                    <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile">
+                      <li>
+                        <span class="profile-icon">
+                          <span ></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#" >Profile Details</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span  class="icon_helpNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#" >Help</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span  class="icon_logoutNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#" >Logout</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="siteurl" value="/MPCNEW/">
+    </div>     
+  </header>
+  <!--header ends here-->
+  <!--start main section -->
+  <section class="view mpc" id="reports" data-complete="true">
+    <div id="reportManagementBaseId">
+      <div id="reportBaseContentId" class="ps-row ps-event-report-wrapper ps-create-report">
+        <div class="reports" id="reportId">
+          <div id="reportTopSectionId" class="topSection formcontrol">
+            <div class="col-md-12 no-padding ps-event-report-title"> 
+              <div class="col-md-6 padding">
+                <a href="#" class="icon icon-left-arrow"></a> 
+                <h1>New Report<span> James</span>
+                </h1>
+              </div>
+              <div class="col-md-6 card-header">
+                <div class="icon tooltipg icon-delete pull-right">delete
+                  <div class="tooltip">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-inner">Delete</div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="icon tooltipg icon-edit pull-right">
+                    <div class="tooltip">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">Edit</div>
+                    </div>
+                  </div></a> 
+              </div>
+            </div>
+          </div>
+          <!-- ko stopBinding: true -->
+          <div id="reportContent">
+            <div id="reportBottomSectionId" class="cardSettings bottomSection col-md-12 col-lg-12 ps-report-container">
+              <div id="reportFilterSectionId" class="firstSection ps-column  col-md-3 col-lg-3">
+                <h2 class="padding">Report Details</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <form>
+                      <!-- ko if: !$data.reportId() -->
+                      <ul>
+                        <li>
+                          <div class="cardTopFirstSection">
+                            <div class="form-group selectize-form-group">
+                              <label id="Report" for="selectReport">Report Type*</label>
+                              <select class="form-control selectbox" id="txbReport" tabindex="1" disabled="disabled">
+                                <option value="Audit Reports">Card Reports</option>
+                                <option value="Event Reports">Event Reports</option>
+                                <option value="Card Reports">Audit Reports</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group">
+                            <label id="Report_Name" class="control-label">Name*</label>
+                            <input type="text" tabindex="22" id="Report_Name" name="Report_Name" placeholder="Event Report Name" class="form-control" disabled="disabled"/>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- /ko -->
+                    </form>
+                  </div>
+                </div>  
+              </div>
+              <div id="reportFilterSectionId" class="ps-column  col-md-3 col-lg-3">   
+                <h2 class="padding">Filters</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <ul class="filter-first-ul">
+                      <li>
+                        <div class="radio ps-radio row ps-row">
+                          <div class="col-md-3 col-lg-3 no-padding">
+                            <label id="Report_Filter_All" class="formControl-radio ps-disabled">
+                              <input id="all" type="radio" value="All" name="radiotest" disabled="disabled" checked/>
+                              <span class="icon-radio radiotext"></span>
+                              <span tabindex="2">All</span>                            
+                            </label>
+                          </div>
+                          <div class="col-md-9 col-lg-9 no-padding">
+                            <label id="Report_Filter_Credential_Number_Range" class="formControl-radio ps-disabled">
+                              <input id="cardRange" disabled="disabled" value="" type="radio" name="radiotest">
+                              <span class="icon-radio radiotext"></span>
+                              <span tabindex="3">Card Number Range</span>
+                            </label>                            
+                          </div>
+                        </div>
+                        <div class="CardNumberRange"></div>
+                      </li>
+                      <li>
+                        <div class="form-group select-field selectize-form-group">
+                          <label id="Report_Filter_Account" for="selectAccount">Account*</label>
+                          <select id="selectAccount" class="form-control selectbox" tabindex="5" disabled="disabled">
+                          <option value="">All</option></select>
+                        </div>
+                      </li>
+                      <h2 class="reportsHeadingMiddle report-label filter-section-middle">Activation Date</h2>
+                      <li>
+                        <div class="input-append date form-group right-inner-addon notRequiredStyle" id="activationDateFrom">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Report_Date_From" class="control-label">From</label>
+                          <input id="txbReport_Date_From" type="text" placeholder="From" class="form-control form-date" disabled="disabled">
+                           <span class="add-on icon icon-calendar ps-disabled" tabindex="2"></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="input-append date form-group right-inner-addon notRequiredStyle" id="activationDateTo">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Report_Date_To" class="control-label">To</label>
+                          <input id="txbReport_Date_To" type="text" placeholder="To" class="form-control form-date" disabled="disabled">
+                           <span class="add-on icon icon-calendar ps-disabled" tabindex="2"></span>
+                        </div>
+                      </li>
+                      <h2 class="reportsHeadingMiddle report-label filter-section-middle">Expiry Date</h2>
+                      <li>
+                        <div class="input-append date form-group right-inner-addon notRequiredStyle" id="expireDateFrom">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Report_Date_From" class="control-label">From</label>
+                          <input id="txbReport_Date_From" type="text" placeholder="From" class="form-control form-date" disabled="disabled">
+                           <span class="add-on icon icon-calendar ps-disabled" tabindex="2"></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="input-append date form-group right-inner-addon notRequiredStyle" id="expireDateTo">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Report_Date_To" class="control-label">To</label>
+                          <input id="txbReport_Date_To" type="text" placeholder="To" class="form-control form-date" disabled="disabled">
+                           <span class="add-on icon icon-calendar ps-disabled" tabindex="2"></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-group select-field selectize-form-group notRequiredStyle">
+                          <label id="Report_Filter_Credential_Status" for="selectStatus">Card Status</label>
+                          <select id="selectStatus" tabindex="11" disabled="disabled" class="form-control selectbox"><option value="">All</option><option value="4dcd9403-a5f2-42c9-a02c-a5f1b814c274">Active</option><option value="4ecd9403-a5f2-42c9-a02c-a5f1b814c274">Inactive</option><option value="4fcd9403-a5f2-42c9-a02c-a5f1b814c274">Lost</option><option value="50cd9403-a5f2-42c9-a02c-a5f1b814c274">Trace</option></select>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-group notRequiredStyle">
+                          <label id="Report_Filter_Credential_Holder_Name" class="control-label">Card Holder Name</label>
+                          <input id="txbReport_Filter_Credential_Holder_Name" type="text" tabindex="12" name="" required="" class="form-control" disabled="disabled">
+                        </div>
+                      </li>
+                    </ul>    
+                  </div>
+                </div> 
+              </div>
+              <div id="reportOutputSectionId" class="thirdSection ps-column col-md-3 col-lg-3">
+                <h2 class="padding">Layout</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <ul>
+                      <li>
+                        <div class="form-group selectize-form-group">
+                          <label id="Report_Output_Select_Columns" class="control-label">Columns</label> 
+                          <select class="form-control selectbox" tabindex="19" id="formatType" disabled="disabled">
+                            <option value="0">option</option>
+                            <option value="1">option</option>
+                            <option value="3">option</option>
+                            <option value="4" selected="selected">option</option>
+                          </select> 
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="ps-sort-layout">
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order1" for="sortOrder1">Sort order 1</label>
+                          <select class="form-control selectbox" id="sortOrder1" disabled="disabled" ><option value="">None</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option></select>
+                        </div>
+                        <span class="icon input-addon-icon ps-disabled" tabindex="15"><b class="sortOrder1 icon-sort-ascending" title="Descending"></b></span>
+                      </li>
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order2" for="sortOrder2">Sort order 2</label>
+                          <select class="form-control selectbox" id="sortOrder2" disabled="disabled">
+                            <option value="">None</option>
+                            <option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option>
+                            <option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option>
+                            <option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option>
+                            <option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option>
+                          </select>
+                        </div>
+                        <span class="icon input-addon-icon ps-disabled" tabindex="15"><b class="sortOrder1 icon-sort-ascending" title="Descending"></b></span>
+                      </li>
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order3" for="sortOrder3">Sort order 3</label>
+                          <select class="form-control selectbox" id="sortOrder3" disabled="disabled"><option value="">None</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option></select>
+                        </div>
+                        <span class="icon input-addon-icon ps-disabled" tabindex="15"><b class="sortOrder1 icon-sort-ascending" title="Descending"></b></span>
+                      </li>
+                      <div class="footer-report">
+                        <button id="Report_Export" class="btn btn-primary pull-right margin-none" tabindex="25" type="button">Export</button>
+                        <button class="btn btn-default pull-right margin-right" tabindex="18" id="preview" type="button" value="Save" data-toggle="modal" role="button" >Preview</button>                       
+                        <ul class="report-export-data site-select">
+                          <li>
+                            <a href="#">To PDF</a>
+                          </li>
+                          <li>
+                            <a href="#">To Excel</a>
+                          </li>
+                          <li>
+                            <a href="#">To CSV</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id="reportOptionSectionId" class="fourSection ps-column col-md-3 col-lg-3">
+                <span id="Report_Schedule" class="reportsHeading">
+                  <h2 class="padding">Schedule Delivery</h2>
+                </span>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <form data-validationkey="report_form" id="reportmodalform">
+                      <ul class="sch_options">
+                        <li>
+                          <div class="form-group selectize-form-group">
+                            <label id="Report_Schedule_Options" for="selectAccount">Frequency</label>
+                            <select class="form-control selectbox" tabindex="19" id="formatType"  disabled="disabled">
+                              <option value="0">Never</option>
+                              <option value="1">Every Day</option>
+                              <option value="3">Every Week</option>
+                              <option value="4" selected="selected">Every Month</option>
+                            </select>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group" id="reportScheduleDate" data-date="" data-date-format="">
+                            <label id="lblSelect_Date" class="control-label">On</label><input id="txbSelect_Date" type="text" placeholder="Select Date" class="form-control form-date" disabled="disabled">
+                             <span class="add-on icon icon-calendar ps-disabled" tabindex="2"></span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group selectize-form-group">
+                            <label id="Report_Schedule_Send_To" class="control-label">Email To</label>
+                            <select class="form-control selectbox select-item" disabled="disabled" tabindex="19" id="formatType" multiple="multiple">
+                              <option value="0" selected >CardHolder</option>
+                              <option value="1" selected>Card</option>
+                            </select> 
+                            <div class="selectColumnContainer site-checkbox">
+
+                              <ul class="event-config-container">
+                                <li class="search">
+                                  <span class="icon-search pull-right">
+                                    <input type="search" class="form-control form-search" placeholder="Search report">
+                                    <span class="foucs-icon-search"></span>
+                                  </span>
+                                  <span class="total-count"><span>783</span> Users</span>
+                                </li>  
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand>All</legand>
+                                  </label>
+                                </li>
+                                <!-- ko foreach: $data.OutputFields -->
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand>CardHolder First Name</legand>
+
+                                  </label>
+
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand>CardHolder Last Name</legand>
+                                  </label>     
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >Date and Time</legand>
+                                  </label>    
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Severity</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Device Name</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Card Number</legand>
+                                  </label>
+                                </li>
+                                <!-- /ko -->
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div> 
+              </div>
+              </div>
+              <div class='doneBtn create-report-footer col-md-12'>
+                <button class='btn btn-primary pull-right margin-none'  disabled="disabled" id='confirmButton'>SAVE</button>
+                <button id="Report_Save" disabled="disabled" class="btn pull-right btn-default margin-right" tabindex="23" type="button" value="Save">CANCEL</button>
+              </div>
+            </div>
+            <!-- /ko -->
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section> <!--End main section -->
+  <script src="../scripts/custom.js"></script>
+</body>
+</html>

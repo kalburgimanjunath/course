@@ -1,0 +1,71 @@
+﻿﻿/*version 1.0.3*/
+/*common styles*/
+
+.test {
+    top: 0;
+}
+
+.ispsubscription {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.ispsubscription  .ps-main-container .ps-left-sidebar {
+    position: absolute;
+    top: 46px;
+    width: 100%;
+}
+
+.ispsubscription .main-content {
+    width: calc(100% - 25%);
+    left: 25%;
+    float: left;
+    margin-top: 17px;
+    padding-left: 5px;
+    font-size: 16px;
+    color: #d0d0d0;
+    background-position: -1600px -159px;
+    width: 20px;
+}
+
+.subscirption-srt-btn {
+    position: relative;
+    bottom: 3px;
+    right: 10px;
+    padding: 0px 4px 0px 0px !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin: 0px 10px 0px 0px;
+    background:#fff;
+    border:0;
+}
+
+.packageSummary .basicTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #707070;
+}
+
+.packageSummary .proTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #0199C8;
+}
+
+.packageSummary .premiumTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #3BAD49;
+}
+
+.packageSelectionTable {
+    display: table;
+    overflow-y: scroll;
+    width: 88%;
+    /*height: 100%;*/
+    position: absolute;
+    color: #707070;
+    /*top: 0;
+    min-width:900px;*/
+}

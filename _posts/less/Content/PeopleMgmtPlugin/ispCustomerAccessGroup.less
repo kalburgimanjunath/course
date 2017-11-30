@@ -1,0 +1,974 @@
+﻿@color_1: #808080;
+@color_2: #303030;
+@color_3: #606060;
+@color_4: #1792e5;
+@color_5: #202020;
+@color_6: #ccc;
+@font_family_1: "HoneywellSansWeb-Medium";
+@font_family_2: "HoneywellSansWeb-Bold";
+@font_family_3: 'HoneywellSansWeb-Bold';
+@font_family_4: 'HoneywellSansWeb-Medium';
+@background_color_1: #fff;
+@background_color_2: #ffffff;
+@background_color_3: inherit;
+@background_color_4: #e8f4fc;
+@background_color_5: initial;
+
+/*version 1.0.1*/
+/*.customeraccessgroup-root .accessgroupView .table td div:not(span){
+padding-left: 12px !important;
+}*/
+/* NEW ADDITION 24-08-2016*/
+/* CONTROLLER OVERVVIEW*/
+.customeraccessgroup-root {
+	.isptabs {
+		.nav {
+			border-bottom: 1px solid #dfdfdf;
+			li {
+				font-family: @font_family_1 !important;
+				a {
+					font-family: @font_family_1 !important;
+					font-size: 14px;
+					color: @color_1;
+					background: transparent;
+					border: none;
+					outline: none;
+					&:hover {
+						border: none;
+					}
+					&:active {
+						border: none;
+					}
+					&:focus {
+						border: none;
+					}
+				}
+			}
+			li.active {
+				a {
+					font-family: @font_family_2 !important;
+					font-size: 14px;
+					color: @color_2;
+					background: transparent;
+					border-bottom: 4px solid #1792e5;
+				}
+			}
+		}
+	}
+	.cardlistview {
+		padding: 0px;
+		.list-group-item {
+			border-radius: 0;
+		}
+		.nav.nav-tabs {
+			margin-left: 20px;
+		}
+		.listcount {
+			background: #f2f2f2;
+			margin-right: 0;
+			padding: 4px 0px;
+		}
+		.ispsearch {
+			background-color: @background_color_1;
+		}
+		.name {
+			font-family: @font_family_3 !important;
+			font-size: 15px;
+			color: @color_2;
+		}
+		.peoplecount {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+		}
+		.doorcount {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_1;
+		}
+		.controllerList {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_1;
+		}
+		.ispheadersearch {
+			padding-right: 20px;
+			border-top: 1px solid #d0d0d0;
+			border-bottom: 1px solid #d0d0d0;
+			height: 43px;
+		}
+	}
+	.listOverview {
+		border-left: 1px solid #e7e7e7;
+		.headerTitle {
+			font-family: @font_family_3 !important;
+			color: @color_2;
+			margin-left: 20px;
+		}
+		.overviewTab {
+			max-height: 400px;
+		}
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+	.accessgroupView {
+		.overviewTab {
+			.table {
+				>thead {
+					>tr {
+						>th {
+							border-bottom: 0 none;
+						}
+					}
+				}
+			}
+			span.name {
+				font-family: @font_family_3 !important;
+				color: @color_4;
+				font-size: 14px;
+			}
+			span.sensorsid {
+				font-family: @font_family_4 !important;
+				color: @color_3;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			table {
+				th {
+					font-family: @font_family_3 !important;
+					font-size: 14px;
+				}
+				td {
+					span {
+						font-family: @font_family_4 !important;
+						font-size: 14px;
+					}
+				}
+			}
+			.ispicon {
+				margin-top: 10px;
+			}
+			.ispicon_collapse {
+				margin-left: 15px;
+			}
+		}
+		.table {
+			td {
+				border-bottom: 1px solid #dfdfdf !important;
+				&:first-child {
+					padding-left: 24px;
+					padding: 10px 0 10px 24px;
+				}
+				.ispicon_schedule {
+					width: 27px;
+					padding-right: 13px;
+					&:before {
+						cursor: default;
+					}
+				}
+			}
+			.nextlevel {
+				padding: 0px 0 0px 10px !important;
+				border-top: 0px solid #f0f0f0 !important;
+				div {
+					span {
+						padding-left: 0px;
+					}
+					span.col-md-4 {
+						padding-left: 21px;
+					}
+				}
+			}
+			td.nextlevel {
+				&:first-child {
+					padding-left: 0px;
+					border-top: 0px;
+					border-bottom: 0px;
+					box-shadow: none;
+				}
+			}
+			margin-bottom: 0px;
+		}
+		.cardlistview {
+			.isppagetitle {
+				font-family: @font_family_3 !important;
+				color: @color_5;
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-top: 17px;
+				margin-bottom: 14px;
+			}
+		}
+		.list-group-item {
+			padding: 10px 20px;
+			border-right: 0px;
+			cursor: pointer;
+		}
+		.checkbox {
+			float: left;
+			margin-top: 0;
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+			label {
+				&::before {
+					display: none;
+				}
+			}
+		}
+		.btn-group {
+			.btn {
+				&+.btn {
+					margin-left: 8px !important;
+				}
+			}
+		}
+		.btn-footer {
+			position: absolute;
+			bottom: 0;
+			right: -15px;
+			border-top: 1px solid #ccc;
+			left: 0;
+			padding: 10px 30px 10px 10px;
+		}
+		.viewmode {
+			.table {
+				td {
+					&:first-child {
+						padding: 10px 0 10px 22px !important;
+					}
+				}
+			}
+		}
+		.secondlevel {
+			.name {
+				margin-left: 15px;
+				padding-top: 2px !important;
+			}
+		}
+	}
+	.addSchedule {
+		.table {
+			>thead {
+				>tr {
+					>th {
+						border-bottom: 0 none;
+					}
+				}
+			}
+		}
+		table {
+			td {
+				border-top: 1px solid #e7e7e7 !important;
+			}
+		}
+		.overviewTab {
+			table {
+				td {
+					font-family: @font_family_4 !important;
+					font-size: 14px;
+				}
+			}
+			.sensorsid {
+				margin-left: 10px;
+			}
+			.name {
+				margin-left: 10px;
+			}
+		}
+		.ispicon {
+			margin-top: 10px;
+		}
+		.name {
+			margin-left: 10px;
+		}
+		.sensorsid {
+			margin-left: 10px;
+		}
+		.checkbox {
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+		}
+		.modal-dialog {
+			width: 700px;
+			padding-top: 10px;
+		}
+		.panel-body {
+			padding: 5px 15px 0 15px;
+		}
+	}
+	.EditAccessGroup {
+		.table {
+			.nextlevel {
+				padding: 0px 0 0px 10px !important;
+				border-top: 0px solid #f0f0f0 !important;
+				div {
+					span {
+						padding-left: 0px;
+					}
+					span.col-md-4 {
+						padding-left: 2px;
+					}
+				}
+			}
+			span.col-md-4 {
+				&:not(.nextlevel) {
+					padding-left: 0;
+				}
+			}
+			td {
+				&:not(.nextlevel) {
+					div {
+						span {
+							padding-left: 1px;
+						}
+					}
+				}
+				&:first-child {
+					div {
+						span {
+							font-family: @font_family_4 !important;
+							color: @color_3;
+							font-size: 14px;
+						}
+					}
+					input[type="checkbox"] {
+						margin-top: 2px;
+					}
+				}
+				.ispicon_schedule {
+					width: 27px;
+					padding-right: 13px;
+				}
+			}
+			td.nextlevel {
+				div {
+					&:not(span) {
+						padding-left: 0px !important;
+						margin-left: 1px;
+					}
+				}
+			}
+			tr {
+				td {
+					border-bottom: 1px solid #dfdfdf !important;
+				}
+			}
+		}
+		.accgrouptableaccordian {
+			.nextlevel {
+				.listStickyHeader {
+					padding: 0;
+					border: 0;
+					input[type="checkbox"] {
+						margin: 0;
+					}
+				}
+			}
+			.secondlevel {
+				margin-left: 0px;
+				width: calc(100% - 0px);
+			}
+		}
+		.dropdown-menu {
+			margin-top: 60px;
+		}
+		.accordian-additional-menu {
+			b {
+				padding: 0px;
+			}
+		}
+		.accessgrouppopupcontainer {
+			max-height: 394px;
+			.ispselectdropdown {
+				.isppopup-site {
+					width: calc(100% - 30px);
+				}
+			}
+		}
+		.ispicon_sortasc {
+			padding: 5px;
+		}
+	}
+	.accgrouptableaccordian {
+		.nextlevel {
+			.listStickyHeader {
+				background: #fff !important;
+			}
+		}
+		.panel-group {
+			margin-bottom: 0;
+			.panel {
+				border-radius: 0;
+				border: 0px;
+			}
+		}
+		.listStickyHeader {
+			font-family: @font_family_2 !important;
+			font-size: 13px;
+			color: @color_2;
+			background: #f2f2f2 !important;
+			border-top: 1px solid #dfdfdf;
+			padding-left: 9px;
+			padding-bottom: 2px;
+			padding-top: 4px;
+			.collapsed {
+				.ispicon_accordian_droparrow {
+					&::before {
+						background-position: -396px -142px;
+					}
+				}
+			}
+			.panel-title {
+				font-family: @font_family_2 !important;
+				font-size: 14px;
+				color: @color_2;
+				cursor: pointer;
+			}
+			h4.panel-title {
+				&+span[aria-expanded="true"] {
+					.ispicon_accordian_droparrow {
+						&::before {
+							background-position: -396px -140px;
+						}
+					}
+				}
+			}
+			.title {
+				font-family: @font_family_2 !important;
+				font-size: 13px;
+				color: @color_2;
+				cursor: pointer;
+				input[type="checkbox"] {
+					margin: 2px 5px;
+					&+span {
+						line-height: 24px;
+						margin-left: 6px;
+					}
+				}
+			}
+			.datalist {
+				width: auto;
+				min-width: 50%;
+				background-color: @background_color_3;
+			}
+			.headerDL {
+				padding-left: 8px;
+				width: 59.4%;
+				background-color: @background_color_3;
+				padding-right: 3px;
+			}
+		}
+		.collapsed {
+			.ispicon_accordian_droparrow {
+				&::before {
+					background-position: -396px -142px;
+				}
+			}
+		}
+		.panel-body {
+			padding: 0px 0px;
+		}
+		.accordionhead {
+			width: 50%;
+			position: absolute;
+			right: 0px;
+			.custompicker {
+				width: 57.4%;
+				margin-left: 18px !important;
+				background-color: @background_color_3;
+			}
+			.name {
+				padding-top: 5px;
+				position: absolute;
+			}
+		}
+		.secondlevel {
+			tr {
+				td {
+					&:first-child {
+						padding-left: 31px;
+					}
+				}
+				input[type="checkbox"] {
+					&+span {
+						font-family: @font_family_4 !important;
+						font-size: 14px;
+						color: @color_3;
+					}
+				}
+			}
+			margin-left: 24px;
+			margin-bottom: 0px;
+			width: calc(100% - 24px);
+			margin-left: 0px;
+			width: calc(100% - 0px);
+			input[type="checkbox"] {
+				margin-top: 0px;
+			}
+			tr.thirdlevel {
+				input[type="checkbox"] {
+					&+span {
+						font-family: @font_family_3 !important;
+						font-size: 14px;
+						color: @color_2;
+					}
+				}
+			}
+		}
+		.ispicon_schedule {
+			&:hover {
+				&::before {
+					background-position: -492px -11px !important;
+				}
+			}
+			padding: 1px 10px;
+		}
+		.ispicon_plus {
+			padding: 1px 10px;
+		}
+		.ispselect {
+			outline: none;
+			border: none;
+			height: 19px;
+			margin-top: 2px;
+		}
+	}
+	.customeraccessgroup-root {
+		.accessgroupView {
+			.table {
+				td {
+					&:first-child {
+						div {
+							span {
+								font-family: @font_family_4 !important;
+								color: @color_3;
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.scheduleList {
+		>span {
+			&+span {
+				margin-left: 5px;
+			}
+		}
+	}
+	.addSchedule.ispmodal {
+		left: 0 !important;
+	}
+	.listHeader {
+		font-family: @font_family_3 !important;
+		color: @color_2;
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		padding: 15px 0;
+		margin: 0 15px 10px 15px;
+		font-size: 18px;
+		clear: both;
+		&+hr {
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+	}
+	.btn-group {
+		button.moveArea {
+			margin-left: 10px !important;
+		}
+	}
+	.viewmode {
+		div {
+			pointer-events: none;
+		}
+		input {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			[type="checkbox"] {
+				background: 0;
+			}
+		}
+		textarea {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		.btn-footer {
+			display: none;
+			display: none;
+		}
+		.accgrouptableaccordian {
+			.listStickyHeader {
+				.panel-title {
+					pointer-events: none;
+				}
+				.title {
+					input[type="checkbox"] {
+						display: none;
+						display: none;
+					}
+				}
+			}
+			.ispselect {
+				background-color: @background_color_5;
+				height: 24px;
+			}
+			input[type="checkbox"] {
+				display: none;
+			}
+		}
+		.accordian-additional-menu {
+			.ispicon_sort {
+				pointer-events: none;
+			}
+		}
+	}
+	.row {
+		height: 64px;
+	}
+	.btn-footer {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 15px;
+	}
+	.bold {
+		font-family: @font_family_3 !important;
+	}
+	.ispheaderbar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	.inputuppercase {
+		text-transform: uppercase;
+	}
+	.disabledbutton {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+	.btn-default {
+		background-color: @background_color_2 !important;
+		border: 1px solid #d0d0d0 !important;
+		color: @color_6 !important;
+	}
+	.scheduleOverview {
+		position: absolute;
+		right: 15px;
+		bottom: 0;
+		top: 0px;
+		.content {
+			padding: 0 10px;
+			background: #f4f4f4;
+			padding-right: 24px;
+			box-shadow: 0 -1px 0 0 #d6d6d6;
+		}
+		.leftlist {
+			.panel {
+				ul {
+					.list-group-item.active {
+						background: #e1eff9;
+						color: @color_3;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+					.list-group-item {
+						.ispicon.ispicon_downarrow {
+							margin-right: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.ControllerOverview {
+		.leftlist {
+			.panel {
+				ul.list-group-item.active {
+					&:hover {
+						background: #e1eff9;
+						color: @color_3;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+				}
+				ul {
+					li.list-group-item.active {
+						&:focus {
+							background: #e1eff9;
+							color: @color_3;
+							font-size: 14px;
+							font-family: @font_family_4 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.accessgroupcontainer {
+		top: 60px;
+		position: absolute;
+		width: 98%;
+		bottom: 0px;
+		height: 100%;
+		min-height: 533px;
+	}
+	.ispmodal {
+		.accgrouptableaccordian {
+			max-height: 250px;
+			position: relative;
+			width: 99%;
+			overflow: hidden;
+			&:hover {
+				overflow: auto;
+			}
+		}
+		.EditAccessGroup {
+			.accordian-additional-menu {
+				border-bottom: 1px solid #f5f5f5;
+			}
+		}
+	}
+	.accessgroupOverview {
+		position: absolute;
+		bottom: 0;
+		top: 0px;
+		padding: 0px;
+		width: calc(76% - 336px);
+		margin: 0px;
+		right: 0px;
+	}
+	.accordian-additional-menu {
+		padding: 0 6px 0 0px;
+		b {
+			font-family: @font_family_2 !important;
+			font-size: 16px;
+			color: @color_2;
+			padding: 0;
+		}
+	}
+	.contentContainer {
+		position: absolute;
+		bottom: 0px;
+		top: 85px;
+		overflow-y: hidden;
+		padding: 0px;
+		margin: 0px;
+		&:hover {
+			overflow-y: auto;
+		}
+	}
+	.nopadding {
+		padding: 0;
+	}
+	.lists {
+		width: 336px;
+		float: left;
+		position: absolute;
+		left: 24%;
+		bottom: 0;
+		top: 0;
+	}
+	.section-head1 {
+		font-family: @font_family_3 !important;
+		color: @color_5;
+		font-size: 22px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 600px;
+		margin-left: 20px;
+		margin-top: -4px;
+	}
+	.listcontainer {
+		position: absolute;
+		top: 133px;
+		bottom: 0px;
+		overflow-y: hidden;
+		width: 100%;
+		margin-bottom: 0;
+		&:hover {
+			overflow-y: auto;
+		}
+		.listStickyHeader {
+			border-top: 0px;
+			text-align: left;
+			border-top: 2px solid #d0d0d0;
+		}
+	}
+	.ispmenu {
+		border: 1px solid #d0d0d0;
+		min-width: 200px;
+		padding: 0px;
+		li {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_2;
+			a {
+				font-family: @font_family_4 !important;
+				font-size: 14px;
+				color: @color_3;
+				padding: 12px 24px;
+				border-bottom: 1px solid #d0d0d0;
+				&:hover {
+					font-family: @font_family_3 !important;
+					font-size: 14px;
+					color: @color_2;
+					background-color: @background_color_4;
+				}
+			}
+		}
+	}
+	.ispmenu.rightalign {
+		top: 50px;
+		right: 20px;
+	}
+	.checkbox {
+		input[type="checkbox"] {
+			opacity: 1;
+		}
+	}
+	.datalist {
+		&::-webkit-calendar-picker-indicator {
+			opacity: 100;
+		}
+	}
+	.ispselectdropdown {
+		.isppopup-site {
+			.control-label {
+				input[type="checkbox"] {
+					&+span {
+						max-width: 178px;
+					}
+				}
+				height: 40px;
+			}
+		}
+	}
+	.search-icon {
+		&:before {
+			transform: rotate(90deg);
+		}
+	}
+}
+.accountcontainer {
+	.overview {
+		.content {
+			background: 0 !important;
+			box-shadow: none !important;
+		}
+	}
+}
+.accgrouptableaccordian {
+	.listStickyHeader.collapsed {
+		font-family: @font_family_2 !important;
+		font-size: 13px;
+		color: @color_2;
+		background: #f2f2f2 !important;
+		border-top: 1px solid #dfdfdf;
+		padding-left: 9px;
+		padding-bottom: 2px;
+		padding-top: 4px;
+		.panel-title {
+			font-family: @font_family_2 !important;
+			font-size: 14px;
+			color: @color_2;
+			cursor: pointer;
+		}
+	}
+}
+.viewmode {
+	&:not(.listStickyHeader) {
+		pointer-events: initial;
+	}
+}
+.ag-delete-icon {
+	position: absolute;
+	right: 20px;
+	top: 22px;
+}
+.ag-add-icon {
+	position: absolute;
+	right: 47px;
+	top: 23px;
+}
+.ag-edit-icon {
+	position: absolute;
+	right: 20px;
+	top: 22px;
+}
+.ag-toggle-icon {
+	position: absolute;
+	right: 20px;
+	top: 80px;
+}
+.border-d0d0d0 {
+	border-bottom: 1px solid #d0d0d0;
+}
+@media (max-width: 1366px) and (min-width: 1441px) {
+	.customeraccessgroup-root {
+		.listOverview {
+			.overviewTab {
+				max-height: 400px;
+			}
+		}
+	}
+	.listOverview {
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+}
+@media screen and (min-width: 1920px) {
+	.customeraccessgroup-root {
+		.listOverview {
+			.overviewTab {
+				max-height: 804px;
+			}
+		}
+	}
+	.listOverview {
+		.settingsTab {
+			max-height: 804px;
+		}
+	}
+}
+@monIE:"screen\0";
+@media @monIE{
+	.customeraccessgroup-root {
+		.ispicon.inverse {
+			&::before {
+				width: 20px;
+				left: 24px;
+				top: 43px;
+			}
+		}
+	}
+}
+@media (max-height: 768px) {
+	.customeraccessgroup-root {
+		.addnewaccount {
+			max-height: 330px;
+			width: 100%;
+		}
+		.ControllerOverview {
+			.overview {
+				.content {
+					width: 98%;
+					max-height: 520px;
+				}
+			}
+		}
+	}
+}

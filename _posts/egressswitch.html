@@ -1,0 +1,175 @@
+        <!-- ADD DEVICE MODAL -->
+<style>
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+    .switch input {
+        display: none;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #7eb338;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    left: -7px;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+</style>
+<div id="addDevice" class="modal fade ispmodal addDevice" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Egress</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                         <div class="form-group col-md-6">
+                            <label class="control-label">Input Name<span class="star">*</span></label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Shunt time Schedule<span class="star">*</span></label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Block Interlock Time Schedule<span class="star">*</span></label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Disable Alarms and Events Time Schedule<span class="star">*</span></label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Shunt Time<span class="star">*</span></label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                         <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Debounce Time<span class="star">*</span></label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="switch">
+                            <span>Normally</span>
+                            <input type="checkbox">
+                            <div class="slider round"></div>
+                            <span>Open</span>
+                        </label>
+                    </div>
+                    <div class="col-md-8 col-lg-8 pull-left clear-left">
+                            <div>
+                                <label id="AntiPassback" class="checkbox">
+                                    <input type="checkbox" name="panel_IsAntiPassbackEnabled" id="panel_IsAntiPassbackEnabled">
+                                    <span>Supervised</span>
+                                </label>
+                                
+                            </div>
+                            <div class="col-md-12 col-lg-12 pull-left clear-left">
+                                 <div class="form-group col-md-6 paddingLnone">
+                                    <label class="control-label">Resistor Value</label>
+                                    <select class="form-control">
+                                        <option>Sensor1</option>
+                                    </select>
+                                </div>
+                               
+                            </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 pull-left clear-left">
+                            <div>
+                                <label id="AntiPassback" class="checkbox">
+                                    <input type="checkbox" name="panel_IsAntiPassbackEnabled" id="panel_IsAntiPassbackEnabled">
+                                    <span>Anti Relock</span>
+                                </label>
+                                
+                            </div>
+                            <div class="col-md-12 col-lg-12 pull-left clear-left">
+                                 <div class="form-group col-md-6 paddingLnone">
+                                    <label class="control-label">Output</label>
+                                    <select class="form-control">
+                                        <option>Sensor1</option>
+                                    </select>
+                                </div>
+                               
+                            </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 pull-left clear-left">
+                            <div>
+                                <label id="AntiPassback" class="checkbox">
+                                    <input type="checkbox" name="panel_IsAntiPassbackEnabled" id="panel_IsAntiPassbackEnabled">
+                                    <span>Interlocking</span>
+                                </label>
+                                
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ADD DEVICE MODAL -->

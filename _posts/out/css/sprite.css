@@ -1,0 +1,254 @@
+.ispicon {
+    font-size: 10px;
+}
+
+.ispicon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 2.413em 62.4em;
+}
+
+.no-svg .ispicon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .ispicon.ispicon_PeripheralDevices:before {
+      background-position: 0em 0em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_VisualManagement:before {
+      background-position: 0em -2.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_access:before {
+      background-position: 0em -4.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_access_group:before {
+      background-position: 0em -7.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_accounts:before {
+      background-position: 0em -9.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_alarms:before {
+      background-position: 0em -12em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_area:before {
+      background-position: 0em -14.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_cards:before {
+      background-position: 0em -16.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_company:before {
+      background-position: 0em -19.2em;
+      width: 2.413em;
+      height: 2.413em;
+  }
+
+
+
+
+  .ispicon.ispicon_controller:before {
+      background-position: 0em -21.7em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_controller_offline:before {
+      background-position: 0em -24.1em;
+      width: 2.304em;
+      height: 2.298em;
+  }
+
+
+
+
+  .ispicon.ispicon_customeroverview:before {
+      background-position: 0em -26.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_dashboard:before {
+      background-position: 0em -28.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_delete:before {
+      background-position: 0em -31.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_download:before {
+      background-position: 0em -33.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_firmwaremgmt:before {
+      background-position: 0em -36em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_floorplan:before {
+      background-position: 0em -38.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_people:before {
+      background-position: 0em -40.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_print:before {
+      background-position: 0em -43.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_reports:before {
+      background-position: 0em -45.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_rules:before {
+      background-position: 0em -48em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_schedule:before {
+      background-position: 0em -50.4em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_search:before {
+      background-position: 0em -52.8em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_sites:before {
+      background-position: 0em -55.2em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_users:before {
+      background-position: 0em -57.6em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_viewer:before {
+      background-position: 0em -60em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+

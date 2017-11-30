@@ -1,0 +1,257 @@
+@import url("../Content/Styles/bootstrap/bootstrap.css");
+@import url("../Content/Styles/bootstrap/bootstrap-responsive.css");
+@import url("../Content/Styles/jquery/jquery.dropdown.css");
+@import url("../ContentStyles/addon.css");
+@import url("../Content/Styles/bootstrap-datetimepicker.css");
+@import url("../Content/Styles/alertify.css");
+/*@import url("../Content/Styles/accordion.css");*/
+@import url("../Content/Styles/appicons.css");
+@import url("../Content/Styles/bootstrap-select.css");
+@import url("../Content/Styles/bootstrap-tagsinput.css");
+@import url("../Content/Styles/checkbox.css");
+@import url("../Content/Styles/checkbox-list.css");
+@import url("../Content/Styles/configstyle.css");
+@import url("../Content/Styles/controlstyles.css");
+@import url("../Content/Styles/custom-bootstrap-datetimepicker.css");
+@import url("../Content/Styles/default.css");
+@import url("../Content/Styles/header.css");
+@import url("../Content/Styles/icons.css");
+@import url("../Content/Styles/ispcommon.css");
+/*@import url("../Content/Styles/ispaccount.css");*/
+@import url("../Content/Styles/jquery.webui-popover.min.css");
+@import url("../Content/Styles/menu.css");
+@import url("../Content/Styles/modal.css");
+@import url("../Content/Styles/modal-confirm.css");
+@import url("../Content/Styles/normalize.css");
+@import url("../Content/Styles/radio.css");
+@import url("../Content/Styles/selectize.css");
+@import url("../Content/Styles/Site.css");
+@import url("../Content/Styles/spinner.css");
+@import url("../Content/Styles/timeout-dialog.css");
+@import url("../Content/Styles/toastr.css");
+@import url("../Content/Styles/webhelp.css");
+/*@import url("../Content/fonts.css");*/
+@import url("../Content/forms.css");
+@import url("../Content/overlays.css");
+/*@import url("../Content/simple-sidebar.css");*/
+@import url("../Content/AccordionPlugin/accordion.css");
+@import url("../Content/AccountMgmtPlugin/customerlist.css");
+@import url("../Content/AccountMgmtPlugin/ispaccount.css");
+@import url("../Content/PeopleMgmtPlugin/ispInstrusion.css");
+@import url("../Content/PeopleMgmtPlugin/ispPeopleMgmt.css");
+/*@import url("../Content/SchdHoldPluginCSS/ispPeopleMgmt.css");*/
+.customerListOverview {
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.customerlistView .sensorsTab .table > tbody > tr:hover {
+    background: #f5f5f5;
+    cursor: default;
+}
+
+.customerlistView .checkbox input[type="checkbox"] {
+    opacity: 1;
+}
+
+.customerlistView .table > tbody > tr > td .checkbox {
+    margin-top: 0;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+    .customerlistView .sensorsTab .table > thead > tr > th.sort {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #808080;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th.desort {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #808080;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(1), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(1) {
+        /*width: 40px;*/
+        padding-right: 0;
+        width: 28px;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(2), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(2) {
+        width: 25%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3) {
+        width: 20%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(4), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(4) {
+        width: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(5), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(5) {
+        width: 14%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(6), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(6) {
+        width: 13%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+
+.customerlistView .table1 {
+    margin-bottom: 0;
+}
+
+.customerlistView .table.table2 > thead > tr {
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(2) {
+    width: 24.5%;
+}
+
+    .customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(2) span:hover {
+        color: #1792e5;
+        cursor: pointer;
+    }
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(3) {
+    width: 20%;
+}
+
+    .customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(3) span:hover {
+        color: #1792e5;
+        cursor: pointer;
+    }
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(4) {
+    width: 9%;
+}
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(5) {
+    width: 14%;
+}
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(6) {
+    width: 8%;
+}
+
+.customerlistView .sensorsTab .table2 > tbody > tr {
+    height: 42px;
+}
+
+.customerlistView .sensorsTab .table > tbody {
+    position: absolute;
+    width: 100%;
+    min-height: 480px;
+    overflow: auto;
+    bottom: 0;
+    top: 42px;
+    margin-top: -4px;
+}
+
+.customerlistView .count {
+    margin: 0 5px 0 0px;
+    font-weight: bold;
+}
+
+
+.customerlistView .basetitle {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 22px;
+    color: #303030;
+    height: 44px;
+    border-bottom: 1px #dfdfdf;
+}
+
+
+.customerlistView .isptabs .nav {
+    border-top: 1px solid #dfdfdf;
+}
+
+.right-menu-tabs {
+}
+
+    .right-menu-tabs li {
+        list-style-type: none;
+        float: left;
+        cursor: pointer;
+    }
+
+        .right-menu-tabs li span {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #808080;
+        }
+
+.colorlow {
+    background: #ffc627;
+    border: 1px solid #e2b023;
+}
+
+.coloroverlow {
+    background: #ffffff;
+    border: 1px solid #d32b20;
+}
+
+.colorhigh {
+    background: #ee3124;
+    border: 1px solid #d32b20;
+}
+
+.status-indicator {
+    border-radius: 50% 50%;
+    width: 10px;
+    height: 10px;
+    display: inherit;
+    float: left;
+    margin: 5px 5px 0 0px;
+}
+
+#map-container {
+    padding: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc #ccc #999 #ccc;
+    -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+    -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+    box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+    right: 0px;
+    position: absolute;
+    width: 30%;
+    border-left: 1px solid #d6d6d6;
+    top: 74px;
+    bottom: 0px;
+}
+
+#map {
+    height: 400px;
+}

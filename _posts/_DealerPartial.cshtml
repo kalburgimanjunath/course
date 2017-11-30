@@ -1,0 +1,102 @@
+﻿<div class="ps-dealer-form userdetailform layoutrow scroll-y">
+    <div id="userpanel" data-url="@Url.Action("", "UserConfig")" class="effect8">
+        <form data-validationkey="customer" id="userdetailform" class="Userdetail-form" data-bind="submit: $data.savedata">
+            <div id="editUser" class="row formcontrol" style="display: block;">
+                <div class="pull-left ps-edit-user">
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="customer_Name" for="customer_Name" class="control-label">@Resources.customer_Name</label>
+                        <input type="text" name="customer_Name" id="customer_Name" class="form-control" data-bind="value: $data.Name">
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Firstname" for="firstname" class="control-label">First Name</label>
+                        <input type="text" name="Firstname" id="firstname" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Lastname" for="lastname" class="control-label">Last Name</label>
+                        <input type="text" name="lastname" id="Lastname" class="form-control">
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Email" for="customer_Email" class="control-label dealer-email">@Resources.Email</label>
+                        <input type="email" readonly="readonly" name="customer_Email" id="customer_Email" class="form-control email-dealer" data-bind="value: $data.ContactInfo.EmailAddress">
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Address" for="customer_Address" class="control-label">@Resources.Address</label>
+                        <input type="text" name="customer_Address" id="customer_Address" class="form-control" data-bind="value: $data.ContactInfo.AddressLine1">
+                    </div>
+                    <span class="form-seperator"></span>
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="City" for="customer_City" class="control-label">@Resources.City</label>
+                        <input type="text" name="customer_City" id="customer_City" class="form-control" data-bind="value: $data.ContactInfo.City">
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Regio" for="customer_Region" class="control-label">@Resources.Region</label>
+                        <input type="text" name="customer_Region" id="customer_Region" class="form-control" data-bind="value: $data.ContactInfo.Region">
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Country" for="customer_Country" class="control-label">@Resources.Country</label>
+                        <input type="text" name="customer_Country" id="customer_Country" class="form-control" data-bind="value: $data.ContactInfo.Country">
+                    </div>
+                    <span class="form-seperator"></span>
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Zipcode" for="customer_ZipCode" class="control-label">@Resources.Zipcode</label>
+                        <input type="text" name="customer_ZipCode" id="customer_ZipCode" class="form-control" data-bind="value: $data.ContactInfo.ZipCode">
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Phone" for="customer_Phone" class="control-label">@Resources.Phone</label>
+                        <input type="tel" name="customer_Phone" id="customer_Phone" class="form-control" data-bind="value: $data.ContactInfo.Phone">
+                    </div>
+                    <div class="col-md-4 col-lg-4 form-group">
+                        <label id="Honeywell_ADI_Number" for="bpcsnumber" class="control-label">@Resources.Honeywell_ADI_Number</label>
+                        <input type="text" id="bpcsnumber" name="bpcsnumber" class="form-control" data-bind="value: $data.HoneywellAdiNumber">
+                    </div>
+                    <span class="form-seperator"></span>
+                    <div class="authorizedDealerPgm">
+                        <b class="form-registration-heading">@Resources.FAP_Number</b>
+                        <ul class="dealer_check">
+                            <li class="checkbox">
+                                <label id="Dealer_FAP" class="formControl-checkbox control-label">
+                                    <input class="checkbox" type="checkbox" value="0" data-bind="checked:$data.IsSILVER">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_FAP</legand>
+                            </li>
+                            <li class="checkbox">
+                                <label id="Dealer_CSS" class="formControl-checkbox control-label">
+                                    <input class="checkbox" type="checkbox" value="1" data-bind="checked:$data.IsGOLD">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_CSS</legand>
+                            </li>
+                            <li class="checkbox">
+                                <label id="Dealer_HIS" class="formControl-checkbox control-label">
+                                    <input class="checkbox" type="checkbox" value="2" data-bind="checked:$data.IsPLATINUM">
+                                    <span></span>
+                                </label>
+                                <legand>@Resources.Dealer_HIS</legand>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row borderTop">
+                </div>
+                <div class="row col">
+                    <span class="ui-button-container dealer-partial-button">
+                        @if (Html.HasPermissions(MPCOperatorLevelHierarchy.SystemRoot))
+                        {
+                            <button class="btn btn-default" id="btndelete" data-bind="click: $data.deleteSelectedUser">@Resources.Delete</button>
+                            <input class="btn btn-primary" type="button" id="btnsave" data-bind="click: $data.savedata" value=@Resources.Save />
+                            <input class="btn btn-primary" type="button" id="btnapprove" data-bind="click: $data.approve" value="Approve" />                            
+                        }
+                    </span>
+                </div>
+            </div>
+
+            <span class="errorDetail errorSummary" data-bind="visible: $data.IsError, text: $data.ErrorMessage" />
+        </form>
+    </div>
+</div>

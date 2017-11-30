@@ -1,0 +1,1009 @@
+@color_1: #1792e5;
+@color_2: #202020;
+@color_3: #606060;
+@color_4: #808080;
+@color_5: #FFF;
+@color_6: #303030;
+@color_7: #d0d0d0;
+@color_8: #000;
+@color_9: #fff;
+@color_10: #ddd;
+@color_11: #7EB338;
+@font_family_1: "HoneywellSansWeb-Bold";
+@font_family_2: 'HoneywellSansWeb-Bold';
+@font_family_3: 'HoneywellSansWeb-Medium';
+@background_color_1: none;
+@background_color_2: #a0a0a0;
+@background_color_3: #fff;
+@background_color_4: #f7f7f7;
+@background_color_5: #606060;
+@background_color_6: transparent;
+@border_color_1: #fff;
+
+/*version 1.0.3*/
+/*.people-root .cardlistview #contact-list {
+    position: fixed;
+    width: 25%;
+    top: 191px;
+    overflow-y: auto;
+    bottom: 0;
+    height: auto;
+    border-right: 1px solid #ddd;
+}*/
+/*this is custom fix for checkbox style on People list page and Create New IntrusionGroup from People page*/
+/*.cardlistview #contact-list {
+        max-height: 735px;
+    }
+
+    .peopleoverview .profile, .peopleoverview .access {
+        max-height: 400px;
+    }*/
+/*.peopleoverview .profile, .peopleoverview .access {
+        height: calc(1366px - 898px);
+    }*/
+.carousel-inner.onebyone-carosel {
+	margin: auto;
+	width: 100%;
+}
+.onebyone-carosel {
+	.active.left {
+		left: -33.33%;
+	}
+	.active.right {
+		left: 33.33%;
+	}
+	.next {
+		left: 33.33%;
+	}
+	.prev {
+		left: -33.33%;
+	}
+}
+#myCarousel {
+	.col-md-4 {
+		position: relative;
+		min-height: 1px;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+.carousel-control.right {
+	background-image: none !important;
+	filter: none !important;
+}
+.carousel-control {
+	background-color: @background_color_1;
+	font-size: 1.5em;
+	height: 32px;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0px 0px;
+	width: 32px;
+	-webkit-transition: color .2s;
+	-moz-transition: color .2s;
+	-ms-transition: color .2s;
+	-0-transition: color .2s;
+	transition: color .2s;
+	border-radius: 3px;
+	opacity: 1 !important;
+	&:hover {
+		opacity: 0.8 !important;
+	}
+}
+.carousel-indicators {
+	top: 260px;
+}
+.people-root {
+	.lists {
+		width: 336px;
+		float: left;
+		position: absolute;
+		left: 24%;
+		bottom: 0;
+		top: 0;
+	}
+	input[type='checkbox'] {
+		&:disabled {
+			&+span {
+				background: none !important;
+			}
+		}
+	}
+	.isptabs {
+		.nav {
+			li {
+				a {
+					&:hover {
+						border: none;
+					}
+				}
+			}
+			li.active {
+				a {
+					font-family: @font_family_1 !important;
+					font-size: 14px;
+					color: @color_1;
+					background: transparent;
+					border-bottom: 4px solid #1792e5;
+					padding: 8px 0 4px 0;
+				}
+			}
+		}
+	}
+	.peopleoverview {
+		width: 50%;
+		position: absolute;
+		bottom: 0;
+		top: 0px;
+		padding: 0px;
+		width: calc(76% - 336px);
+		margin: 0px;
+		right: 0px;
+		.isptabs {
+			.nav {
+				li {
+					padding: 0 20px 0 0;
+				}
+			}
+		}
+	}
+	.peopleoverview.isptabs {
+		.tab-header {
+			margin-right: -15px;
+			margin-left: -10px !important;
+		}
+	}
+	.cardlistview {
+		width: 336px;
+		float: left;
+		position: absolute;
+		left: 24%;
+		bottom: 0;
+		top: 0;
+		border-right: 1px solid #e7e7e7;
+		.isppagetitle {
+			font-family: @font_family_2 !important;
+			color: @color_2;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-top: 17px;
+			margin-bottom: 14px;
+		}
+		.pull-right {
+			margin-right: 20px;
+		}
+		.nav.nav-tabs {
+			margin-left: 20px;
+		}
+		.panel.panel-default {
+			border: 0;
+			border-radius: 0 !important;
+			border-top: 1px solid #d0d0d0;
+			border-bottom: 1px solid #d0d0d0;
+		}
+		#contact-list {
+			.ispimage-small {
+				img {
+					min-width: 50px;
+					height: 50px;
+					padding: 0;
+					border-radius: 0;
+				}
+				img[src=""] {
+					background-image: url('../images/icon_sprites_24px-01.svg');
+					display: block;
+					width: 56px;
+					height: 56px;
+					margin-top: 3px;
+					background-size: 1400px;
+					content: "";
+					background-position: -228px -110px;
+					vertical-align: top;
+					z-index: 100;
+				}
+				max-width: 52px;
+				padding-left: 2px;
+			}
+			.checkbox-square {
+				padding-left: 10px;
+				input[type="checkbox"] {
+					margin-top: 0;
+				}
+			}
+		}
+		.name {
+			font-family: @font_family_2 !important;
+			font-size: 16px;
+			text-align: left;
+			color: @color_3;
+			margin-right: 0;
+			display: inline-block;
+			width: 57%;
+			float: left;
+			display: inline-block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.designation {
+			font-family: @font_family_2 !important;
+			font-size: 14px;
+			color: @color_3;
+			float: left;
+			position: absolute;
+			left: 16px;
+		}
+		.employeeid {
+			font-family: @font_family_2 !important;
+			font-size: 14px;
+			color: @color_4;
+			.card {
+				margin-left: 12px;
+			}
+		}
+		.inactive {
+			font-family: @font_family_2 !important;
+			float: left;
+			word-break: initial;
+			font-size: 10px;
+			line-width: 100;
+			line-height: 100%;
+			color: @color_5;
+			display: inline-block;
+			background-color: @background_color_2;
+			text-transform: capitalize;
+			float: left;
+			max-width: 43%;
+			padding: 2px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.c-search {
+			margin: 0;
+			input {
+				&:focus {
+					border: none;
+					box-shadow: none;
+					background-color: @background_color_1;
+				}
+				&:hover {
+					border: none;
+					box-shadow: none;
+					background-color: @background_color_1;
+				}
+			}
+			button {
+				&:focus {
+					border: none;
+					box-shadow: none;
+					background-color: @background_color_1;
+				}
+				border: 0;
+			}
+		}
+		.listcount {
+			background: #f2f2f2;
+			margin-right: 0;
+			padding: 4px 0px 8px 15px;
+		}
+		.ispheadersearch {
+			padding-right: 20px;
+			border-top: 1px solid #d0d0d0;
+			border-bottom: 1px solid #d0d0d0;
+			height: 43px;
+		}
+		.list-group-item {
+			padding: 10px 20px;
+			border-right: 0px;
+			cursor: pointer;
+		}
+	}
+	.profile-pic {
+		margin-top: 24px;
+		left: 30px !important;
+		background: #f2f2f2;
+		padding: 0px;
+		width: 114px;
+		height: 109px;
+		margin-right: 20px;
+		img {
+			max-width: 114px;
+			max-height: 110px;
+			width: 114px;
+			height: 110px;
+			padding: 0;
+			border-radius: 0;
+		}
+		img[src=""] {
+			background-image: url('../images/icon_sprites_24px-01.svg');
+			background-repeat: no-repeat;
+			display: block;
+			width: 114px;
+			height: 110px;
+			background-size: 1200px;
+			content: "";
+			background-position: -512px -63px;
+			vertical-align: top;
+			z-index: 100;
+			padding: 42px;
+			background-clip: content-box;
+			cursor: pointer;
+		}
+		input[type="file"] {
+			background-image: url('../images/icon_sprites_24px-01.svg');
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 0;
+			width: 114px;
+			height: 110px;
+			opacity: 0;
+			background-size: 780px;
+			content: "";
+			vertical-align: top;
+			z-index: 100;
+			padding: 42px;
+			-webkit-appearance: none;
+		}
+	}
+	.img-browse-txt {
+		margin-top: -40px;
+		font-family: @font_family_3 !important;
+		color: @color_3;
+		font-size: 12px;
+	}
+	.addSchedule {
+		.checkbox-square {
+			input[type="checkbox"] {
+				margin-top: 0;
+			}
+		}
+		.checkbox {
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+		}
+	}
+	.viewmode {
+		input {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		textarea {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		input[type="checkbox"] {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		input[type="radio"] {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		select {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		.ispicon_calender {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			background: transparent;
+		}
+		.btn-primary {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			border: none !important;
+		}
+		.ispaddicon {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		.people_card_wrong_icon {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		.profile-pic {
+			input[type="file"] {
+				pointer-events: none;
+			}
+		}
+		.checkbox {
+			pointer-events: none;
+		}
+		.btn-footer {
+			display: none;
+		}
+	}
+	.btn-footer {
+		margin-top: 10px;
+		padding-top: 10px;
+		left: -16px;
+		background-color: @background_color_3;
+		border-color: @border_color_1;
+	}
+	.bold {
+		font-family: @font_family_2 !important;
+		color: @color_6;
+	}
+	.c-search {
+		input {
+			padding-left: 50px;
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_7;
+			border: 0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+	.section-head2 {
+		font-size: 18px;
+		font-family: @font_family_3 !important;
+		color: @color_3;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.section-head1 {
+		font-size: 22px;
+		font-family: @font_family_2 !important;
+		color: @color_6;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 82%;
+	}
+	.card-horizontal-scroller {
+		margin-top: 14px;
+		margin-bottom: 3px;
+		.card {
+			max-width: 160px;
+			padding: 10px 5px;
+			margin-right: 8px;
+			background-color: @background_color_4;
+			font-size: 14px;
+			color: @color_8;
+			font-family: @font_family_2 !important;
+			cursor: pointer;
+			span {
+				background-color: @background_color_5;
+				padding: 2px 10px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			span.carditem {
+				background-color: @background_color_6;
+			}
+		}
+		.card.newCard {
+			background: #D1E9FA;
+			color: @color_9;
+			border: 1px solid #C0C0C0;
+			margin-right: 20px;
+			height: 75px;
+			text-align: center;
+			span {
+				background: none;
+				font-size: 20px;
+				font-weight: 600;
+				vertical-align: middle;
+				display: table;
+				padding: 13px 18px;
+			}
+		}
+		.card.newCard.selected {
+			background: #D1E9FA;
+			color: @color_9;
+			border: 1px solid #C0C0C0;
+			margin-right: 20px;
+			height: 82px;
+			text-align: center;
+		}
+		.card.active {
+			background: #fff;
+			color: @color_9;
+			border: 1px solid #C0C0C0;
+			border-top: 4px solid #7EB338;
+			margin-right: 20px;
+			height: 82px;
+			.carditem.people_access_cardno {
+				color: @color_3;
+			}
+		}
+		.card.inActive {
+			background: #fff;
+			color: @color_9;
+			border: 1px solid #F0F0F0;
+			border-top: 4px solid #D0D0D0;
+			margin-right: 20px;
+			height: 82px;
+		}
+		.card.selected {
+			background: #D1E9FA;
+			color: @color_9;
+			border: 1px solid #8BC9F2;
+			border-top: 4px solid #7EB338;
+			margin-right: 20px;
+			height: 82px;
+		}
+		.card.selected.active {
+			.carditem.people_access_cardno {
+				color: @color_3;
+			}
+		}
+		.card.selected.inActive {
+			.carditem.people_access_cardno {
+				color: @color_6;
+			}
+		}
+	}
+	.checkboxlabel {
+		.checkbox {
+			margin: -5px 0 10px 0;
+		}
+	}
+	.ispbuttongroup {
+		position: absolute;
+		bottom: 16px;
+		padding: 0;
+		padding-top: 10px;
+		border-top: 1px solid #d6d6d6;
+		padding-left: 0px;
+		margin-left: 16px;
+		width: 100%;
+	}
+	.overviewtitle {
+		margin-top: 20px;
+	}
+	.people_activation_date_icon {
+		top: 27px;
+		right: 10px;
+	}
+	.people_expiry_date_icon {
+		top: 27px;
+		right: 25px;
+	}
+	.people_list_sort_icon {
+		background: none !important;
+		border: none !important;
+		&:hover {
+			background: none !important;
+			border: none !important;
+		}
+	}
+	.people_list_search_icon {
+		&:before {
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+	}
+	.people_access_activation_date_icon {
+		right: 10px;
+	}
+	.people_access_expiry_date_icon {
+		right: 22px;
+	}
+	.people_access_carousel_left_arrow_icon {
+		&:before {
+			position: relative;
+			top: 25px;
+		}
+	}
+	.people_access_carousel_right_arrow_icon {
+		&:before {
+			position: relative;
+			top: 25px;
+		}
+	}
+	.people_card_wrong_icon {
+		background: none !important;
+		position: absolute;
+		right: -15px;
+		top: 0;
+	}
+	.people_access_cardno {
+		position: absolute;
+		top: 10px;
+		color: @color_10;
+	}
+	.people_access_cardname {
+		position: absolute;
+		bottom: 6px;
+		border: 1px solid #7EB338;
+		background: #fff !important;
+		padding: 0 5px !important;
+		left: 15px;
+		color: @color_11;
+		font-family: @font_family_2;
+	}
+	.spinner-control {
+		label {
+			margin-bottom: 0;
+		}
+		input[type="checkbox"] {
+			position: relative;
+			bottom: 2px;
+		}
+		span.accessUses {
+			font-weight: normal;
+		}
+	}
+	.firsttimeLandingpage {
+		position: absolute;
+		right: 0px;
+		top: 30%;
+		padding: 0;
+		left: 0;
+		.firsttimepage {
+			padding: 0px;
+			margin: 0px;
+		}
+	}
+	.ispselectdropdown {
+		.isppopup-site {
+			width: calc(100% - 5px);
+			.accordion {
+				li {
+					div {
+						&:hover {
+							background: #e1eff9;
+						}
+					}
+				}
+			}
+		}
+		.isppopup-site.peopleCredentialCardNo {
+			width: calc(100% - 20px);
+		}
+	}
+	.people_access_cardname.inActive {
+		color: @color_8;
+		font-family: @font_family_2;
+	}
+	.peopleCredentialCardNo {
+		ul {
+			width: 100% !important;
+		}
+	}
+	.peopleListDeleteIcon {
+		position: relative;
+		left: 3px;
+	}
+	.intrusionHeader {
+		hr {
+			margin-top: 8px;
+		}
+		h3 {
+			line-height: 1.4em;
+			margin-bottom: 14px;
+		}
+	}
+	#access {
+		.access {
+			margin-top: 8px;
+		}
+		position: absolute;
+		overflow-y: hidden;
+		top: 134px;
+		bottom: 66px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		&:hover {
+			overflow-y: auto;
+		}
+	}
+	.people_access_cardname.InActive {
+		border: 1px solid #d0d0d0;
+		color: @color_3;
+	}
+	.access {
+		.carousel-control.right {
+			background: none;
+		}
+	}
+	.carouselRightIcon {
+		position: relative;
+	}
+	.ispheadersearch {
+		.dropdown-toggle {
+			margin: 0;
+		}
+	}
+	.peopleList_searchIcon {
+		&:before {
+			transform: rotate(90deg);
+		}
+	}
+	.peopleList_SearchInput {
+		position: relative;
+		right: 6px;
+	}
+	.peopleList_sortIcon {
+		position: relative;
+		right: 10px;
+	}
+	.peopleList_recordNos {
+		position: relative;
+		top: 5px;
+		left: 5px;
+	}
+	.peopleList-sortList {
+		margin: -5px 5px 0 0 !important;
+	}
+	.peopleList_sortIconBtn {
+		background: none !important;
+	}
+	.people-delete-icon {
+		position: absolute;
+		right: 20px;
+		top: 22px;
+	}
+	.people-add-icon {
+		position: absolute;
+		right: 47px;
+		top: 23px;
+	}
+	.people-edit-icon {
+		position: absolute;
+		right: 20px;
+		top: 22px;
+	}
+	.people-toggle-icon {
+		position: absolute;
+		right: 20px;
+		top: 80px;
+	}
+	.row {
+		height: 110px;
+	}
+	.listcontainer {
+		position: absolute;
+		top: 133px;
+		bottom: 0px;
+		overflow-y: hidden;
+		width: 100%;
+		margin-bottom: 0;
+		&:hover {
+			overflow-y: auto;
+		}
+		.listStickyHeader {
+			border-top: 0px;
+			text-align: left;
+			border-top: 2px solid #d0d0d0;
+		}
+	}
+	.heading {
+		margin-top: 14px;
+		margin-bottom: 7px;
+	}
+	#profile {
+		position: absolute;
+		overflow-y: hidden;
+		top: 134px;
+		bottom: 66px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		&:hover {
+			overflow-y: auto;
+		}
+	}
+	#additional {
+		position: absolute;
+		overflow-y: hidden;
+		top: 134px;
+		bottom: 66px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		&:hover {
+			overflow-y: auto;
+		}
+	}
+}
+.togglemenu {
+	.people-root {
+		position: absolute;
+		left: 70px;
+		width: 100%;
+		.peopleoverview {
+			width: 69%;
+		}
+		.ispbuttongroup {
+			width: 70%;
+			left: 31%;
+		}
+	}
+}
+.isptabs {
+	.nav {
+		li {
+			a {
+				&:active {
+					border: none;
+				}
+				&:focus {
+					border: none;
+				}
+			}
+		}
+	}
+}
+.peopleoverview {
+	.nav.nav-tabs {
+		position: absolute;
+		top: 85px;
+		left: 152px;
+		min-width: 100%;
+		padding-top: 12px;
+		bottom: 0;
+		height: 49px;
+	}
+}
+.blankview {
+	padding-top: 20%;
+	padding-left: 33%;
+}
+.cardlistview {
+	.rightlistcontent {
+		width: 72%;
+		padding-right: 0px;
+	}
+}
+.viewmode {
+	.people-root {
+		.ispbuttongroup {
+			display: none;
+		}
+	}
+}
+.ispbuttongroup {
+	.btn-group {
+		right: 16px;
+		top: 16px;
+		bottom: 16px;
+	}
+}
+.intrusionListStyle {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	max-height: 150px;
+	ul {
+		list-style-type: none;
+	}
+	li {
+		border: solid 0.01px #f2f2f2;
+		list-style-type: none;
+		height: 35px;
+		cursor: pointer;
+		a {
+			text-decoration: none;
+			width: 100%;
+		}
+	}
+}
+.outerDropdown {
+	list-style-type: none;
+}
+.child {
+	display: none;
+}
+.people_delete {
+	.modal-dialog {
+		background: #fff;
+		width: 700px;
+	}
+	.modal-content {
+		box-shadow: none;
+		border: none;
+	}
+}
+.people_delete.ispmodal {
+	left: 25%;
+	top: 25%;
+}
+people_delete {
+	.modal-header {
+		border-bottom: none !important;
+	}
+}
+.ispmodal.people_delete {
+	.modal-header {
+		padding: 30px 0 0px 0;
+		border-bottom: none;
+		h1 {
+			display: inline-block;
+		}
+	}
+}
+#peoplemgmtPeopleDeleteUser {
+	border-radius: 5px;
+}
+#peoplemgmtPeopleDeleteUserAndCards {
+	border-radius: 5px;
+	margin-right: 8px;
+}
+#peoplemgmtPeopleDeleteCancel {
+	background: #808080;
+	border: none;
+	border-radius: 5px;
+}
+#deletepeople {
+	.modal-footer {
+		padding: 16px 20px 75px;
+	}
+}
+#peoplemgmtCarosel {
+	margin-left: 25px;
+}
+@media screen and (min-width: 1920px) {
+	.people-root {
+		.btn-footer {
+			.btn-group.col-md-offset-4 {
+				left: 64px;
+			}
+		}
+		.cardlistview {
+			.name {
+				max-width: 217px;
+			}
+		}
+	}
+}
+@monIE:"screen\0";
+@media @monIE{
+	.people-root {
+		.cardlistview {
+			.c-search {
+				input {
+					padding-top: 10px;
+				}
+			}
+			#contact-list {
+				.ispimage-small {
+					img {
+						height: 50px !important;
+					}
+				}
+			}
+		}
+		.ispicon.inverse {
+			&::before {
+				width: 20px;
+				left: 24px;
+				top: 43px;
+			}
+		}
+		.peopleoverview {
+			.profile-pic {
+				img[src=''] {
+					background-position: -150px -116px;
+				}
+			}
+		}
+	}
+}

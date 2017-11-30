@@ -1,0 +1,1064 @@
+﻿
+.visual_management_root .cardlistview{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.visual_management_root .cardlistview .panel-title>span{
+    font-family: 'HoneywellSansWeb-Medium';
+    color: #606060;
+    font-size: 14px;
+}
+
+.visual_management_root .cardlistview .main_tab_list, 
+.visual_management_root .cardlistview .sub_content {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.visual_management_root .cardlistview .site_list {
+    position:absolute;
+    top:40px;
+    bottom:53px;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .tab-content .area_list {
+    position:absolute;
+    top:130px;
+    bottom:90px;
+    left:0;
+    right:0;
+    overflow-y:auto;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom:0;
+    height:98px;
+    border-top: 2px solid rgba(0,0,0,.1);
+    background-color: #ffffff;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table {
+    width: 100%;    
+    margin: 16px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td{
+    width: 50%;
+    border-right:2px solid rgba(0,0,0,.1);
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td:last-child{    
+    border-right:0;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td .arm_btn_bg{
+    position: relative;
+    display:inline-block;
+    width:44px;
+    height:44px;
+    border-radius:27px;
+    background-color:#606060;
+    cursor: pointer;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td .ispicon {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    pointer-events: none;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td span{
+    color: #808080;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td.disable span{
+    color: #e0e0e0;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td.disable .arm_btn_bg {
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td.disable .ispicon_vm_armed_small::before{
+    background-position: -524px -236px;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td.disable .ispicon_vm_disarmed_small::before{
+    background-position: -556px -236px;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns table tr td.disable .ispicon_vm_reset::before{
+    background-position: -588px -460px;
+}
+
+.ispicon_vm_reset::before {
+    background-position: -588px -428px;
+}
+
+.visual_management_root .cardlistview .disarmed {
+    color:#ffffff;
+    background-color:#7eb338;
+    padding:15px;
+    height:90px;
+}
+
+.visual_management_root .cardlistview .armed {
+    color:#ffffff;
+    background-color:#ee3124;
+    padding:15px;
+    height:90px;
+}
+
+.visual_management_root .cardlistview .disarmed_not_ready {
+    color:#ffffff;
+    background-color:#f58d4d;
+    padding:15px;
+    height:170px;
+}
+
+.visual_management_root .cardlistview .disarmed_not_ready_show~.area_list {
+    top:210px;
+}
+
+.visual_management_root .cardlistview .disarmed_not_ready .btn_check_zones {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+}
+
+.visual_management_root .cardlistview .bypass_all_label {   
+    height: 62px;   
+    color:#808080;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.visual_management_root .cardlistview .bypass_all_label .h3 {
+    color:#808080;
+}
+
+.visual_management_root .cardlistview .tab-content .door_list,
+.visual_management_root .cardlistview .tab-content .camera_list {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .main_nav_page {
+    position:absolute;
+    top:58px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .sub_content .sub_dev_tab_list,
+.visual_management_root .cardlistview .sub_content .zone_status_area
+ {
+    position:absolute;
+    top:54px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .sub_content .sub_zone_tab_list
+ {
+    position:absolute;
+    top:78px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .sub_content .sub_zone_tab_list .tab-content
+ {    
+    overflow-y:visible;
+}
+
+.visual_management_root .cardlistview .sub_content .zone_list_panel {
+    position:absolute;
+    top:102px;
+    bottom: 118px;
+    margin-bottom: 0;
+    left:0;
+    right:0;
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .sub_content .sub_door_tab_list {
+    position:absolute;
+    top:79px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .nav-tabs{
+    border-bottom: 1px solid #d0d0d0 !important;
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.visual_management_root .cardlistview .tab-content{
+    position: absolute;  
+    top: 40px;
+    bottom: 0;  
+    right: 0;
+    left: 0;   
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .tab-content.device{
+    position: absolute;  
+    top: 40px;
+    bottom: 0;  
+    right: 0;
+    left: 0;   
+    overflow-y: visible;
+}
+
+.visual_management_root .cardlistview .sub_content{
+    padding:0;
+}
+
+.visual_management_root .cardlistview .sub_content_head {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e7e7e7;
+    height: 84px;
+}
+
+.visual_management_root .cardlistview .sub_content .title {
+    min-width: 0;
+}
+
+.visual_management_root .cardlistview .name{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.visual_management_root .cardlistview .description{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #606060;
+}
+
+.visual_management_root .cardlistview .description.offline,
+.visual_management_root .cardlistview .description.blocked{
+    color: #EE3124;
+}
+
+.visual_management_root .cardlistview .switch {
+    width:50px;
+}
+
+.visual_management_root .cardlistview .panel {
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+.visual_management_root .cardlistview .panel + .panel {
+    margin-top:0;
+}
+.visual_management_root .cardlistview .panel:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.visual_management_root .cardlistview .tab-content .panel .panel-heading {
+    cursor: pointer;
+}
+
+.visual_management_root .cardlistview .panel-body {
+    padding:0;
+}
+
+.visual_management_root .cardlistview .panel-body .list-group {
+    margin-bottom:0;
+}
+
+.visual_management_root .cardlistview .panel-body .list-group .list-group-item.critical{
+    border-left: 4px solid #ee3124;
+}
+
+.visual_management_root .cardlistview .panel-body .list-group .list-group-item.major{
+    border-left: 4px solid #f37021;
+}
+
+.visual_management_root .cardlistview .zone_status_area{
+    border-top: 1px solid #e7e7e7;
+}
+
+.visual_management_root .cardlistview .zone_status_area>li{
+    margin: 15px 20px 15px 30px;
+    list-style: none;
+    height: 42px;
+}
+.visual_management_root .cardlistview .door_info .no_alarms {
+    height:172px;
+    font-family:HoneywellSans-Medium;
+    font-size:24px;
+    color:#909090;
+    text-align: center;
+    line-height: 172px;
+}
+
+.visual_management_root .cardlistview .door_info .associate_camera {
+    margin:15px;
+}
+
+.visual_management_root .cardlistview .door_info #recorded_clips:last-child tr td{
+    border-bottom: 1px solid #ddd;
+}
+
+.visual_management_root .cardlistview .table tr:first-child td{
+    border-top:0;
+}
+
+.visual_management_root .cardlistview .camera_video_box_small {
+    height:62px;
+    background-color:#f2f2f2;
+    text-align:center;
+    display: table;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.visual_management_root .cardlistview .camera_video_box_small .ispicon_play_clip {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.visual_management_root .cardlistview .camera_video_box {
+    margin-top: 15px;
+    height:180px;
+    background-color:#f2f2f2;
+    display: table;
+    width: 100%;
+    text-align:center;
+}
+
+.visual_management_root .cardlistview .camera_video_box .ispicon_play_clip {
+    display: table-cell;
+    vertical-align: middle;
+    zoom:2;
+}
+
+.visual_management_root .cardlistview .seperator{
+    border-top: 1px solid #ddd;
+    height:1px;
+}
+
+.visual_management_root .camera_online{
+    background-color:#99c264;
+    padding:3px 5px;
+}
+
+.visual_management_root .camera_recorded_clips .dropdown-menu{
+    width:400px;
+}
+
+.visual_management_root .visual_map{
+    position: absolute;
+    right:0;
+    top: 0;
+    bottom: 0;
+    padding:0;
+}
+
+.visual_management_root .visual_map .visual_map_wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    overflow: hidden;
+}
+
+.visual_management_root .visual_map .visual_map_wrapper .sync_list_btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;    
+}                                    
+
+.visual_map_wrapper .visual_map_img{
+    max-width: 100%;
+}
+
+.visual_map_wrapper .label_vm {
+    position:absolute;
+    height:32px;
+    background-color:#1792e5;
+    padding:5px;
+    white-space: nowrap;
+}
+
+.visual_map_wrapper .label_vm_txt {
+    color:#fff;
+    white-space: nowrap;
+    font-size:14px;
+}                               
+
+.visual_map_tools_wrapper{
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+}
+
+.visual_map_tools_wrapper .reset_btn{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    float: left;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns .ispicon_accMinus {
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+    
+
+/*  floor image viewer map style  */
+.visual_map_floorImgView {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 37px;
+    border-top: 1px solid #d0d0d0;
+    text-align: center;
+    /* margin: 20px 10% 20px 10%; */
+    margin-right: 5px;
+    background-color: #f5f5f5;
+}
+
+.floorplanShowAlarmsMode .vm_map_item .ispicon_vmitem.ispicon_vmgreen,
+.floorplanShowAlarmsMode .vm_map_item .ispicon_vmitem.ispicon_vmgray
+{
+     display: none;
+}
+
+.visual_map_wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    overflow: hidden;
+    /* margin: 20px 10% 20px 10%; */
+}
+
+.visual_map_wrapper .vm_map_item {
+    font-size: .75em;
+    position: absolute;    
+    margin-left: -20px;
+    margin-top: -36px;  
+    transform-origin: 20px 36px 0px; 
+}
+
+.visual_map_wrapper .vm_map_item:hover {   
+    margin-left: -24px;
+    margin-top: -48px; 
+    transform-origin: 24px 48px 0px;
+}
+
+.visual_map_wrapper .vm_map_item:hover .ispicon_vmitem{   
+    top:12px;
+    left:12px;  
+}
+
+.ispicon_vmitem {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+
+.visual-map-img {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 100%;
+}
+
+.fpImgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+}
+
+.fpImgDetails {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    float: left;
+    position: relative;
+}
+
+.alarm_small_count {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 8px;
+    top: -6px;
+    right: -6px;
+}
+
+    .alarm_small_count span {
+        color: white;
+    }
+
+/*  floor image viewer map style  */
+
+
+/*  floor image viewer map device button style  */
+.ispicon_vm_executive::before {
+    background-position: -556px -363px;
+}
+
+.ispicon_vm_fire::before {
+    background-position: -524px -364px;
+}
+
+.ispicon_vmred::before {
+    background-position: -75px -549px;
+    position: relative;
+    width:38px;
+    height:42px;  
+}
+
+.ispicon_vmred:hover::before {
+    background-position: -248px -542px;    
+    width:46px;
+    height:56px;
+}
+
+.ispicon_vmyellow::before {
+    background-position: -11px -549px;
+    position: relative;
+    width:38px;
+    height:42px;        
+}
+
+.ispicon_vmyellow:hover::before {
+    background-position: -192px -542px;    
+    width:46px;
+    height:56px;
+}
+
+.ispicon_vmgreen::before {
+    background-position: -139px -549px;
+    position: relative;
+    width:38px;
+    height:42px;  
+}
+
+.ispicon_vmgreen:hover::before {
+    background-position: -299px -542px;
+    width:46px;
+    height:56px;
+}
+
+.ispicon_vmgray::before {
+    background-position: -250px -643px;
+    position: relative;
+    width:38px;
+    height:42px;  
+}
+
+.ispicon_vmgray:hover::before {
+    background-position: -363px -541px;
+    width:46px;
+    height:56px;
+}
+
+.ispicon_vmcamera::before {
+    background-position: -331px -428px;    
+}
+
+.ispicon_vmdoor::before {
+    background-position: -235px -396px;
+}
+
+.ispicon_vmzone::before {
+    background-position: -1169px -171px;
+}
+
+.ispicon_vmoutput::before {
+    background-position: -267px -396px;
+}
+/*  floor image viewer map device button style  */
+
+.ispicon_vm_disarmed::before {
+    background-position: -556px -364px;
+    zoom:2;
+}
+
+.ispicon_vm_armed::before {
+    background-position: -524px -364px;
+    height:24px;
+    zoom:2;
+}
+
+
+.visual_management_root .device_info .major_label {
+    display:inline-block;
+    background-color:#f47e37;
+    color:#fff;
+    font-size:14px;
+}
+
+.visual_management_root .device_info .note_input {
+    border:0;
+}
+
+.visual_management_root .device_info .btn_actions {
+    background:transparent;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;    
+}
+
+.visual_map_tools_wrapper{
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+}
+
+.visual_map_tools_wrapper .reset_btn{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    float: left;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns .ispicon_accMinus {
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+    
+.visual_management_root .white {
+    color:white;
+}
+
+.ispicon_vm_armedDefault::before {
+    background-position: -524px -236px;
+}
+
+.ispicon_vm_armedModerate::before {
+    background-position: -524px -332px;
+}
+
+.ispicon_vm_armedMajor::before {
+    background-position: -524px -300px;
+}
+
+.ispicon_vm_armedCritical::before {
+    background-position: -524px -268px;
+}
+
+.ispicon_vm_disarmedDefault::before {
+    background-position: -556px -236px;
+}
+
+.ispicon_vm_disarmedModerate::before {
+    background-position: -556px -332px;
+}
+
+.ispicon_vm_disarmedCritical::before {
+    background-position: -556px -268px;
+}
+
+.ispicon_vm_disarmedMajor::before {
+    background-position: -556px -300px;
+}
+
+.ispicon_vm_disarmedNormal::before {
+    background-position: -556px -396px;
+}
+
+.alarm_sign {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 4px;
+} 
+
+
+.vm_modal .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vm_modal .vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.vm_modal .modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    border-radius:0;
+}
+
+.vm_camera_video_modal .modal-dialog {
+    width:900px;
+}
+
+.vm_camera_video_modal .video_box {
+    width:827px;
+    height:450px;
+    margin:0 auto;
+    background-color: #f2f2f2;
+    display:table;
+    text-align: center;
+    position: relative;
+}
+
+.vm_camera_video_modal .video_box .ispicon_play_clip {
+    display: table-cell;
+    vertical-align: middle;
+    zoom:3;
+}
+
+.vm_camera_video_modal .playerwrapper .playercontainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.vm_camera_video_modal .playerwrapper .video_cell .ispicon_viewerremovesalvo {
+   position: absolute;
+   right: 0;
+}
+
+.vm_camera_video_modal .video-play {
+    position: absolute;
+    top: 43%;
+    left: 45%;
+}
+
+.ispicon_DoorLocked::before {
+    background-position: -876px -364px;
+}
+
+.ispicon_DoorBlocked::before {
+    background-position: -876px -396px;
+}
+
+.ispicon_vmdoor_locked::before {
+    background-position: -878px -428px;
+}
+
+.ispicon_vmdoor_unlocked::before {
+    background-position: -235px -396px;
+}
+
+.ispicon_vmdoor_offline::before {
+    background-position: -428px -460px;
+}
+
+.ispicon_zone_in_faulty::before,
+.ispicon_Door_offline::before{
+    background-position: -428px -428px;
+}
+
+.alarm_sign_site_icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    color: white;    
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 10px;
+    top: -5px;
+    right: 0;
+}
+
+.alarm_sign_site_icon.critical {
+    background-color: #EE3124;
+}
+
+.alarm_sign_site_icon.major {
+    background-color: #F37021;
+}
+
+.visual_management_root .visual_map_wrapper .show_alarms {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0 10px;
+    background-color: #ffffff;
+    white-space: nowrap;
+    width: 135px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    border: 1px solid rgba(0, 0, 0, .175);
+    z-index:100;
+}
+
+.ispicon_vm_Area_green::before {
+    background-position: -201px -713px;
+    position: relative;
+    width:41px;
+    height:42px;  
+}
+
+.ispicon_vm_Area_green:hover::before {
+    background-position: -150px -707px;
+    width:45px;
+    height:56px;
+}
+
+.ispicon_vm_disarmed_small::before {
+    background-position: -556px -364px;
+}
+
+.ispicon_vm_Area_red::before {
+    background-position: -310px -713px;
+    position: relative;
+    width:41px;
+    height:42px; 
+}
+
+.ispicon_vm_Area_red:hover::before {
+    background-position: -259px -707px;
+    width:45px;
+    height:56px;
+}
+
+.ispicon_vm_armed_small::before {
+    background-position: -524px -364px;
+}
+
+.visual_management_root input[type="checkbox"].disabled {
+    background-position:-9px -384px;
+}
+
+.visual_management_root input[type="checkbox"].disabled:checked {
+    background-position:-9px -438px;
+}
+
+.visual_management_root .list-group .list-group-item input.disabled{
+    pointer-events:none;
+}
+
+.vm_acknowledge_alarm_mode .modal-dialog .modal-header,
+.vm_area_confirm_mode .modal-dialog .modal-header {
+    margin: 20px;
+    border-bottom: 0;
+    padding: 0;
+}
+
+.vm_acknowledge_alarm_mode .modal-dialog .modal-body, 
+.vm_area_confirm_mode .modal-dialog .modal-body {
+    margin: 0 20px 20px 20px;
+    padding: 0;
+}
+
+.vm_acknowledge_alarm_mode .modal-dialog textarea {
+    width:558px;
+    height:56px;
+    overflow-y:auto;
+}
+
+.vm_area_confirm_mode .panel {
+    border:none;
+}
+
+.vm_area_confirm_mode .panel .list-group.confirm_bypass {
+    max-height:252px;
+}
+
+.vm_area_confirm_mode .panel-group {
+    max-height:414px;
+}
+
+.vm_area_confirm_mode .panel-group .panel {
+    box-shadow:none;
+}
+
+.vm_area_confirm_mode .panel-group .panel .list-group .list-group-item:last-child{
+   border-bottom:none;
+}
+
+.vm_area_confirm_mode .panel-group .panel:last-child .list-group .list-group-item:last-child{
+   border-bottom:1px solid #ddd;
+}
+
+.ispicon_vm_Area_orange::before {
+    background-position: -94px -713px;
+    position: relative;
+    width:42px;
+    height:42px; 
+}
+
+.ispicon_vm_Area_orange:hover::before {
+    background-position: -43px -707px;
+    width:46px;
+    height:56px;
+}
+.visual_map_wrapper .vmItem_zoom
+{
+    margin-left: -24px;
+    margin-top: -48px; 
+    transform-origin: 24px 48px 0px;
+}
+
+.vmItem_zoom .ispicon_vm_Area_orange::before
+{
+    background-position: -43px -707px;
+    width:46px;
+    height:56px;
+}
+
+.vmItem_zoom .ispicon_vmitem{   
+    top:12px;
+    left:12px;  
+}
+
+
+.vmItem_zoom .ispicon_vmred::before {
+    background-position: -248px -542px;    
+    width:46px;
+    height:56px;
+}
+.vmItem_zoom .ispicon_vmyellow::before {
+    background-position: -192px -542px;    
+    width:46px;
+    height:56px;
+}
+.vmItem_zoom .ispicon_vmgreen::before {
+    background-position: -299px -542px;
+    width:46px;
+    height:56px;
+}
+.vmItem_zoom .ispicon_vmgray::before {
+    background-position: -363px -541px;
+    width:46px;
+    height:56px;
+}
+.vmItem_zoom .ispicon_vm_Area_green::before {
+    background-position: -150px -707px;
+    width:45px;
+    height:56px;
+}
+.vmItem_zoom .ispicon_vm_Area_red::before {
+    background-position: -259px -707px;
+    width:45px;
+    height:56px;
+}
+
+.visual_management_root .cardlistview .tab-content .arm_btns.one table tr td{
+    width: 100%;
+}
+
+/* for beta */
+.visual_management_root #doorDetails-overview{
+    visibility: hidden !important;
+}
+
+.visual_management_root .areastatus-summary {
+    visibility: hidden !important;
+}
+
+.visual_management_root .ispheadersearch {
+    visibility: hidden !important;
+}
+
+.visual_management_root .cardlistview .tab-content .area_list input[type="checkbox"]{
+    visibility: hidden !important;
+}
+
+.visual_management_root .cardlistview .tab-content .door_list .ispicon_arrow {
+    visibility: hidden !important;
+}
+
+.visual_management_root .cardlistview .tab-content #Areas .arm_btns {
+     visibility: hidden !important;
+}
+
+.visual_management_root .cardlistview .tab-content .area_list {
+    top: 0 !important; 
+    bottom: 0 !important; 
+}
+
+.visual_management_root .cardlistview .tab-content .camera_list,
+.visual_management_root .cardlistview .tab-content .door_list {
+     top: 0 !important; 
+}
+
+.visual_management_root .visual_map_floorImgView .show_alarms {
+    visibility: hidden !important;
+}
+.visual_management_root .cardlistview .sub_content .zone_list_panel {
+    top: 0 !important; 
+    bottom: 98px !important;
+}
+.visual_management_root .cardlistview .sub_content .zone_list_panel #acknoledgealarm_button {
+    visibility: hidden !important;
+}
+
+.visual_management_root #vm_zone_arm_modal #armstay_button,
+.visual_management_root #vm_zone_arm_modal #armmax_button {
+    display: none;
+}
+
+/* for beta */

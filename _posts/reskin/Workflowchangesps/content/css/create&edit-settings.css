@@ -1,0 +1,589 @@
+.dahua-create-edit body {
+    padding: 0px;
+    overflow: hidden;
+}
+
+.dahua-create-edit .main_container {
+    background: #fff;
+    height: calc(100% - 60px);
+    margin-top: 60px !important;
+}
+
+.dahua-create-edit .mpc .btn {
+    margin: 0;
+}
+
+.dahua-create-edit .mpc .config-rtl {
+    padding: 0px;
+}
+
+.dahua-create-edit .mpc .config-lft {
+    border-right: #e7e7e7 solid 1px;
+    overflow: auto;
+    padding: 0px;
+}
+
+
+/*footer*/
+
+.dahua-create-edit .mpc .padding-sections {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dahua-create-edit .mpc .footer {
+    position: fixed;
+    height: 64px;
+    background-color: #ffffff;
+    bottom: 0;
+    border-top: #e7e7e7 1px solid;
+    width: calc(100% - 340px);
+}
+
+.dahua-create-edit .mpc div.footer-button {
+    padding: 16px 16px 0 0;
+}
+
+.dahua-create-edit .mpc .footer .footer-button .btn:last-child {
+    margin-right: 10px !important;
+}
+
+.dahua-create-edit .mpc.ppl-list {
+    overflow: auto;
+}
+
+
+/*
+
+.dahua-create-edit .mpc .scroll-rtl,
+.dahua-create-edit .mpc .scroll-lft {
+    padding-bottom: 20px;
+}
+*/
+
+.dahua-create-edit .mpc .scroll-rtl form {
+    padding-bottom: 50px;
+}
+
+.dahua-create-edit .mpc .scroll-lft form {
+    padding-bottom: 10px;
+}
+
+.dahua-create-edit .mpc div.sett-video {
+    padding-bottom: 0;
+    position: relative;
+}
+
+.dahua-create-edit .mpc video.video {
+    width: 100%;
+}
+
+.dahua-create-edit .mpc .video--wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dahua-create-edit .mpc .video--wrapper:hover {
+    cursor: pointer;
+}
+
+.dahua-create-edit .mpc div.playpause {
+    position: absolute;
+    left: 47.5%;
+    top: 46%;
+    /* bottom: 0%; */
+    height: 46px;
+    width: 46px;
+    background: url(../../images/play.png) no-repeat center center;
+    background-size: 46px 46px;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .dahua-create-edit .mpc div.playpause {
+        position: relative;
+        left: 73px;
+        right: 0;
+        top: -104px;
+        bottom: 0%;
+        height: 46px;
+        width: 46px;
+        background: url(../../images/play.png) no-repeat center center;
+        background-size: 46px 46px;
+    }
+}
+
+
+/*
+div.playpause:before {
+    background: url("../../images/play.png") no-repeat center center;
+    background-size: 46px 46px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+}
+
+div.playpause:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(135deg, #fcd200 0%, #f4b31a 16%, #e07518 37%, #ea3919 64%, #ea3919 64%, #ea3919 65%, #d300db 100%);
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+}
+*/
+
+.dahua-create-edit .mpc .video-pre {
+    width: 43%;
+    padding-bottom: 4px;
+}
+
+.dahua-create-edit .mpc hr {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.dahua-create-edit .mpc .spinner-control .ui-widget input,
+.dahua-create-edit .mpc .spinner-control .ui-widget select,
+.dahua-create-edit .mpc .spinner-control .ui-widget textarea,
+.dahua-create-edit .mpc .spinner-control .ui-widget button {
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    /* border: none; */
+    color: #0889C5;
+    margin-top: 0px !important;
+    padding: 0px;
+    /* margin-right: 43px; */
+}
+
+.dahua-create-edit .mpc .spinner-control input[type=number] {
+    padding-left: 8px !important;
+}
+
+.dahua-create-edit .mpc .spinner-control .ui-spinner-input {
+    /* border: none; */
+    /* background: none; */
+    color: #0889C5;
+    padding: 0;
+    margin: 0 0;
+    vertical-align: middle;
+    /* margin-left: .4em; */
+    /* margin-right: 22px; */
+}
+
+.spinner-control .ui-spinner-input {
+    /* border: none; */
+    /* background: none; */
+    color: #0889C5;
+    padding: 0;
+    margin: auto;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dahua-create-edit .mpc .spinner-control .ui-widget input,
+.dahua-create-edit .mpc .spinner-control .ui-widget select,
+.dahua-create-edit .mpc .spinner-control .ui-widget textarea,
+.dahua-create-edit .mpc .spinner-control .ui-widget button {
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    border: 1px solid #d0d0d0;
+    color: #606060;
+    margin-top: 0px !important;
+    padding: 7px 12px;
+    margin-right: auto;
+}
+
+.spinner-control input[type=number],
+.ui-spinner {
+    width: 100%;
+}
+
+.spinner-control .ui-spinner-button {
+    width: 16px;
+    height: 50%;
+    font-size: .5em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    cursor: default;
+    display: block;
+    overflow: hidden;
+    right: 2px;
+}
+
+.spinner-control .ui-spinner .ui-icon {
+    position: absolute;
+    margin-top: -2px;
+    left: -2px;
+}
+
+.spinner-control .ui-widget-content {
+    /* border: 1px solid #dddddd; */
+    /* background: #eeeeee url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x; */
+    color: #333333;
+    margin-top: 0;
+    /* margin-left: 8px; */
+}
+
+.spinner-control .ui-spinner .ui-spinner-down {
+    top: 10px;
+    position: absolute;
+    height: 28px;
+}
+
+.spinner-control .ui-spinner-up {
+    top: 0;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-top,
+.spinner-control .ui-corner-left,
+.spinner-control .ui-corner-tl {
+    border-top-left-radius: 0px;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-top,
+.spinner-control .ui-corner-right,
+.spinner-control .ui-corner-tr {
+    border-top-right-radius: 0px;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-bottom,
+.spinner-control .ui-corner-left,
+.spinner-control .ui-corner-bl {
+    border-bottom-left-radius: 0;
+}
+
+.spinner-control .ui-corner-all,
+.spinner-control .ui-corner-bottom,
+.spinner-control .ui-corner-right,
+.spinner-control .ui-corner-br {
+    border-bottom-right-radius: 0;
+}
+
+.dahua-create-edit .mpc .rule-alarm-span {
+    cursor: pointer;
+    left: -7px;
+    position: absolute;
+    top: -1px;
+}
+
+.dahua-create-edit .mpc .checkbox legand {
+    bottom: 2px;
+    color: #606060;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-weight: normal;
+    position: relative;
+}
+
+.view_mode .dahua-create-edit .mpc .checkbox legand {
+    cursor: none !important;
+}
+
+.dahua-create-edit .mpc .formControl-checkbox {
+    border-style: none;
+    color: #6F7074;
+    font-size: 13px;
+    margin: 0;
+    /* position: absolute; */
+    position: relative;
+    width: auto;
+    top: 8px !important;
+    /* top: 0px !important; */
+    font-family: Open Sans Regular;
+}
+
+.dahua-create-edit .mpc .checkbox-form-control {
+    padding: 0 0 20px 9px !important;
+}
+
+.dahua-create-edit .mpc h2.form-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #303030;
+    padding-bottom: 5px !important;
+}
+
+.dahua-create-edit .mpc label.label-heading {
+    padding-top: 15px;
+    font-weight: normal;
+    color: #606060;
+}
+
+.dahua-create-edit .mpc .sett-video {
+    padding-top: 20px;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.dahua-create-edit .mpc .scroll_shadow {
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.2);
+}
+
+.dahua-create-edit .mpc ul.nav-tabs.pw_tabs {
+    padding: 17px 17px 0px 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.dahua-create-edit .mpc .nav-tabs.pw_tabs {
+    border: none;
+}
+
+.dahua-create-edit .mpc .ppl_main_tab {
+    height: 52px;
+}
+
+.dahua-create-edit .mpc ul.nav-tabs.pw_tabs {
+    padding: 17px 17px 0px 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.dahua-create-edit .mpc .nav-tabs.pw_tabs {
+    border: none;
+}
+
+.dahua-create-edit .mpc .nav.nav-tabs.pw_tabs li {
+    margin: 0 20px 0 0;
+}
+
+.dahua-create-edit .mpc .nav.nav-tabs.pw_tabs li.active a {
+    background: none;
+    border: none;
+    color: #1792e5;
+    border-bottom: 4px solid #1792e5;
+}
+
+.dahua-create-edit .mpc .nav.nav-tabs.pw_tabs li a {
+    border-bottom: 2px solid transparent;
+}
+
+.dahua-create-edit .mpc .people_group {
+    width: 340px;
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+}
+
+.dahua-create-edit .mpc .people_group_right {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+}
+
+.dahua-create-edit .mpc .people_title {
+    position: relative;
+}
+
+.dahua-create-edit .mpc .video-button-btm {
+    margin-top: 13px;
+}
+
+@media only screen and (min-width: 1900px) {
+    .dahua-create-edit .mpc .video-button-btm {
+        margin-top: 13px;
+    }
+}
+
+.dahua-create-edit .mpc .field.form-group.timeConditionField.spinner-control {
+    margin-top: -2px;
+}
+
+.dahua-create-edit .mpc .switch_btn input[type="radio"],
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+    position: absolute !important;
+    z-index: -1;
+}
+
+.dahua-create-edit .mpc .switch_btn input[type='checkbox']:checked + label {
+    background: #90ba51;
+}
+
+.dahua-create-edit .mpc .switch_btn label {
+    text-indent: -999px;
+    margin: 0;
+    width: 36px;
+    height: 20px;
+    background: #e5e5e5;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dahua-create-edit .mpc .switch_btn input[type='checkbox']:checked + label:after {
+    left: 17px;
+    border-color: #799d43;
+}
+
+.dahua-create-edit .mpc .switch_btn label:after {
+    content: ' ';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: block;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    box-shadow: 1px 1px 4px rgba(221, 221, 221, 0.5);
+}
+
+.dahua-create-edit .mpc .switch_options {
+    display: inline-block;
+    border: 1px solid #1792e5;
+    margin-bottom: -5px;
+}
+
+.dahua-create-edit .mpc .switch_options span {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #1792e5;
+    line-height: 1;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fff;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    height: 26px;
+    line-height: 30px;
+}
+
+.dahua-create-edit .mpc .switch_options span.selected {
+    color: #fff;
+    border-color: #fff;
+    background: #1792e5;
+}
+
+.view_mode input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+.view_mode input[type="text"]::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.view_mode input[type="text"]::-moz-placeholder {
+    color: #ccc;
+}
+
+.view_mode input[type="text"]::-ms-input-placeholder {
+    color: #ccc;
+}
+
+.dahua-create-edit .mpc .nofooter .btn-primary,
+.view_mode .btn-primary {
+    color: #fff;
+    background-color: #8bc9f2;
+    border-color: #8bc9f2;
+    border-radius: 0;
+}
+
+.dahua-create-edit .mpc .view_mode .spinner-control .ui-widget input {
+    border: 1px solid #eeeeee;
+}
+
+.dahua-create-edit .mpc .nofooter .btn-default,
+.dahua-create-edit .mpc.view_mode .btn-default,
+.dahua-create-edit .mpc.view_mode button,
+.view_mode .btn-default {
+    background-color: #ffffff !important;
+    border-color: #e1e1e1 !important;
+    color: #e1e1e1 !important;
+}
+
+.view_mode .form-group,
+.view_mode .form-control {
+    color: #cccccc;
+}
+
+.view_mode .form-group,
+.view_mode .form-control,
+.view_mode .nofooter .btn-default,
+.view_mode .nofooter .btn-primary,
+.view_mode .btn-default,
+.view_mode .btn-primary,
+.view_mode .checkbox,
+.view_mode .checkbox legand,
+view_mode .formControl-checkbox span,
+.dahua-create-edit .mpc .viewmode .rule-alarm-span,
+.dahua-create-edit .mpc .view_mode video.video {
+    pointer-events: none;
+}
+.view_mode .checkbox legand{
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.dahua-create-edit .mpc .view_mode .rule-alarm-span {
+    background: url(../../images/sprite_icons_03.png) no-repeat -581px -252px !important;
+}
+
+.spinner-control .ui-icon,
+.spinner-control .ui-widget-content .ui-icon {
+    background-image: url(../../images/Icons_Sprites_MPC.svg) !important;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+
+.spinner-control .ui-icon-triangle-1-n {
+    background-position: -700px -399px;
+    cursor: pointer;
+}
+
+.spinner-control .ui-icon-triangle-1-n:hover {
+    background-position: -670px -401px;
+    height: 5px;
+    top: 7px;
+}
+
+.spinner-control .ui-spinner .ui-icon-triangle-1-s {
+    background-position: -670px -384px;
+    cursor: pointer;
+}
+
+.spinner-control .ui-spinner .ui-icon-triangle-1-s:hover {
+    background-position: -700px -384px;
+    cursor: pointer;
+}
+
+.dahua-create-edit .mpc input[readonly].form-control::-webkit-input-placeholder {
+    color: #707070 !important;
+}
+
+.dahua-create-edit .mpc input[readonly].form-control:-moz-placeholder {
+    color: #707070 !important;
+}
+
+.dahua-create-edit .mpc input[readonly].form-control::-moz-placeholder {
+    color: #707070 !important;
+}
+
+.dahua-create-edit .mpc input[readonly].form-control:-ms-input-placeholder {
+    color: #707070 !important;
+}

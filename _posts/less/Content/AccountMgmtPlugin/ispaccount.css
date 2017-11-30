@@ -1,0 +1,476 @@
+﻿/*version 1.0.1*/
+
+    .accountcontainer .leftlist {
+        padding-left: 15;
+        margin-left: -15px;
+        padding-right: 0;
+    }
+
+        .accountcontainer .leftlist h6 {
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            font-size: 14px;
+            color: #1792e5;
+            padding: 4px 4px 4px 10px;
+        }
+
+        .accountcontainer .leftlist .panel-title {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 22px;
+            color: #303030;
+            /*margin-left: 24px;*/
+            text-transform:capitalize;
+        }
+
+        /*.accountcontainer .leftlist .panel {
+            border-radius: 0;
+            height: 100%;
+            position: fixed;
+            width: 24%;
+            border-left: 0px solid #e7e7e7;
+            box-shadow: 2px 0px 10px 0 #e7e7e7;
+        }*/
+
+            .accountcontainer .leftlist .panel ul li a.list-group-item {
+                /*height: 44px;*/
+                border-radius: 0;
+                font-family: 'HoneywellSansWeb-Medium' !important;
+                color: #606060;
+                font-size: 14px;
+                padding: 12px 24px;
+            }
+
+                .accountcontainer .leftlist .panel ul li.list-group-item.active, .accountcontainer .leftlist .panel ul li.list-group-item.active:hover, .accountcontainer .leftlist .panel ul li.list-group-item.active:focus, .accountcontainer .leftlist .panel ul li a.list-group-item:hover, .accountcontainer .leftlist .panel ul li a.list-group-item:focus {
+                    background-color: rgba(185,221,243,.3);
+                    color: #303030;
+                }
+
+
+
+            .accountcontainer .leftlist .panel ul.dropdown-menu {
+                position: relative;
+                background: initial;
+                box-shadow: none;
+                border: 0;
+                width: 100%;
+                padding: 0;
+               /* margin-bottom:10px; */
+            }
+
+                
+
+                    .accountcontainer .leftlist .panel ul.dropdown-menu li a {
+                        padding-left: 24px;
+                    }
+
+
+        /*.accountcontainer .leftlist .panel-heading + .list-group li {
+            list-style-type: none;
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            color: #606060;
+            font-size: 14px;
+            border: 1px solid #e7e7e7;
+        }*/
+
+            .accountcontainer .leftlist .panel-heading + .list-group li .ispicon {
+                margin-right: 8px;
+            }
+
+        .accountcontainer .leftlist .panel-heading {
+            background: #fff;
+        }
+
+    .accountcontainer .overview {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        .accountcontainer .overview .isppagetitle {
+            padding-left: 24px;
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            color: #202020;
+        }
+
+        .accountcontainer .overview h3 {
+            padding-left: 0;
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            color: #202020;
+        }
+
+        .accountcontainer .overview .content {
+            padding: 0 10px;
+            /*margin-left: -15px !important;*/
+            background: #f4f4f4;
+            padding-right: 24px;
+            /*box-shadow: 0 -1px 0 0 #d6d6d6;*/
+            /*position: absolute;*/
+            bottom: 0;
+            /*top: 10px;*/
+        }
+
+
+
+    .accountcontainer .content .panel-info.white > .panel-heading {
+        background: #fff;
+        border: 0;
+    }
+
+    .accountcontainer .content .panel-info.white.accountdetails > .panel-body {
+        padding: 0px;
+    }
+
+    .accountcontainer .content .panel-info.white > .panel-body {
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+        padding-top: 0;
+    }
+
+    .accountcontainer .content .panel-info.white {
+        border-color: #e7e7e7;
+        border: 1px solid #e7e7e7;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .accountcontainer .leftlist .panel ul .list-group-item.active, .accountcontainer .leftlist .panel ul.list-group-item.active:hover, .accountcontainer .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #303030;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+    }
+
+        .accountcontainer .leftlist .panel ul .list-group-item.active .menuname {
+            color: #303030;
+            font-size: 14px;
+            font-family: 'HoneywellSansWeb-Bold' !important;
+        }
+
+
+    .accountcontainer .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+.testingstyle {
+    padding-left: 0px;
+    margin-left: -15px !important;
+    margin-right: 15px;
+}
+
+@media (max-height: 768px) {
+    .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+
+    /*.accountcontainer .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }*/
+
+
+}
+
+@media (min-width: 1366px) {
+     .accountcontainer.site .overview {
+        width: 106%;
+        margin-left: -15px !important;
+    }
+     .accountcontainer.customer .overview .content{
+        width:100%;
+        
+    }
+}
+
+@media (min-width: 1920px) {
+     .accountcontainer.site .overview {
+        width: 103%;
+        margin-left: -15px !important;
+    }
+}
+.accountcontainer.customer .overview .content
+{
+    background: #f4f4f4 !important;
+    box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+        position: absolute;
+    overflow: auto;
+    top: 70px;
+    padding-top: 10px;
+}
+
+.accountpopup.ispmodal .modal-content{
+	border: 0px solid #d0d0d0;
+	box-shadow: 0 0 0px #000;
+    -moz-box-shadow: 0 0 0px #000;
+    -webkit-box-shadow: 0 0 0px #000;
+    -o-box-shadow: 0 0 0px #000;
+}
+.accountpopup.ispmodal .modal-content .modal-body .addnewaccount .row{
+    margin-right:0px !important;
+}
+
+.accountpopup.ispmodal .modal-content .col-md-6:first-child{
+    padding-right:6px;
+}
+
+.usermanagement-root .drpUserRole {
+    width: 90%;
+}
+
+.usermanagement-root .userRoleInfoIcon{
+    margin-left: 8px;
+    pointer-events: inherit;
+    cursor:pointer;
+    position: relative;
+    top: 7px;
+}
+
+.usermanagement-root .userMobileAccess{
+    /*margin-top: 25px;*
+}
+
+.usermanagement-root .userMobileAccess input[type="checkbox"] {
+    /*margin-left: 10px;*/
+    margin-right: 10px;
+    border: none;
+}
+
+.usermanagement-root .userMobileAccess label {
+    margin-top: 4px;
+    padding-left: 25px;
+}
+
+.usermanagement-root .userRoleInfoHelp{
+    background: #fff;
+    border: 2px solid #d0d0d0;
+    border-radius: 0;
+    box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    height: 420px;
+    padding: 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    z-index: 2;
+    padding: 10px 36px 36px 36px;
+}
+
+.usermanagement-root .userRoleInfoHelp table{
+    width: 100%;
+}
+.usermanagement-root .userRoleInfoHelp table > tbody > tr{
+    border-bottom: 2px solid #eee;
+}
+
+.usermanagement-root .userRoleInfoHelp table > thead {
+    border-top: 2px solid #d0d0d0;
+    background: #eee;
+}
+
+.usermanagement-root .userRoleInfoHelp table > tbody > tr > td {
+    padding: 8px 10px;
+}
+.usermanagement-root .userRoleInfoHelp table > thead > tr > th {
+    padding: 8px 10px;
+}
+
+.usermanagement-root .userRoleInfoHelp table > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+.usermanagement-root .userRoleInfoHelp h5 {
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+
+.usermanagement-root .userRoleInfo{
+    background: #fff;
+    border: 2px solid #d0d0d0;
+    border-radius: 0;
+    box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    height: 200px;
+    width: 250px;
+    padding: 10px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 2;
+    left: 400px;
+    padding: 24px;
+}
+
+.usermanagement-root .userRoleInfo table{
+    width: 100%;
+}
+.usermanagement-root .userRoleInfo table > tbody > tr{
+    border-bottom: 2px solid #eee;
+}
+
+.usermanagement-root .userRoleInfo table > thead {
+    border-top: 2px solid #d0d0d0;
+    background: #eee;
+}
+
+.usermanagement-root .userRoleInfo table > tbody > tr > td {
+    padding: 8px 10px;
+}
+.usermanagement-root .userRoleInfo table > thead > tr > th {
+    padding: 8px 10px;
+}
+
+.usermanagement-root .userRoleInfo table > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+.userPermissionChooseSite label {
+    padding: 0;
+}
+
+.userPermissionChooseSite label a {
+    text-decoration: none;
+}
+.usermanagement-root .userMobileAccessMarginTop{
+    margin-top: 25px !important;
+    margin-right: 0px !important;
+}
+.usermanagement-root .userRoleInfoHelp h1 {
+    margin-bottom: 5px;
+}
+.usermanagement-root .userMobileAccess input[type="checkbox"] {
+    border: none;
+}
+.usermanagement-root .userRoleInfoHelp h1 {
+    margin-bottom: 0;
+}
+.userRoleInfoTooltip{
+    position: relative;
+}
+.usermanagement-root .userRoleInfoTooltip:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #d0d0d0;
+    border-width: 7px;
+    margin-left: -30px;
+}
+.usermanagement-root .userRoleInfoTooltip:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #d0d0d0;
+    border-width: 7px;
+    margin-left: -31px;
+}
+.userRoleInfoTooltip:after,.userRoleInfoTooltip:before {
+    bottom: 94%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}       
+.usermanagement-root .userRoleInfoHelpOkButton {
+    position: relative;
+    left: 12px;
+}
+.usermanagement-root .usersSearchIcon {
+    border: none !important;
+    padding: 2px 6px 26px 6px !important;
+}
+.usermanagement-root .usersSearchPlaceholder {
+    border: none !important;
+    margin-left: -17px;
+    margin-top: 0;
+}
+.usermanagement-root .usersFilterIcon {
+    border: none !important;
+    padding: 2px 6px 26px 6px !important;
+}
+.usermanagement-root .siteInfoTooltip{
+	position: relative !important;
+	left: 18% !important;
+	bottom: 50px !important;
+}
+.usermanagement-root .siteRoleInfo{ 
+    left: 40% !important;
+}
+.accountcontainer .content .panel-info.white.customerOverviewHeader > .panel-heading{
+    border-bottom: 1px solid #ddd;
+}
+.accountcontainer .content .panel-info.white.customerOverviewHeader{
+    padding-left: 0;
+    padding-right: 0;
+}
+.account-root .customerOverviewDownloadStatusL{
+    display: inline-block;
+}
+.account-root .customerOverviewDownloadStatusR{
+    display: inline-block;
+    margin-right: 24px;
+}
+.customerOverviewHeader .panel-body {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.customerOverviewHeader .panel-footer {
+    background: none;
+    padding-top: 16px;
+}
+.customerOverviewHeader .panel-footer.customerOverviewDownloadButtonGrp{
+    padding-bottom: 40px;
+}
+.customerOverviewHeader .panel-body h5{
+    padding-bottom: 16px;
+}
+.customerOverviewDownloadReport{
+    padding-bottom: 8px;
+}
+
+.usermanagement-root .userRoleInfo table thead th{
+    color: #606060;
+}
+.usermanagement-root .userRoleInfo table tbody td{
+    color: #606060;
+}
+
+.account-root .downloadStatusServiceBasic{
+    background: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    margin-right: 0;
+}
+.account-root .downloadStatusServicelist{
+    text-align: center;
+    margin-right: 0;
+}
+.account-root .downloadStatusServicelist:first-child{
+    margin-top: 10px;
+}
+.account-root .downloadStatusServiceBasicHeader{
+    margin-top: 0;
+}
+.account-root .downloadStatusServiceBasicActivate {
+    padding-left: 15px;
+    top: 16px;
+    position: relative;
+    font-size: 14px;
+}
+.account-root .downloadStatusServiceBasicText {
+    text-align: center;
+    margin-top: 30px;
+}
+.account-root .downloadStatusServiceBasicDollar {
+    text-align: center;
+    font-size: 32px;
+    margin-top: -10px;
+    color: #43ab4f;
+}
+.account-root .downloadStatusServiceBasicMonth {
+    font-size: 14px;
+    color: #43ab4f;
+}
+.account-root .downloadStatusServiceBasicInfo{
+    text-align: center;
+    padding-bottom: 16px;
+}

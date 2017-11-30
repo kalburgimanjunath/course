@@ -1,0 +1,186 @@
+﻿@color_1: #303030;
+@color_2: #808080;
+@color_3: #1792e5;
+@font_family_1: 'HoneywellSansWeb-Medium';
+@background_color_1: #e8f4fc;
+@background_color_2: #f5f5f5;
+
+/*version 1.0.1*/
+/*for plugin container that needed AccordionPlugin menu*/
+/*for plugin container that needed AccordionPlugin menu after toggle menu*/
+/* DROPDOWN MENU */
+.overview {
+    position: absolute;
+    left: 24%;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+.togglemenu {
+    .overview {
+        position: absolute;
+        left: 70px;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+.account-root {
+    .listcontainer {
+        position: absolute;
+        top: 94px;
+        bottom: 0px;
+        height: 92%;
+        min-height: 500px;
+        overflow: scroll;
+        width: 100%;
+    }
+}
+.schedulelists {
+    position: absolute;
+    top: 132px;
+    overflow: scroll;
+    bottom: 0px;
+    min-height: 364%;
+    width: 100%;
+    border-top: 1px solid #d0d0d0;
+}
+.cardlistview {
+    .peoplecount {
+        font-family: @font_family_1 !important;
+        font-size: 14px;
+        color: @color_1;
+    }
+}
+.siteAddress {
+    font-family: @font_family_1 !important;
+    font-size: 14px;
+    color: @color_2;
+}
+.siteView {
+    .isppagetitle {
+        margin-right: 20px;
+        margin-bottom: 17px;
+    }
+    span.input-group-btn {
+        padding-right: 12px;
+    }
+    .cardlistview {
+        width: 25.15%;
+        float: left;
+        position: absolute;
+        left: 24%;
+        bottom: 0;
+        top: 0;
+        .list-group.scroll-x.scroll-y {
+            overflow-y: auto;
+            position: absolute;
+            bottom: 0;
+            top: 109px;
+            right: 0;
+            left: 0;
+            margin-bottom: 0;
+            border-top: 1px solid #e7e7e7;
+            li {
+                &:first-child {
+                    border-top: 0 none;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .siteOverview {
+        width: 50%;
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        top: 0px;
+        padding: 0 15px 0 0;
+    }
+    .ispheadersearch {
+        .ispicon_sort {
+            border: 0 none;
+            margin-right: 10px;
+        }
+        .ispsearch {
+            color: @color_1;
+        }
+    }
+    .list-group-item {
+        padding: 12px 20px 10px 20px;
+        min-height: 88px;
+    }
+}
+.ispActionMenu {
+    cursor: pointer;
+    li {
+        padding: 0;
+    }
+    .dropdown-menu {
+        padding: 0;
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+        >li {
+            >a {
+                cursor: pointer;
+                padding: 8px 18px;
+                border-top: 1px solid #e5e5e5;
+                >span {
+                    margin-right: 8px;
+                }
+                &:hover {
+                    background-color: @background_color_2;
+                    font-family: @font_family_1 !important;
+                }
+                &:focus {
+                    background-color: @background_color_2;
+                    font-family: @font_family_1 !important;
+                }
+            }
+            >a.selected {
+                background-color: @background_color_1;
+            }
+            &:first-child {
+                >a {
+                    cursor: pointer;
+                    border-top: 0 none;
+                }
+            }
+        }
+    }
+}
+.ispActionMenu.open {
+    font-size: 14px;
+    color: @color_3;
+}
+.ispActionMenu.mainMenu.open {
+    .dropdown-toggle {
+        color: @color_1;
+        font-size: 18px;
+    }
+}
+.ispActionMenu.mainMenu {
+    .dropdown-toggle {
+        &:hover {
+            color: @color_1;
+            font-size: 18px;
+        }
+    }
+    .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+}
+.ispActionMenu.contentMenu {
+    .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+    .footer {
+        margin-top: 20px;
+        button {
+            margin-left: 9px;
+        }
+    }
+}

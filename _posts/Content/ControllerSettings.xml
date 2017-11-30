@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BurglaryRestoreOptions>
+  <Key id="ZoneRestoreOrDisarm" value="Zone restore / Disarm" />
+  <Key id="DisarmOrBellTimeOut" value="Disarm / Bell Timeout" />
+  <Key id="TimeWindowExpiry" value="Time Window Expiry" />
+</BurglaryRestoreOptions>

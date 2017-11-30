@@ -1,0 +1,219 @@
+﻿/*version 1.0.1*/
+#envr-overview .ControllerOverview {
+    position: absolute;
+    width: 50%;
+    margin-left: 49%;
+    left: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.togglemenu #envr-overview .ControllerOverview {
+    margin-left: 70px;
+    left: 25%;
+    width: 71%;
+}
+
+﻿.inputuppercase {
+    text-transform: uppercase;
+}
+
+#paneloperatorModal {
+    left: 0 !important;
+}
+
+    #paneloperatorModal .modal-dialog {
+        width: 700px;
+    }
+
+    #paneloperatorModal .col-sm-6:first-child, #paneloperatorModal .col-md-6 {
+        padding-left: 0 !important;
+        padding-right: 6px;
+    }
+
+    #paneloperatorModal .col-sm-4, #paneloperatorModal .col-sm-5 {
+        padding-right: 0 !important;
+    }
+
+.masterCode .ispicon_eye {
+    position: static;
+}
+
+    .masterCode .ispicon_eye::before {
+        position: absolute;
+        width: 37px;
+        padding: 17px;
+        background-position: -7px -4px;
+        right: 15px;
+        top: 25px;
+        margin-left: 0 !important;
+    }
+
+    .masterCode .ispicon_eye:hover::before {
+        background-position: -7px -36px;
+    }
+
+    .masterCode .ispicon_eye:active::before {
+        background-position: -7px -68px;
+    }
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.panelsection input[type="checkbox"] + span {
+    margin-left: 5px;
+    line-height: 25px;
+}
+
+.panelsection .checkbox input[type="checkbox"], .areaSection .checkbox input[type="radio"] {
+    opacity: 1;
+    z-index: 0;
+}
+
+.panelsection .checkbox label::before {
+    display: none;
+}
+
+.panelType {
+    padding-left: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+}
+
+    .panelType input {
+        background: none !important;
+        border: 0 !important;
+        padding-left: 0;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+    }
+
+.row {
+    margin-right: 0;
+}
+/*.btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}*/
+
+.iowrapper-container .ioTriggerStatus .statusDot{
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.iowrapper-container .ioTriggerStatus .online {
+    background-color: #98c260;
+}
+
+.iowrapper-container .ioTriggerStatus .offline {
+    background-color: #ee3124;
+}
+
+.iowrapper-container .ioTriggerStatus .disabled {
+    background-color: #BABABA;
+}
+
+.triggerOrCamerPopover {
+    left: 8px;
+    top: calc(100% - 10px);
+    width: 180px;
+    height: 151px;
+    overflow-y: auto;
+    
+}
+
+.triggerOrCamerPopover>table {
+    width:100%;
+    max-height:calc(100% - 2px);
+    vertical-align: bottom;
+}
+
+.triggerOrCamerPopover>table [type="checkbox"] {
+    margin:8px 2px 8px 20px;
+}
+
+.triggerOrCamerPopover>table span {
+    margin-top:10px;
+}
+
+#dahuaIoSetting .popover-content {
+    padding: 0;
+}
+
+.controllerView .iotable .table tbody tr{
+    cursor:auto;
+}
+
+.iotable tbody tr td {
+    vertical-align: middle;
+}
+
+#envr-overview #dahuaIoSetting th {
+    color: #808080;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-weight: normal;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+#envr-overview .viewmode_envr .iowrapper-container button {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    background-color: #f2f2f2;
+    cursor: no-drop;
+}
+
+#envr-overview .viewmode_envr td {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e1e1e1;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+#envr-overview .viewmode_envr input{
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    background-color: #f2f2f2;
+    cursor: no-drop;
+}
+
+#envr-overview .viewmode_envr input[type="text"],
+#envr-overview .viewmode_envr select
+{
+    border: 0px solid !important;
+}
+
+#envr-overview .viewmode_envr input[type="checkbox"] {
+    background-color: initial;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    cursor: no-drop;
+    background-position:-9px -384px;
+}
+
+#envr-overview .viewmode_envr input[type="checkbox"]:checked{
+    background-position:-9px -438px;
+}
+
+#envr-overview .viewmode_envr select {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    background-color: #f2f2f2;
+    cursor: no-drop;
+    opacity: .65;
+}

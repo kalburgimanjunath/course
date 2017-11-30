@@ -1,0 +1,342 @@
+.schedule-root{
+
+}
+
+.schedule-root .scroll-x{
+        overflow-x:auto;
+
+    }
+    .schedule-root .scroll-y{
+        overflow-y:auto;
+    }
+
+    .schedule-root .cardlistview .inactive {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        word-break: initial;
+        font-size: 10px;
+        line-width: 100;
+        line-height: 100%;
+        color: #FFF;
+        display: inline-block;
+        background-color: #a0a0a0;
+        text-transform: capitalize;
+        max-width: 43%;
+        padding: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .schedule-root .viewmode {
+}
+
+.schedule-root .viewmode input, .schedule-root .viewmode textarea, .schedule-root .viewmode input[type="checkbox"], .schedule-root .viewmode input[type="radio"],.schedule-root .viewmode select, .schedule-root .viewmode .ispicon_calender {
+    background-color: #f2f2f2;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.schedule-root .viewmode .profile-pic input[type="file"]{
+    pointer-events: none;
+}
+
+.schedule-root .viewmode .checkbox{
+    pointer-events: none;
+}
+
+.schedule-root .viewmode .btn-footer {
+    display: none;
+}
+
+.schedule-root .viewmode .ispicon_calender{
+    background: transparent;
+}
+
+/*.selectController {
+    width: 100%;
+    padding: 15px 20px;
+    border-top: 1px solid #e7e7e7;
+}*/
+
+/*.areaListRow {
+    border-radius: 0;
+}*/
+
+.schedule-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+/*    .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+*/
+/*.scheduleView .sensorsTab .table > thead > tr > th, .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}*/
+
+.schedule-root .scheduleView .sensorsTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.schedule-root .scheduleView .sensorsTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+/*
+.scheduleView .sensorsTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}*/
+
+/*.scheduleView .sensorsTab table td, .scheduleView .sensorsTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+*/
+.schedule-root .scheduleView .sensorsTab .ispicon, .schedule-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.schedule-root .scheduleView .sensorsTab .sensorsid, .schedule-root .scheduleView .sensorsTab .name,
+.schedule-root .addSchedule .name, .schedule-root .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.schedule-root .scheduleView .sensorsTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+/*.scheduleView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}*/
+
+.schedule-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+.schedule-root .scheduleView .cardlistview .isppagetitle, .schedule-root .scheduleView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.schedule-root .scheduleView .listOverview .isppagetitle {
+    margin-left: 9px;
+    margin-right: 24px;
+}
+
+.schedule-root .cardlistview .nav.nav-tabs {
+    margin-left: 20px;
+}
+
+.schedule-root .scheduleView .list-group-item {
+    padding: 10px 20px;
+}
+
+.schedule-root .cardlistview .list-group-item {
+    border-radius: 0;
+}
+
+    .schedule-root .cardlistview .list-group-item.active, .schedule-root .cardlistview .list-group-item.active:hover, .schedule-root .cardlistview .list-group-item.active:focus, .schedule-root .cardlistview .list-group-item:hover {
+        background-color: #e1eff9;
+        color: #606060;
+        border-color: #e7e7e7;
+    }
+
+.schedule-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.schedule-root .cardlistview .sensorsList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.schedule-root .sensorsList > span + span {
+    margin-left: 5px;
+}
+
+.schedule-root .scheduleView .checkbox {
+    float: left;
+}
+
+    .schedule-root .scheduleView .checkbox input[type="checkbox"], .schedule-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.schedule-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.schedule-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.schedule-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .schedule-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.schedule-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.schedule-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.viewmode input, .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.viewmode .btn-footer {
+    display: none;
+}
+
+.btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/*.bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+*/
+.ispicon.inverse::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);
+    width: 24px;
+    margin-top: 2px;
+    margin-left: -25px;
+    position: relative;
+    left: 25px;
+    top: 28px;
+    height: 15px;
+}
+
+.schedule-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+
+.schedule-root .listOverview .sensorsTab, .schedule-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .schedule-root .listOverview .sensorsTab, .schedule-root .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .schedule-root .listOverview .sensorsTab, .schedule-root .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+/* AREA SETTINGS *//*
+.areaSection .areaContent > p {
+    margin: 20px 10px 20px 15px;
+}
+
+.areaSection .link > .add {
+    font-size: 60px;
+}
+
+.areaSection .link {
+    color: #1792e5;
+}
+
+.areaSection .areaBox {
+    padding: 70px;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.areaSection .contentContainer {
+    border-color: #e7e7e7;
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff;
+}
+
+.ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}*/
+
+/*body {
+    overflow-y: auto !important;
+}*/
+
+./*areaSection .form-group {
+    padding-left: 0;
+}
+
+.areaSection .checkbox input[type="checkbox"], .areaSection .checkbox input[type="radio"] {
+    opacity: 1;
+    z-index: 0;
+}
+
+.areaSection .checkbox label::before {
+    border: 0;
+}*/
+
+.schedule-root .scheduleView .checkbox label::before {
+    display: none;
+}

@@ -1,0 +1,186 @@
+﻿Honeywell.ISP.UserMap.Cluster = Honeywell.ISP.WebUIFramework.BaseModel.inherits({
+    initialize: function (data) {
+                
+
+        this.SiteId = ko.observable();
+        this.SiteName = ko.observable();
+        this.DeviceStates = ko.observableArray();
+        this.GeoLocation = ko.observable();
+        this.ZipCode = ko.observable();
+        this.Address = ko.observable();
+        this.totaldevices = ko.observable();
+        this.SiteStatus = ko.observable();
+        this.statusicon = ko.observable();
+        this.statustextstyle = ko.observable();
+        this.devicecountstyle = ko.observable();
+        this.devices = ko.observable();
+        this.mapicon = ko.observable();
+        if (data) {
+            this.dataSource(data);
+        }
+    },
+    dataSource: function (data) {
+        data = data || {};
+        this.SiteId(data.SiteId);
+        this.SiteName(data.SiteName);
+        this.DeviceStates(data.DeviceStates);
+        this.GeoLocation(data.GeoLocation);
+        this.ZipCode(data.ZipCode);
+        this.Address(data.Address);
+        this.SiteStatus(data.SiteStatus);
+        this.devices(data.devices);
+        this.bindiconstyle(this.SiteStatus());
+        this.bindtotaldevices(this.DeviceStates());
+    },
+    bindiconstyle: function (status) {
+        var icon = "",textstyle="",devicecountstyle="",mapicon="";
+        switch (status) {
+            case Honeywell.ISP.UserMap.status.Critical:
+                mapicon = "ispicon_siteCritical";
+                icon = "ispicon_criticalError";
+                textstyle = "siteCritical";
+                devicecountstyle = "criticalCount";
+                break;
+            case Honeywell.ISP.UserMap.status.Major:
+                mapicon = "ispicon_siteMajor";
+                icon = "ispicon_majorError";
+                textstyle = "siteMajor";
+                devicecountstyle = "majorCount";
+                break;
+            case Honeywell.ISP.UserMap.status.Moderate:
+                icon = "ispicon_moderateError";
+                textstyle = "siteMajor";
+                devicecountstyle = "majorCount";
+                mapicon = "ispicon_siteMajor";
+                break;
+            case Honeywell.ISP.UserMap.status.Normal:
+                textstyle = "siteNormal";
+                icon = "ispicon_acknowledged";
+                devicecountstyle = "normalCount",
+                mapicon = "ispicon_siteNormal";
+                break;
+        }
+        this.mapicon(mapicon);
+        this.statusicon(icon);
+        this.statustextstyle(textstyle);
+        this.devicecountstyle(devicecountstyle);
+    },
+    bindtotaldevices: function (devicestates) {
+        var s = _(devicestates).reduce(function (result, current) {
+            if (current.Severity !== Honeywell.ISP.UserMap.status.Normal) {
+                return result += current.DeviceIds.length;
+            } else {
+                return result;
+            }
+        }, 0);
+        this.totaldevices(s);
+    },
+    toJson: function () {
+        return ko.mapping.toJS(this);
+    }
+});
+
+Honeywell.ISP.UserMap.Clusters = Honeywell.ISP.WebUIFramework.BaseModel.inherits({
+    initialize: function (data) {
+        this.clusters = ko.observableArray();
+        this.allclusters = ko.observable();
+        //this.totalsites = ko.observable();
+        this.totalsiteswithalarms = ko.observable();
+        this.totalalarms = ko.observable();
+        this.headerStyle = ko.observable();
+        if (data) {
+            this.dataSource(data);
+        }
+    },
+    dataSource: function (data) {
+        data = data || {};
+        this.bindClusters(data);
+        this.bindTotalAlarmSites(data);
+        this.bindTotalAlarms(data)
+        this.bindAllClusters(data);
+    },
+    bindClusters: function (clusters) {
+        this.clusters(_.map(clusters || [], function (cluster) {
+            return new Honeywell.ISP.UserMap.Cluster(cluster);
+        }));
+    },
+    bindAllClusters:function(clusters){
+        this.allclusters(clusters);
+    },
+    bindTotalAlarmSites: function () {
+        this.totalsiteswithalarms(this.clusters().length)
+    },
+    bindTotalAlarms: function () {
+        var totalAlarms;
+        var totalAlarms = _(this.clusters()).reduce(function (result, current) {
+            return result += current.totaldevices();
+        }, 0);
+        if (totalAlarms >0) {
+            this.headerStyle('withAlarms');
+        }else{
+            this.headerStyle('noAlarms');
+        }
+        this.totalalarms(totalAlarms);
+    },
+    removeAlarm: function (device) {
+        _.each(this.allclusters(), function (v, i) {
+            _.each(v.DeviceStates, function (v1, i1) {
+                if (_.contains(v1.DeviceIds, device)) {
+                    v1.DeviceIds = _.filter(v1.DeviceIds, function (a) {
+                        return a != device;
+                    });
+                }
+            });
+        });
+    },
+    updateAlarmList: function (device) {
+		var account = _.find(this.allclusters(), function (a) { return a.SiteId === device.AccountId; })
+        if (account) {
+            var arr = _.chain(this.allclusters()).filter(function (a) { return a.SiteId == device.AccountId }).map(function (value,key) {
+                var updated = false;
+                _.each(value.DeviceStates, function (v, i) {
+                    if (v.Severity === device.SeverityName) {
+                        v.DeviceIds.push(device.SourceEntityId);
+                        updated = true;
+                        return;
+                    }
+                });
+                if (!updated) {
+                    var s = {};
+                    s.DeviceIds = [device.SourceEntityId];
+                    s.Severity = device.SeverityName;
+                    s.State = device.EventCodeType;
+                    value.DeviceStates.push(s);
+                }
+            }).value();
+        } else {
+            var DeviceStates = [];
+            var s = {}
+            s.DeviceIds = [];
+            s.State = ""
+            var alarm = _.chain([device]).map(function (value, key) {
+                if (value.SourceEntityId) {
+                    s.DeviceIds.push(value.SourceEntityId);
+                    s.Severity = value.SeverityName;
+                    s.State = value.EventCodeType;
+                }
+                DeviceStates.push(s);
+                return {
+                    SiteId: value.AccountId,
+                    SiteName: value.SiteName || value.Location,
+                    GeoLocation: value.GeoLocation,
+                    DeviceStates: DeviceStates,
+                    devices: s.DeviceIds,
+                    Address: value.ZipCode,
+                    address: value.Location,
+                    SiteStatus: value.SeverityName,
+                    statusid: Honeywell.ISP.UserMap.sitestatusid[value.SeverityName]
+                }
+            }).value();
+            this.allclusters().push(alarm[0]);
+        }
+    },
+    toJson: function () {
+        return ko.mapping.toJS(this);
+    }
+});

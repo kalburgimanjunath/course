@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PathSupervisionPeriod>
+  <Key id="PT0S" value="0 seconds-disabled" />
+  <Key id="PT60S" value="60 seconds" />
+  <Key id="PT90S" value="90 seconds" />
+  <Key id="PT180S" value="3 minutes" />
+  <Key id="PT300S" value="5 minutes" />
+  <Key id="PT600S" value="10 minutes" />
+  <Key id="PT1800S" value="30 minutes" />
+  <Key id="PT3600S" value="1 hour" />
+  <Key id="PT18000S" value="5 hours" />
+  <Key id="PT43200S" value="12 hours" />
+  <Key id="PT86400S" value="24 hours" />
+</PathSupervisionPeriod>

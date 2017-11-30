@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+	
+	<style>
+		.multicamera .hide-bullets {
+            list-style: none;
+            margin-left: -10px;
+            margin-top: 20px;
+        }
+        .ispmodal.multicamera{
+            left: 0 !important;
+        }
+        .multicamera .modal-dialog{
+            padding-top: 0;
+        }
+        .multicamera .modal-dialog{
+            width: 50%;
+            margin: 2% auto;
+        }
+        .multicamera .modal-content{
+            box-shadow: none;
+            border: 1px solid #e5e5e5;
+            border-radius: 0;
+        }
+        .multicamera .modal-header {
+            padding: 15px 25px 6px 20px;
+        }
+        .multicamera .close{
+            font-size: 30px;
+        }
+        .multicamera .modal-body{
+            padding: 0;
+        }
+        .multicamera .modal-footer{
+            padding: 16px 20px 0;
+        }
+        .multicamera video {
+            width: 90%;
+            height: auto;
+        }
+        .multicamera .thumbnail{
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .multicamera .modal-body .container{
+            width: 100%;
+            padding: 0;
+        }
+        .multicamera .col-xs-12,
+        .multicamera .col-sm-12{
+            padding: 0;
+        }
+        .multicamera .carousel-inner{
+            padding: 0 5%;
+        }
+        .multicamera .item h4{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+	</style>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+            // $(".wrapper:not('#menu-toggle')").click(function (e) {
+            //     e.preventDefault();
+            //     $("#sidebar-wrapper").toggleClass("active");
+            // });
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+
+<div class="modal fade in multicamera" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false" style="display: block;">
+    <div class="modal-dialog">
+    <form id="multicamera-view" class="modal-content show" data-bind="busyIndicator: {show: IsLoading, blockAll: true}" novalidate="novalidate">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <!-- <h1 class="modal-title" id="lineModalLabel">Add New Account</h1> -->
+            </div>
+            <div class="modal-body">
+                <div class="row">
+					<div class="container">
+						<div id="main_area">
+							<div class="row">
+								<div class="col-xs-12" id="slider">
+									<div class="row">
+										<div class="col-sm-12" id="carousel-bounding-box">
+											<div class="carousel" id="myCarousel">
+												<div class="carousel-inner">
+													<div class="active item">
+                                                        <h4>Test</h4>
+														<video width="640" height="360">
+															<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+														</video>
+													</div>
+													<div class="item">
+														<video width="640" height="360">
+															<source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+														</video>
+													</div>
+													<div class="item">
+														<video width="640" height="360">
+															<source src="http://media.w3.org/2010/05/bunny/movie.mp4" type="video/mp4">
+														</video>
+													</div>
+													<div class="item">
+														<video width="640" height="360">
+															<source src="https://www.iandevlin.com/html5test/webvtt/v/upc-tobymanley.theora.ogg" type="video/ogg">
+														</video>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row hidden-xs" id="slider-thumbs">
+								<ul class="hide-bullets">
+									<li class="col-sm-offset-1 col-sm-2">
+										<a class="thumbnail" id="carousel-selector-0"><img src="http://placehold.it/170x100&text=one">
+										</a>
+									</li>
+									<li class="col-sm-2">
+										<a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/170x100&text=two">
+										</a>
+									</li>
+									<li class="col-sm-2">
+										<a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three">
+										</a>
+									</li>
+									<li class="col-sm-2">
+										<a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+                
+                </div>
+			</div>
+			<div class="modal-footer" style="margin-top:0" >
+				<p class=""> CONTACT </p>
+				<p class=""> John Doe <a href="tel()" class="link">(516) 577-2000 </a> </p>
+				
+				
+			</div>
+        </div>
+        
+            <!-- FOOTER SECTION ENDS -->
+    </div>
+    </form>
+    </div>
+</div>
+
+	<script>
+		jQuery(document).ready(function($) {
+            $('[id^=carousel-selector-]').click(function() {
+                var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+                var id = parseInt(id);
+                $('#myCarousel').carousel(id);
+            });
+        });
+	</script>
+</body>
+</html>
+
+
+

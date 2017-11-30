@@ -1,0 +1,21 @@
+/*
+** style for event report page
+*/
+.ps-create-report h1:before {
+	content: " ";
+	background: url("../../images/sprite_icons.png") no-repeat scroll -282px -338px;
+	display: inline-block;
+	height: 20px;
+	width: 20px; 
+}
+.ps-create-report .ps-report-container {
+	border-top: 1px solid #d0d0d0;
+	min-height: 450px;
+	height: 100%;
+	padding: 0;
+}
+.ps-create-report .ps-report-container .ps-column {
+	border-right: 1px solid #d0d0d0;
+	min-height: inherit;
+}
+

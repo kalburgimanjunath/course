@@ -1,0 +1,265 @@
+.mpc .dahua-nrvcheck .main_container {
+    background: #fff;
+    height: calc(100% - 60px);
+    margin-top: 60px !important;
+}
+
+.mpc .dahua-nrvcheck h2.form-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #303030;
+    margin: 0;
+    padding: 20px 0 15px !important;
+}
+
+.mpc .dahua-nrvcheck div.form-nrv {
+    padding: 24px;
+}
+
+.mpc .dahua-nrvcheck label {
+    font-weight: normal;
+}
+
+.mpc .dahua-nrvcheck .form-group.col-lg-4.col-md-4.col-sm-4:first-child {
+    padding-left: 0;
+}
+
+.mpc .dahua-nrvcheck div.form-hr {
+    padding: 0 20px 0 0;
+}
+
+.mpc .dahua-nrvcheck .nrv .bottom-pad {
+    margin-bottom: 20px;
+}
+
+.mpc .dahua-nrvcheck .serv-url {
+    margin: 0 !important;
+}
+
+.mpc .dahua-nrvcheck .form-mac {
+    padding: 24px 0 0 24px !important;
+}
+
+.mpc .dahua-nrvcheck .form-mac .form-group {
+    vertical-align: baseline;
+}
+
+.mpc .dahua-nrvcheck .advanced-sett .btn {
+    margin-right: 6px;
+}
+
+.mpc .dahua-nrvcheck .ppl-list {
+    overflow: auto;
+}
+
+.mpc .dahua-nrvcheck .scroll_shadow {
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.2);
+}
+
+.mpc .dahua-nrvcheck body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.mpc .dahua-nrvcheck div.nrv-rec {
+    padding-top: 7px;
+}
+
+.mpc .dahua-nrvcheck .btn {
+    margin: 0;
+    margin-right: 10px !important;
+}
+
+.mpc .dahua-nrvcheck hr {
+    margin-top: 24px;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+.btn:first-child {
+    margin-right: 8px;
+}
+
+.mpc .dahua-nrvcheck .pw_icon {
+    width: 20px;
+    height: 20px;
+    background: url(../images/PW_Sprite_Icons.svg) no-repeat;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.mpc .dahua-nrvcheck .input-group .form-control:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 20px;
+}
+
+.mpc .dahua-nrvcheck .people_details {
+    width: calc(100% - 340px);
+    padding: 0;
+}
+
+
+/*
+.mpc .dahua-nrvcheck .nrv .col-lg-4.col-md-4.col-sm-4 {
+    padding-right: 20px;
+    padding-left: 0;
+}
+*/
+
+.mpc .dahua-nrvcheck .nrv .col-lg-12.col-md-12.col-sm-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.mpc .dahua-nrvcheck .nrv .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*.mpc .dahua-nrvcheck .device-setting-form {
+    padding-top: 20px;
+    padding-left: 20px;
+}*/
+
+.mpc .dahua-nrvcheck .device-setting-form .form-inline .form-group {
+    padding-right: 17px;
+}
+
+.mpc .dahua-nrvcheck .ps-checkbox-text {
+    position: relative;
+    bottom: 2px;
+    left: -26px;
+}
+
+.mpc .dahua-nrvcheck .footer {
+    position: fixed;
+    height: 64px;
+    background-color: #ffffff;
+    bottom: 0;
+    border-top: #e7e7e7 1px solid;
+    width: calc(100% - 340px);
+}
+
+.mpc .dahua-nrvcheck div.footer-button {
+    padding: 16px 16px 0 0;
+}
+
+.mpc .dahua-nrvcheck .footer .footer-button .btn:last-child {
+    margin-right: 10px !important;
+}
+
+.mpc .dahua-nrvcheck .footer .footer-button .btn:last-child {
+    margin-right: 10px !important;
+}
+
+.mpc .dahua-nrvcheck .footer .footer-button .btn:first-child {
+    margin-right: 0;
+}
+
+.mpc .dahua-nrvcheck .checkbox,
+.radio {
+    display: block;
+    margin-bottom: 11px;
+    margin-top: 0;
+    position: relative;
+}
+
+.mpc .dahua-nrvcheck .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+}
+
+.mpc .dahua-nrvcheck .checkbox label input{
+    display:block;
+}
+
+.mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+4) {
+    padding-left: 0;
+}
+
+.mpc .dahua-nrvcheck .nrv-netset .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+1) {
+    padding-right: 0;
+}
+
+.mpc .dahua-nrvcheck .nrv-netset .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(1) {
+    padding-left: 0;
+}
+
+.mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+1) {
+    padding-right: 0;
+}
+
+.mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4 {
+    padding-right: 0;
+}
+
+@media only screen and (min-width: 1366px) {
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(1) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(1) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(3n+4) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+3) {
+        padding-right: 0;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .nrv-netconfig .col-lg-4,
+    .nrv-netset .col-lg-4,
+    .nrv-rec .col-lg-4 {
+        width: 25%;
+    }
+    .mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(4n+4) {
+        padding-right: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netset .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(4n+4) {
+        padding-right: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(4n+4) {
+        padding-right: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(1) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(4n+5) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(4n+5) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netset .form-group.col-lg-4.col-md-4.col-sm-4:first-child {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netset .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(1) {
+        padding-left: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-rec .form-group.col-lg-4.col-md-4.col-sm-4:nth-of-type(3n+4) {
+        padding-left: 20px;
+    }
+    .mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+3) {
+        padding-right: 0;
+    }
+    .mpc .dahua-nrvcheck .nrv-netconfig .form-group.col-lg-4.col-md-4.col-sm-4:nth-child(3n+4) {
+        padding-left: 20px;
+    }
+}
+
+.mpc .dahua-nrvcheck .col-lg-4 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.controllersettings-root{
+    background: #fff;
+}

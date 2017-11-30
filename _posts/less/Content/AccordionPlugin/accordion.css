@@ -1,0 +1,140 @@
+﻿/*version 1.0.3*/    
+/*for AccordionPlugin*/
+    #accordion-pane
+    {
+       position:absolute;
+        width:24%;
+        left:0;
+        top: 0px;
+        bottom: 0px;
+        right: auto;
+    }
+
+    /*for AccordionPlugin after toggle menu*/
+    .togglemenu #accordion-pane
+    {
+       position:absolute;
+       width:70px;
+       left:0;
+       top: 0px;
+       bottom: 0px;
+       right: auto;
+    }
+
+    .togglemenu  #accordion-pane{
+
+    }
+
+    .togglemenu  #accordion-pane .panel{
+        width: 70px !important;
+    }
+
+    .togglemenu #accordion-pane .panel-heading h6,.togglemenu #accordion-pane .panel-heading h3{
+        visibility: hidden;
+    }
+
+    .togglemenu #accordion-pane .ispicon_plus {
+        top: 48px;
+        /* margin-right: 8px; */
+        left: 22px;
+        position: absolute;
+    }    
+
+    .togglemenu #accordion-pane .panel > a li.list-group:nth-child(1){
+        display: block;
+    }
+    .togglemenu #accordion-pane .panel a span:nth-child(2),.togglemenu #accordion-pane .panel  a span:nth-child(3){
+        display:none;
+    }
+    .togglemenu #accordion-pane .panel hr.dividerLine{
+        display: none;
+    }
+
+    .accountcontainer .leftlist {
+        padding-left: 15;
+        margin-left: -15px;
+        padding-right: 0;
+    }
+
+    .accountcontainer .leftlist h6 {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #1792e5;
+        padding: 4px 4px 4px 10px;
+    }
+
+    .accountcontainer .leftlist h6 .ispicon {
+        margin-right: 5px;
+        text-transform: capitalize;
+    }
+
+    .accountcontainer .leftlist .panel-title {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 18px;
+        color: #303030;
+        /*margin-left: 36px;*/
+    }
+
+    .accountcontainer .leftlist .panel {
+        border-radius: 0;
+        height: 100%;
+        position: fixed;
+        width: 24%;
+        border: 1px solid #e7e7e7;
+        -webkit-box-shadow: rgb(238, 238, 238) 3px 0px 4px -2px;
+        box-shadow: rgb(238, 238, 238) 3px 0px 4px -2px;
+        border-top: 0px;
+    }
+
+    .accountcontainer .leftlist .panel ul li a.list-group-item {
+        /*height: 44px;*/
+        border-radius: 0;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .accountcontainer .leftlist .panel ul li.list-group-item.active, .accountcontainer .leftlist .panel ul li.list-group-item.active:hover, .accountcontainer .leftlist .panel ul li.list-group-item.active:focus, .accountcontainer .leftlist .panel ul li a.list-group-item:hover, .accountcontainer .leftlist .panel ul li a.list-group-item:focus {
+        background-color: rgba(185,221,243,.3);
+    }
+
+
+
+    .accountcontainer .leftlist .panel ul.dropdown-menu {
+        position: relative;
+        background: initial;
+        box-shadow: none;
+        border: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .accountcontainer .leftlist .panel ul.dropdown-menu li {
+        /*border: none;*/
+    }
+
+    .accountcontainer .leftlist .panel ul.dropdown-menu li a {
+        padding-left: 24px;
+    }
+
+
+    .accountcontainer .leftlist .panel-heading + .list-group li {
+        list-style-type: none;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+        font-size: 14px;
+        /*border: 1px solid #e7e7e7;*/
+    }
+
+    .accountcontainer .leftlist .panel-heading + .list-group li .ispicon {
+        margin-right: 8px;
+    }
+
+    .accountcontainer .leftlist .panel-heading {
+        background: #fff;
+    }    
+    .accountcontainer .leftlist .dividerLine {
+    margin: 0;
+    margin-left: 53px;
+}

@@ -1,0 +1,270 @@
+<!-- version 1.0 -->
+<link rel="stylesheet" type="text/css" href="css/dcm.css">
+<link rel="stylesheet" type="text/css" href="css/panelreplacement.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	.mpc-model-form.assign-card{
+		margin: 0px;
+        padding-top: 10px;
+	}
+    .modal-header.assign-card-header {
+        padding: 10px 20px 10px 30px;
+    }
+    .assign-card .ispheadersearch .input-group{
+        top: 0;
+    }
+    .assign-card .form-control{
+        height: 30px;
+    }
+    .assign-card .list-group{
+        margin-bottom: 10px;
+        max-height: 250px;
+    }
+    .assign-card .assign-card-search{
+        position: relative;
+        z-index: 3;
+        top: 4px;
+        right: 15px;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+    }
+    .assign-card .assign-card-input{
+        position: absolute;
+        width: 87%;
+    }
+    .assign-card .assign-card-sort-icon{
+        border: none !important;
+    }
+    .assign-card .assign-card-img-list .control-label{
+        position: relative;
+        top: 18px;
+    }
+    
+    .assign-card .assign-card-img img{
+        background-image: url(../images/icon_sprites_24px-020.svg);
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin-top: 3px;
+        background-size: 1400px;
+        content: "";
+        background-position: -228px -110px;
+        vertical-align: top;
+        z-index: 100;
+    }
+    .assign-card .assign-card-img .img-thumbnail{
+        padding: 0;
+    }
+    .assign-card .assign-card-img-list{
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+    .assign-card .assign-card-img-list:hover{
+        background: #337ab7;
+        border-color: #fff;
+    }
+    .assign-card .rightlistcontent h2{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        color: #000;
+    }
+    .assign-card .rightlistcontent p{
+        padding: 0;
+        color: #000;
+    }
+    .assign-card button.btn.btn-default.assign-card-sort-icon{
+        padding: 0px !important;
+    }
+    .assign-card .assign-card-img{
+        padding-left: 0;
+        padding-right: 0;   
+    }
+     .assign-card .assign-card-img .list-group-item{
+        margin-bottom: 0px !important;
+        border: none;
+        border-radius: none;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+     }
+     .assign-card .assign-card-img .list-group-item:first-child{
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+     }
+     .assign-card .list-group-item.assign-card-img-list {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border: none;
+        margin-bottom: 0px;
+        border-bottom: 1px solid #ddd;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .assign-card-expand-icon{
+        margin-top: 20px;
+    }
+    .modal-footer.assign-card-footer{
+        border-top: none;
+    }
+    .assign-card-img-list .rightlistcontent p{
+        margin: 0;
+    }
+</style>
+
+
+<div class="modal ispmodal fade in" id="addCard" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false" style="display: block;">
+    <div class="modal-dialog">
+    <form class="modal-content show" novalidate="novalidate">
+        <div class="modal-content" >
+            <div class="modal-header assign-card-header">
+                <h1 class="modal-title" id="lineModalLabel">Assign Card</h1>
+            </div>
+			<div class="mpc-model-form assign-card">
+				<div class="col-md-6 ispheadersearch pull-right">
+					<form>
+						<div class="row pull-left">
+							<div class="input-group">
+                                <div>
+                                    <span class="ispicon ispicon_search assign-card-search pull-right"></span>
+                                    <input name="x" type="text" class="form-control assign-card-input" placeholder="Search...">
+                                </div>
+                                <span class="input-group-btn ">
+									<button class="btn btn-default assign-card-sort-icon" type="button"><span class="ispicon ispicon_sortasc"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+				<div class="listStickyHeader" style="margin-top: 40px;">
+					<b class="bold">87</span> <span>People</b>
+                </div>
+                <ul class="list-group scroll-x scroll-y" id="contact-list">
+                    <li class="list-group-item assign-card-img-list">
+                        <div class="col-md-1">
+                            <div class="control-label">
+                                <input id="radio" type="radio"> <label for="radio"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ispimage-small assign-card-img">
+                            <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                        </div>
+                        <div class="col-md-8 rightlistcontent">
+                            <h2 class="name">Manjunath Kalburgi</h2>
+                            <p class="b name">Permanent Employee</p>
+                            <div id="demo" class="collapse">
+                                <p class="b name">2 Credentials</p>    
+                                <p class="b name">Manju@honeywell.com</p>
+                                <p class="b name">Active</p>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                            <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item assign-card-img-list">
+                        <div class="col-md-1">
+                            <div class="control-label">
+                                <input id="radio" type="radio"> <label for="radio"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ispimage-small assign-card-img">
+                            <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                        </div>
+                        <div class="col-md-8 rightlistcontent">
+                            <h2 class="name">Manjunath Kalburgi</h2>
+                            <p class="b name">Permanent Employee</p>
+                            <div id="demo" class="collapse">
+                                <p class="b name">2 Credentials</p>    
+                                <p class="b name">Manju@honeywell.com</p>
+                                <p class="b name">Active</p>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                            <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item assign-card-img-list">
+                        <div class="col-md-1">
+                            <div class="control-label">
+                                <input id="radio" type="radio"> <label for="radio"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ispimage-small assign-card-img">
+                            <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                        </div>
+                        <div class="col-md-8 rightlistcontent">
+                            <h2 class="name">Manjunath Kalburgi</h2>
+                            <p class="b name">Permanent Employee</p>
+                            <div id="demo" class="collapse">
+                                <p class="b name">2 Credentials</p>    
+                                <p class="b name">Manju@honeywell.com</p>
+                                <p class="b name">Active</p>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                            <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item assign-card-img-list">
+                        <div class="col-md-1">
+                            <div class="control-label">
+                                <input id="radio" type="radio"> <label for="radio"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ispimage-small assign-card-img">
+                            <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                        </div>
+                        <div class="col-md-8 rightlistcontent">
+                            <h2 class="name">Manjunath Kalburgi</h2>
+                            <p class="b name">Permanent Employee</p>
+                            <div id="demo" class="collapse">
+                                <p class="b name">2 Credentials</p>    
+                                <p class="b name">Manju@honeywell.com</p>
+                                <p class="b name">Active</p>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                            <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item assign-card-img-list">
+                        <div class="col-md-1">
+                            <div class="control-label">
+                                <input id="radio" type="radio"> <label for="radio"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ispimage-small assign-card-img">
+                            <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                        </div>
+                        <div class="col-md-8 rightlistcontent">
+                            <h2 class="name">Manjunath Kalburgi</h2>
+                            <p class="b name">Permanent Employee</p>
+                            <div id="demo" class="collapse">
+                                <p class="b name">2 Credentials</p>    
+                                <p class="b name">Manju@honeywell.com</p>
+                                <p class="b name">Active</p>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                            <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>                                        
+                </ul>
+			</div>
+            <div class="modal-footer assign-card-footer" style="margin-top:0" >
+                <div class="btn-group" role="group" aria-label="group button">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a type="button" href="customer-list.html" class="btn btn-primary" >Save</a>
+                </div>
+            </div>
+        </div>
+     </form>
+    </div>
+</div>

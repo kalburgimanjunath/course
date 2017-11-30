@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MPC</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+    <link href="content/css/master.css" rel="stylesheet" type="text/css">
+    <link href="content/css/spinner.css" rel="stylesheet" type="text/css">
+    <link href="content/css/base.css" rel="stylesheet" type="text/css">
+    <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+    <link href="content/css/checkbox.css" rel="stylesheet" type="text/css">
+    <link href="content/css/controlstyles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/nrvcheck-settings.css" rel="stylesheet" type="text/css">
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="scripts/selectize.js"></script>
+    <script src="scripts/jquery.slimscroll.js"></script>
+    <script src="scripts/master.js"></script>
+    <script src="scripts/jquery.mousewheel.js"></script>
+</head>
+
+<body class="mpc">
+    <!--header starts here-->
+    <header>
+        <nav class="masterhead navbar navbar-default">
+            <div class="header_left navbar-header">
+                <a href="#" class="hamburger close_menu pull-left key_cntrl"> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> </a>
+                <div class="masterhead_logo pull-right">
+                    <p></p>
+                </div>
+            </div>
+            <div class="header_right nav navbar-nav navbar-right">
+                <a href="#" class="alarm pull-left hdr_alrm pw_icon"></a>
+                <a href="#" class="help pull-left hdr_hlp pw_icon"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="main_container clearfix people_container row">
+        <div class="people_group col-md-3 col-lg-3">
+            <div class="people_title">
+                <div class="people_grp_list">
+                    <ul class="nav nav-tabs pw_tabs">
+                        <li class="active"> <a href="#people_search" data-toggle="tab">People</a> </li>
+                    </ul>
+                </div>
+                <div class="people_group_right">
+                    <a class="add_sm pw_icon"></a>
+                    <a class="opt_sm pw_icon"></a>
+                </div>
+            </div>
+            <div class="tab-content ppl-list"> </div>
+        </div>
+        <div class="people_details people_deails_tab col-md-9 col-lg-9">
+            <div class="">
+                <div class="ppl_main_tab">
+                    <ul class="nav nav-tabs pw_tabs">
+                        <li class="active"><a href="#" data-toggle="tab">Maps</a></li>
+                        <li><a href="#" data-toggle="tab">Settings</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="nrv">
+                            <div class="clearfix">
+                                <div class="col-sm-2 col-md-3">
+                                    <form class="form-mac">
+                                        <div class="form-group">
+                                            <label for="macid">MAC ID</label>
+                                            <input type="text" class="form-control" id="" placeholder="Email"> </div>
+                                        <button type="submit" class="btn btn-default">Edit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="form-hr">
+                                <hr> </div>
+                            <form class="form-nrv-config">
+                                <div class="clearfix">
+                                    <div class="clearfix">
+                                        <h3 class="form-heading">Network Configuration</h3>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">IP Address</label>
+                                            <input type="text" class="form-control" id="" placeholder="IP Address"> </div>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">HTTP Port</label>
+                                            <input type="text" class="form-control" id="" placeholder="HTTP Port"> </div>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">Subnet Mask</label>
+                                            <input type="text" class="form-control" id="" placeholder="Subnet Mask"> </div>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">Gateway</label>
+                                            <input type="text" class="form-control" id="" placeholder="Gateway"> </div>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">DNS Server</label>
+                                            <input type="text" class="form-control" id="" placeholder="DNS Server"> </div>
+                                        <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                            <label for="macid">Alternate DNS</label>
+                                            <input type="text" class="form-control" id="" placeholder="Alternate DNS"> </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <div class="nrv-rec">
+                                            <h3 class="form-heading">Recorder Settings</h3>
+                                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                                <label for="macid">Name of the recorder</label>
+                                                <input type="text" class="form-control" id="" placeholder="IP Address"> </div>
+                                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                                <label for="macid">Mac Address</label>
+                                                <input type="text" class="form-control" id="" placeholder="HTTP Port"> </div>
+                                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                                <label for="macid">Hardware Version</label>
+                                                <input type="text" class="form-control" id="" placeholder="Subnet Mask"> </div>
+                                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                                <label for="macid">Version of the Firmware</label>
+                                                <input type="text" class="form-control" id="" placeholder="Gateway"> </div>
+                                            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                                <label for="exampleInputEmail1">Recorder Settings</label>
+                                                <select class="selectbox">
+                                                    <option>option 1</option>
+                                                    <option>option 2</option>
+                                                    <option>option 3</option>
+                                                    <option>option 4</option>
+                                                    <option>option 5</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-12  col-md-12 col-sm-12">
+                                                <button type="submit" class="btn btn-default">Reboot</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                            <hr>
+                            <form>
+                                <div class="clearfix">
+                                    <h3 class="form-heading">POE Settings</h3>
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                        <label for="macid">POE IP Address</label>
+                                        <input type="text" class="form-control" id="" placeholder="IP Address"> </div>
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                        <label for="macid">POE Subnet Mask</label>
+                                        <input type="text" class="form-control" id="" placeholder="HTTP Port"> </div>
+                                    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                                        <label for="macid">POE Default Gateway</label>
+                                        <input type="text" class="form-control" id="" placeholder="Subnet Mask"> </div>
+                                </div>
+                            </form>
+                            <div class="clearfix nrv-rec">
+                                <form>
+                                    <h3 class="form-heading">MAXPRO Connect Settings</h3>
+                                    <div class="form-group serv-url col-lg-4 col-md-4 col-sm-4">
+                                        <label for="macid">Server URL</label>
+                                        <input type="text" class="form-control" id="" placeholder="Server URL"> </div>
+                                </form>
+                            </div>
+                            <hr>
+                            <div class="clearfix">
+                                <form>
+                                    <h3 class="form-heading">Advanced Settings</h3>
+                                    <div class="form-group col-lg-12  col-md-12 col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Restore Password</button>
+                                        <button type="submit" class="btn btn-primary">Update Password</button>
+                                        <button type="submit" class="btn btn-primary">Sync Device</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Main layout ends-->
+    <script>
+    </script>
+</body>
+
+</html>

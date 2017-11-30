@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Selectize.js Demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/stylesheet.css">
+		<!--[if IE 8]><script src="js/es5.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="../dist/js/standalone/selectize.js"></script>
+		<script src="js/index.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/peopleareas.css">
+		<style type="text/css">
+
+		@import url("../../Content/Styles/icons.css");
+		@import url("../../css/peopleareas.css");
+		.selectize-control .option .title {
+			display: block;
+		}
+		.selectize-control .option .url {
+			font-size: 12px;
+			display: block;
+			color: #a0a0a0;
+		}
+		.selectize-control .item a {
+			color: #006ef5;
+		}
+		.selectize-control .item.active a {
+			color: #303030;
+		}
+
+		.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header{
+		    padding: 6px 8px;
+				font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #b0b0b0;
+		}
+
+		.selectize-dropdown .active{
+			font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #303030;
+		}
+
+		</style>
+	</head>
+    <body>
+		<div id="wrapper">
+			<div class="demo">
+				<div class="control-group">
+					<label for="select-links">Links:</label>
+					<select id="select-links" placeholder="Pick some links..."></select>
+				</div>
+				<script>
+				// <select id="select-links"></select>
+
+				$('#input-tags').selectize({
+				    delimiter: ',',
+				    persist: false,
+				    create: function(input) {
+				        return {
+				            value: input,
+				            text: input
+				        }
+				    }
+				});
+
+				$('#select-links').selectize({
+					theme: 'links',
+					maxItems: null,
+					valueField: 'id',
+					searchField: 'title',
+					persist: false,
+					options: [
+						{id: 1, title: 'DIY', url: 'https://diy.org'},
+						{id: 2, title: 'Google', url: 'http://google.com'},
+						{id: 3, title: 'Yahoo', url: 'http://yahoo.com'},
+					],
+					render: {
+						option: function(data, escape) {
+							return '<div class="option">' +
+									'<span class="ispicon ispicon_plus pull-left"/>' +
+									'<span class="title">' + escape(data.title) + '</span>' +
+									// '<span class="url">' + escape(data.url) + '</span>' +
+
+								'</div>';
+						},
+						
+						item: function(data, escape) {
+							return '<div class="item"><a href="' + escape(data.url) + '">' + escape(data.title) + '</a></div>';
+						}
+					},
+					// render: {
+					//     optgroup_header: function(data, escape) {
+					//     return '<div class="optgroup-header">' + escape(data) + '</div>';
+					// 	}
+					// },
+					create: function(input) {
+						return {
+							id: 0,
+							title: input,
+							url: '#'
+						};
+					}
+				});
+				$('#select-links')[0].selectize.addOptionGroup('1', 'meat');
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

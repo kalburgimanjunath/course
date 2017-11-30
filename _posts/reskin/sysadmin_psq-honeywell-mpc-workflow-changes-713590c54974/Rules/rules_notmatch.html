@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://ck.api-ucp-platform.org/MPCNEW/ -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules</title>
+    <link href="../content/css/header.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+    <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/master.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../content/css/ispcommon.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/rules.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="../content/js/bootstrap.min.js"></script>
+    <script src="../content/js/bootstrap-multiselect.js"></script>
+    <script src="../scripts/jquery.slimscroll.min.js"></script>
+    <script src="../content/js/bootstrap-select.min.js"></script>
+    <script src="../scripts/selectize.js"></script>
+    <script src="../scripts/master.js"></script>
+  </head>
+  <body class="ps-rules-edit" tabindex="0">
+    <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title"></span>
+        </a>
+        <div class="main-menu-navigation" id="overlay-menu">
+          <div class="topmenucontent">
+            <div class="nav_img">
+              <a href="" class="close_btn key_cntrl">×</a>
+            </div>
+            <ul class="main-menu-ul">
+              <!-- ko foreach: $data.pages -->
+              <li class="card-item">
+                <header class="count">
+                  <span></span>
+                </header>
+                <p>Insight</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_1"></span>
+                </header>
+                <p>Create &amp; Edit</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_2"></span>
+                </header>
+                <p>Viewer</p>
+              </li>                        
+              <li class="card-item active">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_4"></span>
+                </header>
+                <p>Reports</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_5"></span>
+                </header>
+                <p>Rules</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_6"></span>
+                </header>
+                <p>Calendar</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_7"></span>
+                </header>
+                <p>Maps</p>
+              </li>                       
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_8"></span>
+                </header>
+                <p>Controller</p>
+              </li>
+              <!--/ko-->
+              <li>Eagle Menus</li>
+              <li class="dropdown">
+                <p class="dropdown-toggle">
+                <span class="ispicon ispicon_accounts"></span>
+                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                </p>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                    <header class="count">
+                      <span class="ispicon ispicon_plus"></span>
+                    </header>
+                    <p>Add New Account</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                    <header class="count">
+                      <span class="ispicon ispicon_overview"></span>
+                    </header>
+                    <p>Account Overview</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                    <header class="count">
+                      <span></span>
+                    </header>
+                    <p>Customer List</p>
+                  </li>                               
+                </ul>
+              </li>                      
+              <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>
+            </ul>
+            <ul class="handbar-profile">
+              <li>
+                <div class="col-xs-12 col-sm-8">
+                  <span class="name">Scott Stevens</span><br>
+                  <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right" id="notification-menu">
+        <div id="navigation-menu">
+          <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li id="notifications" class="dropdown">
+                <a href="" class="dropdown notification-icon"></a>
+                <ul class="dropdown-menu dashboard-message" id="dash-message">
+                  <li class="msg-header">
+                    <span class="header" id="header">
+                    Today's Notifications
+                    </span>
+                  </li>
+                  <!-- ko foreach: $data.messages --><!-- /ko -->
+                  <li id="ShowAllNotifications" class="msg">
+                    <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                  </li>
+                  <li id="msgTitle" class="msg">
+                    <span class="dropdown-menu-sub-footer">Loading</span>
+                  </li>
+                </ul>
+              </li>
+              <li id="profileoptions" class="dropdown">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                    </a>
+                    <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile">
+                      <li>
+                        <span class="profile-icon">
+                          <span class="icon_userNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Profile Details</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span class="icon_helpNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Help</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span class="icon_logoutNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Logout</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="siteurl" value="/MPCNEW/">
+    </div>     
+  </header>
+
+    <!--rule-main-container-starts-->
+    <section class="view mpc ps-rules-mpc" id="rules" data-complete="true">
+      <div class="row ps-row ps-main-container-rules">
+        <!---sidebar-starts-here-->
+        <div class="col-md-3 col-lg-3 ps-rules-left-sidebar sidebar-left people_group no-padding">
+
+          <script type="text/html" id="ruleitemtemplate">
+            <li>
+              <div id="rulelist">
+                <div class="rulelistItem">
+                  <div class="txtFields">
+                    <ul>
+                      <li class="bottomSpace grid-text1" >
+                        <b></b>
+                        <span class="status failed rule-status"></span>
+                      </li>
+                      <li class="bottomSpace grid-text2">
+                        <span class="report-date"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </script>
+          <div id="ruleviewContainer" data-url="/MPCNEW/RuleConfig/GetRulesForUser">
+            <div class="row ps-row ps-first-row">
+              <div class="col-md-6 col-lg-6 ps-left-header padding">
+                <div class="sidebar-title">
+                  <h1>Rules</h1>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 ps-left-header-icons card-header">
+                <div data-toggle="modal" data-target="#myModal" class="icon icon-delete tooltipg pull-right">delete
+                 <div class="tooltip">
+                 <div class="tooltip-arrow"></div>
+                 <div class="tooltip-inner">Delete</div>
+                </div>
+                </div>
+                
+                  <a href="#" class=""> 
+                    <div class="icon icon-add tooltipg pull-right">add
+                      <div class="tooltip">
+                        <div class="tooltip-arrow"></div>
+                        <div class="tooltip-inner">Edit</div>
+                      </div>
+                    </div>
+                  </a> 
+            
+              </div>
+            </div>
+            <div class="row ps-row ps-second-row padding">
+              <div class="col-md-10 col-lg-10 no-padding ps-left-header-search">
+                <form onsubmit="return false" id="search-box" class="ruleSearchContainer">
+                  <span class="icon-search pull-left" id="search-box">
+                    <input type="search" class="form-control searchbox" value="Obli" placeholder="Search" name="q">
+                    <span class="focus-icon-search"></span>
+                  </span>
+                </form>
+              </div>
+              <div class="col-md-2 col-lg-2 no-padding ps-left-search-icons">
+                <span class="icon icon-drop pull-right"></span>
+              </div>
+            </div>
+            <div class="row ps-row ps-second-row">
+              <span class="total-count">
+              <span class="search-text">No matches found for</span>
+              <span class="search-result">"Obli"</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!---sidebar-ends-here-->
+
+        <!---rules-right-side-body-->
+        <div id="ruleconfigContainer" class="col-md-9 col-lg-9 rules-main-content ps-main-container" data-url="/MPCNEW/Treeview/GetAllCamerawithStatusbyRecorderId">
+
+          <!--rule-second-header-starts-->
+          <div class="row ps-row ps-rules-first-top-right">
+            <div class="col-md-9 col-lg-9 ps-rule-content-title no-padding">
+              <a href="#" class="sidebar-slide icon"></a>
+              <h1>Disarm Site</h1>
+            </div>
+            <div class="col-md-3 col-lg-3 ps-rules-switcher card-header">
+              <div class="switch_btn pull-right">
+                <input name="Validity" id="grp_validity" type="checkbox">
+                <label for="grp_validity"></label>
+              </div>
+              <a href="#">
+                <div class="icon tooltipg icon-edit pull-right active">
+                   <div class="tooltip">
+                  <div class="tooltip-arrow"></div>
+                  <div class="tooltip-inner">Edit</div>
+              </div>
+                </div> 
+              </a>
+             
+            </div>
+          </div>
+          <div class= "row ps-row ps-rules-second-top-right">
+            <ul id="rulelistHeader">
+              <li>
+                <div class="col-md-4 col-lg-4 pull-left padding">
+                  <div class="ps-top-section">
+                    <div class="form-group">
+                      <label id="lbl.RULE_LABEL_RULENAME" class="control-label pull-left">Rule Name*</label>
+                      <input type="text" id="rulename_textbox" class="form-control" required="required">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-4 col-lg-4 pull-left padding-20">
+                  <div class="ps-top-section" data-target="webuiPopover0">
+                    <div class="form-group">
+                      <label id="lbl-RULE_LABEL_RULEPOSITION" class="control-label pull-left">Site*</label>
+                      <input type="text" class="form-control readonly" id="position_textbox" required="required" readonly>
+                      <b class=" icon_list1" data-toggle="popover" data-placement="auto"></b>
+                    </div>
+                  </div>
+                  <div class="selectColumnContainer select-site-rule popup-site">
+                    <ul class="" id="accordion1">
+                      <li class="search">
+                        <span class="icon-search">
+                          <input type="search" class="form-control form-search" placeholder="Search report">
+                          <span class="focus-icon-search"></span>
+                        </span>
+                  
+                      </li>
+                      <li class="ps-checkbox checkbox"> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                          <label class=" control-label label-padding">
+                           
+                            <legand>Health and Status Event</legand>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                            
+                            <label class=" control-label label-padding">
+                              
+                              <legand>Video</legand>
+                            </label>
+                          </a>
+                        </li>
+                        <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                           
+                            <label class=" control-label label-padding">
+                              
+                              <legand>Access</legand>
+                            </label>
+                          </a>
+                        </li>                                    
+                      </ul>                                                    
+                    </li>
+                    <li class="ps-checkbox checkbox"> 
+                      <a href="#">
+                        <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink2" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                        <label class=" control-label label-padding">
+                          
+                          <legand>Alarm/Event</legand>
+                        </label>
+                      </span>
+                    </a>
+                    <ul id="firstLink2" class="collapse" aria-expanded="false">
+                      <li class="ps-checkbox checkbox site-active">
+                        <a href="#"> 
+                          
+                          <label class=" control-label label-padding">
+                            
+                            <legand>Video</legand>
+                          </label>
+                        </a>
+                      </li>                                     
+                    </ul>                                                    
+                  </li>
+                  <li class="ps-checkbox checkbox"> 
+                    <a href="#">
+                      <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink3" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                      <label class=" control-label label-padding">
+                        
+                        <legand>System</legand>
+                      </label>
+                    </span>
+                  </a>
+                  <ul id="firstLink3" class="collapse" aria-expanded="false">
+                    <li class="ps-checkbox checkbox">
+                      <a href="#"> 
+                        
+                        <label class=" control-label label-padding">
+                          
+                          <legand>Access</legand>
+                        </label>
+                      </a>
+                    </li>                                     
+                  </ul>                                                    
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+              <div class="pull-right col-md-4 col-lg-4 pull-left padding-20">
+                <div class="checkbox ps-checkbox ps-top-section-checkbox">
+                  <label id="lbl-Display_Rules_Execution_Alarms" class="control-label">
+                    <input type="checkbox" name="displayRuleExecution" id="displayRuleExecution">
+                    <span></span>
+                    <div class="ps-checkbox-text">Display Rules execution in Alarms</div>
+                  </label>
+                </div>
+              </div>
+            </ul>
+            <div class="show-rules-list" data-position="left" title="" data-original-title="Expand list of rules">
+              <span class="cursor_Pointer" id="rules-toggle-show"><b class="icon_listRules"></b></span>
+            </div>
+            <div class="divider-bottom"></div>
+          </div>
+          <!--rule-second-header-ends-->
+
+          <!--rule-right-container-starts-->
+          <div id="div_rulecntr" class="ps-rules-right-container">
+           
+            <section id="ruleeditbody" class="">
+              <!--rule-body-container-starts-->
+              <div class="row ps-row clearfix row-layout ps-rules-body-section">
+                <div class="ps-rules-when-title col-lg-6 col-md-6 col-sm-6 padding">
+                  <h1>When</h1>
+                  <span>this rule should trigger…</span>
+                </div>
+                <div class="ps-rules-when-title col-lg-6 col-md-6 col-sm-6 padding">
+                  <h1>Then</h1>
+                  <span>what actions should it perform.</span>
+                </div>
+                <div class="main-rules col-md-12 no-padding">
+                <div class="scroll-rules">
+                <div class="col-lg-6 col-md-6 col-sm-6 padding">
+                  
+                  <div id="div_devicecntr" class="ps-rules-when-section">
+                    <ul id="rulesettingList scroll-rules">
+                    
+                      <span class="rules-action-wrapper">
+                      <span class="icon icon-cross pull-right"></span>
+                        <li class="ps-rules-grey-wrapper rules-device">
+                          <ul id="RULESETTINGS_FOR_DEVICE" data-template="RULESETTINGS_FOR_DEVICE_TEMPLATE" data-templateid="_8c5675b9_35b4_431c_9e3c">
+                            <div class="ps-rules-icon">
+                              <span class="icon icon-areas pull-left"></span>
+                            </div>
+                            <div class="ps-rules-input-group">
+                              <li class="ps-rules-first-input-wrapper" >
+                                <div class="form-group">
+                                  <span id="device-popoverbtn" data-placement="auto">
+                                    <span class="icon_list1i"></span>
+                                  </span>
+                                  <label id="lbl-RULE_LABEL_DEVICE" class="control-label pull-left">Areas*<span class="rsAcCount"></span></label>
+                                  <input type="text" placeholder="Main Area + 4"  class="form-control readonly" id="txt_device" readonly>
+                                  <span class="icon icon-popup"></span>
+                                  <div class="selectColumnContainer popup-site">
+                    <ul class="" id="accordion1">
+                      <li class="search">
+                        <span class="icon-search">
+                          <input type="search" class="form-control form-search" placeholder="Search report">
+                          <span class="focus-icon-search"></span>
+                        </span>
+                  
+                      </li>
+                      <li class="ps-checkbox checkbox"> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink1" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                          <label class=" control-label label-padding">
+                            <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                            <span></span>
+                            <legand>Health and Status Event</legand>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink1" class="collapse" aria-expanded="false">
+                        <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                            
+                            <label class=" control-label label-padding">
+                              <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                              <span></span>
+                              <legand>Video</legand>
+                            </label>
+                          </a>
+                        </li>
+                        <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                           
+                            <label class=" control-label label-padding">
+                              <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                              <span></span>
+                              <legand>Access</legand>
+                            </label>
+                          </a>
+                        </li>                                    
+                      </ul>                                                    
+                    </li>
+                    <li class="ps-checkbox checkbox"> 
+                      <a href="#">
+                        <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink21" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                        <label class=" control-label label-padding">
+                          <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                          <span></span>
+                          <legand>Alarm/Event</legand>
+                        </label>
+                      </span>
+                    </a>
+                    <ul id="firstLink21" class="collapse" aria-expanded="false">
+                      <li class="ps-checkbox checkbox">
+                        <a href="#"> 
+                          
+                          <label class=" control-label label-padding">
+                            <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                            <span></span>
+                            <legand>Video</legand>
+                          </label>
+                        </a>
+                      </li>                                     
+                    </ul>                                                    
+                  </li>
+                  <li class="ps-checkbox checkbox"> 
+                    <a href="#">
+                      <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink31" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                      <label class=" control-label label-padding">
+                        <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                        <span></span>
+                        <legand>System</legand>
+                      </label>
+                    </span>
+                  </a>
+                  <ul id="firstLink31" class="collapse" aria-expanded="false">
+                    <li class="ps-checkbox checkbox">
+                      <a href="#"> 
+                        
+                        <label class=" control-label label-padding">
+                          <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                          <span></span>
+                          <legand>Access</legand>
+                        </label>
+                      </a>
+                    </li>                                     
+                  </ul>                                                    
+                </li>
+              </ul>
+            </div>
+                                </div>
+                              </li>
+
+
+                              <li class="ps-rules-second-input-wrapper">
+                                <div class="form-group margin">
+                                  <span data-toggle="popover">
+                                    <b class="icon_list1o"></b>
+                                  </span>
+                                  <label id="lbl-RULE_OPTION_SELECTEVENTS" class="control-label">Actions* <b class="rsAcCount"></b></label>
+                                  <select class="form-control">
+                                    <option>Disarmed</option>
+                                    <option>Disarmed1</option>
+                                    <option>Disarmed2</option>
+                                    <option>Disarmed3</option>
+                                  </select>
+                                </div>
+                                <span class="remove-button">
+                                  <b class="icon_removeRule"></b>
+                                </span>
+                              </li>
+                            </div>
+                          </ul>
+                        </li>
+
+                        <li class="ps-rules-condition-buttons clone-conditions">
+                          <div class="ps-rules-switch-options">
+                            <div class="switch_options">
+                              <span class="switch_enable">AND</span>
+                              <span class="switch_disable selected">OR</span>
+                              <input type="hidden" class="switch_val" value="2">
+                            </div>
+                            <input type="hidden" class="switch_val" value="1">
+                          </div>
+                        </li>
+
+                        <span class="icon icon-cross pull-right schedules-wrapper"></span>    
+                        <li class="ps-rules-grey-wrapper schedules-wrapper">
+                          <ul id="SCHEDULESETTINGS_FOR_DEVICE" data-template="SCHEDULESETTINGS_FOR_DEVICE" data-templateid="_600c0e9b_9cdb_4280_909b">
+                            <div class="ps-rules-icon">
+                              <span class="icon icon-schedule pull-left"></span>
+                            </div>
+                            <div class="ps-rules-input-group">
+                              <li class="ps-rules-first-input-wrapper">
+                                <div class="form-group margin">
+                                  <span id="schedule-popoverbtn" data-target="webuiPopover1">
+                                    <b class="icon_list1o"></b>
+                                  </span>
+                                  <label id="lbl-RULE_LABEL_SCHEDULE" class="control-label">Schedules <b class="rsAcCount"></b></label>
+                                  <select class="form-control">
+                                    <option>Work Week Schedule</option>
+                                    <option>Work Week Schedule</option>
+                                    <option>Work Week Schedule</option>
+                                    <option>Work Week Schedule</option>
+                                  </select>
+                                </div>
+                                <span class="remove-button">
+                                  <b class="icon_removeRule"></b>
+                                </span>
+                              </li>
+                            </div>
+                          </ul>
+                        </li>
+
+                        
+                        
+                      </span>
+                      <div class="form-group col-lg-10 col-md-10 col-sm-10 no-padding selectize-form-group">
+                              <select class="form-control" id="txbruleswhen" selected="Select condition*" tabindex="1">
+                                <option value="Select condition*">Select condition*</option>
+                                <option value="Device">Device</option>
+                                <option value="Action">Action</option>
+                                <option value="Schdules">Schdules</option>
+                                <option value="Controller">Controller</option>
+                                <option value="Areas">Areas</option>
+                                <option value="Zones">Zones</option>
+                                <option value="Doors">Doors</option>
+                                <option value="Cameras">Cameras</option>
+                                <option value="Time">Time</option>
+                              </select>
+                      </div>
+                      <div class="ps-rules-divider-wrapper">
+                            <div class="ps-rules-icon-wrapper">
+                              <span class="icon icon-add"></span>
+                            </div>
+                            <div class="ps-rules-text-add">Add another condition</div>
+                        </div>
+                    </ul>
+                  </div>
+                  <!-- <div class="modelLeftSection">
+                  </div> -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 padding">
+                 
+                  <div id="div_actiondevicecntr" class="ps-rules-then-section">
+                  
+                      <ul id="rulesettingListAction">
+                        <span class="then-rules-wrapper">
+                          <span class="icon icon-cross pull-right"></span>
+                        <li class="ps-rules-grey-wrapper thenaction">
+                          <div class="ps-rules-icon">
+                            <span class="icon icon-device pull-left"></span>
+                          </div>
+                          <div class="ps-rules-input-group">
+                            <ul data-template="RULESETTINGS_FOR_DEVICE_ACTIONTEMPLATE" data-templateid="_bfae7eba_80c9_4f54_88fe">
+                              <li class="ps-rules-first-input-wrapper">
+                                <div class="form-group">
+                                  <span id="deviceAction-popoverbtn" data-placement="auto">
+                                    <b class="icon_list1o"></b>
+                                  </span>
+                                  <label id="lbl-.RULE_OPTION_DEVICES" class="control-label">Devices <b class="rsAcCount"></b></label>
+                                  <input type="text" placeholder="Main Area + 4" class="form-control" id="txt_deviceAction">
+                                  <span class="icon icon-popup"></span>
+                                </div>
+                              </li>
+                              <!--<li>
+                              <span class="oddContainer"></span>
+                              </li> -->
+                            </ul>
+
+                            <ul id="RULESETTINGS_FOR_ACTION_EMAIL" data-template="RULESETTINGS_FOR_ACTION_EMAIL" data-templateid="_0b2f688b_975f_443f_adda">
+                              <li class="ps-rules-second-input-wrapper">
+                                <div class="form-group margin">
+                                  <label id="lbl-RULE_LABEL_EMAIL" class="control-label">Actions</label>
+                                  <span data-toggle="popover" class="input-group-addon-left">
+                                    <b class="icon_list1la"></b>
+                                  </span>
+                                  <select class="form-control">
+                                    <option>Open and Normal</option>
+                                    <option>Open and Normal</option>
+                                    <option>Open and Normal</option>
+                                    <option>Open and Normal</option>
+                                  </select>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <div class="ps-rules-divider-wrapper">
+                            <div class="ps-rules-icon-wrapper">
+                              <span class="icon icon-add"></span>
+                            </div>
+                            <div class="ps-rules-text-add">Add another action</div>
+                        </div>
+                        </span>
+                        <div class="form-group col-lg-10 col-md-10 col-sm-10 no-padding selectize-form-group">
+                                <select class="form-control" id="txbrulesthen" tabindex="1">
+                                 <option value="Select condition*">Select condition*</option>
+                                <option value="Device">Device</option>
+                                <option value="Action">Action</option>
+                                <option value="Schdules">Schdules</option>
+                                <option value="Door">Door</option>
+                                <option value="Cameras">Cameras</option>
+                                <option value="Actions">Actions</option>
+                              </select>
+                            </div>
+                      </ul>                   
+                  </div>
+                </div>
+                </div>
+                </div>
+              </div>
+              <!--rule-body-container-ends-->
+
+              <div class="footer-menu-dashboard">
+                <div class="buttonGroup">
+                  <button class="btn btn-primary pull-right">Save</button>
+
+                  <button class="btn btn-default pull-right btn-space margin-right">Cancel</button>
+                </div>
+              </div>
+            </section>
+            <input id="ruleconfigurl" type="hidden" data-treeurl="/MPCNEW/treeview" data-url="/MPCNEW/RuleConfig">
+          </div>
+          <!--rule-right-container-ends-->
+        </div>
+        <!---rules-right-side-body-->
+      </div>
+    </section>
+    <!--rule-main-container-ends-->
+      <!-- Modal -->
+      <div class="modal confirm-delete fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Confirm Delete</h4>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete rule Disarm site?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default " data-dismiss="modal">No</button>
+              <button class="btn btn-primary pull-right">Yes</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    <script src="../scripts/custom.js"></script>
+  </body>
+</html>

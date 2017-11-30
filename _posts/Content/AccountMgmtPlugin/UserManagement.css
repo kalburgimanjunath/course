@@ -1,0 +1,910 @@
+﻿/*version 1.0.2*/
+.usermanagement-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .usermanagement-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .usermanagement-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .usermanagement-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none -moz-box-sizing:none;
+                box-sizing: none;
+            }
+
+                .usermanagement-root .isptabs .nav li a:hover, .usermanagement-root .isptabs .nav li a:active, .usermanagement-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .usermanagement-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.usermanagement-root .peopleoverview {
+    /*border-left: 1px solid #e7e7e7;*/
+}
+
+.usermanagement-root .usercardcontainer {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    border-right: 1px solid #e7e7e7;
+    /* height: 1000px; */
+    position: absolute;
+    left: 0;
+    top: 60px;
+    bottom: 0px;
+    position: fixed;
+        overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-box-shadow: rgb(238, 238, 238) 3px 0px 4px -2px;
+    box-shadow: rgb(238, 238, 238) 3px 0px 4px -2px;
+}
+
+    .usermanagement-root .usercardcontainer .isppagetitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #202020;
+        margin-left: 20px;
+        font-size: 22px;
+        
+        margin: 16px 0 16px 20px;
+    }
+
+    .usermanagement-root .usercardcontainer .pull-right {
+        margin-right: 20px;
+    }
+
+    .usermanagement-root .usercardcontainer .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.usermanagement-root .usermanagementprofile {
+    margin-left: -15px !important;
+}
+
+.usermanagement-root .profile-pic {
+    /*left: 14px !important;*/
+    /* padding-left: 20px; */
+    background: #f2f2f2;
+    padding: 0px;
+    width: 114px;
+    height: 109px;
+}
+
+    .usermanagement-root .profile-pic img {
+        max-width: 114px;
+        max-height: 110px;
+        width: 114px;
+        height: 110px;
+        padding: 0px;
+        border-radius: 0px;
+            display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.usermanagement-root .img-browse-txt {
+    margin-top: -40px;
+    /*position: absolute;*/
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+}
+
+.usermanagement-root .usercardcontainer .usercards {
+    /* height: 59%; */
+    position: absolute;
+    /* overflow: scroll; */
+    top: 0;
+    bottom: 0;
+    width:100%;
+}
+
+    .usermanagement-root .usercardcontainer .usercards .ispimage-small img {
+        min-width: 50px;
+        height: 50px;
+        padding: 0px;
+        border-radius: 0px;
+    }
+
+        .usermanagement-root .usercardcontainer .usercards .ispimage-small img[src=""] {
+            background-image: url('../images/icon_sprites_24px.svg');
+            display: block;
+            width: 56px;
+            height: 56px;
+            margin-top: 3px;
+            background-size: 1400px;
+            content: "";
+            background-position: -226px -111px;
+            vertical-align: top;
+            z-index: 100;
+        }
+
+
+
+    .usermanagement-root .usercardcontainer .usercards .ispimage-small {
+        max-width: 52px;
+        padding-left: 2px;
+    }
+
+    .usermanagement-root .usercardcontainer .usercards .checkbox-square {
+        padding-left: 10px;
+    }
+
+        /*this is custom fix for checkbox style on People list page and Create New IntrusionGroup from People page*/
+        .usermanagement-root .usercardcontainer .usercards .checkbox-square input[type="checkbox"], .people-root .addSchedule .checkbox-square input[type="checkbox"] {
+            margin-top: 0px;
+        }
+
+
+.usermanagement-root .usercardcontainer .name {
+    text-align: left;
+    margin-right: 0;
+    display: inline-block;
+    width: 57%;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top:3px;
+}
+
+.usermanagement-root .usercardcontainer .designation {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #606060;
+    float: left;
+    position: absolute;
+    left: 16px;
+}
+
+.usermanagement-root .usercardcontainer .employeeid {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+    .usermanagement-root .usercardcontainer .employeeid .card {
+        margin-left: 12px;
+    }
+
+.usermanagement-root .usercardcontainer .inactive {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    float: left;
+    word-break: initial;
+    font-size: 10px;
+    line-width: 100;
+    line-height: 100%;
+    color: #FFF;
+    display: inline-block;
+    background-color: #a0a0a0;
+    text-transform: capitalize;
+    float: left;
+    max-width: 43%;
+    /* margin-left: 16px; */
+    padding: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.usermanagement-root .viewmode {
+}
+
+    .usermanagement-root .viewmode input, .people-root .viewmode textarea, .usermanagement-root .viewmode input[type="checkbox"], .usermanagement-root .viewmode input[type="radio"], .usermanagement-root .viewmode select, .usermanagement-root .viewmode .ispicon_calender {
+        background-color: #f2f2f2;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+        pointer-events: none;
+    }
+
+    .usermanagement-root .viewmode .profile-pic input[type="file"] {
+        pointer-events: none;
+    }
+
+    .usermanagement-root .viewmode .checkbox {
+        pointer-events: none;
+    }
+
+    .usermanagement-root .viewmode .btn-footer {
+        display: none;
+    }
+
+    .usermanagement-root .viewmode .ispicon_calender {
+        background: transparent;
+    }
+
+.usermanagement-root .btn-footer {
+    position: fixed;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 16px 20px 16px 10px;
+    left: 25%;
+    width: 75%;
+    background: #fff;
+}
+
+.usermanagement-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+
+.usermanagement-root .usercardcontainer .c-search {
+    margin: 0px;
+}
+
+.usermanagement-root .c-search input {
+    padding-left: 50px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #d0d0d0;
+    border: 0;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+}
+
+
+.usermanagement-root .usercardcontainer .c-search input:focus, .people-root .usercardcontainer .c-search button:focus, .people-root .usercardcontainer .c-search input:hover {
+    border: none;
+    box-shadow: none;
+    background-color: none;
+}
+
+.usermanagement-root .usercardcontainer .c-search button {
+    border: 0;
+}
+
+.usermanagement-root .usercardcontainer .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.usermanagement-root .peopleoverview .usermanagementprofile, .peopleoverview .access {
+    max-height: 400px;
+}
+
+.usermanagement-root .section-head2 {
+    font-size: 18px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.usermanagement-root .section-head1 {
+    font-size: 22px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 82%;
+}
+
+.peopleoverview .nav.nav-tabs {
+    padding-top: 12px;
+    position: absolute;
+    top: 75px;
+    left: 161px;
+    min-width: 73%;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+    .usercardcontainer .usercards {
+        max-height: 735px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    /* .usermanagement-root .usercardcontainer .usercards {
+        max-height: 735px;
+    }*/
+
+    .usermanagement-root .peopleoverview .usermanagementprofile, .peopleoverview .access {
+        max-height: 707px;
+    }
+
+    .usermanagement-root .btn-footer .btn-group.col-md-offset-4 {
+        left: 64px;
+    }
+
+    .usermanagement-root .usercardcontainer .name {
+        max-width: 217px;
+    }
+}
+
+@media screen\0 and (max-width: 1366px) and (min-width: 1441px) {
+    .peopleoverview .usermanagementprofile, .peopleoverview .access {
+        max-height: 500px;
+    }
+}
+
+@media screen\0 {
+    /*.usermanagement-root .usercardcontainer .usercards {
+        max-height: 735px;
+    }*/
+
+    .usermanagement-root .peopleoverview .usermanagementprofile, .peopleoverview .access {
+        max-height: 428px;
+    }
+
+    .usermanagement-root .usercardcontainer .c-search input {
+        padding-top: 10px;
+    }
+
+    .usermanagement-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+
+    .usermanagement-root .peopleoverview .profile-pic img[src=''] {
+        background-position: -150px -116px;
+    }
+
+    .usermanagement-root .usercardcontainer .usercards .ispimage-small img {
+        height: 50px !important;
+    }
+}
+
+@media screen\0 and (min-width: 1920px) {
+    /*.usermanagement-root .usercardcontainer .usercards {
+        max-height: 800px;
+    }*/
+
+    .usermanagement-root .peopleoverview .usermanagementprofile, .peopleoverview .access {
+        max-height: 900px;
+    }
+}
+
+.blankview {
+    padding-top: 20%;
+    padding-left: 33%;
+}
+
+.usercardcontainer .rightlistcontent {
+    width: 67%;
+    padding-right: 0px;
+}
+
+.usermanagementle-root .usercards [title]:hover:after {
+    content: attr(title);
+    padding: 4px 8px;
+    color: #606060;
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: -30px;
+    z-index: 20;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #323232;
+    -webkit-box-shadow: 0px 0px 4px #323232;
+    box-shadow: 0px 0px 4px #323232;
+    background: #fff;
+}
+
+.usermanagement-root .card-horizontal-scroller {
+    height: 61px;
+    margin-top: 16px;
+}
+
+    .usermanagement-root .card-horizontal-scroller .card {
+        max-width: 150px;
+        padding: 20px;
+        margin-right: 8px;
+        background-color: #f7f7f7;
+        font-size: 14px;
+        color: #000;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        cursor: pointer;
+    }
+
+        .usermanagement-root .card-horizontal-scroller .card.active {
+            background-color: #1792e5;
+            color: #fff;
+        }
+
+        .usermanagement-root .card-horizontal-scroller .card span {
+            background-color: #606060;
+            padding: 0px 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+            .usermanagement-root .card-horizontal-scroller .card span.carditem {
+                background-color: transparent;
+            }
+
+.usermanagement-root .checkboxlabel .checkbox {
+    margin: -5px 0px 10px 0;
+}
+
+.usermanagement-root .ispbuttongroup {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    padding: 0px;
+}
+
+.usermanagement-root .overviewtitle h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ispbuttongroup .btn-group {
+    right: 24px;
+    position: absolute;
+}
+
+
+/* LEFT LIST VIEW */
+.usercardcontainer .list-group-item {
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.usercardcontainer .nav.nav-tabs {
+    margin-left: 20px;
+    border-bottom: 0px !important;
+}
+
+/* RIGHT PANE VIEW */
+.usercardcontainer .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+.usercardcontainer {
+    padding: 0px;
+}
+
+    .usercardcontainer .list-group-item {
+        border-radius: 0;
+    }
+
+        .usercardcontainer .list-group-item.active, .usercardcontainer .list-group-item.active:hover, .usercardcontainer .list-group-item.active:focus, .usercardcontainer .list-group-item:active {
+            background-color: #e1eff9;
+            color: #606060;
+            border-color: #e7e7e7;
+        }
+
+        .usercardcontainer .list-group-item.masteruser .employeeid {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #9b59b6;
+            text-transform: uppercase;
+        }
+
+        .usercardcontainer .list-group-item:hover {
+            background: #f5f5f5;
+            cursor: pointer;
+        }
+
+    .usercardcontainer .name {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 15px;
+        color: #303030;
+    }
+
+    .usercardcontainer .sensorsList {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 14px;
+        color: #808080;
+    }
+
+/*.c1 {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.c2 {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #606060;
+}
+
+.c3 {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.c4 {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+}*/
+
+.usermanagement-root .pagemaincontainer {
+    top: 0;
+    position: absolute;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+}
+
+.usermanagement-root .usercardcheckbox {
+    top: 0;
+    margin-top: 19px;
+    width: 20px;
+}
+
+.usermanagement-root .usercardcontainerscroll {
+    top: 150px;
+    position: absolute;
+    bottom: 0;
+    overflow-y: auto;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.usermanagement-root .editplaceholder {
+}
+
+.ispforms .btn:first-child {
+    margin-right: 12px;
+}
+
+.usermanagement-root .panel.panel-default {
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+}
+
+.viewmode .hideinviewmode {
+}
+
+.viewmode .ispselectdropdown .ispicon_dropArrow {
+    display: none;
+}
+
+.usermanagement-root .useroverview {
+    position: fixed;
+    left: 25%;
+    width: 75%;
+    padding: 20px;
+    /*overflow-y: auto;*/
+    top: 60px;
+    bottom: 53px;
+}
+.usermanagement-root .UserEditIcon{
+    position: relative;
+    z-index: 1;
+    padding-top: 25px;
+}
+
+.usermanagement-root .useroverview.viewmode {
+    bottom: 0;
+    pointer-events: auto;
+}
+
+.usermanagement-root .useroverview hr.horizon-line{
+        width: 120%;
+    margin-top: 58px;
+    margin-bottom: 0;
+}
+
+.usermanagement-root .listrighticon {
+    float: right;
+    margin-top: -8px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.ispformcontainer .form-group {
+    padding: 0px 5px 0 15px !important;
+}
+
+.ispicon_helpinfo + .tooltip .tooltip-inner {
+    background: #fff;
+    color: #606060;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    border: 1px solid #e7e7e7;
+    min-width: 338px;
+    text-align: left;
+    padding: 24px;
+    -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -ms-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    box-shadow: 1px 5px 4px -2px #d6d6d6;
+}
+
+.ispicon_helpinfo + .tooltip {
+    opacity: 1;
+}
+
+.ispicon_helpinfo[data-placement="top"] + .tooltip > .tooltip-arrow {
+    border-top-color: #e7e7e7;
+}
+
+.ispicon_helpinfo[data-placement="right"] + .tooltip > .tooltip-arrow {
+    border-right-color: #e7e7e7;
+}
+
+.ispicon_helpinfo[data-placement="bottom"] + .tooltip > .tooltip-arrow {
+    border-bottom-color: #e7e7e7;
+}
+
+.ispicon_helpinfo[data-placement="left"] + .tooltip > .tooltip-arrow {
+    border-left-color: #e7e7e7;
+}
+
+.usermanagement-root .ispselectdropdown .showpopuponviewmode {
+    pointer-events: inherit;
+    cursor:pointer;
+}
+
+/** placehoder **/
+.icon-search ::-webkit-input-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.icon-search :-moz-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.icon-search ::-moz-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.icon-search :-ms-input-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+select:focus {
+    background: #fff;
+}
+
+.sitelistpopup .modal-header .modal-title {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 24px;
+    color: #101010;
+}
+
+.sitelistpopup .modal-header {
+    padding: 28px 20px 0px 33px;
+}
+
+.sitelistpopup .modal-body {
+    padding: 0px 20px 0 32px;
+    position: relative;
+    overflow: auto;
+    max-height: 300px;
+    margin-top: 16px;
+}
+/* site  select dropdown style*/
+
+.masterhead {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 60px;
+}
+
+/* css for Search icon */
+.icon {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    margin: 0;
+    width: 28px;
+    margin-top: 5px;
+}
+
+.form-search {
+    padding-right: 35px;
+}
+
+.icon:focus {
+    outline: none;
+}
+
+select:focus {
+    background: #fff;
+}
+
+.usermgmt {
+    /*margin-left: 24%;*/
+    position: absolute;
+}
+
+    .usermgmt .usercardcontainer {
+        left: 24%;
+    }
+
+    .usermgmt .useroverview {
+        left: 49%;
+        width: 50%;
+    }
+
+    .usermgmt .btn-footer {
+        left: 49%;
+        width: 51%;
+    }
+
+    .usermgmt .col-md-4 {
+        width: 50%;
+    }
+
+.usermanagement-root .ispicon_eye::before {
+    right: 0;
+}
+
+.usermanagement-root .viewmode .ispicon_eye::before {
+    background-position: -7px -4px;
+}
+
+.usermanagement-root .ispselectdropdown .isppopup-site {
+    width: calc(100% - 40px);
+}
+
+
+.usermanagement-root .profile-pic img[src=""] {
+	background-image: url('../images/icon_sprites_24px.svg');
+	background-repeat: no-repeat;
+	display: block;
+	/*width: 114px;
+	height: 110px;*/
+	background-size: 1200px;
+	content: "";
+	background-position: -512px -63px;
+	vertical-align: top;
+	z-index: 100;
+	padding: 42px;
+	background-clip: content-box;
+	cursor: pointer;
+}
+
+.usermanagement-root .profile-pic input[type="file"] {
+	background-image: url('../images/icon_sprites_24px.svg');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0px;
+	width: 114px;
+	height: 110px;
+	opacity: 0;
+	background-size: 780px;
+	content: "";
+	vertical-align: top;
+	z-index: 100;
+	padding: 42px;
+	-webkit-appearance: none;
+} 
+.usermanagement-root .disablesitesAcessList {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none
+    background-color: #f2f2f2;
+    cursor: no-drop;
+}
+.usermanagement-root .userPermissionAccessRadioButtonGrp {
+    position: relative;
+    top: 2px;
+    right: 5px;
+    color: #808080;
+}
+
+.viewmode .usermanagement-root .userPermissionAccessRadioButtonGrp {
+    pointer-events:none;
+}
+.usermanagement-root .ispselectdropdown .viewmode{
+    pointer-events: inherit;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+}
+.usermanagement-root .view_pwd {
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    right: 10px;
+    display: block;
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+    background: url('../images/password_icons.png') no-repeat center top;
+}
+.usermanagement-root .view_pwd:active {
+    height: 18px;
+    background: url('../images/password_icons.png') no-repeat 2px -18px;
+}
+.usermanagement-root .usersSearchIcon {
+    border: none !important;
+}
+.usermanagement-root .usersSearchPlaceholder {
+    border: none !important;
+}
+.usermanagement-root .usersFilterIcon {
+    border: none !important;
+}
+.usermanagement-root .usersNoResults{
+    padding:10px 10px 10px 24px;
+}
+.usermanagement-root .usercardcontainerscroll.userlistview {
+    top: 128px;
+}
+.usermanagement-root .usersSearchPlaceholder .viewmode{
+   pointer-events: none;
+}
+.usermanagement-root .viewmode{
+       pointer-events: none;
+}
+
+.usermanagement-root .viewmode input[type="checkbox"]:checked {
+        background-position: -10px -439px;
+}
+
+.usermanagement-root .viewmode .userRoleInfoIcon{
+       cursor:pointer!important;
+       pointer-events:all !important;
+}
+.usermanagement-root  .viewmode .userRoleInfoHelp{
+       cursor:pointer!important;
+       pointer-events:all !important;
+}
+.usermanagement-root .userAccessTable thead{
+    display: block;
+    padding-right:10px;
+}
+.usermanagement-root .userAccessTable tbody {
+    height: 200px;
+    overflow-y: scroll;
+    display: block;
+    width: 100%;
+    padding-right:10px;
+}
+.usermanagement-root .userRoleInfoHelp table{
+    margin-bottom: 20px;
+}
+
+.usermanagement-root .disableAccessDropdown {
+    background-color: #f2f2f2;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+        pointer-events: all !important;
+        cursor: no-drop;
+}
+
+.usermanagement-root .siteOperatorIspIconDisable {
+        pointer-events: none;
+    }

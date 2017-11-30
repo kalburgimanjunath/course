@@ -1,0 +1,502 @@
+#rules .popover {
+    width: 350px;
+    max-width: 350px !important;
+    height: 470px;
+    background-color: #28282a;
+}
+
+#rules .popover.right {
+    top: 11px !important;
+    margin-left: 31px !important;
+}
+
+#rules .popover-title {
+    font-size: 15px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    color: #d3d3d3;
+    border-bottom: 1px solid #e7e7e7 !important;
+    background-color: #272727;
+}
+
+#rules .popover-content {
+    margin: 0;
+    padding: 0;
+    background: #323232;
+}
+
+#rules .popover-content .Item-State-checked {
+    background: rgba(94, 94, 94, .5);
+}
+
+#rules .popover-content .Item-State-selected {
+    background: rgba(94, 94, 94, .5);
+}
+
+#rules .popover-content .leftTree {
+    position: relative !important;
+    min-width: 100%;
+    min-height: 350px !important;
+    padding-left: 0;
+    border: 0 solid;
+    background-color: #323232 !important;
+}
+
+#rules .popover-content .leftTree .tree ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+#rules .popover-content .leftTree .tree ul li {
+    float: none;
+    margin: 0;
+    padding: 0;
+}
+
+#rules .popover-content .leftTree .tree ul li .tree-label {
+    left: 48px !important;
+}
+
+#rules .popover-content .leftTree .tree span:hover {
+    background-color: transparent !important;
+}
+
+#rules .popover-content .buttonGroupTree {
+    position: absolute;
+    bottom: 0;
+    width: 327px;
+    padding: 14px 0 24px 24px;
+    text-align: left;
+    border-top: 1px solid #e7e7e7;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    background: #272727;
+    -ms-border-radius: 0 0 4px 4px;
+    -o-border-radius: 0 0 4px 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+#rules .popover.right .arrow {
+    top: 24px !important;
+    border-right-color: #e7e7e7;
+}
+
+#rules .popover.right .arrow:after {
+    border-right-color: #e7e7e7;
+}
+
+.events {
+    /*background-color: #323232;*/
+    bottom: 0;
+}
+
+.events ul {
+    position: relative;
+    overflow: auto;
+    min-width: 54%;
+    height: 200px;
+    min-height: 200px;
+    margin: 0 !important;
+    padding: 0;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    /* padding-left: 24px; */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    #rules .events ul {
+        overflow-y: auto;
+    }
+}
+
+.events ul li {
+    width: 100%;
+    max-width: 100%;
+    height: 43px;
+    /* border-bottom: 1px Solid #e7e7e7; */
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-top: 10px !important;
+    padding-right: 24px;
+    padding-bottom: 10px;
+    padding-left: 24px !important;
+    list-style: none;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.events ul li:hover {
+    background-color: #fafafa;
+}
+
+
+/*
+.events ul li:first-child {
+    line-height: 26px;
+}
+*/
+
+.events ul li:last-child {
+    border-bottom: 0 Solid #e7e7e7;
+}
+
+.events-checkbox ul li:checked {
+    background: red;
+}
+
+.events-checkbox input:checked+span {
+    position: absolute;
+    top: 4px;
+    background: url('../Images/checkbox.png') 0 -16px;
+    background-repeat: no-repeat;
+}
+
+.events-checkbox span {
+    display: block;
+    width: 20px !important;
+    height: 20px;
+    margin-top: -5px;
+    margin-left: -16px !important;
+    margin-left: -16px !important;
+    background: url('../Images/checkbox.png') 0 4px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+}
+
+.events-checkbox input {
+    display: none;
+}
+
+.events-checkbox {
+    font-family: 'Open Sans Regular';
+    font-size: 13px;
+    position: relative;
+    width: 30px;
+    margin: 0;
+    color: #6f7074;
+    border-style: none;
+}
+
+.events-checkbox label {
+    font-size: 12px !important;
+    font-weight: bold;
+    position: absolute;
+    margin: 4px 0 8px 16px !important;
+    margin-top: 4px;
+    margin-left: 14px;
+    letter-spacing: 1px;
+    opacity: 1;
+    color: #6f7074 !important;
+    border-style: none;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+}
+
+.events-checkbox legand {
+    /*    margin-top: -3px;*/
+    position: absolute;
+    top: 14px;
+    left: 51px;
+    color: #707070;
+    cursor: pointer;
+}
+
+.events .buttonGroup {
+    position: relative !important;
+    width: auto;
+    width: 211px;
+    height: 54px;
+    padding-left: 24px;
+    text-align: left;
+    background: #323232;
+    background-color: transparent !important;
+}
+
+
+/* Schedules */
+
+.schedule {
+    position: relative;
+    bottom: 0;
+    background-color: #323232;
+}
+
+.schedule ul {
+    position: relative;
+    overflow: scroll;
+    min-width: 54%;
+    height: 376px;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.schedule ul li {
+    width: 100%;
+    height: 40px;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-top: 20px !important;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 20px !important;
+    padding-left: 24px;
+    list-style: none;
+    border-bottom: 1px Solid #e7e7e7;
+}
+
+.schedule ul li:hover {
+    background-color: #fafafa;
+}
+
+.schedule ul li:first-child {
+    line-height: 26px;
+}
+
+.schedule ul li:last-child {
+    border-bottom: 0 Solid #e7e7e7;
+}
+
+.schedule-checkbox input:checked+span {
+    background: url('../Images/checkBoxB_press.png');
+    background-repeat: no-repeat;
+}
+
+.schedule-checkbox span {
+    display: block;
+    width: 20px !important;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -16px !important;
+    background: url('../Images/checkBoxB_normal.png');
+    background-repeat: no-repeat;
+}
+
+.schedule-checkbox input {
+    display: none;
+}
+
+.schedule-checkbox {
+    font-family: 'Open Sans Regular';
+    font-size: 13px;
+    position: relative;
+    width: 30px;
+    margin: 0;
+    color: #6f7074;
+    border-style: none;
+}
+
+.schedule-checkbox label {
+    font-size: 12px !important;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 12px;
+    letter-spacing: 1px;
+    opacity: 1;
+    color: #6f7074 !important;
+    border-style: none;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+}
+
+.schedule-checkbox legand {
+    position: absolute;
+    top: 11px;
+    left: 44px;
+    margin-top: 0;
+    color: #bababa;
+}
+
+.schedule .buttonGroup {
+    position: relative !important;
+    width: 100%;
+    width: 211px;
+    height: 60px;
+    padding-left: 24px;
+    text-align: left;
+    background: #323232;
+    background-color: transparent !important;
+}
+
+@media print {
+    #rules .popover-content .buttonGroupTree {
+        background: #272727 !important;
+    }
+    #rules .popover-title {
+        color: #d3d3d3 !important;
+        background-color: #272727 !important;
+    }
+}
+
+@-moz-document url-prefix() {
+    #positiontreeview .expand .treecheckboxStyle .treecustomcheckbox span {
+        margin-top: 0 !important;
+        margin-left: -1px;
+    }
+    #ruletreeview2 .expand .treecheckboxStyle .treecustomcheckbox span {
+        margin-top: 0 !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul li .tree-label:nth-of-type(1) {
+        padding-left: 28px;
+    }
+    #ruletreeview2.leftTree .tree ul li .tree-label:nth-of-type(1) {
+        padding-left: 35px;
+    }
+    /*#ruletreeview2 ul.tree li .tree-label{
+        padding-left: 23px !important;
+    }*/
+    #ruletreeview2.rightDeviceTree .tree ul li ul li.tree-label:nth-of-type(1) {
+        padding-left: 35px !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul li ul li .tree-label {
+        padding-left: 23px !important;
+    }
+    #ruletreeview2 .tree-label {
+        padding-left: 24px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #positiontreeview .treecheckboxStyle+span {
+        padding-left: 32px !important;
+    }
+    /*#ruletreeview2 .treecheckboxStyle + span{
+        padding-left:26px !important;
+    }*/
+    #positiontreeview.leftTree .tree ul li .tree-label {
+        padding-left: 28px !important;
+    }
+    #positiontreeview.leftTree .tree ul .treenormal li li .tree-label:nth-of-type(1) {
+        padding-left: 5px !important;
+        vertical-align: top;
+    }
+    #positiontreeview.leftTree .tree ul .treenormal li li .tree-label:nth-of-type(0) {
+        padding-left: 12px !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul li ul li.tree-label:nth-of-type(1) {
+        padding-left: 24px !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul li ul li .tree-label {
+        padding-left: 23px !important;
+    }
+    #positiontreeview .tree ul li ul li ul li .tree-label {
+        padding-left: 23px !important;
+    }
+    #positiontreeview .tree ul li ul li ul li ul li .tree-label {
+        padding-left: 23px !important;
+    }
+    #ruletreeview2.leftTree .tree ul .treenormal li .tree-label:nth-of-type(1) {
+        padding-left: 5px !important;
+    }
+    #ruletreeview2.leftTree .tree ul .tree-label:nth-of-type(1) {
+        padding-left: 5px;
+    }
+    #ruletreeview2 .contentWrap .expand .treecheckboxStyle .treecustomcheckbox {
+        padding-left: 2px !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul:nth-of-type(1).tree-label {
+        padding-left: 28px !important;
+    }
+    #ruletreeview2.rightDeviceTree .tree ul:first-child.tree-label {
+        padding-left: 28px !important;
+    }
+    #ruletreeview2 .tree-label {
+        padding-left: 24px;
+    }
+    #ruletreeview2 .expand .treecheckboxStyle {
+        position: relative;
+        z-index: 99;
+        margin: -4px -27px 0 5px;
+    }
+    .leftTree#ruletreeview2 .tree ul :nth-of-type(1).tree-label {
+        padding-left: 32px;
+    }
+    .contentWrap .treeProp .treecheckboxStyle {
+        margin: -4px -6px 0 4px;
+    }
+}
+
+#positiontreeview .Item-State-hover .tree-label, #positiontreeview .Item-State-selected .tree-label, #ruletreeview2 .Item-State-hover .tree-label {
+    color: #707070 !important;
+}
+
+.tree-label, .schedule-name {
+    font-size: 14px;
+    line-height: 15px;
+    display: block;
+    width: auto;
+    min-width: 0;
+    padding-bottom: 13px !important;
+    padding-left: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #707070;
+    -webkit-padding-start: 9px;
+}
+
+.ps-rules-popover {
+    line-height: 8px;
+}
+.ps-rules-popover .events-checkbox legand {
+    top: 19px;
+}
+
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .contentWrap #positiontreeview .tree-label, 
+  #positiontreeview .schedule-name,
+ .contentWrap #ruletreeview2 .tree-label,
+ #ruletreeview2 .tree-label {
+    padding-top: 14px !important;
+  }
+
+.contentWrap #positiontreeview .treecheckboxStyle {
+    width: 24px;
+  }
+  .leftTree#positiontreeview .tree ul .treenormal li li :nth-of-type(1).tree-label {
+    padding-left: 28px !important;
+  }
+  .contentWrap #positiontreeview .treecheckboxStyle,
+  .contentWrap #ruletreeview2 .treecheckboxStyle {
+    position: relative;
+    top: 14px;
+  }
+   
+  .webui-popover-content #ruletreeview2 .tree-icon-refresh {
+    top : 12px;
+   }
+   .rightDeviceTree#ruletreeview2 .tree ul :nth-of-type(1).tree-label {
+    padding-left: 32px !important;
+   }
+   .leftTree#ruletreeview2 .tree ul .treenormal li :nth-of-type(1).tree-label {
+     padding-left: 32px !important;
+   }
+   .rightDeviceTree#ruletreeview2 .tree ul .treenormal li :nth-of-type(1).tree-label {
+    padding-left: 32px !important;
+   }
+
+}
+.ps-rules-popover input[type="checkbox"].treecheckbox ,
+.ps-rules-popover input[type="checkbox"].checkbox,
+.ps-rules-popover #lbl-ACTIONLISTSETTINGS_FOR_ACTION input[type="checkbox"].checkbox  {
+    display: none ;
+    width: 17px;
+    height: 18px;
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-size: 1000px;
+    background-position: -9px -330px;
+    -webkit-appearance: none;
+    float: left;
+    outline: 0 !important;
+    opacity: 1 !important;
+}
+

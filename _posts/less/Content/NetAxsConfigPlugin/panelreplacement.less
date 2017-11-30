@@ -1,0 +1,78 @@
+﻿@color_1: #707070;
+@font_family_1: "honeywellsansweb-medium";
+
+.ps-mpc-model{
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mpc-model-form {
+    border-top: 2px solid #EBEBEB;
+    margin: 0 34px;
+    padding-top: 20px;
+  }
+  .macid {
+    padding: 0;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  p {
+    padding: 10px 0;
+    font-size: 14px;
+    color: @color_1;
+    font-family: @font_family_1;
+  }
+  .modal-footer {
+    padding: 16px;
+  }
+  .checkbox {
+    input[type="checkbox"] {
+      height: 22px;
+      width: 18px;
+      margin-right: 10px;
+      position: relative;
+      z-index: 99999;
+      margin-top: 1px;
+      &:focus {
+        outline: none !important;
+        &+label {
+          &::before {
+            outline: none;
+          }
+        }
+      }
+      &:checked {
+        &+label {
+          &::after {
+            content: "";
+          }
+          &::before {
+            outline: none !important;
+            border: none !important;
+          }
+        }
+      }
+    }
+    display: block;
+    margin-bottom: 7px;
+    margin-top: 0;
+    position: relative;
+    label {
+      &::before {
+        border-radius: 0;
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+  .radio {
+    display: block;
+    margin-bottom: 7px;
+    margin-top: 0;
+    position: relative;
+  }
+}
+.inputuppercase {
+  text-transform: uppercase;
+}

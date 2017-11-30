@@ -1,0 +1,369 @@
+.ps-card-holder-detail {
+    padding: 4.3em 0 0;
+    margin: 0;
+    width: calc(100% - 340px);
+}
+.ps-card-holder-detail .import-card-header h1 {
+    color: #303030;
+    font-family: HoneywellSans-Bold;
+    font-size: 22px;
+    margin: 4px 0 0;
+}
+.ps-card-holder-detail .card-header {
+    padding: 18px 20px 0 20px;
+    height: 68px;
+}
+.ps-card-holder-detail .user-image .name-reference a {
+    color: #1792e5;
+}
+.ps-card-holder-detail .contant-wrapper .wrap-header {
+    padding: 21px 0 5px 0;
+    float: left;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.ps-card-holder-detail .contant-wrapper {
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
+    width: 100%;
+}
+.ps-card-holder-detail .wrap-header a {
+    font-size: 14px;
+    color: #606060;
+    font-family: honeywellsansweb-bold !important;
+}
+.ps-card-holder-detail .wrap-header a.picture {
+    padding-right: 16px;
+}
+.ps-card-holder-detail .wrap-header a:focus {
+    text-decoration: none;
+}
+.ps-card-holder-detail .wrap-header .table-label {
+    padding: 0 0 0 25px;
+}
+.ps-card-holder-detail .contant-wrapper .wrap-header a:active,
+.ps-card-holder-detail .contant-wrapper .wrap-header a:hover {
+    text-decoration: none;
+}
+.ps-card-holder-detail .icon-search input:focus {
+    width: 300px;
+    border: 1px solid #1792e5;
+    background: none;
+    box-shadow: none;
+}
+.ps-card-holder-detail .icon {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    margin: 0;
+    width: 28px;
+}
+.ps-card-holder-detail .icon-dwonload {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    background-position: -664px -152px;
+}
+.ps-card-holder-detail .icon-dwonload:hover {
+    background-position: -664px -182px;
+}
+.ps-card-holder-detail .icon-add {
+    background-position: -755px -213px;
+    margin: 0 3px 0 0;
+}
+.ps-card-holder-detail .icon-add:hover {
+    background-position: -755px -243px;
+}
+.ps-card-holder-detail .dorpdown-arrow {
+    cursor: pointer;
+    display: inline-block;
+}
+.ps-card-holder-detail .dorpup-arrow:before,
+.ps-card-holder-detail .dorpdown-arrow:before {
+    background-image: url(../../images/Icons_Sprites_MPC.svg) !important;
+    ;
+    background-position: -433px -400px;
+    content: "";
+    display: block;
+    height: 19px;
+    width: 17px;
+}
+.ps-card-holder-detail .dorpup-arrow {
+    display: none;
+}
+.ps-card-holder-detail .dorpdown-arrow:hover:before {
+    background-position: -463px -400px;
+}
+.ps-card-holder-detail .card-details-title {
+    background-color: #e7f4fd;
+    margin: 0;
+    padding: 12px 0;
+}
+.ps-card-holder-detail .icon-delete {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    background-position: -658px -214px;
+    display: block;
+    height: 30px;
+    margin: 7px 8px 0 0;
+    width: 37px;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 7px;
+}
+.ps-card-holder-detail .icon-delete:hover {
+    background-position: -658px -244px;
+}
+.ps-card-holder-detail .card-details-title {
+    clear: left;
+    border-bottom: 1px solid #f0f0f0;
+    background: #d1e9f9;
+    padding: 12px 0;
+    display: inline-block;
+    width: 100%;
+}
+.ps-card-holder-detail .card-details-title label {
+    margin: 0;
+}
+.ps-card-holder-detail .card-details-title label {
+    color: #303030;
+    text-decoration: none;
+}
+.col-sm-3.text-left.create-new a:focus {
+    text-decoration: none;
+}
+.ps-card-holder-detail .unassociated label a {
+    color: #303030;
+    font-family: honeywellsansweb-medium;
+    font-size: 14px;
+    font-weight: 400;
+}
+.ps-card-holder-detail .unassociated label a:hover {
+    color: #303030;
+    text-decoration: none;
+}
+.ps-card-holder-detail .create-new label a {
+    padding-left: 5px;
+    color: #1792e5 !important;
+    font-family: "honeywellsansweb-medium" !important;
+    font-size: 14px;
+    font-weight: 400;
+}
+.create-new a:hover {
+    color: #303030;
+    text-decoration: none;
+}
+.ps-card-holder-detail .create-new label a {
+    color: #606060;
+    font-family: honeywellsansweb-medium;
+    font-size: 14px;
+    font-weight: 400;
+}
+.ps-card-holder-detail .create-new label a:hover {
+    color: #303030;
+    text-decoration: none;
+}
+.ps-card-holder-detail .card-details {
+    border-bottom: 1px solid #e7e7e7;
+    margin-left: 0;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+.ps-card-holder-detail .user-image {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.ps-card-holder-detail .user-image .details-image {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 19px;
+}
+.ps-card-holder-detail .details-image img {
+    width: 100%;
+    height: 100%;
+}
+.ps-card-holder-detail .name-reference {
+    font-size: 14px;
+    font-family: 'HoneywellSansWeb-Medium';
+    font-weight: 400;
+    color: #303030;
+    margin-top: 16px;
+    display: block;
+}
+.ps-card-holder-detail .name-reference {
+    padding-left: 2px;
+}
+.ps-card-holder-detail .wrapper-details {
+    overflow: auto;
+}
+.ps-card-holder-detail .card-details > div {
+    padding: 0 0 0 25px;
+}
+.ps-card-holder-detail .card-details .short-name .name-reference,
+.ps-card-holder-detail .card-details .assigend-cards-list .name-reference,
+.ps-card-holder-detail .card-details .icon-delete .name-reference {
+    margin-top: 17px;
+}
+.ps-card-holder-detail .icon-search input:focus + .foucs-icon-search {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    background-position: -36px -152px;
+    display: block;
+    height: 30px;
+    margin: 0;
+    width: 30px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    outline: none;
+}
+.ps-card-holder-detail .icon-search {
+    position: relative;
+}
+.ps-card-holder-detail .icon-search input {
+    border: none;
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    background-position: -10px -152px;
+    width: 26px;
+    height: 32px;
+    cursor: pointer;
+}
+.ps-card-holder-detail .unassociated {
+    padding-left: 93px;
+}
+.ps-card-holder-detail .assigend-Cards-details {
+    padding-left: 15px;
+}
+.ps-card-holder-detail .table-label.assigend-Cards-details {
+    padding-left: 20px !important;
+}
+.ps-card-holder .people_group {
+    min-height: 600px;
+}
+.ps-card-holder-detail .assigend-cards-list .name-reference {
+    padding-left: 0;
+}
+.ps-card-holder-detail .title-name {
+    color: #303030;
+    float: left;
+    font-family: honeywellsansweb-bold;
+    font-size: 14px;
+    padding-right: 5px;
+}
+.ps-card-holder-detail .display-name {
+    color: #606060;
+    float: left;
+    font-family: honeywellsansweb-bold;
+    font-size: 14px;
+    padding-right: 5px;
+}
+.ps-card-holder-detail .event_card_table_content {
+    background-color: #ffffff;
+}
+.ps-card-holder-detail .table.activity_card_table_body {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 0px 6px 0px -10px !important;
+}
+.ps-card-holder-detail .activity_card_table_body tbody {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 0 6px 0px -2px !important;
+    display: table;
+    border-bottom: 1px solid #e7e7e7;
+}
+.ps-card-holder-detail .video-settin .mpc .activity_card_table_body tbody tr {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+.ps-card-holder-detail .table.header_tableevent.event_card_table_content thead tr.top th {
+    line-height: 0;
+    vertical-align: middle;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+.ps-card-holder-detail .table.header_tableevent.event_card_table_content thead tr.bottom th {
+    border-bottom: #dfdfdf 1px solid;
+    border-top: #dfdfdf 1px solid;
+}
+.ps-card-holder-detail .table.header_tableevent.event_card_table_content thead tr.top th {
+    border-bottom: #dfdfdf 1px solid;
+}
+.ps-card-holder-detail .activity_card_table_body tr,
+.ps-card-holder-detail .video-settin .mpc .activity_card_table_body th {
+    border-top: #f0f0f0 1px solid;
+    border-bottom: #f0f0f0 1px solid;
+}
+.ps-card-holder-detail .event_card_table_content {
+    background-color: #ffffff;
+}
+.ps-card-holder-detail .activity_card_table .table>thead>tr>th {
+    color: #606060;
+    width: 12.5%;
+    border: 0;
+    font-size: 14px;
+}
+.ps-card-holder-detail table.activity_card_table_body tbody tr td {
+    padding-left: 34px;
+}
+.ps-card-holder-detail .activity_card_table_body tbody tr td {
+    line-height: 1.4;
+    vertical-align: middle;
+}
+.ps-card-holder-detail .activity_card_table_body tbody tr:hover td {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0 !important;
+    color: #303030;
+}
+.ps-card-holder-detail .col-md-3.col-lg-3.pull-left.padding-20:nth-of-type(4n+4) {
+    padding-right: 0px;
+}
+.ps-card-holder-detail .spinner-control .mpc_icon {
+    width: 23px;
+    height: 23px;
+    background: url(../../images/Icons_Sprites_MPC.svg) no-repeat;
+    display: block;
+    cursor: pointer;
+}
+.spinner-control .mpc_edit_md {
+    background-position: -761px -368px !important;
+}
+.spinner-control .mpc_edit_md:hover {
+    background-position: -761px -338px !important;
+}
+.ps-card-holder-detail .event_card_table_content thead tr.bottom {
+    background: #d1e9f9;
+}
+.ps-card-holder-detail .icon-search input:focus {
+    width: 300px;
+    border: 1px solid #1792e5;
+    background: none;
+    box-shadow: none;
+    padding-right: 25px;
+    text-indent: 0;
+    top: 2px;
+    position: absolute;
+    right: 0;
+}
+.ps-card-holder-detail .icon-search input.form-control:hover {
+    background-position: -40px -152px;
+}
+.ps-card-holder-detail .card-details:hover {
+    background-color: #f0f0f0;
+}
+.ps-card-holder-detail .table-body {
+    margin-top: -6px !important;
+}
+.ps-card-holder-detail .temp-access {
+    padding-left: 32px;
+}

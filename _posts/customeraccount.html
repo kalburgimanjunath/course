@@ -1,0 +1,425 @@
+            <style type="text/css">
+                 .row-offcanvas {
+                       height: 100%;
+                   }
+
+                  
+                   #sidebar {
+                       width: inherit;
+                       min-width: 25%;
+                       max-width: 25%;
+                       background-color: #f5f5f5;
+                       float: left;
+                       height: 100%;
+                       position: relative;
+                       overflow-y: auto;
+                       overflow-x: hidden;
+                   }
+
+                   .ispnewtable {
+                       height: 100%;
+                       overflow: auto;
+                   }
+
+                   /*
+                * off Canvas sidebar
+                * --------------------------------------------------
+                */
+                   @media screen and (max-width: 768px) {
+                       .row-offcanvas {
+                           position: relative;
+                           -webkit-transition: all 0.25s ease-out;
+                           -moz-transition: all 0.25s ease-out;
+                           transition: all 0.25s ease-out;
+                           width: calc(100% + 220px);
+                       }
+
+                       .row-offcanvas-left {
+                           left: -220px;
+                       }
+
+                           .row-offcanvas-left.active {
+                               left: 0;
+                           }
+
+                       .sidebar-offcanvas {
+                           position: absolute;
+                           top: 0;
+                       }
+                   }
+                   .table-fixed thead {
+                      width: 97%;
+                    }
+                    .table-fixed tbody {
+                      height: 230px;
+                      overflow-y: auto;
+                      width: 100%;
+                    }
+                    .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+                      display: block;
+                    }
+                    .table-fixed tbody td, .table-fixed thead > tr> th {
+                      float: left;
+                      border-bottom-width: 0;
+                    }
+            </style>
+            <div class="customerlistview-root">
+                <div class="row-offcanvas row-offcanvas-left">
+                <div id="sidebar" class="sidebar-offcanvas">
+                    <div class="col-md-12">
+                        <h2 class="isppagetitle">
+                        Customers
+                            <span class="pull-right">
+                                <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addSchedule" title="Add New"></a>
+                                </a>
+                            </span>
+                        </h2>
+                        
+                        <div class="listStickyHeader">
+                            <span>10</span><span>Customers</span>
+                        </div>
+                        <div class="noResults hide">
+                            No results found
+                        </div>
+
+
+                        <ul class="nav nav-pills nav-stacked cardlistview">
+                            <li class="list-group-item active">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="c1">Customer 1 </div>
+                                <div class="c2">6 Site | 10 Controller</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ispnewtable">
+                    <div class="col-md-12">
+                        <p class="visible-xs">
+                            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                        </p>
+                        <h2 class="pull-left h1 bold">Customer Name 1 <span class="link">View Overview</span></h2>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                
+                                <table class="table table-fixed">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-xs-2">Site Reference No</th>
+                                            <th class="col-xs-8">Site<span class="sort"></th>
+                                            <th class="col-xs-2">No. of Controllers</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-xs-2">1</td>
+                                            <td class="col-xs-8">Mike Adams</td>
+                                            <td class="col-xs-2">23</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-2">2</td>
+                                            <td class="col-xs-8">Holly Galivan</td>
+                                            <td class="col-xs-2">44</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-2">3</td>
+                                            <td class="col-xs-8">Mary Shea</td>
+                                            <td class="col-xs-2">86</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                            
+                                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/row-offcanvas -->
+            </div>
+            

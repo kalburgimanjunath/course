@@ -1,0 +1,63 @@
+﻿@color_1: #6F7074;
+
+.radio {
+	padding: 0;
+	margin: 0;
+	.radiotext {
+		padding-right: 15px;
+		padding-left: 39px;
+		font-size: 15px;
+		color: @color_1;
+	}
+}
+.formControl-radio {
+	input {
+		&:checked {
+			&+span {
+				background: url(../images/sprite_icons.png) no-repeat -638px -250px;
+				background-repeat: no-repeat;
+				&:hover {
+					background: url(../images/sprite_icons.png) no-repeat -639px -342px !important;
+				}
+			}
+		}
+		display: none;
+	}
+	span {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		background: url(../images/sprite_icons.png) no-repeat -638px -280px;
+		background-repeat: no-repeat;
+		&:active {
+			background: url(../images/sprite_icons.png) no-repeat -638px -311px !important;
+		}
+		&:focus {
+			background: url(../images/sprite_icons.png) no-repeat -638px -311px !important;
+		}
+	}
+	&:disabled {
+		span {
+			&:active {
+				background: url(../images/sprite_icons.png) no-repeat -639px -372px !important;
+				outline: none;
+			}
+			&:focus {
+				background: url(../images/sprite_icons.png) no-repeat -639px -372px !important;
+				outline: none;
+			}
+		}
+	}
+	border-style: none;
+	color: @color_1;
+	font-size: 13px;
+	margin: 0;
+	position: relative;
+	top: 4px;
+	padding-left: 0 !important;
+}
+.radiodisabled {
+	span {
+		background: url("../images/icons/radioBtn_disable.png");
+	}
+}

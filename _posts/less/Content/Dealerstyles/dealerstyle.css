@@ -1,0 +1,973 @@
+.imageloader {
+    position: absolute;
+    z-index: 99;
+    width: 40px;
+    height: 40px;
+    background: url(images/ajax-loader.gif) no-repeat center center;
+}
+
+#operatorModal {
+    left: 40%;
+    width: 885px !important;
+}
+
+#approval .userconfigcontainer.layoutcol {
+    right: 0;
+    left: 0;
+}
+
+#approval .userlistcontainer.layoutcol {
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-right: 1px solid #e7e7e7;
+}
+
+.userliststyle li {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#approval .usetitemcontainer {
+    width: 100%;
+    height: 47px;
+    margin-left: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    border-bottom: 0px;
+}
+
+    #approval .usetitemcontainer ul li {
+        font-size: 16px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        list-style-type: none;
+    }
+
+#approval .userlistheader.layoutrow {
+    z-index: 100;
+    top: 0;
+    height: 60px;
+    border-collapse: separate;
+    /* Required by IE 9 */
+    border-bottom: 1px solid #bababa;
+    -webkit-box-shadow: 0 10px 10px -13px #bababa;
+    -moz-box-shadow: 0 10px 10px -13px #bababa;
+    box-shadow: 0 10px 10px -13px #bababa;
+    filter: progid: DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=10px, Color='#bababa', Positive='false');
+    /* IE 5.5 */
+}
+
+#approval .icon_usr_add {
+    margin: 24px 24px 24px 24px;
+    cursor: pointer;
+}
+
+#approval .operatorContent ul {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #bababb;
+}
+
+    #approval .operatorContent ul li {
+        line-height: 40px;
+        float: left;
+        list-style-type: none;
+    }
+
+#approval .userlistinnercontainer.layoutrow {
+    top: 97px;
+    bottom: 0;
+}
+
+#approval .userlist.layoutrow {
+    top: 56px;
+    bottom: 0;
+    height: calc((100%) - 100px);
+}
+
+#approval .margintop {
+    margin-top: 0;
+}
+
+#approval .operatorContent form {
+    margin: 0;
+}
+
+#approval .usercreatebuttonstyle {
+    float: left;
+    margin-top: 14px;
+    margin-left: 0;
+    padding: 10PX 10px 10px 10px !important;
+    cursor: pointer;
+    color: #08c !important;
+    background-color: white;
+    background-image: url(images/icon_add.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    #approval .usercreatebuttonstyle:hover {
+        border-collapse: separate;
+        /* Required by IE 9 */
+        -webkit-box-shadow: 33px 34px 11px -24px rgba(59, 59, 59, 1);
+        -moz-box-shadow: 33px 34px 11px -24px rgba(59, 59, 59, 1);
+        box-shadow: 33px 34px 11px -24px rgba(59, 59, 59, 1);
+        filter: progid: DXImageTransform.Microsoft.dropshadow( OffX=33px, OffY=34px, Color='rgba(59,59,59,1)', Positive='false');
+        /* IE 5.5 */
+    }
+
+#approval .userdetailform.layoutrow {
+    top: 0;
+    bottom: 44px;
+}
+
+#approval .userliststyle {
+    width: 100%;
+    height: calc(100% - 85px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+}
+
+    #approval .userliststyle #userItem {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        list-style-type: none;
+        cursor: pointer;
+        -webkit-transition: all .15s ease-in-out;
+        -moz-transition: all .15s ease-in-out;
+        -o-transition: all .15s ease-in-out;
+        transition: all .15s ease-in-out;
+        color: #707070;
+    }
+
+        #approval .userliststyle #userItem:hover, #approval .userliststyle #userItem:active {
+            color: #1792e5 !important;
+            border-right: 1px solid transparent;
+            background-color: #fafafa;
+            -webkit-box-shadow: 0 0 6px #fafafa;
+            -moz-box-shadow: 0 0 6px #fafafa;
+            box-shadow: 0 0 6px #fafafa;
+        }
+
+        #approval .userliststyle #userItem .grid-text1, #approval .userliststyle #userItem .grid-text1 {
+            color: #707070;
+        }
+
+            /*#approval .userliststyle #userItem.userItemSelected li, #approval .userliststyle #userItem .grid-text1:hover, #approval .userliststyle #userItem .grid-text1.active {
+                color: #1792e5 !important;
+            }*/
+
+        #approval .userliststyle #userItem.userItemSelected {
+            font-size: 1.2em;
+            color: #1792e5 !important;
+            border-right: 1px solid transparent;
+            background-color: #e7f4fc;
+    border-top: 1px solid #8bc9fc;
+    border-bottom: 1px solid #8bc9fc;
+        }
+
+#approval .UserClassCreate {
+    margin-left: 0;
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+#approval .user-button-padding {
+    line-height: 41px;
+    position: absolute;
+    width: 184px;
+}
+
+    #approval .user-button-padding > span {
+        padding-left: 0 !important;
+    }
+
+#approval .rightUserColumn {
+    padding-left: 24px;
+}
+
+.eulatab .rightUserColumn {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#approval .dealer-partial-button {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    border-top: 1px solid #e7e7e7;
+    background: #fff;
+}
+
+#approval .grid-text1 {
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: left;
+    border: none !important;
+}
+
+#approval .grid-text2 {
+    font-size: 14px;
+    margin-top: 4px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: left;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    -ms-word-break: break-all;
+    border: none !important;
+}
+
+#approval .usertotal {
+    font-size: 15px;
+    padding: 24px 0 16px 20px;
+    color: #1792e5;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#approval .online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #18a350;
+}
+
+#approval .bottomSpace {
+    padding-bottom: 5px;
+}
+
+#approval .userlistcontainer .userProfile {
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding-left: 0 !important;
+    background-image: url('images/img_profileSmall.png');
+    background-repeat: no-repeat;
+}
+
+    #approval .userlistcontainer .userProfile #photo {
+        width: 40px !important;
+        height: 40px !important;
+        background-image: url('images/img_profileSmall.png');
+    }
+
+#usercandoModal .table > tbody > tr > td {
+    border-top: 1px solid #d3d3d3;
+}
+
+#usercandoModal .table > thead > tr > th {
+    font-size: 14px;
+    font-weight: normal;
+    padding-right: 14px;
+    padding-left: 14px;
+    vertical-align: middle;
+    color: #3b3b3d;
+    border-right: 1px solid #d3d3d3;
+}
+
+#usercandoModal .candoSection {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+#usercandoModal section {
+    padding-top: 0 !important;
+}
+
+    #usercandoModal section ul li {
+        float: none;
+        padding-bottom: 0;
+        border-bottom: 1px solid #a7a7a8;
+    }
+
+.category {
+    margin: 0 !important;
+    list-style: none;
+    color: #484848;
+    border: 1px solid #d3d3d3;
+}
+
+    .category .catitem {
+        padding: 8px;
+        list-style: none;
+        cursor: pointer;
+        border-style: solid;
+        border-color: #d3d3d3;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px;
+        border-left: 0;
+    }
+
+.catitem:hover {
+    opacity: .8;
+    background-color: #e6f3fb;
+}
+
+#usercandoModal {
+    left: 40%;
+    width: 885px !important;
+    height: 545px !important;
+}
+
+    #usercandoModal + section {
+        padding-top: 0 !important;
+    }
+
+    #usercandoModal section .category li div {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+.catitem.itemselected {
+    font-size: 1.2em;
+    color: #4d4d4d;
+    border-right: 1px solid transparent;
+    background-color: #e6f3fb;
+}
+
+#usercandoModal tbody > tr > td {
+    font-size: 15px;
+    padding-right: 14px;
+    padding-left: 14px;
+    vertical-align: middle;
+    color: #6f7074;
+}
+
+#usercandoModal .formControl-checkbox {
+    top: 2px !important;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+    #usercandoModal .formControl-checkbox span {
+        width: 24px;
+        height: 24px;
+        padding: 0;
+    }
+
+    #usercandoModal .formControl-checkbox input:checked + span {
+        /* background: url("../images/icons/checkBox_press.png"); */
+        background: url('../images/sprite_icons.png');
+        background-repeat: no-repeat;
+        background-position: -250px -68px;
+    }
+
+    #usercandoModal .formControl-checkbox span {
+        background: url('../images/sprite_icons.png');
+        background-position: -610px -99px;
+    }
+
+.popup-checkbox span {
+    width: 130px;
+}
+
+
+/*Sticky styles */
+
+#sticky-list {
+    position: absolute;
+    overflow: hidden;
+    width: 96%;
+    height: 73%;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+    #sticky-list > ul {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+#usercandoModal ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sticky thead {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    display: inherit;
+    background-color: white;
+}
+
+.ctablehead {
+    cursor: pointer;
+}
+
+.catename {
+    color: #08a2aa;
+}
+
+.catenamecount {
+    color: #08c;
+}
+
+.ctablehead:hover {
+    background: #e6f3fb;
+}
+
+.operatorButton {
+    line-height: 52px;
+    position: absolute;
+    width: 181px;
+    margin-top: 191px;
+}
+
+.rightTextFields {
+    position: absolute;
+    top: 24px !important;
+    margin-left: 204px;
+}
+
+    .rightTextFields .spaceBottomfix {
+        margin-bottom: 45px;
+    }
+
+.userlistheader ul {
+    height: 12px;
+    margin: 0;
+}
+
+    .userlistheader ul li {
+        display: block;
+        padding: 0 18px 0 0;
+        list-style-type: none;
+    }
+
+#approval .operatorSearch {
+    position: absolute;
+    left: 48px;
+    display: none;
+    margin: 12px;
+}
+
+.operatorName {
+    padding-top: 40px;
+    list-style-type: none;
+}
+
+    .operatorName ul li {
+        float: none !important;
+    }
+
+.operatorDetails li {
+    float: none !important;
+}
+
+.remove-image {
+    position: absolute;
+    z-index: 1;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: url('../images/sprite_icons.png');
+    background-position: -458px -338px;
+}
+
+.ps-utilities .tabcontainer {
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+    .ps-utilities .tabcontainer ul {
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+        .ps-utilities .tabcontainer ul#Utils {
+            padding: 15px 20px 0 15px;
+            border-bottom: 1px solid #e7e7e7;
+            box-shadow: 0 0 6px #e7e7e7;
+        }
+
+        .ps-utilities .tabcontainer ul#myTab {
+            padding: 5px 5px 0 15px;
+            background: #fafafa;
+        }
+
+    .ps-utilities .tabcontainer li {
+        padding: 0 10px;
+    }
+
+        .ps-utilities .tabcontainer li a {
+            margin: 0;
+            padding: 10px 0;
+            color: #707070;
+            border: none;
+        }
+
+            .ps-utilities .tabcontainer li.active a:hover, .ps-utilities .tabcontainer li.active a, .ps-utilities .tabcontainer li.active a:hover, .ps-utilities .tabcontainer li a:hover, .ps-utilities .tabcontainer li a:focus, .ps-utilities .tabcontainer li.active a:focus {
+                margin: 0;
+                padding: 10px 0 8px;
+                color: #1792e5;
+                border: none;
+                border-bottom: 3px solid #1792e5 !important;
+                background: none;
+            }
+
+.ps-utilities .navbar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.ps-utilities .ps-edit-user {
+    padding: 20px 20px 20px 0px;
+}
+
+.ps-utilities .form-group {
+    padding-left: 20px;
+}
+
+.ps-utilities .eulatab .eulaSecondColumn .right-inner-addon {
+    padding-left: 0px;
+}
+
+.ps-utilities .authorizedDealerPgm {
+    float: left;
+    clear: left;
+    margin-top: 4px;
+}
+
+    .ps-utilities .authorizedDealerPgm .checkbox label:before {
+        content: none;
+    }
+
+    .ps-utilities .authorizedDealerPgm legand {
+        font-size: 15px;
+        font-weight: normal;
+        display: inline-block;
+        padding-top: 2px;
+        vertical-align: middle;
+        padding-left: 12px;
+    }
+
+    .ps-utilities .authorizedDealerPgm li.checkbox {
+        display: inline-block;
+        width: 100%;
+        padding-left: 12px;
+        vertical-align: top;
+    }
+
+        .ps-utilities .authorizedDealerPgm li.checkbox label {
+            vertical-align: top;
+        }
+
+    .ps-utilities .authorizedDealerPgm .form-registration-heading {
+        margin-top: 0;
+        padding-left: 20px;
+    }
+
+    .ps-utilities .authorizedDealerPgm ul {
+        padding-top: 12px;
+    }
+
+
+/*EULA Styles*/
+
+
+/*Eula Tab*/
+
+.ps-utilities .eula-profile {
+    position: absolute;
+    top: 96px;
+    bottom: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+.ps-utilities .eulatab {
+    width: 100%;
+    padding: 20px 24px;
+}
+
+    .ps-utilities .eulatab .eulaHeading {
+        font-size: 14px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        color: #707070;
+    }
+
+    .ps-utilities .eulatab .eulaTxtArea {
+        width: 100%;
+        height: 315px;
+        resize: none;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ps-utilities .eulatab .eulaSecondColumn {
+        padding-top: 24px;
+        padding-right: 0;
+        padding-left: 24px;
+    }
+
+    .ps-utilities .eulatab .spaceBottomStyle {
+        margin-bottom: 16px;
+    }
+
+    .ps-utilities .eulatab .select-field {
+        font-family: 'Honeywell Sans Medium';
+        font-size: 14px;
+        width: 100%;
+        padding: 6px 8px 5px;
+        color: #707070;
+        border: 1px solid #d0d0d0;
+        border-radius: 0;
+    }
+
+    .ps-utilities .eulatab #btneulasave {
+        float: right;
+        margin-left: 24px;
+    }
+
+    .ps-utilities .eulatab .eulaSecondColumn .add-on {
+        z-index: 100;
+        right: 0;
+        width: 39px !important;
+        height: 39px !important;
+        border-top: none;
+        border-right: none;
+    }
+
+        .ps-utilities .eulatab .eulaSecondColumn .add-on .icon-calendar {
+            top: 28px;
+            left: 10px;
+            background-position: 0 0;
+        }
+
+    .ps-utilities .eulatab .icon-calendar:hover {
+        top: 28px;
+        left: 10px;
+        background-position: 0 0;
+    }
+
+.ps-utilities .buttonGroup {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #e7e7e7;
+    background: #fff;
+}
+
+#EulaSubContainer .hideerrorSummary {
+    float: left;
+    padding-left: 5px;
+}
+
+
+/*Eula Tab*/
+
+
+/*Eula List*/
+
+.ps-utilities .eulalist-tab {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.ps-utilities .eulaListTable {
+    display: table;
+    overflow-y: scroll;
+    -ms-overflow-y: scroll;
+    width: 96.5%;
+    margin: 6px 24px 20px 24px;
+    color: #707070;
+    /* border-top: 1px solid #e7e7e7; */
+    background: #fff;
+}
+
+.ps-utilities .eulalist-tab .eulaListTable > thead > tr {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+    .ps-utilities .eulalist-tab .eulaListTable > thead > tr > th {
+        padding: 14px 14px 12px 10px;
+        border: none;
+        font-family: 'HoneywellSansWeb-Bold';
+    }
+
+        .ps-utilities .eulalist-tab .eulaListTable > thead > tr > th:first-child {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            vertical-align: middle;
+            text-transform: capitalize !important;
+            color: #303030 !important;
+        }
+
+.ps-utilities .eulaListTable .inputNameField {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    color: #0889c4;
+    border: none;
+}
+
+.ps-utilities .eulaListTable > thead tr {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #bababa;
+}
+
+.ps-utilities .eulaListTable > thead th {
+    font-size: 14px;
+    font-weight: 400;
+    vertical-align: middle;
+    border-right: 1px solid #d3d3d3;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+    .ps-utilities .eulaListTable > thead th:first-child {
+        border-left: none;
+    }
+
+    .ps-utilities .eulaListTable > thead th:last-child {
+        border-right: none;
+    }
+
+.ps-utilities .eulaListTable > tbody {
+    overflow: auto;
+    width: 100%;
+    height: auto;
+}
+
+@-moz-document url-prefix() {
+    .eulaListTable > tbody {
+        top: 44px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .eulaListTable > tbody {
+        top: 44px;
+    }
+}
+
+.ps-utilities .form-seperator {
+    float: left;
+    width: 100%;
+}
+
+.ps-utilities .eulaListTable tbody tr {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 0 12px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.ps-utilities .eulaListTable tbody tr:hover{
+    background-color:#f5f5f5;
+}
+
+.ps-utilities .eulaListTable > tbody tr td {
+    font-size: 14px;
+    padding-top: 1px;
+    padding-bottom: 0;
+    vertical-align: middle;
+    vertical-align: middle\9;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    border: none;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    -webkit-word-wrap: break-word;
+    -moz-word-wrap: break-word;
+    -o-word-wrap: break-word;
+}
+
+.ps-utilities .eulaListTable td:nth-child(1), .ps-utilities .eulaListTable th:nth-child(1) {
+    width: 20%;
+}
+
+.eulaListTable td:nth-child(2), .ps-utilities .eulaListTable th:nth-child(2) {
+    width: 15%;
+}
+
+.ps-utilities .eulaListTable td:nth-child(3), .ps-utilities .eulaListTable th:nth-child(3) {
+    width: 15%;
+}
+
+.ps-utilities .eulaListTable td:nth-child(4), .ps-utilities .eulaListTable th:nth-child(4) {
+    width: 15%;
+}
+
+.ps-utilities .eulaListTable th, .ps-utilities .eulaListTable td {
+    padding: 11px 10px;
+}
+
+.ps-utilities .eulaListTable tbody td, .ps-utilities .eulaListTable thead th {
+    display: inline-block;
+}
+
+.ps-utilities .eulaListRefreshIcon {
+    position: absolute;
+    top: 102px;
+    right: 59px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('../images/sprite_icons.png') no-repeat -40px -430px;
+}
+
+#EulaSubContainer {
+    margin-top: 55px !important;
+}
+
+    #EulaSubContainer.contentWrap {
+        border-bottom: none !important;
+    }
+
+
+/*Eula List*/
+
+
+/*/*Eula Tabs
+.EULAcontainer #myTab .active {
+    border-bottom: 3px solid #1792E5;
+}
+.EULAcontainer #myTab.nav-tabs > li a:hover {
+    background: none;
+    border: none;
+    color: #707070;
+}
+.EULAcontainer #myTab li a {
+    border: none !important;
+    color: #707070;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.EULAcontainer #myTab li a:hover {
+    background-color: #ffffff !important;
+    border-top: none;
+}*/
+
+
+/*Eula Tabs*/
+
+
+/*EULA Styles*/
+
+
+/*Billing Styles*/
+
+.ps-utilities .billingcontainer {
+    margin-top: 75px;
+    padding: 0 24px;
+}
+
+.ps-utilities .click-here {
+    margin: 10px 0;
+}
+
+.ps-utilities .billingcontainer .billingText {
+    color: #707070;
+}
+
+/*.ps-utilities .dealer_check li {
+    margin-top: -10px;
+}*/
+
+.ps-utilities .dealer-email {
+    color: #ccc;
+}
+
+.ps-utilities .email-dealer {
+    color: #ccc;
+    border: 1px solid #e1e1e1 !important;
+}
+
+
+/*Billing Styles*/
+
+
+/*Profile Option style for Utlity*/
+
+.nav > li#profileoptionsUtil > a:hover, .nav > li#profileoptionsUtil > a:focus {
+    background-color: transparent;
+}
+
+#profileoptionsUtil {
+    padding-right: 24px;
+}
+
+    #profileoptionsUtil ul#dash-profile {
+        right: 12px;
+    }
+
+
+/*Profile Option style for Utlity*/
+
+
+/*Dealer Approval Subtabs*/
+
+#dealerSubContainer {
+    margin-top: 56px;
+    /* padding-left: 10px; */
+}
+
+.eula-tab {
+    padding-top: 5px;
+    padding-left: 17px;
+}
+
+
+.ps-utilities .tabcontainer li.active a:hover,
+.ps-utilities .tabcontainer li a:hover,
+.ps-utilities .tabcontainer li a:focus,
+.ps-utilities .tabcontainer li.active a:focus {
+    margin: 0;
+    padding: 10px 0 8px;
+    color: #1792e5;
+    border: none;
+    border-bottom: 3px solid #1792e5 !important;
+    background: none;
+}
+
+#dealerSubContainer .activeuserlistinnercontainer {
+    top: 0;
+    bottom: 0;
+}
+
+.activeuserlistinnercontainer #btnapprove, .activeuserlistinnercontainer #btndelete {
+    display: none;
+}
+
+
+/*Dealer Approval Subtabs*/

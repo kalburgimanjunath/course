@@ -1,0 +1,230 @@
+﻿.Firmware-root .firmwareCustomerList {
+    width: calc(100% - 30px);
+}
+
+.Firmware-root .firmwareControllerList {
+    width: calc(100% - 30px);
+}
+
+.Firmware-root .ispselectdropdown .isppopup-site .icon-search.firmwareCustomerListSearch {
+    border-bottom: none;
+}
+
+.Firmware-root .firmwareCustomerDroparrowIcon {
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.Firmware-root .firmwareCustomerSearchBtn {
+    margin-top: 24px;
+}
+
+.Firmware-root .firmwareOverview {
+    margin-top: 14px;
+}
+
+.Firmware-root .alarmFilter {
+    width: 300px;
+}
+
+.Firmware-root .sensorsTab .panel-body {
+    padding: 0;
+}
+
+.Firmware-root .sensorsTab .table > tbody > tr > td {
+    border-bottom: 1px solid #ddd;
+}
+
+    .Firmware-root .sensorsTab .table > tbody > tr > td.emptyBorder {
+        border-bottom: none;
+    }
+
+    .Firmware-root .sensorsTab .table > tbody > tr > td > span.input-group-btn {
+        display: inline-block;
+    }
+
+.Firmware-root .sensorsTab .ispmenu.dropdown-menu {
+    margin-top: 0;
+}
+
+.Firmware-root .settingsTab .table > tbody > tr > td {
+    border-bottom: 1px solid #ddd;
+}
+
+    .Firmware-root .settingsTab .table > tbody > tr > td.emptyBorder {
+        border-bottom: none;
+    }
+
+.Firmware-root .settingsTab .panel-body {
+    padding: 0;
+}
+
+
+.Firmware-root .firmwareResults .listOverview {
+    border-top: 2px solid #e7e7e7;
+}
+
+.Firmware-root .ispselectdropdown .isppopup-site .accordion li div.firmwareCustomerChildList {
+    border-bottom: none;
+    border-top: 1px solid #e7e7e7;
+}
+
+    .Firmware-root .ispselectdropdown .isppopup-site .accordion li div.firmwareCustomerChildList label {
+        padding-left: 63px;
+    }
+
+.Firmware-root .firmwaResultCustomer {
+    width: 18%;
+}
+
+.Firmware-root .firmwaResultControllerName {
+    width: 16%;
+}
+
+.Firmware-root .firmwaResultControllerType {
+    width: 16%;
+}
+
+.Firmware-root .firmwaResultMacID {
+    width: 16%;
+}
+
+.Firmware-root .firmwaResultCurrentVersion {
+    width: 16%;
+}
+
+.Firmware-root .firmwareUpdatedSiteName {
+    width: 18%;
+}
+
+.Firmware-root .firmwareUpdatedControllerName {
+    width: 16%;
+}
+
+.Firmware-root .firmwareUpdatedControllerType {
+    width: 16%;
+}
+
+.Firmware-root .firmwareUpdatedMacID {
+    width: 16%;
+}
+
+.Firmware-root .firmwareUpdatedVersion {
+    width: 16%;
+}
+
+.Firmware-root .firmwareResultsTable,
+.Firmware-root .firmwareUpdatedTable {
+    width: 100%;
+}
+
+.Firmware-root .firmwareResultsVersionText{
+    position: relative;
+    left: 25px;
+}
+.Firmware-root .firmwareResutsDropArrowIcon {
+    display: inline-block;
+    position: relative;
+    left: 25px;
+}
+
+.Firmware-root .sensorsTab, .Firmware-root .settingsTab {
+    height: 300px;
+}
+
+.Firmware-root .firmwareResultsTable tbody > tr {
+    border-bottom: 1px solid #ddd;
+    line-height: 2em;
+}
+
+    .Firmware-root .firmwareResultsTable tbody > tr:last-child {
+        border-bottom: none;
+    }
+
+.Firmware-root .firmwareResultsInfoIcon {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+}
+
+.Firmware-root .firmwareUpdatedTable tbody > tr {
+    border-bottom: 1px solid #ddd;
+    line-height: 2.2em;
+}
+
+    .Firmware-root .firmwareUpdatedTable tbody > tr:last-child {
+        border-bottom: none;
+    }
+
+.Firmware-root .ispselectdropdown .isppopup-site .icon-search.firmwareCustomerListSearch:hover {
+    background: #fff;
+}
+
+.Firmware-root .ispselectdropdown .isppopup-site .icon-search .ispicon_search.firmwareCustomerSearchIcon {
+    left: 15px;
+}
+
+.Firmware-root .ispselectdropdown .isppopup-site .accordion li div {
+    padding: 2px 0;
+}
+.sensorsTab .table > thead > tr > th input[type=checkbox] {
+    position: relative;
+    bottom: 5px;
+}
+
+.sensorsTab .table > thead > tr > th,
+.settingsTab .table > thead > tr > th {
+    padding-top: 22px;
+}
+
+.Firmware-root .sensorsTab .table-responsive {
+    overflow: visible;
+}
+.Firmware-root .firmwareInfoVersionReport {
+    padding: 16px 20px;
+    width: 300px;
+}
+.Firmware-root .firmwaResultControllerName {
+    position: relative;
+    padding-left: 35px;
+}
+.Firmware-root .firmwareControllerLoader {
+    left: 0;
+    margin-top: 0;
+}
+.Firmware-root .firmwareversiondropdownlist{
+    height: 200px;
+    overflow-y: scroll;
+}
+.Firmware-root .firmwareButtonGroup{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+}
+.Firmware-root .firmwareInfoVersionReport h3 {
+    margin-top: 5px;
+}
+.Firmware-root .firmwareInfoVersionReport h4 {
+    margin-bottom: 0;
+}
+.Firmware-root .firmwareInfoVersionReport h6 {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.Firmware-root .firmwareFeatureInfo{
+    white-space: normal;
+    text-align: justify;
+    word-wrap: break-word;
+}
+.Firmware-root .flirmwareLoaderIcon {
+    position: absolute;
+    left: 0;
+    margin-top: 0;
+}
+.Firmware-root .firmwareResultsFilter .firmwareFilterButton{
+    margin-top: 0;
+}

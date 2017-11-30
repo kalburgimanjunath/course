@@ -1,0 +1,423 @@
+﻿@color_1: #fff;
+@color_2: #606060;
+@color_3: #303030;
+@color_4: #808080;
+@font_family_1: 'HoneywellSansWeb-bold';
+@font_family_2: 'HoneywellSansWeb-Medium';
+@font_family_3: 'HoneywellSansWeb-Bold';
+@background_color_1: #f47e37;
+@background_color_2: transparent;
+@background_color_3: #f2f2f2;
+@background_color_4: #000;
+@background_color_5: #1792e5;
+
+.visual_management_root {
+	padding: 2px !important;
+	background: #ffffff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	.mapOverview {
+		position: absolute;
+		left: 25%;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		padding: 0;
+		width: 75%;
+	}
+	.sitelistCard {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		top: 0;
+		padding: 0;
+		width: 25%;
+		background: #f5f5f5;
+	}
+	.cardlistview {
+		position: absolute;
+		width: 25%;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		.security_level {
+			height: 108px;
+			background-color: @background_color_1;
+			select {
+				background-color: @background_color_2;
+				border: 0;
+				color: @color_1;
+				font-family: @font_family_1 !important;
+				font-size: 18px;
+				margin-top: 39px;
+			}
+		}
+		.panel-title {
+			>span {
+				font-family: @font_family_2;
+				color: @color_2;
+				font-size: 14px;
+			}
+		}
+		.main_tab_list {
+			position: absolute;
+			top: 0px;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+		.sub_content {
+			position: absolute;
+			top: 0px;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			padding: 0;
+			.sub_dev_tab_list {
+				position: absolute;
+				top: 54px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			.zone_status_area {
+				position: absolute;
+				top: 54px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			.zone_list_panel {
+				position: absolute;
+				top: 84px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				overflow-y: auto;
+			}
+		}
+		.site_list {
+			position: absolute;
+			top: 40px;
+			bottom: 53px;
+			left: 0;
+			right: 0;
+		}
+		.main_nav_page {
+			position: absolute;
+			top: 94px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		.sync_map {
+			position: absolute;
+			bottom: 0;
+			height: 53px;
+			left: 0;
+			right: 0;
+			padding: 10px 20px;
+			border-top: 1px solid #d0d0d0;
+			z-index: 100;
+		}
+		.header {
+			border-bottom: 1px solid #d0d0d0;
+		}
+		.nav-tabs {
+			border-bottom: 1px solid #d0d0d0 !important;
+			margin-left: 0;
+			padding-left: 20px;
+		}
+		.tab-content {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			overflow-y: auto;
+			.panel {
+				.panel-heading {
+					cursor: pointer;
+				}
+			}
+		}
+		.tab-content.device {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			overflow-y: auto;
+		}
+		.sub_content_head {
+			padding: 10px 15px;
+			border-bottom: 1px solid #e7e7e7;
+			height: 84px;
+		}
+		.name {
+			font-family: @font_family_3 !important;
+			font-size: 15px;
+			color: @color_3;
+		}
+		.description {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_4;
+		}
+		.switch {
+			width: 50px;
+		}
+		.panel {
+			border-right: 0;
+			border-left: 0;
+			border-bottom: 0;
+			border-radius: 0;
+			&+.panel {
+				margin-top: 0;
+			}
+			&:last-child {
+				border-bottom: 1px solid #ddd;
+			}
+		}
+		.panel-body {
+			padding: 0;
+			.list-group {
+				margin-bottom: 0;
+			}
+		}
+		.zone_status_area {
+			border-top: 1px solid #e7e7e7;
+			>li {
+				margin: 15px 20px 15px 30px;
+				list-style: none;
+				height: 42px;
+			}
+		}
+		.device_info {
+			.clip_record_small {
+				height: 62px;
+				background-color: @background_color_3;
+			}
+			.associate_camera {
+				margin: 15px;
+			}
+			.associated_camera_video_small {
+				margin-top: 15px;
+				height: 180px;
+				background-color: @background_color_3;
+			}
+			#recorded_clips {
+				&:last-child {
+					tr {
+						td {
+							border-bottom: 1px solid #ddd;
+						}
+					}
+				}
+			}
+			.table {
+				tr {
+					&:first-child {
+						td {
+							border-top: 0;
+						}
+					}
+				}
+			}
+			.device_video_overview {
+				height: 200px;
+				background-color: @background_color_4;
+			}
+		}
+	}
+	.visual_map {
+		position: absolute;
+		left: 25%;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		.visual_map_wrapper {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			border-top: 1px solid #e7e7e7;
+			overflow: hidden;
+			.sync_list_btn {
+				position: absolute;
+				left: 20px;
+				top: 20px;
+			}
+		}
+	}
+	.device_info {
+		.major_label {
+			display: inline-block;
+			background-color: @background_color_1;
+			color: @color_1;
+			font-size: 14px;
+		}
+		.note_input {
+			border: 0;
+		}
+		.btn_actions {
+			background: transparent;
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background-image: none;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+	}
+}
+.siteList {
+	li {
+		float: left;
+		width: 100%;
+	}
+}
+.visual_map_wrapper {
+	.visual_map_img {
+		max-width: 100%;
+	}
+	.vm_map_item {
+		font-size: .75em;
+		position: absolute;
+		margin-left: -21px;
+		margin-top: -50px;
+		&:hover {
+			margin-left: -23px;
+			margin-top: -56px;
+		}
+	}
+	.label_vm {
+		position: absolute;
+		height: 32px;
+		background-color: @background_color_5;
+		padding: 5px;
+		white-space: nowrap;
+	}
+	.label_vm_txt {
+		color: @color_1;
+		white-space: nowrap;
+		font-size: 14px;
+	}
+}
+.ispicon_vm_executive {
+	&::before {
+		background-position: -556px -363px;
+	}
+}
+.ispicon_vm_fire {
+	&::before {
+		background-position: -524px -364px;
+	}
+}
+.ispicon_vmred {
+	&::before {
+		background-position: -75px -549px;
+		position: relative;
+		width: 41px;
+		height: 50px;
+	}
+	&:hover {
+		&::before {
+			background-position: -249px -542px;
+			width: 45px;
+			height: 56px;
+		}
+	}
+}
+.ispicon_vmyellow {
+	&::before {
+		background-position: -9px -549px;
+		position: relative;
+		width: 41px;
+		height: 50px;
+	}
+	&:hover {
+		&::before {
+			background-position: -192px -542px;
+			width: 45px;
+			height: 56px;
+		}
+	}
+}
+.ispicon_vmgreen {
+	&::before {
+		background-position: -139px -549px;
+		position: relative;
+		width: 41px;
+		height: 50px;
+	}
+	&:hover {
+		&::before {
+			background-position: -300px -542px;
+			width: 45px;
+			height: 56px;
+		}
+	}
+}
+.ispicon_vmitem {
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+.ispicon_vmcamera {
+	&::before {
+		background-position: -331px -428px;
+	}
+}
+.ispicon_vmdoor {
+	&::before {
+		background-position: -235px -396px;
+	}
+}
+.ispicon_vmzone {
+	&::before {
+		background-position: -1169px -171px;
+	}
+}
+.ispicon_vmoutput {
+	&::before {
+		background-position: -267px -396px;
+	}
+}
+.visual_map_tools_wrapper {
+	position: absolute;
+	bottom: 80px;
+	right: 20px;
+	.reset_btn {
+		margin-top: 10px;
+		box-shadow: 0 0 4px -1px #000 !important;
+		padding: 3px;
+		background: #fff;
+	}
+	.zoom_btns {
+		margin-top: 10px;
+		box-shadow: 0 0 4px -1px #000 !important;
+		padding: 3px;
+		float: left;
+		background: #fff;
+		.ispicon_accMinus {
+			border-top: 1px solid #ccc;
+			clear: both;
+		}
+	}
+}

@@ -1,0 +1,407 @@
+@import url("../Content/Styles/bootstrap/bootstrap.css");
+@import url("../Content/Styles/bootstrap/bootstrap-responsive.css");
+@import url("../Content/Styles/jquery/jquery.dropdown.css");
+@import url("../ContentStyles//addon.css");
+@import url("../Content/Styles/bootstrap-datetimepicker.css");
+@import url("../Content/Styles/alertify.css");
+@import url("../Content/Styles/accordion.css");
+@import url("../Content/Styles/appicons.css");
+@import url("../Content/Styles/bootstrap-select.css");
+@import url("../Content/Styles/bootstrap-tagsinput.css");
+@import url("../Content/Styles/checkbox.css");
+@import url("../Content/Styles/checkbox-list.css");
+@import url("../Content/Styles/configstyle.css");
+@import url("../Content/Styles/controlstyles.css");
+@import url("../Content/Styles/custom-bootstrap-datetimepicker.css");
+@import url("../Content/Styles/default.css");
+@import url("../Content/Styles/header.css");
+@import url("../Content/Styles/icons.css");
+@import url("../Content/Styles/ispcommon.css");
+@import url("../Content/Styles/ispaccount.css");
+@import url("../Content/Styles/jquery.webui-popover.min.css");
+@import url("../Content/Styles/menu.css");
+@import url("../Content/Styles/modal.css");
+@import url("../Content/Styles/modal-confirm.css");
+@import url("../Content/Styles/normalize.css");
+@import url("../Content/Styles/radio.css");
+@import url("../Content/Styles/selectize.css");
+@import url("../Content/Styles/Site.css");
+@import url("../Content/Styles/spinner.css");
+@import url("../Content/Styles/timeout-dialog.css");
+@import url("../Content/Styles/toastr.css");
+@import url("../Content/Styles/webhelp.css");
+@import url("../Content/fonts.css");
+@import url("../Content/forms.css");
+@import url("../Content/overlays.css");
+/*@import url("../Content/simple-sidebar.css");*/
+
+.intrusion-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .intrusion-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .intrusion-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .intrusion-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none -moz-box-sizing:none;
+                box-sizing: none;
+            }
+
+                .intrusion-root .isptabs .nav li a:hover, .intrusion-root .isptabs .nav li a:active, .intrusion-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .intrusion-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.intrusion-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .intrusion-root .cardlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .intrusion-root .cardlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.intrusion-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .intrusion-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.intrusion-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.intrusion-root .listOverview .overviewTab, .intrusion-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+.intrusion-root .cardlistview .list-group-item.active, .intrusion-root .cardlistview .list-group-item.active:hover, .intrusion-root .cardlistview .list-group-item.active:focus, .intrusion-root .cardlistview .list-group-item:hover {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+}
+
+.intrusion-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.intrusion-root .cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.intrusion-root .intrusionView .overviewTab .table > thead > tr > th, .intrusion-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.intrusion-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.intrusion-root .intrusionView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.intrusion-root .intrusionView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.intrusion-root .intrusionView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.addSchedule .overviewTab table td, .intrusion-root .intrusionView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.intrusion-root .intrusionView .overviewTab .ispicon, .intrusion-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.addSchedule .overviewTab .sensorsid, .intrusion-root .addSchedule .overviewTab .name,
+.addSchedule .name, .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.intrusion-root .intrusionView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.intrusion-root .intrusionView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.intrusion-root .intrusionView .cardlistview .isppagetitle, .intrusion-root .intrusionView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.intrusion-root .intrusionView .listOverview .isppagetitle {
+    margin-left: 9px;
+    margin-right: 24px;
+    border-bottom:1px solid #e7e7e7;
+    padding-bottom: 15px;
+}
+
+.intrusion-root .intrusionView .list-group-item {
+    padding: 10px 20px;
+}
+
+.scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.intrusion-root .intrusionView .checkbox {
+    float: left;
+    margin-top: 0;
+}
+
+    .intrusion-root .intrusionView .checkbox input[type="checkbox"], .intrusion-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.intrusion-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.intrusion-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.intrusion-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .intrusion-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.intrusion-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.intrusion-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.intrusion-root .viewmode input, .intrusion-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.intrusion-root .viewmode .btn-footer {
+    display: none;
+}
+
+.intrusion-root .btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.intrusion-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .intrusion-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .intrusion-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .intrusion-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.intrusion-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.intrusion-root .intrusionView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.intrusion-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+/**/
+
+.intrusion-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.intrusion-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.intrusion-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.intrusion-root .intrusionView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.intrusion-root .intrusionView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.intrusion-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+/* CONTROLLER OVERVVIEW*/
+
+.intrusion-root .scheduleOverview .content {
+            padding: 0 10px;
+            /*margin-left: -15px !important;*/
+            background: #f4f4f4;
+            padding-right: 24px;
+            box-shadow: 0 -1px 0 0 #d6d6d6;
+        }
+
+
+.intrusion-root .scheduleOverview .leftlist .panel ul .list-group-item.active, .intrusion-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .intrusion-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+.intrusion-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+@media (max-height: 768px) {
+    .intrusion-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+    .intrusion-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .intrusion-root .custom-style-list{
+        position: absolute;
+        overflow: scroll;
+        width: 100%;
+        max-height: 900px;
+    }
+}
+@media (max-width: 1366px) {
+    .intrusion-root .custom-style-list{
+        position: absolute;
+        overflow: scroll;
+        width: 102%;
+        max-height: 550px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .intrusion-root .custom-style-list{
+        position: absolute;
+        overflow: scroll;
+        width: 102%;
+        max-height: 635px;
+    }
+}
+
+.intrusion-root .section-head1{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    font-size: 22px;
+}

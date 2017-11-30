@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+             $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <style>
+        #wrapperLoginBtn{
+            position: relative;
+                right: 0;
+    bottom: 0;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+
+     <div class="body-content">
+        
+<div class="login-root">
+
+
+<!-- new pages-->
+<div class="logo col-xs-12 text-center">
+    <ul>
+        <li>
+            <span class="honeywelllogo"><img src="Content/images/Honeywell-logo.png" /></span>
+        </li>
+        <li class="logoline">
+            |
+        </li>
+        <li class="brand"><span>Eagle</span></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <section class="login">
+                <div id="login" class="loginbase-container pagebox">
+                    <form id="loginform" class="form-signin" autocomplete="off" data-bind="submit: $data.onSignin, busyIndicator: {show: IsLoading, blockAll: true}">
+                        <h1 class="logintitle">Sign in</h1>
+                        <div class="form-group">
+                            <label class="control-label">Email/User ID</label>
+                            <input name="username"  type="text" class="form-control" data-bind="value: $data.model.UserName, valueUpdate:'afterkeydown', hasfocus: true"  autocomplete="off" autocorrect="off" autocapitalize="off" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <span class="ispicon ispicon_eye"></span>
+                            <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                        </div>
+                        <div class="form-group" id="wrapperLoginBtn">
+                            <div class="">
+                                <a class="btn btn-primary btn-block" type="submit" id="btnlogin" href="dashboard.html">Sign in</a>
+                            </div>
+                            <span class="text-danger pull-left text-left col-md-7"></span>
+                        </div>
+                    </form>
+                    <span class="error-msg hide">
+                        <span id="errormsg">The email or password you entered is incorrect</span>
+                    </span>
+                    <div class="form-group">
+                        <div class="">
+                            <div class="text-right">
+                                <a id="forgotPassword" href='forgotpassword.html' data-bind="click: $data.onForgotPassword">Forgot Password</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center">
+                        <hr class="complete-line" />
+                        <div class="">
+                            <div class="text-center">
+                                Don’t have an account? <a id="signupButton" href='#' data-bind="click: $data.onCreateAccount">Sign up</a>
+                            </div>
+                        </div>
+                        <!-- <a href="/Account/%23">Learn about [Eagle] and the Dealer Program.</a> -->
+                    </p>
+                </div>
+                <div id="register" class="loginbase-container pagebox" style="display: none;width:800px;">
+                </div>
+                <div id="forgotpassword" class="pagebox" style="display: none">
+                </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+﻿.addonbutton.card_view_addonButton {
+    top: 27px;
+}
+
+.cards_viewmode .card_view_Uses_checkBox {
+    margin-right: 5px;
+}
+
+.card-root .cardlistview .custom-style-list {
+    width: 99%;
+    position: absolute;
+    top: 130px;
+    bottom: 0px;
+    height: 200px;
+}
+
+.listOverview.cards_listview_details {
+    padding-bottom: 100%;
+}
+
+.card-root {
+    position: absolute;
+    left: 24%;
+    width:100%;
+}
+
+    .card-root .cards_listview_details .btn-footer.cards_view_footer {
+        position: absolute;
+        bottom: 60%;
+        right: 30px;
+    }
+
+    .card-root .cardlistview .listStickyHeader {
+        padding: 12px 24px;
+    }
+
+        .card-root .cardlistview .listStickyHeader b {
+            position: relative;
+            top: 5px;
+        }
+
+    .card-root .cardlistview .ispheadersearch {
+        background: #fff;
+    }
+
+    .card-root .cardlistview .card_view_search_icon:before {
+        transform: rotate(90deg);
+    }
+
+    /*.card-root .cardlistview .ispheadersearch {
+        border-left: 1px solid #ddd;
+    }*/
+
+.assign-card-img img[src=""] {
+    background-image: url(../images/icon_sprites_24px-020.svg);
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-top: 3px;
+    background-size: 1400px;
+    content: "";
+    background-position: -228px -110px;
+    vertical-align: top;
+    z-index: 100;
+}
+
+.card-root .card_view_uses_checkbox_icon {
+    margin-right: 5px;
+    margin-top:0;
+}
+
+.card-root .card_list_group .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card-root .card_list_group .col-md-10 span.name {
+    margin-left: 10px;
+    line-height: 2;
+}
+
+.card-root .cards_listview_details .card_view_edit_icon {
+    position: relative;
+    right: 15px;
+}
+
+.card-root .card_view_assign_btn {
+    margin-right: 0px;
+}
+
+.viewmode .card_view_assign_btn{
+    display:none;
+}
+
+.mpc-model-form.assign-card {
+    margin: 0px;
+    padding-top: 10px;
+}
+
+.modal-header.assign-card-header {
+    padding: 0px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+.assign-card .ispheadersearch .input-group {
+    top: 0;
+}
+
+.assign-card .form-control {
+    height: 30px;
+}
+
+.assign-card .list-group {
+    margin-bottom: 10px;
+    max-height: 250px;
+}
+
+.assign-card .assign-card-search {
+    position: relative;
+    z-index: 3;
+    top: 4px;
+    right: 20px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+}
+
+.assign-card .assign-card-input {
+    position: absolute;
+    width: 87%;
+}
+
+.assign-card .assign-card-sort-icon {
+    border: none !important;
+}
+
+.assign-card .assign-card-img-list .control-label {
+    position: relative;
+    top: 18px;
+}
+
+.assign-card .assign-card-img img {
+    background-image: url(../images/icon_sprites_24px-020.svg);
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-top: 3px;
+    background-size: 1400px;
+    content: "";
+    background-position: -228px -110px;
+    vertical-align: top;
+    z-index: 100;
+}
+
+.assign-card .assign-card-img .img-thumbnail {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.assign-card .assign-card-img-list {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+    .assign-card .assign-card-img-list:hover {
+        /*background: #337ab7;*/
+        border-color: #fff;
+    }
+
+.assign-card .rightlistcontent h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: #000;
+    line-height: 22px;
+}
+
+.assign-card .rightlistcontent p {
+    padding: 2px 0;
+    color: #000;
+}
+
+.assign-card button.btn.btn-default.assign-card-sort-icon {
+    padding: 0px !important;
+}
+
+.assign-card .assign-card-img {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+    .assign-card .assign-card-img .list-group-item {
+        margin-bottom: 0px !important;
+        border: none;
+        border-radius: 0;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+    }
+
+        .assign-card .assign-card-img .list-group-item:first-child {
+            border-top-left-radius: 0px !important;
+            border-top-right-radius: 0px !important;
+        }
+
+.assign-card .list-group-item.assign-card-img-list {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: none;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #ddd;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 6px;
+    padding: 10px 0px;
+}
+
+.assign-card-expand-icon {
+    margin-top: 20px;
+}
+
+.modal-footer.assign-card-footer {
+    border-top: none;
+}
+
+.assign-card-img-list .rightlistcontent p {
+    margin: 0;
+}
+
+.modal-content.assign_catd_popup {
+    padding: 36px;
+}
+
+.assign-card-header .modal-title {
+    line-height: 0;
+}
+
+.modal-footer.assign-card-footer{
+    padding: 0;
+}
+
+.togglemenu #card-view{
+    left: 70px;
+    position: absolute;
+    width: 69%;
+}

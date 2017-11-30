@@ -1,0 +1,183 @@
+﻿<div id="site-overview" class="row site hide accountcontainer account-view col-md-9 nopadding">
+    @*<div id="site-overview" style="display:none">*@
+
+        @*<h3 class="isppagetitle">@Resources.Account_Site_Overview</h3>*@
+        @*<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">*@
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hide leftlist">
+
+            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 overview">
+            <h3 class="isppagetitle">@Resources.Account_Site_Overview</h3>
+            @*<h3 class="isppagetitle">@Resources.Account_Site_Overview</h3>*@
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-info white accountdetails">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Account_Details_Status</h3>
+                                @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        @Resources.CustomerName<br />
+                                        <b>
+                                            <span id="customernameId"></span>
+                                            <span id="customerName" data-bind="text: $data.siteDetailModel.CustomerInfo.Name"></span>
+                                        </b>
+                                    </div>
+                                    <p></p>
+                                    <br />
+                                    <hr />
+                                    <div class="col-md-6">
+                                        @Resources.Site<br />
+                                        <span id="siteId" style="display:none"></span>
+                                        <span id="siteName" data-bind="text: $data.siteDetailModel.SiteInfo.Name"></span>
+                                    </div>
+                                    <br />
+                                    <p></p>
+                                    <br />
+                                    <div class="col-md-6">
+                                        @Resources.SiteReferenceNumber<br />
+                                        <span id="SiteReferenceNumberId">k09878734</span>
+                                    </div>
+                                    <br />
+                                    <p></p>
+
+                                </div>
+                                <div class="row hide">
+                                    @Resources.EULA_Acceptance<br />
+                                    <button>@Resources.Awaiting_Acceptance</button><br />
+                                    <a href="#">@Resources.Resend_Reg_Email</a>
+                                </div>
+                                <div class="row hide">
+                                    @Resources.Account_Status<br />
+                                    <button>@Resources.Accepted</button><br />
+                                    <b>May 03, 2016 9:24 AM</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hide">
+                        <div class="panel panel-info white">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Account_Revenue</h3>
+                                @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                            </div>
+                            <div class="panel-body">Panel content</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-info white">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Account_Site_Details</h3>
+                                @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    @*United Hospitals*@
+                                    <span data-bind="value: $data.accountModel.Name"></span>
+                                </p>
+                                <p>
+                                    <b>TimeZone:</b><br />
+                                <p>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b>@Resources.Address</b><br />
+                                    @*297 Memorial Ave<br />
+                                        New York, NY 10032<br />
+                                        United States*@
+                                    <span data-bind="text: $data.accountModel.ContactInfo.AddressLine1"></span><br />
+                                    <span data-bind="text:$data.accountModel.ContactInfo.City"> </span>
+                                    <span data-bind="text:$data.accountModel.ContactInfo.State"></span>
+                                    <span data-bind="text:$data.accountModel.ContactInfo.ZipCode"></span><br />
+                                    <span data-bind="text: $data.accountModel.ContactInfo.Country"></span>
+
+                                </p>
+                                <hr />
+                                <p>
+                                    <a href="tel:+ 1 (516) 8341241"><span data-bind="value: $data.userModel.Phone"></span></a><br />
+                                    <a href="email:contact@unitedhospitals.com"><span data-bind="value: $data.userModel.EmailAddress"> </span></a>
+
+                                </p>
+                                <p>
+                                    @*<b>Site Admin</b>
+                                        <b>Jane Smith</b><br />
+                                        Cell: + 1 (456) 3457896<br />
+                                        Office: + 1 (456) 3457896 x 3579<br />
+                                        john.appleseed@unitedhospitals.com*@
+
+                                    <b>@Resources.Site_Admin</b>
+                                    <b>
+                                        <span data-bind="value: $data.userModel.FirstName"></span>
+                                        <span data-bind="value: $data.userModel.LastName"></span>
+                                    </b><br />
+                                    @Resources.Cell : <span data-bind="value: $data.userModel.MobileNumber"></span><br />
+                                    @Resources.Office : <span data-bind="value: $data.userModel.WorkPhone"></span><br />
+                                    <span data-bind="value: $data.userModel.EmailAddress"> </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-info white">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Quick_Links</h3>
+                                @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                            </div>
+                            <div class="panel-body">
+                                <ol>
+                                    <li>
+                                        <p>
+                                            @Resources.Site_No_Controller<br />
+                                            <a href="#paneloperatorModal" data-bind="click:addController"><span class="ispicon ispicon_plus"></span>@Resources.Add_New_Controller</a>
+                                        </p>
+                                        <hr />
+                                    </li>
+                                    <li>
+                                        <p>
+                                            @Resources.Site_No_Area<br />
+                                            <a href="#"><span class="ispicon ispicon_plus"></span>@Resources.Add_New_Area</a>
+                                        </p>
+                                        <hr />
+                                    </li>
+                                    <li>
+                                        <p>
+                                            @Resources.Site_No_People_Badges<br />
+                                            <a href="#">@Resources.Define_People_And_Badges</a>
+                                        </p>
+                                        <hr />
+                                    </li>
+                                    <li>
+                                        <p>
+                                            @Resources.Site_No_Schedule<br />
+                                            <a href="#"><span class="ispicon ispicon_plus"></span>@Resources.Create_New_Schedule</a>
+                                        </p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hide">
+                        <div class="panel panel-info white">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Devices_And_Area</h3>
+                                @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                            </div>
+                            <div class="panel-body">Panel content</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 hide">
+                        <div class="panel panel-info white">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Resources.Health_And_Status</h3>
+                                <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                            </div>
+                            <div class="panel-body">Panel content</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

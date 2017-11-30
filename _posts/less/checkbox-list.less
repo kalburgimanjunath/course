@@ -1,0 +1,46 @@
+﻿@color_1: #3B3B3D;
+@font_family_1: 'Open Sans Semibold';
+
+.checkbox-list {
+    margin-bottom: 0px;
+    li {
+        float: none;
+        margin: 0;
+        border-right: 1px solid #D3D3D3;
+        list-style-type: none;
+        .colHeading {
+            font-size: 15px;
+            color: @color_1;
+            display: block;
+            font-family: @font_family_1 !important;
+        }
+        div {
+            padding: 12px 0 12px 0 !important;
+            border-bottom: 1px solid #d6d6d6;
+            label {
+                border-style: none;
+                margin: 0 !important;
+                input {
+                    display: none;
+                    &:checked {
+                        &+span {
+                            background: url("images/icons/checkBox_press.png");
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+                span {
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    background: url("images/icons/checkBox_normal.png");
+                    background-repeat: no-repeat;
+                }
+            }
+            label.title {
+                display: inline;
+                margin: 0 0 0 -2px !important;
+            }
+        }
+    }
+}

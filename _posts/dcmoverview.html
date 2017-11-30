@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <style>
+    .ispmenu {
+        border: 1px solid #d0d0d0;
+        min-width:200px;
+        padding:0px;
+    }
+
+        .ispmenu li {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #303030;
+        }
+
+            .ispmenu li a {
+                font-family: 'HoneywellSansWeb-Medium' !important;
+                font-size: 14px;
+                color: #606060;
+                padding: 12px 24px;
+                border-bottom: 1px solid #d0d0d0;
+            }
+
+                .ispmenu li a:hover {
+                    font-family: 'HoneywellSansWeb-Bold' !important;
+                    font-size: 14px;
+                    color: #303030;
+                    background-color: #e8f4fc;
+                }
+                .ispmenu.rightalign{
+                    top: 50px;
+                    right: 20px;
+                }
+    </style>
+</head>
+<body>
+<form id="doorForm" class="dcmOverview" data-validationkey="door" novalidate="novalidate">
+       <!--  <div class="field">
+            <label class="floatLblDn">Door name</label>
+            <input type="text" class="floatTxt myStyle valid" id="door_Name" name="door_Name" maxlength="25" data-original-title="" title="">
+        </div> -->
+
+        <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+            <li class="doorBehaviour">
+                <div class="doorBehaviourButton secondary-button1" >
+                    <span class="doorSettingsButtonTxt">Door Behavior</span>
+                    <span>Pulse Time: </span><span>0:0:10.0</span><br>
+                    <span>Shunt Time: </span><span>0:0:15.0</span><br>
+                </div>
+            </li>
+
+            <li class="doorReaderRight" id="doorReaderRightId">
+                <div class="doorReaderRightButton disabled-button" data-toggle="modal" role="button">
+                    <span class="doorSettingsButtonTxt" >Reader B</span>
+                    <span class="doorSettingsButtonTxt"></span>
+                    <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                    <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                    <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+                </div>
+            </li>
+
+            <li class="egressSwitch" id="doorEgressId">
+                <div class="egressSwitchButton secondary-button1">
+                    <span class="doorSettingsButtonTxt">Egress Switch</span>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="doorSettingsWrapperTop">
+            <li>
+                <div class="associationButton secondary-button1">
+                    <span class="doorSettingsAssociationButtonTxt" >Associations: </span>
+                    <span class="doorSettingsAssociationButtonTxt">0</span>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+            <li>
+                <div class="stripe leftNoBorder"></div>
+                <!--<div class="doorLeftLine"></div>-->
+            </li>
+            <li class="connecterLeft"></li>
+            <li>
+                <div class="arrowUpEnabled">
+                    <div class="arrow_head_up" ></div>
+                    <div class="arrow_body_up">
+                        <ul>
+                            <li class="arrowText" >In</li>
+                            <li class="arrowText" style="display: none;">Out</li>
+                        </ul>
+                    </div>
+                    <div class="arrow_head_down" style="display: none;"></div>
+                </div>
+            </li>
+            <li class="connecterMiddle"></li>
+            <li>
+                <div class="arrowDownDisabled">
+                    <div class="arrow_head_up" style="display: none;"></div>
+                    <div class="arrow_body_down">
+                        <ul>
+                            <li class="arrowText" style="display: none;">In</li>
+                            <li class="arrowText">Out</li>
+                        </ul>
+                    </div>
+                    <div class="arrow_head_down"></div>
+                </div>
+            </li>
+            <li class="connecterRight"></li>
+            <li>
+                <div class="egressSwitchTopEnable"></div>
+                <div class="stripe rightNoBorder"></div>
+                <!--<div class="doorRightLine"></div>-->
+                <div class="egressSwitchBottom"></div>
+            </li>
+        </ul>
+
+        <div class="doorReaderLeft" id="doorReaderLeftId">
+            <div class="doorReaderLeftButton secondary-button1" data-toggle="modal" role="button">
+                <span class="doorSettingsButtonTxt">Door 1 - Reader A</span>
+                <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+            </div>
+        </div>
+
+       <!--  <div class="buttonGroup antipassback">
+            <button class="primary-button" data-bind="click:$data.saveDoor" data-original-title="" title="">Save</button>
+            <button class="secondary-button" data-bind="click:$data.resetDoor" data-original-title="" title="">Reset</button>
+            <span class="class2 errorDetail" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="display: none;"></span>
+        </div> -->
+    </form>
+</body>
+</html>

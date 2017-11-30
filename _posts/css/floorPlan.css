@@ -1,0 +1,435 @@
+﻿/*version 1.0.1*/
+.floorPlan-root .floorPlanLanding {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    top: 70px;
+    padding: 0;
+    left: 24%;
+}
+
+    .floorPlan-root .floorPlanLanding .isppagetitle {
+        border-bottom: 1px solid #e7e7e7;
+        padding: 0 20px 10px 20px;
+    }
+
+.firstFloorPlan {
+    padding: 35px 35px 36px 35px;
+    margin: 0 auto;
+    margin-top: 11%;
+    background: #fff;
+    text-align: center;
+}
+
+    .firstFloorPlan h4 {
+        font-style: italic;
+        color: #b0b0b0;
+        margin: 0;
+    }
+
+    .firstFloorPlan p + p {
+        margin-top: 19px;
+        margin-bottom: 0;
+    }
+
+.ispicon_firstItem::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -16px;
+}
+
+.ispicon_firstItem:hover::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -69px;
+}
+
+.ispicon_firstItem:active:before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -122px;
+}
+
+.addfloorplan, .addfloorplan .modal-dialog {
+    width: 400px;
+    margin: 0 auto;
+    left: 0 !important;
+}
+
+.flooplaninfo {
+    pointer-events: none;
+}
+
+.fpUpload {
+    cursor: pointer;
+    padding: 4px 10px;
+    color: #333;
+}
+
+    .fpUpload input {
+        left: -9999px;
+        position: absolute;
+    }
+
+.fpPath {
+    position: absolute;
+    width: 297px;
+    border: 0 none;
+    height: 30px;
+    top: 30px;
+    left: 20px;
+    pointer-events: none;
+    background: #fff !important;
+}
+
+    .fpPath:focus, .fpPath:hover {
+        border: 0 none;
+        box-shadow: none;
+    }
+
+.previewImage {
+    height: 175px;
+    width: 100%;
+}
+
+.floorPlanList {
+    position: absolute;
+    top: 55px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+.fpBox {
+    height: 213px;
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+    margin-bottom: 20px;
+}
+
+    .fpBox .ispicon {
+        margin-left: 5px;
+        display: none;
+    }
+
+    .fpBox .ispicon_closeEvents {
+        display: block !important;
+    }
+
+    .fpBox:hover .ispicon {
+        margin-left: 5px;
+        display: inline-block;
+    }
+
+    .fpBox .progressLoading {
+        margin-top: 60px !important;
+    }
+
+        .fpBox .progressLoading .meter {
+            margin-bottom: 15px !important;
+        }
+
+.fpContent {
+    background: #fff;
+    padding: 8px 8px 16px 8px;
+    height: 213px;
+}
+
+
+
+.fpImage {
+    height: 150px;
+    width: 100%;
+    float: left;
+}
+
+.fpImgDetails {
+    height: 100%;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.fpEditIcons {
+    margin-top: 16px;
+}
+
+.fpImage:hover, .fpBox:hover .fpName {
+    cursor: pointer;
+}
+
+.fpBox:hover .fpName {
+    color: #1792e5 !important;
+}
+
+.fpBox .fpName {
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* FLOORPLANLIST */
+.floorPlanView .cardlistview {
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 50px;
+    top: 124px;
+}
+
+.floorPlanView .listOverview {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    top: 130px;
+    padding: 0;
+    width: 51%;
+}
+
+.floorPlanView .nonEditmode.cardlistview, .floorPlanView .nonEditmode.listOverview {
+    bottom: 0;
+}
+
+.floorPlanView .listOverview .selectPanel {
+    width: 100%;
+}
+
+    .floorPlanView .listOverview .selectPanel select {
+        width: auto;
+    }
+
+.floorImgWrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 39px;
+    border-top: 1px solid #d0d0d0;
+    background-color: #f5f5f5;
+}
+
+.floorPlanImg {
+    margin: 20px 10% 20px 10%;
+    height: 87%;
+    border: 1px solid #ccc;
+}
+
+.fpIconWrapper {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    top: 43%;
+}
+
+.fpImgOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #606060;
+    opacity: .8;
+}
+
+.floorImgWrapper .helpText {
+    word-wrap: break-word;
+    color: #fff;
+    margin-top: 50px;
+    cursor: default;
+}
+
+.floorPlanView .isppagetitle .ispicon_edit {
+    margin-left: 5px;
+}
+
+.floorPlanView .ispheadersearch .ispicon_filter {
+    margin-right: 10px;
+}
+
+.floorPlanView .cardlistview .input-group.selectPanel, .floorPlanView .listOverview .input-group.selectPanel {
+    margin-bottom: 0;
+}
+
+    .floorPlanView .cardlistview .input-group.selectPanel select, .floorPlanView .listOverview .input-group.selectPanel select {
+        border: 0 none;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+        .floorPlanView .cardlistview .input-group.selectPanel select:focus, .floorPlanView .cardlistview .input-group.selectPanel select:hover,
+        .floorPlanView .listOverview .input-group.selectPanel select:focus, .floorPlanView .listOverview .input-group.selectPanel select:hover {
+            box-shadow: none;
+        }
+
+.floorPlanView .cardlistview .tab-content .panel-collapse .list-group-item {
+    border: 0 none !important;
+    border-top: 1px solid #ddd !important;
+}
+
+.floorPlanView .cardlistview .tab-content .list-group-item .ispicon, .floorPlanView .cardlistview .tab-content .list-group-item .radio {
+    margin-top: 10px;
+}
+
+.floorPlanView .cardlistview .tab-content .panel-collapse .list-group-item:first-child {
+    border-top: 0 none !important;
+}
+
+.floorPlanView .cardlistview .tab-content .list-group-item .status.notAssigned {
+    color: #808080;
+    font-style: italic;
+}
+
+.floorPlanView .cardlistview .tab-content .panel-body {
+    padding: 0 !important;
+}
+
+    .floorPlanView .cardlistview .tab-content .panel-body .list-group, .floorPlanView .cardlistview .tab-content .panel {
+        margin-bottom: 0 !important;
+    }
+
+        .floorPlanView .cardlistview .tab-content .panel, .floorPlanView .cardlistview .tab-content .panel .panel-heading {
+            border-radius: 0;
+            border-bottom: 0 none;
+        }
+
+            .floorPlanView .cardlistview .tab-content .panel .panel-heading .panel-title {
+                font-size: 14px;
+            }
+
+.floorPlanView .cardlistview .tab-content .panel {
+    border-right: 0;
+    border-left: 0;
+}
+
+    .floorPlanView .cardlistview .tab-content .panel:first-child {
+        border-radius: 0;
+        border-top: 0 none;
+    }
+
+    .floorPlanView .cardlistview .tab-content .panel:last-child {
+        border-bottom: 1px solid #ddd;
+    }
+
+.floorPlanView .panel-group .panel + .panel {
+    margin-top: 0 !important;
+}
+
+.floorPlanView .cardlistview .tab-content .panel .panel-heading {
+    cursor: pointer;
+}
+
+.floorPlanView .cardlistview .tab-content {
+    position: absolute;
+    top: 81px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.floorPlanView .cardlistview .nav-tabs {
+    border-bottom: 1px solid #d0d0d0 !important;
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.floorPlanView .btn-footer {
+    position: absolute;
+    right: 0;
+    left: 24%;
+    bottom: 0;
+    padding: 10px 20px;
+    border-top: 1px solid #d0d0d0;
+    z-index:100;
+}
+
+    .floorPlanView .btn-footer .btn + .btn {
+        margin-left: 5px;
+    }
+
+.floorPlanView .nonEditmode + .btn-footer, .floorPlanView .cardlistview.nonEditmode .panel-group .radio {
+    /*display: none;*/
+}
+
+.floorPlanView .cardlistview .tab-content .list-group-item .ispicon_arrow.right{
+    margin-left: 10px;
+}
+
+.floorPlanView .cardlistview .tab-content .ispicon_accordian_droparrowOpen::before{
+    background-position: -396px -176px;
+}
+
+
+.floorPlanView .cardlistview .list-group-item.active .radio.cicle input[type="checkbox"]:checked{
+        background-position: -36px -304px;
+}
+
+.zoomControls{
+    position: absolute;
+    width: 30px;
+    bottom: 70px;
+    background: #fff;
+    right: 20px;
+    padding: 5px;
+}
+
+.ispicon_fpBgIcon:hover::before{
+    zoom:2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpVideo::before{
+    zoom: 2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpDoor::before{
+    zoom: 2;
+}
+
+.ispicon_fpBgIcon:hover::before{
+    zoom:2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpVideo::before{
+    zoom: 2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpDoor::before{
+    zoom: 2;
+}
+
+.dropiconplaceholder .ispicon_fpBgIcon{
+        position: absolute;
+    margin: 50%;
+}
+
+.dropiconplaceholder .ispicon_fpBgIcon:hover .ispicon_fpVideo::before{
+     zoom: 2;
+}
+
+.dropiconplaceholder .ispicon_fpBgIcon:hover .ispicon_fpDoor::before{
+     zoom: 2;
+}
+
+.dropiconplaceholder{
+    margin: 0 auto;
+    margin-top: -70px;
+    margin-left: -35px;
+}
+
+.circle{
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    opacity: 0.4;
+}

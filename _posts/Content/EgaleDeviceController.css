@@ -1,0 +1,100 @@
+﻿/*for plugin container that needed AccordionPlugin menu*/
+.area-root
+{
+  position:absolute;
+  left:24%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+/*for plugin container that needed AccordionPlugin menu after toggle menu*/
+.togglemenu .area-root
+{
+  position:absolute;
+  left:70px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+﻿.inputuppercase {
+    text-transform: uppercase;
+}
+
+#paneloperatorModal {
+    left: 0 !important;
+}
+
+    #paneloperatorModal .modal-dialog {
+        width: 700px;
+    }
+
+    #paneloperatorModal .col-sm-6, #paneloperatorModal .col-md-6 {
+        padding-left: 0 !important;
+    }
+
+    #paneloperatorModal .col-sm-4, #paneloperatorModal .col-sm-5 {
+        padding-right: 0 !important;    
+    }
+
+.masterCode .ispicon_eye {
+    position: static;
+}
+
+    .masterCode .ispicon_eye::before {
+        position: absolute;
+        width: 37px;
+        padding: 17px;
+        background-position: -7px -4px;
+        right: 15px;
+        top: 25px;
+        margin-left: 0 !important;
+    }
+
+    .masterCode .ispicon_eye:hover::before {
+        background-position: -7px -36px;
+    }
+
+    .masterCode .ispicon_eye:active::before {
+        background-position: -7px -68px;
+    }
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.panelsection input[type="checkbox"] + span {
+    margin-left: 5px;
+    line-height: 25px;
+}
+
+.panelsection .checkbox input[type="checkbox"], .areaSection .checkbox input[type="radio"] {
+    opacity: 1;
+    z-index: 0;
+}
+
+.panelsection .checkbox label::before {
+    display: none;
+}
+
+.panelType {
+    padding-left: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+}
+
+    .panelType input {
+        background: none !important;
+        border: 0 !important;
+        padding-left: 0;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+    }
+
+/*.btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}*/

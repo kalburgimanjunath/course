@@ -1,0 +1,951 @@
+﻿/*version 1.0.1*/
+.accessgroup-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .accessgroup-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .accessgroup-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .accessgroup-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                /*These properties are depricated
+                -webkit-box-sizing: none;
+                -moz-box-sizing:none;
+                box-sizing: none;*/
+            }
+
+                .accessgroup-root .isptabs .nav li a:hover, .accessgroup-root .isptabs .nav li a:active, .accessgroup-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .accessgroup-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.accessgroup-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .accessgroup-root .cardlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .accessgroup-root .cardlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.accessgroup-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .accessgroup-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.accessgroup-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.accessgroup-root .listOverview .overviewTab, .accessgroup-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+/*.accessgroup-root .cardlistview .list-group-item.active, .accessgroup-root .cardlistview .list-group-item.active:hover, .accessgroup-root .cardlistview .list-group-item.active:focus, .accessgroup-root .cardlistview .list-group-item:hover {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+}*/
+
+.accessgroup-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.accessgroup-root .cardlistview .peoplecount {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+}
+
+.accessgroup-root .cardlistview .doorcount {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+
+.accessgroup-root .cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.accessgroup-root .accessgroupView .overviewTab .table > thead > tr > th, .accessgroup-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.accessgroup-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.accessgroup-root .accessgroupView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.accessgroup-root .accessgroupView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.accessgroup-root .accessgroupView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.accessgroup-root .addSchedule .overviewTab table td, .accessgroup-root .accessgroupView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.accessgroup-root .accessgroupView .overviewTab .ispicon, .accessgroup-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.accessgroup-root .addSchedule .overviewTab .sensorsid, .accessgroup-root .addSchedule .overviewTab .name,
+.accessgroup-root .addSchedule .name, .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.accessgroup-root .accessgroupView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.accessgroup-root .accessgroupView .table td {
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+    .accessgroup-root .accessgroupView .table td:first-child {
+        padding-left: 24px;
+        padding: 10px 0 10px 24px;
+    }
+
+.accessgroup-root .accessgroupView .table .nextlevel, .accessgroup-root .EditAccessGroup .table .nextlevel {
+    padding: 0px 0 0px 10px !important;
+    border-top: 0px solid #f0f0f0 !important;
+}
+
+
+.accessgroup-root .accgrouptableaccordian .nextlevel .listStickyHeader {
+    background: #fff !important;
+}
+
+.accessgroup-root .EditAccessGroup .accgrouptableaccordian .nextlevel .listStickyHeader {
+    padding: 0;
+    border: 0;
+}
+
+
+    .accessgroup-root .EditAccessGroup .accgrouptableaccordian .nextlevel .listStickyHeader input[type="checkbox"] {
+        margin: 0;
+    }
+
+
+.accessgroup-root .accessgroupView .table td.nextlevel :first-child {
+    padding-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    box-shadow: none;
+    /*padding: 10px 0 10px 24px;*/
+}
+
+.accessgroup-root .accessgroupView .table .nextlevel div span, .accessgroup-root .EditAccessGroup .table .nextlevel div span {
+    padding-left: 0px;
+}
+
+    .accessgroup-root .accessgroupView .table .nextlevel div span.col-md-4 {
+        padding-left: 21px;
+    }
+
+    .accessgroup-root .EditAccessGroup .table .nextlevel div span.col-md-4 {
+        padding-left: 2px;
+    }
+
+.accessgroup-root .EditAccessGroup .table span.col-md-4:not(.nextlevel) {
+    padding-left: 0;
+}
+
+.accessgroup-root .accessgroupView .table td div:not(span) {
+    padding-left: 12px;
+}
+
+.accessgroup-root .EditAccessGroup .table td div {
+    padding-left: 22px;
+}
+
+.accessgroup-root .EditAccessGroup .table td:not(.nextlevel) div span {
+    padding-left: 6px;
+}
+
+.accessgroup-root .EditAccessGroup .table td.nextlevel div:not(span) {
+    padding-left: 0px !important;
+    margin-left: 1px;
+}
+
+.accessgroup-root .EditAccessGroup .dropdown-menu {
+    margin-top: 60px;
+}
+
+
+.accessgroup-root .EditAccessGroup .table tr td {
+    border-top: 1px solid #d0d0d0 !important;
+}
+
+
+.accessgroup-root .accessgroupView .table td:first-child div span, .accessgroup-root .EditAccessGroup .table td:first-child div span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #808080;
+    font-size: 14px;
+    /*padding-left: 10px;*/
+}
+
+.accessgroup-root .EditAccessGroup .table td:first-child input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.accessgroup-root .accessgroupView .table td .ispicon_schedule, .accessgroup-root .EditAccessGroup .table td .ispicon_schedule {
+    padding-right: 13px;
+}
+
+    .accessgroup-root .accessgroupView .table td .ispicon_schedule:before {
+        cursor: default;
+    }
+
+/*.accessgroup-root .accessgroupView .table td .name,.accessgroup-root .EditAccessGroup .table td .name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}*/
+
+.accessgroup-root .accessgroupView .cardlistview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #202020;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 14px;
+}
+
+.accessgroup-root .accessgroupView .table {
+    margin-bottom: 0px;
+}
+
+
+.accessgroup-root .accessgroupView .listOverview .isppagetitle {
+    /*margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 43px;*/
+}
+
+.accessgroup-root .accessgroupView .list-group-item {
+    padding: 10px 20px;
+    border-right: 0px;
+    cursor: pointer;
+}
+
+.accessgroup-root .scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.accessgroup-root .accessgroupView .checkbox {
+    float: left;
+    margin-top: 0;
+}
+
+    .accessgroup-root .accessgroupView .checkbox input[type="checkbox"], .accessgroup-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.accessgroup-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.accessgroup-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.accessgroup-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .accessgroup-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.accessgroup-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.accessgroup-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.accessgroup-root .viewmode {
+    pointer-events: none;
+}
+
+.accessgroup-root .row {
+    /*margin-right: -6px !important;*/
+    height:64px;
+}
+
+.accessgroup-root .viewmode input, .accessgroup-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.accessgroup-root .viewmode .btn-footer {
+    display: none;
+}
+
+.accessgroup-root .viewmode .accgrouptableaccordian .listStickyHeader .panel-title, .accessgroup-root .viewmode .accordian-additional-menu .ispicon_sort {
+    pointer-events: none;
+}
+
+.accessgroup-root .btn-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.accessgroup-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .accessgroup-root .listOverview .overviewTab, .accessgroup-root .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .accessgroup-root .listOverview .overviewTab, .accessgroup-root .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .accessgroup-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.accessgroup-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.accessgroup-root .accessgroupView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.accessgroup-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+
+/* ICONS */
+/*
+.accessgroup-root .ispicon_plus::before {
+    background-position: -298px -21px;
+    background-size: 780px;
+}
+
+.accessgroup-root .ispicon_plus:hover::before {
+    background-position: -298px -42px;
+}
+
+.accessgroup-root .ispicon_plus:active::before {
+    background-position: -298px -63px;
+}
+
+.accessgroup-root .ispicon_more::before {
+    background-position: -573px -21px;
+    background-size: 780px;
+}
+
+.accessgroup-root .ispicon_more:hover::before {
+    background-position: -573px -42px;
+}
+
+.accessgroup-root .ispicon_more:active::before {
+    background-position: -573px -63px;
+}
+
+.accessgroup-root .ispicon_collapse::before {
+    background-position: -128px -24px;
+    background-size: 780px;
+}
+
+.accessgroup-root .ispicon_collapse:hover::before {
+    background-position: -128px -45px;
+}
+
+.accessgroup-root .ispicon_collapse:active::before {
+    background-position: -128px -66px;
+}
+
+.accessgroup-root .ispicon_edit::before {
+    background-position: -63px -148px;
+    background-size: 780px;
+}
+
+.accessgroup-root .ispicon_edit:hover::before {
+    background-position: -63px -169px;
+}
+
+.accessgroup-root .ispicon_edit:active::before {
+    background-position: -63px -190px;
+}
+
+
+.accessgroup-root .ispicon::before {
+    background-size: 700px;
+    cursor: pointer;
+}
+
+.accessgroup-root .ispicon_filter::before {
+    background-position: -362px -21px;
+    margin-right: 3px;
+}
+
+.accessgroup-root .ispActionMenu:hover {
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active {
+    color: #1272b2;
+}
+
+.accessgroup-root .ispActionMenu:hover .ispicon_filter::before, .accessgroup-root .ispActionMenu.open .ispicon_filter::before {
+    background-position: -362px -42px;
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active .ispicon_filter::before {
+    background-position: -362px -63px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_views::before {
+    background-position: -319px -21px;
+    margin-right: 4px;
+}
+
+.accessgroup-root .ispActionMenu:hover .ispicon_views::before, .accessgroup-root .ispActionMenu.open .ispicon_views::before {
+    background-position: -319px -42px;
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active .ispicon_views::before {
+    background-position: -319px -63px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_action::before {
+    background-position: -382px -21px;
+}
+
+.accessgroup-root .ispActionMenu:hover .ispicon_action::before, .accessgroup-root .ispActionMenu.open .ispicon_action::before {
+    background-position: -382px -42px;
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active .ispicon_action::before {
+    background-position: -382px -63px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_sort::before {
+    background-position: -340px -21px;
+}
+
+.accessgroup-root .ispActionMenu:hover .ispicon_sort::before, .accessgroup-root .ispActionMenu.open .ispicon_sort::before {
+    background-position: -340px -42px;
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active .ispicon_sort::before {
+    background-position: -340px -63px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_saveFilter::before {
+    background-position: -22px -149px;
+    margin-right: 3px;
+}
+
+.accessgroup-root .ispActionMenu:hover .ispicon_saveFilter::before, .accessgroup-root .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -22px -170px;
+    color: #1792e5;
+}
+
+.accessgroup-root .ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -22px -191px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_alarmsCritical::before {
+    background-position: -425px -21px;
+}
+
+.accessgroup-root .ispicon_alarmsMajor::before {
+    background-position: -425px -42px;
+}
+
+.accessgroup-root .ispicon_alarmsModerate::before {
+    background-position: -425px -63px;
+}
+
+.accessgroup-root .ispicon_alarmsDefault:before {
+    background-position: -64px -21px;
+}
+
+.accessgroup-root .ispicon_cloudDefault::before {
+    background-position: -446px -21px;
+}
+
+.accessgroup-root .ispicon_cloudModerate::before {
+    background-position: -446px -42px;
+}
+
+.accessgroup-root .ispicon_cloudMajor::before {
+    background-position: -446px -63px;
+}
+
+.accessgroup-root .ispicon_cloudCritical::before {
+    background-position: -446px -84px;
+}
+
+.accessgroup-root .ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.accessgroup-root .ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.accessgroup-root .ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.accessgroup-root .ispicon_DoorDefault::before {
+    background-position: -615px -21px;
+}
+
+.accessgroup-root .ispicon_DoorModerate::before {
+    background-position: -615px -42px;
+}
+
+.accessgroup-root .ispicon_DoorMajor::before {
+    background-position: -615px -63px;
+}
+
+.accessgroup-root .ispicon_DoorCritical::before {
+    background-position: -615px -84px;
+}
+
+.accessgroup-root .ispicon_video::before {
+    background-position: -404px -21px;
+}
+
+.accessgroup-root .ispicon_video:hover::before {
+    background-position: -404px -42px;
+}
+
+.accessgroup-root .ispicon_video:active::before {
+    background-position: -404px -63px;
+}
+
+.accessgroup-root .ispicon_videoModerate::before {
+    background-position: -404px -84px;
+}
+
+.accessgroup-root .ispicon_videoCritical::before {
+    background-position: -404px -105px;
+}
+
+.accessgroup-root .ispicon_videoMajor::before {
+    background-position: -404px -126px;
+}
+
+.accessgroup-root .ispicon_disarmDefault::before {
+    background-position: -660px -21px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -660px -42px;
+}
+
+
+.accessgroup-root .ispicon_dropArrow::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+.accessgroup-root .ispicon_dropArrow:hover::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+
+.accessgroup-root .acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover {
+    background-position: -466px -42px;
+    color: #1792e5;
+}
+
+.accessgroup-root .acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active {
+    background-position: -466px -63px;
+    color: #1272b2;
+}
+
+.accessgroup-root .ispicon_handbar::before {
+    background-position: -64px -125px;
+}
+
+.accessgroup-root .ispicon_handbar:hover::before {
+    background-position: -42px -105px;
+}
+
+.accessgroup-root .ispicon_close::before {
+    background-position: -255px -21px;
+}
+
+.accessgroup-root .ispicon_close:hover::before {
+    background-position: -255px -42px;
+}
+
+.accessgroup-root .ispicon_close:active::before {
+    background-position: -255px -63px;
+}
+
+*/
+.accessgroup-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.accessgroup-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.accessgroup-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.accessgroup-root .accessgroupView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.accessgroup-root .accessgroupView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.accessgroup-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+    /* CONTROLLER OVERVVIEW*/
+
+    .accessgroup-root .scheduleOverview .content {
+        padding: 0 10px;
+        /*margin-left: -15px !important;*/
+        background: #f4f4f4;
+        padding-right: 24px;
+        box-shadow: 0 -1px 0 0 #d6d6d6;
+    }
+
+
+    .accessgroup-root .scheduleOverview .leftlist .panel ul .list-group-item.active, .accessgroup-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .accessgroup-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .accessgroup-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+
+
+
+@media (max-height: 768px) {
+    .accessgroup-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+
+    .accessgroup-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+.accessgroup-root .accessgroupcontainer {
+    top: 60px;
+    position: absolute;
+    width: 98%;
+    bottom: 0px;
+    height: 100%;
+    min-height: 533px;
+}
+
+.accessgroup-root .ispmodal .accgrouptableaccordian {
+    max-height: 250px;
+}
+
+.accessgroup-root .accessgroupOverview {
+    position: absolute;
+    bottom: 0;
+    top: 0px;
+    padding: 0px;
+    width: calc(76% - 336px);
+    margin: 0px;
+    right: 0px;
+}
+
+.accessgroup-root .accordian-additional-menu {
+    padding: 0 6px 0 0px;
+}
+
+    .accessgroup-root .accordian-additional-menu b {
+        padding: 0 17px;
+        font-family: "HoneywellSansWeb-Bold" !important;
+        font-size: 16px;
+        color: #303030;
+    }
+
+.accessgroup-root .accgrouptableaccordian .listStickyHeader, .accgrouptableaccordian .listStickyHeader.collapsed {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 13px;
+    color: #303030;
+    background: #f2f2f2 !important;
+    border-top: 1px solid #dfdfdf;
+    padding-left: 9px;
+    /*padding: 9px 24px;*/
+}
+
+    .accessgroup-root .accgrouptableaccordian .listStickyHeader .collapsed .ispicon_accordian_droparrow::before {
+        background-position: -396px -142px;
+    }
+
+    .accessgroup-root .accgrouptableaccordian .listStickyHeader .panel-title, .accgrouptableaccordian .listStickyHeader.collapsed .panel-title {
+        font-family: "HoneywellSansWeb-Bold" !important;
+        font-size: 13px;
+        color: #303030;
+        cursor: pointer;
+    }
+
+    .accessgroup-root .accgrouptableaccordian .listStickyHeader h4.panel-title + span[aria-expanded="true"] .ispicon_accordian_droparrow::before {
+        background-position: -396px -140px;
+    }
+
+
+.accessgroup-root .accgrouptableaccordian .collapsed .ispicon_accordian_droparrow::before {
+    background-position: -396px -142px;
+}
+
+
+.accessgroup-root .accgrouptableaccordian .panel-body {
+    padding: 0px 0px;
+}
+
+.accessgroup-root .accgrouptableaccordian .panel-group .panel {
+    border-radius: 0;
+    border: 0px;
+}
+
+.accessgroup-root .accgrouptableaccordian .listStickyHeader .title {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 13px;
+    color: #303030;
+    cursor: pointer;
+}
+
+
+
+.accessgroup-root .contentContainer {
+    position: absolute;
+    bottom: 0px;
+    top: 85px;
+    overflow-y: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+    .accessgroup-root .contentContainer:hover {
+        overflow-y: auto;
+    }
+
+.accessgroup-root .intrusion-root .viewmode input, .accessgroup-root .intrusion-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    background: #f2f2f2;
+}
+
+.accessgroup-root .viewmode .btn-footer {
+    display: none;
+}
+
+.accessgroup-root .nopadding {
+    padding: 0;
+}
+
+.accessgroup-root .lists {
+    width: 336px;
+    float: left;
+    position: absolute;
+    left: 24%;
+    bottom: 0;
+    top: 0;
+}
+
+.accessgroup-root .EditAccessGroup .accordian-additional-menu b {
+    padding: 0px;
+}
+
+
+.accessgroup-root .EditAccessGroup .accessgrouppopupcontainer {
+    max-height: 394px;
+    /*overflow-y: auto;*/
+}
+
+
+.accessgroup-root .section-head1 {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #202020;
+    font-size: 22px;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 600px;
+    margin-left: 20px;
+    margin-top:-4px;
+}
+
+.accessgroup-root .listcontainer {
+    position: absolute;
+    top: 128px;
+    bottom: 0px;
+    /*height: 92%;
+    min-height: 500px;*/
+    overflow-y: hidden;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+    .accessgroup-root .listcontainer:hover {
+        overflow-y: auto;
+    }
+
+    .accessgroup-root .listcontainer .listStickyHeader {
+        /*padding-left: 56px;*/
+        border-top: 0px;
+        text-align: center;
+    }
+
+
+
+.accessgroup-root .cardlistview .ispheadersearch {
+    padding-right: 20px;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    height: 43px;
+}
+
+.ag-sort-asc {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.ag-content-sort-asc {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+}
+
+.border-d0d0d0 {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.accessgroup-root .search-icon:before {
+    /*transform: rotate(90deg);*/
+}

@@ -1,0 +1,431 @@
+@color_1: #1792e5;
+@color_2: #808080;
+@color_3: #606060;
+@color_4: #303030;
+@font_family_1: "HoneywellSansWeb-Bold";
+@font_family_2: 'HoneywellSansWeb-Medium';
+@font_family_3: 'HoneywellSansWeb-Bold';
+
+/*version 1.0.4*/
+/*@media screen\0 and (min-width: 1366px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:26.5% !important;
+    }
+}
+
+
+@media screen\0 and (min-width: 1600px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:29.5% !important;
+    }
+}
+
+@media screen\0 and (min-width: 1920px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:30.5% !important;
+    }
+}*/
+/*@media screen and (min-width: 1920px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {*/
+.customerlistView {
+    .sensorsTab {
+        .table {
+            >thead {
+                >tr {
+                    >th {
+                        border-bottom: 1px solid #dfdfdf;
+                        text-align: left;
+                        font-family: @font_family_1 !important;
+                        font-size: 14px;
+                        color: @color_2;
+                        width: 25%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    >th.sort {
+                        font-family: @font_family_2 !important;
+                        font-size: 14px;
+                        color: @color_2;
+                        cursor: pointer;
+                    }
+                    >th.desort {
+                        font-family: @font_family_2 !important;
+                        font-size: 14px;
+                        color: @color_2;
+                    }
+                    vertical-align: top;
+                }
+            }
+            >tbody {
+                >tr {
+                    &:hover {
+                        background: #e1eff9;
+                    }
+                    >td {
+                        width: 25%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    height: 42px;
+                    border-bottom: 1px solid #d0d0d0 !important;
+                    cursor: pointer;
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                }
+                position: absolute;
+                width: 100%;
+                min-height: 460px;
+                overflow: auto;
+                bottom: 0;
+                top: 42px;
+                margin-top: -4px;
+                td {
+                    font-family: @font_family_2 !important;
+                    font-size: 14px;
+                    cursor: pointer;
+                    span {
+                        font-family: @font_family_2 !important;
+                        font-size: 14px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: @color_3;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        span {
+                            color: @color_1;
+                        }
+                    }
+                }
+            }
+            margin-bottom: 0;
+            .table1 {
+                td {
+                    &:nth-child(1) {
+                        padding-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+    .checkbox {
+        input[type="checkbox"] {
+            opacity: 1;
+        }
+    }
+    .table {
+        >tbody {
+            >tr {
+                >td {
+                    .checkbox {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .count {
+        margin: 0 5px 0 0px;
+        font-weight: bold;
+    }
+    .basetitle {
+        font-family: @font_family_2 !important;
+        font-size: 22px;
+        color: @color_4;
+        height: 44px;
+        border-bottom: 1px #dfdfdf;
+    }
+    .isptabs {
+        .nav {
+            border-top: 1px solid #dfdfdf;
+        }
+    }
+    .right-menu-tabs {
+        li {
+            list-style-type: none;
+            float: left;
+            cursor: pointer;
+            &:hover {
+                span {
+                    color: @color_1;
+                }
+            }
+            span {
+                font-family: @font_family_3 !important;
+                font-size: 14px;
+                color: @color_2;
+            }
+        }
+    }
+    .table.table1 {
+        thead {
+            tr {
+                th.sort {
+                    &:hover {
+                        .ispicon_downarrow {
+                            &::before {
+                                background-position: -235px -139px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.colorlow {
+    background: #ffc627;
+    border: 1px solid #e2b023;
+}
+.coloroverlow {
+    background: #ffffff;
+    border: 1px solid #d32b20;
+}
+.colorhigh {
+    background: #ee3124;
+    border: 1px solid #d32b20;
+}
+.status-indicator {
+    border-radius: 50% 50%;
+    width: 10px;
+    height: 10px;
+    display: inherit;
+    float: left;
+    margin: 5px 5px 0 0px;
+}
+.ispmancontainer {
+    border-left: 1px solid #e7e7e7;
+    top: 130px;
+    bottom: 0;
+    right: 0px;
+    position: fixed;
+    width: 30.5%;
+}
+.customerlist-root {
+    .customerlistHolder {
+        margin: 0;
+    }
+    .ispicon_plus_custom {
+        top: 6px;
+        position: relative;
+        margin-right: 20px;
+    }
+    .customerlisttablecontainer {
+        position: relative;
+        top: -4px;
+        max-height: 505px;
+    }
+    .customertable {
+        padding-top: 0;
+        height: 550px;
+        tbody {
+            td {
+                span {
+                    cursor: pointer;
+                    text-transform: capitalize;
+                    font-size: 14px;
+                }
+            }
+        }
+        .ispicon_tablesortasc {
+            &::before {
+                position: absolute;
+                top: 8px;
+                float: right;
+            }
+        }
+        tr {
+            >th {
+                >div.sort {
+                    font-family: @font_family_3 !important;
+                    font-size: 15px;
+                    color: @color_2;
+                    cursor: pointer;
+                    padding: 0 6px;
+                }
+            }
+        }
+    }
+}
+.customerListOverview {
+    .titleRow {
+        margin: 0;
+        height: 70px;
+        border-bottom: 1px solid #dfdfdf;
+    }
+    h2 {
+        .ispicon_close {
+            &::before {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+@media (max-width: 1366px) and (min-width: 1441px) {
+    .customerlist-root {
+        .customertable {
+            height: 600px;
+        }
+        .customerlisttablecontainer {
+            max-height: 505px !important;
+        }
+    }
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >tbody {
+                    min-height: 420px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1920px) {
+    .customerlist-root {
+        .customertable {
+            height: 1000px !important;
+        }
+        .customerlisttablecontainer {
+            max-height: 817px !important;
+        }
+    }
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >tbody {
+                    min-height: 780px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1920px) and (-ms-high-contrast:active) {
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >thead {
+                    >tr {
+                        >th {
+                            &:nth-child(3) {
+                                width: 30.5% !important;
+                            }
+                        }
+                    }
+                }
+                >tbody {
+                    >tr {
+                        >td {
+                            &:nth-child(3) {
+                                width: 30.5% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customerlist-root {
+        .customertable {
+            height: 800px;
+        }
+    }
+}
+@media (-ms-high-contrast:none) {
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >thead {
+                    >tr {
+                        >th {
+                            &:nth-child(3) {
+                                width: 30.5% !important;
+                                width: 29.5% !important;
+                                width: 26.5% !important;
+                            }
+                        }
+                    }
+                }
+                >tbody {
+                    >tr {
+                        >td {
+                            &:nth-child(3) {
+                                width: 30.5% !important;
+                                width: 29.5% !important;
+                                width: 26.5% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customerlist-root {
+        .customertable {
+            height: 800px;
+            height: 550px;
+        }
+    }
+}
+@media screen and (min-width: 1600px) and (-ms-high-contrast:active) {
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >thead {
+                    >tr {
+                        >th {
+                            &:nth-child(3) {
+                                width: 29.5% !important;
+                            }
+                        }
+                    }
+                }
+                >tbody {
+                    >tr {
+                        >td {
+                            &:nth-child(3) {
+                                width: 29.5% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1366px) and (-ms-high-contrast:active) {
+    .customerlistView {
+        .sensorsTab {
+            .table {
+                >thead {
+                    >tr {
+                        >th {
+                            &:nth-child(3) {
+                                width: 26.5% !important;
+                            }
+                        }
+                    }
+                }
+                >tbody {
+                    >tr {
+                        >td {
+                            &:nth-child(3) {
+                                width: 26.5% !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .customerlist-root {
+        .customertable {
+            height: 550px;
+        }
+    }
+}

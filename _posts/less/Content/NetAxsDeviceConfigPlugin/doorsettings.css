@@ -1,0 +1,16 @@
+.netaxs-device-config-root .radio input[type="radio"],
+.netaxs-config-root .radio input[type="radio"],
+.netaxs-device-config-root .threeradios .radio input[type="radio"],
+.netaxs-config-root .threeradios .radio input[type="radio"],
+.netaxs-device-config-root .tworadios .radio input[type="radio"],
+.netaxs-config-root .tworadios .radio input[type="radio"],
+.netaxs-device-config-root .tworadios .radio + .radio,
+.netaxs-config-root .tworadios .radio + .radio,
+.netaxs-device-config-root .threeradios .radio + .radio,
+.netaxs-config-root .threeradios .radio + .radio {
+    margin-top: 0 !important;
+}
+
+.controllerView .listOverview .doorsettingsTab .doorsettings {
+	margin-right: 0 !important;
+}

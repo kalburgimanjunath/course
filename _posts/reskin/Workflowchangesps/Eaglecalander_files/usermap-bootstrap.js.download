@@ -1,0 +1,12 @@
+﻿$(function () {
+    var usermapUrl = $("#usermap-view").attr("data-url");
+    var antiForgeryToken = $('#antiForgeryToken').val();
+    
+    Honeywell.ISP.UserMap.views = {
+        userMapView: new Honeywell.ISP.UserMap.UserMapView({
+            baseUrl: usermapUrl,
+            antiForgeryToken: antiForgeryToken,
+            viewName: Honeywell.ISP.UserMap.form.userlistmapview
+        })
+    };
+});

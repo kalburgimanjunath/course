@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ <link rel="stylesheet" type="text/css" href="css/ispselectdropdown.css">
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    .useroverview{
+        position: absolute;
+        left: 25%;
+        width: 75%;
+        padding: 20px;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/user-management.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script>
+        $( document ).ready(function() {
+             $(".ispicon_edit").click(function(){
+                $(".useroverview").toggleClass("viewmode");
+                $('.btn-footer').css("display","block");
+                $('#sitelistpopup').toggle('hide');
+
+            });
+
+         
+
+        });
+        $('.btn-footer').hide();
+
+
+
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        // $('.SlectBox').SumoSelect();
+        $(".ispicon_collapse").click(function(){
+            $(".accordion-root").toggleClass("togglemenu");
+            $(".people-root").toggleClass("alignmenu-left");
+        });
+        $(".ispicon_edit").click(function(){
+            $(".contentContainer").removeClass("viewmode");
+            $(".btn-footer").removeClass("viewmode");
+        });
+    });
+    </script>
+
+    <style>
+
+    </style>
+    <style>
+    .alignmenu-left{
+            position: relative;
+            float: left;
+            padding-left: 70px;
+    }
+    .accountcontainer .overview .content{
+            box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            background: #f4f4f4 !important;
+    }
+    </style>
+        
+    <style type="text/css">
+        .togglemenu{
+
+    }
+
+    .togglemenu .panel{
+        width: 70px !important;
+    }
+
+    .togglemenu .panel-heading h6,.togglemenu .panel-heading h3{
+        visibility: hidden;
+    }
+
+    .togglemenu .ispicon_plus {
+        top: 48px;
+        /* margin-right: 8px; */
+        left: 22px;
+        position: absolute;
+    }
+
+    
+
+    .togglemenu .panel > a li.list-group:nth-child(1){
+        display: block;
+    }
+    .togglemenu .panel a span:nth-child(2),.togglemenu .panel  a span:nth-child(3){
+        display:none;
+    }
+    .togglemenu .panel hr.dividerLine{
+        display: none;
+    }
+
+    .togglemenu + div.page-root{
+        padding-left: -230px;
+    }
+
+    </style>
+    </style>
+</head>
+<body>
+
+    <div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>My Company</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" href="customer-list.html">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts </span>
+                            </a>
+                           <!--  <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a ><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul> -->
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="user-management.html">Users</a></li>
+                                <li><a href="dcm.html">Roles</a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        
+                        
+
+                    </ul>
+                        <div class="menu_user_sec_logout">
+                            <div class="menu_user_sec clearfix">
+                                <div class="menu_user_img">
+                                    <img src="http://lorempixel.com/100/100/people/9/" alt="Siva Baghat">
+                                </div>
+
+                                <div class="menu_user_details col-md-8">
+                                    <h3>Siva Baghat</h3>
+                                    <span>Business Owner</span>
+
+                                </div>
+                                <span class="ispicon ispicon_logout push-right"></span>
+
+                            </div>
+                           <!--  <div class="user_logout">
+                                <a href="#">Logout</a>
+                            </div> -->
+                        </div>
+                </nav>
+
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding ">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group ">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer togglemenu hide">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                        <span class="ispicon ispicon_plus pull-right"/>
+                    </div>
+                    <ul class="list-group leftmenu">
+                        <li><a href="customeroverview.html" class="list-group-item "><span class="ispicon ispicon_sites"></span><span>Site Overview</span><span class="pull-right">0</span></a></li>
+                         <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_floorPlan"></span><span>Floor Map</span></a></li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item active"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="areas.html" class="list-group-item"><span class="ispicon ispicon_area"></span><span>Areas</span></a></li>
+                        <hr class="dividerLine"/>
+                                <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="row accountcontainer customer account-view show">
+            <div class="usermanagement-root col-md-12 pagemaincontainer ispforms">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 usercardcontainer isptabs">
+                    <span class="ispicon ispicon_collapse inverse" data-bind="click: $data.toggleAccordionMenu"></span>
+                    <h1 class="isppagetitle">
+                        All Users
+                        <span class="pull-right">
+                            <span class="ispicon ispicon_plus"  title="Add"></span>
+                            <span class="ispicon ispicon_delete" title="Delete"></span>
+                        </span>
+                    </h1>
+                    <ul class="nav nav-tabs hide" role="tablist">
+                        <li role="presentation" class="active"><a href="#people" aria-controls="home" role="tab" data-toggle="tab">People</a></li>
+                    </ul>
+                    <div class="panel panel-default">
+                      
+                        <div class="col-md-12 ispheadersearch hide">
+               
+                                <form>
+                                    <div class="row pull-left">
+                                        <div class="input-group">
+                                            <div class="input-group-btn search-panel">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                    <span id="search_concept"><span class="ispicon ispicon_search"></span> 
+                                                </span></button>
+                                               
+                                            </div>
+                                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                           <!--  <span class="input-group-btn ">
+                                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_filter"></span></button>
+                                            </span> -->
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button"><span class="ispicon ispicon_sortasc"></span></button>
+                                            </span>
+                                            
+                                        </div>
+                                    </div>
+                                   
+                                </form>
+                        </div>
+                        <div class="listStickyHeader" style="margin-top: 40px;">
+                            <b class="bold">1</span> <span>People</b>
+                        </div>
+                        <div class="usercardcontainerscroll scroll-x scroll-y">
+                        <ul class="list-group usercards">
+                             <li class="list-group-item active">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="usercardcheckbox col-md-1 nopadding hide">
+                                    <div class="text-center">
+                                        <input id="checkbox" type="checkbox">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-xs-12 col-md-9 rightlistcontent">
+                                    <span class="name ellipsis c1 col-md-12 nopadding" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="employeeid c3 pull-left col-md-12 nopadding">Operator</span>  
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                             
+
+                        </ul>
+                    </div>
+                </div>
+                </div>
+
+                <div class="useroverview isptabs pull-left viewmode ">
+                    <form novalidate="novalidate">
+                            <div class="usercard-header-container ">
+                                <div class="profile-pic  col-md-3 nopadding">
+                                    <img data-bind="attr: {src: $data.getPhoto($data.model, true)}" class="img-responsive img-thumbnail ispicon_uploadprofilepic" src="">
+                                    <span class="text-center img-browse-txt col-md-12" data-bind="ifnot: $data.isReadOnly() || $data.hasPhoto($data.model)">Upload a image</span>
+                                <input type="file" data-original-title="" title=""></div>
+                                <div class="overviewtitle col-md-9">
+                                    <h1>Manjunath kalburgi</h1>
+                                    <h5>Admin</div>
+                                    <span class="editplaceholder">
+                                        <span class="ispicon ispicon_edit pull-right" title="Edit" style="right:20px;"></span>
+                                    </span>
+                                </div>
+                                <div class="ispformcontainer">
+                                    <div class="profile row col-md-12 nopadding">
+                                    <div class="row col-md-12">
+                                        <h3>User Details</h3>
+                                    </div>
+                                    <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Last Name<span class="star">*</span></label>
+                                                    <input type="text" name="lastName" id="lastName" class="form-control" tabindex="1" title="">
+                                            </div>
+                                             <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">First Name<span class="star">*</span></label>
+                                                    <input type="text" name="firstName" id="firstName" class="form-control"  tabindex="2" data-original-title="" title="">
+                                            </div>
+
+                                           <!--  <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Employee ID</label>
+                                                    <input type="text" name="displayName" id="displayName" class="form-control"  tabindex="3" data-original-title="" title="">
+                                            </div> -->
+                                            </div>
+                                    <div class="row">
+                                            <!--  <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Phone<span class="star">*</span></label>
+                                                    <input type="text" name="firstName" id="firstName" class="form-control"tabindex="2" data-original-title="" title="">
+                                            </div> -->
+                                           
+                                            <!-- <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Email</label>
+                                                    <input type="text" name="email" id="email" class="form-control" tabindex="4" data-original-title="" >
+                                            </div> -->
+                                    </div>
+                                </div>
+                                    
+                                    <div class="col-md-12">
+                                        
+                                            <hr/>
+                                         <h3>Permissions</h3>
+                                           
+                                    </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Role <span class="ispicon ispicon_helpinfo"></span></label>
+                                                    <select class="form-control">
+                                                        <option>Admin</option>
+                                                    </select>
+
+                                            </div>
+                                           <!--  <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Site</label>
+                                                    <input type="password" name="pin" class="form-control hideinviewmode" tabindex="9">
+
+                                                    
+
+                                            </div> -->
+                                            <div class="col-md-4 ispselectdropdown">
+   
+                                                 <div class="form-group">
+                                  <span id="device-popoverbtn" data-placement="auto">
+                                    <span class="icon_list1i" data-bind="click: $data.leftControlClick"></span>
+                                  </span>
+                                  <label id="lbl-RULE_LABEL_DEVICE" class="control-label pull-left">Site<span class="rsAcCount" data-bind="text: $data.RuleAction().ActionNameCount"></span></label>
+                                  <input type="text" placeholder="Main Area + 4" class="form-control" id="txt_device" data-bind="value: $data.RuleAction().getactionnames()">
+                                  <span class="ispicon icon-popup"></span>
+                                  <div class="selectColumnContainer isppopup-site">
+                                            <ul class="" id="accordion1">
+                                              <li class="search">
+                                                <span class="icon-search">
+                                                  <input type="search" class="form-control form-search" placeholder="Search report">
+                                                  <span class="focus-icon-search ispicon ispicon_search"></span>
+                                                </span>
+                                          
+                                              </li>
+                                              <li class="ps-checkbox checkbox"> 
+                                                <a href="#">
+                                                  <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink1" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow icon pull-left" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+                                                  <label class=" control-label label-padding">
+                                                    <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                    <span></span>
+                                                    <legand data-bind="text: $data.Name">Health and Status Event</legand>
+                                                  </label>
+                                                </span>
+                                              </a>
+                                              <ul id="firstLink1" class="collapse" aria-expanded="false">
+                                                <li class="ps-checkbox checkbox">
+                                                  <a href="#"> 
+                                                    
+                                                    <label class=" control-label label-padding">
+                                                      <input id="txbonEventCategorySelection" class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                      <span></span>
+                                                      <legand data-bind="text: $data.Name">Video</legand>
+                                                    </label>
+                                                  </a>
+                                                </li>
+                                                <li class="ps-checkbox checkbox">
+                                                  <a href="#"> 
+                                                   
+                                                    <label class=" control-label label-padding">
+                                                      <input id="txbonEventCategorySelection" class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                      <span></span>
+                                                      <legand data-bind="text: $data.Name">Access</legand>
+                                                    </label>
+                                                  </a>
+                                                </li>                                    
+                                              </ul>                                                    
+                                            </li>
+                                            <li class="ps-checkbox checkbox"> 
+                                              <a href="#">
+                                                <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink21" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow icon pull-left" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+                                                <label class=" control-label label-padding">
+                                                  <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                  <span></span>
+                                                  <legand data-bind="text: $data.Name">Alarm/Event</legand>
+                                                </label>
+                                              </span>
+                                            </a>
+                                            <ul id="firstLink21" class="collapse" aria-expanded="false">
+                                              <li class="ps-checkbox checkbox">
+                                                <a href="#"> 
+                                                  
+                                                  <label class=" control-label label-padding">
+                                                    <input id="txbonEventCategorySelection" class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                    <span></span>
+                                                    <legand data-bind="text: $data.Name">Video</legand>
+                                                  </label>
+                                                </a>
+                                              </li>                                     
+                                            </ul>                                                    
+                                          </li>
+                                          <li class="ps-checkbox checkbox"> 
+                                            <a href="#">
+                                              <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink31" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow icon pull-left" data-bind="css: {expandIcon: $data.IsExpanded}, click: $root.onCategoryExpand"></span>
+                                              <label class=" control-label label-padding">
+                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                <span></span>
+                                                <legand data-bind="text: $data.Name">System</legand>
+                                              </label>
+                                            </span>
+                                          </a>
+                                          <ul id="firstLink31" class="collapse" aria-expanded="false">
+                                            <li class="ps-checkbox checkbox">
+                                              <a href="#"> 
+                                                
+                                                <label class=" control-label label-padding">
+                                                  <input id="txbonEventCategorySelection" class="checkbox" type="checkbox" data-bind="checked: $data.IsSelected, click: $root.onEventCategorySelection">
+                                                  <span></span>
+                                                  <legand data-bind="text: $data.Name">Access</legand>
+                                                </label>
+                                              </a>
+                                            </li>                                     
+                                          </ul>                                                    
+                                        </li>
+                                      </ul>
+                                    </div>
+                                </div>
+                                <a href="sitelistpopup.html">Viewmodesitepopup</a>
+    </div>
+
+                                   
+                                        </div>
+
+                                    <div class="col-md-12">
+                                        
+                                            <hr/>
+                                         <h3>Contact</h3>
+                                           
+                                    </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Primary Phone<span class="star">*</span></label>
+                                                    <input type="text" name="badgeNo" id="badgeNo" class="form-control"  tabindex="6">
+                                            </div>
+                                             <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Alternate Phone</label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Primary Email</label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Alternate Email</label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                           
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Address</label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">City</label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">State<span class="star">*</span></label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                            <div class="form-group col-md-4 pull-left">
+                                                <label class="control-label">Country<span class="star">*</span></label>
+                                                    <input type="password" name="pin" id="pin" class="form-control"tabindex="9">
+                                            </div>
+                                        </div>
+                                </div>
+                                    
+                                
+                            </div>
+                            <div class="btn-footer">
+                                    <div class="btn-group pull-right" role="group" aria-label="group button">
+                                        <button type="button" class="btn btn-default">Cancel</button>
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                    </div>
+                        
+                    </form>
+                </div>
+                    </div>
+                    <div id="addScheduleform" data-bind="busyIndicator: {show: $data.IsLoading, blockAll: true}" class="hide"></div>
+                    <input type="hidden" id="peoplemgmturl" value="/MPC/PeopleMgmt">
+                    <input type="hidden" id="fileMgmturl" value="/MPC/File">
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-common.js"></script>
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-validation-context.js"></script>
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-model.js"></script>
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-datacontext.js"></script>
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-uicontext.js"></script>
+                    <script src="/MPC/Scripts/PeopleMgmtPlugin/peoplemgmt-bootstrap.js"></script>
+                </div>
+            
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+    $(window).load(function () {
+    
+    $('#accordion1 input[type="checkbox"]').click(function (e) {
+        e.stopPropagation();
+    });
+    var hasClass = 'collapse';
+    // hasClass is boolean
+    if (hasClass === 'collapse') {
+        $('#accordion1 li > a').click(function (e) {
+            $(this).parent().toggleClass('collaspe-icons');
+        });
+    }
+    // Added js for action in create rules page when
+    
+        
+    $('.ispselectdropdown .hideinviewmode, .icon-popup').click(function () {
+        $(this).parent().children('.isppopup-site').css("width", "100%").toggle();
+        $('.ps-rules-first-input-wrapper .isppopup-site input:checkbox').change(function () {
+            if ($(this).is(":checked")) {
+                var text = $(this).next().next().html();
+                $(this).parent().parent().parent().parent().parent().parent().prev().prev().attr('placeholder', text);
+            } else {
+                $(this).parent().parent().parent().parent().parent().parent().prev().prev().attr('placeholder', 'Main Area + 4');
+            }
+        });
+    });
+
+    $('.isppopup-site .parent-checkbox').change(function () {
+        var checkboxes = $(this).parent().parent().parent().parent().find("input[type=checkbox]");
+        checkboxes.prop("checked", checkboxes.prop("checked"));
+        if ($(this).parent().parent().parent().parent().next().find("input[type=checkbox]").is(":checked")) {
+            var checkboxess = $(this).parent().parent().parent().parent().next().find("input[type=checkbox]");
+            checkboxess.attr('checked', false);
+        }
+        if ($(this).parent().parent().parent().parent().prev().find("input[type=checkbox]").is(":checked")) {
+            var checkboxesss = $(this).parent().parent().parent().parent().prev().find("input[type=checkbox]");
+            checkboxesss.attr('checked', false);
+        }
+        if ($(this).parent().parent().parent().parent().prev().prev().find("input[type=checkbox]").is(":checked")) {
+            var checkboxesss = $(this).parent().parent().parent().parent().prev().prev().find("input[type=checkbox]");
+            checkboxesss.attr('checked', false);
+        }
+        if ($(this).parent().parent().parent().parent().next().next().find("input[type=checkbox]").is(":checked")) {
+            var checkboxesss = $(this).parent().parent().parent().parent().next().next().find("input[type=checkbox]");
+            checkboxesss.attr('checked', false);
+        }
+    });
+
+
+});
+
+    
+
+</script>
+    
+
+</body>
+</html>

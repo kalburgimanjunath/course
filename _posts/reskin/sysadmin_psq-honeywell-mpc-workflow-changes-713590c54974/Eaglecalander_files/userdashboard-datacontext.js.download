@@ -1,0 +1,25 @@
+﻿(function () {
+    Honeywell.ISP.UserDashboard.UserDashboardViewModel = Honeywell.ISP.WebUIFramework.BaseViewModel.inherits({
+        initializeViewModel: function (options) {
+            this.bindAll(this, 'showError');
+            this.initializeBinding(options);
+        },
+        initializeBinding: function (options) {
+            this.ErrorMessage = ko.observable("");
+            this.IsError = ko.observable(true);
+            this.UserDashboardModel = new Honeywell.ISP.UserDashboard.UserDashboardModel({ ShowMap: true });
+            this.on(Honeywell.ISP.UserDashboard.events.dashboard_refresh, this.refreshDashboard)
+            this.showMapPlugin();
+        },
+        showError: function (result) {
+            this.IsError(true);
+            this.ErrorMessage((result && result.errorMessage) || Resources.General_error);
+        },
+        refreshDashboard: function () {
+            this.showMapPlugin();
+        },
+        showMapPlugin: function () {
+            Honeywell.ISP.Navigation.navigate([Honeywell.ISP.UserDashboard.actions.mapPlugin], Honeywell.ISP.UserDashboard.events.show_map);
+        }
+    });
+})();

@@ -1,0 +1,22 @@
+﻿@font-face {
+    font-family: 'HoneywellSansWeb-Bold';
+    src: url('../fonts/HoneywellSansWeb-Bold.woff') format('woff'), url('../fonts/HoneywellSansWeb-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HoneywellSansWeb-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HoneywellSansWeb-Medium';
+    src: url('../fonts/HoneywellSansWeb-Medium.woff') format('woff'), url('../fonts/HoneywellSansWeb-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/HoneywellSansWeb-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HoneywellSansWeb-Book';
+    src: url('../fonts/HoneywellSans-Book.otf') format('opentype');
+}
+
+b {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+.fontMedium {
+    font-family: 'HoneywellSansWeb-Medium';
+}

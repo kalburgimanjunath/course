@@ -1,0 +1,231 @@
+﻿<?xml version="1.0"?>
+<DeviceTypes>
+  <DeviceType type="Hardwired">
+    <SensorTypes>
+      <SensorType type="Input" id="Generic" value="Generic Sensor" >
+        <Mode>
+          <Key id="NoEOLRNormalClose" value="NoEOLRNormalClose" >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="NoEOLRNormalOpen" value="NoEOLRNormalOpen"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="SupervisedEOLRNormalClose" value="SupervisedEOLRNormalClose"  >
+            <Options>
+              <Key id="1" value="1" />
+              <Key id="2" value="2" />
+              <Key id="3" value="3" />
+              <Key id="4" value="4" />
+              <Key id="5" value="5" />
+              <Key id="6" value="6" />
+              <Key id="7" value="7" />
+            </Options>
+          </Key>
+          <Key id="SupervisedEOLRNormalOpen" value="SupervisedEOLRNormalOpen"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="DoubleBalanced" value="DoubleBalanced"   >
+            <Options>
+              <Key id="1" value="1" />
+              <Key id="2" value="2" />
+              <Key id="3" value="3" />
+              <Key id="4" value="4" />
+              <Key id="5" value="5" />
+              <Key id="6" value="6" />
+              <Key id="7" value="7" />
+              <Key id="8" value="8" />
+            </Options>
+          </Key>
+          <Key id="TripleBalancedENmask" value="TripleBalancedENmask"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="QuadrupleBalancedENmask" value="QuadrupleBalancedENmask"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+        </Mode>
+      </SensorType>
+      <SensorType type="Output" id="Output" value="Output" >
+        <Mode>
+          <Key id="Pulse" value="Pulse" >
+          </Key>
+          <Key id="Reflex" value="Reflex"  >
+          </Key>
+        </Mode>
+        <Polarity>
+          <Key id="false" value=" Active High" >
+          </Key>
+          <Key id="true" value="Active Low"  >
+          </Key>
+        </Polarity>
+        <SubType>
+          <SubType1 type="Alarm">
+            <SubType2 key="IntrusionPerimeter" value="HardWired_SubType_Output_Intrusion_Perimeter"></SubType2>
+            <SubType2 key="Intrusion Entry Exit" value="HardWired_SubType_Output_Intrusion_Entry_Exit" ></SubType2>
+            <SubType2 key="IntrusionDayNight" value="HardWired_SubType_Output_IntrusionDayNight"></SubType2>
+            <SubType2 key="IntrusionInterior" value="HardWired_SubType_Output_IntrusionInterior"></SubType2>
+            <SubType2 key="Panic24HourSilentHoldUp" value="HardWired_SubType_Output_Panic24HourSilentHoldUp"></SubType2>
+            <SubType2 key="24HPersonalAssistance" value="Responsetype_24_Hour_Personal_Assistance"></SubType2>
+            <SubType2 key="24HAudibleBurglary" value="Responsetype_24_Hour_Audible_Burglary"></SubType2>
+            <SubType2 key="PullStation" value="HardWired_SubType_Output_PullStation"></SubType2>
+            <SubType2 key="Tamper" value="HardWired_SubType_Output_Tamper"></SubType2>
+          </SubType1>
+          <SubType1 type="SetState">
+            <SubType2 key="FullSet" value="HardWired_SubType_Output_FullSet"></SubType2>
+            <SubType2 key="PartSet" value="HardWired_SubType_Output_PartSet"></SubType2>
+          </SubType1>
+        </SubType>
+      </SensorType>
+      <SensorType type="Sounder" id="Sounder" value="Sounder">
+        <Mode>
+          <Key id="Pulse" value="Pulse" >
+          </Key>
+          <Key id="Reflex" value="Reflex"  >
+          </Key>
+        </Mode>
+        <Polarity>
+          <Key id="false" value=" Active High" >
+          </Key>
+          <Key id="true" value="Active Low"  >
+          </Key>
+        </Polarity>
+        <SubType>
+          <SubType1 type="Siren">
+            <SubType2 key="Interior" value="HardWired_SubType_Sounder_Interior_Siren"></SubType2>
+            <SubType2 key="Exterior" value="HardWired_SubType_Sounder_Exterior_Siren"></SubType2>
+          </SubType1>
+        </SubType>
+      </SensorType>
+    </SensorTypes>
+    <ZoneCount type="Total"  value="13" >
+    </ZoneCount>
+  </DeviceType>
+  <DeviceType type="Zone Expander">
+    <SensorTypes>
+      <SensorType id="Input" value="Input" >
+        <Mode>
+          <Key id="NoEOLRNormalClose" value="NoEOLRNormalClose" >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="NoEOLRNormalOpen" value="NoEOLRNormalOpen"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="SupervisedEOLRNormalClose" value="SupervisedEOLRNormalClose"  >
+            <Options>
+              <Key id="1" value="1" />
+              <Key id="2" value="2" />
+              <Key id="3" value="3" />
+              <Key id="4" value="4" />
+              <Key id="5" value="5" />
+              <Key id="6" value="6" />
+              <Key id="7" value="7" />
+            </Options>
+          </Key>
+          <Key id="SupervisedEOLRNormalOpen" value="SupervisedEOLRNormalOpen"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="DoubleBalanced" value="DoubleBalanced"   >
+            <Options>
+              <Key id="1" value="1" />
+              <Key id="2" value="2" />
+              <Key id="3" value="3" />
+              <Key id="4" value="4" />
+              <Key id="5" value="5" />
+              <Key id="6" value="6" />
+              <Key id="7" value="7" />
+              <Key id="8" value="8" />
+            </Options>
+          </Key>
+          <Key id="TripleBalancedENmask" value="TripleBalancedENmask"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+          <Key id="QuadrupleBalancedENmask" value="QuadrupleBalancedENmask"  >
+            <Options>
+              <Key id="1" value="1" />
+            </Options>
+          </Key>
+        </Mode>
+      </SensorType>
+      <SensorType type="Output" id="Output" value="Output" >
+        <Mode>
+          <Key id="Pulse" value="Pulse" >
+          </Key>
+          <Key id="Reflex" value="Reflex"  >
+          </Key>
+        </Mode>
+        <Polarity>
+          <Key id="false" value=" Active High" >
+          </Key>
+          <Key id="true" value="Active Low"  >
+          </Key>
+        </Polarity>
+        <SubType>
+          <SubType1 type="Alarm">
+            <SubType2 key="IntrusionPerimeter" value="HardWired_SubType_Output_Intrusion_Perimeter"></SubType2>
+            <SubType2 key="Intrusion Entry Exit" value="HardWired_SubType_Output_Intrusion_Entry_Exit" ></SubType2>
+            <SubType2 key="IntrusionDayNight" value="HardWired_SubType_Output_IntrusionDayNight"></SubType2>
+            <SubType2 key="IntrusionInterior" value="HardWired_SubType_Output_IntrusionInterior"></SubType2>
+            <SubType2 key="Panic24HourSilentHoldUp" value="HardWired_SubType_Output_Panic24HourSilentHoldUp"></SubType2>
+            <SubType2 key="24HPersonalAssistance" value="Responsetype_24_Hour_Personal_Assistance"></SubType2>
+            <SubType2 key="24HAudibleBurglary" value="Responsetype_24_Hour_Audible_Burglary"></SubType2>
+            <SubType2 key="PullStation" value="HardWired_SubType_Output_PullStation"></SubType2>
+            <SubType2 key="Tamper" value="HardWired_SubType_Output_Tamper"></SubType2>
+          </SubType1>
+          <SubType1 type="SetState">
+            <SubType2 key="FullSet" value="HardWired_SubType_Output_FullSet"></SubType2>
+            <SubType2 key="PartSet" value="HardWired_SubType_Output_PartSet"></SubType2>
+          </SubType1>
+        </SubType>
+      </SensorType>
+      <SensorType type="Sounder" id="Sounder" value="Sounder">
+        <Mode>
+          <Key id="Pulse" value="Pulse" >
+          </Key>
+          <Key id="Reflex" value="Reflex"  >
+          </Key>
+        </Mode>
+        <Polarity>
+          <Key id="false" value=" Active High" >
+          </Key>
+          <Key id="true" value="Active Low"  >
+          </Key>
+        </Polarity>
+        <SubType>
+          <SubType1 type="Siren">
+            <SubType2 key="Interior" value="HardWired_SubType_Sounder_Interior_Siren"></SubType2>
+            <SubType2 key="Exterior" value="HardWired_SubType_Sounder_Exterior_Siren"></SubType2>
+          </SubType1>
+        </SubType>
+      </SensorType>
+    </SensorTypes>
+    <ZoneCount type="Input" value="8">
+    </ZoneCount>
+    <ZoneCount type="Output" value="4">
+    </ZoneCount>
+    <ZoneCount type="Total" value="12">
+    </ZoneCount>
+  </DeviceType>
+  <DeviceType type="Pheripheral">
+    <BusId>
+      <Key id="2" value="IB2 Bus 1" />
+      <Key id="3" value="IB2 Bus 2" />
+    </BusId>
+  </DeviceType>
+</DeviceTypes>

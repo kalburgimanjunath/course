@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>Title Page</title>
+		<meta charset="UTF-8">
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+		<link href="css/cssTextFields.css" rel="stylesheet" media="screen"> 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body style="padding:50px">
+	<style>
+.combo .combo-text {
+  font-size: 12px;
+  border: 0px;
+  margin: 0;
+
+  *margin-top: -1px;
+  *height: 18px;
+  *line-height: 18px;
+  _height: 18px;
+  _line-height: 18px;
+  vertical-align: baseline;
+  	outline:none;
+padding-top: 13px;
+padding-left:14px;
+color:#0067A6 !important;
+
+}
+
+.combo-arrow {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  	background: url('images/icons/arrow_menu.png');
+width: 8px;
+opacity: 1;
+top: 29px;
+position: relative;
+height: 8px !important;
+right: 14px;
+
+}
+
+
+.combo-arrow-hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+.combo-panel {
+  overflow: auto;
+}
+
+.combo,
+.combo-panel, .combo-arrow-hover {
+  background-color: #ffffff;
+}
+
+.combobox-item,
+.combobox-group {
+  font-size: 12px;
+  padding: 3px;
+  padding-right: 0px;
+}
+.combobox-item-disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.combobox-gitem {
+  padding-left: 10px;
+}
+.combobox-group {
+  font-weight: bold;
+}
+/*.combobox-item-hover {
+  background-color: #eaf2ff;
+  color: #000000;
+}*/
+.combobox-item-selected {
+  background-color: #ffe48d;
+  color: #000000;
+}
+
+.panel {
+  overflow: hidden;
+  text-align: left;
+  margin: 0;
+  border: 0;
+  -moz-border-radius: 0 0 0 0;
+  -webkit-border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
+}
+		@font-face
+			{
+				font-family: Gotham-Book;
+				src: url("css/fonts/Gotham-Book.ttf");
+				
+
+						}
+			
+	html *
+			{   
+			   font-family: Gotham-Book !important;
+			   font-size: 15px !important;
+color: #6f7074 !important;
+			   }
+
+label.combolabel {
+display: block;
+margin-bottom: 0px;
+font-weight: normal;
+font-size: 12px !important;
+left: auto !important;
+top: auto !important;
+padding-left: 1px;
+}
+	.combo{
+	width: 303px !important;
+	border-bottom: 1px solid #D3D3D3;
+border-right: 1px solid #D3D3D3;
+border-top: none;
+border-left: none;
+height: 51px !important;
+display: inline-block;
+
+}
+
+.panel-body{
+border:1px solid #BABABB;
+padding:0;
+}
+
+.combobox-item-selected{
+background-color:#e6f3fb !important;
+}
+
+.combobox-item{
+border-bottom: 1px solid #D3D3D3;
+padding-left: 13px;
+padding-top: 9px;
+font-size: 15px;
+padding-bottom: 9px;
+padding-right:13px;
+}
+
+
+.combobox-item-hover{
+background-color: #e6f3fb;	
+color:#0067a6 !important;
+}
+	</style>
+	<form action="" method="get">
+		<label class="combolabel">TOP LABEL1</label>
+		
+	<select class="easyui-combobox" name="state" style="width:200px;" multiple="multiple">
+        <option value="AL">Alabama</option>
+        
+       <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">OHIO</option>
+        <option value="OK">Oklahoma</option>
+      
+    </select>
+
+    <label class="combolabel">TOP LABEL2</label>
+		
+	<select class="easyui-combobox" name="state" style="width:200px;" multiple="multiple">
+        <option value="AL">Alabama</option>
+        
+       <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">OHIO</option>
+        <option value="OK">Oklahoma</option>
+      
+    </select>
+    <input type="submit" value="submit"/>
+    </form>
+    <script type="text/javascript">
+$(function () 
+{
+  var onClass = "on";
+  var showClass = "show";
+
+  $("input, select")
+    .bind("checkval", function () 
+    {
+      var label = $(this).prev("label");
+        
+      if (this.value !== "")
+        label.addClass(showClass);
+        
+      else
+        label.removeClass(showClass);
+    })
+    .on("keyup", function () 
+    {
+      $(this).trigger("checkval");
+    })
+    .on("focus", function () 
+    {
+      $(this).prev("label").addClass(onClass);
+    })
+    .on("blur", function () 
+    {
+        $(this).prev("label").removeClass(onClass);
+    })
+    .trigger("checkval");
+    
+  $("select")
+    .on("change", function ()
+    {
+      var $this = $(this);
+      
+      if ($this.val() == "")
+        $this.addClass("watermark");
+      
+      else
+        $this.removeClass("watermark");
+        
+      $this.trigger("checkval");
+    })
+    .change();
+});
+    </script>
+
+	</body>
+</html>

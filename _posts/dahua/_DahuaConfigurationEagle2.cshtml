@@ -1,0 +1,303 @@
+﻿@using MaxproCloud.UI.Resources
+<div class="row content">
+    <div class="col-lg-12 col-md-12">
+        <div class="padding-sections">
+            <div class="row">
+                <div class="form-group col-lg-12 col-md-12 mar-b0 pad-t20">
+                    <div class="pull-left pad-r20">
+                        <h2 class="form-heading pad-t5">Camera State</h2>
+                    </div>
+                    <div class="pull-left">
+                        <div class="ps-disabled-switcher">
+                            <label class="switch pull-left">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b25">
+                    <label for="dahuacameraname">Camera Name</label>
+                    <input id="dahuacameraname" class="form-control" name="dahuacameraname" type="text" placeholder="Camera Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b20">
+                    <div class="checkbox">
+                        <label class="formControl-checkbox">
+                            <input type="checkbox" name="dahuaCam_ipmanualadd" id="dahuaCam_ipmanualadd">
+                            <span class="col-md-2 col-lg-2"></span>
+                            <legand class="col-md-10 col-lg-10">Manual Camera Addition</legand>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b25">
+                    <label for="dahuacamera_Model">Camera Model</label>
+                    <input type="text" class="form-control" id="dahuacamera_Model" name="dahuacamera_Model" placeholder="Camera Model">
+                </div>
+                <div class="form-group col-lg-6 col-md-6 pad-l10 mar-b25">
+                    <label for="dahuacameramodel">Discovered Cameras</label>
+                    <select class="form-control selectbox" id="dahuacameramodel" name="dahuacameramodel">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b25">
+                    <label for="dahuacamera_IPaddress">Cameras IP Address</label>
+                    <input type="text" class="form-control" id="dahuacamera_IPaddress" placeholder="Cameras IP Address" name="dahuacamera_IPaddress">
+                </div>
+                <div class="form-group col-lg-6 col-md-6 pad-l10 mar-b25">
+                    <label for="dahuacamerausername">Username</label>
+                    <input id="dahuacamerausername" class="form-control" placeholder="Username" name="dahuacamerausername" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b25">
+                    <label for="dahuacamerapassword">Password</label>
+                    <input type="password" class="form-control" id="dahuacamerapassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="pull-right btn btn-primary">Discover Camera</button>
+            </div>
+        </div>
+
+        <div class="row hr discoveryButton"></div>
+    </div>
+
+    <div class="col-lg-12 col-md-12">
+        <div class="padding-sections">
+            <div class="row">
+                <div class="livepreview col-lg-6 col-md-6 pad-r10">
+                    <div class="stitched">
+                        <div class="playHolder" id="DahuaPlayerId">
+                            <b class="icon_player ispicon ispicon_play" data-bind="click: $root.PanelModel().getPlayClickdetails"></b>
+                            <span class="playText">Play</span>
+                            <div class="playercontainer" data-bind="visible:$root.PanelModel().issuccess"></div>
+                            <div id="panelRequestLive" data-bind="visible:$root.PanelModel().iscustomimage() &amp;&amp; $root.PanelModel().isshow()">
+                                <i class="loading-icon"></i>
+                                <i class="close-icon ispicon ispicon_close" data-bind="click:$root.PanelModel().closepanel"></i>
+                                <span class="videoError" data-bind="text:$root.PanelModel().erromessage"></span>
+                            </div>
+                            <div class="videoErrorTextStyle" data-bind="visible:$root.PanelModel().isError()">
+                                <i class="close-icon"></i>
+                                <span class="videoErrorImage ispicon ispicon_majorError"></span>
+                                <span class="videoErrorText" data-bind="text:$root.PanelModel().erromessage"></span>
+                                <span class="tryAgainStyle" data-bind="click:$root.PanelModel().Retryvideostream,visible:$root.PanelModel().istryagain()">
+                                    <i class="icon_tryagain"></i>
+                                    <span class="text">Try Again</span>
+                                </span>
+                            </div>
+                            <div data-bind="visible:$root.PanelModel().issuccess() &amp;&amp; $root.PanelModel().isshow()">
+                                <i class="close-icon  ispicon ispicon_close" data-bind="click:$root.PanelModel().closepanel,visible:$root.PanelModel().isclosevisible() &amp;&amp; $root.PanelModel().isshow()"></i>
+                                <span class="textOnVideoLeft" data-bind="text:$root.PanelModel().sessionmodel.cameraname"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-button-btm col-lg-6 col-md-6 pad-l10">
+                    <div class="ispselectdropdown">
+                        <div class="ps-top-section">
+                            <div class="form-group">
+                                <label id="" class="control-label">Associations</label>
+                                <input type="text" class="form-control arrow-top readonly" id="txt_position" name="txt_position" readonly="">
+                                <span class="ispicon ispicon_dropArrow" data-toggle="dropdown"></span>
+                            </div>
+                        </div>
+                        <div class="isppopup-site" id="associationstreeview">
+                            <ul class="accordion" id="associationsTreeviewAccordian">
+                                <li class="search">
+                                    <span class="icon-search">
+                                        <input type="search" id="" class="form-control form-search" placeholder="Search">
+                                        <span class="focus-icon-search ispicon ispicon_search"></span>
+                                    </span>
+                                </li>
+                                <!-- start KO foreach -->
+                                <li cclass="collaspe-icons">
+                                    <div class="collapse-box">
+                                        <span data-parent="#associationsTreeviewAccordian">
+                                            <span class="ispicon ispicon_accordian_droparrow pull-left pad-t5"></span>
+                                            <label class="control-label label-padding">
+                                                <span>Name 1</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <ul aria-expanded="true" class="collapse">
+                                        <li>
+                                            <div class="checkbox">
+                                                <label class="formControl-checkbox control-label">
+                                                    <input type="checkbox" name="dahuaCam_ipmanualadd" id="dahuaCam_ipmanualadd">
+                                                    <span class="col-md-2 col-lg-2"></span>
+                                                    <legand class="col-md-10 col-lg-10 ellipsis">Manual Camera Addition 1.1</legand>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <label class="formControl-checkbox control-label">
+                                                    <input type="checkbox" name="dahuaCam_ipmanualadd" id="dahuaCam_ipmanualadd">
+                                                    <span class="col-md-2 col-lg-2"></span>
+                                                    <legand class="col-md-10 col-lg-10 ellipsis">Manual Camera Addition 1.2</legand>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- End KO foreach -->
+                                <li cclass="collaspe-icons">
+                                    <div class="collapse-box">
+                                        <span data-parent="#associationsTreeviewAccordian">
+                                            <span class="ispicon ispicon_accordian_droparrow pull-left pad-t5"></span>
+                                            <label class="control-label label-padding">
+                                                <span>Name 2</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <ul aria-expanded="true" class="collapse">
+                                        <li>
+                                            <div class="checkbox">
+                                                <label class="formControl-checkbox control-label">
+                                                    <input type="checkbox" name="dahuaCam_ipmanualadd" id="dahuaCam_ipmanualadd">
+                                                    <span class="col-md-2 col-lg-2"></span>
+                                                    <legand class="col-md-10 col-lg-10 ellipsis" title="Manual Camera Addition 2.1">Manual Camera Addition 2.1</legand>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <label class="formControl-checkbox control-label">
+                                                    <input type="checkbox" name="dahuaCam_ipmanualadd" id="dahuaCam_ipmanualadd">
+                                                    <span class="col-md-2 col-lg-2"></span>
+                                                    <legand class="col-md-10 col-lg-10 ellipsis" title="Manual Camera Addition 2.2">Manual Camera Addition 2.2</legand>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 recordingClipDuration">
+        <div class="padding-sections">
+            <div class="row hr"></div>
+
+            <h2 class="form-heading">Recording Clip Duration</h2>
+            <div class="row">
+                <div class="field form-group col-lg-6 col-md-6 pad-r10 mar-b0">
+                    <div class="timeConditionField spinner-control">
+                        <label id="lbl-Min" class="label-control labelalign" for="dahuacameraRCDPreEvnt">Pre Event (secs)</label>
+                        <div class="ui-spinner ui-widget ui-widget-content ui-corner-all">
+                            <input id="dahuacameraRCDPreEvnt" name="dahuacameraRCDPreEvnt" size="2" class="form-control valid" type="number" data-bind="spinner: $data.RuleAction().TimeConditionMin, event: { change: $root.IsInRange }" min="0" max="60" step="1" data-original-title="" title="">
+                        </div>
+                    </div>
+                </div>
+                <div class="field form-group col-lg-6 col-md-6 pad-l10 mar-b0">
+                    <div class="timeConditionField spinner-control">
+                        <label id="lbl-Min" class="label-control labelalign" for="dahuacameraRCDOnsPstEvnt">Post Event (secs)</label>
+                        <div class="ui-spinner ui-widget ui-widget-content ui-corner-all">
+                            <input id="dahuacameraRCDOnsPstEvnt" name="dahuacameraRCDOnsPstEvnt" size="2" class="form-control valid" type="number" data-bind="spinner: $data.RuleAction().TimeConditionMin, event: { change: $root.IsInRange }" min="0" max="60" step="1" data-original-title="" title="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hr"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12">
+        <div class="padding-sections">
+            <h2 class="form-heading">Recording Settings</h2>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b25">
+                    <label for="dahuacameraRecResolution">Camera Resolution</label>
+                    <select class="form-control selectbox" id="dahuacameraRecResolution" name="dahuacameraRecResolution">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 pad-l10 mar-b25">
+                    <label for="dahuacameraRecFPS">Frame Rate</label>
+                    <select class="form-control selectbox" id="dahuacameraRecFPS" name="dahuacameraRecFPS">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10 mar-b0">
+                    <label for="dahuacameraRecQuality">Camera Quality</label>
+                    <select class="form-control selectbox" id="dahuacameraRecQuality" name="dahuacameraRecQuality">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row hr"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12">
+        <div class="padding-sections">
+            <h2 class="form-heading">Live Settings</h2>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10">
+                    <label for="dahuacameraLiveResolution">Camera Resolution</label>
+                    <select class="form-control selectbox" id="dahuacameraLiveResolution" name="dahuacameraLiveResolution">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 pad-l10">
+                    <label for="dahuacameraLiveFPS">Frame Rate</label>
+                    <select class="form-control selectbox" id="dahuacameraLiveFPS" name="dahuacameraLiveFPS">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 pad-r10">
+                    <label for="dahuacameraLiveQuality">Camera Quality</label>
+                    <select class="form-control selectbox" id="dahuacameraLiveQuality" name="dahuacameraLiveQuality">
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                        <option>option 4</option>
+                        <option>option 5</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,287 @@
+/*h2   {color:white}
+p    {color:white}
+*/
+
+@font-face {
+    font-family: 'HoneywellSansWeb-Bold';
+    src: url('../Content/fonts/HoneywellSansWeb-Bold.woff') format('woff'), url('../Content/fonts/HoneywellSansWeb-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HoneywellSansWeb-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HoneywellSansWeb-Medium';
+    src: url('../Content/fonts/HoneywellSansWeb-Medium.woff') format('woff'), url('../Content/fonts/HoneywellSansWeb-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/HoneywellSansWeb-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HoneywellSansWeb-Book';
+    src: url('../Content/fonts/HoneywellSans-Book.otf') format('opentype');
+}
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    /*background-image: linear-gradient(135deg, rgba(31,123,229,1) 0%, rgba(58,139,232,1) 47%, rgba(70,153,234,1) 92%, rgba(72,156,234,1) 100%);*/
+    background-image: url("../Content/Images/bg.jpg"); 
+    background-size: 100% 100%;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: "HoneywellSansWeb-Medium", Arial, Serif !important;
+    font-size: 14px;
+    color: #606060;
+}
+
+.card-container.card {
+    width: 450px;
+    padding: 36px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.16), 0px 2px 10px 0px rgba(0,0,0,0.12);
+    background: #fff;
+}
+
+.profile-img-card {
+    /*width: 96px;
+    height: 96px;*/
+    margin: 0 auto 10px;
+    display: block;
+    width: 420px;
+        padding-top: 70px;
+    /*-moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;*/
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    /*height: 44px;*/
+    /*font-size: 16px;*/
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    /*background-color: rgb(104, 145, 162);
+    / background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    top: 16px;
+    padding: 0px;
+    font-weight: 700;
+    font-size: 13px;
+    height: 36px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1792e5;
+    border-color: #1792e5;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+        background-color: #1272b2;
+        border-color: #1272b2;
+}
+
+.btn-primary:active {
+        background-color: #23608c;
+}
+
+ .btn-primary:disabled {
+        background-color: #8bc9f2;
+        border-color: #8bc9f2;
+    }
+
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+.logintitle{
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 22px;
+    margin-bottom: 13px;
+    color: #303030;
+    margin-top: 0px;
+}
+
+.control-label {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    color: #707070;
+    text-rendering: optimizeLegibility;
+    text-align: left;
+    letter-spacing: 0;
+    opacity: 1;
+    text-transform: capitalize;
+}
+
+.form-group .form-control.error {
+    border: 1px solid #ee3124;
+    color: #303030;
+}
+input[type="password"] {
+    background-image: url(../Images/icon_sprites_24px_a.svg) no-repeat 8px 6px;
+    background-size: 218px;
+    content: "";
+    background-position: -13px -39px;
+}
+
+.form-control {
+    border: 1px solid #d0d0d0;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    Color: #606060;
+    font-weight: normal;
+    text-align: left;
+    line-height: 16.8px;
+    letter-spacing: 0;
+    opacity: 1;
+    height: 34px;
+}
+.form-control {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    /* min-width: 325px; */
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline:0;
+}
+
+a, .link, a:hover, .link:hover {
+    font-size: 14px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #1792e5;
+}
+
+footer{
+       opacity: 0.9;
+    background: #202020;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+    color: #CCC;
+}
+
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}
+
+.langselect{
+        background: #202020 !important;
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 12px;
+    float: left;
+    display: inline-block;
+    width: auto;
+    max-width: 200px;
+}
+
+.view_pwd {
+    position: relative;
+    z-index: 1;
+    top: -34px;
+    right: 10px;
+    left: 90%;
+    display: block;
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+    background: url('../Content/images/password_icons.png') no-repeat center top;
+}
+.view_pwd:active {
+    /*height: 18px;*/
+    background: url(../Content/images/password_icons.png) no-repeat 2px -18px;
+}

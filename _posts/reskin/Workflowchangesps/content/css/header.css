@@ -1,0 +1,160 @@
+#page-header {
+    position: fixed;
+    height: 60px;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.ps-global-header {
+    background: #f2f2f2;
+    box-shadow: none;
+    border-bottom: 1px solid #dfdfdf;
+}
+.pagetitle {
+    float: left;
+    padding-top: 19px;
+    padding-left: 35px;
+}
+.pagetitle a {
+    text-decoration: none;
+}
+.page-header-title {
+    color: #707070;
+    cursor: pointer;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-family: 'HoneywellSansWeb-Medium';
+    position: relative;
+    top: -2px;
+}
+.ps-global-header .main-icon-bar {
+    cursor: pointer;
+}
+span.main-icon-bar {
+    display: inline-block;
+    width: 30px;
+}
+.people_container{
+	background: #fff;
+    position: relative;
+    top: 60px;
+}
+.hamburger .icon-bar {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: #9f9f9f;
+    margin: 2px 0px;
+}
+#navigation-menu {
+    min-height: 40px;
+    padding: 18px 28px 0px;
+}
+.ps-global-header #notification-menu .navbar {
+    margin-bottom: 0;
+}
+#navigation-menu .navbar .nav > li > a {
+    padding: 0px 0px 0px 0px;
+    width: 26px;
+    margin-right: 5px;
+    height: 21px;
+}
+#notifications > a.notification-icon {
+    background: url(../../images/sprite_icons.png) no-repeat -579px -309px;
+}
+#notifications > a:hover {
+    background: url(../../images/sprite_icons.png) no-repeat -609px -309px;
+}
+#profileoptions > ul > li > a {
+    background: url(../../images/sprite_icons.png) no-repeat -275px -99px;
+}
+#profileoptions > ul > li > a:hover {
+    background: url(../../images/sprite_icons.png) no-repeat -245px -459px;
+}
+.main-menu-navigation {
+    left: -318px;
+    top: 0;
+    box-shadow: 1px 0 6px #dfdfdf;
+    -webkit-transition: left 0.5s ease-in-out;
+    -moz-transition: left 0.5s ease-in-out;
+    -o-transition: left 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out;
+    background: #404040;
+    z-index: 1;
+    overflow: auto;
+    width: 318px;
+    position: fixed;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.open .main-menu-navigation {
+    left: 0px;
+    width: 318px;
+}
+.topmenucontent {
+    width: 100%;
+    position: relative;
+    -ms-overflow-x: auto;
+    overflow-x: auto;
+    cursor: default;
+    height: 100%;
+}
+.nav_img {
+    position: relative;
+    padding: 29px 10px 30px 22px;
+    border-bottom: 1px solid #303030;
+    background: url(../images/honeywell-white-logo.png) no-repeat 25px 50%;
+    float: left;
+    width: 100%;
+}
+.topmenucontent ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.topmenucontent .active {
+    background-color: #202020;
+    color: #f0f0f0;
+}
+.topmenucontent ul li {
+    height: 44;
+    padding: 10px 0 10px 24px;
+}
+
+.topmenucontent ul li {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    cursor: pointer;
+}
+.topmenucontent ul li .count span {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+.icon_1 {
+    background: url(../images/sprite24.png) no-repeat -10px -78px;
+}
+.topmenucontent ul li p {
+    color: #a0a0a0;
+    font-size: 16px;
+    text-transform: capitalize;
+    word-break: break-all;
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+.ps-global-header .icon_2 {
+    background-position: -10px -9px;
+}
+.topmenucontent .active .icon_2 {
+    background: url(../images/sprite24.png) no-repeat -78px -13px;
+}

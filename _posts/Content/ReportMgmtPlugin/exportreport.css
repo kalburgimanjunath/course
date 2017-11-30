@@ -1,0 +1,35 @@
+.ps-report-base-content .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    width: 100%;
+    padding: 10px 0 15px 0;
+    color: #d8ecf2;
+    border-bottom: 1px solid #7fc1d3;
+}
+
+.ps-report-base-content .sub-group {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 10px 0 15px 0;
+    border-bottom: 1px solid #7fc1d3;
+}
+
+.ps-report-base-content .table-header {
+    padding: 5px;
+}
+
+.ps-report-base-content .data-grid {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 10px 0 15px 0;
+}
+
+.ps-report-base-content .data-grid-row-header {
+    padding: 5px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.ps-report-base-content .data-grid-row {
+    padding: 5px;
+    border-bottom: 1px solid #d3d3d3;
+}

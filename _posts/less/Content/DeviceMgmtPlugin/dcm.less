@@ -1,0 +1,401 @@
+@color_1: #606060;
+@color_2: #303030;
+@color_3: #808080;
+@color_4: #628b2c;
+@font_family_1: 'HoneywellSansWeb-Medium';
+@font_family_2: 'HoneywellSansWeb-Bold';
+@background_color_1: #f2f2f2;
+@background_color_2: #fff;
+@background_color_3: #7eb338;
+@background_color_4: #707070;
+@background_color_5: #1792e5;
+@border_top_color_1: #fff;
+@border_bottom_color_1: #fff;
+
+/*version 1.0.1*/
+/*.dcm-root .DcmOverview .tooltip{
+    min-width:300px;
+    max-width: 400px;
+}*/
+/*.listgrouppane{
+    overflow: scroll;
+    max-height: 410px;
+}*/
+/*.dcmOverview .doorSettingsWrapper .rightNoBorder{
+        margin-left: 15px;
+    }*/
+/* color for view mode */
+.dcm-root {
+    .listStickyHeader {
+        font-family: @font_family_1 !important;
+        color: @color_1;
+        font-size: 13px;
+        padding: 6px 24px;
+        background: #d0d0d0;
+    }
+    .dcmView {
+        .cardlistview {
+            .isppagetitle {
+                font-family: @font_family_2 !important;
+                color: @color_2;
+                margin-left: 25px;
+                margin-right: 20px;
+            }
+        }
+        .listOverview {
+            .isppagetitle {
+                font-family: @font_family_2 !important;
+                color: @color_2;
+                margin-left: 25px;
+                margin-right: 20px;
+                margin-left: 0px;
+                margin-right: 24px;
+            }
+            right: 0;
+            border-left: 0;
+            left: 49%;
+        }
+        .checkbox {
+            float: left;
+            input[type="checkbox"] {
+                opacity: 1 !important;
+                opacity: 1 !important;
+                margin-top: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    .selectController {
+        width: 100%;
+        padding: 15px 20px;
+        border-top: 1px solid #e7e7e7;
+    }
+    .DcmOverview {
+        padding-left: 15px;
+        width: 50%;
+        position: absolute;
+        border-left: 0px;
+        right: 15px;
+        top: 0;
+        bottom: 0;
+        .tooltip-inner {
+            background: #fff;
+            color: @color_3;
+            border-radius: 0;
+            box-shadow: 0 0 1px #000;
+            -moz-box-shadow: 0 0 1px #000;
+            -o-box-shadow: 0 0 1px #000;
+            max-width: 256px;
+            table {
+                td {
+                    border: 0px solid #fff !important;
+                    color: @color_3;
+                    padding: 2px 5px;
+                    text-align: left;
+                    vertical-align: bottom;
+                    &:first-child {
+                        text-align: right;
+                        font-family: @font_family_1 !important;
+                        font-size: 14px;
+                        color: @color_3;
+                    }
+                }
+                tr {
+                    border: 0 !important;
+                }
+                .head {
+                    text-align: left;
+                    font-family: @font_family_2 !important;
+                    font-size: 14px;
+                    color: @color_3;
+                }
+            }
+        }
+        .tooltip.top {
+            .tooltip-arrow {
+                border-top-color: @border_top_color_1;
+                border-width: 13px 14px 0;
+                margin-left: -14px;
+                margin-bottom: -4px;
+            }
+        }
+        .tooltip.bottom {
+            .tooltip-arrow {
+                border-bottom-color: @border_bottom_color_1;
+                border-width: 0 13px 14px;
+                margin-left: -14px;
+                margin-top: -4px;
+            }
+        }
+    }
+    .viewmode {
+        input {
+            font-family: @font_family_1 !important;
+            font-size: 14px;
+            color: @color_1;
+            pointer-events: none;
+            background-color: @background_color_1;
+            [type="checkbox"] {
+                background: 0;
+            }
+        }
+        select {
+            font-family: @font_family_1 !important;
+            font-size: 14px;
+            color: @color_1;
+            pointer-events: none;
+            background-color: @background_color_1;
+        }
+        .arrowUpEnabled {
+            font-family: @font_family_1 !important;
+            font-size: 14px;
+            color: @color_1;
+            pointer-events: none;
+            background-color: @background_color_1;
+        }
+        .arrowDownDisabled {
+            font-family: @font_family_1 !important;
+            font-size: 14px;
+            color: @color_1;
+            pointer-events: none;
+            background-color: @background_color_1;
+        }
+        .btn-footer {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 15px;
+            border-top: 1px solid #dfdfdf;
+        }
+        .dcmOverview {
+            .doorSettingsWrapper {
+                .arrowUpEnabled {
+                    .arrow_head_up {
+                        border-bottom: 37px solid #7eb338;
+                    }
+                    .arrow_body_up {
+                        background-color: @background_color_3;
+                    }
+                }
+                .arrowDownDisabled {
+                    .arrow_body_down {
+                        background-color: @background_color_4;
+                    }
+                    .arrow_head_down {
+                        border-top: 37px solid #707070;
+                    }
+                }
+                .egressSwitchTop.enabled {
+                    background-color: @background_color_3;
+                }
+                .connecterLeft {
+                    background: #fff;
+                }
+            }
+        }
+    }
+    .listgrouppane {
+        .ispicon_access {
+            margin-top: 9px;
+        }
+    }
+    .liststylesearch-container {
+        list-style-type: none;
+        height: 20px;
+    }
+    .ispicon_filter {
+        &::before {
+            margin-right: 20px;
+        }
+    }
+    .overviewTab {
+        position: absolute;
+        bottom: 45px;
+        top: 93px;
+        .content {
+            .dcmOverview {
+                margin-top: 20px;
+            }
+        }
+    }
+    .contentContainer {
+        position: absolute;
+        right: 0;
+        bottom: 53px;
+        top: 96px;
+        left: 10px;
+        overflow-y: auto;
+    }
+    .cardlistview {
+        width: 25%;
+        float: left;
+        position: absolute;
+        left: 24%;
+        bottom: 0;
+        top: 0;
+        border-right: 1px solid #e7e7e7;
+    }
+    .btn-footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-top: 1px Solid #dfdfdf;
+        margin-left: 23px;
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        left: -16px;
+        background-color: @background_color_2;
+    }
+    .btn {
+        &:first-child {
+            margin-right: 8px;
+        }
+    }
+    .doorLeftLine {
+        width: 9px;
+        left: 14%;
+        height: 38px;
+        border: 2px solid #b0b0b0;
+        position: absolute;
+        background: #fff;
+    }
+    .dcmOverview {
+        .doorSettingsWrapper {
+            .connecterLeft {
+                background: #d0d0d0;
+            }
+        }
+    }
+}
+.ispicon_door_default {
+    &:before {
+        background-position: -404px -105px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+}
+.listgrouppane {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 164px;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #f0f0f0;
+    .panel {
+        border-radius: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        .panel-body {
+            padding: 0;
+        }
+        .list-group {
+            margin: 0;
+            width: 101;
+        }
+        &+.panel {
+            margin: 0;
+        }
+        .status {
+            text-transform: uppercase;
+            border: 1px solid #bfd99c;
+            padding: 3px 5px;
+            margin: 5px 0;
+            font-size: 12px;
+            color: @color_4;
+            font-family: @font_family_2 !important;
+        }
+    }
+}
+.addReader {
+    z-index: 10000;
+}
+.doorRightLine {
+    width: 9px;
+    height: 38px;
+    border: 2px solid #b0b0b0;
+    position: absolute;
+    background: #fff;
+    left: 76%;
+}
+.dcmOverview {
+    .doorSettingsWrapper {
+        .arrowUpEnabled {
+            .arrow_head_up {
+                border-bottom: 37px solid #1792e5;
+            }
+            .arrow_body_up {
+                background-color: @background_color_5;
+            }
+        }
+        .arrowDownDisabled {
+            .arrow_body_down {
+                background-color: @background_color_5;
+            }
+            .arrow_head_down {
+                border-top: 37px solid #1792e5;
+            }
+        }
+        .egressSwitchTop.enabled {
+            background-color: @background_color_5;
+        }
+    }
+}
+.addDevice {
+    z-index: 99999;
+}
+#netaxs_device_list {
+    .listgrouppane {
+        top: 124px;
+    }
+}
+.togglemenu {
+    .dcm-root {
+        .cardlistview {
+            left: 70px;
+        }
+        .listOverview {
+            left: 25%;
+            margin-left: 70px;
+        }
+    }
+}
+@media screen and (min-width: 1920px) {
+    .dcm-root {
+        .overviewTab {
+            min-height: 500px;
+        }
+    }
+    .listcontainer {
+        position: absolute;
+        top: 60px;
+        bottom: 0px;
+        height: 100%;
+        min-height: 870px;
+        overflow: scroll;
+        width: 102%;
+    }
+    .dcmOverview {
+        .doorcurveline2 {
+            margin-left: -53% !important;
+        }
+        .doorSettingsWrapper {
+            .connecterRight {
+                width: 10% !important;
+            }
+            .egressSwitchTop.enabled {
+                margin-left: 102% !important;
+            }
+        }
+    }
+    .doorRightLine {
+        left: 77.5% !important;
+    }
+}
+@media (max-width: 1366px) {
+    .doorRightLine {
+        left: 78% !important;
+    }
+}

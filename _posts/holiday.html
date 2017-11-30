@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/Schedules.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/ispSchedule.css"> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+    <script src="Scripts/lib/alertify.js" type="text/javascript"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+alertify.success('Success message');
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $( document ).ready(function() {
+        $(".ispicon_edit").click(function(){
+            $(".contentContainer").removeClass("viewmode");
+            $(".btn-footer").css("display","block");
+        });
+
+        $("#sorting").click(function(){
+            $(".ispicon_sort").addClass("ispicon_sort_asc");
+            $(".ispicon_sort").removeClass("ispicon_sort");
+            
+        });
+
+        
+
+        // $(".ispicon_collapse").click(function(){
+        //     $(".accordion-root").toggle();
+        //     //$('.scheduleOverview').toggleClass('col-xs-6 col-sm-6 col-md-6 col-lg-6','col-xs-9 col-sm-9 col-md-9 col-lg-9');
+        //     $('.scheduleOverview').toggleClass('col-xs-9 col-sm-9 col-md-9 col-lg-9').css('left','25%');
+            
+        // });
+
+      
+        //$('.SlectBox').SumoSelect();
+
+    });
+
+    function onMenuItemSelect(itemName) {
+    $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+    switch (itemName) {
+    case "SiteOverview":
+    blockUI();
+    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+    unblockUI();
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+    });
+    break;
+    case "AddSite":
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+    break;
+    }
+    }
+     
+    </script>
+
+    
+</head>
+<body>
+                 
+                    
+<div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+</div>
+
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="customeroverview.html" class="list-group-item"><span class="ispicon ispicon_sites"></span><span>Site Overview</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                       <!--  <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li> -->
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                       
+                                <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item active"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                       
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="schedule-root">
+            <!-- <link href="~/Content/AccountMgmtPlugin/alarms.css" rel="stylesheet" /> -->
+            <div id="schedule-view" class="scheduleView">
+                <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs ">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Schedule & Holidays
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addSchedule" title="Add New"></a>
+                            <a class="ispicon ispicon_delete dropdown-toggle" data-toggle="dropdown" title="More">
+                                
+                            </a>
+                           <!--  <ul class="dropdown-menu ispmenu rightalign">
+                                <li><a href="#">Menu 1</a></li>
+                                <li><a href="#">Menu 2</a></li>
+                                <li><a href="#">Delete</a></li>
+                              </ul> -->
+                        </span>
+
+                    </h2>
+                    
+
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#schedule" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true" data-target="#schedule, #schedule_else">Schedule</a></li>
+                        <li role="presentation" class=""><a href="#holidays" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false" data-target="#holidays, #holidays_else">Holidays</a></li>
+                    </ul>
+                    <div class="col-md-12 ispheadersearch">
+               
+                            <form>
+                                <div class="row pull-left">
+                                    <div class="input-group">
+                                        <div class="input-group-btn search-panel">
+                                            <button type="button" class="btn btn-default dropdown-toggle padding-correction-searchbox" data-toggle="dropdown" aria-expanded="false">
+                                                <span id="search_concept"><span class="ispicon ispicon_search"></span> 
+                                            </span></button>
+                                         <!--    <ul class="dropdown-menu ispmenu" role="menu">
+                                              <li><a href="#contains">Contains</a></li>
+                                              <li><a href="#its_equal">It's equal</a></li>
+                                              <li><a href="#greather_than">Greather than &gt;</a></li>
+                                              <li><a href="#less_than">Less than &lt; </a></li>
+                                              <li><a href="#all">Anything</a></li>
+                                            </ul> -->
+                                        </div>
+                                        <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                        <span class="input-group-btn ">
+                                            <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_filter"></span></button>
+                                        </span>
+                                       <!--  <span class="input-group-btn">
+                                            <button class="btn btn-default padding-correction" type="button"><span id="sorting" class="ispicon ispicon_sort"></span></button>
+                                        </span> -->
+                                        <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle padding-correction" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_sortasc"></span></button>
+                                                <ul class="dropdown-menu ispmenu" role="menu">
+                                                    <li>
+                                                        <a href="#">Latest first</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">A to Z</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Z to A</a>
+                                                    </li>
+                                                </ul>
+                                                
+
+                                            </span>
+                                        <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <span id="search_concept"><span class="ispicon ispicon_search"></span> <span class="caret"></span>
+                                            </span></button> -->
+                                       <!--  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                            </span></button> -->
+                                    </div>
+                                </div>
+                               
+                            </form>
+                    </div>
+                    <div>
+                    <div class="tab-content ">
+                            <div id="schedule" class="tab-pane ">
+                                <ul class="list-group scroll-x scroll-y schedulelists">
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Server Maintenance</span> <br />
+                                            <span class="sensorsList"><span>Lorem ipsum dot site amet</span>
+                                            <!-- <div class="pull-right">Currently ON</div><span class="inactive" title="InActive">InActive</span> -->
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet </span><br/>
+                                            <span class="pull-right">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item active">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Regular Shift</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span>Occurs every day</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item readonly">
+                                        <div class="checkbox">
+                                            <input type="checkbox" disabled />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Always On</span> <br />
+                                             <span class="sensorsList">Lorem ipsum dot site amet.
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item readonly">
+                                        <div class="checkbox">
+                                            <input type="checkbox" disabled/>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Always Off</span> <br />
+                                             <span class="sensorsList">Lorem ipsum dot site amet.
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span>Occurs weekdays</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span class="pull-right">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span class="pull-right">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span>Occurs weekdays</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span><br/>
+                                            <span class="pull-right">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-11">
+                                            <span class="name">Security Briefing</span> <br />
+                                             <span class="sensorsList"><span>Lorem ipsum dot site amet</span>
+                                            <span class="pull-right">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="holidays" class="tab-pane active">
+                                
+                                <ul class="list-group scroll-x scroll-y schedulelists">
+                                     <li class="listStickyHeader"><span class="count">20 </span><b>Holidays</b> </span>
+                                     </li>
+                                     <li class="list-group-item readonly">
+                                        <div class="checkbox">
+                                            <input type="checkbox" disabled />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Always On</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     <li class="list-group-item readonly">
+                                        <div class="checkbox">
+                                            <input type="checkbox" disabled/>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Always Off</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Independence Day</span> <br />
+                                            <span class="sensorsList"><span>July 4, 2016</span> <br />
+                                            <span>Repeats yearly forever</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Thanks Giving Holiday</span> <br />
+                                             <span class="sensorsList"><span>Nov 24 & 25, 2016</span><br />
+                                            <span>Repeats never</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item active">
+                                        <div class="checkbox">
+                                            <input type="checkbox" checked/>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Founder’s Day</span> <br />
+                                             <span class="sensorsList"><span>Date</span><br />
+                                            <span>Repeats yearly forever</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <!-- <li class="listStickyHeader"><b>H2</b>
+                                     </li> -->
+                                     <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 4</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 5</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 5</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 5</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 5</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="checkbox">
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span class="name">Holiday 5</span> <br />
+                                             <span class="sensorsList"><span>Date</span>
+                                            <span>Occurrence
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                     
+                                </ul>
+                            </div>
+                    </div>
+                        
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview scheduleOverview isptabs pull-left">
+                    <div class="row isptabs">
+                        <div class="tab-content ">
+                            <div id="schedule_else" class="tab-pane active">
+
+                                <div class="row">
+                                    <h2 class="isppagetitle">
+                                        Server Maintenance
+                                        <span class="pull-right">
+                                            <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit"></span>
+                                        </span>
+
+                                    </h2>
+                                </div>
+                                 <div class="contentContainer scroll-x scroll-y col-md-12 clear viewmode">
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Description</label>
+                                            <input type="text" name="customerName" id="customerName" class="form-control" value="Lorem ipsum dot site amet.">                           
+                                        </div>
+                                    </div>
+                                    
+                                   <div class="col-md-12">
+                                         <h4><b>Schedule Settings</b></h4>        
+                                            <div>
+                                                Time Picker selector Control
+                                            </div>  
+                                   </div>             
+                                </div>
+                            </div>
+                            <div id="holidays_else" class="tab-pane">
+
+                                <div class="row">
+                                    <h2 class="isppagetitle">
+                                        Thanks Giving Holidays
+                                        <span class="pull-right">
+                                            <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit"></span>
+                                        </span>
+                                    </h2>
+                                </div>
+
+                                <div class="contentContainer scroll-x scroll-y col-md-12 viewmode">
+                                     <div class="col-sm-12 clear">
+                                        <h4><b>Details</b></h4>        
+                                                      
+                                    </div>
+                                     <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Holiday Name<span class="star">*</span></label>
+                                            <input type="text" name="customerName" id="customerName" class="form-control" value="Lorem ipsum dot site amet.">                           
+                                        </div>
+                                        <div class="form-group col-md-4 hide">
+                                            <label class="control-label">Description</label>
+                                            <input type="text" name="description" id="customerName" class="form-control" value="Lorem ipsum dot site amet.">                           
+                                        </div>
+
+                                    </div>
+                                     <div class="row">
+                                        
+                                        <div class="form-group col-md-4" style="margin-bottom: 0px;">
+                                            <label class="control-label">Holiday Type*</label>
+                                            <div class="row">
+                                                <div class="col-md-4 nopadding">
+                                                    <input id="radio8" type="radio" class="col-md-1"/>
+                                                    <span for="radio8">H1</span>
+                                                </div>
+                                                <div class="col-md-4 nopadding">
+                                                    <input id="radio8" type="radio" class="col-md-1"/>
+                                                    <span for="radio8">H2</span>
+                                                </div>
+                                                <div class="col-md-4 nopadding">
+                                                    <input id="radio8" type="radio" class="col-md-1"/>
+                                                    <span for="radio8">H3</span>
+                                                </div>
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 hide">
+                                        <hr/>
+                                        <div class="col-md-4 nopadding">
+                                            <input id="radio8" type="radio" class="col-md-1"/>
+                                            <span for="radio8" class="col-md-11">Single Day</span>
+                                        </div>
+                                        <div class="col-md-4 nopadding">
+                                            <input id="radio8" type="radio" class="col-md-1"/>
+                                            <span for="radio8" class="col-md-11">Date Range</span>
+                                        </div>
+                                       
+                                        <br/>
+                                    </div>
+                                    <div class="row hide">
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Start Date</label>
+                                            <input type="text" class="form-control" readonly="readonly">
+                                            <span class="addonbutton">
+                                                <span class="ispicon add-on ispicon_calender"></span>
+                                            </span>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">End Date</label>
+                                            <input type="text" class="form-control" readonly="readonly">
+                                            <span class="addonbutton">
+                                                <span class="ispicon add-on ispicon_calender"></span>
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-12 clear">
+                                    <hr/>
+                                        <h4><b>Occurrence</b></h4>    
+                                    </div>
+                                    <div class="row clear">    
+                                       
+
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Starts on</label>
+                                            <input type="text" class="form-control" readonly="readonly">
+                                            <span class="addonbutton">
+                                                <span class="ispicon add-on ispicon_calender"></span>
+                                            </span>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="control-label">Repeats</label>
+                                            <select class="form-control">
+                                                <option>None</option>
+                                                <option>Yearly</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 hide">
+                                            <label class="control-label">Until</label>
+                                            <input type="text" class="form-control" readonly="readonly">
+                                            <span class="addonbutton">
+                                                <span class="ispicon add-on ispicon_calender"></span>
+                                            </span>
+                                        </div>
+
+                                       
+                                       
+                                        <div class="col-md-12 hide">
+                                            <a class="pull-right">Except on</a>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-12 hide">
+                                        <hr/>
+                                        First occurs on November 24, 2016<br/>
+                                        Repeats Yearly until November 25, 2025
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="btn-footer"  style="display:none;">
+                            <div class="btn-group pull-right" role="group" aria-label="group button">
+                                <button type="button" class="btn btn-default">Cancel</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <!-- AREA OVERVIEW-->
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>

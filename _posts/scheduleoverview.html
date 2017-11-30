@@ -1,0 +1,412 @@
+<style>
+    .isplistview {
+        padding: 0px;
+        /*margin-left: -15px;*/
+        /*border-right: 1px solid #e7e7e7;*/
+    }
+
+        .isplistview .isppagetitle {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            color: #303030;
+            margin-left: 20px;
+        }
+
+        .isplistview .pull-right {
+            margin-right: 20px;
+        }
+
+        .isplistview .nav.nav-tabs {
+            margin-left: 20px;
+        }
+
+        .isplistview .list-group-item.active, .isplistview .list-group-item.active:hover, .isplistview .list-group-item.active:focus, .isplistview .list-group-item:hover {
+            background-color: #e1eff9;
+            color: #606060;
+            border-color: #e7e7e7;
+        }
+
+
+        .isplistview #contact-list {
+            max-height: 376px;
+        }
+
+            .isplistview #contact-list .ispimage-small img {
+                max-width: 50px;
+                padding: 0px;
+                border-radius: 0px;
+            }
+
+                .isplistview #contact-list .ispimage-small img[src=""] {
+                    background-image: url('../images/icon_sprites_24px-01.svg');
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-size: 780px;
+                    content: "";
+                    background-position: -248px -152px;
+                    vertical-align: top;
+                    z-index: 100;
+                }
+
+
+
+            .isplistview #contact-list .ispimage-small {
+                max-width: 52px;
+                padding-left: 2px;
+            }
+
+            .isplistview #contact-list .checkbox-square {
+                padding-left: 10px;
+            }
+
+        .isplistview .name {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 16px;
+            color: #606060;
+            margin-right: 16px;
+        }
+
+        .isplistview .designation {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 12px;
+            color: #606060;
+        }
+
+        .isplistview .employeeid {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 12px;
+            color: #808080;
+        }
+
+            .isplistview .employeeid .card {
+                margin-left: 12px;
+            }
+
+        .isplistview .inactive {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 11px;
+            color: #FFF;
+            background-color: #a0a0a0;
+            text-transform: uppercase;
+            /*margin-left: 16px;*/
+            padding: 2px;
+        }
+
+        .isplistview .listcount {
+            background: #f2f2f2;
+            margin-right: 0;
+            padding: 4px 0px;
+        }
+
+        .isplistview #contact-list-search{
+            padding-left: 48px;
+        }
+
+    @@media (max-width: 1366px){
+        .isplistview #contact-list {
+            max-height: 710px;
+        }
+    }
+
+    @@media screen and (min-width: 1920px) {
+        .isplistview #contact-list {
+            max-height: 735px;
+        }
+    }
+</style>
+
+<div id="customer-overview" class="row accountcontainer customer hide account-view" style="display:none;" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 overview site">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 isplistview isptabs">
+            @*<span class="ispicon ispicon_more inverse" data-bind="click: $data.toggleAccordionMenu"></span>*@
+            <h2 class="isppagetitle">
+                Sites
+            </h2>
+
+            <div class="panel panel-default">
+                <div class="input-group c-search">
+                    <span class="ispicon isplisticon_search"></span>
+                    <input type="search" class="form-control" id="contact-list-search" placeholder="Search">
+                    <span class="input-group-btn">
+
+                        <button class="btn btn-default" type="button"><span class="ispicon ispicon_sort text-muted"></span></button>
+                    </span>
+                </div>
+                <div class="row text-center listcount">
+                    <span class="bold"></span> <span>no. of Sites</span>
+                </div>
+                <ul class="list-group scroll-x scroll-y" id="contact-list">
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-md-1 hide">
+                            <div class="checkbox checkbox-square checkbox-primary">
+                                <input id="checkbox7" type="checkbox">
+                                <label for="checkbox7"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-11">
+                            <span class="name">Queen Campus</span><br />
+                            <span class="designation">128 W 32nd Street</span><br />
+                            <span class="employeeid">New York,Ny 100007</span><br />
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 overview hide">
+        <h3 class="isppagetitle">Overview<span class="ispicon ispicon_schedule pull-right hide"></span></h3>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content scroll-x scroll-y">
+            <div class="row">
+                <div class="col-md-4 hide">
+                    <div class="panel panel-info white accountdetails ">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ACCOUNT DETAILS </h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Account#<br />
+                                    <b>KO24652467</b>
+                                </div>
+                                <div class="col-md-6">
+                                    Last Registered<br />
+                                    <b>May 04, 2016</b>
+                                </div>
+                            </div>
+                            <div class="row hide">
+                                EULA Acceptance<br />
+                                <button>AWAITING ACCEPTANCE</button><br />
+                                <a href="#">Resend Registration Email</a>
+                            </div>
+                            <div class="row hide">
+                                Account Status<br />
+                                <button>ACCEPTED</button><br />
+                                May 03, 2016 9:24 AM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hide">
+                    <div class="panel panel-info white">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ACCOUNT REVENUE</h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">Panel content</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info white">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ACCOUNT DETAILS</h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="row">
+                                    Customer<br />
+                                    <b data-bind="text: $data.siteDetailModel.CustomerInfo.Name"></b>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="row">
+                                <div class="row">
+                                    Site<br />
+                                    <b data-bind="text: $data.siteDetailModel.SiteInfo.Name"></b>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="row" data-bind="if: $data.siteDetailModel.SiteInfo.hasFeature('SiteReferenceNo')">
+                                    Site Reference No.<br />
+                                    <b data-bind="text: $data.siteDetailModel.SiteInfo.getFeature('SiteReferenceNo').Value"></b>
+                                </div>
+                            </div>
+                            <p>
+                                <b>Address</b><br />
+                                <span data-bind="text: $data.siteDetailModel.SiteInfo.ContactInfo.AddressLine1"></span><br />
+                                <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.City"> </span>
+                                <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.Region"></span>
+                                <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.ZipCode"></span><br />
+                                <span data-bind="text: $data.siteDetailModel.SiteInfo.ContactInfo.Country"></span>
+                            </p>
+                            <hr />
+
+                            <p>
+                                <b>Site Admin</b><br />
+                                <b>
+                                    <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.FirstName"></span>
+                                    <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.LastName"></span>
+                                </b><br />
+                                @Resources.Cell : <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.MobileNumber"></span><br />
+                                @Resources.Office : <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.WorkPhone"></span><br />
+                                <a data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.EmailAddress"> </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info white">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">CONTROLLER DETAILS</h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">
+
+                            <p>
+                                No Controller found<br />
+                                <button type="button" class="btn btn-primary text-center" data-toggle="modal" href='#modal-id-site' data-bind="click: $data.addController">Add Controller</button>
+                            </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hide">
+                    <div class="panel panel-info white">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">SERVICE APPOINTMENTS</h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">Panel content</div>
+                    </div>
+                </div>
+                <div class="col-md-4 hide">
+                    <div class="panel panel-info white">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">SERVICE APPOINTMENTS</h3>
+                            @*<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>*@
+                        </div>
+                        <div class="panel-body">Panel content</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

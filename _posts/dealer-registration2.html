@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/intrusiongroup.css">
+    <link rel="stylesheet" type="text/css" href="Content/LoginPlugin/loginstyle.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+             $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+        
+            //$('.SlectBox').SumoSelect();
+
+            $("#continue").click(function (e) {
+                e.preventDefault();
+                $(".moredetails").addClass("show").addClass('animateshowform');
+                $(".moredetails").removeClass("hide");
+                $(".pagebox-withscroll").addClass("regscroll-x");
+                $(".regscroll-y").addClass("footermorepadding");
+                $("#btnlogin").removeClass("hide");
+                $("#continue").addClass("hide");
+                $("#wrapperLoginBtn").addClass("regfooter");
+            });
+
+            // $("#cancel").click(function (e) {
+            //     e.preventDefault();
+            //     $(".moredetails").removeClass("show");
+            //     $(".moredetails").addClass("hide");
+            //     $(".pagebox-withscroll").removeClass("regscroll-x");
+            //     $("#wrapperLoginBtn").removeClass("regfooter");
+            // });
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+       
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+    <style type="text/css">
+    #loginform{
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .pagebox{
+
+    }
+    .pagebox{
+        
+    }
+
+    .agreementcontainer input[type="checkbox"]{
+        float: left;
+        display: block;
+    }
+
+    .animateshowform{
+        -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+        transition: opacity 2s;
+    }
+
+    .pagebox-withscroll{
+        position: fixed;
+        top: 20%;
+        margin: 0 33%;
+        min-height: 47%;
+        padding-top: 22px;
+    }
+    
+    .pagebox-withscroll.regscroll-x{
+        bottom: 1em;
+    }  
+
+    .regscroll-y{
+        overflow: auto;
+        position: absolute;
+        bottom: 20px;
+        top: 68px;
+        left: 24px;
+        /*border-bottom: 1px solid #e7e7e7;*/
+    }
+
+    .regfooter{
+        position: fixed;
+        bottom: 36px;
+        right: 32%;
+    }
+
+    .checkbox{
+        margin-top: -2px;
+    }
+    
+    .checkbox span.agreement{
+            font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+        font-size: 14px;
+        padding-top: 8px;
+        padding-left: 9px;
+        cursor: pointer;
+    }
+
+    .checkbox input[type="checkbox"]{
+        margin-top: 2px;
+    }
+
+    .regscroll-y.footermorepadding{
+        bottom: 70px;
+
+    }
+    .footermorepadding hr{
+            margin-bottom: 2px;
+    }
+
+    hr{
+            margin-top: 0px;
+    }
+
+    a.link:hover{
+        outline: none;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #1792e5;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+        
+<div class="login-root">
+
+
+<!-- new pages-->
+<div class="logo col-xs-12 text-center">
+    <ul>
+        <li>
+            <span class="honeywelllogo"><img src="Content/images/Honeywell-logo.png" /></span>
+        </li>
+        <li class="logoline">
+            |
+        </li>
+        <li class="brand"><span>Eagle</span></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <section class="login">
+                <div id="login" class="loginbase-container pagebox pagebox-withscroll">
+                    <form id="registrationform" class="form-signin" autocomplete="off" data-bind="submit: $data.onSignin, busyIndicator: {show: IsLoading, blockAll: true}">
+                        <h1 class="logintitle">Register a New Account</h1>
+                        <div class="regscroll-y col-md-11">
+                            <div class="form-group">
+                                <label class="control-label">Email/User ID</label>
+                                <input name="username"  type="text" class="form-control" data-bind="value: $data.model.UserName, valueUpdate:'afterkeydown', hasfocus: true"  autocomplete="off" autocorrect="off" autocapitalize="off" autofocus>
+                            </div>
+                            <div class="row nopadding">
+                                <div class="form-group col-md-6 col-sm-6 nopadding">
+                                    <label class="control-label">Password</label>
+                                    <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <label class="control-label">Confirm Password</label>
+                                    <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                </div>
+                            </div>
+                            <div class="hide moredetails">
+                            <hr/>
+                                <h2>Just a few more details</h2>
+                               
+                                <div class="row nopadding">
+                                    <div class="form-group col-md-6 col-sm-6 nopadding">
+                                        <label class="control-label">First Name</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6">
+                                        <label class="control-label">Last Name</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+                                <div class="row nopadding">
+                                    <div class="form-group col-md-6 col-sm-6 nopadding">
+                                        <label class="control-label">Name of your Organization</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6">
+                                        <label class="control-label">Honeywell ADI Number<span class="ispicon ispicon_door"></span></label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 nopadding">
+                                    <div class="form-group">
+                                        <label class="control-label">Country</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                   
+                                </div>
+                                <div class="col-md-12 nopadding">
+                                    <div class="form-group">
+                                        <label class="control-label">Address</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    
+                                </div>
+                                <div class="row nopadding">
+                                    <div class="form-group col-md-6 col-sm-6 nopadding">
+                                        <label class="control-label">City</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6">
+                                        <label class="control-label">State/Province</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 nopadding">
+                                    <div class="form-group">
+                                        <label class="control-label">Zip/Postal Code</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                  
+                                </div>
+                                <div class="col-md-12 nopadding">
+                                    <div class="form-group">
+                                        <label class="control-label">Mobile Phone</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="row nopadding">
+                                    <div class="form-group col-md-8 nopadding">
+                                        <label class="control-label">Phone</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label class="control-label">Ext</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+                                <div class="row nopadding">
+                                    <div class="form-group col-md-6 col-sm-6 nopadding">
+                                        <label class="control-label">Prove you’re not a robot</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6">
+                                        <label class="control-label">Type the text</label>
+                                        <input name="password" type="password" class="form-control" data-bind="value: $data.model.Password, valueUpdate:'afterkeydown'" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+
+                                <label class="checkbox agreementcontainer">
+                                    <input type="checkbox"/>
+                                    <span class="agreement">I agree to Honeywell</span><a href="" class="link"> Terms of Service</a>
+                                </label>
+                            </div>
+                            <hr/>
+                            <div class="row clearfix"></div>
+                            <div class="col-md-12 col-sm-12 nopadding" id="wrapperLoginBtn">
+                                <div class="col-md-offset-5 col-sm-offset-6 nopadding pull-right">
+                                    <a class="btn btn-default" type="submit" id="cancel">Cancel</a>
+                                    <a class="btn btn-primary" type="submit" id="continue" id="continue">Continue</a>
+                                    <a class="btn btn-primary hide" type="submit" id="btnlogin">SUBMIT REQUEST</a>
+                                </div>
+                                <span class="text-danger pull-left text-left col-md-7 col-sm-7"></span>
+                            </div>
+                        </div>
+                        
+                        
+                       
+                    </form>
+                </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

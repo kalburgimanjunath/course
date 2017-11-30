@@ -1,0 +1,101 @@
+.ispicon {
+    font-size: 10px;
+}
+
+.ispicon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../svg/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 2.413em 21.7em;
+}
+
+.no-svg .ispicon:before {
+    background-image: url("../svg/sprite.png");
+}
+
+
+
+  .ispicon.ispicon_MyCompany:before {
+      background-position: 0em 0em;
+      width: 2.413em;
+      height: 2.413em;
+  }
+
+
+
+
+  .ispicon.ispicon_VisualManagment:before {
+      background-position: 0em -2.5em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_accounts:before {
+      background-position: 0em -4.9em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_alarms:before {
+      background-position: 0em -7.3em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_dashboard:before {
+      background-position: 0em -9.7em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_firmware:before {
+      background-position: 0em -12.1em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_reports:before {
+      background-position: 0em -14.5em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_rules:before {
+      background-position: 0em -16.9em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+  .ispicon.ispicon_viewer:before {
+      background-position: 0em -19.3em;
+      width: 2.4em;
+      height: 2.4em;
+  }
+
+
+
+
+

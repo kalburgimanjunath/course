@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            .ispcertular.progress{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.ispcertular.progress:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ispcertular.progress > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.ispcertular.progress .progress-left{
+    left: 0;
+}
+.ispcertular.progress .progress-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.ispcertular.progress .progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.ispcertular.progress .progress-right{
+    right: 0;
+}
+.ispcertular.progress .progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.ispcertular.progress .progress-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #44484b;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.ispcertular .progress.blue .progress-bar{
+    border-color: #049dff;
+}
+.ispcertular .progress.blue .progress-left .progress-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+.ispcertular .progress.yellow .progress-bar{
+    border-color: #fdba04;
+}
+.ispcertular .progress.yellow .progress-left .progress-bar{
+    animation: loading-3 1s linear forwards 1.8s;
+}
+.ispcertular .progress.pink .progress-bar{
+    border-color: #ed687c;
+}
+.ispcertular .progress.pink .progress-left .progress-bar{
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+.ispcertular .progress.green .progress-bar{
+    border-color: #1abc9c;
+}
+.ispcertular .progress.green .progress-left .progress-bar{
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+@media only screen and (max-width: 990px){
+    .progress{ margin-bottom: 20px; }
+}
+
+
+.page{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 275px;
+  margin: 20px auto;
+}
+.score-bar{
+        display: inline-block;
+        width: 275px;
+        height: 275px;
+        margin: 7px;
+        padding: 0;
+}
+.score-bar .score-active{
+        position: relative;
+        top: -279px;
+}
+.score-bar p{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 275px;
+        top: -460px;
+        font-size: 54px;
+        font-weight: 900;
+        text-align: center;
+        color:#000;
+}
+#scoreControllerContainer{
+  position: absolute;
+  top: 320px;
+  padding: 10px 80px;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="ispcertular progress blue">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">90%</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="ispcertular progress yellow">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">75%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JJ -->
+<div class="col-sm-12">
+    <span >Score: </span>  773 out of 100
+<div id="page" class="page">
+
+  <div class="score-bar">
+          <canvas id="inactiveProgress" class="score-inactive" height="275px" width="275px"></canvas>
+    <canvas id="activeProgress" class="score-active"  height="275px" width="275px"></canvas>
+    <!--<p>0%</p>-->
+  </div>
+  <div id="scoreControllerContainer">
+    <input type="range" id="scoreController" min="0" max="1000" value="773" />
+  </div>
+</div>
+</div>
+<!-- SDG -->
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            var $pc = $('#scoreController');
+            var $pCaption = $('.score-bar p');
+            var iProgress = document.getElementById('inactiveProgress');
+            var aProgress = document.getElementById('activeProgress');
+            var iProgressCTX = iProgress.getContext('2d');
+
+            
+            drawInactive(iProgressCTX);
+            
+            $pc.on('change', function(){
+                var percentage = $(this).val() / 100;
+                drawProgress(aProgress, percentage, $pCaption);
+            });
+
+            function drawInactive(iProgressCTX){
+                iProgressCTX.lineCap = 'square';
+
+                //outer ring
+                //iProgressCTX.beginPath();
+                //iProgressCTX.lineWidth = 15;
+                //iProgressCTX.strokeStyle = '#e1e1e1';
+                //iProgressCTX.arc(137.5,137.5,129,0,2*Math.PI);
+                //iProgressCTX.stroke();
+
+                //score bar
+                iProgressCTX.beginPath();
+                iProgressCTX.lineWidth = 0;
+                iProgressCTX.fillStyle = '#e6e6e6';
+                iProgressCTX.arc(137.5,137.5,121,0,2*Math.PI);
+                iProgressCTX.fill();
+
+                //scorebar caption
+                iProgressCTX.beginPath();
+                iProgressCTX.lineWidth = 0;
+                iProgressCTX.fillStyle = '#fff';
+                iProgressCTX.arc(137.5,137.5,100,0,2*Math.PI);
+                iProgressCTX.fill();
+
+            }
+            function drawProgress(bar, percentage, $pCaption){
+                var barCTX = bar.getContext("2d");
+                var quarterTurn = Math.PI / 2;
+                var endingAngle = ((2*percentage) * Math.PI) - quarterTurn;
+                var startingAngle = 0 - quarterTurn;
+
+                bar.width = bar.width;
+                barCTX.lineCap = 'square';
+
+                barCTX.beginPath();
+                barCTX.lineWidth = 20;
+                barCTX.strokeStyle = '#00B4FF';
+                barCTX.arc(137.5,137.5,111,startingAngle, endingAngle);
+                barCTX.stroke();
+                
+                
+                barCTX.beginPath();
+                barCTX.lineWidth = 20;
+                barCTX.strokeStyle = '#f0ad4e';
+                barCTX.arc(137.5,137.5,111,endingAngle, startingAngle);
+                barCTX.stroke();
+
+                //$pCaption.text( (parseInt(percentage * 1000, 10)));
+                //$pCaption.text( 'F. S.');
+            }
+
+                var percentage = $pc.val()/1000;
+                drawProgress(aProgress, percentage, $pCaption);
+
+            
+        });
+        </script>
+        <!-- Bootstrap JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </body>
+</html>

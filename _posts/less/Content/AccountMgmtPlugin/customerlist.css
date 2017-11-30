@@ -1,0 +1,326 @@
+/*version 1.0.5*/
+.customerlistView .sensorsTab .table > thead > tr > th {
+    border-bottom: 1px solid #dfdfdf;
+    /* float: left; */
+    text-align: left;
+    /* display: inline-table; */
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.customerlistView .sensorsTab .table > tbody > tr:hover {
+    background: #e1eff9;
+}
+
+.customerlistView .sensorsTab .table tbody tr td span {
+    color: #1792e5;
+}
+
+.customerlistView .checkbox input[type="checkbox"] {
+    opacity: 1;
+}
+
+.customerlistView .table > tbody > tr > td .checkbox {
+    margin-top: 0;
+}
+
+
+
+    .customerlistView .sensorsTab .table > thead > tr > th.sort {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #808080;
+        cursor: pointer;
+    }
+
+    .customerlistView .sensorsTab .table > thead > tr > th.desort {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #808080;
+    }
+
+.customerlistView .sensorsTab .table > thead > tr > th,
+.customerlistView .sensorsTab .table > tbody > tr > td {
+    width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.customerlistView .sensorsTab .table {
+    margin-bottom: 0;
+}
+
+    .customerlistView .sensorsTab .table > thead > tr {
+        vertical-align: top;
+    }
+
+    .customerlistView .sensorsTab .table > tbody > tr {
+        height: 42px;
+        border-bottom: 1px solid #d0d0d0 !important;
+        cursor: pointer;
+        width: 100%;
+        position: relative;
+        /* text-align: center; */
+        display: flex;
+    }
+
+    .customerlistView .sensorsTab .table > tbody {
+        position: absolute;
+        width: 100%;
+        min-height: 460px;
+        overflow: auto;
+        bottom: 0;
+        top: 42px;
+        margin-top: -4px;
+    }
+
+        .customerlistView .sensorsTab .table > tbody td {
+            /* border-top:1px solid #d0d0d0 !important; */
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            font-size: 14px;
+            /*padding-left:0;*/
+            cursor: pointer;
+            /* text-align: left; */
+            /* float: left; */
+        }
+
+
+
+.customerlistView .sensorsTab .table > tbody td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #606060;
+}
+
+.customerlistView .sensorsTab .table .table1 td:nth-child(1) {
+    padding-right: 3px;
+}
+
+.customerlistView .count {
+    margin: 0 5px 0 0px;
+    font-weight: bold;
+}
+
+.customerlistView .basetitle {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 22px;
+    color: #303030;
+    height: 44px;
+    border-bottom: 1px #dfdfdf;
+}
+
+.customerlistView .isptabs .nav {
+    border-top: 1px solid #dfdfdf;
+}
+
+
+
+    .customerlistView .right-menu-tabs li {
+        list-style-type: none;
+        float: left;
+        cursor: pointer;
+    }
+
+        .customerlistView .right-menu-tabs li:hover span {
+            color: #1792e5;
+        }
+
+        .customerlistView .right-menu-tabs li span {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #808080;
+        }
+
+.colorlow {
+    background: #ffc627;
+    border: 1px solid #e2b023;
+}
+
+.coloroverlow {
+    background: #ffffff;
+    border: 1px solid #d32b20;
+}
+
+.colorhigh {
+    background: #ee3124;
+    border: 1px solid #d32b20;
+}
+
+.status-indicator {
+    border-radius: 50% 50%;
+    width: 10px;
+    height: 10px;
+    display: inherit;
+    float: left;
+    margin: 5px 5px 0 0px;
+}
+
+.ispmancontainer {
+    border-left: 1px solid #e7e7e7;
+    top: 130px;
+    bottom: 0;
+    right: 0px;
+    /* height: 100%; */
+    position: fixed;
+    width: 30.5%;
+}
+
+
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+    .customerlist-root .customertable {
+        height: 600px;
+    }
+
+    
+
+    .customerlistView .sensorsTab .table > tbody {
+        min-height: 420px;
+    }
+
+    .customerlist-root .customerlisttablecontainer {
+        max-height: 505px !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .customerlist-root .customertable {
+        height: 900px !important;
+    }
+
+    
+
+    .customerlistView .sensorsTab .table > tbody {
+        min-height: 780px;
+    }
+
+    .customerlist-root .customerlisttablecontainer {
+        max-height: 817px !important;
+    }
+}
+
+.customerlistView .table.table1 thead tr th.sort:hover .ispicon_downarrow::before {
+    background-position: -235px -139px;
+}
+
+
+
+.customerlist-root .customerlistHolder {
+    /*border-top: 1px solid #dfdfdf;
+    position: absolute;
+    top: 70px;*/
+    margin: 0;
+}
+
+.customerlist-root .ispicon_plus_custom {
+    top: 6px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.customerlist-root .customerlisttablecontainer {
+    /* overflow: scroll; */
+    position: relative;
+    top: -4px;
+    max-height: 505px;
+}
+
+.customerListOverview .titleRow {
+    margin: 0;
+    height: 70px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.customerListOverview h2 .ispicon_close::before {
+    margin-top: 5px;
+}
+
+/*@media screen\0 and (min-width: 1366px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:26.5% !important;
+    }
+}
+
+
+@media screen\0 and (min-width: 1600px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:29.5% !important;
+    }
+}
+
+@media screen\0 and (min-width: 1920px){
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+        width:30.5% !important;
+    }
+}*/
+
+/*@media screen and (min-width: 1920px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {*/
+
+@media screen and (min-width: 1920px) and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3) {
+        width: 30.5% !important;
+    }
+
+    .customerlist-root .customertable {
+        height: 800px;
+    }
+}
+
+@media screen and (min-width: 1600px) and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3) {
+        width: 29.5% !important;
+    }
+}
+
+@media screen and (min-width: 1366px) and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+    .customerlistView .sensorsTab .table > thead > tr > th:nth-child(3), .customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3) {
+        width: 26.5% !important;
+    }
+
+    .customerlist-root .customertable {
+        height: 550px;
+    }
+}
+
+.customerlist-root .customertable {
+    padding-top: 0;
+    height: 550px;
+}
+
+    .customerlist-root .customertable tbody td span {
+        cursor: pointer;
+        text-transform: capitalize;
+        font-size:14px;
+    }
+
+
+    .customerlist-root .customertable .ispicon_tablesortasc::before {
+        position: absolute;
+        top: 8px;
+        float: right;
+    }
+
+    .customerlist-root .customertable tr > th > div.sort {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 15px;
+        color: #808080;
+        cursor: pointer;
+            padding: 0 6px;
+    }
+
+    .customerlist-root .customertable tr > th:nth-child(2) > div{
+        margin-left: 5px !important; 
+    }
+
+    .customerlist-root .customertable tr > th:nth-child(1) > div{
+        margin-left: 25px !important; 
+    }
+    
+    .customerlist-root .customertable tr > td:nth-child(1) > span{
+        margin-left: 25px !important; 
+    }

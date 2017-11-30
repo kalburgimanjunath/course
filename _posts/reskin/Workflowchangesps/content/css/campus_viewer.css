@@ -1,0 +1,318 @@
+.ps-main-container-viewer .background-picture {
+	padding: 10px;
+	height: 100%;
+}
+.ps-main-container-viewer .background-picture img {
+	width: 100%;
+	height: 100%;
+}
+.ps-main-container-viewer .background-picture video{
+  width: 100%;
+  height: 100%;
+}
+.ps-main-container-viewer .background-picture .playpause {
+    position: absolute;
+    left: 45%;
+    right: 0;
+    bottom: 50%;
+    height: 46px;
+    width: 46px;
+    background: url(../../images/play.png) no-repeat center center;
+    background-size: 46px 46px;
+}
+.ps-main-container-viewer .camera-name {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    color: #606060;
+}
+.ps-main-container-viewer .camera-icon {
+    position: relative;
+    top: -3px;
+}
+.ps-main-container-viewer .icon-video-stream {
+    background-position: -815px -11px;
+    left: 14px;
+    position: relative;
+    height: 20px;
+}
+.ps-main-container-viewer .icon-door {
+    background-position: -815px -67px;
+}
+.ps-main-container-viewer .icon-video-camera {
+	background-position: -815px -127px;
+}
+.ps-main-container-viewer .icon-video-camera:hover{
+  background-position: -845px -127px;
+}
+.ps-main-container-viewer .icon-zoom {
+	background-position: -815px -156px;
+}
+.ps-main-container-viewer .camera-things {
+	position: relative;
+  top: 0;
+  z-index: 99;
+}
+.ps-main-container-viewer .video-container.active {
+    border: 3px solid #1792e5;
+    background: #ffffff;
+}
+.ps-main-container-viewer .video-container .camera-icon {
+   display: none;
+}
+.ps-main-container-viewer .video-container.active .camera-icon {
+	display: inline-flex;
+  padding-right: 22px;
+}
+.ps-main-container-viewer .pager {
+  background-position: -825px -465px;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+}
+.ps-main-container-viewer .pager:last-child {
+  margin-right: 0;
+}
+.ps-main-container-viewer .pager.active{
+	background-position: -825px -435px;
+}
+
+.ps-main-container-viewer .campus_viewer_pagination {
+  text-align: center;
+}
+.ps-main-container-viewer .video-container  {
+	cursor: pointer;
+}
+.ps-main-container-viewer .ps-camera-decription{
+	float: left;
+	width: 90%;
+}
+.ps-main-container-viewer .camera-area{
+	width: 100%;
+}
+
+.ps-main-container-viewer .video-icon-left {
+	background-position:-815px -299px;
+	position: relative;
+    top: 8px;	
+}
+
+.ps-main-container-viewer .icon-circle-left {
+  background-position:-815px -211px;
+  position: relative;
+  top: 8px;	
+}
+
+.ps-main-container-viewer .icon-circle-left-uncheck {
+  background-position:-815px -180px;
+  position: relative;
+  top: 8px;	
+}
+
+.ps-main-container-viewer .camera-left-sidebar {
+	color: #303030;
+}
+.ps-main-container-viewer .icon.icon-offline {
+  position: absolute;
+  display: block;
+  background-position: -840px -180px;
+  width: 40px;
+  right: 10px;
+}
+.viewer-view{
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+}
+.ps-main-container-viewer .footer-viewer-buttons{
+  display: inline-block;
+  width: 100%;
+  padding: 16px 8px;
+  border-top: 1px solid #d6d6d6;
+}
+/* css for access history viewer page */
+.ps-popup.viewer_access_history_popup .modal-content{
+  height: 500px;
+  overflow-y: hidden;
+}
+.viewer_access_history_popup .modal-dialog {
+  width: 720px;
+  height: auto;
+}
+.viewer_save_salvo_detail_listing .icon-next{
+  background-position: -61px 585px;
+  bottom: 60px;
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  position: relative;
+  transform: rotate(268deg);
+}
+.viewer_access_history_popup .col-sm-7,
+.viewer_access_history_popup .col-sm-5{
+  padding: 0;
+}
+.viewer_access_history_popup .modal-body{
+  padding: 0;
+}
+.video-camera {
+  background-image: url(../../images/img1.jpg);
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 42px;
+  margin: 0;
+  width: 42px;
+}
+.ps-popup .access-video-right .modal-header{
+  padding: 5px;
+}
+.access-video-left,
+.access-video-right{
+  border:1px solid #e7e7e7;
+  border-bottom: none;
+}
+.access-video-right .modal-header .viewer_save_salvo_detail_listing{
+  border-bottom: none;
+}
+.access-video-time li {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+.ps-dropdown-custom.viewer_view_list {
+  min-width: 40px;
+      left: -26px;
+    top: 30px;
+}
+.viewer_view_list .icon-park{
+  margin-right: 10px;
+}
+.viewer_save_salvo_detail_listing .icon-video-camera{
+  margin-right: 10px;
+  margin-top: 7px;
+}
+.viewer_save_salvo_detail_listing.active{
+    background: rgba(23, 146, 229, 0.1);
+}
+/*Css for four container */
+.four-screen.video-container-wrapper {
+  padding: 10px 110px;
+  height: 100% ! important;
+}
+.four-screen ol.carousel-indicators {
+        bottom: 53px  ;
+       position: fixed;
+       margin-left: -18%;
+       text-align: center;
+    
+}
+/*Css for six container */
+.six-screen.video-container-wrapper {
+  padding: 10px 40px;
+  height: 100%;
+}
+.six-screen .video-container {
+  width: calc(33% - 20px);
+  height: calc(100% - 20px);
+}
+.six-screen .ps-row{
+  height: 50%;
+}
+.six-screen .background-picture{
+height: calc(100% - 30px);
+}
+.six-screen .video-container{
+  margin: 10px;
+}
+.six-screen .camera-things{
+  margin: 0;
+  height: 30px; 
+}
+.six-screen .carousel, .six-screen .carousel-inner, .six-screen .carousel-inner .item{
+  height: 100%;
+}
+.six-screen .carousel-inner .item{
+  padding-bottom: 26px;
+}
+.six-screen .carousel-indicators{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.six-screen .carousel-indicators li{
+  border: 0 none;
+  border-radius: 0;
+}
+.eight-screen.video-container-wrapper {
+  padding: 20px 20px 10px;
+}
+.eight-screen .video-container {
+  height: 200px;
+  width: calc(25% - 20px);
+}
+.ps-main-container-viewer .eight-screen .background-picture {
+  padding: 10px;
+  height: 160px;
+}
+.ps-main-container-viewer .eight-screen .camera-things {
+  top: 5px;
+}
+.ps-main-container-viewer .eight-screen .camera-icon {
+  left: 0;
+  bottom: 26px;
+  padding: 0;
+}
+.ps-main-container-viewer .icon-door:active,
+.ps-main-container-viewer .icon-door:hover{
+  background-position: -845px -97px;
+}
+.viewer_view_list ul{
+  margin: 0;
+}
+.icon-view-4{
+  background-position: -815px -37px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.icon-view-6 {
+  background-position: -754px -37px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.icon-view-8 {
+  background-position: -724px -37px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.campus_viewer_bx .ps-row{
+  height: 50%;
+}
+.campus_viewer_bx .video-container{
+  margin: 0;
+  height: calc(50% - 20px);
+  margin: 10px;
+}
+.campus_viewer_bx .background-picture video{
+  width: 100%;
+    background: #000;
+}
+.campus_viewer_bx .camera-things{
+  height: 30px;
+  margin: 0;
+  padding: 4px 0;
+}
+.campus_viewer_bx .background-picture{
+  height: calc(100% - 30px);
+  overflow: hidden;
+}

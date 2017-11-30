@@ -1,0 +1,145 @@
+.netaxs-device-config-root .radio input[type="radio"],
+.netaxs-config-root .radio input[type="radio"],
+.netaxs-device-config-root .threeradios .radio input[type="radio"],
+.netaxs-config-root .threeradios .radio input[type="radio"],
+.netaxs-device-config-root .tworadios .radio input[type="radio"],
+.netaxs-config-root .tworadios .radio input[type="radio"],
+.netaxs-device-config-root .tworadios .radio + .radio,
+.netaxs-config-root .tworadios .radio + .radio,
+.netaxs-device-config-root .threeradios .radio + .radio,
+.netaxs-config-root .threeradios .radio + .radio {
+    margin-top: 0 !important;
+}
+
+.controllerView .listOverview .doorsettingsTab .doorsettings {
+	margin-right: 0 !important;
+}
+.dcmOverview .doorAssociations .ispicon{
+    margin-top: 0;
+}
+.dcmOverview .doorAssociations .doorAssociationsList{
+    width: calc(100% - 30px);
+    top: 58px;
+    max-height: 355px;
+}
+.dcmOverview .doorAssociationsList .doorAssociationControllerList{
+    top: 32px;
+}
+.dcmOverview .doorSettingsWrapper{
+    z-index: 998;
+}
+
+.dcmOverview .ispselectdropdown .isppopup-site .accordion li div.dashbdSearch:hover{
+    background: none;
+}
+.doorAssociations .doorAssociationsList .accordion li div:hover{
+	background: none;
+}
+.doorAssociations .doorAssociationsList .accordion li div > label:hover{
+	background: #f5f5f5;
+}
+
+.doorAssociations .doorAssociationsList .accordion li div{
+	border-top: 1px solid #e7e7e7 ;
+    border-bottom: none;
+}
+.doorAssociations .doorAssociationsList .accordion li div .dashbdEventList .doorAssociationDropdownlabel{
+    padding-left: 50px;
+}
+.dcmOverview .doorAssociations .doorAssociationsList .doorAssociationFooterGrp{
+    position: relative;
+    margin-left: 0;
+    border-top: 1px solid #e7e7e7 !important;
+    left: 0;
+    margin-top: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: 66px;
+}
+.dcmOverview .doorAssociations .doorAssociationsList .doorAssociationFooterGrp .doorAssociationButton{
+    width: auto;
+    margin-left: 8px;
+    margin-right: 0;
+}
+.dcmOverview .doorAssociations .doorAssociationsList .doorAssociationFooterGrp .btn-primary:hover{
+    background:#1272b2;
+    border-color:#1272b2; 
+}
+.dcmOverview .doorAssociationsList .doorAssociationListHeader{
+    padding-left: 7px;
+}
+.dcmOverview .doorAssociationDropdownIcon{
+    cursor: pointer;
+}
+.dcmOverview .doorAssociationMenuList{
+    max-height: 200px;
+}
+.dcmOverview .doorAssociationSearch{
+    height: 33px;
+}
+.netAxsTooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.netAxsTooltip .netAxsTooltipHover {
+    visibility: hidden;
+    width: 200px;
+    height: 250px;
+    background-color: #fff;
+    color: #606060;
+    text-align: center;
+    padding: 16px;
+    position: absolute;
+    z-index: 9999;
+    top: 160%;
+    left: 0;
+    margin-left: -60px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 6px 6px #e7e7e7;
+    -moz-box-shadow: 0 6px 6px #e7e7e7;
+    -o-box-shadow: 0 6px 6px #e7e7e7;
+    box-shadow: 0 6px 6px #e7e7e7;
+    font-family: 'HoneywellSansWeb-Medium';
+}
+.netAxsTooltip .netAxsTooltipHover::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 9px solid transparent;
+    border-bottom-color: #ccc;
+}
+.netAxsTooltip .netAxsTooltipHover::after {
+    content: "";
+    position: absolute;
+    bottom: 99%;
+    left: 50%;
+    margin-left: -5px;
+    border: 9px solid transparent;
+    border-bottom-color: white;
+}
+
+.netAxsTooltip:hover .netAxsTooltipHover {
+    visibility: visible;
+}
+.netAxsTooltipText{
+    overflow: visible;
+}
+.netAxsTable > thead {
+    border-top: 2px solid #ddd;
+    background: #eee;
+}
+.netAxsTable {
+    width: 100%;
+}
+.netAxsTable > thead > tr > th {
+    padding: 10px 10px 10px 10px;
+    color: #606060;
+}
+.netAxsTable > tbody > tr > td {
+    padding: 5px 10px 5px 10px;
+    text-align: left;
+    color: #606060;
+}

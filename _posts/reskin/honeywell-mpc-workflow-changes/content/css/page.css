@@ -1,0 +1,131 @@
+.ps-download-screen form {
+	padding-top: 20px;
+}
+.ps-download-screen .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0 20px;
+} 
+.ps-download-screen .form-group {
+	margin-right: 0;
+  margin-bottom: 10px;
+}
+.ps-download-screen .btn{
+	margin-top: 20px;
+}
+.download-screen-table table tbody tr td {
+  color: #606060;
+  height: 42px;
+  padding: 10px 8px;
+}
+
+.download-screen-table .table-striped>tbody>tr:nth-of-type(odd) {
+	background: none;
+}
+
+.ps-download-screen label {
+	margin-bottom: 0;
+	padding-bottom: 5px;
+	color: #707070;
+}
+
+.ps-download-screen .btn:first-child {
+    margin-right: 0;
+}
+
+.ps-download-screen .btn {
+    margin-top: 0;
+}
+.download-screen-list ul.nav-tabs.pw_tabs {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 17px 20px 0 ;
+}
+.btn-download-status {
+    padding: 0 0 20px;
+    margin-top: -2px;
+}
+.table-header-download {
+    background-color: #fff;
+    display: inline-block;
+  /*  padding: 45px 0 0 0;*/
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-screen-table {
+    background-color: #fff;
+    color: #606060;
+    padding: 0;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.download-screen-table th {
+	color: transparent;
+	border: medium none;
+  color: transparent;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  white-space: nowrap;
+  position: initial;
+}
+.download-screen-table td div {
+	padding-left: 11px;
+}
+.table-background {
+    background-color: #f5f5f5;
+    display: inline-block;
+    padding: 20px 20px 15px;
+    width: 100%;
+    border-top: 1px solid #e6e6e6;
+}
+.selectbox .item:hover {
+	color: #303030;
+}
+
+
+.ps-download-screen .selectize-input {
+	border-radius: 0;
+  box-shadow: none;
+}
+
+.ps-download-screen .selectize-input:focus {
+  border: 1px solid #1792e5;
+}
+
+/** css for slim scroller author sumit **/
+.table-header-download .slimScrollDiv {
+   overflow: visible !important;
+   margin-top: 44px;
+}
+.download-screen-table th div {
+  position: absolute;
+  color: #303030;
+  padding: 16px 20px 14px;
+  margin-left: -10px;
+  line-height: normal;
+  z-index: 8;
+  text-align: left;
+  top: -44px;
+  background: #fff;
+  width: 100%;
+}
+.download-screen-table.scroll-x.scroll-y {
+    border-top: 2px solid #dfdfdf;
+    height: 197px !important;
+}
+.download-screen-table .table>thead>tr>th{
+    border-bottom: 0;
+}
+.download-screen-table .table tbody tr:first-child td{
+    border-top: 0;
+}
+.table.download-status-table{
+  margin-bottom: 0;
+}
+

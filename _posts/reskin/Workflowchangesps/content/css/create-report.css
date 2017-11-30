@@ -1,0 +1,365 @@
+/*
+** style for event report page
+*/
+.ps-create-report .ps-report-container {
+  border-top: 1px solid #e7e7e7;
+  padding: 0;
+}
+.ps-create-report .card-header{
+  padding: 15px 20px;
+}
+.ps-create-report .ps-report-container .ps-column {
+  border-right: 1px solid #e7e7e7;
+  padding: 0;
+}
+.ps-create-report .report-border-bottom {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 24px
+}
+.ps-create-report .ps-alarms-events.row{
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.ps-create-report .report-label-padding {
+ padding-bottom: 11px;
+ padding-top: 3px;
+ margin: 0;
+}
+.ps-create-report .filter-section-middle.report-label-padding {
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+.ps-create-report .filter-first-ul .ps-checkbox {
+  border-bottom: 1px solid #e7e7e7;
+}
+.ps-create-report .create-report-footer {
+  z-index: 999;
+  padding: 16px;
+  border-top: 1px solid #e7e7e7;
+  background: #fff; 
+}
+.ps-create-report .checkbox input[type="checkbox"] {
+  float: left;
+}
+.ps-create-report .search .icon-search input.form-control {
+  width: 100%;
+}
+.ps-create-report .search .icon-search {
+  display: block;
+  width: 100%;
+}
+.ps-create-report .search .icon-search input:focus {
+  padding-right: 35px;
+  width: inherit;
+}
+.ps-create-report .icon-search input.form-control {
+  background-image: none;
+}  
+.ps-create-report .icon-search .foucs-icon-search {
+  border: none;
+  background-image: url(../../images/Icons_Sprites_MPC.svg);
+  background-position: 115px 967px;
+  width: 25px;
+  height: 32px;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  outline: none;
+}
+.ps-create-report .icon-search input:focus + .foucs-icon-search {
+  right: 0px;
+      background-position: 115px 907px;
+}
+.ps-create-report .selectbox .option {
+  border-top: 1px solid #e7e7e7;
+}
+.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header {
+  padding: 6.5px;
+}
+.ps-create-report h2 {
+  margin-bottom: 16px;
+}
+.ps-create-report .selectColumnContainer {
+  border-bottom: 1px solid #d0d0d0;
+  border-left: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.176);
+}
+.ps-create-report .selectColumnContainer ul {
+  margin-bottom: 0;
+}
+.ps-create-report .selectColumnContainer li.search {
+  border-bottom: none;
+  padding: 0;
+}
+.ps-create-report .selectColumnContainer li.search:hover {
+  background: transparent;
+}
+.ps-create-report .event-config-container li {
+  margin-bottom: 0;
+  padding: 1px 20px 4px;
+}
+.ps-create-report .event-config-container li legand {
+  margin-top: 5px;
+  padding-left: 10px;
+}
+.ps-create-report .filter-first-ul .event-config-container li {
+  padding: 6px 0 9px 20px;
+}
+.ps-create-report .site-checkbox legand{
+  font-size: 15px;
+}
+.ps-create-report .secondSection .event-config-container li:hover {
+  background: #f5f5f5;
+}
+.ps-create-report .ps-checkbox label::before {
+  margin-left: -9px;
+}
+.ps-create-report .ps-checkbox legand{
+  margin-top: 5px;
+  display: block;
+  padding-left: 10px;
+}
+.ps-create-report .ps-checkbox input[type="checkbox"]:checked + span {
+  left: -10px;
+}
+.ps-create-report .firstSection .total-count,
+.ps-create-report .thirdSection .total-count,
+.ps-create-report .fourSection .total-count {
+  border-top: 1px solid #e7e7e7;
+  padding-left: 10px;
+} 
+.ps-create-report .secondSection .icon-add {
+    background-position: -792px -185px;
+    font-size: 0;
+    margin: 0 20px 3px 0;
+    width: 17px;
+}
+.ps-create-report .secondSection .icon-add:hover {
+  background-position: -792px -215px;
+}
+.ps-create-report .secondSection .icon-add:focus {
+  background-position: -792px -245px;
+}
+.ps-create-report .collaspe-icons > a > span > span {
+  background-position: -732px -335px !important;
+  background-image: url(../../images/sprite_icons_03.png);
+}
+.ps-create-report .collaspe-icons > a > span > span:hover {
+  background-position: -732px -365px !important; 
+}
+.ps-create-report .collaspe-icons > a > span > span:focus{
+  background-position: -732px -395px; 
+}
+.ps-create-report .ps-disabled .icon-add,
+.ps-create-report .ps-disabled .icon-add:hover {
+  background-position: -792px -275px;
+} 
+.ps-create-report .ps-sort-layout li {
+  width: 100%;
+  display: flex;
+}
+.ps-create-report .right-inner-addon {
+  width: 100%;
+  margin-right: 1%;
+}
+.ps-create-report .right-inner-addon label {
+  color: #606060;
+  font-family: "HoneywellSansWeb-Medium" !important;
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 4px;
+}
+
+.icon.input-addon-icon {
+  background-position: -725px -212px;
+  position: relative;
+  top: 22px;
+}
+.input-addoff-icon{
+  background-position: -725px -212px;
+  position: relative;
+  top:22px;
+}
+.input-addoff-icon:hover{
+  background-position: -725px -242px;
+}
+span.icon.input-addoff-icon:focus {
+    background-position: -695px -272px;
+}
+.input-addoff-icon.ps-disabled:hover{
+  background-position: -725px -242px;
+}
+.icon.input-addon-icon.ps-disabled:hover,
+.icon.input-addon-icon.ps-disabled:focus {
+  background-position: -725px -212px;
+  cursor: default;
+}
+.ps-disabled-checkbox .icon-add:hover{
+  background-position: -792px -185px !important;
+  cursor: default;
+}
+.icon.input-addon-icon:hover {
+  background-position: -725px -242px;
+}
+.icon.input-addon-icon:focus {
+  background-position: -695px -272px;
+}
+.ps-create-report .report-export-data {
+  border: 1px solid #d0d0d0;
+  clear: both;
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 32px;
+  right: 0;
+}
+.ps-create-report .footer-report {
+  padding: 0;
+  margin-bottom: 20px;
+  margin-top: 6px;
+  position: relative;
+}
+.ps-create-report .report-export-data li {
+  margin-bottom: 0;
+}
+.selectColumnContainer {
+  display:none;
+}
+.selectColumnContainer.listdown-active {
+  display: block;
+}
+.ps-create-report .filter-first-ul > li,
+.ps-create-report .sch_options > li {
+  position: relative;
+  margin-bottom: 16px;
+}
+.report-inside-wrap .scroll-create-report li .selectize-form-group{
+  margin-bottom: 16px;
+}
+.ps-create-report .filter-first-ul > li .add-on,
+.ps-create-report .sch_options > li .add-on {
+  position: absolute;
+  right: 4px;
+  top: 22px;
+}
+.footer-report .report-export-data li:first-child {
+  border-top: none;
+}
+.ps-create-report .reportsHeadingMiddle {
+  display: block;
+  margin-bottom: 11px;
+  margin-top: 17px;
+  padding-top: 0;
+}
+.ps-create-report .icon-left-arrow{
+  position: relative;
+  top:20px;
+}
+.ps-create-report .radio{
+  margin-bottom: 15px;
+}
+.ps-disabled .icon.input-addon-icon,
+.ps-disabled .icon.input-addon-icon:hover {
+  background-position: -695px -302px;
+}
+total-count {
+ padding: 0 10px;
+}
+/** acordiun **/
+#accordion1 li {
+ padding: 0;
+ margin: 0;
+ float: left;
+ width: 100%;
+ border-bottom: none;
+}
+#accordion1  a {
+ padding: 6px 20px 4px;
+ float: left;
+ width: 100%;
+ border-bottom: 1px solid #e7e7e7;
+
+}
+#accordion1  a:hover {
+ background: #f5f5f5;
+}
+#accordion1 ul  a {
+ padding-left: 70px;
+}
+select[multiple], select[size] {
+  border-right: 2px solid #d0d0d0;
+  height: 32px;
+}
+select[multiple]:hover,
+select[size]:hover
+select[multiple]:active,
+select[size]:active,
+select[multiple]:focus,
+select[size]:focus{
+  border-right: 2px solid #1792e5;
+}
+select[multiple] option{
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 6px;
+  background: #1792e5;
+  color: #fff;
+}
+.formControl-radio.ps-disabled,
+.formControl-radio.ps-disabled span{
+  cursor: default !important;
+}
+.ps-create-report .secondSection .event-config-container li.ps-disabled-checkbox:hover{
+  background: none;
+}
+/* Css for select container */
+.ps-create-report .selectize-form-group,
+.ps-create-report .report-heading-entity .form-group{
+  position: relative;
+}
+.ps-create-report .selectColumnContainer.site-checkbox {
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+.ps-create-report .event-config-container .total-count{
+  padding-left: 10px;
+}
+.ps-create-report .event-config-container .icon-search input:focus + .foucs-icon-search {
+    background-image: url(../../images/Icons_Sprites_MPC.svg);
+    background-position: 115px 907px;
+    display: block;
+    height: 28px;
+    margin: 0;
+    width: 30px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    outline: none;
+}
+.ps-create-report .event-config-container .icon-search input:focus {
+    width: 100%;
+    border: 1px solid #1792e5;
+    background: none;
+    box-shadow: none;
+    padding-right: 25px;
+    text-indent: 0;
+    top: 0px;
+    position: relative;
+    right: 0px;
+}
+
+.ps-create-report .secondSection legand,
+.ps-create-report .event-config-container legand {
+  width: 165px;
+  word-wrap: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 17px;
+}

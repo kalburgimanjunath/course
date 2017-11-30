@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report</title>
+  <!-- start css file -->
+  <link href="../content/css/bootstrap-3.3.7-dist/bootstrap.css" rel="stylesheet">
+  <link href="../content/css/base.css" rel="stylesheet">
+  <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/master.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/report.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+  <!-- start scripts file -->
+  <script src="../scripts/jquery-2.2.4.min.js"></script>
+  <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+  <script src="../scripts/jquery.slimscroll.min.js"></script>
+  <script src="../scripts/master.js"></script>
+  <script src="../content/js/bootstrap-select.min.js"></script>
+  <script src="../scripts/selectize.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      Highcharts.chart('container', {
+        chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: 0,
+          plotShadow: false,
+        },
+        title: {
+          text: '101<br><span style="font-size:20px;color:#606060 !important ;fontFamily:HoneywellSansWeb-Medium;">Scheduled</span>',
+          align: 'center',
+          verticalAlign: 'top',
+          style: { 
+            "color": "#808080", 
+            "fontSize": "25px",
+            "lineHight": "20px",
+            "fontFamily":"HoneywellSansWeb-Medium" ,
+            "font-weight":"bold"			
+          },
+          y: 150
+        },
+        tooltip: {
+           enabled: false
+        },
+
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: false,
+            },
+            startAngle: 0,
+            endAngle: 360,
+            center: ['50%', '50%'],
+            borderWidth: 3,
+            point: {
+              events: {
+                mouseOver: function() {
+                  this.graphic.attr({
+                    r: this.shapeArgs.r + 10
+                  });
+                },
+                mouseOut: function() {
+                  this.graphic.attr({
+                    r: this.shapeArgs.r
+                  });
+                }
+              }
+            },
+          },
+          column: {
+            borderWidth: 2
+          },
+          series: {
+            states: {
+              hover: {
+                enabled: false,
+                halo: {
+                  attributes: {
+                    stroke: false
+                  },
+                  opacity: 1,
+                  size: 15
+                },
+              }
+            },
+            cursor: 'pointer',
+          },
+        },
+        exporting: { 
+          enabled: false 
+        },
+        credits: {
+          enabled: false
+        },
+        legend: {
+          align: 'center',
+          layout: 'horizontal',
+          verticalAlign: 'bottom',
+          useHTML: true,
+          labelFormatter: function() {
+            return '<span class='+this.name+'>' + this.y + '</span><div style="text-align: left;color: #606060;font-family: HoneywellSansWeb-Medium;font-size:16px; padding-top:7px; font-weight: normal;">' + this.name + '</div>';
+          },
+          symbolPadding: 0,
+          symbolRadius: 0,
+          symbolHeight: '0px',
+          padding: 5
+        },
+        series: [{
+          type: 'pie',
+          innerSize: '90%',
+          data: [
+          {
+            name: "Delivered",
+            y: 49,
+            color: {
+              linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+              stops: [
+              [0, '#7eb338'],
+              [1, '#7eb338']
+              ]
+            }
+
+          }, {
+            name: "Failed",
+            y: 20,
+            color: {
+              linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+              stops: [
+              [0, '#ee3124'],
+              [1, '#ee3124']
+              ]
+            }
+
+          },{
+            name: "Pending",
+            y: 32,
+            color: {
+              linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+              stops: [
+              [0, '#333333'],
+              [1, '#333333']
+              ]
+            }
+          },
+          ],
+          showInLegend: true,
+          marker : {
+            enabled: false
+          }
+        }]
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title"></span>
+        </a>
+          <div class="main-menu-navigation" id="overlay-menu">
+            <div class="topmenucontent">
+              <div class="nav_img">
+                <a href="" class="close_btn key_cntrl">×</a>
+              </div>
+              <ul class="main-menu-ul">
+                  <!-- ko foreach: $data.pages -->
+                  <li class="card-item">
+                    <header class="count">
+                      <span></span>
+                    </header>
+                    <p>Insight</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_1"></span>
+                    </header>
+                    <p>Create &amp; Edit</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_2"></span>
+                    </header>
+                    <p>Viewer</p>
+                  </li>                        
+                  <li class="card-item active">
+                    <header class="count">
+                      <span class="icon_3"></span>
+                    </header>
+                    <p>Alarms</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_4"></span>
+                    </header>
+                    <p>Reports</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_5"></span>
+                    </header>
+                    <p>Rules</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_6"></span>
+                    </header>
+                    <p>Calendar</p>
+                  </li>                        
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_7"></span>
+                    </header>
+                    <p>Maps</p>
+                  </li>                       
+                  <li class="card-item">
+                    <header class="count">
+                      <span class="icon_8"></span>
+                    </header>
+                    <p>Controller</p>
+                  </li>
+                  <!--/ko-->
+                  <li>Eagle Menus</li>
+                  <li class="dropdown">
+                    <p class="dropdown-toggle">
+                      <span class="ispicon ispicon_accounts"></span>
+                      Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                    </p>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                        <header class="count">
+                          <span class="ispicon ispicon_plus"></span>
+                        </header>
+                        <p>Add New Account</p>
+                      </li>
+                      <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                        <header class="count">
+                          <span class="ispicon ispicon_overview"></span>
+                        </header>
+                        <p>Account Overview</p>
+                      </li>
+                      <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                        <header class="count">
+                          <span></span>
+                        </header>
+                        <p>Customer List</p>
+                      </li>                               
+                    </ul>
+                  </li>                      
+                  <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                    <header class="count">
+                      <span class="icon_3"></span>
+                    </header>
+                    <p>Alarms</p>
+                  </li>
+                </ul>
+                <ul class="handbar-profile">
+                  <li>
+                    <div class="col-xs-12 col-sm-8">
+                      <span class="name">Scott Stevens</span><br>
+                      <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                    </div>
+                    <div class="clearfix"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right" id="notification-menu">
+            <div id="navigation-menu">
+              <div class="navbar">
+                <ul class="nav navbar-nav">
+                  <li id="notifications" class="dropdown">
+                    <a href="" class="dropdown notification-icon">
+                    </a>
+                    <ul class="dropdown-menu dashboard-message" id="dash-message">
+                      <li class="msg-header">
+                        <span class="header" id="header">
+                          Today's Notifications
+                        </span>
+                      </li>
+                      <!-- ko foreach: $data.messages --><!-- /ko -->
+                      <li id="ShowAllNotifications" class="msg">
+                        <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                      </li>
+                      <li id="msgTitle" class="msg">
+                        <span class="dropdown-menu-sub-footer">Loading</span>
+                      </li>
+                  </ul>
+                </li>
+                <li id="profileoptions" class="dropdown">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                      </a>
+                      <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile">
+                        <li>
+                          <span class="profile-icon">
+                            <span class="icon_userNormal"></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#">Profile Details</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+                        <li>
+                          <span class="profile-icon">
+                            <span class="icon_helpNormal"></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#">Help</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+                        <li>
+                          <span class="profile-icon">
+                            <span class="icon_logoutNormal"></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#">Logout</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" id="siteurl" value="/MPCNEW/">
+      </div>     
+        <div class="main-menu-navigation" id="overlay-menu">
+          <div class="topmenucontent">
+            <div class="nav_img">
+              <a href="" class="close_btn key_cntrl">×</a>
+            </div>
+            <ul class="main-menu-ul">
+              <!-- ko foreach: $data.pages -->
+              <li class="card-item">
+                <header class="count">
+                  <span></span>
+                </header>
+                <p>Insight</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_1"></span>
+                </header>
+                <p>Create &amp; Edit</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_2"></span>
+                </header>
+                <p>Viewer</p>
+              </li>                        
+              <li class="card-item active">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_4"></span>
+                </header>
+                <p>Reports</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_5"></span>
+                </header>
+                <p>Rules</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_6"></span>
+                </header>
+                <p>Calendar</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_7"></span>
+                </header>
+                <p>Maps</p>
+              </li>                       
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_8"></span>
+                </header>
+                <p>Controller</p>
+              </li>
+              <!--/ko-->
+              <li>Eagle Menus</li>
+              <li class="dropdown">
+                <p class="dropdown-toggle">
+                <span class="ispicon ispicon_accounts"></span>
+                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                </p>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                    <header class="count">
+                      <span class="ispicon ispicon_plus"></span>
+                    </header>
+                    <p>Add New Account</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                    <header class="count">
+                      <span class="ispicon ispicon_overview"></span>
+                    </header>
+                    <p>Account Overview</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                    <header class="count">
+                      <span></span>
+                    </header>
+                    <p>Customer List</p>
+                  </li>                               
+                </ul>
+              </li>                      
+              <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>
+            </ul>
+            <ul class="handbar-profile">
+              <li>
+                <div class="col-xs-12 col-sm-8">
+                  <span class="name">Scott Stevens</span><br>
+                  <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="siteurl" value="/MPCNEW/">
+    </div>     
+  </header>
+  <!--header ends here-->
+  <!--Start main section-->
+  <section class="view" id="reports"  data-complete="true">
+    <div id="reportManagementBaseId">
+      <div id="reportBaseContentId" class="row ps-row ps-report-wrapper">
+        <div id="reportListBase" class="col-md-12 col-lg-12 col-padding">
+          <div class="reportsLandingPg" id="reportListId">
+            <div class="people_group sidebar-left col-md-3 col-lg-3">
+              <div class="padding ps-report-title"> 
+                <h1> November 2016 </h1>
+              </div>
+              <div class="ps-report-sub-title">
+                <h1 class="padding"> Overview </h1>
+                <div class="main-rpt-chart">
+                    <div class="report-year padding ">Since November 1, 2016</div>
+                    <!-- <div class="report-help-text padding ">Clicking each section on pie chart will filter the list on the right side.</div> -->      
+                    <div id="container"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 ps-main-container right-side-report">
+              <div class="main-container-header">
+                <div class="col-md-6 no-padding"><a href="#" class="sidebar-slide icon"></a>
+                  <h1 class="padding">Scheduled</h1>
+                </div>
+                <!-- <h1 class="col-md-6 padding">Scheduled</h1> -->
+                <div class="col-md-6 card-header">
+                  <div class="icon tooltipg icon-delete pull-right">delete
+                    <div class="tooltip">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">Delete</div>
+                    </div>
+                  </div>
+                  <a href="#" class="">   
+                    <div class="icon tooltipg icon-add pull-right">add
+                    <div class="tooltip">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">Edit</div>
+                    </div>
+                    </div>
+                  </a>    
+                  <span class="icon-search pull-right">
+                    <input type="search" class="form-control" placeholder="Search report">
+                    <span class="foucs-icon-search"></span>
+                  </span>
+                </div>  
+              </div>
+              <div class="ps-report-wrap-detail">
+                <div class="report-filter-result-wrapper padding">
+                  <span class="report-fliter-tags report-deliverd">Delivered<a href="#" class="btn-close-white"></a></span>
+                  <span class="report-fliter-tags report-pending">Pending<a href="#" class="btn-close-white"></a></span>
+                  <span class="report-fliter-tags report-failed">Failed<a href="#" class="btn-close-white"></a></span>
+                </div>
+                <div class="listing-of-reports padding">
+                  <table class="ps-report-label">
+                    <thead>
+                      <tr>
+                        <th class="col-md-3 ps-col-3">
+                          <div class="ps-checkbox checkbox pull-left">
+                            <label class="control-label">
+                              <input type="checkbox"/>
+                              <span></span>
+                            </label>
+                            <span class="label-name">Name</span>
+                          </div>
+                        </th>
+                        <th class="col-md-2 ps-col-2">
+                          <a class="ps-a" href="#">Type<span class="down-arrow"><span></a>
+                        </th>
+                        <th class="col-md-2 ps-col-2">
+                          <div class="report-header-label">Schedule</div>
+                        </th>
+                        <th class="col-md-2 ps-col-2">
+                          <div class="report-header-label">Status</div>
+                        </th>
+                        <th class="col-md-2 ps-col-2">
+                          <div class="report-header-label">Delivery (Success/Fail)</div>
+                        </th>
+                      </tr>     
+                    </thead>      
+                  </table>
+                  <div class="main-rpt">
+                    <ul class="scroll-report">
+                      <li>
+                        <div>
+                          <table class="table bottomspace grid-text1">
+                            <tbody>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text">Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2">Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="failText">Disable</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-default" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text">Event test Name Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2">Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="failText">Disable</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success">0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-default">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2">
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text">Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-default" >0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <table class="table bottomspace grid-text1">
+                            <tbody>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2">Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2">
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text">Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2">Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-default">0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2">
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text">Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-default">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-default" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-default">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-default">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          <table class="table bottomspace grid-text1">
+                            <tbody>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                              <tr class="search-item">
+                                <td class="col-md-3 ps-col-3">
+                                  <div class="ps-checkbox checkbox pull-left">
+                                    <label class="control-label">
+                                      <input type="checkbox"/>
+                                      <span></span>
+                                    </label>
+                                    <a class="ps-a search-item-text" >Event Report</a>
+                                  </div>
+                                </td>
+                                <!-- ko if: IsVisible --><!-- /ko -->
+                                <!-- ko ifnot: IsVisible -->
+                                <td class="col-md-2 ps-col-2" >Event Type</td>
+                                <td class="col-md-2 ps-col-2" >Daily : 14:17:38</td>
+                                <td class="col-md-2 ps-col-2">
+                                  <span class="successText">Active</span>
+                                </td>
+                                <td class="col-md-2 ps-col-2" >  
+                                  <div class="delivery_cur">
+                                    <span class="delivery-report-success" >0</span>
+                                    <span>/</span>
+                                    <span class="delivery-report-fail">0</span>
+                                  </div>
+                                </td>
+                                <td class="col-md-1 ps-col-2" >
+                                  <a href="#"><span class="icon-edit">edit</span></a>
+                                </td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: IsVisible --><!-- /ko -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!--End main section -->
+  <script src="../scripts/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,905 @@
+﻿@color_1: #808080;
+@color_2: #1792e5;
+@color_3: #303030;
+@color_4: #606060;
+@color_5: #fff;
+@color_6: #888;
+@color_7: #707070;
+@font_family_1: "HoneywellSansWeb-Medium";
+@font_family_2: "HoneywellSansWeb-Bold";
+@font_family_3: 'HoneywellSansWeb-Bold';
+@font_family_4: 'HoneywellSansWeb-Medium';
+@background_color_1: #f5f5f5;
+@background_color_2: rgba(185,221,243,.3);
+@background_color_3: #fff;
+@border_color_1: #e7e7e7;
+@border_color_2: #fff;
+@border_top_color_1: #333;
+
+/*version 1.0.1*/
+/*.schedule-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}*/
+/* NEW ADDITION 24-08-2016*/
+/* CONTROLLER OVERVVIEW*/
+.schedule-root {
+	.isptabs {
+		.nav {
+			border-bottom: 1px solid #dfdfdf;
+			li {
+				font-family: @font_family_1 !important;
+				a {
+					font-family: @font_family_1 !important;
+					font-size: 14px;
+					color: @color_1;
+					background: transparent;
+					border: none;
+					outline: none;
+					-webkit-box-sizing: none;
+					-moz-box-sizing:none;
+					box-sizing: none;
+					&:hover {
+						border: none;
+					}
+					&:active {
+						border: none;
+					}
+					&:focus {
+						border: none;
+					}
+				}
+			}
+			li.active {
+				a {
+					font-family: @font_family_2 !important;
+					font-size: 14px;
+					color: @color_2 !important;
+					background: transparent;
+					border-bottom: 4px solid #1792e5;
+				}
+			}
+		}
+	}
+	.cardlistview {
+		padding: 0px;
+		.list-group-item {
+			border-radius: 0;
+			&:hover {
+				background-color: @background_color_1;
+				color: @color_4;
+				border-color: @border_color_1;
+			}
+		}
+		.nav.nav-tabs {
+			margin-left: 20px;
+		}
+		.listcount {
+			background: #f2f2f2;
+			margin-right: 0;
+			padding: 4px 0px;
+		}
+		.list-group-item.active {
+			&:hover {
+				background-color: @background_color_1;
+				color: @color_4;
+				border-color: @border_color_1;
+			}
+			&:focus {
+				background-color: @background_color_1;
+				color: @color_4;
+				border-color: @border_color_1;
+			}
+			background-color: @background_color_2;
+			color: @color_4;
+			border-color: @border_color_1;
+		}
+		.name {
+			font-family: @font_family_3 !important;
+			font-size: 15px;
+			color: @color_3;
+		}
+		.controllerList {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_1;
+		}
+	}
+	.listOverview {
+		border-left: 1px solid #e7e7e7;
+		.headerTitle {
+			font-family: @font_family_3 !important;
+			color: @color_3;
+			margin-left: 20px;
+		}
+		.overviewTab {
+			max-height: 400px;
+		}
+	}
+	.scheduleView {
+		.overviewTab {
+			.table {
+				>thead {
+					>tr {
+						>th {
+							border-bottom: 0 none;
+						}
+					}
+				}
+			}
+			span.name {
+				font-family: @font_family_3 !important;
+				color: @color_2;
+				font-size: 14px;
+			}
+			span.sensorsid {
+				font-family: @font_family_4 !important;
+				color: @color_4;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			table {
+				th {
+					font-family: @font_family_3 !important;
+					font-size: 14px;
+				}
+				td {
+					span {
+						font-family: @font_family_4 !important;
+						font-size: 14px;
+					}
+				}
+			}
+			.ispicon {
+				margin-top: 10px;
+			}
+			.ispicon_collapse {
+				margin-left: 15px;
+			}
+		}
+		.table {
+			td {
+				border-top: 1px solid #f0f0f0 !important;
+			}
+		}
+		.cardlistview {
+			.isppagetitle {
+				font-family: @font_family_3 !important;
+				color: @color_3;
+				margin-right: 20px;
+				margin-bottom: 5px;
+			}
+		}
+		.listOverview {
+			.isppagetitle {
+				.sectionHead1 {
+					font-family: @font_family_3 !important;
+					color: @color_3;
+					margin-right: 20px;
+					margin-bottom: 5px;
+				}
+				margin-left: 6px;
+				margin-right: 24px;
+				border-bottom: 1px solid #e7e7e7;
+				padding-bottom: 19px;
+			}
+		}
+		.list-group-item {
+			padding: 10px 0px;
+		}
+		.checkbox {
+			float: left;
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+			label {
+				&::before {
+					display: none;
+				}
+			}
+		}
+		.btn-group {
+			.btn {
+				&+.btn {
+					margin-left: 8px !important;
+				}
+			}
+		}
+		.btn-footer {
+			position: absolute;
+			bottom: 0;
+			right: -15px;
+			border-top: 1px solid #ccc;
+			left: 0;
+			padding: 10px 30px 10px 10px;
+		}
+	}
+	.addSchedule {
+		.overviewTab {
+			table {
+				td {
+					font-family: @font_family_4 !important;
+					font-size: 14px;
+				}
+			}
+			.sensorsid {
+				margin-left: 10px;
+			}
+			.name {
+				margin-left: 10px;
+			}
+		}
+		.name {
+			margin-left: 10px;
+		}
+		.modal-dialog {
+			width: 700px;
+			padding-top: 10px;
+		}
+		.panel-body {
+			padding: 5px 15px 0 15px;
+		}
+	}
+	.addSchedule.ispmodal {
+		left: 0 !important;
+	}
+	.listHeader {
+		font-family: @font_family_3 !important;
+		color: @color_3;
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		padding: 15px 0;
+		margin: 0 15px 10px 15px;
+		font-size: 18px;
+		clear: both;
+		&+hr {
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+	}
+	.btn-group {
+		button.moveArea {
+			margin-left: 10px !important;
+		}
+	}
+	.inputuppercase {
+		text-transform: uppercase;
+	}
+	.disabledbutton {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+	.scheduleOverview {
+		position: absolute;
+		right: 13px;
+		bottom: 0;
+		top: 0px;
+		.content {
+			padding: 0 10px;
+			background: #f4f4f4;
+			padding-right: 24px;
+			box-shadow: 0 -1px 0 0 #d6d6d6;
+		}
+		.leftlist {
+			.panel {
+				ul {
+					.list-group-item.active {
+						background: #e1eff9;
+						color: @color_4;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+					.list-group-item {
+						.ispicon.ispicon_downarrow {
+							margin-right: 0px;
+						}
+					}
+				}
+			}
+		}
+		.time-chart {
+			position: relative;
+			min-height: 306px;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			padding-right: 10px;
+			[data-y-index] {
+				text {
+					fill: #000000;
+					stroke: none;
+				}
+			}
+			[data-handle] {
+				cursor: e-resize;
+			}
+			[data-axis="x"] {
+				rect {
+					fill: #fff;
+					cursor: pointer;
+				}
+			}
+			.tz-flag {
+				rect {
+					fill: #888888;
+					stroke-width: 2;
+				}
+				text {
+					font-size: 10px;
+					fill: #fff;
+					cursor: default;
+				}
+				.tz-flag-strip {
+					stroke: none;
+				}
+			}
+			.tz-default {
+				fill: #fff;
+				stroke: #555555;
+			}
+			rect[data-slider='-1'] {
+				stroke: none;
+			}
+			line[data-slider='-1'] {
+				stroke: #66CCFF;
+			}
+			.tz-handle {
+				fill: #000000;
+			}
+			.tz-frame {
+				fill: #3BAD49;
+			}
+			[data-selected] {
+				.tz-frame {
+					fill: #3BAD49;
+				}
+			}
+		}
+		.time-input {
+			background: #888;
+			position: relative;
+			display: none;
+			input {
+				font-size: 10px;
+				vertical-align: top;
+				background: none;
+				color: @color_5;
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				width: 28%;
+				border: 0 none;
+				outline: none;
+				line-height: 0.8px;
+			}
+			label {
+				position: static;
+				width: 2%;
+			}
+			input.meridiem-field {
+				width: 32%;
+			}
+		}
+	}
+	.callout {
+		background: #333;
+		min-height: 50px;
+		color: @color_5;
+		position: absolute;
+		text-align: center;
+		display: none;
+		label {
+			border-bottom: solid 1px #888;
+			padding-bottom: 2px;
+			position: static;
+			color: @color_5;
+		}
+		ul {
+			margin-left: 0;
+			li {
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
+				display: -moz-inline-box;
+				font-size: 0.7em;
+				padding-top: 8px;
+				padding-bottom: 6px;
+				padding-left: 10px;
+				padding-right: 10px;
+				cursor: pointer;
+				label {
+					border-bottom: solid 0px #888;
+					padding-bottom: 2px;
+					position: static;
+					color: @color_5;
+					font-size: 9px;
+				}
+				label.formControl-checkbox {
+					width: auto;
+				}
+			}
+			li.selected {
+				color: @color_6;
+			}
+		}
+		.formControl-checkbox {
+			span {
+				background: url('../images/sprite_icons.png') no-repeat -612px -132px !important;
+				padding: 0 0 15px 0;
+				cursor: pointer;
+				height: 11px !important;
+			}
+			input {
+				&:checked {
+					&+span {
+						background: url('../images/sprite_icons.png') no-repeat -612px -192px !important;
+					}
+				}
+			}
+		}
+	}
+	.callout-arrow {
+		border: solid 10px transparent;
+		border-top-color: @border_top_color_1;
+		border-bottom-width: 0;
+		position: absolute;
+		top: 100%;
+		left: 46%;
+	}
+	.schedulelists {
+		position: absolute;
+		top: 166px;
+		overflow: scroll;
+		bottom: 0px;
+		min-height: 80%;
+		width: 100%;
+		border-top: 1px solid #d0d0d0;
+	}
+	.holidaylists {
+		position: absolute;
+		top: 166px;
+		overflow: scroll;
+		bottom: 0px;
+		min-height: 80%;
+		width: 100%;
+		border-top: 1px solid #d0d0d0;
+	}
+	.contentContainer {
+		position: absolute;
+		right: 0;
+		bottom: 53px;
+		top: 76px;
+		overflow-y: auto;
+		padding-left: 5px;
+	}
+	.padding-correction {
+		margin-right: 10px !important;
+	}
+	.padding-correction-searchbox {
+		padding-right: 0 !important;
+		&:hover {
+			background: none !important;
+		}
+	}
+	.ispicon_search {
+		&::before {
+			background-position: -107px -11px !important;
+		}
+	}
+	.form-group {
+		margin-bottom: 14px;
+	}
+	hr {
+		margin-bottom: 24px;
+	}
+	.viewmode {
+		.form-group {
+			label {
+				font-family: @font_family_4 !important;
+				font-size: 14px;
+				font-weight: normal;
+				-webkit-font-smoothing: antialiased;
+				display: block;
+				color: @color_7;
+				text-rendering: optimizeLegibility;
+				text-align: left;
+				letter-spacing: 0;
+				opacity: 1;
+			}
+		}
+	}
+	.ispselectdropdown {
+		.isppopup-site {
+			width: calc(100% - 30px) !important;
+		}
+	}
+}
+.listOverview {
+	.settingsTab {
+		max-height: 400px;
+	}
+}
+.addSchedule {
+	.table {
+		>thead {
+			>tr {
+				>th {
+					border-bottom: 0 none;
+				}
+			}
+		}
+	}
+	table {
+		td {
+			border-top: 1px solid #e7e7e7 !important;
+		}
+	}
+	.ispicon {
+		margin-top: 10px;
+	}
+	.sensorsid {
+		margin-left: 10px;
+	}
+	.checkbox {
+		input[type="checkbox"] {
+			opacity: 1 !important;
+			margin-top: 0;
+		}
+	}
+}
+.scheduleList {
+	>span {
+		&+span {
+			margin-left: 5px;
+		}
+	}
+}
+.viewmode {
+	input {
+		font-family: @font_family_4 !important;
+		font-size: 14px;
+		color: @color_4;
+		pointer-events: none;
+		[type="checkbox"] {
+			background: 0;
+		}
+	}
+	textarea {
+		font-family: @font_family_4 !important;
+		font-size: 14px;
+		color: @color_4;
+		pointer-events: none;
+	}
+	select {
+		font-family: @font_family_4 !important;
+		font-size: 14px;
+		color: @color_4;
+		pointer-events: none;
+	}
+	.btn-footer {
+		display: none;
+	}
+}
+.btn-footer {
+	margin-top: 10px;
+	padding-top: 10px;
+	left: -16px;
+	background-color: @background_color_3;
+	border-color: @border_color_2;
+}
+.bold {
+	font-family: @font_family_3 !important;
+}
+.ispheaderbar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+.accountcontainer {
+	.overview {
+		.content {
+			background: 0 !important;
+			box-shadow: none !important;
+		}
+	}
+}
+.ControllerOverview {
+	.leftlist {
+		.panel {
+			ul.list-group-item.active {
+				&:hover {
+					background: #e1eff9;
+					color: @color_4;
+					font-size: 14px;
+					font-family: @font_family_4 !important;
+				}
+			}
+			ul {
+				li.list-group-item.active {
+					&:focus {
+						background: #e1eff9;
+						color: @color_4;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+				}
+			}
+		}
+	}
+}
+[data-axis="x"] {
+	text {
+		fill: #000000;
+		stroke: none;
+		fill: #000000;
+		stroke: none;
+	}
+}
+.tz-flag {
+	line {
+		fill: #888888;
+		stroke-width: 2;
+		fill: #888888;
+		stroke-width: 2;
+	}
+}
+.time-input {
+	label {
+		font-size: 10px;
+		vertical-align: top;
+		background: none;
+		color: @color_5;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-size: 10px;
+		vertical-align: top;
+		background: none;
+		color: @color_5;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+}
+.schedule-popup {
+	.time-chart {
+		position: relative;
+		min-height: 306px;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		padding-right: 10px;
+		[data-y-index] {
+			text {
+				fill: #000000;
+				stroke: none;
+			}
+		}
+		[data-handle] {
+			cursor: e-resize;
+		}
+		[data-axis="x"] {
+			rect {
+				fill: #fff;
+				cursor: pointer;
+			}
+		}
+		.tz-flag {
+			rect {
+				fill: #888888;
+				stroke-width: 2;
+			}
+			text {
+				font-size: 10px;
+				fill: #fff;
+				cursor: default;
+			}
+			.tz-flag-strip {
+				stroke: none;
+			}
+		}
+		.tz-default {
+			fill: #fff;
+			stroke: #555555;
+		}
+		rect[data-slider='-1'] {
+			stroke: none;
+		}
+		line[data-slider='-1'] {
+			stroke: #66CCFF;
+		}
+		.tz-handle {
+			fill: #000000;
+		}
+		.tz-frame {
+			fill: #3BAD49;
+		}
+		[data-selected] {
+			.tz-frame {
+				fill: #3BAD49;
+			}
+		}
+	}
+	.time-input {
+		background: #888;
+		position: relative;
+		display: none;
+		input {
+			font-size: 10px;
+			vertical-align: top;
+			background: none;
+			color: @color_5;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			width: 28%;
+			border: 0 none;
+			outline: none;
+			line-height: 0.8px;
+		}
+		label {
+			position: static;
+			width: 2%;
+		}
+		input.meridiem-field {
+			width: 32%;
+		}
+	}
+	.callout-popup {
+		background: #333;
+		min-height: 50px;
+		color: @color_5;
+		position: absolute;
+		text-align: center;
+		display: none;
+		label {
+			border-bottom: solid 1px #888;
+			position: static;
+			color: @color_5;
+		}
+		ul {
+			margin-left: 0;
+			li {
+				display: -webkit-inline-box;
+				display: -ms-inline-flexbox;
+				display: -moz-inline-box;
+				padding-left: 10px;
+				padding-right: 10px;
+				cursor: pointer;
+				label {
+					border-bottom: solid 0px #888;
+					position: static;
+					color: @color_5;
+					font-size: 12px;
+					height: 14px;
+					font-weight: normal;
+				}
+				label.formControl-checkbox {
+					width: auto;
+				}
+			}
+			li.selected {
+				color: @color_6;
+			}
+		}
+		.formControl-checkbox1 {
+			span {
+				background: url('../images/sprite_icons.png') no-repeat -612px -132px !important;
+				padding: 0 0 15px 0;
+				cursor: pointer;
+				height: 11px !important;
+			}
+			input {
+				&:checked {
+					&+span {
+						background: url('../images/sprite_icons.png') no-repeat -612px -192px !important;
+					}
+				}
+			}
+		}
+	}
+	.callout-popup-arrow {
+		border: solid 10px transparent;
+		border-top-color: @border_top_color_1;
+		border-bottom-width: 0;
+		position: absolute;
+		top: 100%;
+		left: 46%;
+	}
+}
+@media (max-width: 1366px) and (min-width: 1441px) {
+	.schedule-root {
+		.scheduleView {
+			.listOverview {
+				right: 16px;
+			}
+		}
+		.schedulelists {
+			max-height: 450px;
+		}
+		.holidaylists {
+			max-height: 450px;
+		}
+	}
+	.listOverview {
+		.overviewTab {
+			max-height: 400px;
+		}
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+}
+@media (max-width: 1600px) {
+	.schedule-root {
+		.scheduleView {
+			.listOverview {
+				right: 15px;
+			}
+		}
+		.listOverview {
+			.overviewTab {
+				max-height: 620px;
+			}
+			.settingsTab {
+				max-height: 620px;
+			}
+		}
+		.schedulelists {
+			max-height: 620px;
+		}
+		.holidaylists {
+			max-height: 620px;
+		}
+	}
+}
+@media screen and (min-width: 1920px) {
+	.listOverview {
+		.overviewTab {
+			max-height: 804px;
+		}
+		.settingsTab {
+			max-height: 804px;
+		}
+	}
+	.schedule-root {
+		.schedulelists {
+			height: 926px;
+		}
+		.holidaylists {
+			height: 926px;
+		}
+	}
+}
+@monIE:"screen\0";
+@media @monIE{
+	.ispicon.inverse {
+		&::before {
+			width: 20px;
+			left: 24px;
+			top: 43px;
+		}
+	}
+}
+@media (max-height: 768px) {
+	.schedule-root {
+		.addnewaccount {
+			max-height: 330px;
+			width: 100%;
+		}
+		.ControllerOverview {
+			.overview {
+				.content {
+					width: 98%;
+					max-height: 520px;
+				}
+			}
+		}
+	}
+}

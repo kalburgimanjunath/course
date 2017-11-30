@@ -1,0 +1,102 @@
+﻿<div class="modal ispmodal fade" id="modal-id-customer" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <form id="customer-view" class="modal-content" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="lineModalLabel">Add New Account</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row addnewaccount scroll-x scroll-y">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h3>@Resources.Account_Details</h3>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_customer_Name<span class="star">*</span></label>
+                            <input type="text" name="customerName" id="customerName" class="form-control" data-bind="value: $data.siteDetailModel.CustomerInfo.Name,hasFocus: true" >
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Site_name<span class="star">*</span></label>
+                            <input type="text" name="siteName" id="siteName" class="form-control" data-bind="value: $data.siteDetailModel.SiteInfo.Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_Site_Reference_No</label>
+                            <input type="text" name="siteReferenceno" id="siteReferenceno" data-bind="value: $data.siteDetailModel.SiteInfo.getFeature('SiteReferenceNo').Value"  class="form-control"> 
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_Address<span class="star">*</span></label>
+                            <input type="text" name="addressLine1" id="addressLine1" class="form-control" data-bind="value: $data.siteDetailModel.SiteInfo.ContactInfo.AddressLine1">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.City<span class="star">*</span></label>
+                            <input type="text" name="city" id="city" class="form-control" data-bind="AutoComplete: { onComplete: $data.onAutoComplete },value: $data.siteDetailModel.SiteInfo.ContactInfo.City">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_State<span class="star">*</span></label>
+                            <input type="text" name="state" id="state" class="form-control" data-bind="value: $data.siteDetailModel.SiteInfo.ContactInfo.Region">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" >@Resources.Country<span class="star">*</span></label>
+                            <input type="text" name="country" id="country" class="form-control" data-bind="value: $data.siteDetailModel.SiteInfo.ContactInfo.Country">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_Zip_Code<span class="star">*</span></label>
+                            <input type="text" name="zipCode" id="zipCode" class="form-control" data-bind="value: $data.siteDetailModel.SiteInfo.ContactInfo.ZipCode">
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h3>Site Admin</h3>
+                        </div>
+                        <div class="form-group">
+                            <label class="row control-label">@Resources.First_Name</label>
+                            <input type="text" name="firstName" id="firstName" class="form-control"  data-bind="value: $data.siteDetailModel.PrimaryOperatorInfo.FirstName">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Last_Name</label>
+                            <input type="text" name="lastName" id="lastName" class="form-control" data-bind="value: $data.siteDetailModel.PrimaryOperatorInfo.LastName">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Email</label>
+                            <input type="text" name="email" id="email" class="form-control" data-bind="value: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.EmailAddress">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_OfficePhone</label>
+                            <input type="text" name="officePhone" id="officePhone" class="form-control" data-bind="value: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.WorkPhone">
+                        </div>
+                        @*<div class="row form-group">
+                            <div class="col-md-7">
+                                <label class="control-label">Office Phone</label>
+                                <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="control-label">Extension</label>
+                                <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+                        </div>*@
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_CellPhone</label>
+                            <input type="text" name="cellPhone" id="cellPhone" class="form-control" data-bind="value: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.MobileNumber">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <span class="text-danger pull-left text-left col-md-7" data-bind="visible: $data.IsError, text: $data.ErrorMessage"></span>
+                <div class="btn-group" role="group" aria-label="group button">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: $data.cancelSiteDetail">@Resources.Cancel</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" href='#modal-id-site' data-bind="click: $data.saveSiteDetail">@Resources.Account_Add_Account</button>
+                </div>
+            </div>
+            <!-- FOOTER SECTION ENDS -->
+        </div>
+	 </form>
+    </div>
+</div>

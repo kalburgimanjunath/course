@@ -1,0 +1,53 @@
+﻿.radio{
+	padding:0;
+	margin:0;
+}
+.formControl-radio input:checked + span {
+	background: url(../images/sprite_icons.png) no-repeat -638px -250px;
+	background-repeat: no-repeat;
+}
+.formControl-radio input:checked + span:hover {
+	background:  url(../images/sprite_icons.png) no-repeat -639px -342px !important;
+}
+.formControl-radio span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background: url(../images/sprite_icons.png) no-repeat -638px -280px;
+	background-repeat: no-repeat;
+	/*position:absolute;*/
+}
+.formControl-radio:disabled span:active,
+.formControl-radio:disabled span:focus{
+	background: url(../images/sprite_icons.png) no-repeat -639px -372px !important;
+	outline: none;
+}
+.formControl-radio span:active,
+.formControl-radio span:focus{
+	background: url(../images/sprite_icons.png) no-repeat -638px -311px !important;
+}
+.radiodisabled span {
+	background: url("../images/icons/radioBtn_disable.png");
+}
+
+.formControl-radio input {
+	display: none;
+}
+
+.formControl-radio{
+	border-style: none;
+	color: #6F7074;
+	font-size: 13px;
+	margin: 0;
+	position: relative;
+	top: 4px;
+	padding-left: 0 !important;
+	/*display:inline-block;*/
+}
+
+.radio .radiotext{
+	padding-right:15px;
+	padding-left: 39px;
+	font-size: 15px;
+	color: #6F7074;
+}

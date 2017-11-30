@@ -1,0 +1,80 @@
+.isptabs {
+/*margin: 24px;*/
+}
+
+.isptabs .nav {
+border-bottom: 1px solid #dfdfdf;
+}
+
+.isptabs .nav li {
+font-family: "HoneywellSansWeb-Medium" !important;
+padding: 0 15px;
+}
+
+.isptabs .nav li a {
+font-family: "HoneywellSansWeb-Medium" !important;
+font-size: 14px;
+color: #808080;
+background: transparent;
+border: none;
+outline: none;
+-webkit-box-sizing: none;
+-moz-box-sizing: none;
+box-sizing: none;
+}
+
+.isptabs .nav li a:hover, .isptabs .nav li a:active, .isptabs .nav li a:focus {
+    border: none;
+}
+
+.isptabs .nav li.active a {
+font-family: "HoneywellSansWeb-Bold" !important;
+font-size: 14px;
+color: #303030;
+background: transparent;
+border-bottom: 4px solid #1792e5;
+}
+
+.viewmode input, .viewmode textarea,.viewmode select {
+font-family: 'HoneywellSansWeb-Medium' !important;
+font-size: 14px;
+color: #606060;
+pointer-events: none;
+background: #f2f2f2;
+}
+
+.cardlistview .list-group-item {
+border-radius: 0;
+}
+
+.cardlistview .list-group-item.active, .cardlistview .list-group-item.active:hover, .cardlistview .list-group-item.active:focus {
+background-color: #e1eff9;
+color: #606060;
+border-color: #e7e7e7;
+border-right:1px solid #e7e7e7 !important;
+}
+
+.cardlistview .list-group-item:hover {
+background: #f5f5f5;
+cursor: pointer;
+}
+
+.cardlistview .name {
+font-family: 'HoneywellSansWeb-Bold' !important;
+font-size: 15px;
+color: #303030;
+}
+
+.cardlistview .sensorsList {
+font-family: 'HoneywellSansWeb-Bold' !important;
+font-size: 14px;
+color: #808080;
+}
+
+.viewmode.btn-footer{
+    display: none;
+}
+
+.star{
+	color:gray;
+}

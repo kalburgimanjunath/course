@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+            // $(".wrapper:not('#menu-toggle')").click(function (e) {
+            //     e.preventDefault();
+            //     $("#sidebar-wrapper").toggleClass("active");
+            // });
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+                    
+                    
+<div id="">
+   <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="dashboard.html" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>                            
+                        </li>                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">               
+                <form>
+                    <div class="col-xs-10 pull-left hide">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="search-box-container col-lg-9 col-md-9 pull-left">
+                        <div class="input-group col-lg-12 col-md-12 mar-b0">                            
+                            <input type="text" class="form-control ispsearch pad-l10 pad-r50 mar-t0" name="x" placeholder="Search...">                            
+                            <span class="ispicon ispicon_close hide"></span>
+                            <span class="ispicon ispicon_search" id="searchIcon"></span>
+                            <span class="loader alarm-searchIcon hide mar-t5"></span>
+                        </div>
+                        <div class="search-dropdown col-lg-12 col-md-12 nopadding hide" id="">
+                            <div class="row no-results hide">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span>No results found</span>
+                                </div>
+                            </div>
+                            <div class="row results-count">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span class="pull-left nopadding"><span class="bold">3</span> Accounts</span>
+                                    <span class="pull-right nopadding view-all"><a href="javascript:;" class="">View All</a></span>
+                                </div>
+                            </div>
+                            <div class="row results">
+                                <div class="cardlistview col-lg-12 col-md-12 col-sm-12 nopadding">
+                                    <div class="list-group scroll-x scroll-y mar-b0">
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name bold pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>                            
+                </form>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <input type="hidden" id="siteurl" value="/MPC/">
+</div>
+<script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+     $(function() {
+    $('.page-alert').hide();
+    //Show alert
+        $('button[data-toggle="page-alert"]').click(function(e) {
+            e.preventDefault();
+            var id = $(this).attr('data-toggle-id');
+            var alert = $('#alert-' + id);
+            var timeOut;
+            alert.appendTo('.page-alerts');
+            alert.slideDown();
+            
+            //Is autoclosing alert
+            var delay = $(this).attr('data-delay');
+            if(delay != undefined)
+            {
+                delay = parseInt(delay);
+                clearTimeout(timeOut);
+                timeOut = window.setTimeout(function() {
+                        alert.slideUp();
+                    }, delay);
+            }
+        });
+    });
+    
+    //Close alert
+    $('.page-alert .close').click(function(e) {
+        e.preventDefault();
+        $(this).closest('.page-alert').slideUp();
+    });
+
+    
+
+    
+
+</script>
+    <style>
+    #map-container {
+        padding: 6px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ccc #ccc #999 #ccc;
+        -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+        width: 600px;
+      }
+      #map {
+        height: 400px;
+      }
+
+      /* REQUIRED */
+    .page-alerts {
+        margin-bottom: 20px;
+    }
+
+    .page-alerts .page-alert {
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    </style>
+                    
+                </div>
+<div class="account-root">
+        <!-- ADD DEVICE MODAL -->
+<div id="addDevice" class="modal fade ispmodal addDevice in show" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Add New Device</h1>
+            </div>
+            <div class="page-alerts">
+                <div class="alert alert-success page-alert" id="alert-1">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Success!</strong> You successfully read this important alert message.
+                </div>
+                <div class="alert alert-info page-alert" id="alert-2">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Information!</strong> This alert needs your attention, but it's not super important.
+                </div>
+                <div class="alert alert-warning page-alert" id="alert-3">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                </div>
+                <div class="alert alert-danger page-alert" id="alert-4">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Critical!</strong> Change a few things up and try submitting again.
+                </div>
+                <div class="alert alert-success page-alert" id="alert-5">
+                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong>Cool!</strong> This alert will close in 3 seconds. The data-delay attribute is in milliseconds.
+                </div>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Device Type</label>
+                            <select class="form-control">
+                                <option>Sensor1</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Device Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Device Serial Number</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Bus ID</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group col-md-6 paddingLnone">
+                            <label class="control-label">Bus Slot ID</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-toggle="page-alert" data-toggle-id="3" >Save and Error</button>
+                <button type="button" class="btn btn-primary" onclick="document.location.href='ControllerList.html'">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ADD DEVICE MODAL -->
+</div>
+</body>
+</html>

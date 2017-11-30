@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Report</title>
+  <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+  <!-- <link href="../content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"> -->
+  <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+  <!-- <link href="../content/css/custom-bootstrap-datetimepicker.css" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+  <link href="../content/css/create-report.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <script src="../scripts/jquery-2.2.4.min.js"></script>
+  <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+  <!-- <script src="../scripts/jquery.mousewheel.js"></script> -->
+  <script src="../content/js/bootstrap.min.js"></script>
+  <script src="../content/js/bootstrap-multiselect.js"></script>
+  <script src="../scripts/jquery.slimscroll.min.js"></script>
+  <script src="../content/js/bootstrap-select.min.js"></script>
+  <script src="../scripts/selectize.js"></script>
+  <script src="../scripts/master.js"></script>
+</head>
+<body>
+  <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title"></span>
+        </a>
+        <div class="main-menu-navigation" id="overlay-menu">
+          <div class="topmenucontent">
+            <div class="nav_img">
+              <a href="" class="close_btn key_cntrl">×</a>
+            </div>
+            <ul class="main-menu-ul">
+           
+              <li class="card-item">
+                <header class="count">
+                  <span></span>
+                </header>
+                <p>Insight</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_1"></span>
+                </header>
+                <p>Create &amp; Edit</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_2"></span>
+                </header>
+                <p>Viewer</p>
+              </li>                        
+              <li class="card-item active">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_4"></span>
+                </header>
+                <p>Reports</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_5"></span>
+                </header>
+                <p>Rules</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_6"></span>
+                </header>
+                <p>Calendar</p>
+              </li>                        
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_7"></span>
+                </header>
+                <p>Maps</p>
+              </li>                       
+              <li class="card-item">
+                <header class="count">
+                  <span class="icon_8"></span>
+                </header>
+                <p>Controller</p>
+              </li>
+              <!--/ko-->
+              <li>Eagle Menus</li>
+              <li class="dropdown">
+                <p class="dropdown-toggle">
+                <span class="ispicon ispicon_accounts"></span>
+                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                </p>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                    <header class="count">
+                      <span class="ispicon ispicon_plus"></span>
+                    </header>
+                    <p>Add New Account</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                    <header class="count">
+                      <span class="ispicon ispicon_overview"></span>
+                    </header>
+                    <p>Account Overview</p>
+                  </li>
+                  <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                    <header class="count">
+                      <span></span>
+                    </header>
+                    <p>Customer List</p>
+                  </li>                               
+                </ul>
+              </li>                      
+              <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+                <header class="count">
+                  <span class="icon_3"></span>
+                </header>
+                <p>Alarms</p>
+              </li>
+            </ul>
+            <ul class="handbar-profile">
+              <li>
+                <div class="col-xs-12 col-sm-8">
+                  <span class="name">Scott Stevens</span><br>
+                  <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                </div>
+                <div class="clearfix"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right" id="notification-menu">
+        <div id="navigation-menu">
+          <div class="navbar">
+            <ul class="nav navbar-nav">
+              <li id="notifications" class="dropdown">
+                <a href="" class="dropdown notification-icon"></a>
+                <ul class="dropdown-menu dashboard-message" id="dash-message">
+                  <li class="msg-header">
+                    <span class="header" id="header">
+                    Today's Notifications
+                    </span>
+                  </li>
+                 
+                  <li id="ShowAllNotifications" class="msg">
+                    <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                  </li>
+                  <li id="msgTitle" class="msg">
+                    <span class="dropdown-menu-sub-footer">Loading</span>
+                  </li>
+                </ul>
+              </li>
+              <li id="profileoptions" class="dropdown">
+                <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                    </a>
+                    <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile" >
+                      <li>
+                        <span class="profile-icon">
+                          <span></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Profile Details</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span class="icon_helpNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Help</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="profile-icon">
+                          <span class="icon_logoutNormal"></span>
+                        </span>
+                        <span class="profile-item-content">
+                          <a href="#">Logout</a>
+                          <span class="menu-divider"></span>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="siteurl" value="/MPCNEW/">
+    </div>     
+  </header>
+  <!--header ends here-->
+  <!--start main section -->
+  <section class="view mpc" id="reports" data-complete="true">
+    <div id="reportManagementBaseId">
+      <div id="reportBaseContentId" class="ps-row ps-createholder ps-event-report-wrapper ps-create-report">
+        <div class="reports" id="reportId">
+          <div id="reportTopSectionId" class="topSection formcontrol">
+            <div class="col-md-12 no-padding ps-event-report-title"> 
+              <div class="col-md-6 padding">
+                <a href="#" class="icon icon-left-arrow"></a>
+                <h1>New Report <span> James</span>
+                </h1>
+              </div>
+              <div class="col-md-6 card-header">
+                <div class="icon tooltipg icon-delete pull-right">delete
+                  <div class="tooltip">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-inner">Delete</div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="icon tooltipg icon-edit pull-right active">
+                    <div class="tooltip">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">Edit</div>
+                    </div> 
+                  </div>
+                </a> 
+              </div>
+            </div>
+          </div>
+       
+          <div id="reportContent">
+            <div id="reportBottomSectionId" class="cardSettings bottomSection col-md-12 col-lg-12 ps-report-container">
+              <div id="reportFilterSectionId" class="firstSection ps-column  col-md-3 col-lg-3">
+                <h2 class="padding">Report Details</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <form>
+                     
+                      <ul>
+                        <li>
+                          <div class="cardTopFirstSection">
+                            <div class="form-group selectize-form-group">
+                              <label id="Report" for="selectReport">Report Type*</label>
+                              <select class="form-control selectbox" id="txbReport" tabindex="1">
+                                <option value="Audit Reports">Audit Reports</option>
+                                <option value="Event Reports">Event Reports</option>
+                                <option value="Card Reports">Card Reports</option>
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group">
+                            <label id="Report_Name" class="control-label">Name*</label>
+                            <input type="text" tabindex="22" id="Report_Name" name="Report_Name" placeholder="Report Name" class="form-control">
+                          </div>
+                        </li>
+                      </ul>
+                   
+                    </form>
+                  </div>
+                </div>  
+              </div>
+              <div id="reportFilterSectionId" class="ps-column  col-md-3 col-lg-3">   
+                <h2 class="padding">Filters</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <ul class="filter-first-ul">
+                      <li >
+                        <div class="form-group select-field selectize-form-group">
+                          <label id="Report_Filter_Account" for="selectAccount">Account*</label>
+                          <select  id="selectAccount" class="form-control selectbox">
+                          <option value="0">All</option>
+                          <option value="1">option 2</option>
+                          <option value="3">option 3</option>
+                          <option value="4">option</option>
+                          </select>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-group calender" id="activationDate" data-date="" data-date-format="">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Select_Start_Date" class="control-label">Starts on</label><input id="txbSelect_Start_Date" type="text" required="" placeholder="Select Date" class="form-control form-date">
+                          <span class="add-on icon form-date icon-calendar" tabindex="2"></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-group calender" id="expireDate">
+                          <a class="reset_cal_icon"></a>
+                          <label id="Select_End_Date" class="control-label">Ends on</label><input id="txbSelect_End_Date" type="text" required="" placeholder="Select Date" class="form-control form-date">
+                          <span class=" add-on icon form-date icon-calendar" tabindex="3"></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-group selectize-form-group">
+                          <label id="Report_Filter_Timezone" for="selectTimezone" class="control-label">Timezone*</label>
+                          <select class="form-control selectbox" id="selectTimezone" tabindex="4"><option value="">None</option><option value="(UTC-12:00) International Date Line West">(UTC-12:00) International Date Line West</option><option value="(UTC-11:00) Coordinated Universal Time-11">(UTC-11:00) Coordinated Universal Time-11</option><option value="(UTC-10:00) Hawaii">(UTC-10:00) Hawaii</option><option value="(UTC-09:00) Alaska">(UTC-09:00) Alaska</option><option value="(UTC-08:00) Pacific Time (US &amp; Canada)">(UTC-08:00) Pacific Time (US &amp; Canada)</option><option value="(UTC-08:00) Baja California">(UTC-08:00) Baja California</option><option value="(UTC-07:00) Mountain Time (US &amp; Canada)">(UTC-07:00) Mountain Time (US &amp; Canada)</option><option value="(UTC-07:00) Chihuahua, La Paz, Mazatlan">(UTC-07:00) Chihuahua, La Paz, Mazatlan</option><option value="(UTC-07:00) Arizona">(UTC-07:00) Arizona</option><option value="(UTC-06:00) Saskatchewan">(UTC-06:00) Saskatchewan</option><option value="(UTC-06:00) Guadalajara, Mexico City, Monterrey">(UTC-06:00) Guadalajara, Mexico City, Monterrey</option><option value="(UTC-06:00) Central Time (US &amp; Canada)">(UTC-06:00) Central Time (US &amp; Canada)</option><option value="(UTC-06:00) Central America">(UTC-06:00) Central America</option><option value="(UTC-05:00) Indiana (East)">(UTC-05:00) Indiana (East)</option><option value="(UTC-05:00) Eastern Time (US &amp; Canada)">(UTC-05:00) Eastern Time (US &amp; Canada)</option><option value="(UTC-05:00) Bogota, Lima, Quito, Rio Branco">(UTC-05:00) Bogota, Lima, Quito, Rio Branco</option><option value="(UTC-04:30) Caracas">(UTC-04:30) Caracas</option><option value="(UTC-04:00) Georgetown, La Paz, Manaus, San Juan">(UTC-04:00) Georgetown, La Paz, Manaus, San Juan</option><option value="(UTC-04:00) Cuiaba">(UTC-04:00) Cuiaba</option><option value="(UTC-04:00) Atlantic Time (Canada)">(UTC-04:00) Atlantic Time (Canada)</option><option value="(UTC-04:00) Asuncion">(UTC-04:00) Asuncion</option><option value="(UTC-03:30) Newfoundland">(UTC-03:30) Newfoundland</option><option value="(UTC-03:00) Salvador">(UTC-03:00) Salvador</option><option value="(UTC-03:00) Santiago">(UTC-03:00) Santiago</option><option value="(UTC-03:00) Montevideo">(UTC-03:00) Montevideo</option><option value="(UTC-03:00) Greenland">(UTC-03:00) Greenland</option><option value="(UTC-03:00) Cayenne, Fortaleza">(UTC-03:00) Cayenne, Fortaleza</option><option value="(UTC-03:00) Buenos Aires">(UTC-03:00) Buenos Aires</option><option value="(UTC-03:00) Brasilia">(UTC-03:00) Brasilia</option><option value="(UTC-02:00) Coordinated Universal Time-02">(UTC-02:00) Coordinated Universal Time-02</option><option value="(UTC-01:00) Cabo Verde Is.">(UTC-01:00) Cabo Verde Is.</option><option value="(UTC-01:00) Azores">(UTC-01:00) Azores</option><option value="(UTC) Casablanca">(UTC) Casablanca</option><option value="(UTC) Coordinated Universal Time">(UTC) Coordinated Universal Time</option><option value="(UTC) Dublin, Edinburgh, Lisbon, London">(UTC) Dublin, Edinburgh, Lisbon, London</option><option value="(UTC) Monrovia, Reykjavik">(UTC) Monrovia, Reykjavik</option><option value="(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna">(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option><option value="(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague">(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option><option value="(UTC+01:00) Brussels, Copenhagen, Madrid, Paris">(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</option><option value="(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb">(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option><option value="(UTC+01:00) West Central Africa">(UTC+01:00) West Central Africa</option><option value="(UTC+01:00) Windhoek">(UTC+01:00) Windhoek</option><option value="(UTC+02:00) Amman">(UTC+02:00) Amman</option><option value="(UTC+02:00) Athens, Bucharest">(UTC+02:00) Athens, Bucharest</option><option value="(UTC+02:00) Beirut">(UTC+02:00) Beirut</option><option value="(UTC+02:00) Cairo">(UTC+02:00) Cairo</option><option value="(UTC+02:00) Damascus">(UTC+02:00) Damascus</option><option value="(UTC+02:00) E. Europe">(UTC+02:00) E. Europe</option><option value="(UTC+02:00) Harare, Pretoria">(UTC+02:00) Harare, Pretoria</option><option value="(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius">(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option><option value="(UTC+02:00) Istanbul">(UTC+02:00) Istanbul</option><option value="(UTC+02:00) Jerusalem">(UTC+02:00) Jerusalem</option><option value="(UTC+02:00) Kaliningrad (RTZ 1)">(UTC+02:00) Kaliningrad (RTZ 1)</option><option value="(UTC+02:00) Tripoli">(UTC+02:00) Tripoli</option><option value="(UTC+03:00) Baghdad">(UTC+03:00) Baghdad</option><option value="(UTC+03:00) Kuwait, Riyadh">(UTC+03:00) Kuwait, Riyadh</option><option value="(UTC+03:00) Minsk">(UTC+03:00) Minsk</option><option value="(UTC+03:00) Moscow, St. Petersburg, Volgograd (RTZ 2)">(UTC+03:00) Moscow, St. Petersburg, Volgograd (RTZ 2)</option><option value="(UTC+03:00) Nairobi">(UTC+03:00) Nairobi</option><option value="(UTC+03:30) Tehran">(UTC+03:30) Tehran</option><option value="(UTC+04:00) Abu Dhabi, Muscat">(UTC+04:00) Abu Dhabi, Muscat</option><option value="(UTC+04:00) Baku">(UTC+04:00) Baku</option><option value="(UTC+04:00) Izhevsk, Samara (RTZ 3)">(UTC+04:00) Izhevsk, Samara (RTZ 3)</option><option value="(UTC+04:00) Port Louis">(UTC+04:00) Port Louis</option><option value="(UTC+04:00) Tbilisi">(UTC+04:00) Tbilisi</option><option value="(UTC+04:00) Yerevan">(UTC+04:00) Yerevan</option><option value="(UTC+04:30) Kabul">(UTC+04:30) Kabul</option><option value="(UTC+05:00) Ashgabat, Tashkent">(UTC+05:00) Ashgabat, Tashkent</option><option value="(UTC+05:00) Ekaterinburg (RTZ 4)">(UTC+05:00) Ekaterinburg (RTZ 4)</option><option value="(UTC+05:00) Islamabad, Karachi">(UTC+05:00) Islamabad, Karachi</option><option value="(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi">(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</option><option value="(UTC+05:30) Sri Jayawardenepura">(UTC+05:30) Sri Jayawardenepura</option><option value="(UTC+05:45) Kathmandu">(UTC+05:45) Kathmandu</option><option value="(UTC+06:00) Astana">(UTC+06:00) Astana</option><option value="(UTC+06:00) Dhaka">(UTC+06:00) Dhaka</option><option value="(UTC+06:00) Novosibirsk (RTZ 5)">(UTC+06:00) Novosibirsk (RTZ 5)</option><option value="(UTC+06:30) Yangon (Rangoon)">(UTC+06:30) Yangon (Rangoon)</option><option value="(UTC+07:00) Bangkok, Hanoi, Jakarta">(UTC+07:00) Bangkok, Hanoi, Jakarta</option><option value="(UTC+07:00) Krasnoyarsk (RTZ 6)">(UTC+07:00) Krasnoyarsk (RTZ 6)</option><option value="(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option><option value="(UTC+08:00) Irkutsk (RTZ 7)">(UTC+08:00) Irkutsk (RTZ 7)</option><option value="(UTC+08:00) Kuala Lumpur, Singapore">(UTC+08:00) Kuala Lumpur, Singapore</option><option value="(UTC+08:00) Perth">(UTC+08:00) Perth</option><option value="(UTC+08:00) Taipei">(UTC+08:00) Taipei</option><option value="(UTC+08:00) Ulaanbaatar">(UTC+08:00) Ulaanbaatar</option><option value="(UTC+09:00) Osaka, Sapporo, Tokyo">(UTC+09:00) Osaka, Sapporo, Tokyo</option><option value="(UTC+09:00) Seoul">(UTC+09:00) Seoul</option><option value="(UTC+09:00) Yakutsk (RTZ 8)">(UTC+09:00) Yakutsk (RTZ 8)</option><option value="(UTC+09:30) Adelaide">(UTC+09:30) Adelaide</option><option value="(UTC+09:30) Darwin">(UTC+09:30) Darwin</option><option value="(UTC+10:00) Brisbane">(UTC+10:00) Brisbane</option><option value="(UTC+10:00) Canberra, Melbourne, Sydney">(UTC+10:00) Canberra, Melbourne, Sydney</option><option value="(UTC+10:00) Guam, Port Moresby">(UTC+10:00) Guam, Port Moresby</option><option value="(UTC+10:00) Hobart">(UTC+10:00) Hobart</option><option value="(UTC+10:00) Magadan">(UTC+10:00) Magadan</option><option value="(UTC+10:00) Vladivostok, Magadan (RTZ 9)">(UTC+10:00) Vladivostok, Magadan (RTZ 9)</option><option value="(UTC+11:00) Chokurdakh (RTZ 10)">(UTC+11:00) Chokurdakh (RTZ 10)</option><option value="(UTC+11:00) Solomon Is., New Caledonia">(UTC+11:00) Solomon Is., New Caledonia</option><option value="(UTC+12:00) Anadyr, Petropavlovsk-Kamchatsky (RTZ 11)">(UTC+12:00) Anadyr, Petropavlovsk-Kamchatsky (RTZ 11)</option><option value="(UTC+12:00) Auckland, Wellington">(UTC+12:00) Auckland, Wellington</option><option value="(UTC+12:00) Coordinated Universal Time+12">(UTC+12:00) Coordinated Universal Time+12</option><option value="(UTC+12:00) Fiji">(UTC+12:00) Fiji</option><option value="(UTC+13:00) Nuku&#39;alofa">(UTC+13:00) Nuku'alofa</option><option value="(UTC+13:00) Samoa">(UTC+13:00) Samoa</option><option value="(UTC+14:00) Kiritimati Island">(UTC+14:00) Kiritimati Island</option></select>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="report-heading-entity">       
+                      <div class="form-group">
+                            <label id="Report_Schedule_Send_To" class="control-label">Users</label>
+                            <select class="form-control selectbox select-item" tabindex="19" id="formatType" multiple="multiple">
+                              <option value="0" selected >Test1</option>
+                              <option value="1" selected>Tom</option>
+                            </select> 
+                            <div class="selectColumnContainer site-checkbox">
+                              <ul class="event-config-container">
+                                <li class="search">
+                                  <span class="icon-search pull-right">
+                                    <input type="search" class="form-control form-search" placeholder="Search report">
+                                    <span class="foucs-icon-search"></span>
+                                  </span>
+                                  <span class="total-count"><span>783</span> Users</span>
+                                </li>  
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand>All</legand>
+                                  </label>
+                                </li>
+                              
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >CardHolder First Name</legand>
+
+                                  </label>
+
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >CardHolder Last Name</legand>
+                                  </label>     
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >Date and Time</legand>
+                                  </label>    
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >Severity</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >Device Name</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox">
+                                    <span></span>
+                                    <legand >Card Number</legand>
+                                  </label>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </div>    
+                  </div>
+                </div> 
+              </div>
+              <div id="reportOutputSectionId" class="thirdSection ps-column col-md-3 col-lg-3">
+                <h2 class="padding">Layout</h2>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                          <ul>
+                      <li>
+                        <div class="form-group selectize-form-group" >
+                          <label id="Report_Output_Select_Columns" class="control-label">Columns</label> 
+                          <select class="form-control selectbox select-item" tabindex="19" id="formatType" multiple="multiple">
+                            <option value="0" selected>CardHolder</option>
+                            <option value="1" selected>Severity</option>
+                            <option value="2" selected>Device Name</option>
+                          </select> 
+                          <div class="selectColumnContainer site-checkbox">
+                            <ul class="event-config-container">
+                              <li class="search">
+                                <span class="icon-search pull-right">
+                                  <input type="search" class="form-control form-search" placeholder="Search report">
+                                  <span class="foucs-icon-search"></span>
+                                </span>
+                                <span class="total-count"><span>7</span> Columns</span>
+                              </li>  
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand>All</legand>
+                                </label>
+                              </li>
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >CardHolder First Name</legand>
+                                </label>
+                              </li>  
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >CardHolder Last Name</legand>
+                                </label>
+                              </li>
+                              <li class="ps-checkbox checkbox"> 
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >Date and Time</legand>
+                                </label>
+                              </li>
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >Severity</legand>
+                                </label> 
+                              </li>
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >Device Name</legand>
+                                </label>
+                              </li>
+                              <li class="ps-checkbox checkbox">
+                                <label class="control-label label-padding">
+                                  <input class="checkbox" type="checkbox" >
+                                  <span></span>
+                                  <legand >Card Number</legand>
+                                </label> 
+                              </li>
+                            </ul>
+                          </div>   
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="ps-sort-layout">
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order1" for="sortOrder1">Sort order 1</label>
+                          <select class="form-control selectbox" id="sortOrder1" ><option value="">None</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option></select>
+                        </div>
+                        <span class="icon input-addon-icon" tabindex="15"><b class="sortOrder1 icon-sort-ascending"  title="Descending"></b></span>
+                      </li>
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order2" for="sortOrder2">Sort order 2</label>
+                          <select class="form-control selectbox" id="sortOrder2" ><option value="">None</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option></select>
+                        </div>
+                        <span class="icon input-addoff-icon" tabindex="15"><b class="sortOrder1 icon-sort-ascending" </b></span>
+                      </li>
+                      <li>
+                        <div class="field select-field right-inner-addon notRequiredStyle selectize-form-group">
+                          <label id="Report_Output_Sort_Order3" for="sortOrder3">Sort order 3</label>
+                          <select class="form-control selectbox" id="sortOrder3"><option value="">None</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000006">Event Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000002">Date and Time</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000003">Severity</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000004">Device Name</option><option value="aaaaaaaa-aaaa-1111-1111-a00000000005">Card Number</option></select>
+                        </div>
+                        <span class="icon input-addon-icon" tabindex="15"><b class="sortOrder1 icon-sort-ascending" title="Descending"></b></span>
+                      </li>
+                      <div class="footer-report col-md-12 col-lg-12">
+                      <button id="Report_Export" class="btn btn-primary pull-right margin-none" tabindex="25" type="button">Export</button>
+                        <button class="btn btn-default pull-right margin-right" tabindex="18" id="preview" type="button" value="Save">Preview</button>                      
+                        <ul class="report-export-data site-select col-md-7 col-lg-7">
+                          <li>
+                            <a href="#">To PDF</a>
+                          </li>
+                          <li>
+                            <a href="#">To Excel</a>
+                          </li>
+                          <li>
+                            <a href="#">To CSV</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id="reportOptionSectionId" class="fourSection ps-column col-md-3 col-lg-3">
+                <span id="Report_Schedule" class="reportsHeading" >
+                  <h2 class="padding">Schedule Delivery</h2>
+                </span>
+                <div class="report-inside-wrap">
+                  <div class="scroll-create-report padding">
+                    <form data-validationkey="report_form" id="reportmodalform">
+                      <ul class="sch_options">
+                        <li>
+                          <div class="form-group selectize-form-group" >
+                            <label id="Report_Schedule_Options" for="selectAccount">Frequency</label>
+                            <select class="form-control selectbox" tabindex="19" id="formatType" >
+                              <option value="0">Never</option>
+                              <option value="1">Every Day</option>
+                              <option value="3">Every Week</option>
+                              <option value="4" selected="selected">Every Month</option>
+                            </select>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group calender" id="reportScheduleDate" data-date="" data-date-format="">
+                            <label id="lblSelect_Date" class="control-label" >On</label><input id="txbSelect_Date" type="text" required="" placeholder="Select Date" class="form-control form-date">
+                            <span class=" add-on icon form-date icon-calendar" tabindex="20"></span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="form-group" >
+                            <label id="Report_Schedule_Send_To" class="control-label">Email To</label>
+                            <select class="form-control selectbox select-item" tabindex="19" id="formatType"  multiple="multiple">
+                              <option value="0" selected >CardHolder</option>
+                              <option value="1" selected>Card</option>
+                            </select> 
+                            <div class="selectColumnContainer site-checkbox">
+
+                              <ul class="event-config-container">
+                                <li class="search">
+                                  <span class="icon-search pull-right">
+                                    <input type="search" class="form-control form-search" placeholder="Search report">
+                                    <span class="foucs-icon-search"></span>
+                                  </span>
+                                  <span class="total-count"><span>783</span> Users</span>
+                                </li>  
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand>All</legand>
+                                  </label>
+                                </li>
+                              
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >CardHolder First Name</legand>
+
+                                  </label>
+
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >CardHolder Last Name</legand>
+                                  </label>     
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Date and Time</legand>
+                                  </label>    
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Severity</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Device Name</legand>
+                                  </label>
+                                </li>
+                                <li class="ps-checkbox checkbox">
+                                  <label class="control-label label-padding">
+                                    <input class="checkbox" type="checkbox" >
+                                    <span></span>
+                                    <legand >Card Number</legand>
+                                  </label>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div> 
+              </div>
+              </div>
+              <div class='doneBtn create-report-footer col-md-12'>
+                <button class='btn btn-primary pull-right margin-none' id='confirmButton'>SAVE</button>
+                <button id="Report_Save" class="btn pull-right btn-default margin-right" tabindex="23" type="button" value="Save" >CANCEL</button>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section> <!--End main section -->
+  <script src="../scripts/custom.js"></script>
+</body>
+</html>

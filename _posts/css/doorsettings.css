@@ -1,0 +1,16 @@
+#doorsettings .threecheckbox .checkbox,
+#doorSettingsForm .row,
+#gatewayForm .row{
+    margin: 0;
+}
+
+#doorsettings .checkbox input[type="checkbox"],
+#doorsettings .threecheckbox .checkbox input[type="checkbox"],
+#doorsettings .tworadios .radio input[type="radio"],
+#doorsettings .tworadios .radio + .radio{
+    margin-top: 0;
+}
+
+.controllerView .listOverview .doorsettingsTab .doorsettings {            
+	margin-right: 0 !important;
+}

@@ -1,0 +1,423 @@
+﻿
+.visual_management_root {
+    padding: 2px !important;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.visual_management_root .mapOverview {
+    position: absolute;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+    width: 75%;
+}
+
+.visual_management_root .sitelistCard {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    padding: 0;
+    width: 25%;
+    background: #f5f5f5;
+}
+
+.siteList li {
+    float: left;
+    width: 100%;
+}
+
+
+.visual_management_root .cardlistview{
+    position: absolute;
+    width: 25%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.visual_management_root .cardlistview .security_level {
+    height:108px;
+    background-color:#f47e37;
+}
+
+.visual_management_root .cardlistview .security_level select{
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-family: 'HoneywellSansWeb-bold' !important;
+    font-size: 18px;
+    margin-top: 39px;
+}
+
+.visual_management_root .cardlistview .panel-title>span{
+    font-family: 'HoneywellSansWeb-Medium';
+    color: #606060;
+    font-size: 14px;
+}
+
+.visual_management_root .cardlistview .main_tab_list, 
+.visual_management_root .cardlistview .sub_content {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.visual_management_root .cardlistview .site_list {
+    position:absolute;
+    top:40px;
+    bottom:53px;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .main_nav_page {
+    position:absolute;
+    top:94px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .sync_map {
+    position:absolute;
+    bottom:0;
+    height:53px;
+    left:0;
+    right:0;
+    padding: 10px 20px;
+    border-top: 1px solid #d0d0d0;
+    z-index: 100;
+}
+
+.visual_management_root .cardlistview .sub_content .sub_dev_tab_list,
+.visual_management_root .cardlistview .sub_content .zone_status_area
+ {
+    position:absolute;
+    top:54px;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.visual_management_root .cardlistview .sub_content .zone_list_panel {
+    position:absolute;
+    top:84px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .header {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.visual_management_root .cardlistview .nav-tabs{
+    border-bottom: 1px solid #d0d0d0 !important;
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.visual_management_root .cardlistview .tab-content{
+    position: absolute;  
+    top: 40px;
+    bottom: 0;  
+    right: 0;
+    left: 0;   
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .tab-content.device{
+    position: absolute;  
+    top: 0;
+    bottom: 0;  
+    right: 0;
+    left: 0;   
+    overflow-y: auto;
+}
+
+.visual_management_root .cardlistview .sub_content{
+    padding:0;
+}
+
+.visual_management_root .cardlistview .sub_content_head {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e7e7e7;
+    height: 84px;
+}
+
+.visual_management_root .cardlistview .name{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.visual_management_root .cardlistview .description{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.visual_management_root .cardlistview .switch {
+    width:50px;
+}
+
+.visual_management_root .cardlistview .panel {
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+.visual_management_root .cardlistview .panel + .panel {
+    margin-top:0;
+}
+.visual_management_root .cardlistview .panel:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.visual_management_root .cardlistview .tab-content .panel .panel-heading {
+    cursor: pointer;
+}
+
+.visual_management_root .cardlistview .panel-body {
+    padding:0;
+}
+
+.visual_management_root .cardlistview .panel-body .list-group {
+    margin-bottom:0;
+}
+
+.visual_management_root .cardlistview .zone_status_area{
+    border-top: 1px solid #e7e7e7;
+}
+
+.visual_management_root .cardlistview .zone_status_area>li{
+    margin: 15px 20px 15px 30px;
+    list-style: none;
+    height: 42px;
+}
+
+.visual_management_root .cardlistview .device_info .clip_record_small {
+    height:62px;
+    background-color:#f2f2f2;
+}
+.visual_management_root .cardlistview .device_info .associate_camera {
+    margin:15px;
+}
+
+.visual_management_root .cardlistview .device_info .associated_camera_video_small {
+    margin-top: 15px;
+    height:180px;
+    background-color:#f2f2f2;
+}
+
+.visual_management_root .cardlistview .device_info #recorded_clips:last-child tr td{
+    border-bottom: 1px solid #ddd;
+}
+
+.visual_management_root .cardlistview .device_info {
+    
+}
+
+.visual_management_root .cardlistview .device_info .table tr:first-child td{
+    border-top:0;
+}
+
+.visual_management_root .cardlistview .device_info .device_video_overview {
+    height:200px;
+    background-color:#000;
+}
+
+.visual_management_root .visual_map{
+    position: absolute;
+    left: 25%;
+    right:0;
+    top: 0;
+    bottom: 0;
+}
+
+.visual_management_root .visual_map .visual_map_wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #e7e7e7;
+    overflow: hidden;
+}
+
+.visual_management_root .visual_map .visual_map_wrapper .sync_list_btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;    
+}                                    
+
+.visual_map_wrapper .visual_map_img{
+    max-width: 100%;
+}
+
+.visual_map_wrapper .vm_map_item {
+    font-size: .75em;
+    position: absolute;    
+    margin-left: -21px;
+    margin-top: -50px;    
+}
+
+.visual_map_wrapper .vm_map_item:hover {   
+    margin-left: -23px;
+    margin-top: -56px;  
+}
+
+.visual_map_wrapper .label_vm {
+    position:absolute;
+    height:32px;
+    background-color:#1792e5;
+    padding:5px;
+    white-space: nowrap;
+}
+
+.visual_map_wrapper .label_vm_txt {
+    color:#fff;
+    white-space: nowrap;
+    font-size:14px;
+}
+
+.ispicon_vm_executive::before {
+    background-position: -556px -363px;
+}
+
+.ispicon_vm_fire::before {
+    background-position: -524px -364px;
+}
+
+.ispicon_vmred::before {
+    background-position: -75px -549px;
+    position: relative;
+    width:41px;
+    height:50px;  
+}
+
+.ispicon_vmred:hover::before {
+    background-position: -249px -542px;    
+    width:45px;
+    height:56px;
+}
+
+.ispicon_vmyellow::before {
+    background-position: -9px -549px;
+    position: relative;
+    width:41px;
+    height:50px;        
+}
+
+.ispicon_vmyellow:hover::before {
+    background-position: -192px -542px;    
+    width:45px;
+    height:56px;
+}
+
+.ispicon_vmgreen::before {
+    background-position: -139px -549px;
+    position: relative;
+    width:41px;
+    height:50px;  
+}
+
+.ispicon_vmgreen:hover::before {
+    background-position: -300px -542px;
+    width:45px;
+    height:56px;
+}
+
+.ispicon_vmitem {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+}
+
+.ispicon_vmcamera::before {
+    background-position: -331px -428px;    
+}
+
+.ispicon_vmdoor::before {
+    background-position: -235px -396px;
+}
+
+.ispicon_vmzone::before {
+    background-position: -1169px -171px;
+}
+
+.ispicon_vmoutput::before {
+    background-position: -267px -396px;
+}
+
+.visual_management_root .device_info .major_label {
+    display:inline-block;
+    background-color:#f47e37;
+    color:#fff;
+    font-size:14px;
+}
+
+.visual_management_root .device_info .note_input {
+    border:0;
+}
+
+.visual_management_root .device_info .btn_actions {
+    background:transparent;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;    
+}
+
+.visual_map_tools_wrapper{
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+}
+
+.visual_map_tools_wrapper .reset_btn{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns{
+    margin-top: 10px;
+    box-shadow: 0 0 4px -1px #000 !important;
+    padding: 3px;
+    float: left;
+    background: #fff;
+}
+
+.visual_map_tools_wrapper .zoom_btns .ispicon_accMinus {
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+    
+

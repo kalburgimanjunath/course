@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/intrusiongroup.css">
+    <link rel="stylesheet" type="text/css" href="Content/LoginPlugin/loginstyle.css">
+    <style type="text/css">
+    .tooltip.bottom {
+        left: 0 !important;
+        position: relative;
+        top: 0px !important;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 8px;
+    }
+   
+    .tooltip-inner {
+        color: #ee3124 !important;
+        background: none !important;
+        background-color: none !important;
+        padding: 0 !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .tooltip.right .tooltip-arrow{
+        border-right-color: #e7e7e7 !important;
+    }
+    .tooltip-inner {
+        background: #fff;
+        border-radius: 0;
+        border: 1px solid #e7e7e7;
+        box-shadow: 0 0 6px #e7e7e7;
+        color: #707070;
+        padding: 6px 6px;
+    }
+    .tooltip-inner {
+        /*position: fixed;*/
+        background: #fff !important;
+        border-radius: 0 !important;
+        border: 1px solid #e7e7e7 !important;
+        box-shadow: 0 0 6px #e7e7e7 !important;
+        color: #707070 !important;
+        padding: 6px 6px !important;
+
+    }
+    </style>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+             $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+        });
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+<div class="container">
+  <h3>Tooltip Example</h3>
+  <p>The data-placement attribute specifies the tooltip position.</p>
+  <ul class="list-inline">
+    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Top</a></li>
+    <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!">Bottom</a></li>
+    <li><a href="#" data-toggle="tooltip" data-placement="left" title="Hooray!">Left</a></li>
+    <li><a href="#" data-toggle="tooltip" data-html="true" data-placement="right" title="Hooray!</br>adsds">Right</a></li>
+  </ul>
+</div>
+</body>
+</html>

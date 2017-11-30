@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/alarm-layout.css">
+    <link rel="stylesheet" type="text/css" href="css/alarm-layout-Copy.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
+
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+
+    <div id="">
+        <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a id="menu-toggle" href="#" class="toggle">
+                        <span class="sidebar-brand">
+                            <span class="ispicon ispicon_handbar">
+                            </span>
+                            Eagle
+                        </span>
+                    </a>
+                    <nav id="sidebar-wrapper" class="">
+                        @*<ul data-bind="foreach: $data.pages">
+                            <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                                <div>
+                                    <header class="count">
+                                        <span data-bind="css: PageIcon"></span>
+                                    </header>
+                                    <p data-bind="text: $data.PageName"></p>
+                                </div>
+                            </li>
+                        </ul>*@
+                        <ul class="sidebar-nav" id="ispheader">
+                            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                            <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                                <a href="#top" onclick=$("#menu-close").click();>
+                                    <img src="~/Content/images/Honeywell-logo-Wht-sm.png" width="120" />
+                                </a>
+                                <p data-bind="text: $data.PageName"></p>
+                            </li>
+                            <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                                <a href="#top" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_dashboard"></span>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="dropdown">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="ispicon ispicon_accounts"></span>
+                                    Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    @*
+                                    <li class="dropdown-header">Dropdown heading</li>*@
+                                    <li><a href="#" onclick="onMenuItemSelect('AddSite')">Add New Account</a></li>
+                                    <li><a href="#" onclick="onMenuItemSelect('SiteOverview')">Account Overview</a></li>
+                                </ul>
+                                @*$('#menu-close').click();*@
+                            </li>
+                            <li>
+                                <a href="#about" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_utility"></span>
+                                    Utility Tools
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_utility"></span>
+                                    My Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#portfolio" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_utility"></span>
+                                    Central Station
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_utility"></span>
+                                    Sales and Support
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact" onclick=$("#menu-close").click();>
+                                    <span class="ispicon ispicon_utility"></span>
+                                    Sign Out
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span>
+                                <button class="btn btn-default" type="submit"><i class="ispicon ispicon_search"></i></button>
+                            </span>
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <div id="page-body">
+        <div class="alarms splitView">
+            <nav class="navbar ispTopmenu">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <div class="dropdown ispActionMenu mainMenu">
+                            <span class="dropdown-toggle title" type="button" data-toggle="dropdown">
+                                67 Custom
+                                <span class="ispicon ispicon_dropArrow"></span>
+                            </span>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span>67</span> All</a></li>
+                                <li><a href="#"><span>30</span> Custom</a></li>
+                                <li><a href="#"><span>23</span>Acknowledged</a></li>
+                                <li><a href="#"><span>35</span>Unacknowledged</a></li>
+                                <li><a href="#"><span>20</span>Events</a></li>
+                                <li><a class="alarmsRecent" href="#">in last 7 days</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown ispActionMenu contentMenu">
+                            <span class="ispicon ispicon_saveFilter"></span>
+                            <span>
+                                Save Filter
+                            </span>
+                            <ul class="dropdown-menu ispmenu hide saveFilter">
+                                <li>
+                                    <p>Please enter a filter name <br /></p>
+                                    <input type="text" class="form-control" />
+                                </li>
+                                <li class="footer">
+                                    <button type="button" class="btn btn-primary pull-right">Save</button>
+                                    <button type="button" class="btn btn-default pull-right">Cancel</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="selectedCount"> <span>3</span> <span>Events</span> <span>selected</span> <span class="pull-right ispicon ispicon_close"></span></div>
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <div class="dropdown ispActionMenu">
+                            <span class="ispicon ispicon_sort"></span>
+                            <span class="dropdown-toggle toggleText" type="button" data-toggle="dropdown">
+                                Sort
+                            </span>
+                            <ul class="dropdown-menu ispmenu">
+                                <li><a href="#">Severity</a></li>
+                                <li><a href="#">Time</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown ispActionMenu">
+                            <span class="ispicon ispicon_filter"></span>
+                            <span class="toggleText">
+                                Filter
+                            </span>
+                            <!-- ALARM FILTERS -->
+                            <div class="dropdown-menu alarmFilter dropdown-menu-right show">
+                                <div>
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#entitiesTab" class="alarm-search-tab-title" >Entities</a></li>
+                                        <li><a  data-toggle="tab" href="#timeTab" class="alarm-search-tab-title">Time</a></li>
+                                        <li><a  data-toggle="tab" href="#eventsTab" class="alarm-search-tab-title">Events</a></li>
+                                        <li><a  data-toggle="tab" href="#sitesTab" class="alarm-search-tab-title">Sites</a></li>
+                                    </ul>
+                                    <div class="tab-content alarm-search-content">
+                                        <!-- ENTITIES TAB-->
+                                        <div class="tab-pane fade in " id="entitiesTab">
+                                            <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                                <li class="selected">
+                                                    <a href="#"> <input type="checkbox" /> <span>Sensor Types </span> <span class="ispicon ispicon_accPlus"></span></a>
+                                                    <div class="filterSearch hide">
+                                                        <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> <input type="checkbox" /> <span>Cameras </span> <span class="ispicon ispicon_accPlus"></span></a>
+                                                    <div class="filterSearch ">
+                                                        <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> <input type="checkbox" /> <span>Doors </span> <span class="ispicon ispicon_accPlus"></span></a>
+                                                    <div class="filterSearch hide">
+                                                        <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> <input type="checkbox" /> <span>Rules </span> <span class="ispicon ispicon_accPlus"></span></a>
+                                                    <div class="filterSearch hide">
+                                                        <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--ENTITIES TAB-->
+                                        <!--TIME TAB-->
+                                        <div class="tab-pane timeTab " id="timeTab">
+                                            <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                                <li><a href="#"> <input type="radio" /> <span>Today </span></a></li>
+                                                <li><a href="#"> <input type="radio" /> <span>Yesterday </span></a></li>
+                                                <li>
+                                                    <a href="#"> <input type="radio" /> <span>Within last 7 days </span></a>
+                                                    <div class="filterSearch ">
+                                                        <span> Date Range </span>
+                                                        <span class="dateTimePicker"><input type="text" class="form-control" /> <i class="ispicon ispicon_calender alarm-searchIcon"></i></span>
+                                                        <span class="dateTimePicker"> <input type="text" class="form-control" /> <i class="ispicon ispicon_calender alarm-searchIcon"></i> </span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--TIME TAB-->
+                                        <!--EVENTS TAB-->
+                                        <div class="tab-pane eventsTab active" id="eventsTab">
+                                            <div class="filterSearch">
+                                                <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                            </div>
+                                            <div class="eventsAlarms">
+                                                <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                                    <li><a class="eventType">Access</a></li>
+                                                    <li><a href="#"> <input type="checkbox" /> <span>Event 2 </span></a></li>
+                                                    <li><a href="#"> <input type="checkbox" /> <span>Event 3 </span></a></li>
+                                                </ul>
+                                                <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                                    <li><a class="eventType">Videos</a></li>
+                                                    <li><a href="#"> <input type="checkbox" /> <span>Event 2 </span></a></li>
+                                                    <li><a href="#"> <input type="checkbox" /> <span>Event 3 </span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--EVENTS TAB-->
+                                        <!--SITES TAB-->
+                                        <div class="tab-pane sitesTab" id="sitesTab">
+                                            <div class="filterSearch">
+                                                <input type="text" class="form-control" /> <i class="ispicon ispicon_search alarm-searchIcon"></i>
+                                            </div>
+                                            <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                                <li><a href="#"> <input type="checkbox" /> <span>Site 1 </span></a></li>
+                                                <li><a href="#"> <input type="checkbox" /> <span>Site 2 </span></a></li>
+                                                <li><a href="#"> <input type="checkbox" /> <span>Site 3 </span></a></li>
+                                                <li><a href="#"> <input type="checkbox" /> <span>Site 4 </span></a></li>
+                                            </ul>
+                                        </div>
+                                        <!--SITES TAB-->
+                                        <div class="btn-footer">
+                                            <div class="pull-right">
+
+                                                <div class="btn btn-default">Cancel</div>
+                                                <div class="btn btn-primary">Apply</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ALARM FILTERS -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown ispActionMenu">
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_views"></span>
+                                <span class="toggleText">
+                                    Views
+                                </span>
+                            </span>
+                            <ul class="dropdown-menu ispmenu dropdown-menu-right">
+                                <li><a href="#">Table View</a></li>
+                                <li><a href="#">Split View</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown ispActionMenu">
+                            <span class="dropdropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_action"></span>
+                                <span class="toggleText">
+                                    Actions
+                                </span>
+                            </span>
+                            <ul class="dropdown-menu ispmenu dropdown-menu-right">
+                                <li><a href="#">Freeze Alarm Stream</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#ackAlarmsModal">Acknowledge</a></li>
+                                <li><a href="#">Clear</a></li>
+                                <li><a href="#">Report</a></li>
+                                <li><a href="#">Share</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="filterDisplay show">
+                <span id="Today" class="search-filter-text"><span>Today</span> <span>x</span></span>
+                <span id="Cameras" class="search-filter-text"><span>Cameras</span> <span>x</span></span>
+            </div>
+            <div class="alarmFrozen show">
+                <p class="pull-left frozenInfo">
+                    <span class="ispicon ispicon_frozen"></span>
+                    <span>Alarm Stream Frozen</span> <span>|</span>
+                    <span class="frozenNewAlarm"> <span>2</span><span> New Alarms </span></span>
+                </p>
+                <p class="pull-right unfreeze">Unfreeze Alarm Stream</p>
+            </div>
+
+            <div class="alarmEventTable">
+                <div class="alarmsContainer table-responsive panel-body">
+                    <div class="EventsHeader">
+                        <p class="pull-left"><span>5</span> Needs Attention</p>
+                        <p class="pull-right acknowledgeAll"><span class="ispicon ispicon_acknowledgeAll"></span><span>Acknowledge All</span></p>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr style="position:relative;">
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+                                <td class="dropdown-menu ispmenu show saveFilter">
+                                    <div>
+                                        <p>Please enter a filter name <br /></p>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="footer">
+                                        <button type="button" class="btn btn-primary pull-right">Save</button>
+                                        <button type="button" class="btn btn-default pull-right">Cancel</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="eventContainer table-responsive panel-body">
+                    <div class="EventsHeader">
+                        <p class="pull-left"><span>62</span>Events</p>
+                        <p class="pull-right acknowledgeAll"><span class="ispicon ispicon_acknowledgeAll"></span><span>Clear All</span></p>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="severityCheck">
+                                    <input type="checkbox" value="" />
+                                    <span class="ispicon ispicon_alarmsCritical"></span>
+                                </td>
+
+                                <td class="alarmDesc">
+                                    <h4 class="title">
+                                        Card Not Found
+                                    </h4>
+                                    <span class="severityType pull-left criticalAlarm">CRITICAL</span>
+                                    <p class="deviceName">Devcice Name</p>
+                                    <p class="summary"> Business Lounge, Floor 1, Tower2...</p>
+                                </td>
+
+                                <td>
+                                    <span>8:42 PM</span>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="newAlarm"><span><span>2</span><span>New Alarms</span><span>x</span></span></div>
+            </div>
+
+            <div class="floorPlanWrapper">
+                <div class="floorPlanView"></div>
+            </div>
+
+        </div>
+
+        <div class="modal ispmodal fade" id="ackAlarmsModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="lineModalLabel">Acknowledge Alarms</h1>
+                    </div>
+                    <div class="modal-body hide">
+                        <div class="row scroll-x scroll-y">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group" role="group" aria-label="group button">
+                            <button type="button" class="btn btn-default">Cancel</button>
+                            <button type="button" class="btn btn-primary">Acknowledge</button>
+                        </div>
+                    </div>
+                    <!-- FOOTER SECTION ENDS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal ispmodal fade" id="clearEventsModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="lineModalLabel">Clear Events</h1>
+                    </div>
+                    <div class="modal-body hide">
+                        <div class="row  scroll-x scroll-y">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group" role="group" aria-label="group button">
+                            <button type="button" class="btn btn-default">Cancel</button>
+                            <button type="button" class="btn btn-primary">Clear</button>
+                        </div>
+                    </div>
+                    <!-- FOOTER SECTION ENDS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

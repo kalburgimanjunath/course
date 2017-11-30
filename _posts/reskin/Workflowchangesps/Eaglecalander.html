@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle</title>
+    <link href="Eaglecalander_files/Site.css" rel="stylesheet">
+    <link href="Eaglecalander_files/appicons.css" rel="stylesheet">
+    <link href="Eaglecalander_files/bootstrap.css" rel="stylesheet">
+    <link href="Eaglecalander_files/header.css" rel="stylesheet">
+    <link href="Eaglecalander_files/menu.css" rel="stylesheet">
+    <link href="Eaglecalander_files/controlstyles.css" rel="stylesheet">
+    <link href="Eaglecalander_files/selectize.css" rel="stylesheet">
+    <link href="Eaglecalander_files/ico.css" rel="stylesheet">
+    <link href="Eaglecalander_files/ispcommon.css" rel="stylesheet">
+    <link href="Eaglecalander_files/calendar-search-layout.css" rel="stylesheet">
+    <link href="Eaglecalander_files/fullcalendar.css" rel="stylesheet">
+    <link href="Eaglecalander_files/configstyle.css" rel="stylesheet">
+    <!-- <link href="Eaglecalander_files/style.css" rel="stylesheet"> -->
+    <link href="content/css/controlstyles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/calandar/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="content/css/calander.css" rel="stylesheet" type="text/css">
+    
+    
+	<script src="scripts/jquery-2.2.4.min.js"></script>
+	
+
+</head>
+
+<body class="calndr" cz-shortcut-listen="true">
+    <div id="busyindicator"></div>
+    <div class="body-content">
+        <input class="cultureandregion" type="hidden" value="US">
+        <input id="signout" type="hidden" data-url="/MaxproCloud.Shell/login/JsonSignout">
+        <input id="renewsessn" type="hidden" data-url="/MaxproCloud.Shell/page/CheckTimeout">
+        <input id="getpages" type="hidden" data-url="/MaxproCloud.Shell/page/getpages">
+        <input id="getpage" type="hidden" data-url="/MaxproCloud.Shell/page/getpage" data-challenge="/MaxproCloud.Shell/page/GetChallenge">
+        <input id="getpartial" type="hidden" data-url="/MaxproCloud.Shell/page/getpartial">
+        <div id="challange">
+            <script type="text/html" id="topMessageTmpl">
+                <a href="" class="dropdown notification-icon" data-toggle="dropdown">
+                </a>
+                <ul class="dropdown-menu dashboard-message" id="dash-message">
+                    <li class="msg-header"> <span class="header" id="header">
+                Today&#39;s Notifications
+            </span> </li>
+                    <!-- ko foreach: $data.messages -->
+                    <li class="message">
+                        <a href=""> <span class="header" id="messagebox">
+                    <span class="msgContent">
+                        <span class="messagetitle"></span> <span class="msgtime"></span> <span class="message">
+                            <span ></span> <span></span> <span>From</span> <span></span> </span>
+                            </span> <span class="msgicon alerticon">
+                        <b></b>
+                    </span> </span>
+                        </a>
+                    </li>
+                    <!-- /ko -->
+                    <li id="ShowAllNotifications" class="msg"> <span class="dropdown-menu-sub-footer" href="">Show all </span> </li>
+                    <li id="msgTitle" class="msg"> <span class="dropdown-menu-sub-footer"></span> </li>
+                </ul>
+            </script>
+            <script type="text/html" id="topMyProfileTmpl">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle profile-icon" data-toggle="dropdown">
+                            <!-- <img src='/MaxproCloud.Shell/Content/images/icon_user.png' /> --></a>
+                        <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile">
+                            <li> <span class="profile-icon">
+                        <span></span> </span> <span class="profile-item-content">
+                        <a href="#"></a>
+                        <span class="menu-divider"></span> </span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </script>
+            <div>
+                <script id="searchresultTmpl" type="text/html">
+                    <li>
+                        <div class="place"> <i></i>
+                            <div class="ListBreadcrumb"><span class="searchNavStyle"></span></div>
+                            <div class="ListBreadcrumb"><span></span></div>
+                        </div>
+                    </li>
+                </script>
+                <script id="userResultTmpl" type="text/html">
+                    <li>
+                        <div class="place"> <i></i>
+                            <div class="ListBreadcrumb"><span class="searchNavStyle"></span></div>
+                            <div class="ListBreadcrumb"><span></span></div>
+                        </div>
+                    </li>
+                </script>
+            </div>
+            <div class="wrapper">
+                <div class="ps-global-header" id="page-header">
+                    <input type="hidden" id="siteurl" value="/MaxproCloud.Shell/"> </div>
+                <section class="" id="page-body">
+                    <section class="mpc" id="Calendar" style="" data-complete="true">
+                        <div class="calendar-root ps-calendar">
+                            <div id="calendar-search-view" class="show">
+                                <div class="calendar-Wrapper">
+                                    <div class="calendar-header">
+                                        <nav>
+                                            <div class="calendar-header-ul pull-left"> </div>
+                                        </nav>
+                                    </div>
+                                    <div class="calendar-main-block">
+                                        <div id="calendar" class="fc fc-ltr">
+                                            <table class="fc-header">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="fc-header-left"><span class="fc-header-title"><h2><span class="add-on">December 2016</span>
+                                                            <input type="text" style="display:none"> </h2>
+                                                            </span>
+                                                        </td>
+                                                        <td class="fc-header-center"><span class="fc-button fc-button-prev fc-state-default fc-corner-left" unselectable="on"><span class="fc-text-arrow"><b class="cal-header-month-left-arrow"></b></span></span><span class="fc-button fc-button-agendaDay fc-state`default" unselectable="on">Day</span><span class="fc-button fc-button-next fc-state-default fc-corner-right" unselectable="on"><span class="fc-text-arrow"><b class="cal-header-month-right-arrow"></b></span></span>
+                                                        </td>
+                                                        <td class="fc-header-right"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="calndr_day_date">
+                                                <ul class="list-unstyled cal-nav">
+                                                    <li>
+
+                                                        <span class="cal-day">MON</span>
+                                                        <span class="cal-date date-hw_red">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">TUE</span>
+                                                        <span class="date-hw_red-o cal-date">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">WED</span>
+                                                        <span class="cal-date">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">THU</span>
+                                                        <span class="cal-date">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">FRI</span>
+                                                        <span class="cal-date">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">SAT</span>
+                                                        <span class="cal-date">12</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">SUN</span>
+                                                        <span class="cal-date date-hw_disabled">12</span>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-psq">
+                                                <ul class="calndr-wrapper scroll-calandar-col-1 calandar-col-1">
+                                                    <li class="calndr-lft calendar-sidebar">
+                                                        <ul class="calndr-timeline">
+                                                            <li><span>12am</span></li>
+                                                            <li><span>1am</span></li>
+                                                            <li><span>2am</span></li>
+                                                            <li><span>3am</span></li>
+                                                            <li><span>4am</span></li>
+                                                            <li><span>5am</span></li>
+                                                            <li><span>6am</span></li>
+                                                            <li><span>7am</span></li>
+                                                            <li><span>8am</span></li>
+                                                            <li><span>9am</span></li>
+                                                            <li><span>10am</span></li>
+                                                            <li><span>11am</span></li>
+                                                            <li><span>12pm</span></li>
+                                                            <li><span>1pm</span></li>
+                                                            <li><span>2pm</span></li>
+                                                            <li><span>3pm</span></li>
+                                                            <li><span>4pm</span></li>
+                                                            <li><span>5pm</span></li>
+                                                            <li><span>6pm</span></li>
+                                                            <li><span>7pm</span></li>
+                                                            <li><span>8pm</span></li>
+                                                            <li><span>9pm</span></li>
+                                                            <li><span>10pm</span></li>
+                                                            <li><span>11pm</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="calndr-rt">
+                                                        <ul class="calndr-alarm-line">
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="calendar-day-view-wrapper">
+                                            <div class="ppl_main_tab">
+                                                <div class="clearfix">
+                                                    <div class="col-lg-8 col-md-8 col-sm-8" id="header">
+                                                        <ul class="nav nav-tabs pw_tabs">
+                                                            <div class="col-sm-6">
+                                                                <div class="ps-rules-input-group">
+                                                                    <li class="ps-rules-first-input-wrapper">
+                                                                        <div class="form-group">
+                                                                            <span id="device-popoverbtn" data-placement="auto">
+                                    <span class="icon_list1i" ></span>
+                                                                            </span>
+                                                                            <!--                                                                            <label id="lbl-RULE_LABEL_DEVICE" class="control-label pull-left">Areas<span class="rsAcCount"></span></label>-->
+                                                                            <input type="text" placeholder="Main Area + 4" class="form-control readonly arrow-top arrow-down" id="txt_device" readonly>
+                                                                            <b class=" icon_list1" data-toggle="popover" data-placement="auto" data-ispopovershown="true"></b>
+                                                                            <div class="selectColumnContainer popup-site">
+                                                                                <ul class="" id="accordion1">
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink1" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink1" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                            <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink21" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Alarm/Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink21" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink31" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>System</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink31" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pull-right calndr-nav-btn">
+                                                                <button type="button" class="btn btn-calndr-warning"></button>
+                                                                <button type="button" class="btn btn-calndr-video"></button>
+                                                            </div>
+                                                        </ul>
+                                                        <div class="scroll-calandar-col-2 calandar-col-2">
+                                                            <div class="calndr-table">
+                                                                <table class="table">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 calandar-col-4">
+                                                        <div class="scroll-calandar-col-3">
+                                                            <div class="calndr-container">
+                                                                <h2 class="video">Trigger Motion</h2>
+                                                                <p>HUE Studio Mn Door, Business Lounge... </p>
+                                                                <p>Offsite</p>
+                                                                <form class="sett-config-r">
+                                                                    <div class="sett-video">
+                                                                        <video class="video">
+                                                                            <source src="video/SampleVideo_360x240_5mb.mp4" type="video/mp4">
+                                                                        </video>
+                                                                        <div class="playpause"></div>
+                                                                    </div>
+                                                                    <button type="button" class="btn btn-primary pull-right">Export</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cal-search-footer-notification">
+                                            <p id="Calendar_Data_Fetch_From_Cloud">All the data shown above are fetched from cloud</p>
+                                        </div>
+                                        <div id="calendarPlayerImage" data-playerimage="/MaxproCloud.Shell/Content/images/Honeywell_Blank_220.png"></div>
+                                    </div>
+                                </div>
+                    </section>
+
+                    </div>
+                </section>
+                </section>
+                </div>
+            </div>
+            <script src="scripts/jquery-2.2.4.min.js"></script>
+            <script src="content/js/bootstrap.min.js"></script>
+            <script src="scripts/jquery.slimscroll.js"></script>
+            <script type="text/javascript" src="scripts/master.js"></script>
+</body>
+
+</html>

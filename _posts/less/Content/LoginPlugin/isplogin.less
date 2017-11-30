@@ -1,0 +1,37 @@
+@color_1: #303030;
+@font_family_1: 'HoneywellSansWeb-Medium';
+
+.logintitle {
+    font-family: @font_family_1 !important;
+    font-size: 22px;
+    margin-bottom: 26px;
+    color: @color_1;
+}
+.login {
+    #Password {
+        border-right: 0 !important;
+        &:hover&+.basic-addon2 {
+            border: 1px solid #1792e5;
+            border-left: 0 solid #1792e5 !important;
+        }
+    }
+    .basic-addon2 {
+        border-left: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+    .input-validation-error&+.basic-addon2 {
+        border: 1px solid #ee3124;
+    }
+    #basic-addon2 {
+        &:hover {
+            #Password {
+                border: 1px solid #1792e5;
+                border-right: 0 solid #1792e5 !important;
+            }
+        }
+    }
+    .text-danger {
+        padding: 20px 0;
+    }
+}

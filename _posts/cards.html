@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Schedules.css">
+    <link rel="stylesheet" type="text/css" href="css/ispSchedule.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/intrusion.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="Scripts/master.js"></script>
+    <script src="sumo-select/jquery.sumoselect.min.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <style>
+        input[type="checkbox"]:checked::before {
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: -20px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            background-color: #fff;
+            -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        }
+        .addonbutton.card_view_addonButton {
+            top: 30px;
+        }
+        .cards_viewmode .card_view_Uses_checkBox{
+            margin-right: 5px;
+        }
+        .cardlistview .custom-style-list {
+            width: 99%;
+        }
+        .listOverview.cards_listview_details{
+            padding-bottom: 100%;
+        }
+        .cards_listview_details .btn-footer.cards_view_footer {
+            bottom: 66%;
+            right: -30px;
+        }
+        .cardlistview .listStickyHeader{
+            padding: 12px 24px;
+        }
+        .cardlistview .listStickyHeader b {
+            position: relative;
+            top: 5px;
+        }
+        .cardlistview .ispheadersearch {
+            background: #fff;
+        }
+        .cardlistview .card_view_search_icon:before{
+            transform: rotate(90deg);
+        }
+        .cardlistview .ispheadersearch{
+            border-left: 1px solid #ddd;
+        }
+        .assign-card-img img[src=""]{
+            background-image: url(../images/icon_sprites_24px-020.svg);
+            display: block;
+            width: 56px;
+            height: 56px;
+            margin-top: 3px;
+            background-size: 1400px;
+            content: "";
+            background-position: -228px -110px;
+            vertical-align: top;
+            z-index: 100;            
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html"><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <a href="alarms.html">
+                                <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">
+
+            <form>
+                <div class="col-xs-10 pull-left">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <span id="search_concept">
+                                    <span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu ispmenu" role="menu">
+                                <li><a href="#contains">Contains</a></li>
+                                <li><a href="#its_equal">It's equal</a></li>
+                                <li><a href="#greather_than">Greather than &gt;</a></li>
+                                <li><a href="#less_than">Less than &lt; </a></li>
+                                <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                        <span class="input-group-btn ">
+                            <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-2 pull-right icons">
+                    <span class="ispicon ispicon_alarmsDefault"></span>
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                        <span class="ispicon ispicon_plus pull-right"/>
+                    </div>
+                    <ul class="list-group leftmenu">
+                        <li><a href="customeroverview.html" class="list-group-item "><span class="ispicon ispicon_sites"></span><span>Site Overview</span><span class="pull-right">0</span></a></li>
+                         <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_floorPlan"></span><span>Floor Map</span></a></li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item "><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="areas.html" class="list-group-item"><span class="ispicon ispicon_area"></span><span>Areas</span></a></li>
+                        <hr class="dividerLine"/>
+                                <li><a href="people.html" class="list-group-item "><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item active"><span class="ispicon ispicon_cards"></span><span>Cards</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="intrusion-root">
+            <!-- <link href="~/Content/AccountMgmtPlugin/alarms.css" rel="stylesheet" /> -->
+            <div id="intrusion-view" class="intrusionView">
+                <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Cards
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addCard" title="Add New"></a>
+                            <a class="ispicon ispicon_delete dropdown-toggle" data-toggle="dropdown" title="Delete">
+
+                            </a>
+                            <ul class="dropdown-menu ispmenu rightalign">
+                                <li><a href="#">Single</a></li>
+                                <li><a href="#">Import</a></li>
+                            </ul>
+                        </span>
+                    </h2>
+                    <div class="col-md-12 ispheadersearch">
+
+                        <form>
+                            <div class="row pull-left">
+                                <div class="input-group">
+                                    <div class="input-group-btn search-panel">
+                                        <button type="button" class="btn btn-default dropdown-toggle padding-correction-searchbox" data-toggle="dropdown" aria-expanded="false">
+                                            <span id="search_concept">
+                                                <span class="ispicon ispicon_search card_view_search_icon"></span>
+                                            </span>
+                                        </button>
+                                        <!--    <ul class="dropdown-menu ispmenu" role="menu">
+                                             <li><a href="#contains">Contains</a></li>
+                                             <li><a href="#its_equal">It's equal</a></li>
+                                             <li><a href="#greather_than">Greather than &gt;</a></li>
+                                             <li><a href="#less_than">Less than &lt; </a></li>
+                                             <li><a href="#all">Anything</a></li>
+                                           </ul> -->
+                                    </div>
+                                    <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                    <!-- <span class="input-group-btn ">
+                                        <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_filter"></span></button>
+                                    </span> -->
+                                    <!--  <span class="input-group-btn">
+                                         <button class="btn btn-default padding-correction" type="button"><span id="sorting" class="ispicon ispicon_sort"></span></button>
+                                     </span> -->
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle padding-correction" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_sortasc"></span></button>
+                                        <ul class="dropdown-menu ispmenu" role="menu">
+                                            <li>
+                                                <a href="#">Ascending</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Descending</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Recently Added</a>
+                                            </li>
+                                        </ul>
+
+
+                                    </span>
+                                    <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <span id="search_concept"><span class="ispicon ispicon_search"></span> <span class="caret"></span>
+                                        </span></button> -->
+                                    <!--  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                             <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                         </span></button> -->
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div>
+                    <div class="listStickyHeader">
+                        <b class="bold">10 <span>Unassigned Cards</span></b>
+                    </div>
+                        <ul class="list-group scroll-x scroll-y custom-style-list" style=" top 94px;">
+                            
+                            <li class="list-group-item active">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">2682638862386868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">3863863636963969639</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">87658768686886868</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">6876866886868686</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">6876866886868686</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">6876866886868686</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">6876866886868686</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">6876866886868686</span> <br />
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview intrusionOverview  isptabs pull-left cards_listview_details viewmode">
+                    <div class="row isptabs">
+                        <div class="row">
+                            <h2 class="isppagetitle">
+                                <span class="section-head1">26986396969269369692</span>
+                                <span class="pull-right">
+                                    <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit"></span>
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <div class="row col-md-12">
+                                <h3 class="bold">Permissions</h3>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="control-label">Access Group</label>
+                                    <select name="accessGroup1" id="accessGroup1" class="form-control" tabindex="11" multiple="multiple">
+                                        <option>Employee</option>
+                                        <option>Visitor</option>
+                                        <option>Access Group 1</option>
+                                        <option>Security Personal</option>
+                                        <option>Access Group 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-bind="with: $data.model.Credentials()[0]">
+                                <div class="form-group">
+                                    <label class="control-label">Status</label>
+                                    <select name="credentialStatus1" id="credentialStatus1" class="form-control" tabindex="13">
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                        <option>Lost</option>
+                                        <option>Trace</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Activation Date</label>
+                                    <input type="text" name="activationDate" id="activationDate" class="form-control" tabindex="7" data-format="MM/dd/yyyy" readonly="readonly">
+                                    <span class="addonbutton card_view_addonButton">
+                                        <span class="ispicon add-on ispicon_calender"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Expiry Date</label>
+                                    <input type="text" name="expiryDate" id="expiryDate" class="form-control" tabindex="8" data-format="MM/dd/yyyy" readonly="readonly">
+                                    <span class="addonbutton card_view_addonButton">
+                                        <span class="ispicon add-on ispicon_calender"></span>
+                                    </span>
+                                </div>
+                            </div>                            
+                            <div class="row col-md-12">
+                                <h3 class="bold">NetAxs Card Type</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Card Type</label>
+                                    <select name="cardtype" id="cardtype" class="form-control" tabindex="13">
+                                        <option>Standard</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Number of Uses</label>
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </div>
+
+                            </div>
+
+                            <div class="row col-md-12">
+                                <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#addCard">Assign</button>
+                            </div>
+                            <div class="btn-footer cards_view_footer">
+                                <div class="btn-group pull-right" role="group" aria-label="group button">
+                                    <button type="button" class="btn btn-default">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                    <button type="button" class="btn btn-primary">Save and add another</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- AREA OVERVIEW-->
+        </div>
+    </div>
+    </div>
+
+    <style>
+        .mpc-model-form.assign-card {
+            margin: 0px;
+            padding-top: 10px;
+        }
+
+        .modal-header.assign-card-header {
+            padding: 10px 20px 10px 30px;
+        }
+
+        .assign-card .ispheadersearch .input-group {
+            top: 0;
+        }
+
+        .assign-card .form-control {
+            height: 30px;
+        }
+
+        .assign-card .list-group {
+            margin-bottom: 10px;
+            max-height: 250px;
+        }
+
+        .assign-card .assign-card-search {
+            position: relative;
+            z-index: 3;
+            top: 4px;
+            right: 20px;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+        }
+
+        .assign-card .assign-card-input {
+            position: absolute;
+            width: 87%;
+        }
+
+        .assign-card .assign-card-sort-icon {
+            border: none !important;
+        }
+
+        .assign-card .assign-card-img-list .control-label {
+            position: relative;
+            top: 18px;
+        }
+
+        .assign-card .assign-card-img img {
+            background-image: url(../images/icon_sprites_24px-020.svg);
+            display: block;
+            width: 56px;
+            height: 56px;
+            margin-top: 3px;
+            background-size: 1400px;
+            content: "";
+            background-position: -228px -110px;
+            vertical-align: top;
+            z-index: 100;
+        }
+
+        .assign-card .assign-card-img .img-thumbnail {
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+
+        .assign-card .assign-card-img-list {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .assign-card .assign-card-img-list:hover {
+                background: #337ab7;
+                border-color: #fff;
+            }
+
+        .assign-card .rightlistcontent h2 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .assign-card .rightlistcontent p {
+            padding: 0;
+            color: #000;
+        }
+
+        .assign-card button.btn.btn-default.assign-card-sort-icon {
+            padding: 0px !important;
+        }
+
+        .assign-card .assign-card-img {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+            .assign-card .assign-card-img .list-group-item {
+                margin-bottom: 0px !important;
+                border: none;
+                border-radius: none;
+                border-top-left-radius: 0px !important;
+                border-top-right-radius: 0px !important;
+            }
+
+                .assign-card .assign-card-img .list-group-item:first-child {
+                    border-top-left-radius: 0px !important;
+                    border-top-right-radius: 0px !important;
+                }
+
+        .assign-card .list-group-item.assign-card-img-list {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border: none;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #ddd;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .assign-card-expand-icon {
+            margin-top: 20px;
+        }
+
+        .modal-footer.assign-card-footer {
+            border-top: none;
+        }
+
+        .assign-card-img-list .rightlistcontent p {
+            margin: 0;
+        }
+    </style>
+    <div class="modal ispmodal fade in" id="addCard" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <form class="modal-content show" novalidate="novalidate">
+                <div class="modal-content">
+                    <div class="modal-header assign-card-header">
+                        <h1 class="modal-title" id="lineModalLabel">Assign Card</h1>
+                    </div>
+                    <div class="mpc-model-form assign-card">
+                        <div class="col-md-6 ispheadersearch pull-right">
+                            <form>
+                                <div class="row pull-left">
+                                    <div class="input-group">
+                                        <div>
+                                            <span class="ispicon ispicon_search assign-card-search pull-right"></span>
+                                            <input name="x" type="text" class="form-control assign-card-input" placeholder="Search...">
+                                        </div>
+                                        <span class="input-group-btn ">
+                                            <button class="btn btn-default assign-card-sort-icon dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_sortasc"></span></button>
+
+                                         
+                                            <ul class="dropdown-menu ispmenu" role="menu">
+                                                <li>
+                                                    <a href="#">Ascending</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Descending</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Recently Added</a>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="listStickyHeader" style="margin-top: 40px;">
+                            <b class="bold">87</span> <span>People</b>
+                        </div>
+                        <ul class="list-group scroll-x scroll-y" id="contact-list">
+                            <li class="list-group-item assign-card-img-list">
+                                <div class="col-md-1">
+                                    <div class="control-label">
+                                        <input id="radio" type="radio"> <label for="radio"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 ispimage-small assign-card-img">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-md-8 rightlistcontent">
+                                    <h2 class="name">Manjunath Kalburgi</h2>
+                                    <p class="b name">Permanent Employee</p>
+                                    <div id="demo" class="collapse">
+                                        <p class="b name">2 Credentials</p>
+                                        <p class="b name">Manju@honeywell.com</p>
+                                        <p class="b name">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                                    <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item assign-card-img-list">
+                                <div class="col-md-1">
+                                    <div class="control-label">
+                                        <input id="radio" type="radio"> <label for="radio"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 ispimage-small assign-card-img">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-md-8 rightlistcontent">
+                                    <h2 class="name">Manjunath Kalburgi</h2>
+                                    <p class="b name">Permanent Employee</p>
+                                    <div id="demo" class="collapse">
+                                        <p class="b name">2 Credentials</p>
+                                        <p class="b name">Manju@honeywell.com</p>
+                                        <p class="b name">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                                    <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item assign-card-img-list">
+                                <div class="col-md-1">
+                                    <div class="control-label">
+                                        <input id="radio" type="radio"> <label for="radio"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 ispimage-small assign-card-img">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-md-8 rightlistcontent">
+                                    <h2 class="name">Manjunath Kalburgi</h2>
+                                    <p class="b name">Permanent Employee</p>
+                                    <div id="demo" class="collapse">
+                                        <p class="b name">2 Credentials</p>
+                                        <p class="b name">Manju@honeywell.com</p>
+                                        <p class="b name">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                                    <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item assign-card-img-list">
+                                <div class="col-md-1">
+                                    <div class="control-label">
+                                        <input id="radio" type="radio"> <label for="radio"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 ispimage-small assign-card-img">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-md-8 rightlistcontent">
+                                    <h2 class="name">Manjunath Kalburgi</h2>
+                                    <p class="b name">Permanent Employee</p>
+                                    <div id="demo" class="collapse">
+                                        <p class="b name">2 Credentials</p>
+                                        <p class="b name">Manju@honeywell.com</p>
+                                        <p class="b name">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                                    <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item assign-card-img-list">
+                                <div class="col-md-1">
+                                    <div class="control-label">
+                                        <input id="radio" type="radio"> <label for="radio"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 ispimage-small assign-card-img">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail">
+                                </div>
+                                <div class="col-md-8 rightlistcontent">
+                                    <h2 class="name">Manjunath Kalburgi</h2>
+                                    <p class="b name">Permanent Employee</p>
+                                    <div id="demo" class="collapse">
+                                        <p class="b name">2 Credentials</p>
+                                        <p class="b name">Manju@honeywell.com</p>
+                                        <p class="b name">Active</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-1 col-md-1 assign-card-expand-icon">
+                                    <span class="ispicon ispicon_info" data-toggle="collapse" data-target="#demo"> </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer assign-card-footer" style="margin-top:0">
+                        <div class="btn-group" role="group" aria-label="group button">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a type="button" href="customer-list.html" class="btn btn-primary">Save</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <section id="alertify" class="alertify alertify-confirm hide">
+        <div class="alertify-dialog">
+            <a id="alertify-resetFocusBack" class="alertify-resetFocus" href="#">Reset Focus</a>
+            <article class="alertify-inner">
+                <span class="ispicon ispicon_troubleCritical pull-left"></span>
+                <p class="alertify-message"><b>Confirm Delete</b> <br> Are you sure you want to delete the
+                    <br>4 cards?
+                </p>
+                <nav class="alertify-buttons">
+                    <button class="alertify-button alertify-button-ok" id="alertify-ok">Yes</button><button class="alertify-button alertify-button-cancel" id="alertify-cancel">No</button>
+                </nav>
+            </article>
+            <a id="alertify-resetFocus" class="alertify-resetFocus" href="#">Reset Focus</a>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,260 @@
+﻿
+
+    <link rel="stylesheet" type="text/css" href="css/dcm1.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+<div class="dcm-root">
+    <div id="device-list-view" class="dcmView">
+        <!-- LIST VIEW-->
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+            <span class="ispicon ispicon_collapse inverse pull-left"></span>
+            <h2 class="isppagetitle">
+                Devices
+                <span class="pull-right">
+                    <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addController" title="Add New"></a>
+                    <a class="ispicon ispicon_more dropdown-toggle" data-toggle="dropdown" title="More"></a>
+                    <ul class="dropdown-menu ispmenu rightalign">
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Delete</a></li>
+                    </ul>
+                </span>
+            </h2>
+            @*<ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#schedule" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">Peripherals</a></li>
+                <li role="presentation" class=""><a href="#holidays" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Edge</a></li>
+            </ul>*@
+            <div>
+                <div class="input-group selectController">
+                    <!-- <label class="control-label">Select Controller</label> -->
+                    <select class="form-control" data-bind="options: $data.controllers, optionsText: 'Name', optionsValue: 'Id',optionsCaption: '--Select--', value:$data.controllerId, event:{change:$data.onControllerChange}"></select>
+                </div>
+            </div>
+            <div>
+                <ul class="list-group scroll-x scroll-y" data-bind="foreach: $data.deviceGroups">
+                    <li class="listStickyHeader">
+                        <b data-bind="text: $data.GroupCount"></b>
+                    </li>
+                    <!-- ko foreach: $data.Devices -->
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <input type="checkbox" />
+                            </div>
+                            <span class="ispicon ispicon_door_default pull-left"></span>
+                            <div class="col-md-10">
+                                <span class="name" data-bind="text: $data.Name" /> <br />
+                                <span class="controllerList" data-bind="text: $data.Description" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+        </div>
+        <!-- LIST VIEW-->
+        <!-- AREA OVERVIEW-->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview DcmOverview isptabs pull-left">
+            <div class="row isptabs">
+                <div class="row">
+                    <h2 class="isppagetitle">
+                        Main Entrance
+                        <span class="pull-right">
+                            <span class="ispicon ispicon_edit col-md-2" data-toggle="tooltip" title="Edit"></span>
+                        </span>
+
+                    </h2>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                        <li role="presentation"><a href="#IO" aria-controls="IO" role="tab" data-toggle="tab">IO</a></li>
+                        <li role="presentation"><a href="#Floor" aria-controls="Floor" role="tab" data-toggle="tab">Floor Plan</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div id="overview" class="tab-pane active">
+                        <div class="row scroll-x scroll-y overviewTab">
+                            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                                <form id="doorForm" class="dcmOverview" data-validationkey="door" novalidate="novalidate">
+
+
+                                    <ul class="doorSettingsWrapperFirstColm" id="doorSettingsWrapperFirstColmId">
+                                        <li class="doorBehaviour">
+                                            <div class="doorBehaviourButton secondary-button1">
+                                                <span class="doorSettingsButtonTxt">Door Behavior</span>
+                                                <span>Pulse Time: </span><span>0:0:10.0</span><br>
+                                                <span>Shunt Time: </span><span>0:0:15.0</span><br>
+                                            </div>
+                                        </li>
+
+                                        <li class="doorReaderRight" id="doorReaderRightId">
+                                            <div class="doorReaderRightButton disabled-button" data-toggle="modal" role="button">
+                                                <span class="doorSettingsButtonTxt">Reader B</span>
+                                                <span class="doorSettingsButtonTxt"></span>
+                                                <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                                                <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                                                <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="egressSwitch" id="doorEgressId">
+                                            <div class="egressSwitchButton secondary-button1">
+                                                <span class="doorSettingsButtonTxt">Egress Switch</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="doorSettingsWrapperTop">
+                                        <li>
+                                            <div class="associationButton secondary-button1">
+                                                <span class="doorSettingsAssociationButtonTxt">Associations: </span>
+                                                <span class="doorSettingsAssociationButtonTxt">0</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="door-config-root doorSettingsWrapper" id="inoutuiposition">
+                                        <li>
+                                            <div class="stripe leftNoBorder"></div>
+                                            <!--<div class="doorLeftLine"></div>-->
+                                        </li>
+                                        <li class="connecterLeft"></li>
+                                        <li>
+                                            <div class="arrowUpEnabled">
+                                                <div class="arrow_head_up"></div>
+                                                <div class="arrow_body_up">
+                                                    <ul>
+                                                        <li class="arrowText">In</li>
+                                                        <li class="arrowText" style="display: none;">Out</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="arrow_head_down" style="display: none;"></div>
+                                            </div>
+                                        </li>
+                                        <li class="connecterMiddle"></li>
+                                        <li>
+                                            <div class="arrowDownDisabled">
+                                                <div class="arrow_head_up" style="display: none;"></div>
+                                                <div class="arrow_body_down">
+                                                    <ul>
+                                                        <li class="arrowText" style="display: none;">In</li>
+                                                        <li class="arrowText">Out</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="arrow_head_down"></div>
+                                            </div>
+                                        </li>
+                                        <li class="connecterRight"></li>
+                                        <li>
+                                            <div class="egressSwitchTopEnable"></div>
+                                            <div class="stripe rightNoBorder"></div>
+                                            <!--<div class="doorRightLine"></div>-->
+                                            <div class="egressSwitchBottom"></div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="doorReaderLeft" id="doorReaderLeftId">
+                                        <div class="doorReaderLeftButton secondary-button1" data-toggle="modal" role="button">
+                                            <span class="doorSettingsButtonTxt">Door 1 - Reader A</span>
+                                            <span class="doorSettingsButtonTxt" style="display: none;">Anti-Passback</span>
+                                            <span class="doorSettingsButtonTxt" style="display: none;">Hard</span>
+                                            <span class="doorSettingsButtonTxt" style="display: none;">Out</span>
+                                        </div>
+                                    </div>
+
+                                    <!--  <div class="buttonGroup antipassback">
+                                        <button class="primary-button" data-bind="click:$data.saveDoor" data-original-title="" title="">Save</button>
+                                        <button class="secondary-button" data-bind="click:$data.resetDoor" data-original-title="" title="">Reset</button>
+                                        <span class="class2 errorDetail" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="display: none;"></span>
+                                    </div> -->
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="settings" class="tab-pane active">
+                        <div class="col-md-12">
+                            <form action="" method="POST" role="form">
+                                <h3 class="row">
+                                    General Settings
+                                </h3>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Name*</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Description</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Panel Address</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Firmware</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">I/O Poll Interval</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Loop Verification Interval</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Panel CMD Retry Count</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="control-label" for="">Regional Time Zone</label>
+                                    <input type="text" class="form-control" id="" placeholder="Input field">
+                                </div>
+                                <div class="checkbox col-md-12 ">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Set Date Time
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Anti Passback
+                                </div>
+
+                                <div class="checkbox col-md-12 ">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Duress Detect
+                                </div>
+                                <div class="checkbox col-md-12 ">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Reverse LED
+                                </div>
+                                <div class="checkbox col-md-12 ">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Continuous Card Reads
+                                </div>
+                                <div class="checkbox col-md-12 ">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    Free Egress Inputs
+                                </div>
+                                <h3 class="row col-md-12 clearfix">
+                                    Reader Settings
+                                </h3>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="btn-footer hide">
+                        <div class="btn-group pull-right" role="group" aria-label="group button">
+                            <button type="button" class="btn btn-default">Cancel</button>
+                            <button type="button" class="btn btn-primary">Delete</button>
+                            <button type="button" class="btn btn-primary">Move</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AREA OVERVIEW-->
+    </div>
+</div>
+

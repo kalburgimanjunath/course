@@ -1,0 +1,22 @@
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;
+}
+.right-inner-addon > span {
+    position: absolute;
+    right: 0px;
+    padding: 25px 12px;
+    width: 60px;
+    /*z-index: 2;*/
+    border-radius: 0;
+    border-left: rgba(249, 249, 249, 0)!important;
+    border-top: rgba(249, 249, 249, 0)!important;
+    border-bottom: 0px;
+    background-color: rgba(249, 249, 249, 0)!important;
+}
+.right-inner-addon > span:hover {
+    background-color: #e6f3fb00 !important;
+    cursor: pointer;
+}

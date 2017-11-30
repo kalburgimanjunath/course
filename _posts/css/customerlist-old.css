@@ -1,0 +1,183 @@
+.customerListOverview{
+
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th{
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.customerlistView .sensorsTab .table > tbody > tr:hover{
+    background: #e1eff9;
+}
+
+.customerlistView .checkbox input[type="checkbox"]{
+	opacity: 1;
+}
+
+.customerlistView .table > tbody > tr > td .checkbox{
+	margin-top: 0 ;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th{
+	font-family: "HoneywellSansWeb-Bold" !important;
+	font-size: 14px;
+	color: #808080;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th.sort{
+	font-family: 'HoneywellSansWeb-Medium' !important;
+	font-size: 14px;
+	color: #808080;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th.desort{
+	font-family: 'HoneywellSansWeb-Medium' !important;
+	font-size: 14px;
+	color: #808080;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(1),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(1){
+	/*width: 40px;*/
+	    padding-right: 0;
+    width: 28px;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(2),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(2){
+	width: 25%;
+	white-space: nowrap;
+  	overflow: hidden;
+ 	text-overflow: ellipsis;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(3),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(3){
+	width: 20%;
+	white-space: nowrap;
+  	overflow: hidden;
+ 	text-overflow: ellipsis;
+}
+
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(4),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(4){
+	width: 10%;
+	white-space: nowrap;
+  	overflow: hidden;
+ 	text-overflow: ellipsis;
+}
+
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(5),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(5){
+	width: 14%;
+	white-space: nowrap;
+  	overflow: hidden;
+ 	text-overflow: ellipsis;
+}
+
+.customerlistView .sensorsTab .table > thead > tr > th:nth-child(6),.customerlistView .sensorsTab .table > tbody > tr > td:nth-child(6){
+	width: 13%;
+	white-space: nowrap;
+  	overflow: hidden;
+ 	text-overflow: ellipsis;
+}
+
+
+
+.customerlistView .table1{
+	margin-bottom: 0;
+}
+
+.customerlistView .table.table2 > thead > tr{
+	vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(2){
+	width: 24.5%;
+}
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(3){
+	width: 20%;
+}
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(4){
+	width: 9%;
+}
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(5){
+	width: 14%;
+}
+.customerlistView .sensorsTab .table2 > tbody > tr > td:nth-child(6){
+	width: 8%;
+}
+
+.customerlistView .sensorsTab .table2 > tbody > tr{
+	height: 42px;
+}
+.customerlistView .sensorsTab .table > tbody{
+	position: absolute;
+    width: 100%;
+    min-height: 480px;
+    overflow: auto;
+    bottom: 0;
+    top: 42px;
+    margin-top: -4px;
+}
+
+.customerlistView .count{
+	margin: 0 5px 0 0px;
+	font-weight: bold;
+}
+
+
+.customerlistView .basetitle{
+	font-family: 'HoneywellSansWeb-Medium' !important;
+	font-size: 22px;
+	color: #303030;
+	height: 44px;
+	border-bottom: 1px #dfdfdf;
+
+}
+
+
+.customerlistView .isptabs .nav{
+	border-top: 1px solid #dfdfdf;
+}
+
+.right-menu-tabs{
+
+}
+
+.right-menu-tabs li{
+	list-style-type: none;
+	float: left;
+	
+	cursor: pointer;
+}
+
+.right-menu-tabs li span{
+	font-family: 'HoneywellSansWeb-Bold' !important;
+	font-size: 14px;
+	color: #808080;
+}
+
+.colorlow{
+	background: #ffc627;
+	border:1px solid #e2b023;
+}
+
+.coloroverlow{
+	background: #ffffff;
+	border:1px solid #d32b20;
+}
+.colorhigh{
+	background: #ee3124;
+	border:1px solid #d32b20;
+	
+}
+
+.status-indicator{
+    border-radius: 50% 50%;
+    width: 10px;
+    height: 10px;
+    display: inherit;
+    float: left;
+    margin: 5px 5px 0 0px;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+    <link rel="stylesheet" type="text/css" href="Content/Styles/menu.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Areas.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="Content/Styles/icons.css">
+    <link rel="stylesheet" type="text/css" href="out/css/sprite.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/dcmoverview.css"> -->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+            // $(".wrapper:not('#menu-toggle')").click(function (e) {
+            //     e.preventDefault();
+            //     $("#sidebar-wrapper").toggleClass("active");
+            // });
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+                    
+                    
+<div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <div class="main-menu-navigation show-menu" id="overlay-menu" data-bind="css: menuclass">
+    <div class="topmenucontent" role="menu" aria-labelledby="dLabel">
+        <div class="div_nav_img nav_img">
+
+        </div>
+        <ul class="main-menu-ul" data-bind="foreach: items">
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_dashboard" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenudashboard">Dashboard</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_rules" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenurules">Rules</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_reports" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenureports">Reports</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_firmwaremgmt" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenufirmwaremgmt">Firmware</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_viewer" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuviewer">Viewer</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_alarms" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenualarms">Alarms</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_VisualManagement" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuVisualManagement">Visual Management</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_company" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenucompany">My Company</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_Subscriptions" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuSubscriptions">Subscriptions</p>
+            </li>
+        </ul>
+        <div class="menu_user_sec_logout">
+            <div class="menu_user_sec clearfix">
+                <div class="menu_user_img">
+                    <img data-bind="attr: {src: photoUrl}" src="">
+                </div>
+                <div class="menu_user_details col-md-8" data-menu-key="profile" data-bind="hamburgermenuselect: onItemSelect">
+                    <h3 data-bind="text: userInfo.FullName, attr: { title: userInfo.FullName }" maxtext="16" class="ellipsis" title="sa sa">sa sa</h3>
+                    <span data-bind="text: userInfo.RoleName">Admin</span>
+                </div>
+                <span class="ispicon ispicon_logout push-right logout" title="Logout" data-menu-key="signout" data-bind="hamburgermenuselect: onItemSelect"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding ">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+    <input type="hidden" id="siteurl" value="/MPC/">
+</div>
+<script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    
+
+</script>
+
+                    
+                </div>
+
+</body>
+</html>

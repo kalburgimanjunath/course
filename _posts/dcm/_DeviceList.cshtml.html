@@ -1,0 +1,117 @@
+﻿<!-- LIST VIEW-->
+<div id="device-list-view" class="dcmView">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+        <span class="ispicon ispicon_collapse inverse pull-left" data-bind="click: $data.toggleAccordionMenu"></span>
+        <h2 class="isppagetitle">
+            @Resources.Devices
+            <span class="pull-right">
+                <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addReader" title="Add New"></a>
+                <a class="ispicon ispicon_more dropdown-toggle" data-toggle="dropdown" title="More">
+
+                </a>
+                <ul class="dropdown-menu ispmenu rightalign">
+                    <li><a href="#">@Resources.Delete</a></li>
+                </ul>
+            </span>
+        </h2>
+        <div>
+            <div class="input-group selectController">
+                <select class="form-control" data-bind="options: $data.controllers, optionsText: 'Name', optionsValue: 'Id',optionsCaption: '--Select--', value:$data.controllerId, event:{change:$data.onControllerChange}"></select>
+            </div>
+            <ul class="listsearchbuttons-container hide">
+                <li>
+                    <a class="ispicon ispicon_filter dropdown-toggle pull-right listsearchbuttons" data-toggle="dropdown" title="filter"></a>
+                    <ul class="dropdown-menu ispmenu rightalign">
+                        <li><a href="#">Device Type</a></li>
+                        <li><a href="#">Recently Added</a></li>
+                        <li><a href="#">Missing Devices</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="panel-group listgrouppane scroll-x scroll-y" id="accordion">
+                <div class="panel panel-default hide" id="panel1">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#collapse1">
+                        <h4 class="panel-title">
+                            <span data-toggle="collapse" data-target="#collapse1" href="#collapse1">1 Zone Expanders</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y">
+                                <li class="list-group-item">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_door_default pull-left"></span>
+                                    <div class="col-md-10">
+                                        <span class="name">Zone Expander Name</span> <br />
+                                        <span class="controllerList">16 Sensors</span><br />
+                                        <span class="status">Connected</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ko if: $data.hasDeviceGroup('DOOR') -->
+                <div class="panel panel-default" id="panel2" data-bind="with: $data.getDeviceGroup('DOOR'), accordion: $data.getDeviceGroup('DOOR').IsExpanded">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span class="collapsed" data-bind="text: $data.Devices().length"></span><span> @Resources.Doors</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div class="panel-collapse collapse fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y" data-bind="foreach: $data.Devices">
+                                <li class="list-group-item" data-bind="click: $root.onDeviceItemSelect, css: {active: $data.IsSelected()}">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_Door pull-left"></span>
+                                    <div class="col-md-9">                                       
+                                        <span class="name" data-bind="text: $data.Name" /> <br />
+                                        <span class="controllerList" data-bind="text: $data.Description" /><br/>
+                                        <span class="status">@Resources.OpenAndNormal</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="panel panel-default hide" id="panel3" data-toggle="collapse" data-target="#collapse3">
+                    <div class="panel-heading" data-toggle="collapse" data-target="#collapse3">
+                        <h4 class="panel-title">
+                            <span data-toggle="collapse" data-target="#collapse3" href="#collapse3" class="collapsed">12 Cameras</span>
+                            <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse  fade">
+                        <div class="panel-body">
+                            <ul class="list-group scroll-x scroll-y">
+                                <li class="list-group-item">
+                                    <div class="checkbox">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <span class="ispicon ispicon_door_default pull-left"></span>
+                                    <div class="col-md-10">
+                                        <span class="name">Main Entrance</span> <br />
+                                        <span class="controllerList">Reception Area</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

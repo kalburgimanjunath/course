@@ -1,0 +1,194 @@
+@color_1: #1792e5;
+@color_2: #3B3B3B;
+@color_3: #fff;
+@background_color_1: #fff;
+@background_color_2: #edf5f9;
+@background_color_3: #d8e9fa;
+@background_color_4: #000;
+@background_color_5: #1792e5;
+@background_color_6: #1272b2;
+@background_color_7: #23608c;
+
+/* Timeout Dialog Styles */
+/* Some default button styles */
+.timeout-dialog {
+  position: absolute;
+  background: #ffffff url(../images/icon_errorLightbox.png) no-repeat 28px 50px;
+  -moz-border-radius: 0px;
+  width: 390px !important;
+  margin-top: 0px !important;
+  border: 1px solid #e7e7e7 !important;
+  -webkit-box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 80px 2px rgba(0,0,0,0.1);
+  outline: none;
+  z-index: 9999;
+  &:focus {
+    outline: none;
+  }
+  button {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+    line-height: normal;
+    *overflow: visible;
+    cursor: pointer;
+    -webkit-appearance: button;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0;
+    cursor: pointer;
+    color: @color_1;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 9px 16px;
+    border: 1px #8bc9f2 solid;
+    background-color: @background_color_1;
+    height: 32px;
+    outline: none;
+    &:hover {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 0;
+      cursor: pointer;
+      color: @color_1;
+      display: inline-block;
+      font-size: 13px;
+      line-height: normal;
+      padding: 9px 16px;
+      border: 1px #8bc9f2 solid;
+      background-color: @background_color_2;
+      height: 32px;
+      outline: none;
+    }
+    &:focus {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 0;
+      cursor: pointer;
+      color: @color_1;
+      display: inline-block;
+      font-size: 13px;
+      line-height: normal;
+      padding: 9px 16px;
+      border: 1px #8bc9f2 solid;
+      background-color: @background_color_2;
+      height: 32px;
+      outline: none !important;
+    }
+    &:active {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 0;
+      cursor: pointer;
+      color: @color_1;
+      display: inline-block;
+      font-size: 13px;
+      line-height: normal;
+      padding: 9px 16px;
+      border: 1px #45a8ea solid;
+      background-color: @background_color_3;
+      height: 32px;
+      outline: none;
+    }
+  }
+  .button {
+    &:hover {
+      text-decoration: none;
+      background-position: 0 -15px;
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .ui-dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    padding: 0 0 15px 0;
+    margin-left: 80px;
+    color: @color_2;
+  }
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+  .ui-dialog-buttonpane {
+    margin-top: 0;
+    margin-left: 0px;
+    border-top: 1px solid #e7e7e7;
+    padding: 16px 0 16px 61px;
+  }
+  &~.ui-widget-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: @background_color_4;
+    filter: alpha(opacity=40);
+    -khtml-opacity: 0.4;
+    -moz-opacity: 0.4;
+    opacity: 0.4;
+  }
+  p {
+    margin: 0 0 5px 80px;
+  }
+  #timeout-keep-signin-btn {
+    color: @color_3 !important;
+    margin-right: 8px;
+    padding: 9px 16px;
+    height: 32px;
+    background-color: @background_color_5;
+    &:hover {
+      color: @color_3 !important;
+      margin-right: 8px;
+      padding: 9px 16px;
+      height: 32px;
+      background-color: @background_color_6;
+    }
+    &:active {
+      color: @color_3 !important;
+      margin-right: 8px;
+      padding: 9px 16px;
+      height: 32px;
+      background-color: @background_color_7;
+    }
+  }
+  .ui-dialog-titlebar {
+    #ui-id-1 {
+      background: none;
+      border: none;
+      height: auto;
+      width: 248px !important;
+    }
+  }
+  .ui-widget-header {
+    border: none;
+    background: none;
+    padding-top: 32px;
+    padding-left: 12px;
+  }
+}
+button {
+  &:hover {
+    text-decoration: none;
+    background-position: 0 -15px;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+#timeout-countdown {
+  font-weight: bold;
+}
+#timeout-dialog {
+  margin-top: 0px;
+  width: auto;
+  min-height: 0px;
+  max-height: none;
+  height: auto;
+  padding-bottom: 17px;
+  padding-left: 12px;
+}

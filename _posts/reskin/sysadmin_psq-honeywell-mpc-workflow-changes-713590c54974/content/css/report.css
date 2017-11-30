@@ -1,0 +1,287 @@
+/*
+** style for report page
+*/
+.ps-report-wrap-detail table {
+	margin-bottom: 0;
+}
+.ps-report-wrapper .ps-report-title {
+	border-bottom: 1px solid #e7e7e7;
+}
+.ps-report-wrapper .ps-report-label {
+	border-bottom: 1px solid #e7e7e7;
+	color: #808080;
+	display: inline-block;
+	margin-bottom: -6px;
+	width: 100%;
+}
+.ps-report-wrapper .ps-report-label .ps-col-3,
+.ps-report-wrapper .ps-report-label .ps-col-2 {
+	border-top: none;
+	padding: 9px 0 11px 0;
+}
+.ps-report-wrapper .ps-report-label .ps-col-3 {
+	padding-left: 16px;
+}
+.ps-report-wrapper .ps-col-3 {
+	padding: 6px 0 6px 16px;
+	border-top: none;
+}
+.ps-report-wrapper .search-item .ps-col-2 {
+	line-height: 36px;
+	padding: 0;
+	border-top: none;
+}
+.ps-report-wrapper .main-container-header {
+	border-bottom: 1px solid #e7e7e7;
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+.ps-report-wrapper .ps-report-label .ps-a {
+	color: #303030;
+	font-family: "HoneywellSansWeb-Bold" !important;
+}	
+.ps-report-wrapper .ps-report-label label {
+	line-height: 1;
+}
+.ps-report-wrapper  label {
+	float: left;
+}
+.ps-report-wrapper .ps-report-label th {
+	color: #808080;
+	font-family: "HoneywellSansWeb-Bold";
+}
+.ps-report-wrapper .label-name,
+.ps-report-wrapper .search-item-text {
+	display: inline-block;
+	margin-top: 6px;
+}
+.ps-report-wrapper .ps-checkbox  {
+	margin-bottom: 0;
+	display: inline-flex;
+}
+.ps-report-wrapper .report-header-label {
+	padding-top: 6px;
+}
+.ps-report-wrapper .search-item {
+	border-bottom: 1px solid #f0f0f0;
+	color: #606060;
+	display: flex;
+	font-family: "HoneywellSansWeb-Medium";
+	align-items: center;
+	width: 100%;
+}
+.ps-report-wrapper .search-item:hover{
+	background: #f5f5f5;
+	color: #303030;
+}
+.ps-report-wrapper .search-item:hover .ps-a {
+	color: #303030;
+}
+.ps-report-wrapper .search-item .active {
+	color: #7eb338;
+}
+.ps-report-wrapper .icon-search {
+	margin-right: 3px;
+}
+.ps-report-wrapper .card-header {
+	padding: 15px 20px;
+}
+.content-wrapper {
+	background: #f5f5f5;
+	border-top: 1px solid #e7e7e7;
+	display: inline-block;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 20px;
+	width: 100%;
+}
+.report-title-wrapper{
+	background: #ffffff;
+}
+.ps-report-details{
+	height: 410px !important;
+}
+.row-wrap .checkbox{
+	margin-top: 2px;
+}
+
+.ps-report-label .checkbox, 
+.ps-report-label .report-header-label {
+	margin: 0;
+	color: #606060;
+}
+span.label-name {
+    color: #606060;
+}
+.ps-report-wrapper .search-item a {
+	text-decoration: none;
+    white-space: nowrap;
+    width: 8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ps-report-wrapper .icon-edit {
+	color: transparent;
+}
+.ps-report-wrapper .search-item:hover .icon-edit {
+	background-image: url(../../images/sprite_icons_03.png);
+	background-position: -753px -366px;
+	display: block;
+	width: 30px;
+  height: 27px;
+	float: right;
+	margin-right: 15px;
+}
+.ps-report-wrapper .search-item:hover .icon-edit:hover {
+  background-position: -753px -336px;
+}
+.ps-report-wrapper .ps-report-wrap-detail {
+	float: left;
+	width: 100%;
+}
+.ps-report-wrapper .successText {
+	color: #7eb338;
+}
+.ps-report-wrapper .delivery-report-fail {
+	color: #ee3124;
+}
+.ps-report-wrapper .delivery-report-success {
+	color: #7eb338;
+}
+.ps-report-wrapper .delivery-report-default {
+	color: #606060;
+}	
+.ps-report-wrapper table td[class*="col-"] {
+	float: left;
+}
+.ps-report-wrapper table th {
+	font-weight: normal;
+	float: left;
+}
+.ps-report-wrapper table thead tr,
+.ps-report-wrapper table thead {
+	width: 100%;
+	float: left;
+}
+.ps-report-wrapper .report-filter-result-wrapper {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.ps-report-wrapper .sidebar-slide {
+	float: left;
+  margin-top: 20px;
+  padding-left: 5px;
+  font-size: 16px;
+  color: #d0d0d0;
+  background-position: -1600px -159px;
+  width: 20px;
+}
+.ps-report-wrapper .sidebar-slide:hover {
+ background-position: -1600px -189px;
+}
+.ps-report-wrapper .listing-of-reports {
+	background: #fff;
+	width: 100%;
+	float: left;
+}
+.ps-report-wrapper .report-fliter-tags {
+	padding: 0 8px;
+	background: #1792e5;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 24px;
+	margin-right: 0;
+	height: 22px;
+}
+.ps-report-wrapper .people_group {
+	border-right: none;
+}
+.ps-report-wrapper .ps-main-container {
+	border-left: 1px solid #e7e7e7;
+}
+.ps-report-wrapper .ps-main-container.ps-full-container {
+	width: 100%;
+	-webkit-transition: width 0.8s;
+	transition: width 0.8s;
+}	
+.ps-report-wrapper .ps-main-container.ps-full-container:before {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+.ps-report-wrapper .ps-main-container:before {
+	content: "";
+	background: #fff;
+	box-shadow: 0 0 3px 1px #e7e7e7;
+	-webkit-box-shadow: 0 0 3px 1px #e7e7e7;
+	-moz-box-shadow: 0 0 3px 1px #e7e7e7;
+	position: absolute;
+	height: 100%;
+	width: 0 ;
+	left: 1px;
+	top: 0;
+}
+.ps-report-wrapper .icon-search input:focus {
+    width: 300px;
+    border: 1px solid #1792e5;
+    background: none;
+    box-shadow: none;
+    padding-right: 25px;
+    text-indent: 0;
+    top: 1px;
+    right: -4px;
+    bottom: 0;
+    position: absolute;
+}
+/*** css for graph **/
+.ps-report-wrapper .Delivered {
+	color: #7eb338;
+}
+.ps-report-wrapper .Failed {
+	color: #ee3124;
+}
+.ps-report-wrapper .Pending {
+	color: #606060;
+}
+.ps-report-wrapper .Pending,
+.ps-report-wrapper .Failed,
+.ps-report-wrapper .Delivered{
+	font-size: 22px;
+	font-family: 'HoneywellSansWeb-Medium';
+	font-weight: normal;
+}
+.ps-report-wrapper .report-help-text {
+	font-size: 14px;
+	font-family: 'HoneywellSansWeb-Medium';
+	color: #606060;
+	padding-top: 12px;
+}
+.ps-report-wrapper .ps-report-sub-title h1 {
+	margin-bottom: 5px;
+	color: #303030;
+  	font-family: 'HoneywellSansWeb-bold' !important;
+  	font-size: 18px;
+}
+.ps-report-wrapper .report-year {
+	font-size: 16px;
+	font-family: 'HoneywellSansWeb-Medium';
+	color: #606060;
+}
+.ps-report-wrapper .highcharts-container path.highcharts-point:hover {
+	cursor: pointer;
+}
+.ps-report-wrapper .people_container {
+    background: #fff;
+}
+
+.ps-report-wrapper .people_group {
+    width: 340px;
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+    /*-webkit-box-shadow: 2px 0 4px -2px #eeeeee;
+    box-shadow: 4px 0 10px -2px #eeeeee;*/
+}

@@ -1,0 +1,924 @@
+
+.intrusiongroup-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .intrusiongroup-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .intrusiongroup-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .intrusiongroup-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none;
+                -moz-box-sizing:none;
+                box-sizing: none;
+            }
+
+                .intrusiongroup-root .isptabs .nav li a:hover, .intrusiongroup-root .isptabs .nav li a:active, .intrusiongroup-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .intrusiongroup-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.intrusiongroup-root .itemlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .intrusiongroup-root .itemlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .intrusiongroup-root .itemlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.intrusiongroup-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .intrusiongroup-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.intrusiongroup-root .itemlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.intrusiongroup-root .listOverview .overviewTab, .intrusiongroup-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+.intrusiongroup-root .itemlistview .list-group-item.active, .intrusiongroup-root .itemlistview .list-group-item.active:hover, .intrusiongroup-root .itemlistview .list-group-item.active:focus, .intrusiongroup-root .itemlistview .list-group-item:hover {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+}
+
+.intrusiongroup-root .itemlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.intrusiongroup-root .itemlistview .peoplecount{
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    /*color: #303030;*/
+}
+
+.intrusiongroup-root .itemlistview .doorcount{
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    /*color: #808080;*/
+}
+
+
+.intrusiongroup-root .itemlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab .table > thead > tr > th, .intrusiongroup-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.intrusiongroup-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.addSchedule .overviewTab table td, .intrusiongroup-root .intrusiongroupView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab .ispicon, .intrusiongroup-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.addSchedule .overviewTab .sensorsid, .intrusiongroup-root .addSchedule .overviewTab .name,
+.addSchedule .name, .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.intrusiongroup-root .intrusiongroupView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.intrusiongroup-root .intrusiongroupView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.intrusiongroup-root .intrusiongroupView .table td:first-child{
+        padding-left: 24px;
+        padding: 10px 0 10px 24px;
+}
+
+.intrusiongroup-root .intrusiongroupView .table .nextlevel,.intrusiongroup-root .EditIntrusionGroup .table .nextlevel{
+    padding: 0px 0 0px 10px !important;
+    border-top: 0px solid #f0f0f0 !important;
+}
+
+
+.accordian-control .nextlevel .listStickyHeader{
+    background: #fff !important;
+}
+
+.EditIntrusionGroup .accordian-control .nextlevel .listStickyHeader{
+        padding: 0;
+    border: 0;
+}
+
+
+.EditIntrusionGroup .accordian-control .nextlevel .listStickyHeader input[type="checkbox"]{
+    margin: 0;
+}
+
+
+.intrusiongroup-root .intrusiongroupView .table td.nextlevel :first-child{
+        padding-left: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+        box-shadow: none;
+        /*padding: 10px 0 10px 24px;*/
+}
+
+.intrusiongroup-root .intrusiongroupView .table .nextlevel div span,.intrusiongroup-root .EditIntrusionGroup .table .nextlevel div span{
+    padding-left: 0px;
+}
+
+.intrusiongroup-root .intrusiongroupView .table .nextlevel div span.col-md-4{
+    padding-left: 21px;
+}
+
+.EditIntrusionGroup .table .nextlevel div span.col-md-4{
+    padding-left: 2px;
+}
+
+.EditIntrusionGroup .table span.col-md-4:not(.nextlevel){
+    padding-left: 0;
+}
+
+.intrusiongroup-root .intrusiongroupView .table td div:not(span){
+    padding-left: 12px;
+}
+
+.EditIntrusionGroup .table td div{
+    padding-left: 22px;
+}
+
+.EditIntrusionGroup .table td div input[type="checkbox"]{
+    margin: 0;
+}
+
+.EditIntrusionGroup .table td:not(.nextlevel) div span{
+    padding-left: 6px;
+}
+
+.EditIntrusionGroup .table td.nextlevel div:not(span){
+    padding-left: 0px !important;
+    margin-left: 1px;
+}
+
+
+.intrusiongroup-root .intrusiongroupView .table td:first-child div span, .EditIntrusionGroup .table td:first-child div span{
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+        font-size: 14px;
+        /*padding-left: 10px;*/
+}
+
+.intrusiongroup-root .intrusiongroupView .table td .ispicon_schedule,.intrusiongroup-root .EditIntrusionGroup .table td .ispicon_schedule{
+        padding-right: 13px;
+}
+
+.intrusiongroup-root .intrusiongroupView .table td .name,.intrusiongroup-root .EditIntrusionGroup .table td .name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.intrusiongroup-root .intrusiongroupView .itemlistview .isppagetitle{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.intrusiongroup-root .intrusiongroupView .table{
+    margin-bottom: 0px;
+}
+
+
+.intrusiongroup-root .intrusiongroupView .listOverview .isppagetitle {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 15px;
+}
+
+.intrusiongroup-root .intrusiongroupView .list-group-item {
+    padding: 10px 20px;
+    border-right: 0px;
+}
+
+.scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.intrusiongroup-root .intrusiongroupView .checkbox {
+    float: left;
+    margin-top: 0;
+}
+
+    .intrusiongroup-root .intrusiongroupView .checkbox input[type="checkbox"], .intrusiongroup-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.intrusiongroup-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.intrusiongroup-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.intrusiongroup-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .intrusiongroup-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.intrusiongroup-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.intrusiongroup-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.intrusiongroup-root .viewmode input, .intrusiongroup-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.intrusiongroup-root .viewmode .btn-footer {
+    display: none;
+}
+
+/*.intrusiongroup-root .viewmode .accordian-control .listStickyHeader .panel-title,.intrusiongroup-root .viewmode .accordian-additional-menu .ispicon_sort{
+    pointer-events: none;
+}*/
+
+.intrusiongroup-root .btn-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.intrusiongroup-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .intrusiongroup-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .intrusiongroup-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .intrusiongroup-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.intrusiongroup-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.intrusiongroup-root .intrusiongroupView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.intrusiongroup-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+
+/* ICONS */
+/*
+.intrusiongroup-root .ispicon_plus::before {
+    background-position: -298px -21px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_plus:hover::before {
+    background-position: -298px -42px;
+}
+
+.intrusiongroup-root .ispicon_plus:active::before {
+    background-position: -298px -63px;
+}
+
+.intrusiongroup-root .ispicon_more::before {
+    background-position: -573px -21px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_more:hover::before {
+    background-position: -573px -42px;
+}
+
+.intrusiongroup-root .ispicon_more:active::before {
+    background-position: -573px -63px;
+}
+
+.intrusiongroup-root .ispicon_collapse::before {
+    background-position: -128px -24px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_collapse:hover::before {
+    background-position: -128px -45px;
+}
+
+.intrusiongroup-root .ispicon_collapse:active::before {
+    background-position: -128px -66px;
+}
+
+.intrusiongroup-root .ispicon_edit::before {
+    background-position: -63px -148px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_edit:hover::before {
+    background-position: -63px -169px;
+}
+
+.intrusiongroup-root .ispicon_edit:active::before {
+    background-position: -63px -190px;
+}
+
+
+.intrusiongroup-root .ispicon::before {
+    background-size: 700px;
+    cursor: pointer;
+}
+
+.intrusiongroup-root .ispicon_filter::before {
+    background-position: -362px -21px;
+    margin-right: 3px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover {
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active {
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_filter::before, .intrusiongroup-root .ispActionMenu.open .ispicon_filter::before {
+    background-position: -362px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_filter::before {
+    background-position: -362px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_views::before {
+    background-position: -319px -21px;
+    margin-right: 4px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_views::before, .intrusiongroup-root .ispActionMenu.open .ispicon_views::before {
+    background-position: -319px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_views::before {
+    background-position: -319px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_action::before {
+    background-position: -382px -21px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_action::before, .intrusiongroup-root .ispActionMenu.open .ispicon_action::before {
+    background-position: -382px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_action::before {
+    background-position: -382px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_sort::before {
+    background-position: -340px -21px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_sort::before, .intrusiongroup-root .ispActionMenu.open .ispicon_sort::before {
+    background-position: -340px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_sort::before {
+    background-position: -340px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_saveFilter::before {
+    background-position: -22px -149px;
+    margin-right: 3px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_saveFilter::before, .intrusiongroup-root .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -22px -170px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -22px -191px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_alarmsCritical::before {
+    background-position: -425px -21px;
+}
+
+.intrusiongroup-root .ispicon_alarmsMajor::before {
+    background-position: -425px -42px;
+}
+
+.intrusiongroup-root .ispicon_alarmsModerate::before {
+    background-position: -425px -63px;
+}
+
+.intrusiongroup-root .ispicon_alarmsDefault:before {
+    background-position: -64px -21px;
+}
+
+.intrusiongroup-root .ispicon_cloudDefault::before {
+    background-position: -446px -21px;
+}
+
+.intrusiongroup-root .ispicon_cloudModerate::before {
+    background-position: -446px -42px;
+}
+
+.intrusiongroup-root .ispicon_cloudMajor::before {
+    background-position: -446px -63px;
+}
+
+.intrusiongroup-root .ispicon_cloudCritical::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.intrusiongroup-root .ispicon_DoorDefault::before {
+    background-position: -615px -21px;
+}
+
+.intrusiongroup-root .ispicon_DoorModerate::before {
+    background-position: -615px -42px;
+}
+
+.intrusiongroup-root .ispicon_DoorMajor::before {
+    background-position: -615px -63px;
+}
+
+.intrusiongroup-root .ispicon_DoorCritical::before {
+    background-position: -615px -84px;
+}
+
+.intrusiongroup-root .ispicon_video::before {
+    background-position: -404px -21px;
+}
+
+.intrusiongroup-root .ispicon_video:hover::before {
+    background-position: -404px -42px;
+}
+
+.intrusiongroup-root .ispicon_video:active::before {
+    background-position: -404px -63px;
+}
+
+.intrusiongroup-root .ispicon_videoModerate::before {
+    background-position: -404px -84px;
+}
+
+.intrusiongroup-root .ispicon_videoCritical::before {
+    background-position: -404px -105px;
+}
+
+.intrusiongroup-root .ispicon_videoMajor::before {
+    background-position: -404px -126px;
+}
+
+.intrusiongroup-root .ispicon_disarmDefault::before {
+    background-position: -660px -21px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -660px -42px;
+}
+
+
+.intrusiongroup-root .ispicon_dropArrow::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+.intrusiongroup-root .ispicon_dropArrow:hover::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+
+.intrusiongroup-root .acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover {
+    background-position: -466px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active {
+    background-position: -466px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_handbar::before {
+    background-position: -64px -125px;
+}
+
+.intrusiongroup-root .ispicon_handbar:hover::before {
+    background-position: -42px -105px;
+}
+
+.intrusiongroup-root .ispicon_close::before {
+    background-position: -255px -21px;
+}
+
+.intrusiongroup-root .ispicon_close:hover::before {
+    background-position: -255px -42px;
+}
+
+.intrusiongroup-root .ispicon_close:active::before {
+    background-position: -255px -63px;
+}
+
+*/
+.intrusiongroup-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.intrusiongroup-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.intrusiongroup-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.intrusiongroup-root .intrusiongroupView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.intrusiongroup-root .intrusiongroupView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.intrusiongroup-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+/* CONTROLLER OVERVVIEW*/
+
+.intrusiongroup-root .scheduleOverview .content {
+            padding: 0 10px;
+            /*margin-left: -15px !important;*/
+            background: #f4f4f4;
+            padding-right: 24px;
+            box-shadow: 0 -1px 0 0 #d6d6d6;
+        }
+
+
+.intrusiongroup-root .scheduleOverview .leftlist .panel ul .list-group-item.active, .intrusiongroup-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .intrusiongroup-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+.intrusiongroup-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+
+    
+
+@media (max-height: 768px) {
+    .intrusiongroup-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+    .intrusiongroup-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+.intrusiongroup-root .accessgroupcontainer{
+    top: 60px;
+    position: absolute;
+    width: 98%;
+    bottom: 0px;
+    height: 100%;
+    min-height: 533px;
+}
+
+.ispmodal .accordian-control{
+    max-height: 134px;
+}
+
+.accessgroupOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+    padding: 0 15px 0 0;
+}
+
+.accordian-additional-menu{
+    padding: 0 6px 0 0px;
+}
+
+.accordian-additional-menu b{
+        padding: 0 17px;
+        font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 16px;
+                color: #303030;
+
+}
+
+.accordian-control .listStickyHeader,.accordian-control .listStickyHeader.collapsed{
+        font-family: "HoneywellSansWeb-Bold" !important;
+        font-size: 13px;
+        color: #303030;
+        background: #f2f2f2 !important;
+        border-top: 1px solid #dfdfdf;
+        padding-left: 9px;
+            /*padding: 9px 24px;*/
+
+}
+
+/*.accordian-control .listStickyHeader .collapsed .ispicon_accordian_droparrow::before {
+    background-position: -396px -142px;
+}*/
+
+.accordian-control .listStickyHeader .panel-title, .accordian-control .listStickyHeader.collapsed .panel-title{
+    font-family: "HoneywellSansWeb-Bold" !important;
+        font-size: 13px;
+        color: #303030;
+        cursor: pointer;
+}
+
+.accordian-control .listStickyHeader h4.panel-title + span[aria-expanded="true"] .ispicon_accordian_droparrow::before{
+        background-position: -396px -140px;
+    }
+
+
+/*.collapsed .ispicon_accordian_droparrow::before{
+    background-position: -396px -142px;
+}*/
+
+
+.accordian-control .panel-body{
+    padding: 0px 0px;
+
+}
+
+.accordian-control .panel-group{
+    margin-bottom: 0;
+}
+
+.accordian-control .panel-group .panel{
+    border-radius: 0;
+    border: 0px;
+}
+
+.accordian-control li{
+    list-style-type: none;
+}
+
+.accordian-control .listStickyHeader .title{
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 13px;
+    color: #303030;
+    cursor: pointer;
+}
+   
+
+
+.intrusiongroup-root .contentContainer {
+    position: absolute;
+    right: 0;
+    bottom: 53px;
+    top: 80px;
+    left: 5px;
+    overflow-y: auto;
+}
+
+
+.viewmode input, .intrusion-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+    background: #f2f2f2;
+}
+
+.viewmode .btn-footer {
+    display: none;
+}
+
+.nopadding{
+    padding:0;
+}
+
+.lists{
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 0;
+    top: 0;
+}
+
+.EditIntrusionGroup .accordian-additional-menu b{
+    padding: 0px;
+}
+
+
+.EditIntrusionGroup .accessgrouppopupcontainer{
+    max-height: 394px;
+    /*overflow-y: auto;*/
+}
+    
+
+.section-head1 {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    font-size: 22px;
+    text-overflow: ellipsis;
+
+      /* Required for text-overflow to do anything */
+      white-space: nowrap;
+      overflow: hidden;
+}
+
+.intrusiongroup-root .itemlistview .listcontainer{
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    height: 92%;
+    min-height: 500px;
+    overflow: scroll;
+    width: 100%;
+}
+/*
+.intrusiongroup-root .itemlistview .listcontainer .listStickyHeader{
+    padding-left: 56px;
+}
+*/
+
+.EditIntrusionGroup .ispheadersearch .ispsearch{
+    border-right: 0px solid #d0d0d0;
+}
+.EditIntrusionGroup .searchbtn{
+    padding-bottom: 24px !important;
+    margin-top: 3px;
+    border-left:0 !important;
+}
+
+.listcontainer .secondline span{
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #606060;
+    font-size: 14px;
+}
+
+.searchplaceholder{
+    list-style-type: none;
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.searchplaceholder > li{
+    float: left;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.searchfilterholder{
+    margin-top: 15px;
+}

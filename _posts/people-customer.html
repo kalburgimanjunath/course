@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/common.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Areas.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+    <link rel="stylesheet" type="text/css" href="css/bulkdelete.css">
+
+    
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+
+    
+
+</script>
+    <script>
+        $( document ).ready(function() {
+             $(".ispicon_edit").click(function(){
+                $(".tab-content").removeClass("viewmode");
+                $('.btn-footer').show();
+            });
+
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+        $('.btn-footer').hide();
+
+
+       
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+        $(".ispicon_collapse").click(function(){
+            $(".accordion-root").toggleClass("togglemenu");
+            $(".people-root").toggleClass("alignmenu-left");
+        });
+        $(".ispicon_edit").click(function(){
+            $(".contentContainer").removeClass("viewmode");
+            $(".btn-footer").removeClass("viewmode");
+        });
+    });
+    </script>
+
+    <style>
+
+    </style>
+    <style>
+    .alignmenu-left{
+            position: relative;
+            float: left;
+            padding-left: 70px;
+    }
+    .accountcontainer .overview .content{
+            box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            background: #f4f4f4 !important;
+    }
+    </style>
+</head>
+<body>
+
+    <div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">
+               
+                <form>
+                    <div class="col-xs-10 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                        <span class="ispicon ispicon_plus pull-right"/>
+                    </div>
+                    <ul class="list-group leftmenu">
+                        <li><a href="customeroverview.html" class="list-group-item "><span class="ispicon ispicon_sites"></span><span>Site Overview</span><span class="pull-right">0</span></a></li>
+                         <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_floorPlan"></span><span>Floor Map</span></a></li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item "><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="areas.html" class="list-group-item"><span class="ispicon ispicon_area"></span><span>Areas</span></a></li>
+                        <hr class="dividerLine"/>
+                                <li><a href="people.html" class="list-group-item active"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <hr class="dividerLine"/>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="row accountcontainer customer account-view show">
+            <div class="people-root">
+                    <div id="people-view" data-bind="busyIndicator: {show: $data.IsLoading, blockAll: true}" class="show">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+                    <span class="ispicon ispicon_collapse inverse" data-bind="click: $data.toggleAccordionMenu"></span>
+                    <h2 class="isppagetitle">
+                        People
+                        <span class="pull-right">
+                            <span class="ispicon ispicon_plus" data-toggle="tooltip" title="Add" new="" data-bind="click: $data.switchToCreate"></span>
+                             <a class="ispicon ispicon_delete" title="Delete" data-toggle="modal" data-target="#deletebulk" >
+                                
+                            </a>
+                           
+                        </span>
+                    </h2>
+                    <ul class="nav nav-tabs hide" role="tablist">
+                        <li role="presentation" class="active"><a href="#people" aria-controls="home" role="tab" data-toggle="tab">People</a></li>
+                    </ul>
+                    <div class="panel panel-default">
+                       <!--  <div class="input-group c-search">
+                            <span class="ispicon isplisticon_search"></span>
+                            <input type="search" class="form-control" id="contact-list-search" placeholder="Search">
+                            <span class="input-group-btn">
+                                
+                                <button class="btn btn-default" type="button"><span class="ispicon ispicon_sort text-muted"></span></button>
+                            </span>
+                        </div> -->
+                        <div class="col-md-12 ispheadersearch">
+               
+                                <form>
+                                    <div class="row pull-left">
+                                        <div class="input-group">
+                                            <div class="input-group-btn search-panel">
+                                                <button type="button" class="btn btn-default dropdown-toggle">
+                                                    <span id="search_concept"><span class="ispicon ispicon_search"></span> 
+                                                </span></button>
+                                            </div>
+                                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                           <!--  <span class="input-group-btn ">
+                                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_filter"></span></button>
+                                            </span> -->
+                                            <span class="input-group-btn ">
+                                                <button class="btn btn-default" type="button"><span class="ispicon ispicon_sortasc"></span></button>
+                                            </span>
+                                            
+                                        </div>
+                                    </div>
+                                   
+                                </form>
+                        </div>
+                        <div class="listStickyHeader" data-bind="text: $data.credentialHolderCount"  style="margin-top: 40px;">
+                            <b class="bold">1</span> <span>People</b>
+                        </div>
+                        <ul class="list-group scroll-x scroll-y" id="contact-list" data-bind="foreach: $data.credentialHolders, lazyScrollBar: $data.lazyLoading, callback: $data.loadNextItems">
+                             <li class="list-group-item active" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item active" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             <li class="list-group-item" data-bind="click: $parent.onHolderItemSelect, css: {active: $data.IsSelected()}">
+                                <div class="col-xs-12 col-sm-1 col-md-1">
+                                    <div class="checkbox checkbox-square checkbox-primary control-label">
+                                        <input id="checkbox" type="checkbox">
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-2 ispimage-small">
+                                    <img alt="" src="" class="img-responsive img-square img-thumbnail" data-bind="attr: {src: $parent.getPhoto($data)}">
+                                </div>
+                                <div class="col-xs-12 col-md-8 rightlistcontent">
+                                    <span class="name" data-bind="text: $data.FLName, attr: {title: $data.FLName}" title="manjunath kalburgi">manjunath kalburgi</span>
+                                    <span class="inactive text-center" data-bind="visible: $data.CredentialHolderStatusName, text: $data.CredentialHolderStatusName,attr: {title: $data.CredentialHolderStatusName}" title="Terminated">Terminated</span><br>
+                                    <span class="designation" data-bind="text: $data.CredentialHolderTypeName"></span><br>
+                                    <span class="pull-left">
+                                    
+                                    <span class="employeeid" data-bind="text: $data.Credentials().length">1</span> 
+                                        <!--ko if: $data.Credentials().length == 0--><!-- /ko -->
+                                        <!--ko ifnot: $data.Credentials().length == 0-->
+                                            <span class="employeeid">Credentials</span>  
+                                        <!-- /ko -->             
+                                    </span> <br>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 peopleoverview isptabs pull-left">
+                    <form novalidate="novalidate">
+                        <div class="row isptabs" data-bind="css: {viewmode: $data.isReadOnly}">
+                            <div class="row">
+                                <div class="row col-xs-4 profile-pic" data-bind="fileUpload: {fileName: $data.uploadedFileName, canUpload: $data.canLoadPhoto, photoLoaded: $data.photoLoaded }">
+                                    <img data-bind="attr: {src: $data.getPhoto($data.model, true)}" class="img-responsive img-thumbnail ispicon_uploadprofilepic" src="">
+                                    <span class="text-center img-browse-txt col-md-12" data-bind="ifnot: $data.isReadOnly() || $data.hasPhoto($data.model)">Upload a image</span>
+                                <input type="file" data-original-title="" title=""></div>
+                                <div class="overviewtitle">
+                                    <div class="section-head1">manjunath kalburgi</div>
+                                    <div class="section-head2 col-md-8 nopadding">Admin</div>
+                                <span class="pull-right col-md-2">
+                                    <span class="ispicon ispicon_edit pull-right" title="Edit" style="right:20px;"></span>
+                                </span>
+                            </div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#profile" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+                                <li role="presentation" class=""><a href="#access" aria-controls="profile" role="tab" data-toggle="tab">Credentials</a></li>
+                                <li role="presentation" class=""><a href="#additional" aria-controls="profile" role="tab" data-toggle="tab">Additional Info</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content viewmode ispform">
+                            <div id="profile" class="tab-pane active">
+                                <div class="row scroll-y profile">
+                                    <div class="row col-md-12">
+                                        <h3 class="bold">User Details</h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Last Name<span class="star">*</span></label>
+                                                <input type="text" name="lastName" id="lastName" class="form-control" data-bind="value: $data.model.Name3" tabindex="1" data-original-title="" title="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Display Name</label>
+                                                <input type="text" name="displayName" id="displayName" class="form-control" data-bind="value: $data.model.DisplayName" tabindex="3" data-original-title="" title="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">User Status</label>
+                                            <select name="credentialHolder_Status" id="credentialHolder_Status" class="form-control" data-bind="options: $data.credentialHolderStatuses, optionsText: 'Name', optionsValue: 'Name',optionsCaption: '--Select--', value:$data.model.CredentialHolderStatusName" tabindex="5" data-original-title="" title=""><option value="">--Select--</option><option value="Associated credentials">Associated credentials</option><option value="Terminated">Terminated</option><option value="Created">Created</option><option value="InActive">InActive</option><option value="Credentials In-progress">Credentials In-progress</option><option value="Active">Active</option><option value="Disassociated credentials">Disassociated credentials</option></select>
+
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">First Name<span class="star">*</span></label>
+                                                <input type="text" name="firstName" id="firstName" class="form-control" data-bind="value: $data.model.Name1" tabindex="2" data-original-title="" title="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                                <input type="text" name="email" id="email" class="form-control" data-bind="value: $data.model.ContactInfo.EmailAddress" tabindex="4" data-original-title="" title="">
+                                        </div>
+                                    </div>
+                                    <div class="row col-md-12">
+                                        <hr>
+                                        <h3 class="bold">Permissions</h3>
+                                    </div>
+                                    <div class="col-md-6" data-bind="with: $data.model.Credentials()[0]">
+                                        <div class="form-group">
+                                            <label class="control-label">Card Number</label>
+                                                <input type="text" name="badgeNo" id="badgeNo" class="form-control" data-bind="value: $data.CredentialNumber" tabindex="6">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">PIN</label>
+                                                <input type="password" name="pin" id="pin" class="form-control" data-bind="value: $data.Pin" tabindex="9">
+                                        </div>
+                                       
+                                       
+                                        <div class="col-md-6">
+                                            <div class="form-group" data-bind="datepicker: $data.ActivationDateTime,
+                                                 datepickerOptions: {position: 'top', startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 0">
+                                                <label class="control-label">Activation Date</label>
+                                                <input type="text" name="activationDate" id="activationDate" class="form-control" tabindex="7" data-format="MM/dd/yyyy" readonly="readonly">
+                                                <span class="addonbutton">
+                                                    <span class="ispicon add-on ispicon_calender"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group" data-bind="datepicker: $data.ExpiryDateTime, datepickerOptions: {position: 'top', startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 1">
+                                                <label class="control-label">Expiry Date</label>
+                                                <input type="text" name="expiryDate" id="expiryDate" class="form-control" tabindex="8" data-format="MM/dd/yyyy" readonly="readonly">
+                                                <span class="addonbutton">
+                                                    <span class="ispicon add-on ispicon_calender"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" data-bind="with: $data.model.Credentials()[0]">
+                                        <div class="row pairtextboxfix">
+                                             <div class="form-group">
+                                                <label class="control-label">Access Group</label>
+                                                <select name="accessGroup1" id="accessGroup1" class="form-control" tabindex="11" data-bind="options: $root.accessGroups, optionsText: 'Name', optionsValue: 'Id', optionsCaption: '--Select--', value: $data.AccessGroupId"><option value="">--Select--</option><option value="0216eda7-2830-4490-bcba-01ef836bf96b">Master</option></select>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <label class="control-label">Intrusion Group</label>
+                                                <select name="intrusionGroup1" id="intrusionGroup1" class="form-control pull-left ispwidth-90per" tabindex="12" data-bind="options: $root.intrusionGroups, optionsText: 'Name', optionsValue: 'Id', optionsCaption: '--Select--',value: $data.IntrusionGroupId"><option value="">--Select--</option></select>
+                                                <span class="ispicon ispicon_plus pull-right nopadding mar-t5" title="add new"> 
+                                                            </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Status</label>
+                                                <select name="credentialStatus1" id="credentialStatus1" class="form-control" data-bind="options: $root.credentialStatuses, optionsText: 'Name', optionsValue: 'Name',value:$data.CredentialStatusName" tabindex="13"><option value="Active">Active</option><option value="Inactive">Inactive</option><option value="Lost">Lost</option><option value="Trace">Trace</option></select>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="form-group" data-bind="visible: !$root.isReadOnly()">
+                                            <label class="control-label">Confirm PIN</label>
+                                            <input type="password" name="confirmPin" id="confirmPin" class="form-control" data-bind="value: $data.ConfirmPin" tabindex="10">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="access" class="tab-pane">
+                                <div class="row scroll-y access">
+                                    <div class="row col-md-12 card-horizontal-scroller scroll-y">
+                                        <!-- ko foreach: $data.model.AdditionalCredentials -->
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 card" data-bind="css: {active: $data.IsSelected}, click: $root.onCredentialItemSelect">
+                                            <span class="box-card"></span>
+                                            <span class="carditem" data-bind="text: $root.getCardTitle($index)">Card 2</span>
+                                        </div>
+                                        
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 card active" data-bind="css: {active: $data.IsSelected}, click: $root.onCredentialItemSelect">
+                                            <span class="box-card"></span>
+                                            <span class="carditem" data-bind="text: $root.getCardTitle($index)">Card 3</span>
+                                        </div>
+                                        <!-- /ko -->
+                                        <span class="col-xs-1 ispicon ispicon_plus pull-right" data-toggle="tooltip" data-bind="visible: !$data.isReadOnly(), click:$data.AddCredential"></span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <hr>
+                                    </div>
+                                    <!-- ko if: $data.model.SelectedCredential -->
+                                    <div class="row col-md-12">
+                                        <h3 class="bold">Security Details</h3>
+                                    </div>
+                                    <div class="col-md-6" data-bind="with: $data.model.SelectedCredential()">
+                                        <div class="form-group">
+                                            <label class="control-label">Badge No</label>
+                                                <input type="text" name="badgeNo" id="badgeNo" class="form-control" data-bind="value: $data.CredentialNumber" tabindex="18">
+                                        </div>
+                                        <div class="row pairtextboxfix">
+                                            <div class="col-md-6">
+                                                <div class="form-group" data-bind="datepicker: $data.ActivationDateTime, 
+                                                     datepickerOptions: {position: 'top', startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 0">
+                                                    <label class="control-label">Activation Date</label>
+                                                        <input type="text" name="activationDate2" id="activationDate2" class="form-control" value="" tabindex="20" data-format="MM/dd/yyyy" readonly="readonly">
+                                                    <span class="addonbutton">
+                                                        <span class="ispicon add-on ispicon_calender"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group" data-bind="datepicker: $data.ExpiryDateTime, datepickerOptions: {position: 'top', startDate: moment(new Date()).utcOffset(moment.parseZone(new Date()).utcOffset())._d, pickTime: false}, setDefaultMode : 1">
+                                                    <label class="control-label">Expiry Date</label>
+                                                        <input type="text" name="expiryDate2" id="expiryDate2" class="form-control" value="" tabindex="21" data-format="MM/dd/yyyy" readonly="readonly">
+                                                    <span class="addonbutton">
+                                                        <span class="ispicon add-on ispicon_calender"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" data-bind="with: $data.model.SelectedCredential()">
+                                        <div class="form-group">
+                                            <label class="control-label">Access Group</label>
+                                            <select name="accessGroup" id="accessGroup" class="form-control" tabindex="19" data-bind="options: $root.accessGroups, optionsText: 'Name', optionsValue: 'Id', optionsCaption: '--Select--', value: $data.AccessGroupId"><option value="">--Select--</option><option value="0216eda7-2830-4490-bcba-01ef836bf96b">Master</option></select>
+                                        </div>
+                                        <div class="form-group hide">
+                                            <label class="control-label">Intrusion Group</label>
+                                            <select name="intrusionGroup" id="intrusionGroup" class="form-control" tabindex="22" data-bind="options: $root.intrusionGroups, optionsText: 'Name', optionsValue: 'Id', optionsCaption: '--Select--',value: $data.IntrusionGroupId"><option value="">--Select--</option></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Status</label>
+                                            <select name="credentialStatus" id="credentialStatus" class="form-control" data-bind="options: $root.credentialStatuses, optionsText: 'Name', optionsValue: 'Name',value:$data.CredentialStatusName" tabindex="23"><option value="Active">Active</option><option value="Inactive">Inactive</option><option value="Lost">Lost</option><option value="Trace">Trace</option></select>
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                            <div id="additional" class="tab-pane">
+                                <div class="row col-md-12">
+                                    <h3 class="bold">Additional Information</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Employee Type</label>
+                                        <select name="credentialHolder_Type" id="credentialHolder_Type" class="form-control" data-bind="options: $data.credentialHolderTypes, optionsText: 'Name', optionsValue: 'Name',optionsCaption: '--Select--', value: $data.model.CredentialHolderTypeName" tabindex="28" data-original-title="" title=""><option value="">--Select--</option><option value="Visitor">Visitor</option><option value="RegularEmployee">RegularEmployee</option><option value="ContractEmployee">ContractEmployee</option></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Phone</label>
+                                            <input type="text" name="phone" id="phone" class="form-control" data-bind="value: $data.model.ContactInfo.Phone" tabindex="30" data-original-title="" title="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Label Name 2</label>
+                                            <input type="text" name="label2" id="label2" class="form-control" data-bind="value: $data.model.Identity2" tabindex="32" data-original-title="" title="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Employee ID</label>
+                                            <input type="text" name="employeeId" id="employeeId" class="form-control" data-bind="value: $data.model.EmployeeId" tabindex="29" data-original-title="" title="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Label Name 1</label>
+                                            <input type="text" name="label1" id="label1" class="form-control" data-bind="value: $data.model.Identity1" tabindex="31" data-original-title="" title="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Notes</label>
+                                            <input type="text" name="notes" id="notes" class="form-control" data-bind="value: $data.model.Note1" tabindex="33" data-original-title="" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-6 navbar navbar-default viewmode navbar-fixed-bottom btn-footer ispbuttongroup" data-bind="ifnot: $data.isReadOnly">
+                            <span class="text-danger pull-left text-left col-md-7" data-bind="visible: $data.IsError, text: $data.ErrorMessage" style="display: none;"></span>
+                            <div class="btn-group" role="group" aria-label="group button">
+
+                                <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: $data.cancelEdit">Cancel</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" href="#modal-id-site" onclick="$('.nav-tabs li:eq(2) a').tab('show')">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                    </div>
+                </div>
+            
+        </div>
+
+
+    </div>
+
+
+
+
+
+    
+    
+
+</body>
+</html>

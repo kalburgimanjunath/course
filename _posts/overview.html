@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<style type="text/css">
+    .accountcontainer .overview .content{
+            box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            background: #f4f4f4 !important;
+    }
+</style>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/readme.css">
+    </head>
+    <body class="accountcontainer">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 overview">
+                <h2 class="isppagetitle">Site Overview</h2>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content scroll-x scroll-y" style="box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            background: #f4f4f4 !important;">
+                    <div class="row">
+                        <div class="col-md-4 hide">
+                            <div class="panel panel-info white accountdetails ">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">ACCOUNT DETAILS </h3>
+                                    
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Account#<br>
+                                            <b>KO24652467</b>
+                                        </div>
+                                        <div class="col-md-6">
+                                            Last Registered<br>
+                                            <b>May 04, 2016</b>
+                                        </div>
+                                    </div>
+                                    <div class="row hide">
+                                        EULA Acceptance<br>
+                                        <button>AWAITING ACCEPTANCE</button><br>
+                                        <a href="#">Resend Registration Email</a>
+                                    </div>
+                                    <div class="row hide">
+                                        Account Status<br>
+                                        <button>ACCEPTED</button><br>
+                                        May 03, 2016 9:24 AM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 hide">
+                            <div class="panel panel-info white">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">ACCOUNT REVENUE</h3>
+                                    
+                                </div>
+                                <div class="panel-body">Panel content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info white">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">ACCOUNT DETAILS</h3>
+                                    
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="row">
+                                            Customer<br>
+                                            <b data-bind="text: $data.siteDetailModel.CustomerInfo.Name">United Hospital</b>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <div class="row">
+                                        <div class="row">
+                                            Site<br>
+                                            <b data-bind="text: $data.siteDetailModel.SiteInfo.Name">New Jersey Campus</b>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="row" data-bind="if: $data.siteDetailModel.SiteInfo.hasFeature('SiteReferenceNo')">
+                                            Site Reference No.<br>
+                                            <b data-bind="text: $data.siteDetailModel.SiteInfo.getFeature('SiteReferenceNo').Value">K0216 01478</b>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <b>Address</b><br>
+                                        <span data-bind="text: $data.siteDetailModel.SiteInfo.ContactInfo.AddressLine1">241 E 23 St, Hoboken</span><br>
+                                        <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.City">Bengaluru</span>
+                                        <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.Region">Karnataka</span>
+                                        <span data-bind="text:$data.siteDetailModel.SiteInfo.ContactInfo.ZipCode">560103</span><br>
+                                        <span data-bind="text: $data.siteDetailModel.SiteInfo.ContactInfo.Country">India</span>
+                                    </p>
+                                    <hr>
+                                   
+                                    <p>
+                                        <b>Site Admin</b><br>
+                                        <b>
+                                            <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.FirstName">Jenny Appleseed</span>
+                                            <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.LastName">Thawale</span>
+                                        </b><br>
+                                        Cell : <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.MobileNumber">6778999990</span><br>
+                                        Office : <span data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.WorkPhone">6778999990</span><br>
+                                       <a data-bind="text: $data.siteDetailModel.PrimaryOperatorInfo.ContactInfo.EmailAddress">vidhya.thawale@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info white">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">CONTROLLER DETAILS</h3>
+                                    
+                                </div>
+                                <div class="panel-body">
+
+                                    <p>
+                                        No Controller found<br>
+                                        <button type="button" class="btn btn-primary text-center" data-toggle="modal" href="#modal-id-site" data-bind="click: $data.addController">Add Controller</button>
+                                    </p>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info white">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">SERVICE APPOINTMENTS</h3>
+                                    
+                                </div>
+                                <div class="panel-body">Panel content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info white">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">SERVICE APPOINTMENTS</h3>
+                                    
+                                </div>
+                                <div class="panel-body">Panel content</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    	
+    </body>
+    </html>

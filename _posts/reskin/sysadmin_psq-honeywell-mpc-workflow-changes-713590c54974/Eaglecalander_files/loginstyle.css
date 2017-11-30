@@ -1,0 +1,30 @@
+.logintitle {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 22px;
+    margin-bottom: 26px;
+    color: #303030;
+}
+
+.login #Password {
+    border-right: 0 !important;
+}
+
+.login .basic-addon2 {
+    border-left: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.login .input-validation-error+.basic-addon2 {
+    border: 1px solid #ee3124;
+}
+
+.login #Password:hover+.basic-addon2 {
+    border: 1px solid #1792e5;
+    border-left: 0 solid #1792e5 !important;
+}
+
+.login #basic-addon2:hover #Password {
+    border: 1px solid #1792e5;
+    border-right: 0 solid #1792e5 !important;
+}

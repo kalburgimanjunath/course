@@ -1,0 +1,23 @@
+﻿<div class="account-root">
+    @{
+        Html.RenderPartial("_AddNewCustomer");
+    }
+
+    @{
+        Html.RenderPartial("_CustomerOverview");
+    }
+
+    @{
+        Html.RenderPartial("_CustomerList");
+        Html.RenderPartial("_SiteOverview");
+    }
+
+    <input type="hidden" id="accountmgmturl" value='@Url.Action("", "AccountMgmt")' />
+    <link href="~/Content/AccountMgmtPlugin/ispaccount.css" rel="stylesheet" />
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-common.js"></script>
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-model.js"></script>
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-validation-context.js"></script>
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-datacontext.js"></script>
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-uicontext.js"></script>
+    <script src="~/scripts/AccountMgmtPlugin/AccountMgmt-bootstrap.js"></script>
+</div>

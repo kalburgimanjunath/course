@@ -1,0 +1,300 @@
+﻿(function () {
+    Honeywell.ISP.UserMap.UserMapViewModel = Honeywell.ISP.WebUIFramework.BaseViewModel.inherits({
+        initializeViewModel: function (options) {
+            this.bindAll('showError', 'loadMapsData', 'createUserMap', 'updateliveAlarmData', 'clusterIconCalculator', 'loadGoogleMaps', 'DefaultViewControl', 'deleteUserMapMarkers', 'clusterIconCalc', 'filtermap', 'gotoalarm');
+            //this.validationContext.reset();
+            this.initializeBinding(options);
+        },
+        initializeBinding: function (options) {
+            this.ErrorMessage = ko.observable("");
+            this.IsError = ko.observable(false);
+            this.selectedMarkerPointer = ko.observable();
+            this.clustersModel = new Honeywell.ISP.UserMap.Clusters();
+            this.map = null;
+            this.infowindow = null;
+            this.marker_list = [];
+            this.markerCluster = null;
+            this.currentUserLocation = ko.observable();
+            this.defaultData = ko.observable();
+            this.totalSites = ko.observable(0);
+            this.selectedFilterOption = ko.observable();
+            this.initializeMap();
+        },
+        initializeMap: function () {
+            self = this;
+            this.loadGoogleMaps(function () {
+                self.loadMarkerScript();
+                var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);
+                self.currentUserLocation(defaultLatLng);
+               self.map = new google.maps.Map($('#userMap')[0], {
+                        zoom: Honeywell.ISP.UserMap.map.Zoom,
+                        center: defaultLatLng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,//google.maps.MapTypeId.HYBRID/ROADMAP,
+                        panControl: false,
+                        streetViewControl: false,
+                        mapTypeControl: false
+                    });
+                    var centerControlDiv = document.createElement('div');
+                    var centerControl = new self.DefaultViewControl(centerControlDiv,self.map);
+
+                    centerControlDiv.index = 1;
+                    self.map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(centerControlDiv);
+                    self.infowindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+                   self.loadMapsData();
+            });
+        },
+        onAlarmEventReceived: function (data) {
+            this.updateliveAlarmData(data);
+        },
+        loadMarkerScript: function () {
+            var scriptRichmarker = document.createElement('script');
+            scriptRichmarker.type = 'text/javascript';
+            scriptRichmarker.src = window.location.href + 'Scripts/UserMapPlugin/richmarker.js';
+            document.body.appendChild(scriptRichmarker);
+        },
+        loadMapsData: function () {
+            blockUI();
+            this.postDataRequest("/GetSiteStatus", { }, function (err, result) {
+                unblockUI();
+                if (!err && result && result.IsSuccessStatusCode) {
+                    var data = this.manipulateSiteData(result.SiteStatusList.Result[0].Value);
+                    this.clustersModel.bindAllClusters(data); //Temp changes for generating data
+                    this.totalSites(data.length);
+                    var filteredData = _.filter(data, function (a) {
+                        return a.statusid !== Honeywell.ISP.UserMap.filter.Normal;
+                    });
+                    if (filteredData.length === 0) {
+                        this.selectedFilterOption(Honeywell.ISP.UserMap.filtertyple.All);
+                        this.clustersModel.bindClusters(data);
+                        this.clustersModel.totalsiteswithalarms(0);
+                    } else {
+                        this.selectedFilterOption(Honeywell.ISP.UserMap.filtertyple.Alarm);
+                        this.clustersModel.bindClusters(filteredData);
+                        this.clustersModel.bindTotalAlarmSites();
+                    }
+                    this.clustersModel.bindTotalAlarms();
+                    this.createUserMap();
+                    //this.updateliveAlarmData();
+                }
+                else {
+                    var data =[];
+                    this.clustersModel.bindAllClusters(data); //Temp changes for generating data
+                    this.totalSites(data.length);
+                    var filteredData = _.filter(data, function (a) {
+                        return a.statusid !== Honeywell.ISP.UserMap.filter.Normal;
+                    });
+                    this.selectedFilterOption(Honeywell.ISP.UserMap.filtertyple.Alarm);
+                    this.clustersModel.bindClusters(filteredData);
+                    this.clustersModel.bindTotalAlarms();
+                    this.clustersModel.bindTotalAlarmSites();
+                }
+                this.on(Honeywell.ISP.UserMap.events.onLiveAlarmReceived, this.onAlarmEventReceived);
+            });
+        },
+        createUserMap: function () {
+            this.deleteUserMapMarkers();
+            var pos = "";
+            var imagePath = "Content/images/icon_sprites_24px-01.svg"
+            this.clustersModel.clusters().forEach(function (v, i) {
+                //if (v.SiteStatus() !== Honeywell.ISP.UserMap.status.Normal) {
+                    var latlng = v.GeoLocation().split(',');
+                    pos = new google.maps.LatLng(parseFloat(latlng[0]), parseFloat(latlng[1]));
+                    marker = new RichMarker({
+                        position: pos,
+                        map: this.map,
+                        draggable: false,
+                        SiteStatus: v.SiteStatus(),
+                        shadow: 'none',
+                        content: '<div class="ispicon ' + v.mapicon() + '"><span class="mapText">' + v.SiteName().slice(0, 2) + '</span></div>'
+                    });
+                    this.bindInfoWindow(marker, this.map, this.infowindow, "<p class='map_siteInfo'>" + v.SiteName() + "</p>");
+                    this.marker_list.push(marker);
+                //}
+            }, this);
+            this.markerCluster = new MarkerClusterer(this.map, this.marker_list, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+                gridSize: Honeywell.ISP.UserMap.map.GridSize,
+                minimumClusterSize: Honeywell.ISP.UserMap.map.MinClusterSize
+            });
+            this.markerCluster.setCalculator(this.clusterIconCalc);
+            var bounds = new google.maps.LatLngBounds();
+            for (var i = 0; i < this.marker_list.length; i++) {
+                bounds.extend(this.marker_list[i].getPosition());
+            }
+
+            this.map.fitBounds(bounds);
+        },
+        clusterIconCalc: function (markers, numStyles) {
+            for (var i = 0; i < markers.length; i++) {
+                if (markers[i].SiteStatus === Honeywell.ISP.UserMap.status.Critical) {
+                    return { text: markers.length, index: 3 }
+                }
+                if (markers[i].SiteStatus === Honeywell.ISP.UserMap.status.Major) {
+                    return { text: markers.length, index: 2 }
+                }
+                if (markers[i].SiteStatus === Honeywell.ISP.UserMap.status.Moderate) {
+                    return { text: markers.length, index: 1 }
+                }
+                if (markers[i].SiteStatus === Honeywell.ISP.UserMap.status.Normal) {
+                    return { text: markers.length, index: 1 }
+                }
+            }
+        },
+        bindInfoWindow: function (marker, map, infowindow, html) {
+            var self = this;
+            /*marker.addListener('click', function () {
+                //self.updateliveAlarmData();
+                infowindow.setContent(html);
+                infowindow.open(map, marker);
+            });*/
+            
+            marker.addListener('mouseover', function () {
+                infowindow.setContent(html);
+                infowindow.open(map, marker);
+            });
+            marker.addListener('mouseout', function () {
+                infowindow.close();
+            });
+            
+        },
+        deleteUserMapMarkers: function(){
+            for (var i = 0; i < this.marker_list.length; i++) {
+                this.marker_list[i].setMap(null);
+            }
+            this.marker_list = [];
+            if (this.markerCluster) {
+                this.markerCluster.clearMarkers();
+            }
+        },
+        updateliveAlarmData: function (data) {
+			if(data[0].AccountId === null || data[0].AccountId === undefined || data[0].AccountId === "" || data[0].SeverityName === null || data[0].SeverityName ===undefined|| data[0].SeverityName ==="") return;
+            this.clustersModel.removeAlarm(data[0].SourceEntityId);
+            this.clustersModel.updateAlarmList(data[0]);
+            var resData = this.clustersModel.allclusters();
+            this.clustersModel.allclusters(this.manipulateSiteData(resData, true));
+            var filteredData = _.filter(this.clustersModel.allclusters(), function (a) {
+                    return a.statusid !== Honeywell.ISP.UserMap.filter.Normal;
+                });
+            if (this.selectedFilterOption() === Honeywell.ISP.UserMap.filtertyple.Alarm) {
+                this.clustersModel.bindClusters(filteredData);
+                this.clustersModel.bindTotalAlarmSites();
+            } else {
+                this.clustersModel.bindClusters(this.clustersModel.allclusters());
+                this.clustersModel.totalsiteswithalarms(filteredData.length);
+            }
+            this.clustersModel.bindTotalAlarms();
+
+            this.createUserMap();
+        },
+        refreshUserMapMarker: function () {
+            this.map.setCenter(new google.maps.LatLng(this.currentUserLocation().lat(), this.currentUserLocation().lng()));
+            if (this.marker_list.length !== 0) {
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < this.marker_list.length; i++) {
+                    bounds.extend(this.marker_list[i].getPosition());
+                }
+                this.map.fitBounds(bounds);
+            }
+        },
+        DefaultViewControl: function (controlDiv,map) {
+            var self = this;
+            var controlUI = document.createElement('div');
+            controlUI.style.background = '#fff';
+            controlUI.style.margin = '0px 13px';
+            controlUI.style.borderRadius = '2px';
+            controlDiv.appendChild(controlUI);
+            var controlText = document.createElement('div');
+            controlText.className = 'ispicon ispicon_mapreset';
+            controlUI.appendChild(controlText);
+            controlUI.addEventListener('click', function () {
+                self.refreshUserMapMarker();
+            });
+        },
+        loadGoogleMaps: function (cb) {
+            $.ajax({
+                url: 'https://www.google.com/jsapi/',
+                dataType: "script",
+                success: function () {
+                    google.load('maps', '3.24', {
+                        callback: cb,
+                        other_params: 'sensor=false&libraries=geometry&language=en'
+                    });
+                }
+            });
+        },
+        filtermap: function (filteritem) {
+            var filteredData;
+            if (filteritem === Honeywell.ISP.UserMap.filtertyple.Alarm) {
+                filteredData = _.filter(this.clustersModel.allclusters(), function (a) {
+                    return a.statusid != Honeywell.ISP.UserMap.filter.Normal;
+                });
+                this.selectedFilterOption(Honeywell.ISP.UserMap.filtertyple.Alarm);
+            } else {
+                filteredData = this.clustersModel.allclusters() || [];
+                this.selectedFilterOption(Honeywell.ISP.UserMap.filtertyple.All);
+            }
+            this.clustersModel.bindClusters(filteredData);
+            if (filteredData.length !== 0) {
+                this.createUserMap();
+            }
+        },
+        gotoalarm:function(){
+            onMenuItemSelect('showalarmview');
+        },
+        manipulateSiteData: function (sitelist, calc) {
+            //calc = true;
+            var self = this;
+            var result = _.chain(sitelist)
+                .map(function (value, key) {
+                    return {
+                        SiteId: value.SiteId,
+                        SiteName: value.SiteName,
+                        GeoLocation: value.GeoLocation,
+                        //statuslist: getstatus(_.pluck(value, "status")),
+                        DeviceStates:value.DeviceStates,
+                        devices: self.getdevices(value.DeviceStates),
+                        ZipCode:value.ZipCode,
+                        Address:value.Address,
+                        SiteStatus: calc ? self.sitestatus(value.DeviceStates) : value.SiteStatus,
+                        statusid: Honeywell.ISP.UserMap.sitestatusid[calc ? self.sitestatus(value.DeviceStates) : value.SiteStatus]
+                    }
+                })
+                .value();
+            result.sort(function (a, b) {
+                return b.devices.length - a.devices.length
+            });
+            var result1 = _.chain(result).sortBy('statusid').value();
+            return result1;
+        },
+        getdevices: function (devices) {
+            return _.reduce(devices, function (result, current) {
+                if (current.Severity === Honeywell.ISP.UserMap.status.Critical) {
+                    return result.concat(current.DeviceIds);
+                } else {
+                    return result;
+                }
+            }, []);
+        },
+        getdevicestates: function (devices) {
+            return _.reduce(devices, function (result, current) {
+                if (current.DeviceIds.length !== 0)
+                    return result.concat(current.Severity);
+                else
+                    return result;
+            }, []);
+        },
+        sitestatus: function (devices) {
+            var list = this.getdevicestates(devices);
+            list.sort(function (a, b) {
+                return (Honeywell.ISP.UserMap.sitestatusid[a] > Honeywell.ISP.UserMap.sitestatusid[b]) ? 1 : ((Honeywell.ISP.UserMap.sitestatusid[b] > Honeywell.ISP.UserMap.sitestatusid[a]) ? -1 : 0);
+            });
+            return list[0];
+        },
+        showError: function (result) {
+            this.IsError(true);
+            this.ErrorMessage((result && result.errorMessage) || Resources.General_error);
+        }
+    });
+})();

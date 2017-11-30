@@ -1,0 +1,174 @@
+﻿/*version 1.0.1*/
+/*for plugin container that needed AccordionPlugin menu*/
+.overview {
+    position: absolute;
+    left: 24%;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+/*for plugin container that needed AccordionPlugin menu after toggle menu*/
+.togglemenu .overview {
+    position: absolute;
+    left: 70px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.account-root .listcontainer {
+    position: absolute;
+    top: 94px;
+    bottom: 0px;
+    height: 92%;
+    min-height: 500px;
+    overflow: scroll;
+    width: 100%;
+}
+
+.schedulelists {
+    position: absolute;
+    top: 132px;
+    overflow: scroll;
+    bottom: 0px;
+    min-height: 364%;
+    width: 100%;
+    border-top: 1px solid #d0d0d0;
+}
+
+.cardlistview .peoplecount {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #303030;
+}
+
+.siteAddress {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.siteView .isppagetitle {
+    margin-right: 20px;
+    margin-bottom: 17px;
+}
+
+.siteView span.input-group-btn {
+    padding-right: 12px;
+}
+
+.siteView .cardlistview {
+    width: 25.15%;
+    float: left;
+    position: absolute;
+    left: 24%;
+    bottom: 0;
+    top: 0;
+}
+
+.siteView .siteOverview {
+    width: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+    padding: 0 15px 0 0;
+}
+
+.siteView .cardlistview .list-group.scroll-x.scroll-y {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 109px;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+    .siteView .cardlistview .list-group.scroll-x.scroll-y li:first-child {
+        border-top: 0 none;
+        text-align: center;
+    }
+
+.siteView .ispheadersearch .ispicon_sort {
+    border: 0 none;
+    margin-right: 10px;
+}
+
+.siteView .ispheadersearch .ispsearch {
+    color: #303030;
+}
+
+.siteView .list-group-item {
+    padding: 12px 20px 10px 20px;
+    min-height: 88px;
+}
+
+/* DROPDOWN MENU */
+.ispActionMenu {
+    cursor: pointer;
+}
+
+    .ispActionMenu li, .ispActionMenu .dropdown-menu {
+        padding: 0;
+    }
+
+    .ispActionMenu .dropdown-menu {
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu.open {
+        font-size: 14px;
+        color: #1792e5;
+    }
+
+    .ispActionMenu.mainMenu.open .dropdown-toggle, .ispActionMenu.mainMenu .dropdown-toggle:hover {
+        color: #303030;
+        font-size: 18px;
+    }
+
+    .ispActionMenu.mainMenu .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a {
+        cursor: pointer;
+        padding: 8px 18px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .ispActionMenu .dropdown-menu > li > a.selected {
+            background-color: #e8f4fc;
+        }
+
+        .ispActionMenu .dropdown-menu > li > a > span {
+            margin-right: 8px;
+        }
+
+    .ispActionMenu .dropdown-menu > li:first-child > a {
+        cursor: pointer;
+        border-top: 0 none;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a:hover, .ispActionMenu .dropdown-menu > li > a:focus {
+        background-color: #f5f5f5;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .ispActionMenu.contentMenu .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .ispActionMenu.contentMenu .footer {
+        margin-top: 20px;
+    }
+
+        .ispActionMenu.contentMenu .footer button {
+            margin-left: 9px;
+        }

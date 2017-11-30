@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/dcmoverview.css"> 
+    <link rel="stylesheet" type="text/css" href="css/listview.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+
+
+
+    </script>
+    <script>
+        $( document ).ready(function() {
+            $(".ispicon_edit").click(function(){
+                $(".tab-content").removeClass("viewmode");
+                $('.btn-footer').show();
+            });
+
+
+            //$('.SlectBox').SumoSelect();
+
+        });
+        $('.btn-footer').hide();
+
+
+
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip('show');
+            $('.SlectBox').SumoSelect();
+        });
+    </script>
+
+    <style>
+    </style>
+    <style>
+        .accountcontainer .overview .content {
+            box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            background: #f4f4f4 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="">
+        <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a id="menu-toggle" href="#" class="toggle">
+                        <span class="sidebar-brand">
+                            <span class="ispicon ispicon_handbar">
+                            </span>
+                            <span>Eagle</span>
+                        </span>
+                    </a>
+                    <nav id="sidebar-wrapper" class="">
+
+                        <ul class="sidebar-nav" id="ispheader">
+                            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                            <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                                <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                                </a>
+                                <p data-bind="text: $data.PageName"></p>
+                            </li>
+                            <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                                <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <span class="ispicon ispicon_dashboard"></span>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+
+                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="ispicon ispicon_accounts"></span>
+                                    Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                    <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                    <li><a href="customer-list.html"><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                                </ul>
+
+                            </li>
+
+                            <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <span class="ispicon ispicon_utility"></span>
+                                    Utility Tools
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <span class="ispicon ispicon_company"></span>
+                                    My Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <span class="ispicon ispicon_centralStation"></span>
+                                    Central Station
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                    <span class="ispicon ispicon_sales"></span>
+                                    Sales and Support
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="onMenuItemSelect('SignOut')">
+                                    <span class="ispicon ispicon_logout"></span>
+                                    Sign Out
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </li>
+
+            </ul>
+            <div class="pull-right col-xs-4 ispheadersearch">
+
+                <form>
+                    <div class="col-xs-10 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept">
+                                        <span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                    <li><a href="#contains">Contains</a></li>
+                                    <li><a href="#its_equal">It's equal</a></li>
+                                    <li><a href="#greather_than">Greather than &gt;</a></li>
+                                    <li><a href="#less_than">Less than &lt; </a></li>
+                                    <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+        <!-- Navigation -->
+    </div>
+    <div id="page-body">
+
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="customeroverview.html" class="list-group-item active"><span class="ispicon ispicon_sites"></span><span>Site Overview</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+
+                        <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                        <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                        <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                        <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div id="site-overview" class="row siteView">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+                <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                <h2 class="isppagetitle">
+                    Sites
+                    <span class="pull-right">
+                        <a class="ispicon ispicon_plus" href="addaccount.html" title="Add New Site"></a>
+                        <span class="ispicon ispicon_delete"  title="delete"></span>
+                    </span>
+                </h2>
+                <div>
+
+                    <div class="col-md-12 ispheadersearch">
+                        <form>
+                            <div class="row pull-left">
+                                <div class="input-group">
+                                    <div class="input-group-btn search-panel">
+                                        <span id="search_concept">
+                                            <span class="ispicon ispicon_search"></span>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row listcount clear">
+                        <span class="bold" data-bind="text: $data.credentialHolderCount">3</span> <span>Sites</span>
+                    </div>
+                    <ul class="list-group scroll-x scroll-y">
+                        <li class="list-group-item" onclick="document.location.href='customeroverview.html'">
+                            <div class="checkbox pull">
+                                <input type="checkbox">
+                            </div>
+                            <div class="col-md-10">
+                                <span class="name ellipsis">Queen campus</span> <br />
+                                <span class="siteAddress">
+                                    128 W 32nd Street <br />
+                                    New York, NY 10007
+                                </span>
+
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox pull">
+                                <input type="checkbox">
+                            </div>
+                            <div class="col-md-10">
+                                <span class="name ellipsis">Queen campus</span> <br />
+                                <span class="siteAddress">
+                                    128 W 32nd Street <br />
+                                    New York, NY 10007
+                                </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox pull">
+                                <input type="checkbox">
+                            </div>
+                            <div class="col-md-10">
+                                <span class="name ellipsis">Queen campus</span> <br />
+                                <span class="siteAddress">
+                                    128 W 32nd Street <br />
+                                    New York, NY 10007
+                                </span>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview siteOverview  pull-left">
+            </div>
+
+        </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Schedules.css">
+    <link rel="stylesheet" type="text/css" href="css/ispSchedule.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/intrusion.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    function onMenuItemSelect(itemName) {
+    $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+    switch (itemName) {
+    case "SiteOverview":
+    blockUI();
+    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+    unblockUI();
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+    });
+    break;
+    case "AddSite":
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+    break;
+    }
+    }
+
+    </script>
+    <style>
+    .ispmenu {
+        border: 1px solid #d0d0d0;
+        min-width:200px;
+        padding:0px;
+    }
+
+        .ispmenu li {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #303030;
+        }
+
+            .ispmenu li a {
+                font-family: 'HoneywellSansWeb-Medium' !important;
+                font-size: 14px;
+                color: #606060;
+                padding: 12px 24px;
+                border-bottom: 1px solid #d0d0d0;
+            }
+
+                .ispmenu li a:hover {
+                    font-family: 'HoneywellSansWeb-Bold' !important;
+                    font-size: 14px;
+                    color: #303030;
+                    background-color: #e8f4fc;
+                }
+                .ispmenu.rightalign{
+                    top: 50px;
+                    right: 20px;
+                }
+
+                .checkbox input[type="checkbox"] {
+                    opacity: 1;
+                }
+
+                .listcontainer{
+                    position: absolute;
+                    top: 60px;
+                    bottom: 0px;
+                    height: 100%;
+                    min-height: 500px;
+                    overflow: scroll;
+                    width: 102%;
+                }
+    </style>
+</head>
+<body>
+
+        <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">
+               
+                <form>
+                    <div class="col-xs-10 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="#" class="list-group-item">Site Overview</a></li>
+                        <li><a href="#" class="list-group-item">Controllers</a></li>
+                        <li><a href="#" class="list-group-item">Edge Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Areas</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                People & Badges
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">People<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Access Personas<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="list-group-item active" data-bind="click: EagleSchedule">Intrusion Groups<span class="pull-right">10</span></a></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="intrusion-root">
+            <!-- <link href="~/Content/AccountMgmtPlugin/alarms.css" rel="stylesheet" /> -->
+            <div id="intrusion-view" class="intrusionView">
+                <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Intrusion Groups
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addSchedule" title="Add New"></a>
+                            <a class="ispicon ispicon_more dropdown-toggle" data-toggle="dropdown" title="More">
+                                
+                            </a>
+                            <ul class="dropdown-menu ispmenu rightalign">
+                                <li><a href="#">Menu 1</a></li>
+                                <li><a href="#">Menu 2</a></li>
+                                <li><a href="#">Delete</a></li>
+                              </ul>
+                        </span>
+                    </h2>
+                    <div>
+                        <ul class="list-group scroll-x scroll-y custom-style-list">
+                            <li class="list-group-item active">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Building Admin</span> <br />
+                                   
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Night Delivery</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Security Grade 3</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                             
+                        </ul>
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview intrusionOverview isptabs pull-left">
+                    <div class="row isptabs">
+                        <div class="row">
+                            <h2 class="isppagetitle">
+                                <span class="section-head1">Night Delivery</span>
+                                <span class="pull-right">
+                                    <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit"></span>
+                                </span>
+                            </h2>
+                        </div>
+                         <div class="row">
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name1</label>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name2</label>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name3</label>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name4</label>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name5</label>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary" />
+                                    <label for="checkbox7">Area Name6</label>
+                                </div>                       
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <!-- AREA OVERVIEW-->
+            </div>
+        </div>
+
+
+
+        <!-- ADD AREA MODAL -->
+        <div id="addSchedule" class="modal fade ispmodal addSchedule" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Add/Edit Intrusion Group</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                        <div class="row form-group col-sm-6">
+                            <label class="control-label">Persona Name</label>
+                            <input class="inputuppercase form-control" type="text">
+                        </div>
+                         <div class="form-group col-sm-6">
+                            <label class="control-label">Authority level</label>
+                            <select class="form-control">
+                                <option>Installer</option>
+                                <option>Service Technican</option>
+                                <option>Master</option>
+                                <option>Manger</option>
+                                <option>Employee</option>
+                                <option>Security Guard</option>
+                                <option>Janitor</option>
+                                <option>Visitor</option>
+                                <option>Duress</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="control-label">Schedule</label>
+                            <select class="form-control">
+                                <option>24 Hours</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12">
+                            Select Area
+                            <div class="checkbox checkbox-square checkbox-primary control-label pull-right">
+                                <input id="checkbox7" type="checkbox" />
+                                <span for="checkbox7">Select All</span>
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name1</span>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name2</span>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name3</span>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name4</span>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name5</span>
+                                </div>                       
+                            </div>
+                            <div class="form-group col-md-4">
+                                 <div class="checkbox checkbox-square checkbox-primary control-label">
+                                    <input id="checkbox7" type="checkbox" data-bind="checked: $data.IsTemporary">
+                                    <span for="checkbox7">Area Name6</span>
+                                </div>                       
+                            </div>
+                        </div>
+                        </div>  
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ADD AREA MODAL -->
+    </div>
+</body>
+</html>

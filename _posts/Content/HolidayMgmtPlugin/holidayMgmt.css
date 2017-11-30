@@ -1,0 +1,93 @@
+﻿body, div, ul, li, table, th, tr, td, input, select, textarea, span, label, h1, h2, h3, h4, h5, h6, p, button, text, tspan {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', 'Calibri', 'Myriad', 'Century Gothic','Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size:12px;
+    color:#333333;
+}
+
+input[type="text"] {
+    height: 23px;
+    margin: 3px;
+    border:1px solid #dcdcdc;
+}
+
+input[type="radio"],  input[type="checkbox"] {
+    height: 15px;
+    width:20px ! important;
+    display:inline-block;
+}
+
+label {
+    display:inline-block;
+}
+
+
+input[type='button'], button {  
+    background-color: #7fc1d3; 
+    border: 1px solid #dcdcdc; 
+    display: inline-block; 
+    color: #fff; 
+    font-family: Arial; 
+    padding: 5px;
+    text-decoration: none; 
+    width:125px;
+    height:15px;
+}
+
+input[type='button']:hover, button:hover {	
+    background-color: #93D5E7;  
+}
+
+input[type='button']:active, button:active { 
+    position: relative;
+    top: 1px;
+}
+
+input[type='checkbox'], input[type='radio'] {
+    vertical-align: text-bottom;
+}
+
+.k-dropdown, .k-dropdown-wrap, .k-dropdown:hover, .k-dropdown-wrap:hover, 
+.k-dropdown:active, .k-dropdown-wrap:active, .k-dropdown .k-state-focused, 
+.k-dropdown .k-state-selected, .k-dropdown .k-state-hover {
+    background: #eee;
+    border-radius: 0;
+}
+
+.blockElement {
+    display:block;
+}
+
+.headerGroup {
+    font-size:15px;
+}
+
+.footerGroup {
+    position:absolute;
+    bottom:10px;
+}
+
+.field-group {
+    border-bottom: solid 1px #ddd;
+    box-shadow: #ddd 0px 2px 1px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.field-group ul {
+    list-style: none
+}
+
+.field-group ul li {
+    display: inline-block;
+    vertical-align: top;
+    margin:10px;
+    min-width:200px;
+}
+
+.field-group ul li > * {
+    display: block;
+    vertical-align: middle;
+    margin: 5px 8px 5px 8px;
+}

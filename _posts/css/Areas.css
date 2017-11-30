@@ -1,0 +1,503 @@
+﻿
+.isptabs {
+    /*margin: 24px;*/
+}
+
+    .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+            padding: 0 15px;
+        }
+
+            .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none;
+                -moz-box-sizing: none;
+                box-sizing: none;
+            }
+
+                .isptabs .nav li a:hover, .isptabs .nav li a:active, .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+
+.selectController {
+    width: 100%;
+    padding: 15px 20px;
+    border-top: 1px solid #e7e7e7;
+}
+
+.areaListRow {
+    border-radius: 0;
+}
+
+.areaView .ispheadersearch .ispicon_sort {
+    border: 0 none;
+    margin-right: 10px;
+}
+
+.areaView .ispheadersearch .ispsearch {
+    color: #303030;
+}
+
+.cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 20px !important;
+}
+
+.areaView .cardlistview .list-group.scroll-x.scroll-y {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 201px;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+    .areaView .cardlistview .list-group.scroll-x.scroll-y li:first-child {
+        border-top: 0 none;
+    }
+
+.areaView .cardlistview {
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 0;
+    top: 0;
+}
+
+.listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.areaView .sensorsTab .table > thead > tr > th, .addArea .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.addArea table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.areaView .sensorsTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.areaView .sensorsTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.areaView .sensorsTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.areaView .sensorsTab table td, .areaView .sensorsTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.areaView .sensorsTab .ispicon, .addArea .ispicon {
+    margin-top: 10px;
+}
+
+.areaView .sensorsTab .name, .addArea .name {
+    margin-left: 10px;
+    float:left;
+    margin-top:10px;
+}
+
+.areaView .sensorsTab .sensorsid, .addArea .sensorsid {
+    margin-left: 0 !important;
+}
+
+.areaView .sensorsTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.areaView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+.areaView .cardlistview .isppagetitle, .areaView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 20px;
+    margin-right: 12px;
+}
+
+.areaView .listOverview .isppagetitle {
+    margin-left: 9px;
+    margin-right: 24px;
+}
+
+.cardlistview .nav.nav-tabs {
+    margin-left: 20px;
+}
+
+.areaView .list-group-item {
+    padding: 12px 20px 10px 20px;
+}
+
+.sensorsList > span + span {
+    margin-left: 5px;
+}
+
+.areaView .checkbox {
+    float: left;
+}
+
+    .areaView .checkbox input[type="checkbox"], .addArea .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.addArea .modal-dialog, .addDevice .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.addArea.ispmodal, .addDevice.ispmodal {
+    left: 0 !important;
+}
+
+.listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.addArea .panel-body, .addDevice .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.addDeviceIcon {
+    margin-left: 10px;
+}
+
+.chimeZone {
+    margin-top: 32px;
+}
+
+    .chimeZone > span {
+        padding-top: 3px;
+        margin-left: 10px;
+        float: left;
+    }
+
+.btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.viewmode input[type="text"], .viewmode textarea, .viewmode select {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e1e1e1;
+    pointer-events: none;
+    border: 1px solid #e1e1e1;
+    cursor: no-drop;
+}
+
+.viewmode .ispicon {
+    pointer-events: none;
+    opacity: .4;
+}
+
+.viewmode .link {
+    color: #e1e1e1;
+}
+
+.viewmode .form-group label {
+    color: #e1e1e1;
+    cursor: default;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+.areaView .viewmode .checkbox {
+    cursor: no-drop;
+    color: #e1e1e1;
+    pointer-events: none;
+}
+
+.areaView .viewmode input[type="checkbox"] {
+    opacity: .4 !important;
+    pointer-events: none;
+}
+
+.areaView .viewmode .btn-footer {
+    display: none;
+}
+
+.btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .listOverview .sensorsTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .listOverview .sensorsTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+/* AREA SETTINGS */
+.areaSection .areaContent > p {
+    margin: 20px 10px 20px 15px;
+}
+
+.areaSection .link > .add {
+    font-size: 60px;
+}
+
+.areaSection .link {
+    color: #1792e5;
+}
+
+.areaSection .areaBox {
+    padding: 70px;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.areaSection .contentContainer {
+    border-color: #e7e7e7;
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff;
+}
+
+.ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.areaSection .form-group {
+    padding-left: 0;
+}
+
+
+
+.areaSection .checkbox input[type="checkbox"], .areaSection .checkbox input[type="radio"] {
+    opacity: 1;
+    z-index: 0;
+}
+
+.areaSection .checkbox label::before {
+    border: 0;
+}
+
+.areaView .areaOverview .checkbox label::before, .areaView .checkbox label::before {
+    display: none;
+}
+
+.infoModal {
+    margin: 0 auto;
+    top: 10% !important;
+    left: 0 !important;
+    text-align: center;
+    width: 400px;
+    height: 175px;
+}
+
+    .infoModal .modal-content {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .infoModal .modal-body > button {
+        margin-top: 30px;
+    }
+
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+.areaView .settingsTab .form-group {
+    padding-left: 0;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.areaView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.areaView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.areaOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+    padding: 0 15px 0 0;
+}
+
+    .areaOverview .tab-content .contentContainer {
+        position: absolute;
+        right: -15px;
+        bottom: 53px;
+        top: 101px;
+        left: 10px;
+        overflow-y: auto;
+    }
+
+    .areaOverview .tab-content .sensorSearch.show + .sensorsTab .contentContainer {
+        top: 156px !important;
+        left: 0;
+    }
+
+    .areaOverview .tab-content .settingsTab .contentContainer {
+        padding-top: 15px;
+    }
+
+    .areaOverview .tab-content .viewmode .contentContainer {
+        bottom: 0;
+    }
+
+    .areaOverview .overviewHeader {
+        padding-left: 20px;
+    }
+
+.areaView .listOverview .isppagetitle {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+.areaOptions .checkbox {
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.sensorSearch {
+    margin: 0 5px 0 20px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 14px;
+    padding-left: 0;
+    font-size: 16px;
+    padding-top: 14px;
+    height: 63px;
+}
+
+    .sensorSearch span {
+        margin-top: 11px;
+    }
+
+    .sensorSearch .btn {
+        margin-top: 1px;
+    }
+
+    .sensorSearch .searchInput {
+        margin: 0 14px;
+        float: left;
+        padding: 0;
+        float: right;
+    }
+
+    .sensorSearch .alarm-searchIcon {
+        height: 30px;
+        width: 20px;
+        z-index: 1000;
+        position: absolute;
+        float: right;
+        right: 17px;
+        top: 6px;
+        margin-top: 0;
+    }
+
+
+/* COMMON CSS */
+
+/* GLOABL CSS */
+span, div {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+}
+
+.link {
+    color: #1792e5;
+    cursor: pointer;
+}

@@ -1,0 +1,471 @@
+
+/* Door Settings */
+
+/*#doorForm {
+    padding: 26px 24px 24px 24px;
+}
+*/
+   
+
+.dcmOverview #doorSettings {
+    padding: 15px;
+}
+
+
+.dcmOverview .doorSettingsWrapper {
+    margin-left: 0px;
+    margin-top: 38px;
+    position: relative;
+    height: 86px;
+    width: 100%;
+}
+
+    .dcmOverview .doorSettingsWrapper li {
+        list-style-type: none;
+        float: left;
+    }
+
+    .dcmOverview .doorSettingsWrapper .stripe {
+        /*background: repeating-linear-gradient( -55deg, #ffffff, #ffffff 4px, #d3d3d3 0px, #d3d3d3 7px );*/
+        background: repeating-linear-gradient( -45deg, #d0d0d0, #d0d0d0 2px, #ffffff 2px, #ffffff 4px );
+        width: 15%;
+        height: 38px;
+        border: 2px solid #b0b0b0;
+        position: absolute;
+    }
+
+    .dcmOverview .doorSettingsWrapper .leftNoBorder {
+        border-left: none;
+    }
+
+    .dcmOverview .doorSettingsWrapper .rightNoBorder {
+        /* border-right: none; */
+    }
+
+    .dcmOverview .doorSettingsWrapper .connecterLeft {
+        border: 1px solid #b0b0b0;
+        width: 23%;
+        margin-top: 23px;
+        /*background: #fff;*/
+        height: 4px;
+        margin-left: 10%;
+    }
+
+    .dcmOverview .doorSettingsWrapper .arrowUp {
+        display: inline-block;
+        margin-top: -30px;
+        margin-left: -10%;
+        position: absolute;
+        z-index: 1;
+    }
+
+        .dcmOverview .doorSettingsWrapper .arrowUp .arrow_head_up {
+            width: 0;
+            height: 0;
+            border-left: 53px solid transparent;
+            border-right: 47px solid transparent;
+            cursor: pointer;
+        }
+
+        .dcmOverview .doorSettingsWrapper .arrowUp .arrow_body_up {
+            width: 68px;
+            height: 70px;
+            margin-left: 17px;
+            cursor: pointer;
+        }
+
+    .dcmOverview .doorSettingsWrapper .arrow_body_up ul {
+        margin-left: 0px;
+    }
+
+        .dcmOverview .doorSettingsWrapper .arrow_body_up ul li {
+            list-style-type: none;
+            text-align: center;
+            float: none;
+        }
+
+    .dcmOverview .doorSettingsWrapper .arrowText {
+        font-size: 20px;
+        color: #FFFFFF;
+        padding-top: 0px;
+        text-transform: uppercase;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+    }
+
+    .dcmOverview .doorSettingsWrapper .arrowTextIN {
+        font-size: 20px;
+        color: #FFFFFF;
+        padding-top: 0px;
+        text-transform: uppercase;
+        font-family: 'HoneywellSansWeb-ExtraBold' !important;
+    }
+
+    .dcmOverview .doorSettingsWrapper .arrowTextOut {
+        font-size: 20px;
+        color: #FFFFFF;
+        padding-top: 0px;
+        text-transform: uppercase;
+        font-family: 'HoneywellSansWeb-ExtraBold' !important;
+    }
+
+    .dcmOverview .doorSettingsWrapper .connecterMiddle {
+        border: 1px solid #b0b0b0;
+        width: 30%;
+        margin-top: 23px;
+        margin-left: -18px;
+        height: 4px;
+        background: #fff;
+    }
+
+    .dcmOverview .doorSettingsWrapper .connecterRight {
+        border: 1px solid #b0b0b0;
+        width: 8%;
+        margin-top: 23px;
+        margin-left: -18px;
+        height: 4px;
+        background: #fff;
+    }
+
+    .viewmode .doorSettingsWrapper .egressSwitchTop{
+        pointer-events:none;
+        cursor: none;
+    }
+
+    .dcmOverview .doorSettingsWrapper .egressSwitchTop.enabled {
+        height: 20px;
+        width: 40px;
+        margin-top: -20px;
+        background-color: #1792e5;
+        margin-left: 64% !important;
+        cursor: pointer;
+    }
+
+    .dcmOverview .doorSettingsWrapper .egressSwitchTop.disabled {
+        height: 20px;
+        width: 40px;
+        margin-top: -20px;
+        background-color: #707070;
+        margin-left: 64% !important;
+        cursor: pointer;
+    }
+
+    .viewmode .doorSettingsWrapper .egressSwitchTop.enabled {
+        background-color: #7eb338 !important;
+    }
+
+.dcmOverview #doorSettings .buttonGroup {
+    position: fixed;
+    bottom: 0px;
+    width: 97%;
+    padding-bottom: 14px;
+}
+
+.dcmOverview .doorSettingsPopover {
+    color: #707070;
+    text-transform: none;
+    cursor: auto;
+}
+
+    .dcmOverview .doorSettingsPopover ul {
+        float: left;
+        padding-bottom: 10px;
+        padding-right: 28px;
+        margin-left: 0px;
+    }
+
+
+.dcmOverview .doorSettingsWrapperTop {
+    margin-left: 0;
+    height: 80px;
+    width: 437px;
+    border: 1px dashed #9d9d9d;
+    top: 61px;
+    border-left: none;
+    border-bottom: none;
+    position: relative;
+}
+
+    .dcmOverview .doorSettingsWrapperTop li {
+        list-style-type: none;
+    }
+
+    .dcmOverview .doorSettingsWrapperTop .associationButton {
+        position: relative;
+        top: -15px;
+        width: 121px;
+        cursor: pointer;
+        text-align: right;
+    }
+
+.dcmOverview .doorSettingsWrapperFirstColm {
+    margin-left: 0;
+    height: 100px;
+    width: 100%;
+    top: 71px;
+    border-left: none;
+    border-bottom: none;
+    position: relative;
+}
+
+    .dcmOverview .doorSettingsWrapperFirstColm li {
+        list-style-type: none;
+        float: left;
+    }
+
+    .dcmOverview .doorSettingsWrapperFirstColm .doorBehaviour {
+        border: 1px dashed #9d9d9d;
+        height: 100px;
+        width: 437px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+        .dcmOverview .doorSettingsWrapperFirstColm .doorBehaviour .doorBehaviourButton {
+            position: relative;
+            top: -47px;
+            width: 195px;
+            cursor: pointer;
+            text-align: right;
+        }
+
+#doorForm .doorSettingsButtonTxt {
+    display: block;
+    text-align: right;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+
+#doorForm.dcmOverview .doorSettingsAssociationButtonTxt {
+    display: inline;
+    text-align: right;
+}
+
+.dcmOverview .doorSettingsWrapperFirstColm .doorReaderRight {
+    margin-left: 47%;
+    margin-top: 94px;
+    position: absolute;
+    height: 283%;
+    width: 30%;
+    /* top: -69px; */
+    /* margin-top: -69px; */
+    /* border-top: 1px dashed #9d9d9d; */
+    border-radius: 0 0 0 100%;
+    /* transform: rotate(90deg); */
+    border-left: 1px dashed #9d9d9d;
+    border-bottom: 1px dashed #9d9d9d;
+    border-right: 1px solid #e0e0e0;
+    border-top: 0;
+}
+
+    .dcmOverview .doorSettingsWrapperFirstColm .doorReaderRight .doorReaderRightButton {
+        position: relative;
+        top: -25px;
+        left: 159px;
+        /*max-width: 225px;*/
+        cursor: pointer;
+        width: 195px;
+    }
+
+.dcmOverview .doorSettingsWrapperFirstColm .egressSwitch {
+    margin-top: 102px;
+    /*border: 1px dashed #9d9d9d;*/
+    /*width: 223px;*/
+    height: 45px;
+    margin-left: 514px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    position: absolute;
+}
+
+    .dcmOverview .doorSettingsWrapperFirstColm .egressSwitch .egressSwitchButton {
+        top: -27px;
+        left: 161px;
+        width: 128px;
+        position: relative;
+        cursor: pointer;
+    }
+
+.dcmOverview .doorcurveline2 {
+    position: absolute;
+    width: 4px;
+    background: #fff;
+    height: 84%;
+    margin-left: -55%;
+    margin-top: 0px;
+    /* top: 0px; */
+    margin-top: -70px;
+    border: 1px solid #e0e0e0;
+}
+
+.dcmOverview .doorcurveline1 {
+    position: absolute;
+    width: 4px;
+    background: #fff;
+    height: 283%;
+    right: 23%;
+    top: 94px;
+    border: 1px solid #e0e0e0;
+}
+
+.dcmOverview .doorReaderLeft {
+    margin-left: 15%;
+    height: 84%;
+    width: 30.4%;
+    border-right: 1px dashed #9d9d9d;
+    border-top: none;
+    border-left: none;
+    position: absolute;
+    /* margin-bottom: 113px; */
+    margin-top: -60px;
+    /* border-radius: 57%/50px 100px 0 0; */
+    /* border: solid 1px #000; */
+    /* border-color: #000 transparent transparent transparent; */
+    border-radius: 0 0 100% 0;
+    /* transform: rotate(90deg); */
+    border-bottom: 1px dashed #9d9d9d;
+    /* border-top: 1px dashed #9d9d9d; */
+    top: 94%;
+}
+
+    .dcmOverview .doorReaderLeft li {
+        list-style-type: none;
+    }
+
+    .dcmOverview .doorReaderLeft .doorReaderLeftButton {
+        position: relative;
+        max-width: 200px;
+        top: 18px;
+        cursor: pointer;
+        float: left;
+        width: 195px;
+    }
+
+.dcmOverview .disabled-button {
+    background: linear-gradient(to top, #D8D8D8, #D5D5D5) repeat scroll 0% 0% transparent;
+    border-radius: 4px;
+    border-bottom: 0px solid #b82d29;
+    color: #ffffff;
+    padding: 5px 14px;
+    font-size: 14px;
+    -webkit-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    -moz-box-shadow: 0px 0px 0px 0px #d2d2d2;
+    box-shadow: 0px 0px 0px 0px #d2d2d2;
+    filter: progid:DXImageTransform.Microsoft.dropshadow( OffX=0px, OffY=0px, Color='#d2d2d2', Positive='false' ); /* IE 5.5 */
+    border-collapse: separate; /* Required by IE 9 */
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-right: 4px;
+}
+
+
+.dcmOverview .secondary-button1{
+    background-color: #707070;
+    padding: 4px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.DcmOverview .form-group{
+        padding-left: 0;
+}
+
+.listgrouppane .panel-default > .panel-heading{
+    cursor: pointer;
+}
+
+.arrowUp.enabled .arrow_head_up{ 
+    border-bottom: 37px solid #1792e5 !important; 
+}
+
+.arrowUp.enabled .arrow_body_up { 
+    background-color: #1792e5 !important; 
+}
+
+.viewmode .arrowUp {
+    pointer-events: none;
+}
+
+.viewmode .arrowUp.enabled .arrow_head_up { 
+    border-bottom: 37px solid #7eb338 !important; 
+} 
+
+.viewmode .arrowUp.enabled .arrow_body_up { 
+    background-color: #7eb338 !important; 
+}
+
+.arrowUp.disabled .arrow_head_up{ 
+    border-bottom: 37px solid #707070 !important; 
+} 
+
+.arrowUp.disabled .arrow_body_up { 
+    background-color: #707070 !important; 
+}
+
+.dcmOverview .doorSettingsWrapper .arrowDown {
+    display: inline-block;
+    margin-top: -30px;
+    margin-left: -18px;
+}
+
+.dcmOverview .doorSettingsWrapper .arrowDown .arrow_body_down {
+    width: 68px;
+    height: 70px;
+    margin-left: 17px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.dcmOverview .doorSettingsWrapper .arrowDown .arrow_head_down {
+    width: 0;
+    height: 0;
+    border-left: 52px solid transparent;
+    border-right: 50px solid transparent;
+    cursor: pointer;
+}
+
+.dcmOverview .doorSettingsWrapper .arrow_body_down ul {
+    margin-left: 0px;
+    padding-top: 20px;
+}
+
+.dcmOverview .doorSettingsWrapper .arrow_body_down ul li {
+    list-style-type: none;
+    text-align: center;
+    float: none;
+}
+
+.arrowDown.enabled .arrow_head_down{ 
+    border-top: 37px solid #1792e5 !important; 
+    border-bottom: 0px !important; 
+} 
+
+.arrowDown.enabled .arrow_body_down{ 
+    background-color: #1792e5 !important; 
+} 
+
+.viewmode .arrowDown {
+    pointer-events: none;
+}
+
+.viewmode .arrowDown.enabled .arrow_head_down{ 
+    border-top: 37px solid #7eb338 !important;
+    border-bottom: 0px !important;
+} 
+
+.viewmode .arrowDown.enabled .arrow_body_down{ 
+    background-color: #7eb338 !important; 
+}
+
+.arrowDown.disabled .arrow_head_down{ 
+    border-top: 37px solid #707070 !important; 
+    border-bottom: 0px !important; 
+} 
+
+.arrowDown.disabled .arrow_body_down{ 
+    background-color: #707070 !important; 
+}
+

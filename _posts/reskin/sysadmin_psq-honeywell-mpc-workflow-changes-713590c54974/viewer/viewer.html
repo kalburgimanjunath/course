@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://ck.api-ucp-platform.org/MPCNEW/ -->
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle</title>
+    <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+    <!-- <link href="../content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"> -->
+    <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+     
+    <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+    <link href="../content/css/viewer.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/campus_viewer.css" rel="stylesheet" type="text/css">
+    <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="../content/js/bootstrap.min.js"></script>
+    <script src="../content/js/bootstrap-multiselect.js"></script>
+    <script src="../scripts/jquery.slimscroll.min.js"></script>
+    <script src="../content/js/bootstrap-select.min.js"></script>
+    <script src="../scripts/selectize.js"></script>
+    <script src="../scripts/master.js"></script>
+  </head>
+<body class="">
+   <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title">Viewer</span>
+        </a>
+          <div class="main-menu-navigation" id="overlay-menu">
+            <div class="topmenucontent">
+              <div class="nav_img">
+                <a href="" class="close_btn key_cntrl">×</a>
+              </div>
+                <ul class="handbar-profile">
+                  <li>
+                    <div class="col-xs-12 col-sm-8">
+                      <span class="name">Scott Stevens</span><br>
+                      <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                    </div>
+                    <div class="clearfix"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </div>
+          <div class="pull-right" id="notification-menu">
+            <div id="navigation-menu">
+              <div class="navbar" style="display: block;">
+                <ul class="nav navbar-nav">
+                  <li id="notifications" class="dropdown">
+                    <a href="" class="dropdown notification-icon">
+                    </a>
+                    <ul class="dropdown-menu dashboard-message" id="dash-message">
+                      <li class="msg-header">
+                        <span class="header" id="header">
+                          Today's Notifications
+                        </span>
+                      </li>
+                     
+                      <li id="ShowAllNotifications" class="msg" style="display: none;">
+                        <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                      </li>
+                      <li id="msgTitle" class="msg">
+                        <span class="dropdown-menu-sub-footer">Loading</span>
+                      </li>
+                  </ul>
+                </li>
+                <li id="profileoptions" class="dropdown">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                      </a>
+                      <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile">
+                        <li>
+                          <span class="profile-icon">
+                            <span class="icon_userNormal"></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#">Profile Details</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>     
+      
+  </header>
+
+
+  <section class="view" id="viewer" data-complete="true">
+    <div class="row ps-row ps-main-container-rules">
+      <div class="col-md-3 col-lg-3 ps-viewer-left-sidebar sidebar-left people_group no-padding">
+        <ul class="nav nav-tabs pw_tabs">
+          <li class="active"><a href="#customer_list" data-toggle="tab">Customer List</a></li>
+          <li><a href="#saved_salvo" data-toggle="tab">Saved Salvo</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="customer_list" class="tab-pane fade in active">
+            <div class="row ps-row ps-second-row">
+              <span class="total-count campus-viewer-left-header"><span>8</span> &nbsp;Customers</span>
+            </div>
+             <div class="leftscroll-viewer">
+              <div class="selectColumnContainer select-site-rule popup-site">
+                    <ul class="" id="accordion12">
+                      <li class="ps-checkbox checkbox"> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                          <label class=" control-label label-padding">
+                           
+                            <legand >Customer 1</legand>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="ps-checkbox checkbox active">
+                          <a href="#"> 
+                            
+                            <label class=" control-label label-padding">
+                              
+                              <legand class="pull-left" >Queen campus</legand>
+                              <span class="icon icon-video-camera pull-left"></span>
+                              <span class="icon icon-prev pull-left"></span>
+                            </label>
+                          </a>
+                        </li>
+                        <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                           
+                            <label class=" control-label label-padding">
+                              
+                              <legand >Meeting Room</legand>
+                            </label>
+                          </a>
+                        </li>                                    
+                      </ul>                                                    
+                    </li>
+                    <li class="ps-checkbox checkbox"> 
+                      <a href="#">
+                        <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink2" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                        <label class=" control-label label-padding">
+                          
+                          <legand >Customer 2</legand>
+                        </label>
+                      </span>
+                    </a>
+                    <ul id="firstLink2" class="collapse" aria-expanded="false">
+                      <li class="ps-checkbox checkbox site-active">
+                        <a href="#"> 
+                          
+                          <label class=" control-label label-padding">
+                            
+                            <legand >Site1</legand>
+                          </label>
+                        </a>
+                      </li>                                     
+                    </ul>                                                    
+                  </li>
+                  <li class="ps-checkbox checkbox"> 
+                    <a href="#">
+                      <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink3" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                      <label class=" control-label label-padding">
+                        
+                        <legand>Customer 3</legand>
+                      </label>
+                    </span>
+                  </a>
+                  <ul id="firstLink3" class="collapse" aria-expanded="false">
+                    <li class="ps-checkbox checkbox">
+                      <a href="#"> 
+                        
+                        <label class=" control-label label-padding">
+                          
+                          <legand >Site1</legand>
+                        </label>
+                      </a>
+                    </li>                                     
+                  </ul>                                                    
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+          <div id="saved_salvo" class="tab-pane fade in  main-viewer-left">
+            <div class="list-group-item active_salvo_showup justify-content-between">
+              <span class="icon icon-prev"></span>
+              <span class="salvo-name-list">Salvo3</span>
+              <span class="icon icon-arrow"></span>
+            </div>
+            <div class="row ps-row ps-second-row">
+              <span class="total-count campus-viewer-left-header"><span>8</span> &nbsp;Camera</span>
+            </div>
+             <div class="leftscroll-viewer salvo_list_bx">
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 2</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 3</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 4</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 5</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 6</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 7</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <div id="viewerContainer" class="no-padding col-md-9 col-lg-9 viewer-main-content">
+        <div class="row ps-row ps-rules-first-top-right">
+          <div class="col-md-9 col-lg-9 ps-rule-content-title no-padding">
+           
+          </div>
+          <div class="col-md-3 col-lg-3 ps-rules-switcher card-header">
+            <div class="pull-right icon icon-edit tooltipg">
+              <div class="tooltip">
+                  <div class="tooltip-arrow"></div>
+                  <div class="tooltip-inner">Edit</div>
+                </div>
+            </div>
+            <span class="pull-right viewer-view">
+              <a class="ps-a" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false"><span class="down-arrow"></span></a>
+              <div class="dropdown-menu ps-dropdown-custom viewer_view_list">
+                <span class="icon icon-view-4"></span>
+                <span class="icon icon-view-6"></span>
+                <span class="icon icon-view-8"></span>           
+              </div>
+            </span>
+            <div class="icon tooltipg icon-view pull-right">
+              <div class="tooltip">
+                  <div class="tooltip-arrow"></div>
+                  <div class="tooltip-inner">View</div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-viewer">
+        <div class="row ps-row scroll-viewer video-container-wrapper">
+          <div class="col-sm-6 col-md-6 col-lg-6 video-container-1">
+            <div class="video_cell">
+              <div class="container-wrapper">
+                <span class="icon icon-emptyVideoImage"></span><span>Drag an Item to view</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 video-container-1">
+            <div class="video_cell">
+              <div class="container-wrapper">
+                <span class="icon icon-emptyVideoImage"></span><span>Drag an Item to view</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 video-container-1">
+            <div class="video_cell">
+              <div class="container-wrapper">
+                <span class="icon icon-emptyVideoImage" ></span><span>Drag an Item to view</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 video-container-1">
+            <div class="video_cell">
+              <div class="container-wrapper">
+                <span class="icon icon-emptyVideoImage" ></span><span>Drag an Item to view</span>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div> 
+      <div class="footer-viewer-buttons">
+        <div class="buttonGroup">
+          <button class="btn btn-primary pull-right">Save</button>
+          <button class="btn btn-default pull-right btn-space margin-right">Cancel</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

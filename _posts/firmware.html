@@ -1,0 +1,2454 @@
+<!-- version 1.0 -->
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/alarms.css">
+    <link rel="stylesheet" type="text/css" href="css/Areas.css">
+    <link rel="stylesheet" type="text/css" href="AccountMgmtPlugin/Content/AccountMgmtPlugin/customerlist.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/customerlist.css"> -->
+    <!-- jQuery library -->
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <script src="Scripts/master.js"></script>
+
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <style type="text/css">
+        .customertable{
+            height: 800px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="navbar" class="navbar-collapse collapse ispheaderbar">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="dashboard.html" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Firmware</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>                            
+                        </li>                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">               
+                <form>
+                    <div class="col-xs-10 pull-left hide">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="search-box-container col-lg-9 col-md-9 pull-left">
+                        <div class="input-group col-lg-12 col-md-12 mar-b0">                            
+                            <input type="text" class="form-control ispsearch pad-l10 pad-r50 mar-t0" name="x" placeholder="Search...">                            
+                            <span class="ispicon ispicon_close hide"></span>
+                            <span class="ispicon ispicon_search" id="searchIcon"></span>
+                            <span class="loader alarm-searchIcon hide mar-t5"></span>
+                        </div>
+                        <div class="search-dropdown col-lg-12 col-md-12 nopadding hide" id="">
+                            <div class="row no-results hide">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span>No results found</span>
+                                </div>
+                            </div>
+                            <div class="row results-count">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span class="pull-left nopadding"><span class="bold">3</span> Accounts</span>
+                                    <span class="pull-right nopadding view-all"><a href="javascript:;" class="">View All</a></span>
+                                </div>
+                            </div>
+                            <div class="row results">
+                                <div class="cardlistview col-lg-12 col-md-12 col-sm-12 nopadding">
+                                    <div class="list-group scroll-x scroll-y mar-b0">
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name bold pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>                            
+                </form>
+        </div>
+    </div>
+    <div id="page-body">
+        <div class="customerlist-root">
+            <div class="customerlistView">
+                <!-- AREA OVERVIEW-->
+                <div class="listOverview customerListOverview pull-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-3">
+
+                                <div class="form-group">
+                                    <label class="control-label">Customer</label>
+                                   <select name="accessGroup1" id="accessGroup1" class="form-control sumoselect" tabindex="-1" multiple="multiple">
+                                        <option value="Employee">Employee</option>
+                                        <option value="Visitor">Visitor</option>
+                                        <option value="Access Group 1">Access Group 1</option>
+                                        <option value="Security Personal">Security Personal</option>
+                                        <option value="Access Group 2">Access Group 2</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+
+                                <div class="form-group">
+                                    <label class="control-label">Controller Type</label>
+                                   <select name="accessGroup1" id="accessGroup1" class="form-control sumoselect" tabindex="-1" >
+                                        <option value="Employee">Employee</option>
+                                        <option value="Visitor">Visitor</option>
+                                        <option value="Access Group 1">Access Group 1</option>
+                                        <option value="Security Personal">Security Personal</option>
+                                        <option value="Access Group 2">Access Group 2</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary col-md-1 mar-t25">Search</button>
+                           
+                        </div>
+                        <div  class="row">
+                            <div class="col-md-12 isptabs">
+                                <ul class="nav nav-tabs" role="tablist">
+                                   <li role="presentation" class="active">
+                                       <a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="count">34</span>Available Updates</a>
+                                   </li>
+                                   <li role="presentation">
+                                       <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Updated</a>
+                                   </li>
+                                   <li>
+                                    <span class="input-group-btn">
+                                        <span class="searchbtn dropdown-toggle-left" type="button" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_filter"></span></span>
+                                        
+                    <!-- ALARM FILTERS -->
+                    <div class="dropdown-menu  alarmFilter dropdown-menu-right" role="menu">
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#entitiesTab" class="alarm-search-tab-title">Version</a></li>
+                                <li><a data-toggle="tab" href="#timeTab" class="alarm-search-tab-title">Status</a></li>
+                               
+                            </ul>
+                            <div class="tab-content alarm-search-content">
+                                <div class="tab-pane fade in active accrodionDropArrow entitiesTab" id="entitiesTab">
+                                    <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms">
+                                        <!--  ko if: $data.entityType === 'DEVICECONTROLLER' -->
+                                        <li >
+                                            <a href="#">
+                                                <span>Controllers </span> <span class="ispicon pull-left ispicon_accordian_droparrow" data-bind="css: {'accordian-drop-down-visibility-hidden':$data.isSelected(), 'ispicon_accordian_droparrowOpen':$data.isExpanded(), 'ispicon_accordian_droparrow': !$data.isExpanded()}, click:$parent.filterItemExpanded"></span>
+                                                <input type="checkbox" data-bind="css:$data.isPartialySelected() ? 'partial':'',checked:$data.isSelected, click:$parent.filterItemSelected">
+                                            </a>
+                                            <div class="filterSearch hide" data-bind="css: $data.isExpanded() ? 'show': 'hide'">
+                                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="form-control ui-autocomplete-input" data-bind="ko_autocomplete: { source: $parent.autoCompleteSource}" autofocus="" autocomplete="off"> <i data-bind="visible:!$parent.alarmEntitiesSearchLoading()" class="ispicon ispicon_search alarm-searchIcon"></i><i data-bind="visible:$parent.alarmEntitiesSearchLoading()" class="loader alarm-searchIcon" style="display: none;"></i>
+                                                <!-- ko if: $root.noMatchingFound --><!-- /ko -->
+                                                <!-- ko if: $parent.searchEntitiesArray().length --><!-- /ko -->
+                                            </div>
+                                        </li>
+                                     
+                                        <li data-bind="css:$data.isExpanded() ? 'selected':''">
+                                            <a href="#">
+                                                <span>Cameras </span> <span class="ispicon pull-left ispicon_accordian_droparrow" data-bind="css: {'accordian-drop-down-visibility-hidden':$data.isSelected(), 'ispicon_accordian_droparrowOpen':$data.isExpanded(), 'ispicon_accordian_droparrow': !$data.isExpanded()}, click:$parent.filterItemExpanded"></span>
+                                                <input type="checkbox" data-bind="css:$data.isPartialySelected() ? 'partial':'', checked:$data.isSelected, click:$parent.filterItemSelected">
+                                            </a>
+                                            <div class="filterSearch hide" data-bind="css: $data.isExpanded() ? 'show': 'hide'">
+                                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="form-control ui-autocomplete-input" data-bind="ko_autocomplete: { source: $parent.autoCompleteSource }" autofocus="" autocomplete="off"> <i data-bind="visible:!$parent.alarmEntitiesSearchLoading()" class="ispicon ispicon_search alarm-searchIcon"></i><i data-bind="visible:$parent.alarmEntitiesSearchLoading()" class="loader alarm-searchIcon" style="display: none;"></i>
+                                                <!-- ko if: $root.noMatchingFound --><!-- /ko -->
+                                                <!-- ko if: $parent.searchEntitiesArray().length --><!-- /ko -->
+                                            </div>
+                                        </li>
+                                        <!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'DEVICEPOINT' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'RULE' --><!-- /ko -->
+                                    
+                                        <!--  ko if: $data.entityType === 'DEVICECONTROLLER' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'CAMERA' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'DEVICEPOINT' -->
+                                        <li data-bind="css:$data.isExpanded() ? 'selected':''">
+                                            <a href="#">
+                                                <span>Doors </span> <span class="ispicon pull-left ispicon_accordian_droparrow" data-bind="css: {'accordian-drop-down-visibility-hidden':$data.isSelected(), 'ispicon_accordian_droparrowOpen':$data.isExpanded(), 'ispicon_accordian_droparrow': !$data.isExpanded()}, click:$parent.filterItemExpanded"></span>
+                                                <input type="checkbox" data-bind="css:$data.isPartialySelected() ? 'partial':'', checked:$data.isSelected, click:$parent.filterItemSelected">
+                                            </a>
+                                            <div class="filterSearch hide" data-bind="css: $data.isExpanded() ? 'show': 'hide'">
+                                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="form-control ui-autocomplete-input" data-bind="ko_autocomplete: { source: $parent.autoCompleteSource }" autofocus="" autocomplete="off"> <i data-bind="visible:!$parent.alarmEntitiesSearchLoading()" class="ispicon ispicon_search alarm-searchIcon"></i><i data-bind="visible:$parent.alarmEntitiesSearchLoading()" class="loader alarm-searchIcon" style="display: none;"></i>
+                                                <!-- ko if: $root.noMatchingFound --><!-- /ko -->
+                                                <!-- ko if: $parent.searchEntitiesArray().length --><!-- /ko -->
+                                            </div>
+                                        </li>
+                                        <!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'RULE' --><!-- /ko -->
+                                    
+                                        <!--  ko if: $data.entityType === 'DEVICECONTROLLER' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'CAMERA' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'DEVICEPOINT' --><!-- /ko -->
+                                        <!--  ko if: $data.entityType === 'RULE' -->
+                                        <li data-bind="css:$data.isExpanded() ? 'selected':''">
+                                            <a href="#">
+                                                <span>Rules </span> <span class="ispicon pull-left ispicon_accordian_droparrow" data-bind="css: {'accordian-drop-down-visibility-hidden':$data.isSelected(), 'ispicon_accordian_droparrowOpen':$data.isExpanded(), 'ispicon_accordian_droparrow': !$data.isExpanded()}, click:$parent.filterItemExpanded"></span>
+                                                <input type="checkbox" data-bind="css:$data.isPartialySelected() ? 'partial':'', checked:$data.isSelected, click:$parent.filterItemSelected">
+                                            </a>
+                                            <div class="filterSearch hide" data-bind="css: $data.isExpanded() ? 'show': 'hide'">
+                                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="form-control ui-autocomplete-input" data-bind="ko_autocomplete: { source: $parent.autoCompleteSource }" autofocus="" autocomplete="off"> <i data-bind="visible:!$parent.alarmEntitiesSearchLoading()" class="ispicon ispicon_search alarm-searchIcon"></i><i data-bind="visible:$parent.alarmEntitiesSearchLoading()" class="loader alarm-searchIcon" style="display: none;"></i>
+                                                <!-- ko if: $root.noMatchingFound --><!-- /ko -->
+                                                <!-- ko if: $parent.searchEntitiesArray().length --><!-- /ko -->
+                                            </div>
+                                        </li>
+                                        <!-- /ko -->
+                                    </ul>
+                                </div>
+                                <div class="tab-pane timeTab" id="timeTab">
+                                    <ul class="dropdown-menu ispmenu dropdown-menu filterAlarms" data-bind="foreach:_.filter( $data.filterModel(), function(item) { return item.entityType == 'Time';})">
+                                        <li data-bind="if:$data.entityId == 'today'">
+                                            <a href="#"> <input type="checkbox" name="time" data-bind="checked:$data.isSelected, click:$parent.filterItemSelected"> <span>Today</span></a>
+                                            <div id="todayInput" class="filterSearch" data-bind="visible:$data.isSelected" style="display: none;">
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.startDate, datepickerOptions: {position: 'top', startDate: new Date(),  endDate:new Date(), pickDate:false, pickTime: true , useMinutes: true, autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_schedule alarm-searchIcon"></span></span>
+                                                </div>
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.endDate, datepickerOptions: {position: 'top', startDate: new Date(), endDate:new Date(), pickDate:false, pickTime: true,  useMinutes: true,autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_schedule alarm-searchIcon"></span></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li data-bind="if:$data.entityId == 'yesterday'"></li>
+                                        <li data-bind="if:$data.entityId == 'last7days'"></li>
+                                    
+                                        <li data-bind="if:$data.entityId == 'today'"></li>
+                                        <li data-bind="if:$data.entityId == 'yesterday'">
+                                            <a href="#"> <input type="checkbox" name="time" data-bind="checked:$data.isSelected, click:$parent.filterItemSelected"> <span>Yesterday</span></a>
+                                            <div id="yesterdayInput" class="filterSearch" data-bind="visible:$data.isSelected" style="display: none;">
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.startDate, datepickerOptions: {position: 'top', startDate: new Date(new Date() - 24*60*60*1000), endDate:new Date(new Date() - 24*60*60*1000), pickDate:false, pickTime: true,  useMinutes: true,autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_calender alarm-searchIcon"></span></span>
+                                                </div>
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.endDate, datepickerOptions: {position: 'top',startDate: new Date(new Date() - 24*60*60*1000), endDate:new Date(new Date() - 24*60*60*1000), pickDate:false, pickTime: true,  useMinutes: true,autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_calender alarm-searchIcon"></span></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li data-bind="if:$data.entityId == 'last7days'"></li>
+                                    
+                                        <li data-bind="if:$data.entityId == 'today'"></li>
+                                        <li data-bind="if:$data.entityId == 'yesterday'"></li>
+                                        <li data-bind="if:$data.entityId == 'last7days'">
+                                            <a href="#"> <input type="checkbox" name="time" data-bind="checked:$data.isSelected, click:$parent.filterItemSelected"> <span>Last 7 Days</span></a>
+                                            <div id="lastWeekInput" class="filterSearch" data-bind="visible:$data.isSelected" style="display: none;">
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.startDate, datepickerOptions: {position: 'top', format:'MM/dd/yyyy hh:mm:ss', startDate: new Date(new Date() - 6*24*60*60*1000), endDate:new Date(),pickTime: true,  useMinutes: true,autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_calender alarm-searchIcon"></span></span>
+                                                </div>
+                                                <div class="input-group dateTimePicker" data-bind="datepicker: $data.endDate, datepickerOptions: {position: 'top', format:'MM/dd/yyyy hh:mm:ss', startDate: new Date(new Date() - 6*24*60*60*1000), endDate:new Date(),pickTime: true,  useMinutes: true,autoClose:false}, event: {changeDate: $parent.validateSelectedDate}">
+                                                    <input type="text" class="form-control" data-format="MM/dd/yyyy hh:mm:ss" readonly="readonly">
+                                                    <span class="addonbutton"><span class="ispicon add-on ispicon_calender alarm-searchIcon"></span></span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="btn-footer">
+                                    <div class="pad-b10">
+                                        <div class="text-danger" data-bind="text:$data.filterErrorMessage()"></div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="btn btn-default" data-bind="click:$data.filterCancel">Cancel</div>
+                                        <div class="btn btn-primary" data-bind="click:$data.filterApply, enable:$data.filterItems().length > 0 &amp;&amp; $data.filterErrorMessage() == ''">Apply</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ALARM FILTERS -->
+                </div>
+            </li>
+                                    </span>
+                                   </li>
+                                   
+                               </ul>
+
+                               
+
+                            </div>
+                            <div class="col-sm-11">
+                                <div>
+                                    <div class="row">
+                                        <div class="table-responsive isptable hide">
+                                            <table class="table table1" width="800">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" value="" /></th>
+                                                        <th class="sort">Customer <span class="ispicon ispicon_tablesortdesc" id="sortcolumn"></span></th>
+                                                        <th>Site</th>
+                                                        
+                                                        
+                                                        <th>Controller Name</th>
+                                                        <th>Controller Type</th>
+                                                        <th>MAC ID</th>
+                                                        <th>Current Version</th>
+                                                        <th>Available Version</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <table class="table table2" width="800">
+                                               <!--  <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" value="" /></th>
+                                                        <th>Customer Name</th>
+                                                        <th>Site Name</th>
+                                                        <th>Status</th>
+                                                        <th>Panel</th>
+                                                        <th>Issue Type</th>
+                                                        <th>Date</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead> -->
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" checked="checked" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4" onclick="document.location.href='customeroverview.html'">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td onclick="document.location.href='siteoverview.html'">
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>New</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td>
+                                                    <span class="status-indicator colorlow"></span>12873872638
+                                                    </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr class="active"> 
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Registred</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                        <!-- <td>
+                                                            <span>Suspended</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                    <span class="status-indicator colorhigh"></span>12873872638
+                                                    </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Test Mode</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                        <td title="Battery Low">
+                                                    <span class="status-indicator coloroverlow"></span>12873872638
+                                                    </td>
+                                                        <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>New</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                        <!-- <td>
+                                                            <span>Registred</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                   <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Suspended</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Test Mode</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                        <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                        <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>New</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                      <!--   <td>
+                                                            <span>Registred</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                   <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                      <!--   <td>
+                                                            <span>Suspended</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                   <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Test Mode</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                        <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                        <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>New</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Registred</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                      <!--   <td>
+                                                            <span>Suspended</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Comm. Failure">
+                                                        <span class="status-indicator colorhigh"></span>Comm. Failure
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Test Mode</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                        <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                        <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>New</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                   <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                      <!--   <td>
+                                                            <span>Registred</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                        <!-- <td>
+                                                            <span>Suspended</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                    <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="checkbox">
+                                                                <input type="checkbox" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td class="col-md-4">
+                                                           
+                                                            <span class="name">United Hospitals</span> <br />
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <span>Queen Campus</span>
+                                                        </td>
+                                                       <!--  <td>
+                                                            <span>Test Mode</span>
+                                                        </td> -->
+                                                        <td>Eagle P3000
+                                                        </td>
+                                                        <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>12873872638
+                                                        </td>
+                                                        <!-- <td>29 May 2016</td> -->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="isptablebase customertable">
+        <div>
+            <div class="isptable">
+                <table>
+                    <thead>
+                    
+                        <tr>
+                        <th><div label="" ></div></th>
+            <th><div label="Site Name" class="sort"></div></th>
+            <th><div label="Customer Name"></div></th>
+            <th><div label="Controller Type"></div></th>
+            <th><div label="Mac Address"></div></th>
+                            <th>
+                                <!--more versatile way of doing column label; requires 2 identical copies of label-->
+                                <div><div>Status</div><div>NA</div></div>
+                            </th>
+              <th class="scrollbarhead"></th> <!--ALWAYS ADD THIS EXTRA CELL AT END OF HEADER ROW-->
+                        </tr>
+                    </thead>
+                        <tbody>
+                                                 <tr class="active">
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr class="active">
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr>
+
+                                                
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+               
+
+                <!-- AREA OVERVIEW-->
+            </div>
+
+        </div>
+
+
+    </div>
+   <!--  <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://googlemaps.github.io/js-marker-clusterer/examples/data.json"></script>
+    <script type="text/javascript" src="https://googlemaps.github.io/js-marker-clusterer/src/markerclusterer.js"></script>
+
+    <script>
+      function initialize() {
+        var center = new google.maps.LatLng(37.4419, -122.1419);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var markers = [];
+        for (var i = 0; i < 100; i++) {
+          var dataPhoto = data.photos[i];
+          var latLng = new google.maps.LatLng(dataPhoto.latitude,
+              dataPhoto.longitude);
+          var marker = new google.maps.Marker({
+            position: latLng
+          });
+          markers.push(marker);
+        }
+        var markerCluster = new MarkerClusterer(map, markers, {imagePath: '../images/m'});
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12846745-20']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script> -->
+</body>
+</html>

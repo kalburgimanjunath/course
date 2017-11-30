@@ -1,0 +1,308 @@
+﻿@using MaxproCloud.UI.Resources
+<div class="mpc">
+    <div id="dahuacameraparent" class="dahuacameraroot dahua-create-edit">
+        <div class="row isptabs">
+            <div class="row overviewHeader">
+                <h2 class="isppagetitle">
+                    Camera 1
+                    <span class="pull-right">
+                        <a class="ispicon ispicon_plus pull-right addDeviceIcon" data-toggle="modal" data-target="#addDevice" title="Add New Sensor"></a>
+                        <span class="ispicon ispicon_edit col-md-2 pull-right" data-toggle="tooltip" title="Edit"></span>
+                    </span>
+                </h2>
+
+                <ul class="nav nav-tabs" id="dahuaTabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#dahuaconfig" data-toggle="tab" aria-controls="dahuaconfig" role="tab">Configure</a></li>
+                    <li role="presentation"><a href="#dahuaevent" data-toggle="tab" aria-controls="dahuaevent" role="tab">Event Recording</a></li>
+                    <li role="presentation"><a href="#dahuacontinue" data-toggle="tab" aria-controls="dahuacontinue" role="tab">Continuous Recording</a></li>
+                    <li role="presentation"><a href="#dahuamotion" data-toggle="tab" aria-controls="dahuamotion" role="tab">Motion Recording</a></li>
+                    <li role="presentation"><a href="#dahuaio" data-toggle="tab" aria-controls="dahuaio" role="tab">I/O</a></li>
+                    <li role="presentation"><a href="#dahuastorage" data-toggle="tab" aria-controls="dahuastorage" role="tab">Storage</a></li>
+                </ul>
+            </div>
+            <div class="tab-content" id="dahuaTabsContent">
+                <div class="tab-pane fade in dahuaconfigwrapper active" id="dahuaconfig">
+                    @Html.Partial("_DahuaConfigurationEagle2")
+                </div>
+                <div class="tab-pane fade dahuaeventwrapper" id="dahuaevent">
+                    @Html.Partial("_DahuaEventRecordingEagle2")
+                </div>
+                <div class="tab-pane fade dahuacontinuewrapper" id="dahuacontinue">
+                    @Html.Partial("_DahuaContinuousRecordingEagle2")
+                </div>
+                <div class="tab-pane fade dahuamotionwrapper" id="dahuamotion">
+                    @Html.Partial("_DahuaMotionRecordingEagle2")
+                </div>
+                <div class="tab-pane fade dahuaiowrapper" id="dahuaio">
+                    @Html.Partial("_DahuaIOEagle2")
+                </div>
+                <div class="tab-pane fade dahuastoragewrapper" id="dahuastorage">
+                    @Html.Partial("_DahuaStorageConfigEagle2")
+                </div>
+
+                <div class="buttonGroup">
+                    <button class="btn btn-primary pull-right">Save</button>
+                    <button class="btn btn-default pull-right">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="addReader" class="modal fade ispmodal addReader" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Reader 1 settings</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="radio" />
+                            <label>In</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="radio">
+                            <span for="checkbox7">Out</span>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label" for="">Pulse Time*</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="checkbox">
+                            <span for="checkbox7">Apply to Reader 2</span>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label" for="">Shunt Time*</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="col-md-12">
+                            <input type="checkbox">
+                            <span for="checkbox7">Apply to Reader 2</span>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label">Associated output</label>
+                            <select class="form-control">
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addReaderBuzzer" class="modal fade ispmodal addReaderBuzzer" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Reader Buzzer</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">List all parameters here</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addDevice" class="modal fade ispmodal addDevice" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Add Device</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-md-6 ispselect">
+                            <label class="control-label" for="">Device Type</label>
+                            <select class="SlectBox form-control">
+                                <option selected="selected">DCM</option>
+                                <option>Volvo</option>
+                                <option>Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="">Device Name</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="">Device Serial Number</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="">Bus ID</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="">Bus Slot ID</label>
+                            <input type="text" class="form-control" id="" placeholder="Input field">
+                        </div>
+                        <div class="form-group col-md-6 ispselect">
+                            <label class="control-label" for="">Controller</label>
+                            <select class="SlectBox form-control">
+                                <option selected="selected">DCM</option>
+                                <option>Volvo</option>
+                                <option>Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save and add another</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addSchedule" class="modal fade ispmodal addSchedule" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">
+                        Time Schedule
+                    </h1>
+                </div>
+                <div class="row">
+                    <div class="ps-dahua-model schedulepopup">
+                        <script src='Scripts/lib/fullcalendar.min.js'></script>
+                        <div id='calendar' class="fc fc-ltr pad-r20 pad-l20 pad-t20 pad-b20" data-dismiss="modal" data-target="#addTime" data-toggle="modal"></div>
+                        <script>
+                                var date = new Date();
+                                var d = date.getDate();
+                                var m = date.getMonth();
+                                var y = date.getFullYear();
+
+                                $('#calendar').fullCalendar({
+                                    defaultView: 'agendaWeek',
+                                    header: {
+                                        left: '',
+                                        center: '',
+                                        right: ''
+                                    },
+                                    allDaySlot: false,
+                                    editable: true,
+                                    columnFormat: 'ddd',
+                                    events: [{
+                                        title: '',
+                                        start: new Date(y, m, 1)
+                                    },
+                                        {
+                                            title: '',
+                                            start: new Date(y, m, d - 5),
+                                            end: new Date(y, m, d - 2)
+                                        }, {
+                                            id: 999,
+                                            title: '',
+                                            start: new Date(y, m, d - 3, 16, 0),
+                                            allDay: false
+                                        }, {
+                                            id: 999,
+                                            title: '',
+                                            start: new Date(y, m, d + 4, 16, 0),
+                                            allDay: false
+                                        }, {
+                                            title: '',
+                                            start: new Date(y, m, d, 10, 30),
+                                            allDay: false
+                                        }, {
+                                            title: '',
+                                            start: new Date(y, m, d, 12, 0),
+                                            end: new Date(y, m, d, 14, 0),
+                                            allDay: false
+                                        }, {
+                                            title: 'Birthday Party',
+                                            start: new Date(y, m, d + 1, 19, 0),
+                                            end: new Date(y, m, d + 1, 22, 30),
+                                            allDay: false
+                                        }, {
+                                            title: 'Click for Google',
+                                            start: new Date(y, m, 28),
+                                            end: new Date(y, m, 29),
+                                            url: 'http://google.com/'
+                                        }]
+                                });
+                        </script>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save and add another</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addTime" class="modal fade ispmodal ps-mpc-model copytimepickerpopup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog mpc">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h1 class="modal-title">Time Schedule</h1>
+                </div>
+                <div class="modal-body">
+                    <form autocomplete="off" class="schedular-popup">
+                        <div class="clearfix">
+                            <div class="col-lg-6 col-md-6 col-sm-6 form-group pad-r20">
+                                <label for="macid">Starts</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                <label for="macid">Ends</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Copy to</p>
+                            <div class="calndr_day_date mar-t10">
+                                <ul class="list-unstyled list-inline cal-nav">
+                                    <li><span class="cal-date date-hw_blue">M</span></li>
+                                    <li><span class="date-hw_gray-o cal-date">T</span></li>
+                                    <li><span class="date-hw_gray-o cal-date">W</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">T</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">F</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">S</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">S</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">H1</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">H2</span></li>
+                                    <li><span class="cal-date date-hw_gray-o">H3</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="spinner-control pull-left"><i class="ispicon ispicon_delete"></i></span>
+                    <button class="btn btn-default" data-dismiss="modal" data-target="#addSchedule" data-toggle="modal">Cancel</button>
+                    <button class="btn btn-primary" data-dismiss="modal" data-target="#addSchedule" data-toggle="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#addSchedule').on('shown.bs.modal', function () {
+                $("#calendar").fullCalendar('render');
+            });
+        });
+    </script>
+</div>

@@ -1,0 +1,10 @@
+﻿Honeywell.ISP.UserDashboard = {
+    events: {
+        tab_change_event: 'ontabchangeevent',
+        show_map: 'showmapplugin',
+        dashboard_refresh: 'dashboardrefresh',
+},
+    actions: {
+        mapPlugin: 29
+    }
+};

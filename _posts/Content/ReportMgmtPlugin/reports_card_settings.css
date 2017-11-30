@@ -1,0 +1,444 @@
+.ps-report-base-content .CardNumberRange {
+    padding-top: 12px;
+}
+
+.ps-report-base-content .backOption {
+    width: 85px;
+    margin-top: 23px;
+    padding-left: 24px;
+}
+
+.ps-report-base-content .backOption a {
+    text-decoration: none;
+    color: #6f7074;
+}
+
+.ps-report-base-content .backOption a:hover {
+    color: #0067a6;
+}
+
+.ps-report-base-content .cardTopFirstSection {
+    position: absolute;
+    margin-left: 64px;
+    margin-left: 64px;
+    padding-top: 10px;
+}
+
+.ps-report-base-content .cardTopFirstSection select {
+    display: block;
+    width: 300px;
+    background-image: url('../images/arrow_menu.png');
+    background-repeat: no-repeat;
+    background-position: 97%;
+}
+
+.ps-report-base-content .reports .thirdSection select {
+    background-image: url('../images/arrow_menu.png');
+    background-repeat: no-repeat;
+    background-position: 97% 12px;
+    text-indent: 2px;
+}
+
+.ps-report-base-content .reports .icon_accessarrow, .ps-report-base-content .reports .icon_accessarrow:hover {
+    margin-top: 27px;
+}
+
+.ps-report-base-content .cardTopFirstSection, .ps-report-base-content .cardTopSecondSection {
+    float: left;
+}
+
+.ps-report-base-content .cardTopFirstSection .field {
+    display: block;
+}
+
+.ps-report-base-content .cardTopFirstSection .selectize-control.single .selectize-input {
+    border-bottom-color: #bababb !important;
+}
+
+.ps-report-base-content .cardTopFirstSection .select-field {
+    margin-bottom: 0;
+    padding-top: 1px;
+}
+
+.ps-report-base-content .cardSettings.bottomSection #eventConfigContainer {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 11px;
+    padding-left: 0;
+}
+
+.ps-report-base-content .cardSettings.bottomSection ul {
+    margin-top: 0;
+    margin-left: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+    border: none;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .formcontrol ul li {
+    position: static;
+    clear: both;
+    border: none;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .formcontrol .selectColumnContainer ul li {
+    position: relative;
+    border: none;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .select-field {
+    clear: both;
+}
+
+#cardPreview.mpcmodel section {
+    padding-top: 0;
+    margin: 0;
+    padding: 0 0 62px 0;
+}
+
+.cardPreview {
+    top: 5%;
+    display: none;
+    width: auto;
+    height: 525px;
+    margin: 0 5% !important;
+}
+.cardPreview thead {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e7e7e7;
+}
+.cardPreview tr  {
+    table-layout: fixed;
+    display: table;
+    width: 100%;
+}
+.cardPreview tbody {
+    height: 367px !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    display: block;
+}
+
+.cardPreview .table>tbody>tr>td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+.cardPreview thead tr {
+    width: 99.2%;
+}
+.cardPreview thead tr th {
+    border-bottom: none !important;
+    border-right: none !important;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    text-transform: capitalize !important;
+    color: #303030 !important;
+}
+
+.cardPreview .table>thead>tr>th {
+    font-size: 14px;
+    font-weight: normal;
+    padding-right: 18px;
+    padding-left: 7px;
+    vertical-align: middle;
+    color: #303030;
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+.cardPreview .table>thead>tr>th:first-child,
+.cardPreview .table>tbody>tr>td:first-child{
+    padding-left: 32px;
+}
+
+
+.cardPreview .table>thead:first-child>tr:first-child>th:last-child {
+    border-right: none;
+}
+
+.cardPreview .table {
+    margin-bottom: 0;
+}
+
+.cardPreview section ul li {
+    float: none;
+    padding-bottom: 0;
+}
+
+.cardPreview tbody>tr>td {
+    font-size: 15px;
+    padding-right: 12px;
+    padding-left: 7px;
+    vertical-align: middle;
+    word-break: break-all;
+    color: #707070;
+    overflow: hidden;
+}
+
+.cardPreview .formControl-checkbox {
+    top: 2px !important;
+    width: 20px;
+    height: 20px;
+}
+
+.cardPreview .formControl-checkbox span {
+    padding: 0;
+}
+
+.ps-report-base-content .popup-checkbox span {
+    width: 130px;
+}
+
+.cardPreview #sticky-list {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 396px;
+    margin-bottom: 22px;
+}
+
+.cardPreview #sticky-list>ul {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -ms-overflow-x: hidden;
+    -ms-overflow-y: hidden;
+    height: 100%;
+}
+
+.cardPreview ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cardPreview .sticky thead {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    display: inherit;
+    background-color: white;
+}
+
+.ps-report-base-content .reports .popover {
+    max-width: 392px !important;
+    border: 1px solid #28282a;
+    background-color: #28282a;
+}
+
+.ps-report-base-content .reports .popover-title {
+    font-size: 15px;
+    padding: 16px 23px 16px 23px;
+    text-transform: uppercase;
+    color: #d3d3d3;
+    border-bottom: 1px solid #212121 !important;
+    background-color: #272727;
+}
+
+.ps-report-base-content .reports .popover-content {
+    min-height: 253px;
+    margin: 0;
+    padding: 0;
+    background: #323232;
+}
+
+.ps-report-base-content .reports .popover.bottom .arrow:after {
+    border-bottom-color: #28282a;
+}
+
+.ps-report-base-content .reports .popover ::-webkit-scrollbar-thumb {
+    background-color: #454545;
+}
+
+.ps-report-base-content .reports .popover.bottom {
+    margin-left: -97px;
+}
+
+.ps-report-base-content .reports .popover.bottom .arrow {
+    left: 89%;
+}
+
+.ps-report-base-content .doneBtn {
+    padding: 18px 24px 0 24px;
+    background: #323232;
+}
+
+.ps-report-base-content .selectColumnContainer {
+    background-color: #323232;
+}
+
+.ps-report-base-content .selectColumnContainer ul {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-x: hidden;
+    -ms-overflow-y: auto;
+    height: 180px;
+    margin: 0;
+    padding: 0;
+}
+
+.ps-report-base-content .selectColumnContainer label {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.ps-report-base-content .selectColumnContainer legand {
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    width: 88%;
+    padding-bottom: 7px;
+    color: #bababa;
+    border-bottom: 1px solid #454545;
+}
+
+.ps-report-base-content .selectColumnContainer ul li {
+    margin: 0 !important;
+    padding-left: 24px !important;
+    list-style: none;
+}
+
+.ps-report-base-content .selectColumnContainer ul li:hover {
+    background-color: #454545;
+}
+
+.ps-report-base-content .selectColumnContainer ul li b {
+    padding: 5px;
+}
+
+.ps-report-base-content .selectColumnContainer .buttonGroup {
+    padding: 14px 24px 24px 24px;
+    border-top-color: #454545;
+}
+
+.ps-report-base-content .selectColumnContainer .selectColumnDivider {
+    position: relative;
+    min-width: 300px;
+    height: 1px;
+    border-bottom: 1px solid #454545;
+}
+
+.ps-report-base-content .selectColumnContainer .buttonGroup .primary-button, .ps-report-base-content .selectColumnContainer .buttonGroup .secondary-button {
+    margin: 0;
+}
+
+.ps-report-base-content .cardSettings .formControl-radio span {
+    position: absolute !important;
+    display: inline-block;
+}
+
+.ps-report-base-content .firstSection .radio .radiotext {
+    padding-right: 18px;
+    padding-left: 25px;
+}
+
+.ps-report-base-content .firstSection .radio {
+    padding-bottom: 24px;
+    padding-left: 0;
+}
+
+.ps-report-base-content .reports .radio label {
+    position: relative;
+    top: 0;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .formcontrol ul .event-wrap {
+    padding-top: 4px;
+    padding-bottom: 20px;
+}
+
+.ps-report-base-content .firstSection #auditActivationDate {
+    margin-top: 17px;
+}
+
+.ps-report-base-content .firstSection #activationDate {
+    margin-top: 17px;
+}
+
+.ps-report-base-content .firstSection #activationDateFrom {
+    margin-top: 17px;
+}
+
+.ps-report-base-content .firstSection #expireDateFrom {
+    margin-top: 17px;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .formcontrol .sch_options ul li {
+    position: relative;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .formcontrol .sch_options li {
+    position: static;
+}
+
+.ps-report-base-content .report-severity-critical {
+    color: #e33e38 !important;
+}
+
+.ps-report-base-content .report-severity-major {
+    color: #e86c08 !important;
+}
+
+.ps-report-base-content .report-severity-moderate {
+    color: #e8a108 !important;
+}
+
+.ps-report-base-content .report-severity-normal {
+    color: #707070 !important;
+}
+
+.ps-report-base-content #popoverreportUsers_click {
+    padding-top: 22px;
+}
+
+.ps-report-base-content .right-inner-addon {
+    padding-bottom: 0;
+}
+
+.ps-report-base-content .cardSettings.bottomSection .event-config-container {
+    top: -14px;
+    padding-left: 0;
+}
+
+.ps-report-base-content .bottomSection .formcontrol .formControl-checkbox, .ps-report-base-content .bottomSection .formcontrol legand {
+    padding-left: 0 !important;
+}
+
+.ps-report-base-content .secondSection .reportsHeadingMiddle {
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.ps-report-base-content .secondSection .reportoutput-sort {
+    padding-bottom: 22px;
+}
+
+.cardPreview .footer-notes {
+    padding-top: 7px;
+    padding-left: 18px;
+}
+.modal .modal-footer {
+    background-color: #fff !important;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+    .cardPreview tbody {
+        overflow-y: scroll !important;
+        overflow-x:  hidden !important;
+        height: 354px !important;
+    }
+    .cardPreview thead {
+        width: 99.2%;
+    }
+    .ps-report-base-content .reports .icon-sort-ascending, 
+    .ps-report-base-content .reports .icon-sort-ascending:hover,
+    .ps-report-base-content .reports .icon-sort-descending, 
+    .ps-report-base-content .reports .icon-sort-descending:hover {
+        top: 8px;
+    }
+}
+@-moz-document url-prefix() {
+   .cardPreview tbody {
+       height: 370px !important;
+       overflow-x: scroll !important;
+    }
+}

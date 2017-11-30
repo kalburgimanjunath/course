@@ -1,0 +1,6 @@
+﻿.termsconditions-root .termsconditions-readonly {
+    background: #fff;
+    margin: 20px;
+    width: calc(100% - 24px);
+}
+

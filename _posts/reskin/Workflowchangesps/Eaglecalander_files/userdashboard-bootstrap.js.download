@@ -1,0 +1,12 @@
+﻿$(function () {
+    var userDashboardUrl = $(".dashboardview").attr("data-url");
+    var antiForgeryToken = $('#antiForgeryToken').val();
+
+    Honeywell.ISP.UserDashboard.views = {
+        userDashboardView: new Honeywell.ISP.UserDashboard.UserDashboardView({
+            baseUrl: userDashboardUrl,
+            antiForgeryToken: antiForgeryToken,
+            viewName: 'dashboard-view'
+        })
+    };
+});

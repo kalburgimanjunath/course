@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://ck.api-ucp-platform.org/MPCNEW/ -->
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle</title>
+    <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+  <!-- <link href="../content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"> -->
+  <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/master.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+  <link href="../content/css/maps.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <script src="../scripts/jquery-2.2.4.min.js"></script>
+  <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+  <script src="../content/js/bootstrap.min.js"></script>
+  <script src="../content/js/bootstrap-multiselect.js"></script>
+  <script src="../scripts/jquery.slimscroll.min.js"></script>
+  <script src="../content/js/bootstrap-select.min.js"></script>
+  <script src="../scripts/selectize.js"></script>
+  <script src="../scripts/master.js"></script>
+  </head>
+<body class="">
+   <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title">Site Management</span>
+        </a>
+          <div class="main-menu-navigation" id="overlay-menu">
+            <div class="topmenucontent">
+              <div class="nav_img">
+                <a href="" class="close_btn key_cntrl">×</a>
+              </div>
+                <ul class="handbar-profile">
+                  <li>
+                    <div class="col-xs-12 col-sm-8">
+                      <span class="name">Scott Stevens</span><br>
+                      <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                    </div>
+                    <div class="clearfix"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right" id="notification-menu">
+            <div id="navigation-menu">
+              <div class="navbar">
+                <ul class="nav navbar-nav">
+                  <li id="notifications" class="dropdown">
+                    <a href="" class="dropdown notification-icon">
+                    </a>
+                    <ul class="dropdown-menu dashboard-message" id="dash-message">
+                      <li class="msg-header">
+                        <span class="header" id="header">
+                          Today's Notifications
+                        </span>
+                      </li>
+                      <!-- ko foreach: $data.messages --><!-- /ko -->
+                      <li id="ShowAllNotifications" class="msg">
+                        <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                      </li>
+                      <li id="msgTitle" class="msg">
+                        <span class="dropdown-menu-sub-footer">Loading</span>
+                      </li>
+                  </ul>
+                </li>
+                <li id="profileoptions" class="dropdown">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                      </a>
+                      <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile" >
+                        <li>
+                          <span class="profile-icon">
+                            <span  class="icon_userNormal"></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#" >Profile Details</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>     
+      </div>
+
+    </div>     
+  </header>
+
+
+  <section class="view" id="viewer" data-complete="true">
+    <div class="row ps-row ps-main-container-rules">
+      <div class="col-md-3 col-lg-3 ps-viewer-left-sidebar sidebar-left people_group no-padding">
+        <ul class="nav nav-tabs pw_tabs">
+          <li class="active"><a href="#customer_list" data-toggle="tab">All Sites</a></li>
+          <li><a href="#saved_salvo" data-toggle="tab">Recently Visted</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="customer_list" class="tab-pane fade in active">
+            <div class="row ps-row ps-second-row">
+            </div>
+            <div class="leftscroll-viewer">
+              <div class="map_all_sites_details active" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="saved_salvo" class="tab-pane fade in active main-viewer-left">
+           
+			 <div class="row ps-row ps-second-row">
+            </div>
+            <div class="leftscroll-viewer">
+              <div class="map_all_sites_details active" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-ex"></span>
+                </div>
+              </div>
+           
+           
+             
+              <div class="map_all_sites_details" tabindex="1">
+                <div class="map_all_sites_details_listing pull-left">
+                  <h3>Strand Book Store</h3>
+                  <span>Philadelphia, PA</span>
+                </div>
+                <div class="pull-left">
+                  <span class="icon icon-error-ex"></span>
+                </div>
+              </div>
+            </div>
+			   
+          </div>
+        </div>        
+      </div>
+      <div id="viewerContainer" class="no-padding col-md-9 col-lg-9 viewer-main-content">
+        <div class="background-map-1">
+          <img src="Maps_01.png">
+         </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

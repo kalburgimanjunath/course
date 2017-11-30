@@ -1,0 +1,1206 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/ispaccount.css">
+    <link rel="stylesheet" type="text/css" href="css/controllers.css">
+    <link rel="stylesheet" type="text/css" href="css/EgaleDeviceController.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <div class="row ps-global-header" id="page-header" data-bind="template: 'header'">
+
+        <div class="pagetitle" id="wrapper" data-bind="css:$data.toggleclass">
+            <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle" data-bind="click: $data.menutoggle,css:$data.ComputeHandBarVisible">
+                <span class="main-icon-bar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </span>
+                <span class="page-header-title" data-bind="text: $data.pageTitle">Insight</span>
+            </a>
+
+            <div class="main-menu-navigation" id="overlay-menu">
+                <div class="topmenucontent" role="menu" aria-labelledby="dLabel">
+                    <div class="nav_img">
+                        <a href="" class="close_btn key_cntrl" data-bind="click: $data.menutoggle">×</a>
+                    </div>
+                    <ul class="main-menu-ul">
+                        <!-- ko foreach: $data.pages -->
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_0"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Insight</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_1"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Create &amp; Edit</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_2"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Viewer</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_3"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Alarms</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_4"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Reports</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_5"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Rules</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_6"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Calendar</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_7"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Maps</p>
+
+                        </li>
+
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+
+                            <header class="count">
+                                <span data-bind="css: PageIcon" class="icon_8"></span>
+                            </header>
+                            <p data-bind="text: $data.PageName">Controller</p>
+
+                        </li>
+                        <!--/ko-->
+                        <li>Eagle Menus</li>
+                        <li class="dropdown">
+                            <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts<span class="ispicon ispicon_downarrow pull-right"></span>
+                            </p>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="card-item" onclick="onMenuItemSelect('AddSite')">
+                                    <header class="count">
+                                        <span class="ispicon ispicon_plus"></span>
+                                    </header>
+                                    <p>Add New Account</p>
+                                </li>
+                                <li class="card-item" onclick="onMenuItemSelect('SiteOverview')">
+                                    <header class="count">
+                                        <span class="ispicon ispicon_overview"></span>
+                                    </header>
+                                    <p>Account Overview</p>
+                                </li>
+                                <li class="card-item" onclick="onMenuItemSelect('CustomerList')">
+                                    <header class="count">
+                                        <span></span>
+                                    </header>
+                                    <p>Customer List</p>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="card-item" onclick="onMenuItemSelect('showalarmview')">
+
+                            <header class="count">
+                                <span class="icon_3"></span>
+                            </header>
+                            <p>Alarms</p>
+
+                        </li>
+
+                    </ul>
+                    <ul class="handbar-profile">
+                        <li>
+                            <div class="col-xs-12 col-sm-4">
+                                <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle">
+
+                            </div>
+                            <div class="col-xs-12 col-sm-8">
+                                <span class="name">Scott Stevens</span><br>
+                                <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="connectivityAlert hide" data-bind="css:$data.showAlarmDCM() ? 'show' :'hide'">
+            <div class="pull-left">
+                <span class="ispicon ispicon_moderateError"></span>
+                <span>
+                    No internet connection detected. You are offline. Eagle will resume once you go online.
+                </span>
+                <a href="" class="alarm-wss-refresh btn btn-connError" data-bind="click:$data.tryWssConnection">Retry</a>
+            </div>
+        </div>
+        <div class="pull-right" id="notification-menu" data-bind="template: 'topLeftTmpl'">
+            <div id="navigation-menu">
+                <div class="navbar">
+                    <ul class="nav navbar-nav">
+                        <li id="downloadclips" class="downloadProgressPopover" data-bind="template: 'ClipdownloadTmpl'">
+                            <a class="downloadProgressMenu" data-toggle="popover" data-bind="click:$data.showdownloadclips, visible: $data.IsRequestCount()" style="display: none;">
+                                <b class="downloadProgress-icon"></b><sup class="downloadProgressMenusub" data-bind="text: $data.clipexportrequestcount()">0</sup>
+                            </a>
+                        </li>
+                        <li id="notifications" class="dropdown" data-bind="template: 'topMessageTmpl'">
+                            <a href="" class="dropdown notification-icon" data-toggle="dropdown" data-bind="click:$data.showMessages">
+                                <!-- <img src='/MPC/Content/images/icon_comments.png' /><sup data-bind="text: $data.notificationCountTxt,visible:$data.notificationsCount() > 0"></sup> -->
+                            </a>
+                            <ul class="dropdown-menu dashboard-message" id="dash-message">
+                                <li class="msg-header">
+                                    <span class="header" id="header">
+                                        Today's Notifications
+                                    </span>
+                                </li>
+                                <!-- ko foreach: $data.messages --><!-- /ko -->
+                                <li id="ShowAllNotifications" class="msg" data-bind="click:$root.navigateAlarm,visible:$data.messages().length > 0" style="display: none;">
+                                    <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                                </li>
+                                <li id="msgTitle" class="msg" data-bind="visible:$data.messages().length == 0">
+                                    <span class="dropdown-menu-sub-footer" data-bind="text:$data.msgTitle">Loading</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="profileoptions" class="dropdown" data-bind="template: 'topMyProfileTmpl'">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle profile-icon" data-toggle="dropdown">
+                                        <!-- <img src='/MPC/Content/images/icon_user.png' /> -->
+                                    </a>
+                                    <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile" data-bind="foreach: $data.userProfileMenu">
+                                        <li>
+                                            <span class="profile-icon">
+                                                <span data-bind="attr: { 'class': icon }" class="icon_userNormal"></span>
+                                            </span>
+                                            <span class="profile-item-content">
+                                                <a href="#" data-bind="click: itemclick, text: title">Profile Details</a>
+                                                <span class="menu-divider"></span>
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="profile-icon">
+                                                <span data-bind="attr: { 'class': icon }" class="icon_helpNormal"></span>
+                                            </span>
+                                            <span class="profile-item-content">
+                                                <a href="#" data-bind="click: itemclick, text: title">Help</a>
+                                                <span class="menu-divider"></span>
+                                            </span>
+                                        </li>
+
+                                        <li>
+                                            <span class="profile-icon">
+                                                <span data-bind="attr: { 'class': icon }" class="icon_logoutNormal"></span>
+                                            </span>
+                                            <span class="profile-item-content">
+                                                <a href="#" data-bind="click: itemclick, text: title">Logout</a>
+                                                <span class="menu-divider"></span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="siteurl" value="/MPC/">
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="#" class="list-group-item active">Site Overview</a></li>
+                        <li><a href="#" class="list-group-item">Controllers</a></li>
+                        <li><a href="#" class="list-group-item">Edge Devices<span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item">Areas</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                People & Badges
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">People<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Access Personas<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="list-group-item active" data-bind="click: EagleSchedule">Site Overview</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="controller-root">
+            <div id="controller-view" class="controllerView">
+                <!-- LIST VIEW-->
+                <div class="cardlistview isptabs singleController">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Controllers
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#paneloperatorModal" title="Add New"></a>
+                            <span class="ispicon ispicon_more" data-toggle="tooltip" title="More"></span>
+                        </span>
+                    </h2>
+                    <div>
+                        <ul class="list-group scroll-x scroll-y">
+                            <li class="list-group-item">
+                                <div class="col-md-10 controllerList">
+                                    <span class="name">Controller 4</span> <br />
+                                    <div class="controllersec">
+                                        <div>Armed</div>
+                                        <div>Lower basement tower II right wing</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col-md-10 controllerList">
+                                    <span class="name">Controller 4</span> <br />
+                                    <div class="controllersec">
+                                        <div>Armed</div>
+                                        <div>Lower basement tower II right wing</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col-md-10 controllerList">
+                                    <span class="name">Controller 4</span> <br />
+                                    <div class="controllersec">
+                                        <div>Armed</div>
+                                        <div>Lower basement tower II right wing</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item active">
+                                <div class="col-md-10 controllerList">
+                                    <span class="name">Controller 4</span> <br />
+                                    <div class="controllersec">
+                                        <div>Armed</div>
+                                        <div>Lower basement tower II right wing</div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="listOverview ControllerOverview isptabs pull-left singleController">
+                    <div class="row isptabs">
+                        <div class="row overviewHeader">
+                            <h2 class="isppagetitle">
+                                Controller 1
+                                <span class="pull-right">
+                                    <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addController" title="Add New"></a>
+                                    <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit"></span>
+                                </span>
+                            </h2>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#overview" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
+                                <li role="presentation"><a href="#settings" aria-controls="profile" role="tab" data-toggle="tab">Settings</a></li>
+                                <li role="presentation"><a href="#commsPath" aria-controls="profile" role="tab" data-toggle="tab">Communication Path</a></li>
+                                <li role="presentation"><a href="#report" aria-controls="profile" role="tab" data-toggle="tab">Report</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="overview" class="tab-pane active">
+                                <div class="row scroll-y overviewTab">
+                                    <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                                        <div class="row">
+                                            <div class="cardWrapper col-md-4">
+                                                <!-- CONTROLLER DETAILS START-->
+                                                <div class="panel panel-info white controllerdetails controllerStatWrapper">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">
+                                                            <p> Eagle P300 Pro </p>
+                                                            <span>Utilities Building Panel on First Floor</span>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="controllerStatus online">Online</div>
+                                                    <div class="panel-body">
+                                                        <div>
+                                                            <label> Time Zone</label>
+                                                            <p>GMT - 5, EST - New York, Boston</p>
+                                                            <span>May 19, 2016 10:45  AM</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- CONTROLLER DETAILS END-->
+                                                <!-- CONTROLLER STATUS START-->
+                                                <div class="panel panel-info white controllerdetails controllerConn">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">
+                                                            Controller Status
+                                                        </h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="col-md-6 paddingLnone">
+                                                            <span class="ispicon ispicon_acConnected pull-left"></span>
+                                                            <span class="pull-left connStatus">
+                                                                <span class="bold"> AC</span>
+                                                                <h5 class="green bold">Connected</h5>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6 paddingLnone">
+                                                            <span class="ispicon ispicon_batteryFull pull-left"></span>
+                                                            <span class="pull-left connStatus">
+                                                                <span class="bold"> Battery</span>
+                                                                <h5 class="red bold">Low</h5>
+                                                            </span>
+                                                        </div>
+                                                        <hr class="clear" />
+                                                        <div class="clear">
+                                                            <label> Registered on</label>
+                                                            <p>May 19, 2016 10:45  AM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- CONTROLLER STATUS END-->
+                                            </div>
+
+                                            <!-- DATA SYNC START-->
+                                            <div class="cardWrapper col-md-4 sysStatWrapper">
+                                                <div class="panel panel-info white controllerdetails scanDevices systemStatus">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">
+                                                            System Status
+                                                        </h3>
+                                                    </div>
+                                                    <!--<div class="systemStatusHeader">
+                                                        <span>Partially Armed</span>
+                                                        <h6> <span>3</span> of <span>10</span> areas armed</h6>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="row isptabs">
+                                                            <ul class="nav nav-tabs" role="tablist">
+                                                                <li role="presentation" class="active"><a href="#disarm" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">DISARM</a></li>
+                                                                <li role="presentation" class=""><a href="#arm" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">ARM</a></li>
+                                                                <li role="presentation" class=""><a href="#customarm" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">Custom ARM</a></li>
+                                                            </ul>
+                                                            <div class="tab-content">
+                                                                <div id="disarm" class="tab-pane active">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <label> New</label> <p>20</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label> Configured</label> <p>4</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label>Missing</label> <p>3</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label> Total Discovered</label> <p>10</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div id="arm" class="tab-pane">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <label>Missing</label> <p>3</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label> Total Discovered</label> <p>10</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div id="customarm" class="tab-pane">
+                                                                    <ul>
+
+                                                                        <li>
+                                                                            <label> Total Discovered</label> <p>10</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr />
+
+                                                        <div>
+                                                            <span>Alarms and Events</span>
+                                                            <span class="link pull-left">View Alarms and Events</span>
+                                                        </div>
+                                                        <p>
+
+                                                        </p>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+                                            <!-- DATA SYNC END-->
+
+                                            <div class="cardWrapper col-md-4 syncWrapper">
+                                                <!-- DATA SYNC START-->
+                                                <div class="panel panel-info white controllerdetails">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">
+                                                            Sync with cloud
+                                                        </h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="">
+                                                            <span class="btn btn-primary syncBtn">Sync</span>
+                                                        </div>
+                                                        <div class="clear syncCloudStat hide">
+                                                            <span class="ispicon ispicon_majorError pull-left"></span>
+                                                            <span class="s4 pull-left"><label class="red s5">Syncing Failed</label><p>25/10/2017 9:42PM</p></span>
+                                                        </div>
+                                                        <div class="pull-right hide">
+                                                            <span class="btn btn-default syncBtn">Retry</span>
+                                                        </div>
+                                                        <div class="clear syncCloudStat hide">
+                                                            <span class="ispicon ispicon_acknowledged pull-left"></span>
+                                                            <span class="s4 pull-left"><label class="green s5">Synced</label><p>25/10/2017 9:42PM</p></span>
+                                                        </div>
+                                                        <!--<div class="loader"></div>-->
+                                                        <div class="progressLoading clear hide">
+                                                            <span class="t3">Syncing with ISP cloud</span>
+                                                            <div class="meter red">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="clear" />
+                                                        <div class="clear">
+                                                            <label class="s4"> Last Synced on</label>
+                                                            <p>25/10/2017 9:42PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- DATA SYNC END-->
+                                                <!-- FIRMWARE START-->
+                                                <div class="clear fwUpgrade">
+                                                    <div class="panel panel-info white controllerdetails">
+                                                        <div class="panel-heading">
+                                                            <h3 class="panel-title">
+                                                                Firmware Version
+                                                            </h3>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                            <div>
+                                                                <label>Current Version: </label>
+                                                                <span class="blue">V1.02</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- FIRMWARE END-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="settings" class="tab-pane">
+                                <div class="row scroll-y settingsTab">
+                                    <div class="contentContainer">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="commsPath" class="tab-pane">
+                                <div class="row scroll-y commsPath">
+                                    <div class="contentContainer">
+                                        <div class="col-md-12 form-group viewmode">
+                                            <h3>
+                                                <span>IP Settings </span>
+                                                <label class="switch pull-left">
+                                                    <input type="checkbox">
+                                                    <div class="slider round"></div>
+                                                </label>
+                                            </h3>
+                                            <div class="col-md-12 clear paddingLnone">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">Use DHCP</label>
+                                                </div>
+                                                <div class="ipSettings clear">
+                                                    <div class="form-group col-sm-6">
+                                                        <label class="control-label">IP Address</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <label class="control-label">Gateway IP Address</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 ipSettingsRight clear paddingLnone">
+                                                <div class="form-group col-sm-6 paddingLnone">
+                                                    <label class="control-label">Subnet Mask</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group col-sm-6 paddingLnone">
+                                                    <label class="control-label">DNS Server IP Address</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="col-md-12 form-group viewmode">
+                                            <div class="gsmSettings">
+                                                <h3>
+                                                    <span>GSM Settings </span>
+                                                    <label class="switch pull-left">
+                                                        <input type="checkbox">
+                                                        <div class="slider round"></div>
+                                                    </label>
+                                                </h3>
+                                                <div class="ipSettings">
+                                                    <div class="col-md-6  clear">
+                                                        <div class="form-group col-sm-12 paddingLnone">
+                                                            <label class="control-label">Access Point Name</label>
+                                                            <input type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="col-md-12 alarmReceiverWrapper">
+                                            <h3>Alarm Receiver Configuration</h3>
+                                            <div class="table-responsive panel-body">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>Receiver Name</th>
+                                                            <th>Receiver Address Type </th>
+                                                            <th>Receiver Address </th>
+                                                            <th>Enable/Disable</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="checkbox">
+                                                                    <input type="checkbox" value="" />
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>10.0.20</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <select class="form-control" data-style="btn-primary">
+                                                                        <option class="select-item">URL</option>
+                                                                        <option class="select-item">IP-Port</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                            <td class="col-md-4">
+                                                                <div class="form-group urlInput hide">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="form-group ipPortInput">
+                                                                    <div>
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider round"></div>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="checkbox">
+                                                                    <input type="checkbox" value="" />
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>10.0.20</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <select class="form-control" data-style="btn-primary">
+                                                                        <option class="select-item">URL</option>
+                                                                        <option class="select-item">IP-Port</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                            <td class="col-md-4">
+                                                                <div class="form-group hide">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="form-group ipPortInput">
+                                                                    <div>
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <label class="switch">
+                                                                    <input type="checkbox">
+                                                                    <div class="slider round"></div>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-footer">
+                                    <div class="btn-group pull-right" role="group" aria-label="group button">
+                                        <button type="button" class="btn btn-default">Add</button>
+                                        <button type="button" class="btn btn-default">Delete</button>
+                                        <button type="button" class="btn btn-default">Reset</button>
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="report" class="tab-pane">
+                                <div class="row scroll-y reportTab viewWrapper">
+                                    <div class="contentContainer">
+                                        <div>
+                                            <div class="cardlistview isptabs reportList">
+                                                <div class="reportsHeader">
+                                                    <span class="name">
+                                                        Alarm Reports
+                                                        <span class="pull-right">
+                                                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addController" title="Add New"></a>
+                                                            <span class="dropdown ispActionMenu">
+                                                                <span class="dropdown-toggle" data-toggle="dropdown">
+                                                                    <span class="ispicon ispicon_more" data-toggle="tooltip" title="More"></span>
+                                                                </span>
+                                                                <ul class="dropdown-menu ispmenu dropdown-menu-right">
+                                                                    <li><a href="#">Delete</a></li>
+                                                                </ul>
+                                                            </span>
+
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="listStickyHeader">
+                                                    <b>4 Reports</b>
+                                                </div>
+                                                <div>
+                                                    <ul class="list-group scroll-x scroll-y">
+                                                        <li class="list-group-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                            </div>
+                                                            <div class="col-md-10 controllerList">
+                                                                <span class="name">Alarm Report 1</span> <br />
+                                                                <div class="controllersec">
+                                                                    <div>AB87902</div>
+                                                                    <div>Status: <span>Enabled</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                            </div>
+                                                            <div class="col-md-10 controllerList">
+                                                                <span class="name">Alarm Report 2</span> <br />
+                                                                <div class="controllersec">
+                                                                    <div>AB87902</div>
+                                                                    <div>Status: <span>Enabled</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                            </div>
+                                                            <div class="col-md-10 controllerList">
+                                                                <span class="name">Alarm Report 3</span> <br />
+                                                                <div class="controllersec">
+                                                                    <div>AB87902</div>
+                                                                    <div>Status: <span>Enabled</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </li>
+                                                        <li class="list-group-item active">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox">
+                                                            </div>
+                                                            <div class="col-md-10 controllerList">
+                                                                <span class="name">Alarm Report 4</span> <br />
+                                                                <div class="controllersec">
+                                                                    <div>AB87902</div>
+                                                                    <div>Status: <span>Enabled</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="reportData viewmode">
+                                            <div class="col-md-12">
+                                                <label class="switch pull-right">
+                                                    <input type="checkbox">
+                                                    <div class="slider round"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <div class="form-group">
+                                                    <label class="control-label"> Report Name </label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">Account Number</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 form-group partitionWrapper">
+                                                <h4>
+                                                    <b>Area - <span>64</span></b>
+                                                    <span class="pull-right selectAll link">
+                                                        <span class="seeAllAreas" data-toggle="modal" data-target="#allAreas" title="See All Areas">See All</span>
+                                                    </span>
+                                                </h4>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">Area 1</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label class="checkbox-inline"><input type="checkbox" value="">Area 1</label>
+                                                </div><div class="checkbox">
+                                                    <label class="checkbox-inline"><input type="checkbox" value="">Area 1</label>
+                                                </div><div class="checkbox">
+                                                    <label class="checkbox-inline"><input type="checkbox" value="">Area 1</label>
+                                                </div><div class="checkbox">
+                                                    <label class="checkbox-inline"><input type="checkbox" value="">Area 1</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 form-group partitionWrapper">
+                                                <h4>
+                                                    <b>Events Type</b>
+                                                    <span class="checkbox pull-right selectAll">
+                                                        <label><input type="checkbox" value="">Select All</label>
+                                                    </span>
+                                                </h4>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">Intrusion Alarm</label>
+                                                </div><div class="checkbox">
+                                                    <label><input type="checkbox" value="">Fire</label>
+                                                </div><div class="checkbox">
+                                                    <label><input type="checkbox" value="">Power Failure</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 form-group partitionWrapper">
+                                                <h4>
+                                                    <b>Alarm Receiver</b>
+                                                    <span class="ispicon ispicon_plus pull-right"></span>
+                                                </h4>
+                                                <div class="form-group">
+                                                    <label class="control-label">Primary Receiver </label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label">Secondary Receiver</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-footer">
+                                    <div class="btn-group pull-right" role="group" aria-label="group button">
+                                        <button type="button" class="btn btn-default">Cancel</button>
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- AREA OVERVIEW-->
+                    </div>
+                </div>
+            </div>
+
+            <div id="allAreas" class="modal fade ispmodal allAreas" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title">Areas</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group col-sm-12">
+                                <div class="selectAll pull-left"> <input type="checkbox" /> SelectAll</div>
+                                <span class="allAreaSearch"><input class="form-control" type="text"><span class="ispicon ispicon_search "></span> </span>
+                            </div>
+                            <div class="table-responsive panel-body selectAllArea">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" value="" />
+                                                <span>Area 1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" value="" />
+                                                <span>Area 1</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" value="" />
+                                                <span>Area 1</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!- DELETE REPORTS -->
+            <div class="modal ispmodal fade deleteReport" id="deleteReport" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="lineModalLabel">Delete Reports</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row scroll-x scroll-y">
+                                Do you want to delete the selected reports?
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div role="group" aria-label="group button">
+                                <button type="button" class="btn btn-default">Cancel</button>
+                                <button type="button" class="btn btn-primary">Delete</button>
+                            </div>
+                        </div>
+                        <!-- FOOTER SECTION ENDS -->
+                    </div>
+                </div>
+            </div>
+            <!- DELETE REPORTS -->
+
+            <!- DISABLE REPORTS -->
+            <div class="modal ispmodal fade disableReport" id="disableReport" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="lineModalLabel">Disable Reports</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row scroll-x scroll-y">
+                                Do you want to disable the selected reports?
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div role="group" aria-label="group button">
+                                <button type="button" class="btn btn-default">Cancel</button>
+                                <button type="button" class="btn btn-primary">Disable</button>
+                            </div>
+                        </div>
+                        <!-- FOOTER SECTION ENDS -->
+                    </div>
+                </div>
+            </div>
+            <!- DISABLE REPORTS -->
+
+            <!-- ADD CONTROLLER START -->
+
+            <div class="panelContainer modal ispmodal fade panelsection" id="paneloperatorModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-url="@Url.Action(" ", " EagleDevice")">
+                <div>
+                    <form data-validationkey="panelmodalform" id="panelmodalform">
+                        <div class="modal-dialog" style="opacity: unset">
+                            <div class="modal-content">
+                                <!-- HEADER SECTION STARTS -->
+                                <div class="modal-header">
+                                    <!--<button type="button" id="btnClose" class="close" data-dismiss="modal">@*<span aria-hidden="true">×</span>*@<span class="sr-only">@Resources.EagleDevice_AddController_Close</span></button>-->
+                                    <h1 class="modal-title" id="lineModalLabel">Add Controller</h1>
+                                </div>
+                                <!-- HEADER SECTION END -->
+                                <!-- CONTENT SECTION STARTS -->
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <!-- MAC ID SECTION START-->
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="form-group col-sm-6 panelType">
+                                                    <label id="panel_type_label" class="control-label">Controller Type</label>
+                                                    <select class="form-control" id="drpPanelType"
+                                                            data-bind="options: $data.PanelTypes,
+                                                                optionsText: 'DisplayName',
+                                                                optionsValue: 'ModelId',
+                                                                value: $data.ControllerModel.DeviceType.ModelId, event:{change:$data.enableDisableControls}"></select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group col-sm-8 paddingLnone">
+                                                        <label id="pnael_macid_label" class="control-label">Gateway MAC ID</label>
+                                                        <input class="inputuppercase form-control" maxlength="12" type="text" name="panel_macid" id="panel_macid" data-bind="value: $data.ControllerModel.UniqueId">
+                                                    </div>
+                                                    <div class="form-group col-sm-4 paddingLnone">
+                                                        <label id="panel_crcno_label" class="control-label">CRC NO</label>
+                                                        <input type="text" id="panel_crcno" maxlength="4" name="panel_crcno" class="inputuppercase form-control" data-bind="value:$data.ControllerModel.Crc, enable: IsDeviceTypeEagle150" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- MAC ID SECTION END-->
+                                        <!-- IMAGE SECTION START-->
+                                        <div class="col-sm-12">
+                                            <div class="row">
+
+                                                <div class="col-sm-6">
+                                                    <div class="imgBlock">
+                                                        Image Of MAC Number Location
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="imgBlock">
+                                                        Panel Image
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        <!-- IMAGE SECTION END-->
+                                        <!-- ALARM REPORTING & CONFIG TEMPLATE SECTION START-->
+                                        <div class="col-sm-12">
+                                            <div class="row">
+
+                                                <div class="form-group col-sm-6">
+                                                    <label id="alarmreportingnumber_label" class="control-label">AlarmReporting Number</label>
+                                                    <input id="alarmreportingnumber" type="text" value="345-45-9876" class="form-control" />
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label id="configurationtemplate_label" class="control-label">Configuration Template</label>
+                                                    <select class="form-control" id="configurationtemplate" data-bind="enable: IsDeviceTypeEagle150">
+                                                        <option>@Resources.EagleDevice_AddController_ConfigurationTemplate_Option1</option>
+                                                        <option>@Resources.EagleDevice_AddController_ConfigurationTemplate_Option2</option>
+                                                        <option>@Resources.EagleDevice_AddController_ConfigurationTemplate_Option3</option>
+                                                        <option>@Resources.EagleDevice_AddController_ConfigurationTemplate_Option4</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <hr class="formGroupHr" />
+                                        </div>
+                                        <!-- ALARM REPORTING & CONFIG TEMPLATE SECTION END-->
+                                        <!-- VISTA NAME AND MASTER CODE -->
+                                        <div class="col-sm-12 masterCode">
+                                            <div class="row">
+
+                                                <div class="form-group col-sm-6">
+                                                    <label id="" class="control-label">Controller Name</label>
+                                                    <input id="" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label id="" class="control-label">Master Code</label>
+                                                    <input id="" type="text" value="" class="form-control" />
+                                                    <span class="ispicon ispicon_eye"> </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- VISTA NAME AND MASTER CODE -->
+                                        <!-- GALAXY NAME AND REMOTE CODE -->
+                                        <div class="col-sm-12 masterCode">
+                                            <div class="row">
+
+                                                <div class="form-group col-sm-6">
+                                                    <label id="" class="control-label">Controller Name</label>
+                                                    <input id="" type="text" value="" class="form-control" />
+                                                </div>
+                                                <div class="form-group col-sm-6">
+                                                    <label id="" class="control-label">Remote Code</label>
+                                                    <input id="" type="text" value="" class="form-control" />
+                                                    <span class="ispicon ispicon_eye"> </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- GALAXY NAME AND REMOTE CODE -->
+                                        <!-- ENABLE CONFIG SECTION START-->
+                                        <div class="col-sm-12">
+                                            <div class="row">
+
+                                                <div class="col-sm-6">
+                                                    <label id="lblTimeZone" class="control-label">Time Zone</label>
+                                                    <select class="form-control" id="drpTimeZone" data-bind="options: $data.TimeZones,
+                                            optionsText: 'Name',
+                                            optionsValue: 'ID',
+                                            value: $data.ControllerModel.GeoTimezone , enable: IsDeviceTypeEagle150"></select>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label id="lblTimeZone" class="control-label">Description</label>
+                                                    <input id="txtDescription" type="text" data-bind="value: $data.ControllerModel.Description, enable: IsDeviceTypeEagle150" class="form-control">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- ENABLE CONFIG SECTION END-->
+                                    </div>
+                                </div>
+                                <!-- CONTENT SECTION ENDS -->
+                                <!-- FOOTER SECTION STARTS -->
+                                <div class="modal-footer">
+                                    <span class="text-danger pull-left text-left col-md-5 col-sm-5" data-bind="visible: $data.IsError, text: $data.ErrorMessage"></span>
+                                    <button type="button" id="btncanPanel" class="btn btn-default" data-bind="click:$data.cancelController">Cancel</button>
+                                    <button id="btnsavecontrollerdetail" type="button" class="btn btn-primary" data-bind="click:$data.saveControllerDetail">Add Controller</button>
+                                    <span class="error-msg"></span>
+                                </div>
+                                <!-- FOOTER SECTION ENDS -->
+                            </div>
+                        </div>
+                    </form>
+                    <input type="hidden" name="infoURL" value="@Url.Action(" getinfomessage","EagleDevice")" />
+                </div>
+            </div>
+
+            <!-- ADD CONTROLLER END-->
+
+        </div>
+    </div>
+    <!--<div>
+        <span data-bind="visible:showAlarmDCM">
+            @Resources.Connectivity_with_Alarm_Service_lost
+
+            <a href="" class="alarm-wss-refresh" data-bind="click:tryWssConnection">@Resources.Refresh</a>
+        </span>
+    </div>-->
+
+    <div class="connectivityAlert hide">
+        <div class="pull-left">
+            <span class="ispicon ispicon_moderateError"></span>
+            <span>
+                No internet connection detected. YUou are offline. Eagle will resume once you go online.
+            </span>
+            <a href="" class="alarm-wss-refresh btn btn-connError">Retry</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+/*version 1.0*/
+.viewmode input[type="text"], .viewmode textarea, .viewmode select {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e0e0e0;
+    pointer-events: none;
+    border: 1px solid #e1e1e1;
+    cursor: no-drop;
+}
+
+.viewmode h3 {
+    color: #d0d0d0;
+}
+
+.viewmode .ispicon {
+    pointer-events: none;
+    opacity: .4;
+}
+
+.viewmode .link {
+    
+    color: #e1e1e1;
+    cursor: default;
+}
+
+.viewmode .modalAllAreas {
+    color: #e1e1e1;
+}
+
+.viewmode .switch {
+    cursor: default;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+ .viewmode .form-group label {
+    color: #e1e1e1;
+    cursor: default;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+ .viewmode .checkbox {
+    cursor: no-drop;
+    color: #e1e1e1;
+    pointer-events: none;
+}
+
+ .viewmode input[type="checkbox"] {
+    opacity: .4 !important;
+}
+
+ .viewmode td {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e1e1e1;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+ .viewmode th {
+    color: #e1e1e1;
+    pointer-events: none;
+    cursor: no-drop;
+}
+

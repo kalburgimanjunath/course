@@ -1,0 +1,420 @@
+﻿@color_1: #606060;
+@color_2: #fff;
+@color_3: #ee3124;
+@color_4: #303030;
+@color_5: #f47e37;
+@color_6: #1792e5;
+@color_7: #b0b0b0;
+@font_family_1: 'HoneywellSansWeb-Bold';
+@font_family_2: 'HoneywellSansWeb-Medium';
+@background_color_1: #d1e9fa;
+@background_color_2: #f5f5f5;
+
+/* SITE CSS */
+/*.zoom .mapText {
+    font-size: 20px;
+    right: 17px;
+    top: 17px;
+}*/
+/* DROP DOWN CSS  - DONT EDIT */
+ul {
+	li {
+		list-style-type: none;
+	}
+}
+.ispdashboardWrapper {
+	padding: 20px !important;
+	background: #f0f0f0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	.newAccount {
+		padding: 35px 35px 36px 35px;
+		border-bottom: 1px solid #D2D2D2;
+		margin: 0 auto;
+		margin-top: 11%;
+		background: #fff;
+		width: 350px;
+		text-align: center;
+		padding: 35px 35px 36px 35px;
+		border-bottom: 1px solid #D2D2D2;
+		margin: 0 auto;
+		margin-top: 11%;
+		background: #fff;
+		width: 350px;
+		text-align: center;
+		h4 {
+			font-style: italic;
+			color: @color_7;
+			margin: 0;
+		}
+		p {
+			margin-top: 17px;
+			margin-bottom: 0;
+			&+p {
+				margin-top: 19px;
+				margin-bottom: 0;
+			}
+		}
+	}
+	.ispicon_firstAccount {
+		&::before {
+			background-size: 1980px !important;
+			width: 40px;
+			height: 40px;
+			background-position: -758px -16px;
+		}
+		&:hover {
+			&::before {
+				background-size: 1980px !important;
+				width: 40px;
+				height: 40px;
+				background-position: -758px -69px;
+			}
+		}
+		&:active {
+			&:before {
+				background-size: 1980px !important;
+				width: 40px;
+				height: 40px;
+				background-position: -758px -122px;
+			}
+		}
+	}
+}
+.usermapview {
+	float: left;
+	position: absolute;
+	top: 35px;
+	bottom: 20px;
+	width: 33.3333%;
+}
+.ispcardLayout {
+	background: #fff;
+	padding: 20px;
+	.cardtHeader {
+		padding-bottom: 17px;
+	}
+	.cardHeader {
+		span {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_1;
+		}
+	}
+}
+.ispcardLayout.siteCard {
+	padding: 0;
+	border-bottom: 1px solid #d2d2d2;
+	height: 100%;
+	clear: both;
+	width: 100% !important;
+	.cardHeader {
+		padding: 19px 20px 18px 20px;
+		float: left;
+		width: 100%;
+	}
+}
+.cardHeaderTitle {
+	margin-top: 4px !important;
+	float: left;
+	text-transform: uppercase;
+}
+.siteCard {
+	.siteMap {
+		height: 200px;
+		background: #f0f0f0;
+		clear: both;
+		height: 40%;
+	}
+	.siteStatCard {
+		float: left;
+		width: 100%;
+		height: 45%;
+	}
+	.siteStatHeader {
+		color: @color_2;
+		padding: 16px 20px 11px 20px;
+		float: left;
+		width: 100%;
+		height: 70px;
+		cursor: pointer;
+		span.alarmCount {
+			font-size: 26px;
+			font-family: @font_family_1 !important;
+			color: @color_2;
+			float: left;
+			line-height: 22px;
+		}
+		>p {
+			font-size: 15px;
+			font-family: @font_family_2 !important;
+			color: @color_2;
+			margin: 0;
+			clear: both;
+			>span {
+				font-size: 15px;
+				font-family: @font_family_2 !important;
+				color: @color_2;
+				margin: 0;
+				clear: both;
+			}
+		}
+	}
+	.siteStatHeader.withAlarms {
+		background: #ee3124;
+	}
+	.siteStatHeader.noAlarms {
+		background: #7eb338;
+		padding: 0px 20px 13px 20px;
+		cursor: default;
+		>p {
+			font-size: 26px;
+			font-family: @font_family_1 !important;
+			>span {
+				font-size: 26px;
+				font-family: @font_family_1 !important;
+			}
+		}
+	}
+	.siteStatList {
+		float: left;
+		width: 100%;
+		height: 256px;
+		overflow-y: auto;
+		li {
+			border-top: 1px solid #f0f0f0;
+			padding: 12px 20px 10px 20px;
+			float: left;
+			width: 100%;
+			height: 64px;
+			&:hover {
+				background: #f5f5f5;
+				cursor: pointer;
+			}
+			&:active {
+				background: #d1e9fa;
+				cursor: pointer;
+			}
+			&:first-child {
+				border-top: 0 none;
+			}
+			>div {
+				&+div {
+					margin-top: 10px;
+				}
+			}
+		}
+		.ispicon {
+			margin-right: 8px;
+			float: left;
+			&::before {
+				cursor: default !important;
+			}
+		}
+		.siteCritical {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_3;
+			margin-top: 15px;
+			float: left;
+		}
+		.siteNormal {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_4;
+			margin-top: 15px;
+			float: left;
+		}
+		.criticalCount {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_3;
+			float: left;
+			padding-top: 3px;
+		}
+		.majorCount {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_3;
+			float: left;
+			padding-top: 3px;
+			color: @color_5 !important;
+		}
+		.siteMajor {
+			font-size: 15px;
+			font-family: @font_family_1 !important;
+			color: @color_5;
+			margin-top: 15px;
+			float: left;
+		}
+	}
+}
+.siteAlarmName {
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+.clusterText {
+	position: relative;
+	font-size: 20px;
+	top: -5px;
+	color: @color_2;
+	text-align: center;
+	right: 27px;
+}
+.mapText {
+	font-size: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: @color_2;
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+.avoidclicks {
+	pointer-events: none;
+}
+.ispActionMenu {
+	cursor: pointer;
+	li {
+		padding: 0;
+	}
+	.dropdown-menu {
+		padding: 0;
+		margin-top: 11px;
+		border-radius: 0;
+		border: 1px solid #d0d0d0;
+		>li {
+			>a {
+				cursor: pointer;
+				padding: 9px 18px 7px 18px;
+				border-top: 0 none;
+				border-bottom: 1px solid #d0d0d0;
+				border-top: 1px solid #d0d0d0;
+				margin-top: -1px;
+				>span {
+					margin-right: 8px;
+					font-family: @font_family_2 !important;
+					color: @color_1;
+				}
+			}
+			&:first-child {
+				>a {
+					cursor: pointer;
+					border-top: 0 none;
+				}
+			}
+			&:hover {
+				background-color: @background_color_2;
+				font-family: @font_family_2 !important;
+				outline: 0;
+			}
+			&:focus {
+				background-color: @background_color_2;
+				font-family: @font_family_2 !important;
+				outline: 0;
+			}
+			a {
+				&:hover {
+					background-color: @background_color_2;
+					font-family: @font_family_2 !important;
+					outline: 0;
+				}
+				&:focus {
+					background-color: @background_color_2;
+					font-family: @font_family_2 !important;
+					outline: 0;
+				}
+				&:active {
+					background-color: @background_color_1 !important;
+					border-bottom: 1px solid #8bc9f2 !important;
+					color: @color_4;
+				}
+			}
+			a.active {
+				background-color: @background_color_1 !important;
+				border-bottom: 1px solid #8bc9f2 !important;
+				color: @color_4;
+			}
+		}
+		>li.selected {
+			background-color: @background_color_1;
+			border-bottom: 1px solid #8bc9f2;
+			color: @color_4;
+			&:hover {
+				background-color: @background_color_1;
+				border-bottom: 1px solid #8bc9f2;
+				color: @color_4;
+			}
+			&:focus {
+				background-color: @background_color_1;
+				border-bottom: 1px solid #8bc9f2;
+				color: @color_4;
+			}
+			a {
+				&:hover {
+					background-color: @background_color_1;
+				}
+				&:focus {
+					background-color: @background_color_1;
+				}
+			}
+		}
+	}
+}
+.ispActionMenu.open {
+	font-size: 14px;
+	color: @color_6;
+}
+.ispActionMenu.mainMenu.open {
+	.dropdown-toggle {
+		color: @color_4;
+		font-size: 18px;
+	}
+}
+.ispActionMenu.mainMenu {
+	.dropdown-toggle {
+		&:hover {
+			color: @color_4;
+			font-size: 18px;
+		}
+	}
+	.dropdown-menu {
+		margin-top: 8px;
+		min-width: 200px;
+	}
+}
+.ispActionMenu.contentMenu {
+	.dropdown-menu {
+		padding: 20px;
+		width: 300px;
+	}
+	.footer {
+		margin-top: 20px;
+		button {
+			margin-left: 9px;
+		}
+	}
+}
+.map_siteInfo {
+	font-size: 12px;
+	padding: 7px 0px 4px 0px !important;
+	font-weight: bold;
+	text-align: center;
+}
+.dashboardheader {
+	font-size: 13px;
+	font-family: @font_family_2 !important;
+	color: @color_1;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 1;
+	a {
+		cursor: pointer;
+	}
+}

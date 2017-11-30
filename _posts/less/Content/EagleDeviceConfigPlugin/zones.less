@@ -1,0 +1,151 @@
+﻿@color_1: #606060;
+
+.addDevice {
+    .modal-dialog {
+        width: 700px;
+    }
+    .chimeZone {
+        margin-top: 0;
+        >span {
+            padding-top: 3px;
+            margin-left: 10px;
+            float: left;
+        }
+    }
+}
+.addDevice.ispmodal {
+    left: 0 !important;
+}
+.wiredZones {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0;
+    padding: 0 15px 0 0;
+    .overviewHeader {
+        padding-left: 0;
+        .nav-tabs {
+            margin-left: 20px;
+            margin-right: 0;
+        }
+    }
+    .isppagetitle {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        margin-bottom: 6px !important;
+    }
+    .panel-body {
+        padding: 15px 20px !important;
+    }
+}
+.wiredZones{
+    .table thead tr th{
+        border-bottom: 0 none;
+    }
+}
+
+.dcm-root {
+    .sensorsTab {
+        margin-top: 24px;
+    }
+    .deviceControllerIcon {
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
+    .listgrouppane {
+        .panel {
+            .status.status_not_registered {
+                color: @color_1;
+                padding-top: 7px;
+            }
+            .status.status_online {
+                padding-top: 7px;
+            }
+        }
+    }
+    .deviceStatusList {
+        line-height: 1.8em;
+    }
+    .isptable {
+        tbody {
+            tr {
+                border-bottom: 1px solid #ddd;
+                cursor: pointer;
+                td {
+                    padding: 4px 10px;
+                }
+                input[type="checkbox"] {
+                    position: relative;
+                    bottom: 0;
+                }
+            }
+        }
+        thead {
+            tr {
+                input[type="checkbox"] {
+                    position: relative;
+                    bottom: 3px;
+                }
+            }
+        }
+    }
+    .modal-body {
+        .chimeZone {
+            input[type="checkbox"] {
+                margin: 4px;
+            }
+        }
+    }
+    .ispmodal {
+        .modal-footer {
+            margin-top: 0;
+        }
+    }
+    .modal-content {
+        margin: auto;
+    }
+    .modal-dialog {
+        margin: 3em auto;
+    }
+    .deviceZoneEditIcon {
+        margin-right: 30px;
+        margin-right: 30px;
+    }
+}
+.zonesTable {
+    .table {
+        >tbody {
+            >tr {
+                >td.zonesCheckboxIcon {
+                    padding: 0 8px;
+                }
+            }
+        }
+        thead {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        tbody {
+            tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+            }
+            display: inline-block;
+            max-height: 450px;
+            overflow-y: auto;
+        }
+    }
+    .severityCheck {
+        padding: 8px;
+    }
+    thead {
+        >tr {
+            >th {
+                padding: 8px 0;
+            }
+        }
+    }
+}

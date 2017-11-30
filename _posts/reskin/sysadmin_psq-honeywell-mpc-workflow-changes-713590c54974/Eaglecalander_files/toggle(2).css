@@ -1,0 +1,65 @@
+.ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options {
+    display: block;
+    margin-bottom: 0;
+    border: 1px solid #1272b2;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: #1272b2;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+.ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options:before, .ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options:after {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    content: '.';
+}
+
+.ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options:after {
+    clear: both;
+}
+
+.ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options span {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 9px 8px 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #1272b2;
+    /*border: 1px solid #1272b2;*/
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fff;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+}
+
+
+/* Active option */
+
+.ps-rules.ruleconfigContainer#ruleconfigContainer .switch_options span.selected {       
+    color: #fff;
+    border-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #1272b2 !important;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.ps-rules.ruleconfigContainer#ruleconfigContainer .rulefield.field.right-inner-addon {
+    margin-top: 1.5px;
+}

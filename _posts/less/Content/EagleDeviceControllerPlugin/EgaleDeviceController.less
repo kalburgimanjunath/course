@@ -1,0 +1,101 @@
+﻿@color_1: #303030;
+@font_family_1: 'HoneywellSansWeb-Bold';
+
+/*version 1.0.1*/
+/*.btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}*/
+﻿.inputuppercase {
+    text-transform: uppercase;
+}
+#paneloperatorModal {
+    left: 0 !important;
+    .modal-dialog {
+        width: 700px;
+    }
+    .col-sm-6 {
+        &:first-child {
+            padding-left: 0 !important;
+            padding-right: 6px;
+        }
+    }
+    .col-md-6 {
+        padding-left: 0 !important;
+        padding-right: 6px;
+    }
+    .col-sm-4 {
+        padding-right: 0 !important;
+    }
+    .col-sm-5 {
+        padding-right: 0 !important;
+    }
+}
+.masterCode {
+    .ispicon_eye {
+        position: static;
+        &::before {
+            position: absolute;
+            width: 37px;
+            padding: 17px;
+            background-position: -7px -4px;
+            right: 15px;
+            top: 25px;
+            margin-left: 0 !important;
+        }
+        &:hover {
+            &::before {
+                background-position: -7px -36px;
+            }
+        }
+        &:active {
+            &::before {
+                background-position: -7px -68px;
+            }
+        }
+    }
+}
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+.panelsection {
+    input[type="checkbox"] {
+        &+span {
+            margin-left: 5px;
+            line-height: 25px;
+        }
+    }
+    .checkbox {
+        input[type="checkbox"] {
+            opacity: 1;
+            z-index: 0;
+        }
+        label {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+.areaSection {
+    .checkbox {
+        input[type="radio"] {
+            opacity: 1;
+            z-index: 0;
+        }
+    }
+}
+.panelType {
+    padding-left: 15px;
+    font-family: @font_family_1 !important;
+    color: @color_1;
+    input {
+        background: none !important;
+        border: 0 !important;
+        padding-left: 0;
+        font-family: @font_family_1 !important;
+        color: @color_1;
+    }
+}

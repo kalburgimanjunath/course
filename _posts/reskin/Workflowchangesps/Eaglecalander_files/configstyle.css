@@ -1,0 +1,1333 @@
+/* */
+
+#header-menu-box {
+    margin-left: 10px;
+    /*padding: 20px 20px 0 0;*/
+}
+
+#header-menu-box h3 {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0;
+    padding-left: 14px;
+    color: #6f7074;
+}
+
+#header-menu-box h5 {
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 24px;
+    color: #9c9ea4;
+}
+
+#header-menu-box>.pull-left {
+    padding-top: 7px;
+}
+
+.schedule-body p {
+    padding: 10px;
+}
+
+#header-menu-box .dropdown {
+    margin-right: 4px;
+}
+
+#header-menu-box .dropdown a {
+    color: #000 !important;
+}
+
+#header-menu-box .dropdown a:hover {
+    font-weight: bold !important;
+    color: #08a0bc !important;
+    background-color: #000 !important;
+}
+
+#header-menu-box ul li {
+    /*background-color: #000000 !important;*/
+    padding: 5% 0;
+}
+
+#header-menu-box ul .navsearchbtn {
+    background-color: #fff !important;
+}
+
+.header-menu-two {
+    font-size: 16px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 64px;
+    border-collapse: separate;
+    /* Required by IE 9 */
+    border-bottom: 1px solid #bababb;
+    background-color: #fff;
+    -webkit-box-shadow: -2px 0 4px 2px #bababb;
+    -moz-box-shadow: -2px 0 4px 2px #bababb;
+    box-shadow: -2px 0 4px 2px #bababb;
+    filter: progid: DXImageTransform.Microsoft.dropshadow( OffX=2px, OffY=0px, Color='#bababb', Positive='false');
+    /* IE 5.5 */
+}
+
+.header-menu-three {
+    font-size: 16px;
+    line-height: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: table-cell;
+    width: 100%;
+    min-width: 100%;
+    height: 46px;
+    min-height: 46px;
+    padding-left: 0;
+    border-bottom: 1px solid #bababb;
+    background-color: #f5f5f5;
+}
+
+.configtopmenu {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-left: 18px;
+}
+
+.header-menu-three .tabcontainer {
+    position: absolute;
+    top: 0;
+    left: 26%;
+    width: 100%;
+}
+
+
+/*.header-menu-three .navbar {
+    max-width: 26%;
+    width: 26%;
+    height: 100%;
+    margin: 0;
+}*/
+
+.header-menu-three .createdropdown {
+    width: 24px;
+    height: 22px;
+    padding: 12px;
+    padding-left: 4px !important;
+    background: transparent !important;
+}
+
+.header-menu-three .deletedropdown {
+    height: 22px;
+    padding: 12px;
+}
+
+.createBodyContainer.layoutrow {
+    top: 46px;
+    bottom: 0 !important;
+}
+
+.leftTree.layoutcol {
+    bottom: 0;
+    width: 26%;
+    border-right: 1px solid #bababb;
+    background-color: #fff;
+}
+
+.contentarea.layoutcol {
+    right: 0;
+    left: 26.1%;
+    background-color: #fff;
+}
+
+#map-content, #maps {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#configtab {
+    border: none;
+}
+
+
+/*#configtab li a {
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 14px;
+        border-radius: 0;
+    }*/
+
+#configtab li a:hover {
+    border: 1px solid transparent;
+    background-color: #f5f5f5;
+}
+
+.tabcontainer #configtab li {
+    padding: 0 15px;
+}
+
+.tabcontainer #configtab li a {
+    padding: 10px 0;
+    color: #606060;
+}
+
+
+/*.tabcontainer #configtab li.active,
+.tabcontainer #configtab li a:hover{
+    border-bottom: 2px solid #1792E5;
+}*/
+
+.tabcontainer #configtab li.active a {
+    color: #1792e5 !important;
+    border: none;
+}
+
+.tabcontainer #configtab li.active a, .tabcontainer #configtab li a:hover, .tabcontainer #configtab li a:focus {
+    padding: 10px 0;
+    color: #606060;
+    border-bottom: 2px solid #1792e5;
+    background-color: #f5f5f5;
+}
+
+.tabcontainer #configtab li:first-child.active a {
+    border-left: 0;
+}
+
+.myProfileWrapper .imageholder {
+    background: no-repeat url('../images/img_browse.png');
+}
+
+.settingsform {
+    display: none;
+}
+
+.settingsform_active {
+    display: block;
+}
+
+.leftpaneform {
+    bottom: 0;
+    display: none;
+    width: 26%;
+    border-right: 1px solid #bababb;
+    background-color: #fff;
+}
+
+.leftpaneform_active {
+    display: block;
+}
+
+.navbar .nav.navpaneform {
+    display: none;
+}
+
+.navbar .nav.navpaneform_active {
+    display: block;
+}
+
+
+/*#region Loading icon style */
+
+.modal-screenlock {
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-color: white;
+    -khtml-opacity: .6;
+    -moz-opacity: .6;
+    filter: alpha(opacity=60);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=60)';
+}
+
+.siteupload-text {
+    margin-left: 160px;
+    color: #707070;
+}
+
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        opacity: .2;
+        -khtml-opacity: .2;
+        -moz-opacity: .2;
+        filter: alpha(opacity=20);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        opacity: 1.0;
+        -khtml-opacity: 1.0;
+        -moz-opacity: 1.0;
+        filter: alpha(opacity=100);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: .2;
+        -khtml-opacity: .2;
+        -moz-opacity: .2;
+        filter: alpha(opacity=20);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        opacity: .2;
+        -khtml-opacity: .2;
+        -moz-opacity: .2;
+        filter: alpha(opacity=20);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        opacity: 1.0;
+        -khtml-opacity: 1.0;
+        -moz-opacity: 1.0;
+        filter: alpha(opacity=100);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: .2;
+        -khtml-opacity: .2;
+        -moz-opacity: .2;
+        filter: alpha(opacity=20);
+        -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=20)';
+    }
+}
+
+.modal-loadingicon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-collapse: separate;
+    /* Required by IE 9 */
+    -webkit-animation: spin .8s linear infinite;
+    -moz-animation: spin .8s linear infinite;
+    -ms-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+    border: 3px dotted #0798b5;
+    border-right-color: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: transparent;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    -webkit-box-shadow: 0 0 25px 2px #eee;
+    -moz-box-shadow: 0 0 25px 2px #eee;
+    box-shadow: 0 0 25px 2px #eee;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    filter: progid: DXImageTransform.Microsoft.dropshadow( OffX=25px, OffY=2px, Color='#eee', Positive='false');
+    /* IE 5.5 */
+}
+
+
+/*#endregion */
+
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 50px;
+}
+
+.file-input-wrapper>input[type='file'] {
+    font-size: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+}
+
+.file-input-wrapper>.btn-file-input {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+}
+
+.moreControls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 26%;
+    margin-left: 0 !important;
+    -webkit-animation: movefromtop 600ms linear;
+    -moz-animation: movefromtop 600ms linear;
+    -ms-animation: movefromtop 600ms linear;
+    animation: movefromtop 600ms linear;
+    border: 1px Solid #bababb;
+    /* position: relative !important; */
+    background-color: #f5f5f5;
+}
+
+.moreControls li {
+    line-height: 30px;
+    float: left;
+    min-width: 80px;
+    padding: 5%;
+    list-style-type: none;
+}
+
+.moreControls li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #454545;
+}
+
+.createbar {
+    margin-top: 3px;
+}
+
+.deletebar {
+    position: absolute;
+    right: 24px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #editSite select {
+        padding: 10px 4px 0 10px !important;
+    }
+}
+
+
+#accesspersona_nav_pane .btn-link {
+    font-size: 16px;
+    margin: 0;
+    padding-top: 10px;
+    color: #777;
+}
+
+#accesspersona_nav_pane .btn-link:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.groupModalwidthfix {
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.deviceModalwidthfix {
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*Package Selection*/
+
+#packageSelect {
+    padding: 22px;
+}
+
+#packageSelect .pkgSelectionHeading {
+    font-family: 'Open Sans Semibold' !important;
+    font-size: 15px;
+    display: block;
+    clear: both;
+    text-transform: uppercase;
+    color: #3b3b3d;
+}
+
+#packageSelect .pkgSelectionSubHeading {
+    font-size: 15px;
+    display: block;
+    padding-top: 5px;
+    color: #707070;
+}
+
+#packageSelect .pkgSelectionSubHeading .boldFontStyle {
+    font-family: 'Open Sans Semibold' !important;
+}
+
+#packageSelect .retentionPeriod {
+    position: absolute;
+    top: 22px;
+    left: 472px;
+}
+
+#packageSelect .retentionPeriod .pkgSelectionHeading {
+    padding-bottom: 8px;
+    text-transform: none;
+}
+
+.planSelection {
+    margin: 0;
+    padding: 31px 0 24px 0;
+}
+
+.planSelection li {
+    float: left;
+    overflow: hidden;
+    width: 252px;
+    list-style-type: none;
+}
+
+.planSelection .basicPlan {
+    margin-right: 24px;
+    margin-bottom: 50px;
+    padding-bottom: 24px;
+    border: 1px solid #bababa;
+    border-radius: 4px;
+}
+
+.planSelection ul {
+    margin: 0;
+}
+
+.planSelection .pkgSelectedIcon {
+    position: relative;
+    display: inline-block;
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-top: 11px;
+    margin-right: 11px;
+    background-image: url('../images/sprite_icons.png');
+    background-position: -370px -10px;
+}
+
+.planSelection .basicPlan .PlanHeading {
+    margin-bottom: 4px;
+    border-bottom: 1px solid #9d9d9d;
+    background-color: #f5f5f5;
+}
+
+.planSelection .basicPlan .PlanHeading .PlanTopHeading {
+    font-size: 18px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    color: #3b3b3d;
+}
+
+.planSelection .basicPlan .PlanHeading .PlanSecondHeading {
+    display: block;
+    padding-bottom: 12px;
+    padding-left: 20px;
+}
+
+.planSelection .basicPlan .PlanHeading .PlanSecondHeading .dollarStyle {
+    font-family: 'Open Sans Semibold' !important;
+    font-size: 36px;
+    color: #3bad49;
+}
+
+.planSelection .doorCameraCost {
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 22px;
+}
+
+.planSelection .proPlan .doorCameraCost, .planSelection .premiumPlan .doorCameraCost {
+    color: #fff;
+}
+
+.planContent {
+    padding: 2px 6px 6px 24px;
+}
+
+.planContent .tickIcon {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/sprite_icons.png');
+    background-position: -70px -520px;
+}
+
+.planContent .crossIcon {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/sprite_icons.png');
+    background-position: -100px -520px;
+}
+
+.planContent .disabledPlanTxt {
+    font-size: 15px;
+    position: relative;
+    padding-left: 7px;
+    color: #9d9d9d;
+}
+
+.planContent .planTxt {
+    /*padding-left: 7px;*/
+    font-size: 15px;
+    position: relative;
+    color: #707070;
+}
+
+.planContent .planTxt a:hover {
+    text-decoration: none;
+    color: #0889c4;
+}
+
+.planContent .StdFeatureLink {
+    cursor: pointer;
+    color: #0889c4;
+}
+
+.planContent .planTxt .boldFontStyle {
+    font-family: 'Open Sans Semibold' !important;
+    padding-right: 3px;
+}
+
+.planContent .planDivider {
+    position: relative;
+    top: 6px;
+    display: block;
+    width: 199px;
+    margin-left: 19px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.planContent:last-child .planDivider {
+    display: none;
+}
+
+.planContent:last-child {
+    padding-bottom: 19px;
+}
+
+#currentPackage .planContent:last-child {
+    padding-bottom: 0;
+}
+
+.planSelection button {
+    width: 81%;
+    margin-top: 15px;
+    margin-left: 23px;
+    vertical-align: middle;
+}
+
+.planSelection .proPlan {
+    margin-right: 24px;
+    padding-bottom: 24px;
+    border: 1px solid #bababa;
+    border-radius: 4px;
+}
+
+.planSelection .proPlan .PlanHeading {
+    margin-bottom: 4px;
+    border-bottom: 1px solid #9d9d9d;
+    background-color: #0199c8;
+}
+
+.planSelection .proPlan .PlanHeading .PlanTopHeading {
+    font-size: 18px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    color: #3b3b3d;
+    color: #fff;
+}
+
+.planSelection .proPlan .PlanHeading .PlanSecondHeading {
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+.planSelection .proPlan .PlanHeading .PlanSecondHeading .dollarStyle {
+    font-family: 'Open Sans Semibold' !important;
+    font-size: 36px;
+}
+
+.planSelection .premiumPlan {
+    margin-right: 24px;
+    padding-bottom: 24px;
+    border: 1px solid #bababa;
+    border-radius: 4px;
+}
+
+.planSelection .premiumPlan .PlanHeading {
+    margin-bottom: 4px;
+    border-bottom: 1px solid #9d9d9d;
+    background-color: #3bad49;
+}
+
+.planSelection .premiumPlan .PlanHeading .PlanTopHeading {
+    font-size: 18px;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    color: #3b3b3d;
+    color: #fff;
+}
+
+.planSelection .premiumPlan .PlanHeading .PlanSecondHeading {
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+.planSelection .premiumPlan .PlanHeading .PlanSecondHeading .dollarStyle {
+    font-family: 'Open Sans Semibold' !important;
+    font-size: 36px;
+}
+
+.planSelection .disabledStyle {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: linear-gradient(to top, #d8d8d8, #d5d5d5) repeat scroll 0 0 transparent;
+}
+
+.planSelection .pkgSwitch .switch-toggle.switch-ios.switch-3 {
+    width: 161px;
+    margin-top: 6px;
+    margin-left: 32px;
+}
+
+.planSelection .activatedDateStyle {
+    font-size: 12px;
+    padding-left: 24px;
+    color: #bababa;
+}
+
+.planSelection .pendingDataStyle {
+    font-size: 12px;
+    padding-left: 24px;
+    cursor: pointer;
+    color: #0889c4;
+}
+
+.planSelection .pendingQusetionMark {
+    padding-left: 4px;
+    cursor: pointer;
+    color: #707070;
+}
+
+.planSelection .pendingQusetionMark:hover {
+    color: #0889c4;
+}
+
+
+/*Package Selection*/
+
+
+/*21 Standard Features*/
+
+.StdFeatures {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 400px;
+    margin: 0;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #bababa;
+}
+
+.StdFeatures .StdFeatureContent {
+    float: left;
+    overflow: hidden;
+    width: 98%;
+    padding: 2px 6px 6px 0;
+    list-style-type: none;
+}
+
+.StdFeatures .StdFeatureContent .tickIcon {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/sprite_icons.png');
+    background-position: -70px -520px;
+}
+
+.StdFeatures .StdFeatureContent .StdFeatureTxt {
+    font-size: 15px;
+    position: relative;
+    padding-left: 7px;
+    color: #707070;
+}
+
+.StdFeatures .StdFeatureContent .StdFeatureDivider {
+    position: relative;
+    top: 6px;
+    display: block;
+    width: 100%;
+    margin-left: 31px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.StdFeatures .StdFeatureContent:last-child .StdFeatureDivider {
+    display: none;
+}
+
+
+/*21 Standard Features*/
+
+.layout-slider {
+    clear: both;
+    width: 775px;
+}
+
+.retentionDaysText {
+    display: block;
+    clear: both;
+    padding: 20px 0 20px 0;
+    color: #707070;
+}
+
+#SliderSingle {
+    -webkit-appearance: slider-horizontal;
+}
+
+
+/*Package More Option*/
+
+.packageMoreOption {
+    position: absolute;
+    display: inline;
+}
+
+.packageMoreOption .packageMoreIcon {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url('../images/sprite_icons.png');
+    background-position: -190px -286px;
+}
+
+.packageMoreOption .packageMoreIcon:hover {
+    background-position: -220px -286px;
+}
+
+.packageMoreOption .packageMoreDropdown {
+    font-size: 100%;
+    /* min-width: 249px; */
+    position: absolute;
+    right: 0;
+    left: -134px;
+    width: 285px;
+    margin-top: -165px;
+    padding: 0;
+    /* border: 4px solid #282820; */
+    border-radius: 4px;
+    box-shadow: 0 5px 10px #999;
+}
+
+.packageMoreDropdown:before {
+    position: absolute;
+    top: 136px;
+    right: 100%;
+    left: 52%;
+    display: block;
+    width: 0;
+    margin-left: -11px;
+    content: '';
+    border-width: 12px;
+    border-style: solid;
+    border-top: 9px solid #707070;
+    border-right: 9px solid transparent;
+    border-bottom: none;
+    border-left: 9px solid transparent;
+    /* border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #282820; */
+    border-image: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+}
+
+.packageMoreDropdown::after {
+    position: absolute;
+    top: 136px;
+    left: 139px;
+    display: inline-block;
+    content: '';
+    border-top: 7px solid #fff;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+
+.packageMoreOption .pkgheader {
+    font-size: 15px;
+    color: #d3d3d3;
+}
+
+.packageMoreOption .pkgContent {
+    font-size: 14px;
+    width: 229px;
+    padding: 18px 22px;
+    color: #454545;
+}
+
+.packageMoreOption .pkgHelpContent {
+    font-size: 12px;
+    padding: 12px 20px 20px 20px;
+    color: #707070;
+}
+
+.packageMoreOption .pkgCancelOption {
+    font-size: 14px;
+    position: absolute;
+    right: 19px;
+    cursor: pointer;
+    color: #0889c4;
+}
+
+.packageMoreOption .basicTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #707070;
+}
+
+.packageMoreOption .proTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #0199c8;
+}
+
+.packageMoreOption .premiumTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #3bad49;
+}
+
+
+/*Package More Option*/
+
+
+/*Package Selection Summary Table Listing*/
+
+.packageSummary .basicTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #707070;
+}
+
+.packageSummary .proTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #0199c8;
+}
+
+.packageSummary .premiumTxtStyle {
+    font-family: Open Sans Semibold !important;
+    text-transform: uppercase;
+    color: #3bad49;
+}
+
+.packageSelectionTable {
+    position: absolute;
+    top: 0;
+    display: table;
+    overflow-y: scroll;
+    width: 94%;
+    min-width: 900px;
+    height: 100%;
+    color: #707070;
+}
+
+.packageSelectionTable>thead tr {
+    float: left;
+    width: 100%;
+    /*-webkit-box-shadow: -2px 0 2px 2px #000;
+-moz-box-shadow: -2px 0 2px 2px #000;
+box-shadow: -2px 0 2px 0 #000;*/
+    border-bottom: 1px solid #bababa;
+}
+
+.packageSelectionTable>thead th {
+    font-size: 14px;
+    font-weight: 400;
+    vertical-align: middle;
+    border-right: 1px solid #d3d3d3;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.packageSelectionTable>thead th:first-child {
+    border-left: none;
+}
+
+.packageSelectionTable>thead th:last-child {
+    border-right: none;
+}
+
+.packageSelectionTable>tbody {
+    position: absolute;
+    top: 68px;
+    bottom: 12px;
+    overflow: auto;
+    width: 100%;
+    height: auto;
+}
+
+@-moz-document url-prefix() {
+    .packageSelectionTable>tbody {
+        top: 68px;
+    }
+    .createbar .searchHolder input:hover {
+        margin-top: 11px !important;
+        margin-left: 6px !important;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .packageSelectionTable>tbody {
+        top: 68px;
+    }
+}
+
+.packageSelectionTable tbody tr {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 0 12px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.packageSelectionTable>tbody tr td {
+    font-size: 14px;
+    padding-top: 1px;
+    padding-bottom: 0;
+    vertical-align: middle;
+    vertical-align: middle\9;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    border: none;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+
+.packageSelectionTable td:nth-child(1), .packageSelectionTable th:nth-child(1), .packageSelectionTable td:first-child td {
+    width: 28%;
+}
+
+.packageSelectionTable td:nth-child(2), .packageSelectionTable th:nth-child(2) {
+    width: 10%;
+}
+
+.packageSelectionTable td:nth-child(3), .packageSelectionTable th:nth-child(3) {
+    width: 7%;
+}
+
+.packageSelectionTable td:nth-child(4), .packageSelectionTable th:nth-child(4) {
+    width: 7%;
+}
+
+.packageSelectionTable td:nth-child(5), .packageSelectionTable th:nth-child(5) {
+    width: 7%;
+}
+
+.packageSelectionTable td:nth-child(6), .packageSelectionTable th:nth-child(6) {
+    width: 13%;
+}
+
+.packageSelectionTable td:nth-child(7), .packageSelectionTable th:nth-child(7) {
+    width: 7%;
+}
+
+.packageSelectionTable th, .packageSelectionTable td {
+    padding: 11px 10px;
+}
+
+.packageSelectionTable tbody td, .packageSelectionTable thead th
+/*, .left*/
+
+{
+    /*float: left;*/
+    display: inline-block;
+    height: 40px;
+    word-wrap: break-word;
+}
+
+.packageSelectionTable span {
+    display: block;
+}
+
+.packageSelectionTable .breadcrumbStyle {
+    font-size: 12px;
+    color: #bababa;
+}
+
+
+/*Package Selection Summary Table Listing*/
+
+
+/*Create with map assist*/
+
+#customerModal #customermodal_form .customermodal_formWidth {
+    width: 613px;
+}
+
+#siteModal #sitemodal_form .sitemodal_formWidth {
+    width: 613px;
+}
+
+.mapAssistContainer {
+    padding-left: 22px;
+}
+
+.addresscontainer {
+    display: block;
+    overflow: auto;
+    width: 273px;
+    height: 205px;
+    margin-top: 12px;
+}
+
+.mapAddressStyle {
+    font-size: 12px;
+    display: block;
+    padding: 7px;
+    cursor: pointer;
+    color: #707070;
+    border-bottom: 1px solid #bababa;
+}
+
+.mapAssistStyle {
+    position: relative;
+    position: absolute !important;
+    right: 10px;
+    left: 22px;
+    overflow: hidden;
+    width: 586px;
+    height: 275px;
+    padding-left: 22px;
+}
+
+.mapCloseIcon {
+    position: absolute;
+    z-index: 2;
+    left: 607px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+    background: url('../images/sprite_icons.png') no-repeat -250px -40px;
+}
+
+.mapDoneIcon {
+    position: absolute;
+    z-index: 2;
+    left: 583px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+    background: url('../images/sprite_icons.png') no-repeat -250px -70px;
+}
+
+
+/*Create with map assist*/
+
+
+/*Upgrade Package Popover Styles*/
+
+#upgradePackageDialog {
+    left: 60%;
+    width: auto;
+}
+
+#upgradePackageDialog .upgradePackageText {
+    font-size: 15px;
+    padding-bottom: 6px;
+}
+
+#upgradePackageDialog .upgradePackageButton {
+    margin-bottom: 41px;
+    padding-top: 11px;
+}
+
+#upgradePackageDialog .modal-footer {
+    border-top: 1px solid #bababa;
+}
+
+#upgradePackageDialog .modal-footer .secondary-button {
+    margin-top: 14px;
+}
+
+
+/*Upgrade Package Popover Styles*/
+
+
+/*Downgrade Package Popover Styles*/
+
+#downgradePackageDialog {
+    left: 57%;
+    width: auto;
+}
+
+#downgradePackageDialog .downgradePackageText {
+    font-size: 15px;
+    padding-bottom: 6px;
+}
+
+#downgradePackageDialog .downgradeStaticText {
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 27px;
+    color: #e33e38;
+}
+
+#downgradePackageDialog .modal-footer {
+    border-top: 1px solid #bababa;
+}
+
+#downgradePackageDialog .modal-footer button {
+    margin-top: 14px;
+}
+
+
+/*Downgrade Package Popover Styles*/
+
+.mpcmodel .modal-footer button.account-done.primary-button {
+    display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .deletebar {
+        position: absolute;
+        right: 41px;
+    }
+    #customerModal {
+        top: 20%;
+        left: 45%;
+    }
+    #siteModal {
+        top: 20%;
+        left: 45%;
+    }
+    #operatorModal {
+        top: 15%;
+        left: 40%;
+    }
+}
+
+@-moz-document url-prefix() {
+    input[type=search]:hover {
+        margin-top: 11px;
+        margin-left: 6px;
+        background: url(../images/icon_searchHover.png) no-repeat;
+        background-color: #f5f5f5;
+        background-position-x: 1px;
+        background-position-y: 8px;
+    }
+    .header-menu-three .searchbox:hover {
+        margin-top: 11px !important;
+        margin-left: 6px !important;
+    }
+    .header-menu-three .searchbox:focus {
+        margin-top: 7px !important;
+        margin-left: 5px !important;
+        background: #fff !important;
+    }
+}
+
+#editSite #site_RegionalTimeZone {
+    width: 302px!important;
+    padding-right: 30px;
+}
+
+
+/*Remove ProPlan*/
+
+.planSelection .proPlan .planContent {
+    display: none;
+}
+
+.planSelection .proPlan .primary-button {
+    display: none;
+}
+
+.planSelection .proPlan .PlanHeading .PlanSecondHeading {
+    display: none;
+}
+
+.planSelection .proPlan {
+    height: 103px;
+}
+
+.planSelection .proPlan .PlanHeading {
+    height: 130px;
+}
+
+.planSelection .proPlan .doorCameraCost {
+    padding-top: 24px;
+    padding-left: 0;
+    text-align: center;
+}
+
+
+/*Remove ProPlan*/

@@ -1,0 +1,803 @@
+﻿<!-- version 1.0.0 -->
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/ispaccount.css"> -->
+     <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link rel="stylesheet" type="text/css" href="css/controllers1.css">
+    <link rel="stylesheet" type="text/css" href="css/EgaleDeviceController.css">
+    <link rel="stylesheet" type="text/css" href="css/floorPlan.css">
+    <!-- jQuery library -->
+    <script src="Scripts/lib/jquery.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="Scripts/jquery.panzoom.js"></script>
+
+    <script src="Scripts/jquery.mousewheel.js"></script>
+
+    
+    <script>
+        (function ($) {
+            var $parent = $('#floor_plan');
+
+            if($parent.length) {
+
+                // set-up panzoom
+                var $panzoom = $parent.find('.panzoom').panzoom({
+                    increment       : 0.5,
+                    minScale        : 1,
+                    maxScale        : 8,
+                    startTransform  : 'scale(4.0)',
+                    $zoomIn         : $parent.find('A[href=#zoom_in]'),
+                    $zoomOut        : $parent.find('A[href=#zoom_out]'),
+                    contain         : 'invert'
+                }).panzoom('zoom', true);
+
+                // handle scrolling in and out
+                $panzoom.parent().on('mousewheel.focal', function (e) {
+
+                    e.preventDefault();
+
+                    var delta = e.delta || e.originalEvent.wheelDelta;
+                    var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+
+                    $panzoom.panzoom('zoom', zoomOut, {
+                        increment   : 0.1,
+                        animate     : false,
+                        focal       : e
+                    });
+                });
+            }
+        })(jQuery);
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+         $( document ).ready(function() {
+             $(".ispicon_edit").click(function(){
+                $(".scheduleOverview").toggleClass("nonEditmode");
+                $('.btn-footer').css("display","block");
+                $(".floorPlanView .cardlistview.nonEditmode .panel-group .radio").css('display','block');
+
+            });
+             $('[data-toggle="tooltip"]').tooltip(); 
+          
+
+          
+
+            $('.doors').click(function(){
+                 $('fpIconWrapper').hide();
+                 $(".dropiconplaceholder").append('<span id="drag1" data-placement="top" data-toggle="tooltip" title="Hooray!" class="ispicon ispicon_fpBgIcon" draggable="true" draggable="true" ondragstart="drag(event)" ><span class="ispicon ispicon_fpDoor"></span></span>');
+                 $('.fpImgOverlay').hide();
+             }); 
+            $('.cameras').click(function(){
+                 $('fpIconWrapper').hide();
+                 $(".dropiconplaceholder").append('<span id="drag1" data-placement="top" data-toggle="tooltip" title="Hooray!" class="ispicon ispicon_fpBgIcon" draggable="true" draggable="true" ondragstart="drag(event)" data-placement="top"><span class="ispicon ispicon_fpVideo"></span></span>');
+                 $('.fpImgOverlay').hide();
+             }); 
+            
+
+        });
+
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</head>
+<body>
+
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        Eagle
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    @*<ul data-bind="foreach: $data.pages">
+                        <li class="card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <div>
+                                <header class="count">
+                                    <span data-bind="css: PageIcon"></span>
+                                </header>
+                                <p data-bind="text: $data.PageName"></p>
+                            </div>
+                        </li>
+                    </ul>*@
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <img src="~/Content/images/Honeywell-logo-Wht-sm.png" width="120" />
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                @*
+                                <li class="dropdown-header">Dropdown heading</li>*@
+                                <li><a href="#" onclick="onMenuItemSelect('AddSite')">Add New Account</a></li>
+                                <li><a href="#" onclick="onMenuItemSelect('SiteOverview')">Account Overview</a></li>
+                            </ul>
+                            @*$('#menu-close').click();*@
+                        </li>
+                        <li>
+                            <a href="#about" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick=$("#menu-close").click();>
+                                <span class="ispicon ispicon_utility"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span>
+                            <button class="btn btn-default" type="submit"><i class="ispicon ispicon_search"></i></button>
+                        </span>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </li>
+        </ul>
+
+
+    </div>
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>&lt; Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                        <span class="ispicon ispicon_plus pull-right">
+                    </span></div>
+                    <ul class="list-group leftmenu">
+                        <li><a href="customeroverview.html" class="list-group-item "><span class="ispicon ispicon_sites"></span><span>Site Overview</span><span class="pull-right">0</span></a></li>
+                         <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_floorPlan"></span><span>Floor Map</span></a></li>
+                        <hr class="dividerLine">
+                        <li><a href="ControllerList.html" class="list-group-item "><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="areas.html" class="list-group-item"><span class="ispicon ispicon_area"></span><span>Areas</span></a></li>
+                        <hr class="dividerLine">
+                                <li><a href="people.html" class="list-group-item active"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule &amp; holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules &amp; Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <hr class="dividerLine">
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+        <div class="floorPlan-root">
+            <div id="floorPlan-view" class="floorPlanView">
+                <div class="floorPlanLanding">
+                    <span class="ispicon ispicon_collapse inverse"></span>
+                    <h2 class="isppagetitle">
+                        Floor Plan
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addfloorplan" title="Add floor Plan"></a>
+                            <a class="ispicon ispicon_edit" title="Edit floor Plan"></a>
+                        </span>
+                    </h2>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs nonEditmode">
+                   <!--  <div class="input-group selectPanel">
+                        <select class="form-control">
+                            <option> Eagle P300 Pro</option>
+                            <option> Eagle P300 Pro</option>
+                            <option> Eagle P300 Pro</option>
+                            <option> Eagle P300 Pro</option>
+                        </select>
+                    </div> -->
+
+
+                    <div class="col-md-12 ispheadersearch">
+
+                        <form>
+                            <div class="row pull-left">
+                               
+                                <div class="input-group">
+                                    <div class="input-group-btn search-panel">
+                                        <button type="button" class="btn btn-default dropdown-toggle padding-correction-searchbox" data-toggle="dropdown" aria-expanded="false">
+                                            <span id="search_concept">
+                                                <span class="ispicon ispicon_search"></span>
+                                            </span>
+                                        </button>
+                                        <!--    <ul class="dropdown-menu ispmenu" role="menu">
+                                          <li><a href="#contains">Contains</a></li>
+                                          <li><a href="#its_equal">It's equal</a></li>
+                                          <li><a href="#greather_than">Greather than &gt;</a></li>
+                                          <li><a href="#less_than">Less than &lt; </a></li>
+                                          <li><a href="#all">Anything</a></li>
+                                        </ul> -->
+                                    </div>
+                                    <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                    <span class="input-group-btn pad-r10 open">
+                                        <span class="searchbtn dropdown-toggle-left" type="button" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_filter"></span></span>
+                                        <ul class="dropdown-menu ispmenu dropdown-menu-right mar-r20 mar-t0 minus-m10" role="menu">
+                                            <li>
+                                                <a href="#">Not assigned</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">All</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav nav-tabs clear" role="tablist">
+                        <li role="presentation" class="active"><a href="#Devices" role="tab" data-toggle="tab" aria-expanded="true">Devices</a></li>
+                        <li role="presentation" class=""><a href="#Areas" role="tab" data-toggle="tab" aria-expanded="false">Areas/Zones</a></li>
+                        <li role="presentation" class=""><a href="#Outputs" role="tab" data-toggle="tab" aria-expanded="true">Outputs</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Devices" class="tab-pane active">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                        <h4 class="panel-title"> <span class="ispicon ispicon_accordian_droparrowOpen pull-left"></span> <span data-toggle="collapse" data-target="#collapse1" href="#collapse1" class="">4 Doors</span> </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-group scroll-x scroll-y doors">
+
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_door pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10 nopadding pad-l10">
+                                                        <span class="name">Main Entrance</span> <br>
+                                                        <span class="status">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_door pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">East Entrance</span> <br>
+                                                        <span class="status">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_door pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">East Entrance 1</span> <br>
+                                                        <span class="status">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_door pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">West Entrance</span> <br>
+                                                        <span class="status">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                        <h4 class="panel-title"> <span class="ispicon ispicon_accordian_droparrowOpen pull-left"></span> <span data-toggle="collapse" data-target="#collapse2" href="#collapse2">4 Cameras</span> </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-group scroll-x scroll-y cameras">
+
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_video pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Common Office</span> <br>
+                                                        <span class="status">Connected</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_video pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">1st Floor Hallway</span> <br>
+                                                        <span class="status">Connected</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_video pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Common Office 1</span> <br>
+                                                        <span class="status">Connected</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_video pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">2nd Floor Hallway</span> <br>
+                                                        <span class="status">Connected</span>
+                                                    </div>
+                                                    <div class="radio pull-right  cicle">
+                                                        <input type="checkbox" />
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Areas" class="tab-pane ">
+                            <div class="panel-group">
+                                <div class="panel panel-default areas">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"> <span>4 Areas</span> </h4>
+                                    </div>
+                                    <div id="collapse1">
+                                        <div class="panel-body">
+                                            <ul class="list-group scroll-x scroll-y areas">
+
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_area pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Fire Escape | <span class="name">6 Zones</span></span> <br>
+                                                        <span class="status">On Second Floor East</span>
+                                                    </div>
+                                                    <div class="ispicon ispicon_arrow right pull-right blockinline"></div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+
+                                                    
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_area pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Area 3</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                    <div class="ispicon ispicon_arrow right pull-right blockinline"></div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_area pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Area 4</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                     <div class="ispicon ispicon_arrow right pull-right blockinline"></div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_area pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Area 5</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                     <div class="ispicon ispicon_arrow right pull-right blockinline"></div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default zones">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"> <span class="link">Areas</span><span> > 6 Zones</span> </h4>
+                                    </div>
+                                    <div id="collapse1">
+                                        <div class="panel-body">
+                                            <ul class="list-group scroll-x scroll-y">
+
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_sensorDefault pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10 pad-t10">
+                                                        <span class="name">1st Floor FE Zone</span> <br>
+                                                        <!-- <span class="status">On Second Floor East</span> -->
+                                                    </div>
+                                                   
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+
+                                                    
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item active">
+                                                    <span class="ispicon ispicon_sensorDefault pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10 pad-t10">
+                                                        <span class="name">1st Floor FE Zone</span> <br>
+                                                        <!-- <span class="status notAssigned">Not Assigned</span> -->
+                                                    </div>
+                                                   
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_sensorDefault pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10 pad-t10">
+                                                        <span class="name">1st Floor FE Zone</span> <br>
+                                                        <!-- <span class="status notAssigned">Not Assigned</span> -->
+                                                    </div>
+                                                    
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="ispicon ispicon_sensorDefault pull-left"></span>
+                                                    <div class="col-md-9 nopadding pad-l10 pad-t10">
+                                                        <span class="name">1st Floor FE Zone</span> <br>
+                                                        <!-- <span class="status notAssigned">Not Assigned</span> -->
+                                                    </div>
+                                                    
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Outputs" class="tab-pane">
+                            <div class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"> <span>16 Outputs</span> (Assigned - <span>0</span>/ <span>10</span>)  </h4>
+                                    </div>
+                                    <div>
+                                        <div class="panel-body">
+                                            <ul class="list-group scroll-x scroll-y">
+
+                                                <li class="list-group-item">
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Output 1</span> <br>
+                                                        <span class="status">On Second Floor East</span>
+                                                    </div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Output 2</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Output 3</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="col-md-9 nopadding pad-l10">
+                                                        <span class="name">Output 4</span> <br>
+                                                        <span class="status notAssigned">Not Assigned</span>
+                                                    </div>
+                                                    <div class="radio pull-right cicle">
+                                                        <input type="checkbox">
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview scheduleOverview isptabs pull-left nonEditmode">
+                    <div class="input-group selectPanel pad-t10 pad-l20">
+                        <!-- <select class="form-control">
+                            <option> First floor East</option>
+                            <option>Second Floor West</option>
+                            <option> Third floor East</option>
+                            <option> Second Floor East</option>
+                        </select> -->
+                        First Floor East
+                    </div>
+                    <div class="floorImgWrapper">
+                        <div class="floorPlanImg">
+                            <div class="fpImgDetails">
+                                <img class="fpImgDetails" ondrop="drop(event)" ondragover="allowDrop(event)" data-bind="http://www.mike-cartwright.com/wp-content/uploads/Bishop-floorplan.jpg" src="http://www.mike-cartwright.com/wp-content/uploads/Bishop-floorplan.jpg">
+                                <div id="floor_plan" class="hidden-xs hidden-sm hide">
+
+                                    <div class="zoom-control">
+                                        <a href="#zoom_in"><i class="fa fa-fw fa-plus-square-o">+</i></a>
+                                        <a href="#zoom_out"><i class="fa fa-fw fa-minus-square-o">-</i></a>
+                                    </div>
+                                    <div class="close">
+                                        <a href="#close_floor_plan"><i class="fa fa-fw fa-times"></i></a>
+                                    </div>
+
+                                    <div class="panzoom">
+                                        <img src="http://blog.millermedeiros.com/wp-content/uploads/2010/04/awesome_tiger.svg" alt="Floor Plan" style="width: 100%; height: auto; display: block" />
+                                    </div>
+                                </div>
+                                <div class="fpImgOverlay"></div>
+                                <div class="fpIconWrapper">
+                                    <span class="ispicon ispicon_fpBgIcon">
+                                        <span class="circle"></span>
+                                        <span class="ispicon ispicon_fpVideo"></span>
+                                        <div class="helpText">Drop pin anywhere for more accurate mapping</div>
+                                        <div class="dropiconplaceholder"></div>
+                                    </span>
+                                </div>
+
+                                <div class="fpZoomWrapper hide">
+                                    <div class="fpReset">
+                                        <div class="ispicon ispicon_maprefresh" data-bind="click: $data.resetMap"></div>
+                                    </div>
+                                    <div class="fpZoom">
+                                        <div class="ispicon ispicon_accPlus" data-bind="click: $data.zoomIn"></div>
+                                        <div class="ispicon ispicon_accMinus" data-bind="click: $data.zoomOut"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="zoomControls">
+                                 <div class="fpReset hide">
+                                        <div class="ispicon ispicon_maprefresh" data-bind="click: $data.resetMap"></div>
+                                    </div>
+                                <div class="ispicon ispicon_simpleplus pull-left"></div>
+                                <div class="ispicon ispicon ispicon_accMinus pull-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-footer">
+                    <div class="pull-left" role="group" aria-label="group button">
+                        <button type="button" class="btn btn-default">Clear All</button>
+                    </div>
+                    <div class="pull-right" role="group" aria-label="group button">
+                        <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- this is for reference only  -->
+        <section id="alertify" class="alertify alertify-confirm hide">
+        <div class="alertify-dialog">
+
+        <a id="alertify-resetFocusBack" class="alertify-resetFocus" href="#">Reset Focus</a>
+        <article class="alertify-inner">
+        <span class="ispicon ispicon_troubleCritical pull-left"></span>
+        <span class="s1 pad-l10">Clear Floor Plan</span>
+        <p class="alertify-message pad-l30">Are you sure you want to clear all the
+device mapping from First Floor
+East?</p>
+        <nav class="alertify-buttons">
+        <button class="alertify-button alertify-button-ok" id="alertify-ok">Yes</button>
+        <button class="alertify-button alertify-button-cancel" id="alertify-cancel">No</button>
+        </nav></article><a id="alertify-resetFocus" class="alertify-resetFocus" href="#">Reset Focus</a></div>
+
+        </section>
+
+        <section id="alertify" class="alertify alertify-confirm hide">
+        <div class="alertify-dialog">
+
+        <a id="alertify-resetFocusBack" class="alertify-resetFocus" href="#">Reset Focus</a>
+        <article class="alertify-inner">
+        <span class="ispicon ispicon_troubleCritical pull-left"></span>
+        <span class="s1 pad-l10">Delete Floor Plan</span>
+        <p class="alertify-message pad-l30">Are you sure you want to delete
+“First Floor East” and remove any
+associated elements on it?</p>
+        <nav class="alertify-buttons">
+        <button class="alertify-button alertify-button-ok" id="alertify-ok">Yes</button>
+        <button class="alertify-button alertify-button-cancel" id="alertify-cancel">No</button>
+        </nav></article><a id="alertify-resetFocus" class="alertify-resetFocus" href="#">Reset Focus</a></div>
+
+        </section>
+
+         <!-- this is for reference only ends -->
+
+        <!-- ADD FLOOR PLAN MODAL -->
+        <div id="addfloorplan" class="modal fade ispmodal addfloorplan" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Add Floor Plan</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group col-sm-12 required paddingRnone">
+                            <label class="control-label">Floor Plan Name</label>
+                            <input class="inputuppercase form-control" type="text">
+                        </div>
+                        <div class="form-group col-sm-12 required paddingRnone">
+                            <label class="control-label">File Name</label>
+                            <input type="text" disabled="disabled" class="form-control fpPath" />
+                            <label class="fpUpload form-control">
+                                <input class="inputuppercase form-control" type="file">
+                                <span class="ispicon ispicon_upload pull-right"></span>
+                            </label>
+                        </div>
+                        <div class="form-group col-sm-12 hide">
+                            <label class="control-label">Preview</label>
+                            <div class="previewImage"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer clear">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ADD FLOOR PLAN MODAL -->
+</body>
+</html>

@@ -1,0 +1,412 @@
+﻿@color_1: #1792e5;
+@color_2: #303030;
+@color_3: #606060;
+@color_4: #202020;
+@font_family_1: 'HoneywellSansWeb-Medium';
+@font_family_2: 'HoneywellSansWeb-Bold';
+@background_color_1: rgba(185,221,243,.3);
+@border_color_1: #e7e7e7;
+@border_color_2: rgba(136, 183, 213, 0);
+@border_color_3: rgba(194, 225, 245, 0);
+@border_bottom_color_1: #d0d0d0;
+
+/*version 1.0.1*/
+
+.accountcontainer {
+    .leftlist {
+        padding-left: 15;
+        margin-left: -15px;
+        padding-right: 0;
+        h6 {
+            font-family: @font_family_1 !important;
+            font-size: 14px;
+            color: @color_1;
+            padding: 4px 4px 4px 10px;
+        }
+        .panel-title {
+            font-family: @font_family_2 !important;
+            font-size: 22px;
+            color: @color_2;
+            text-transform: capitalize;
+        }
+        .panel {
+            ul {
+                li {
+                    a.list-group-item {
+                        border-radius: 0;
+                        font-family: @font_family_1 !important;
+                        color: @color_3;
+                        font-size: 14px;
+                        padding: 12px 24px;
+                        &:hover {
+                            background-color: @background_color_1;
+                            color: @color_2;
+                        }
+                        &:focus {
+                            background-color: @background_color_1;
+                            color: @color_2;
+                        }
+                    }
+                }
+                li.list-group-item.active {
+                    background-color: @background_color_1;
+                    color: @color_2;
+                    &:hover {
+                        background-color: @background_color_1;
+                        color: @color_2;
+                    }
+                    &:focus {
+                        background-color: @background_color_1;
+                        color: @color_2;
+                        background: #e1eff9;
+                        color: @color_2;
+                        font-size: 14px;
+                        font-family: @font_family_2 !important;
+                    }
+                }
+                .list-group-item.active {
+                    background: #e1eff9;
+                    color: @color_2;
+                    font-size: 14px;
+                    font-family: @font_family_2 !important;
+                    .menuname {
+                        color: @color_2;
+                        font-size: 14px;
+                        font-family: @font_family_2 !important;
+                    }
+                }
+                .list-group-item {
+                    .ispicon.ispicon_downarrow {
+                        margin-right: 0px;
+                    }
+                }
+            }
+            ul.dropdown-menu {
+                position: relative;
+                background: initial;
+                box-shadow: none;
+                border: 0;
+                width: 100%;
+                padding: 0;
+                li {
+                    a {
+                        padding-left: 24px;
+                    }
+                }
+            }
+            ul.list-group-item.active {
+                &:hover {
+                    background: #e1eff9;
+                    color: @color_2;
+                    font-size: 14px;
+                    font-family: @font_family_2 !important;
+                }
+            }
+        }
+        .panel-heading {
+            &+.list-group {
+                li {
+                    .ispicon {
+                        margin-right: 8px;
+                    }
+                }
+            }
+            background: #fff;
+        }
+    }
+    .overview {
+        padding-left: 0;
+        padding-right: 0;
+        .isppagetitle {
+            padding-left: 24px;
+            font-family: @font_family_2 !important;
+            color: @color_4;
+        }
+        h3 {
+            padding-left: 0;
+            font-family: @font_family_2 !important;
+            color: @color_4;
+        }
+        .content {
+            padding: 0 10px;
+            background: #f4f4f4;
+            padding-right: 24px;
+            bottom: 0;
+        }
+    }
+    .content {
+        .panel-info.white {
+            >.panel-heading {
+                background: #fff;
+                border: 0;
+            }
+            >.panel-body {
+                -ms-word-wrap: break-word;
+                word-wrap: break-word;
+                padding-top: 0;
+            }
+            border-color: @border_color_1;
+            border: 1px solid #e7e7e7;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 0;
+        }
+        .panel-info.white.accountdetails {
+            >.panel-body {
+                padding: 0px;
+            }
+        }
+    }
+}
+.testingstyle {
+    padding-left: 0px;
+    margin-left: -15px !important;
+    margin-right: 15px;
+}
+.accountcontainer.customer {
+    .overview {
+        .content {
+            background: #f4f4f4 !important;
+            box-shadow: 0 -1px 0 0 #d6d6d6 !important;
+            position: absolute;
+            overflow: auto;
+            top: 70px;
+            padding-top: 10px;
+        }
+    }
+}
+.accountpopup.ispmodal {
+    .modal-content {
+        border: 0px solid #d0d0d0;
+        box-shadow: 0 0 0px #000;
+        -moz-box-shadow: 0 0 0px #000;
+        -webkit-box-shadow: 0 0 0px #000;
+        -o-box-shadow: 0 0 0px #000;
+        .modal-body {
+            .addnewaccount {
+                .row {
+                    margin-right: 0px !important;
+                }
+            }
+        }
+        .col-md-6 {
+            &:first-child {
+                padding-right: 6px;
+            }
+        }
+    }
+}
+.usermanagement-root {
+    .drpUserRole {
+        width: 90%;
+    }
+    .userRoleInfoIcon {
+        margin-left: 8px;
+        pointer-events: inherit;
+        cursor: pointer;
+        position: relative;
+        top: 7px;
+    }
+    .userMobileAccess {
+        margin-right: 10px;
+        border: none;
+        label {
+            margin-top: 4px;
+            padding-left: 25px;
+        }
+        input[type="checkbox"] {
+            border: none;
+        }
+    }
+    .userRoleInfoHelp {
+        background: #fff;
+        border: 2px solid #d0d0d0;
+        border-radius: 0;
+        box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        height: 420px;
+        padding: 10px;
+        font-size: 12px;
+        position: absolute;
+        top: 50px;
+        left: 200px;
+        z-index: 2;
+        padding: 10px 36px 36px 36px;
+        table {
+            width: 100%;
+            >tbody {
+                >tr {
+                    border-bottom: 2px solid #eee;
+                    >td {
+                        padding: 8px 10px;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+            >thead {
+                border-top: 2px solid #d0d0d0;
+                background: #eee;
+                >tr {
+                    >th {
+                        padding: 8px 10px;
+                    }
+                }
+            }
+        }
+        h5 {
+            margin-top: 5px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            margin-bottom: 5px;
+            margin-bottom: 0;
+        }
+    }
+    .userRoleInfo {
+        background: #fff;
+        border: 2px solid #d0d0d0;
+        border-radius: 0;
+        box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+        height: 200px;
+        width: 250px;
+        padding: 10px;
+        font-size: 12px;
+        position: absolute;
+        z-index: 2;
+        left: 400px;
+        padding: 24px;
+        table {
+            width: 100%;
+            >tbody {
+                >tr {
+                    border-bottom: 2px solid #eee;
+                    >td {
+                        padding: 8px 10px;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+            >thead {
+                border-top: 2px solid #d0d0d0;
+                background: #eee;
+                >tr {
+                    >th {
+                        padding: 8px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .userMobileAccessMarginTop {
+        margin-top: 25px !important;
+        margin-right: 0px !important;
+    }
+    .userRoleInfoTooltip {
+        &:after {
+            border-color: @border_color_2;
+            border-bottom-color: @border_bottom_color_1;
+            border-width: 7px;
+            margin-left: -30px;
+        }
+        &:before {
+            border-color: @border_color_3;
+            border-bottom-color: @border_bottom_color_1;
+            border-width: 7px;
+            margin-left: -31px;
+        }
+    }
+    .userRoleInfoHelpOkButton {
+        position: relative;
+        left: 12px;
+    }
+    .usersSearchIcon {
+        border: none !important;
+        padding: 2px 6px 26px 6px !important;
+    }
+    .usersSearchPlaceholder {
+        border: none !important;
+        margin-left: -17px;
+        margin-top: 0;
+    }
+    .usersFilterIcon {
+        border: none !important;
+        padding: 2px 6px 26px 6px !important;
+    }
+    .siteInfoTooltip {
+        position: relative !important;
+        left: 18% !important;
+        bottom: 50px !important;
+    }
+    .siteRoleInfo {
+        left: 40% !important;
+    }
+}
+.userPermissionChooseSite {
+    label {
+        padding: 0;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+.userRoleInfoTooltip {
+    position: relative;
+    &:after {
+        bottom: 94%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &:before {
+        bottom: 94%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}
+@media (max-height: 768px) {
+    .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+}
+@media (min-width: 1366px) {
+    .accountcontainer.site {
+        .overview {
+            width: 106%;
+            margin-left: -15px !important;
+        }
+    }
+    .accountcontainer.customer {
+        .overview {
+            .content {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (min-width: 1920px) {
+    .accountcontainer.site {
+        .overview {
+            width: 103%;
+            margin-left: -15px !important;
+        }
+    }
+}

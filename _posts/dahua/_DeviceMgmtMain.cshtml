@@ -1,0 +1,19 @@
+﻿<div class="devicemgmt-root page-root">
+    <link href="~/Content/DeviceMgmtPlugin/dcm.css" rel="stylesheet" />
+    <link href="~/Content/DeviceMgmtPlugin/dcmoverview.css" rel="stylesheet" />
+    <link href="~/Content/DeviceMgmtPlugin/createandedit-settings.css" rel="stylesheet" />
+    <div id="devicemgmt-form" class="devicemgmt-form" data-bind="busyIndicator: {show: IsLoading, blockAll: true}">
+        <div class="col-md-3 col-lg-3 cardlistview isptabs">
+            <span class="ispicon ispicon_collapse inverse" data-bind="click: $data.toggleAccordionMenu"></span>
+            <h2 class="isppagetitle">Devices</h2>
+        </div>
+        <div class="col-md-6 col-lg-6 mainview">
+            @Html.Partial("_DahuaCreateAndEditEagle2")
+        </div>
+    </div>
+    <input type="hidden" id="devicemgmturl" value='@Url.Action("", "devicemgmt")' />
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-common.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-datacontext.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-uicontext.js"></script>
+    <script src="~/Scripts/DeviceMgmtPlugin/devicemgmt-bootstrap.js"></script>
+</div>

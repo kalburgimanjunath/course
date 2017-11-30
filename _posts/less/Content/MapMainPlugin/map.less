@@ -1,0 +1,567 @@
+﻿@color_1: #303030;
+@color_2: #808080;
+@color_3: #606060;
+@color_4: #1792e5;
+@font_family_1: 'HoneywellSansWeb-Bold';
+@font_family_2: 'Honeywell Sans Bold';
+@background_color_1: #f5f5f5;
+@background_color_2: #fff;
+
+/*version 1.0.1*/
+/* Css for Campus mapus page */
+/* .ps-main-container-map .ps-viewer-left-sidebar .accordion1  li .headings{
+      
+    border-bottom: 1px solid #e7e7e7 !important; 
+  
+}  */
+/* new css*/
+/* master css */
+.ps-main-container-map {
+  .map_all_sites_details {
+    padding: 12px 20px 11px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    outline: none;
+    &:hover {
+      background-color: @background_color_1;
+    }
+    h3 {
+      color: @color_1;
+      margin: 0;
+      font-family: @font_family_1 !important;
+      font-size: 15px;
+      word-wrap: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      line-height: 22px;
+    }
+    span {
+      color: @color_2;
+      word-wrap: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      float: left;
+    }
+    .icon-error-ex {
+      background-position: -545px -448px;
+      width: 30px !important;
+      height: 35px !important;
+    }
+    .icon-ex {
+      background-position: -727px -448px;
+      width: 30px !important;
+      height: 35px !important;
+    }
+  }
+  .map_all_sites_details.active {
+    background: #e7f4fc;
+    border-bottom: 1px solid #8bc9f2 !important;
+    border-top: 1px solid #8bc9f2;
+  }
+  .map_all_sites_details_listing {
+    width: 89%;
+  }
+  .ps-viewer-left-sidebar {
+    .icon-left-arrow {
+      width: 18px;
+      height: 20px;
+    }
+    .accordion1 {
+      li.search {
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+      }
+      li {
+        padding: 0;
+        margin: 0;
+        float: left;
+        width: 100%;
+        border-bottom: none;
+        ul {
+          li {
+            .label-padding {
+              padding-left: 0 !important;
+              padding-bottom: 3px;
+            }
+            .label-padding.no-height {
+              height: auto;
+            }
+          }
+        }
+        &:hover {
+          background-color: @background_color_1;
+        }
+      }
+      a {
+        padding: 0 20px;
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid #e7e7e7;
+      }
+      a.ps-left-header-icons {
+        padding: 0;
+        width: auto;
+        float: none;
+        border: none;
+      }
+    }
+    .popup-site {
+      .icon-search {
+        float: left;
+        width: 87%;
+        height: 44px;
+      }
+      .form-search {
+        background: none !important;
+        text-indent: 0px !important;
+        width: 100% !important;
+        text-indent: 0px !important;
+        width: calc(100% - 45px) !important;
+        float: right;
+        height: 43px !important;
+        padding-right: 9px !important;
+      }
+      .focus-icon-search {
+        border: none;
+        background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+        background-position: -755px -186px;
+        height: 26px;
+        cursor: pointer;
+        float: left;
+        width: 30px;
+        margin-left: 15px;
+        position: relative;
+        top: 6px;
+      }
+      legand {
+        width: 250px;
+        word-wrap: inherit;
+        text-decoration: none;
+        color: @color_1;
+        font-size: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+        font-weight: bold;
+        span {
+          font-size: 13px;
+          font-weight: bold;
+        }
+        span.main-li-bold {
+          font-size: 13px;
+          font-weight: bold;
+        }
+        span.main-li-title {
+          color: @color_3;
+          font-weight: normal;
+        }
+      }
+      .label-padding {
+        &:before {
+          content: none;
+        }
+      }
+      .icon-add {
+        background-position: -792px -184px;
+        font-size: 0;
+        margin: 0 -10px 3px 0;
+        width: 17px;
+        &:hover {
+          background-position: -792px -214px;
+        }
+      }
+      li.active {
+        background: #e7f4fc;
+        border-bottom: 1px solid #8bc9f2 !important;
+        border-top: 1px solid #8bc9f2;
+      }
+    }
+    .icon-search {
+      input {
+        &:focus {
+          border: none;
+        }
+      }
+    }
+    .ps-checkbox.main-li {
+      background: #f2f2f2;
+    }
+    ul {
+      li {
+        background: #ffffff;
+      }
+    }
+    .collaspe-icons {
+      >a {
+        >span {
+          >span {
+            background-position: -732px -335px !important;
+            background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+            &:hover {
+              background-position: -732px -365px !important;
+            }
+          }
+        }
+      }
+    }
+    .icon-arrow {
+      &:hover {
+        background-position: -7px -580px;
+      }
+    }
+    ul.accordion1 {
+      margin: 0;
+    }
+    .cdetails {
+      color: @color_2;
+    }
+    #accordion1 {
+      li {
+        .customize {
+          &:hover {
+            background-color: @background_color_2 !important;
+          }
+        }
+        .search {
+          .collaspe-icons {
+            &:hover {
+              background: #fff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ps-left-header-icons {
+    margin-top: 10px;
+    width: 10%;
+  }
+  .icon-doors-active {
+    background-position: -10px -630px;
+    margin-top: 8px;
+  }
+  .icon-doors-motion {
+    background-position: -70px -630px;
+    margin-top: 8px;
+  }
+  .icon-rest {
+    background-position: -39px -640px;
+    width: 22px;
+  }
+  .icon-doors-camera {
+    background-position: -550px -420px;
+    margin-top: 8px;
+  }
+  .main-map {
+    background: #f5f5f5;
+    width: 100%;
+  }
+  .background-map {
+    padding: 20px 60px;
+  }
+  .background-map-1 {
+    padding: 0;
+  }
+  .map_list_view {
+    top: 95px;
+    left: 31%;
+    .icon-all-device {
+      background-position: -10px -603px;
+      margin: 0 6px 0 8px;
+    }
+    .icon-all-camera {
+      background-position: -40px -605px;
+      margin: 0 6px 0 8px;
+    }
+    .icon-zone-expanders {
+      background-position: -70px -605px;
+      margin: 0 6px 0 8px;
+    }
+    .icon-all-controllers {
+      background-position: -100px -605px;
+      margin: 0 6px 0 8px;
+    }
+    .icon-all-doors {
+      background-position: -10px -605px;
+      margin: 0 6px 0 8px;
+    }
+    .icon-all-zones {
+      background-position: -130px -605px;
+      margin: 0 6px 0 8px;
+    }
+  }
+  .ps-dropdown-custom.map_list_view {
+    border-radius: 0;
+    padding: 0 0 0;
+    width: 215px;
+  }
+  .dropdown-menu.ps-dropdown-custom.map_list_view {
+    .checkbox {
+      label {
+        padding-left: 0;
+        padding-top: 6px;
+      }
+      input[type="checkbox"] {
+        margin-top: 4px;
+      }
+    }
+  }
+  .ps-dropdown-custom.map_area_list_view {
+    border-radius: 0;
+    width: 159px;
+    left: 2%;
+    top: 29px;
+    padding: 0;
+    margin: 0;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        color: @color_1;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 8px 20px;
+        &:hover {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+  .headings {
+    height: auto;
+    padding: 3px 20px !important;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: default;
+    .custom {
+      span {
+        cursor: default;
+      }
+    }
+  }
+  .title {
+    padding-top: 10px;
+    padding-left: 8px;
+    height: auto;
+    word-wrap: inherit;
+    text-decoration: none;
+    color: @color_1;
+    font-size: 15px;
+    white-space: nowrap;
+    display: block;
+    font-weight: bold;
+    text-overflow: ellipsis;
+  }
+  .texts {
+    margin-left: 29px;
+  }
+  .sub-heading {
+    float: left;
+  }
+  .icon-20 {
+    background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-top: 18px;
+    width: 20px;
+    background-position: -10px -640px;
+    float: left;
+  }
+  .icon-16 {
+    background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    margin: 0;
+    width: 20px;
+    background-position: -39px -640px;
+    position: absolute;
+    margin-left: 6px;
+  }
+  .icon-21 {
+    background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-top: 18px;
+    width: 20px;
+    background-position: -70px -640px;
+    float: left;
+  }
+  .icon-22 {
+    background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-top: 18px;
+    width: 20px;
+    background-position: -550px -430px;
+    float: left;
+  }
+  span.main-li-bold {
+    font-weight: bold;
+    color: @color_1;
+  }
+  .dropdown-menu {
+    .ps-dropdown-custom {
+      .map_list_view {
+        ul {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  span.ps-checkbox.checkbox {
+    padding-left: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 0px !important;
+  }
+  .text-for-checkbox {
+    padding-left: 5px;
+    font-weight: 400;
+  }
+  .no-padding {
+    padding: 0;
+  }
+  .people_title {
+    position: relative;
+  }
+  .people_group {
+    width: 340px;
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+    width: 340px;
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+  }
+  .people_grp_list {
+    height: 52px;
+  }
+  .nav.nav-tabs.pw_tabs {
+    li.active {
+      a {
+        background: none;
+        border: none;
+        color: @color_4;
+        border-bottom: 4px solid #1792e5;
+        background: none;
+        border: none;
+        color: @color_4;
+        border-bottom: 4px solid #1792e5;
+      }
+    }
+    li {
+      margin: 0 20px 0 0;
+      a {
+        &:hover {
+          border-bottom: 4px solid #1792e5;
+        }
+        color: @color_2;
+        border: none;
+        font-family: @font_family_2;
+        font-size: 14px;
+        padding: 6px 0 5px;
+        margin: 0;
+      }
+    }
+  }
+  ul.nav-tabs.pw_tabs {
+    padding: 17px 17px 0px 20px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .nav-tabs.pw_tabs {
+    border: none;
+  }
+  .ppl_main_tab {
+    height: 52px;
+  }
+  .main_container_map {
+    height: calc(100% - 60px);
+    margin: 0;
+  }
+  .nav {
+    >li {
+      >a {
+        &:focus {
+          text-decoration: none;
+          background-color: @background_color_2;
+        }
+      }
+    }
+  }
+}
+.ps-viewer-left-sidebar {
+  .icon-arrow {
+    background-position: -37px -580px;
+    float: right;
+    display: block;
+    height: 20px;
+    width: 30px;
+  }
+}
+.ps-map-content-title {
+  margin: 16px 0 6px;
+  .area-title {
+    font-size: 16px;
+    font-family: @font_family_1 !important;
+    color: @color_1;
+  }
+  .icon-down {
+    background-position: -72px -460px;
+    margin: 0 10px 0 5px;
+    background-position: -70px -460px;
+    margin: 0 10px 0 5px;
+    &:hover {
+      background-position: -100px -460px;
+    }
+  }
+}
+.ps-checkbox {
+  input[type="checkbox"] {
+    &:checked {
+      &+.checked {
+        height: 16px;
+        width: 17px;
+        background-image: url(../Content/Images/Icons_Sprites_MPC.svg);
+        background-position: 259px -252px;
+        left: -21px;
+        position: absolute;
+        top: 13px;
+      }
+    }
+  }
+}
+.headings {
+  .custom {
+    cursor: default ! important;
+  }
+}
+.nav {
+  >li {
+    >a {
+      &:hover {
+        text-decoration: none;
+        background-color: @background_color_2;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .ps-viewer-left-sidebar {
+    .popup-site {
+      legand {
+        width: 150px;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<Style>
+#content-1{
+  width: 260px;
+  height: 400px;
+  overflow: hidden;
+  padding: 10px;
+}
+#content-1 ul{
+  width: 230px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+#content-1 li{
+  width: 200px;
+  height: 120px;
+  margin: 5px;
+  padding: 5px 10px;
+  background: #dbf3f7;
+}
+@media only screen and (min-width: 1024px){
+  #content-1{
+    width: 80%;
+    height: 170px;
+  }
+  #content-1 ul{ width: auto; }
+  #content-1 li{ float: left; }
+}
+</Style>
+<script src="Scripts/lib/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript">
+(function($){
+  $(window).load(function(){
+
+    $("#content-1").mCustomScrollbar({
+      axis:"yx", //set both axis scrollbars
+      advanced:{autoExpandHorizontalScroll:true}, //auto-expand content to accommodate floated elements
+      // change mouse-wheel axis on-the-fly 
+      callbacks:{
+        onOverflowY:function(){
+          var opt=$(this).data("mCS").opt;
+          if(opt.mouseWheel.axis!=="y") opt.mouseWheel.axis="y";
+        },
+        onOverflowX:function(){
+          var opt=$(this).data("mCS").opt;
+          if(opt.mouseWheel.axis!=="x") opt.mouseWheel.axis="x";
+        },
+      }
+    });
+
+  });
+})(jQuery);
+</script> 
+<div id="content-1">
+  <ul>
+    <li>First</li> 
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+    <li>Last</li>
+  </ul>
+</div>

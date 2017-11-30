@@ -1,0 +1,1178 @@
+<link rel="stylesheet" type="text/css" href="css/dcm.css">
+<!-- <link href="pscss/ico.css" rel="stylesheet"> -->
+<!-- <link href="pscss/calendar-search-layout.css" rel="stylesheet"> -->
+<!-- <link href="pscss/fullcalendar.css" rel="stylesheet"> -->
+<!-- <link href="pscss/controlstyles.css" rel="stylesheet" type="text/css"> -->
+<link href="pscss/viewer.css" rel="stylesheet" type="text/css">
+<!-- <link href="pscss/campus_viewer.css" rel="stylesheet" type="text/css"> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="scripts/master.js"></script>
+
+<div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a id="menu-toggle" href="#" class="toggle">
+                <span class="sidebar-brand">
+                    <span class="ispicon ispicon_handbar">
+                    </span>
+                    <span>Viewer</span>
+                </span>
+            </a>
+            <nav id="sidebar-wrapper" class="">
+                
+                <ul class="sidebar-nav" id="ispheader">
+                    <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                    <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                        <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                            <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                        </a>
+                        <p data-bind="text: $data.PageName"></p>
+                    </li>
+                    <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                        <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                            <span class="ispicon ispicon_dashboard"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+
+                        <a class="dropdown-toggle" href="firsttimelandingpage.html">
+                            <span class="ispicon ispicon_accounts"></span>
+                            Accounts </span>
+                        </a>
+                       <!--  <ul class="dropdown-menu" role="menu">
+                            
+                            <li><a ><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                            <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                            <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                        </ul> -->
+                        
+                    </li>
+                   
+                    <li>
+                            <a href="alarms.html">
+                                <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                            </a>
+                    </li>
+                    <li>
+                        <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                            <span class="ispicon ispicon_utility"></span>
+                            Utility Tools
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="ispicon ispicon_company"></span>
+                            My Company <span class="ispicon ispicon_downarrow pull-right"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="user-management.html">
+                                <span class="ispicon ispicon_users"></span>
+                                Users
+                            </a></li>
+                             <li><a href="user-management.html">
+                                <span class="ispicon ispicon_rules">Rules</span>
+                                Users
+                            </a></li>
+                        </ul>
+                        
+                    </li>
+                    <li>
+                        <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                            <span class="ispicon ispicon_centralStation"></span>
+                            Central Station
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();" class="active">
+                            <span class="ispicon ispicon_sales"></span>
+                            Sales and Support
+                        </a>
+                    </li>
+                    
+                    
+
+                </ul>
+                    <div class="menu_user_sec_logout">
+                        <div class="menu_user_sec clearfix">
+                            <div class="menu_user_img">
+                                <img src="http://lorempixel.com/100/100/people/9/" alt="Siva Baghat">
+                            </div>
+
+                            <div class="menu_user_details col-md-8">
+                                <h3>Siva Baghat</h3>
+                                <span>Business Owner</span>
+
+                            </div>
+                            <span class="ispicon ispicon_logout push-right pad-110" data-toggle="tooltip" data-placement="left" title="" data-original-title="Log Out"></span>
+
+                        </div>
+                       <!--  <div class="user_logout">
+                            <a href="#">Logout</a>
+                        </div> -->
+                    </div>
+            </nav>
+
+        </li>
+
+    </ul>
+    <div class="pull-right col-xs-4 ispheadersearch">               
+            <form>
+                <div class="col-xs-10 pull-left hide">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                            </span></button>
+                            <ul class="dropdown-menu ispmenu" role="menu">
+                              <li><a href="#contains">Contains</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than &gt;</a></li>
+                              <li><a href="#less_than">Less than &lt; </a></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                        <span class="input-group-btn ">
+                            <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="search-box-container col-lg-9 col-md-9 pull-left">
+                    <div class="input-group col-lg-12 col-md-12 mar-b0">                            
+                        <input type="text" class="form-control ispsearch pad-l10 pad-r50 mar-t0" name="x" placeholder="Search...">                            
+                        <span class="ispicon ispicon_close hide"></span>
+                        <span class="ispicon ispicon_search" id="searchIcon"></span>
+                        <span class="loader alarm-searchIcon hide mar-t5"></span>
+                    </div>
+                    <div class="search-dropdown col-lg-12 col-md-12 nopadding hide" id="">
+                        <div class="row no-results hide">
+                            <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                <span>No results found</span>
+                            </div>
+                        </div>
+                        <div class="row results-count">
+                            <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                <span class="pull-left nopadding"><span class="bold">3</span> Accounts</span>
+                                <span class="pull-right nopadding view-all"><a href="javascript:;" class="">View All</a></span>
+                            </div>
+                        </div>
+                        <div class="row results">
+                            <div class="cardlistview col-lg-12 col-md-12 col-sm-12 nopadding">
+                                <div class="list-group scroll-x scroll-y mar-b0">
+                                    <div class="list-group-item pad-t15 pad-b15">
+                                        <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                        <p class="list-group-item-text customer-name bold pad-t10 pad-b10">United Hospital</p>
+                                        <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                    </div>
+                                    <div class="list-group-item pad-t15 pad-b15">
+                                        <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                        <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                        <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                    </div>
+                                    <div class="list-group-item pad-t15 pad-b15">
+                                        <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                        <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                        <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>    
+                    </div>
+                </div>
+                <div class="col-xs-2 pull-right icons">
+                    <span class="ispicon ispicon_alarmsDefault"></span>
+                </div>                            
+            </form>
+    </div>
+
+
+</div>
+</head>
+
+
+
+<section class="view" id="viewer" data-complete="true">
+    <div class="row ps-row ps-main-container-viewer">
+      <div class="col-md-3 col-lg-3 ps-viewer-left-sidebar sidebar-left people_group nopadding">
+        <ul class="nav nav-tabs pw_tabs">
+          <li class="active"><a href="#customer_list" data-toggle="tab">Saved Salvos</a></li>
+          <li><a href="#saved_salvo" data-toggle="tab">Devices</a></li>
+          <li><a href="#saved_salvo" data-toggle="tab">Clips</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="customer_list" class="tab-pane fade in active">
+           
+            
+            <div class="leftscroll-viewer hide" id="camera">
+                  <!-- <div class="ps-second-row">
+                    <span class="total-count campus-viewer-left-header"><span>8</span> &nbsp;Camera</span>
+                  </div> -->
+                  <div class="list-group-item active_salvo_showup justify-content-between">
+                    <span class="icon icon-prev"></span>
+                    <span class="salvo-name-list">Queen Campus</span>
+                    <!-- <span class="icon icon-arrow"></span> -->
+                  </div>
+                  <div class="ps-second-row">
+                    <span class="total-count campus-viewer-left-header"><span>Queeen Campus</span> - <span>8</span> &nbsp;Camera
+                    <span class="ispicon ispicon_arrow top pull-right pad-r20"></span>
+                    </span>
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing active" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 1</h3>
+                      <span>Reception Area</span>
+                    </div>
+                    
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 2</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                    
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                  <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 3</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                    
+                  </div>
+                  <div class="ps-second-row">
+                    <span class="total-count campus-viewer-left-header"><span>New Jersuy Campus</span> - <span>8</span> &nbsp;Camera
+                    <span class="ispicon ispicon_arrow top pull-right pad-r20"></span>
+                    </span>
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                  <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 4</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                    
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 5</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                    
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 6</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                    
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 7</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 8</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                  </div>
+                  <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                    <label class="control-label label-padding pull-left pad-t10">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-r10 pull-left"></label>
+                            </label>
+                    <span class="icon icon-video-off"></span>
+                    <div class="viewer_save_salvo_grp_info_listing">
+                      <h3>Camera 9</h3>
+                      <span>Meeting Room</span>
+                    </div>
+                  </div>
+            </div>
+            <div class="footer-viewer-buttons-leftsidebar" id="filterbut">
+                  <div class="buttonGroup">
+                    <button class="btn btn-primary pull-right" id="btnfilter">Filter</button>
+                  </div>
+                </div>
+            </div>
+
+
+
+            <!-- clipsearch filter start-->
+            <div class="leftscroll-viewer leftscroll-viewer-filter pad-t0 hide" id="clipsearch">
+              <div class="list-group-item active_salvo_showup justify-content-between">
+                    <span class="icon icon-prev"></span>
+                    <span class="salvo-name-list">Queen Campus</span>
+                    <!-- <span class="icon icon-arrow"></span> -->
+                  </div>
+              <div role="tabpanel" class="pad-l20 pad-r20">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs pw_tabs mar-b10 pad-l0" role="tablist">
+                  <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Today</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Yesterday</a>
+                  </li>
+                  <li role="presentation">
+                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Last 7 Days</a>
+                  </li>
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="form-group calender" id="reportScheduleDate" data-date="" data-date-format="" , datepicker:$data.ScheduleOn, datepickerOptions: {format:'MM/dd/yyyy hh:mm:ss', startDate: new Date()}">
+                      <label id="lblSelect_Date" class="control-label">To</label><input id="txbSelect_Date" type="text" required="" placeholder="Select Date" class="form-control form-date">
+                        <span class=" icon icon-calendar form-date add-on ps-icon-cal" tabindex="20">
+                        </span>
+                    </div>
+                    <div class="form-group calender" id="reportScheduleDate" data-date="" data-date-format=""  datepicker:$data.ScheduleOn, datepickerOptions: {format:'MM/dd/yyyy hh:mm:ss', startDate: new Date()}">
+                      <label id="lblSelect_Date" class="control-label" >From</label><input id="txbSelect_Date" type="text" required="" placeholder="Select Date" class="form-control form-date">
+                        <span class=" icon icon-calendar form-date add-on ps-icon-cal" tabindex="20">
+                        </span>
+                    </div>
+                    <div>
+                    <h3>Events</h3>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">Motion Event<span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">Schedules <span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">Onsite <span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">Rules Driven <span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">Trigger Event<span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 ps-checkbox checkbox">
+                        <label class="control-label"> <input type="checkbox">User Trigger <span></span></label>
+                      </div>
+                      <h3>Storage</h3>
+                      <div class="col-md-6 col-lg-6 nopadding">
+                        <label class="control-label"> <input type="radio">On Cloud <span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 nopadding">
+                        <label class="control-label"> <input type="radio">On Site<span></span></label>
+                      </div>
+                      <div class="col-md-6 col-lg-6 nopadding">
+                        <label class="control-label"> <input type="radio">Both<span></span></label>
+                      </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane" id="tab"></div>
+                    </div>
+              </div>
+               <div class="footer-viewer-buttons-leftsidebar show">
+                  <div class="buttonGroup">
+                    <button class="btn btn-primary pull-right" id="applyresult">Apply</button>
+                    <button class="btn btn-default pull-right btn-space margin-right">Cancel</button>
+                  </div>
+                </div>
+                </div>
+
+                
+                
+            </div>
+            <!-- clipsearch filter end -->
+            <!-- clip search result -->
+
+            <div class="leftscroll-viewer hide" id="clipresult">
+                <div class="viewer_camra_listing_detail active row" tabindex="1">
+
+                <div class="viewer_camra_recorded_clip pull-left">
+                <span class="clip_id_wrapper">
+                  <span>Clip Id:</span>
+                  <span>1123</span>
+                </span>
+                 <span class="event_wrapper">
+                  <span>Event:</span>
+                  <span>User Driven</span>
+                </span>
+                <span class="date_time_hour_wrapper">
+                  <span class="time_duration_text">Dur:</span>
+                  <span class="time_duration"> 00:00:03</span><br/>
+                  <span class="date_text">Date: </span>
+                  <span class="date_format"> 11/24/2016 </span>
+                    <span class="pipe">&#124;</span>
+                  <span class="time-text">Time: </span>
+                  <span class="hour_mint_sec">13:12:25</span>
+                </span>
+                </div>
+                <span class="icon icon-playbutton active pull-right"></span>
+                </div>
+                <div class="viewer_camra_listing_detail row" tabindex="1">
+
+                <div class="viewer_camra_recorded_clip pull-left">
+                <span class="clip_id_wrapper">
+                  <span>Clip Id:</span>
+                  <span>1123</span>
+                </span>
+                 <span class="event_wrapper">
+                  <span>Event:</span>
+                  <span>User Driven</span>
+                </span>
+                <span class="date_time_hour_wrapper">
+                  <span class="time_duration_text">Dur: </span>
+                  <span class="time_duration"> 00:00:03</span><br/>
+                  <span class="date_text">Date: </span>
+                  <span class="date_format"> 11/24/2016 </span>
+                    <span class="pipe">&#124;</span>
+                  <span class="time-text">Time: </span>
+                  <span class="hour_mint_sec">13:12:25</span>
+                </span>
+                </div>
+                <span class="icon icon-playbutton pull-right"></span>
+                </div>
+                <div class="viewer_camra_listing_detail row" tabindex="1">
+
+                <div class="viewer_camra_recorded_clip pull-left">
+                <span class="clip_id_wrapper">
+                  <span>Clip Id:</span>
+                  <span>1123</span>
+                </span>
+                 <span class="event_wrapper">
+                  <span>Event:</span>
+                  <span>User Driven</span>
+                </span>
+                <span class="date_time_hour_wrapper">
+                  <span class="time_duration_text">Dur: </span>
+                  <span class="time_duration"> 00:00:03</span><br/>
+                  <span class="date_text">Date: </span>
+                  <span class="date_format"> 11/24/2016 </span>
+                    <span class="pipe">&#124;</span>
+                  <span class="time-text">Time: </span>
+                  <span class="hour_mint_sec">13:12:25</span>
+                </span>
+                </div>
+                <span class="icon icon-playbutton pull-right"></span>
+                </div>
+                <div class="viewer_camra_listing_detail row" tabindex="1">
+
+                <div class="viewer_camra_recorded_clip pull-left">
+                <span class="clip_id_wrapper">
+                  <span>Clip Id:</span>
+                  <span>1123</span>
+                </span>
+                 <span class="event_wrapper">
+                  <span>Event:</span>
+                  <span>User Driven</span>
+                </span>
+                <span class="date_time_hour_wrapper">
+                  <span class="time_duration_text">Dur: </span>
+                  <span class="time_duration"> 00:00:03</span><br/>
+                  <span class="date_text">Date: </span>
+                  <span class="date_format"> 11/24/2016 </span>
+                    <span class="pipe">&#124;</span>
+                  <span class="time-text">Time: </span>
+                  <span class="hour_mint_sec">13:12:25</span>
+                </span>
+                </div>
+                <span class="icon icon-playbutton pull-right"></span>
+                </div>
+            </div>
+            <!-- clip search result ends -->
+            <!-- customer list starts-->
+            
+            <div class="leftscroll-viewer" id="selectcustomer">
+              <div class="ps-row ps-second-row">
+                <span class="total-count campus-viewer-left-header"><span>8</span> &nbsp;Customers</span>
+              </div>
+              <div class="selectColumnContainer select-site-rule popup-site">
+                    <ul class="" id="accordion12">
+                      <li class=""> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow pad-t5 pull-left"></span>
+                          <label class=" control-label label-padding">
+                                    <input id="radio" type="radio"> 
+                                    <label for="radio" class="pad-l10">Customer 1</label>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="active">
+                          <a href="#" id="selectsite"> 
+                            <label class="control-label label-padding">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-l10 pull-left" >Queen campus</label>
+                            </label>
+                            <div class="control-label clear col-md-offset-2">
+                              03 Cameras
+                            </div>
+                          </a>
+                        </li>
+                                                            
+                      </ul>                                                    
+                    </li>
+                    <li class=""> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow pad-t5 pull-left"></span>
+                          <label class=" control-label label-padding">
+                                    <input id="radio" type="radio"> 
+                                    <label for="radio" class="pad-l10">Customer 2</label>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="active">
+                          <a href="#" id="selectsite"> 
+                            <label class="control-label label-padding">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-l10 pull-left" >Queen campus</label>
+                            </label>
+                          </a>
+                        </li>
+                                                            
+                      </ul>                                                    
+                    </li>
+                    <li class=""> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow pad-t5 pull-left"></span>
+                          <label class=" control-label label-padding">
+                                    <input id="radio" type="radio"> 
+                                    <label for="radio" class="pad-l10">Customer 1</label>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="active">
+                          <a href="#" id="selectsite"> 
+                            <label class="control-label label-padding">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-l10 pull-left" >Queen campus</label>
+                            </label>
+                          </a>
+                        </li>
+                                                            
+                      </ul>                                                    
+                    </li>
+                    <li class=""> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow pad-t5 pull-left"></span>
+                          <label class=" control-label label-padding">
+                                    <input id="radio" type="radio"> 
+                                    <label for="radio" class="pad-l10">Customer 1</label>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="active">
+                          <a href="#" id="selectsite"> 
+                            <label class="control-label label-padding">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-l10 pull-left" >Queen campus</label>
+                            </label>
+                          </a>
+                        </li>
+                                                            
+                      </ul>                                                    
+                    </li>
+                    <li class=""> 
+                        <a href="#">
+                          <span data-toggle="collapse" data-parent="#accordion12" href="#firstLink" class="collapsed" aria-expanded="false"> <span class="ispicon ispicon_accordian_droparrow pad-t5 pull-left"></span>
+                          <label class=" control-label label-padding">
+                                    <input id="radio" type="radio"> 
+                                    <label for="radio" class="pad-l10">Customer 1</label>
+                          </label>
+                        </span>
+                      </a>
+                      <ul id="firstLink" class="collapse" aria-expanded="false">
+                        <li class="active">
+                          <a href="#" id="selectsite"> 
+                            <label class="control-label label-padding">
+                              <input id="radio" type="checkbox"> 
+                              <label for="radio" class="pad-l10 pull-left" >Queen campus</label>
+                            </label>
+                          </a>
+                        </li>
+                                                            
+                      </ul>                                                    
+                    </li>
+                </ul>
+              </div>
+            
+            <!-- customer list ends -->
+
+          </div>
+          <div class="footer-viewer-buttons-leftsidebar">
+                  <div class="buttonGroup">
+                    <button class="btn btn-primary pull-right" id="continuebtn">Continue</button>
+                  </div>
+                </div>
+            </div>
+          <div id="saved_salvo" class="tab-pane fade in active main-viewer-left hide">
+            <div class="list-group-item active_salvo_showup justify-content-between">
+              <span class="ispicon ispicon_arrow left"></span>
+              <span class="salvo-name-list">Salvo3</span>
+              <span class="icon icon-arrow"></span>
+            </div>
+
+            <div class="ps-second-row">
+              <span class="total-count campus-viewer-left-header"><span>8</span> &nbsp;Camera</span>
+            </div>
+             <div class="leftscroll-viewer salvo_list_bx">
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+              <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                <div class="viewer_save_salvo_grp_info_listing">
+                  <span>Salvo 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+         <div class="noResults col-md-3 col-lg-3 ps-viewer-left-sidebar sidebar-left people_group nopadding ">
+        
+          </div>
+      </div>
+     
+      <div id="viewerContainer" class="nopadding col-md-9 col-lg-9 viewer-main-content">
+        <div class="">
+        <div class="row ps-row ps-rules-first-top-right">
+          <div class="col-md-9 col-lg-9 ps-rule-content-title nopadding">
+            <a href="#" class="ispicon ispicon_collapse pull-left mar-t20"></a>
+            <h1 class="salvo_title">Salvo 3</h1>
+          </div>
+           <div class="pull-right ps-rules-switcher card-header pad-t10 pad-r20">
+              <span class="ispicon ispicon_edit pull-right mar-l10 pad-t5"></span>
+              <span>
+                 <span class="dropdown-toggle icon icon-view pull-right " type="button" id="menu1" data-toggle="dropdown"></span>
+                  <ul class="dropdown-menu ps-dropdown-custom viewer_view_list" role="menu" aria-labelledby="menu1">
+                    <span class="icon icon-view-4"></span>
+                    <span class="icon icon-view-6"></span>
+                    <span class="icon icon-view-8"></span>
+                  </ul>
+              </span>
+
+           
+
+            <a class="icon icon-video pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu ps-dropdown-custom viewer_camra_list">
+              <div class="viewer_camra_listing_detail row" tabindex="1">
+                <span class="icon icon-video"></span>
+                <div class="viewer_camra_info pull-left">
+                  <h3>Camera 1</h3>
+                  <h4>Queen Campus</h4>
+                  <span>Customer 4</span>
+                </div>
+                <span class="icon icon-close-camra pull-right"></span>
+              </div>
+              <div class="viewer_camra_listing_detail row" tabindex="1">
+                <span class="icon icon-video"></span>
+                <div class="viewer_camra_info pull-left">
+                  <h3>Camera 1</h3>
+                  <h4>Queen Campus</h4>
+                  <span>Customer 4</span>
+                </div>
+                <span class="icon icon-close-camra pull-right"></span>
+              </div>
+              <div class="viewer_camra_listing_detail row" tabindex="1">
+                <span class="icon icon-video"></span>
+                <div class="viewer_camra_info pull-left">
+                  <h3>Camera 1</h3>
+                  <h4>Queen Campus</h4>
+                  <span>Customer 4</span>
+                </div>
+                <span class="icon icon-close-camra pull-right"></span>
+              </div>
+              <div class="viewer_camra_listing_detail row" tabindex="1">
+                <span class="icon icon-video"></span>
+                <div class="viewer_camra_info pull-left">
+                  <h3>Camera 1</h3>
+                  <h4>Queen Campus</h4>
+                  <span>Customer 4</span>
+                </div>
+                <span class="icon icon-close-camra pull-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-viewer" style="height: calc(100% - 152px);width: 100%;">
+        <div class="row ps-row six-screen video-container-wrapper">
+          <div id="carousel-six-viewer" class="carousel slide" data-ride="carousel" data-interval="false">
+             <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-six-viewer" data-slide-to="0" class="pager active icon"></li>
+              <li data-target="#carousel-six-viewer" data-slide-to="1" class="pager icon"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="ps-row clearfix">
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container active">
+                    <div class="background-picture">
+                      <!--<img src="Content/images/dummy.png">-->
+                                                <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <a class="pull-left ispicon ispicon_door" href="#" aria-haspopup="true" data-toggle="dropdown" aria-expanded="true"></a>
+                        <div class="dropdown-menu ps-dropdown-custom viewer_view_list">
+                      <ul class="access-video-time">
+                        <li class="">Door 1</li>
+                        <li class="">Door 2</li>
+                      </ul>           
+                    </div>
+                        <span class="pull-left icon icon-video-camera" data-toggle="modal" data-target="#MyVideo"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container">
+                    <div class="background-picture">
+                      <!--<img src="Content/images/dummy.png">-->
+                                                <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <span class="pull-left ispicon ispicon_door"></span>
+                        <span class="pull-left icon icon-video-camera"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container">
+                    <div class="background-picture">
+                      <!--<img src="Content/images/dummy.png">-->
+                                                <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <span class="pull-left ispicon ispicon_door"></span>
+                        <span class="pull-left icon icon-video-camera"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ps-row clearfix">
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container">
+                    <div class="background-picture">
+                      <!--<img src="Content/images/dummy.png">-->
+                                                <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <span class="pull-left ispicon ispicon_door"></span>
+                        <span class="pull-left icon icon-video-camera"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container">
+                      <div class="background-picture">
+                        <span class="icon icon-offline"></span>
+                        <!--<img src="Content/images/dummy.png">-->
+                                                  <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                      </div>
+                      <div class="row camera-things">
+                        <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                       <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                       <div class="pull-right camera-icon">
+                          <span class="pull-left ispicon ispicon_door"></span>
+                          <span class="pull-left icon icon-video-camera"></span>
+                          <span class="pull-left icon icon-zoom"></span>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container-1">
+                      <div class="video_cell">
+                        <div class="container-wrapper">
+                          <span class="icon icon-emptyVideoImage"></span><span>Drag an Item to view</span>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ps-row clearfix">
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container">
+                    <div class="background-picture">
+                      <!--<img src="Content/images/dummy.png">-->
+                                                <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <span class="pull-left ispicon ispicon_door"></span>
+                        <span class="pull-left icon icon-video-camera"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4 col-lg-4 video-container door-configuration active">
+                    <div class="door-configuration-viewer">
+                      <div class="container-header">
+                      
+                      <span class="ispicon ispicon_lyricLock pull-left"></span>
+                      <span class="ispicon ispicon_lyricLock pull-left hide"></span>
+                      
+                      <div class="pull-right">
+                      <span class="dropdown-toggle" type="button" data-toggle="dropdown"><span class="ispicon ispicon_caret pull-right"></span>
+                      <span class="ispicon ispicon_action pull-right"></span>
+                      </span>
+                      <ul class="dropdown-menu ispmenu doormenu">
+                        <li><a href="#">Unlock</a></li>
+                      </ul>
+                    </div>
+
+                      <h3 class="modal-title">Door 1</h3>
+                      <span> Access Blocked and Alarm</span>
+                      </div>
+                      <div class="wrapper-details">
+                        <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                          <span class="video-camera"></span>
+                          <div class="viewer_save_salvo_grp_info_listing">
+                            <h3>Camera 2</h3>
+                            <span>Card not found</span>
+                            <span>12 Dec 2016 11:00AM</span>
+                          </div>
+                          <div class="pull-right">
+                            <span class="icon icon-next"></span>
+                          </div>
+                        </div>
+                        <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                          <span class="video-camera"></span>
+                          <div class="viewer_save_salvo_grp_info_listing">
+                            <h3>Camera 2</h3>
+                            <span>12 Dec 2016 11:00AM</span>
+                          </div>
+                          <div class="pull-right">
+                            <span class="icon icon-next"></span>
+                          </div>
+                        </div>
+                           <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                          <span class="video-camera"></span>
+                          <div class="viewer_save_salvo_grp_info_listing">
+                            <h3>Camera 2</h3>
+                            <span>12 Dec 2016 11:00AM</span>
+                          </div>
+                          <div class="pull-right">
+                            <span class="icon icon-next"></span>
+                          </div>
+                        </div>
+                           <div class="viewer_save_salvo_detail_listing" tabindex="1">
+                          <span class="video-camera"></span>
+                          <div class="viewer_save_salvo_grp_info_listing">
+                            <h3>Camera 2</h3>
+                            <span>12 Dec 2016 11:00AM</span>
+                          </div>
+                          <div class="pull-right">
+                            <span class="icon icon-next"></span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- <div class="row camera-things">
+                      <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span>
+                     <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span>
+                     <div class="pull-right camera-icon">
+                        <span class="pull-left ispicon ispicon_door"></span>
+                        <span class="pull-left icon icon-video-camera"></span>
+                        <span class="pull-left icon icon-zoom"></span>
+                      </div>
+                    </div> -->
+                  </div>
+                  <!-- <div class="col-sm-4 col-md-4 col-lg-4 video-container"> -->
+                    <!-- <div class="background-picture"> -->
+                      <!-- <img src="Content/images/dummy.png">
+                            <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+                       -->
+                    <!-- </div> -->
+                    <!-- <div class="row camera-things"> -->
+                      <!-- <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span> -->
+                     <!-- <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span> -->
+                     <!-- <div class="pull-right camera-icon"> -->
+                        <!-- <span class="pull-left ispicon ispicon_door"></span> -->
+                        <!-- <span class="pull-left icon icon-video-camera"></span> -->
+                        <!-- <span class="pull-left icon icon-zoom"></span> -->
+                      <!-- </div> -->
+                    <!-- </div> -->
+                  <!-- </div> -->
+                </div>
+                <!-- <div class="ps-row clearfix"> -->
+                  <!-- <div class="col-sm-4 col-md-4 col-lg-4 video-container"> -->
+                    <!-- <div class="background-picture"> -->
+                      <!-- <img src="Content/images/dummy.png">
+                            <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+                       -->
+                    <!-- </div> -->
+                    <!-- <div class="row camera-things"> -->
+                      <!-- <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span> -->
+                     <!-- <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span> -->
+                     <!-- <div class="pull-right camera-icon"> -->
+                        <!-- <span class="pull-left ispicon ispicon_door"></span> -->
+                        <!-- <span class="pull-left icon icon-video-camera"></span> -->
+                        <!-- <span class="pull-left icon icon-zoom"></span> -->
+                      <!-- </div> -->
+                    <!-- </div> -->
+                  <!-- </div> -->
+                  <!-- <div class="col-sm-4 col-md-4 col-lg-4 video-container"> -->
+                      <!-- <div class="background-picture"> -->
+                        <!-- <img src="Content/images/dummy.png">
+                            <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+                         -->
+                      <!-- </div> -->
+                      <!-- <div class="row camera-things"> -->
+                        <!-- <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span> -->
+                       <!-- <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span> -->
+                       <!-- <div class="pull-right camera-icon"> -->
+                          <!-- <span class="pull-left ispicon ispicon_door"></span> -->
+                          <!-- <span class="pull-left icon icon-video-camera"></span> -->
+                          <!-- <span class="pull-left icon icon-zoom"></span> -->
+                        <!-- </div> -->
+                      <!-- </div> -->
+                  <!-- </div> -->
+                  <!-- <div class="col-sm-4 col-md-4 col-lg-4 video-container"> -->
+                      <!-- <div class="background-picture"> -->
+                        <!-- <img src="Content/images/dummy.png">
+                            <video width="400" autoplay>
+                              <source src="video/video1.mp4" type="video/mp4">
+                              <source src="mov_bbb.ogg" type="video/ogg">
+                              Your browser does not support HTML5 video.
+                            </video>
+                         -->
+                      <!-- </div> -->
+                      <!-- <div class="row camera-things"> -->
+                        <!-- <span class="col-sm-1 col-md-1 col-lg-1 pull-left icon icon-video-stream"></span> -->
+                       <!-- <span class="col-sm-4 col-md-4 col-lg-4 pull-left camera-name">Camera 1</span> -->
+                       <!-- <div class="pull-right camera-icon"> -->
+                          <!-- <span class="pull-left ispicon ispicon_door"></span> -->
+                          <!-- <span class="pull-left icon icon-video-camera"></span> -->
+                          <!-- <span class="pull-left icon icon-zoom"></span> -->
+                        <!-- </div> -->
+                      <!-- </div> -->
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        
+        </div>
+        <div class="footer-viewer-buttons">
+          <div class="buttonGroup pull-left hide">
+            <!-- <button class="btn btn-default pull-right btn-space margin-right">Full Screen</button>
+            <button class="btn btn-default pull-right btn-space margin-right" id="clipview">View Clips</button>
+             <button class="btn btn-default pull-right btn-space margin-right">Record All/Record</button> -->
+             
+          </div>
+          <div class="col-md-1">
+            <span class="ispicon ispicon_arrow top">
+          </div>
+          <div class="col-md-5 pad-b20">
+                <div class="col-md-4 text-center pull-left">
+                  <span class="ispicon ispicon_fullscreen">
+                  <div class="pad-t5">Full Screen</div>
+                </span></div>
+                <div class="col-md-4 text-center pull-left">
+                  <span class="ispicon ispicon_fullscreen">
+                  <div class="pad-t5">View Clips</div>
+                </span></div>
+                <div class="col-md-4 text-center pull-left">
+                  <span class="ispicon ispicon_fullscreen">
+                  <div class="pad-t5">Record All</div>
+                </span></div>
+             </div>
+          <div class="buttonGroup col-md-6">
+
+            <button data-toggle="modal" data-target="#Save_Salvo" class="btn btn-primary pull-right">Save Salvo</button>
+            <button class="btn btn-default pull-right btn-space margin-right">Clear Salvo</button>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="firsttimeLandingpage hide">
+         <!--  <h2 class="isppagetitle">
+              Floor Plan
+              <span class="pull-right">
+                  <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#additem" title="Add floor Plan"></a>
+              </span>
+          </h2> -->
+          <div class="firsttimepage">
+              <p>
+                  <a class="ispicon ispicon_firstItem" title="Add a Salvo">
+                  </a>
+              </p>
+              <p class="h1">You dont have salvos saved yet !</p>
+              <p class="s6">click on <span class="ispicon ispicon_plus flooplaninfo" disabled="disabled"></span> to add a Salvo</p>
+
+              <p><button class="btn btn-primary ispicon_firstItem" data-toggle="modal" data-target="#additem" title="Add floor Plan">Add a Salvo</button></p>
+          </div>
+      </div>
+      
+        
+
+      </div>
+      <div id="MyVideo" class="modal ps-popup fade ps-video-iframe" style="padding-left: 17px;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="icon icon-close-camra pull-right" data-dismiss="modal" aria-hidden="true"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video class="video">
+                              <source src="../video/SampleVideo_360x240_5mb.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-footer">
+                           <span class="pull-left"><span class="icon icon-video-stream-red"></span><span class="iframe_camra_name">Camera 3</span></span>
+                           <span class="icon icon-fullscreen pull-right"></span>
+                           <span class="icon icon-download pull-right" data-toggle="modal" data-target="#myModal"></span>
+
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+      <div class="modal ps-popup ps-viewer-save-salvo-popup fade" id="Save_Salvo" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Save Salvo</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                        <label id="lbl.save_salvo" class="control-label pull-left">Salvo Name*</label>
+                        <input type="text" id="save_salvo_textbox" class="form-control" required="required">
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default " data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary pull-right">save</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+</section>

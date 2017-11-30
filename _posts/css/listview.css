@@ -1,0 +1,207 @@
+@import url("../Content/Styles/bootstrap/bootstrap.css");
+@import url("../Content/Styles/bootstrap/bootstrap-responsive.css");
+@import url("../Content/Styles/jquery/jquery.dropdown.css");
+@import url("../ContentStyles/addon.css");
+@import url("../Content/Styles/bootstrap-datetimepicker.css");
+@import url("../Content/Styles/alertify.css");
+/*@import url("../Content/Styles/accordion.css");*/
+@import url("../Content/Styles/appicons.css");
+@import url("../Content/Styles/bootstrap-select.css");
+@import url("../Content/Styles/bootstrap-tagsinput.css");
+@import url("../Content/Styles/checkbox.css");
+@import url("../Content/Styles/checkbox-list.css");
+@import url("../Content/Styles/configstyle.css");
+@import url("../Content/Styles/controlstyles.css");
+@import url("../Content/Styles/custom-bootstrap-datetimepicker.css");
+@import url("../Content/Styles/default.css");
+@import url("../Content/Styles/header.css");
+@import url("../Content/Styles/icons.css");
+@import url("../Content/Styles/ispcommon.css");
+/*@import url("../Content/Styles/ispaccount.css");*/
+@import url("../Content/Styles/jquery.webui-popover.min.css");
+@import url("../Content/Styles/menu.css");
+@import url("../Content/Styles/modal.css");
+@import url("../Content/Styles/modal-confirm.css");
+@import url("../Content/Styles/normalize.css");
+@import url("../Content/Styles/radio.css");
+@import url("../Content/Styles/selectize.css");
+@import url("../Content/Styles/Site.css");
+@import url("../Content/Styles/spinner.css");
+@import url("../Content/Styles/timeout-dialog.css");
+@import url("../Content/Styles/toastr.css");
+@import url("../Content/Styles/webhelp.css");
+/*@import url("../Content/fonts.css");*/
+@import url("../Content/forms.css");
+@import url("../Content/overlays.css");
+/*@import url("../Content/simple-sidebar.css");*/
+@import url("../Content/AccordionPlugin/accordion.css");
+@import url("../Content/AccountMgmtPlugin/customerlist.css");
+@import url("../Content/AccountMgmtPlugin/ispaccount.css");
+@import url("../Content/PeopleMgmtPlugin/ispInstrusion.css");
+@import url("../Content/PeopleMgmtPlugin/ispPeopleMgmt.css");
+@import url("../Content/SchdHoldPluginCSS/ispPeopleMgmt.css");
+
+.listcontainer {
+    position: absolute;
+    top: 94px;
+    bottom: 0px;
+    height: 92%;
+    min-height: 500px;
+    overflow: scroll;
+    width: 100%;
+}
+
+.schedulelists {
+    position: absolute;
+    top: 132px;
+    overflow: scroll;
+    bottom: 0px;
+    min-height: 364%;
+    width: 100%;
+    border-top: 1px solid #d0d0d0;
+}
+
+.cardlistview .peoplecount {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #303030;
+}
+
+.siteAddress {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.checkbox {
+    float: left;
+    margin-top: 0;
+}
+
+.siteView .isppagetitle {
+    margin-right: 12px;
+    margin-bottom: 17px;
+}
+
+.siteView .cardlistview {
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 0;
+    top: 0;
+}
+
+.siteView .siteOverview {
+    width: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+    padding: 0 15px 0 0;
+}
+
+.siteView .cardlistview .list-group.scroll-x.scroll-y {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 129px;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-top:1px solid #e7e7e7;
+}
+
+    .siteView .cardlistview .list-group.scroll-x.scroll-y li:first-child {
+        border-top: 0 none;
+    }
+
+.siteView .cardlistview {
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 0;
+    top: 0;
+}
+
+.siteView .ispheadersearch .ispicon_sort {
+    border: 0 none;
+    margin-right: 10px;
+}
+
+.siteView .ispheadersearch .ispsearch {
+    color: #303030;
+}
+
+.siteView .list-group-item {
+    padding: 12px 20px 10px 20px;
+    min-height: 88px;
+}
+
+/* DROPDOWN MENU */
+.ispActionMenu {
+    cursor: pointer;
+}
+
+    .ispActionMenu li, .ispActionMenu .dropdown-menu {
+        padding: 0;
+    }
+
+    .ispActionMenu .dropdown-menu {
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu.open {
+        font-size: 14px;
+        color: #1792e5;
+    }
+
+    .ispActionMenu.mainMenu.open .dropdown-toggle, .ispActionMenu.mainMenu .dropdown-toggle:hover {
+        color: #303030;
+        font-size: 18px;
+    }
+
+    .ispActionMenu.mainMenu .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a {
+        cursor: pointer;
+        padding: 8px 18px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .ispActionMenu .dropdown-menu > li > a.selected {
+            background-color: #e8f4fc;
+        }
+
+        .ispActionMenu .dropdown-menu > li > a > span {
+            margin-right: 8px;
+        }
+
+    .ispActionMenu .dropdown-menu > li:first-child > a {
+        cursor: pointer;
+        border-top: 0 none;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a:hover, .ispActionMenu .dropdown-menu > li > a:focus {
+        background-color: #f5f5f5;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .ispActionMenu.contentMenu .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .ispActionMenu.contentMenu .footer {
+        margin-top: 20px;
+    }
+
+        .ispActionMenu.contentMenu .footer button {
+            margin-left: 9px;
+        }

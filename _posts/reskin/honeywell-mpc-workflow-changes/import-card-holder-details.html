@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MPC</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/master.css" rel="stylesheet" type="text/css">
+    <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+    <link href="content/css/base.css" rel="stylesheet" type="text/css">
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="content/css/importcardholder.css">
+    <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/selectize.js"></script>
+    <script src="scripts/jquery.slimscroll.min.js"></script>
+</head>
+<body>
+  <div class="ps-import-card-holder-details">
+    <div class="import-holder-card-heading">
+      <header class="row">
+        <h1>Import Card Holder Details</h1>
+      </header>
+    </div>
+    <div class="people_details people_deails_tab col-md-9 col-lg-9">
+      <div>
+        <ul class="nav nav-tabs pw_tabs">
+          <li class="active"><a href="#ppl_profile" data-toggle="tab">Maps</a></li>
+          <li><a href="#ppl_cred" data-toggle="tab">Settings</a></li>
+          <li><a href="#ppl_assets" data-toggle="tab">Operators</a></li>
+          <li><a href="#ppl_access" data-toggle="tab">Download Status</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="import-holder-form">
+      <form>
+        <div class="row">
+        <div class="form-group">
+        <label class="control-label pull-left">Select a .csv file*</label>
+          <input id="uploadFile" disabled="disabled" />
+          <div class="fileUpload btn">
+            <input id="uploadBtn" type="file" class="upload" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-lg-10 heading-table">
+            <h2>Associate Access Persona</h2>
+          </div>
+        </div>
+        <div class="table-background">
+          <div class="table-header-download">
+          <div class="import-screen-table scroll-x scroll-y">
+            <table class="table table-striped download-status-table">
+              <thead>
+                <tr>
+                  <th class="col-sm-4"><div>Configuration Type</div></th>
+                  <th class="col-sm-3"><div>Name</div></th>
+                  <th class="col-sm-4"><div>Card Number</div></th>
+                  <th class="col-sm-1"><div></div></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col-sm-4"><div>1</div></td> 
+                  <td class="col-sm-3"><div>3</div></td> 
+                  <td class="col-sm-4"><select class="selectbox">
+                        <option>None</option>
+                        <option>All Door Access</option>
+                        <option>None Door Access</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><div></div></td> 
+                </tr>
+                <tr>
+                  <td class="col-sm-4"><div>1</div></td> 
+                  <td class="col-sm-3"><div>3</div></td> 
+                  <td class="col-sm-4"><select class="selectbox">
+                        <option>None</option>
+                        <option>All Door Access</option>
+                        <option>None Door Access</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><div></div></td>  
+                </tr>
+                <tr>
+                  <td class="col-sm-4"><div>1</div></td> 
+                  <td class="col-sm-3"><div>3</div></td> 
+                  <td class="col-sm-4"><select class="selectbox">
+                        <option>None</option>
+                        <option>All Door Access</option>
+                        <option>None Door Access</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><div></div></td>  
+                </tr>
+                <tr>
+                  <td class="col-sm-4"><div>1</div></td> 
+                  <td class="col-sm-3"><div>3</div></td> 
+                  <td class="col-sm-4"><select class="selectbox">
+                        <option>None</option>
+                        <option>All Door Access</option>
+                        <option>None Door Access</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><div></div></td>  
+                </tr>
+                <tr>
+                  <td class="col-sm-4"><div>1</div></td> 
+                  <td class="col-sm-3"><div>3</div></td> 
+                  <td class="col-sm-4"><select class="selectbox">
+                        <option>None</option>
+                        <option>All Door Access</option>
+                        <option>None Door Access</option>
+                      </select>
+                  </td>
+                  <td class="col-sm-1"><div></div></td>  
+                </tr> 
+              </tbody>
+            </table>
+            </div>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+<footer>
+    <div class="modal-footer">
+      <button class="btn btn-default">Close</button>
+      <button class="btn btn-primary">Next</button>
+    </div>
+  </footer>
+<script src= "scripts/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+﻿<link href="../Content/Styles/bootstrap.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="AccountMgmtPlugin/Content/AccountMgmtPlugin/customerlist.css" />
+<form id="customer-listview">
+    <div class="customerlist-root">
+        <div id="customer-view" class="customerlistView">
+            <div class="listOverview customerListOverview pull-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="isppagetitle basetitle">
+                            <span>All</span><span class="count">(50)</span>
+
+                            @*<ul class="pull-right right-menu-tabs">
+                               
+                                <li>
+                                    <span class="ispicon ispicon_plus col-md-2" data-toggle="tooltip" title="Add"></span>
+                                </li>
+                            </ul>*@
+                        </h2>
+                    </div>
+                    <div class="row hide">
+                        <div class="col-md-12 isptabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="count" data-bind="text:$data.CustomerList().length"></span>Troubled</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab"><span class="count"></span>New</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab"><span class="count"></span>Drafts</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab"><span class="count"></span>Modified</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab"><span class="count"></span>All</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-8 listleftcontainer">
+                            <div>
+                                <div class="row scroll-y sensorsTab">
+                                    <div class="table-responsive">
+                                        <table class="table table1" width="800">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" value="" /></th>
+                                                    <th class="sort">@Resources.Site_name<span class="ispicon ispicon_caret"></span></th>
+                                                    <th>@Resources.CustomerName</th>
+                                                    
+                                                    <th>Controller</th>
+                                                    <th>Mac ID</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <table class="table table2 hide" width="800">
+                                            <tbody data-bind="foreach:CustomerList">
+                                                <tr data-bind="click:$parent.onCustomerClick">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" data-bind="attr: { Id: 'checkbox' + $data.Id }" />
+                                                        </span>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <span data-bind="text:siteName"></span>
+                                                    </td>
+													<td>
+                                                        <span class="name" data-bind="text:customerName"></span><br />
+                                                    </td>
+                                                    <td>
+                                                        <!--Bind the data in below span-->
+                                                        <span>NA</span>
+                                                    </td>
+                                                    <td>
+                                                        <!--Bind the data in below span-->
+                                                        <span>NA</span>
+                                                    </td>
+                                                    
+                                                    @*coloroverlow|colorlow|colorhigh*@
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+                                                    @*<td>
+                                                        <!--Bind the data in below span-->
+                                                        <span>NA</span>
+                                                    </td>*@
+                                                    <td>
+                                                        <span>NA</span>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table2" width="800">
+                                            
+                                            <tbody>
+                                                <tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+												<tr class="text" onclick="document.location.href='customeroverview.html'">
+                                                    <td>
+                                                        <span class="checkbox">
+                                                            <input type="checkbox" value="" />
+                                                        </span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <span>Queen Campus</span>
+                                                    </td>
+													 <td class="col-md-4">
+
+                                                        <span class="name">United Hospitals</span> <br />
+
+                                                    </td>
+                                                    <td>
+                                                        <span>New</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Eagle P3000</span>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="map-container" class="ispmancontainer text-center"><div id="map"><h1>No Map Available</h1></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

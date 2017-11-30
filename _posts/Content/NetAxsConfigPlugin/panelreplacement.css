@@ -1,0 +1,65 @@
+﻿<!-- version 1.0 -->
+.ps-mpc-model .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ps-mpc-model .mpc-model-form {
+  border-top: 2px solid #EBEBEB;
+  margin: 0 34px;
+  padding-top: 20px;
+}
+.ps-mpc-model .macid {
+  padding: 0;
+}
+
+.ps-mpc-model .form-group {
+  margin-bottom: 10px;
+}
+.ps-mpc-model p {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #707070;
+  font-family: honeywellsansweb-medium;
+}
+.ps-mpc-model .modal-footer{
+  padding: 16px;
+}
+.ps-mpc-model .checkbox input[type="checkbox"] {
+      height: 22px;
+    width: 18px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 99999;
+    margin-top: 1px;
+}
+
+.ps-mpc-model .checkbox input[type="checkbox"]:focus{
+  outline: none !important;
+}
+
+.ps-mpc-model .checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+.ps-mpc-model .checkbox input[type="checkbox"]:checked + label::before {
+  outline: none !important;
+  border: none !important;
+}
+
+.ps-mpc-model .checkbox, .ps-mpc-model .radio {
+  display: block;
+  margin-bottom: 7px;
+  margin-top: 0;
+  position: relative;
+}
+.ps-mpc-model .checkbox label::before{
+  border-radius: 0;
+  height: 16px;
+  width: 16px;
+}
+.ps-mpc-model .checkbox input[type="checkbox"]:focus + label::before{
+  outline: none;
+}
+.inputuppercase {
+    text-transform: uppercase;
+}

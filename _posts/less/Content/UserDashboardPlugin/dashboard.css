@@ -1,0 +1,392 @@
+﻿
+ul li {
+    list-style-type: none;
+}
+
+.ispdashboardWrapper {
+    padding: 20px !important;
+    background: #f0f0f0;
+    /*overflow-y: auto;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.usermapview {
+    float: left;
+    position: absolute;
+    top: 35px;
+    bottom: 20px;
+    width: 33.3333%;
+}
+
+.ispcardLayout {
+    background: #fff;
+    padding: 20px;
+}
+
+    .ispcardLayout .cardtHeader {
+        padding-bottom: 17px;
+    }
+
+    .ispcardLayout .cardHeader span {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #606060;
+    }
+
+    /* SITE CSS */
+
+    .ispcardLayout.siteCard {
+        padding: 0;
+        border-bottom: 1px solid #d2d2d2;
+        height: 100%;
+        clear: both;
+        /* margin-top: 15px; */
+        width: 100% !important;
+    }
+
+        .ispcardLayout.siteCard .cardHeader {
+            padding: 19px 20px 18px 20px;
+            float: left;
+            width: 100%;
+        }
+
+.cardHeaderTitle {
+    margin-top: 4px !important;
+    float: left;
+    text-transform: uppercase;
+}
+
+
+.siteCard .siteMap {
+    height: 200px;
+    background: #f0f0f0;
+    clear: both;
+    height: 40%;
+}
+
+.siteCard .siteStatCard {
+    float: left;
+    width: 100%;
+    height: 45%;
+}
+
+.siteCard .siteStatHeader {
+    color: #fff;
+    padding: 16px 20px 11px 20px;
+    float: left;
+    width: 100%;
+    height:70px;
+    cursor:pointer;
+}
+
+    .siteCard .siteStatHeader.withAlarms {
+        background: #ee3124;
+    }
+
+    .siteCard .siteStatHeader.noAlarms {
+        background: #7eb338;
+        padding: 0px 20px 13px 20px;
+        cursor:default;
+    }
+
+    .siteCard .siteStatHeader span.alarmCount {
+        font-size: 26px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #fff;
+        float: left;
+        line-height: 22px;
+    }
+
+    .siteCard .siteStatHeader > p, .siteCard .siteStatHeader > p > span {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #fff;
+        margin: 0;
+        clear: both;
+    }
+
+    .siteCard .siteStatHeader.noAlarms > p, .siteCard .siteStatHeader.noAlarms > p > span {
+        font-size: 26px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+    }
+
+.siteCard .siteStatList {
+    float: left;
+    width: 100%;
+    height: 256px;
+    overflow-y: auto;
+}
+
+    .siteCard .siteStatList li {
+        border-top: 1px solid #f0f0f0;
+        padding: 12px 20px 10px 20px;
+        float: left;
+        width: 100%;
+        height: 64px;
+    }
+
+        .siteCard .siteStatList li:hover {
+            background: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .siteCard .siteStatList li:active {
+            background: #d1e9fa;
+            cursor: pointer;
+        }
+
+        .siteCard .siteStatList li:first-child {
+            border-top: 0 none;
+        }
+
+    .siteCard .siteStatList .ispicon {
+        margin-right: 8px;
+        float: left;
+    }
+
+        .siteCard .siteStatList .ispicon::before {
+            cursor: default !important;
+        }
+
+    .siteCard .siteStatList li > div + div {
+        margin-top: 10px;
+    }
+
+.siteAlarmName::first-letter {
+    text-transform: uppercase;
+}
+
+.clusterText {
+    position: relative;
+    font-size: 20px;
+    top: -5px;
+    color: #fff;
+    text-align: center;
+    right: 27px;
+}
+
+.siteCard .siteStatList .siteCritical {
+    font-size: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #ee3124;
+    margin-top: 15px;
+    float: left;
+}
+
+.siteCard .siteStatList .siteNormal {
+    font-size: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-top: 15px;
+    float: left;
+}
+
+.siteCard .siteStatList .criticalCount, .siteCard .siteStatList .majorCount {
+    font-size: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #ee3124;
+    float: left;
+    padding-top: 3px;
+}
+
+.siteCard .siteStatList .majorCount {
+    color: #f47e37 !important;
+}
+
+.siteCard .siteStatList .siteMajor {
+    font-size: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #f47e37;
+    margin-top: 15px;
+    float: left;
+}
+
+.mapText {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+}
+
+/*.zoom .mapText {
+    font-size: 20px;
+    right: 17px;
+    top: 17px;
+}*/
+
+.mapText::first-letter {
+    text-transform: uppercase;
+}
+
+.avoidclicks {
+    pointer-events: none;
+}
+
+/* DROP DOWN CSS  - DONT EDIT */
+.ispActionMenu {
+    cursor: pointer;
+}
+
+    .ispActionMenu li, .ispActionMenu .dropdown-menu {
+        padding: 0;
+    }
+
+    .ispActionMenu .dropdown-menu {
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu.open {
+        font-size: 14px;
+        color: #1792e5;
+    }
+
+    .ispActionMenu.mainMenu.open .dropdown-toggle, .ispActionMenu.mainMenu .dropdown-toggle:hover {
+        color: #303030;
+        font-size: 18px;
+    }
+
+    .ispActionMenu.mainMenu .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a {
+        cursor: pointer;
+        padding: 9px 18px 7px 18px;
+        border-top: 0 none;
+        border-bottom: 1px solid #d0d0d0;
+        border-top: 1px solid #d0d0d0;
+        margin-top: -1px;
+    }
+
+    .ispActionMenu .dropdown-menu > li.selected, .ispActionMenu .dropdown-menu > li.selected:hover, .ispActionMenu .dropdown-menu > li.selected:focus {
+        background-color: #d1e9fa;
+        border-bottom: 1px solid #8bc9f2;
+        color: #303030;
+    }
+
+        .ispActionMenu .dropdown-menu > li.selected a:hover, .ispActionMenu .dropdown-menu > li.selected a:focus {
+            background-color: #d1e9fa;
+        }
+
+    .ispActionMenu .dropdown-menu > li > a > span {
+        margin-right: 8px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+    }
+
+    .ispActionMenu .dropdown-menu > li:first-child > a {
+        cursor: pointer;
+        border-top: 0 none;
+    }
+
+    .ispActionMenu .dropdown-menu > li:hover, .ispActionMenu .dropdown-menu > li:focus,
+    .ispActionMenu .dropdown-menu > li a:hover, .ispActionMenu .dropdown-menu > li a:focus {
+        background-color: #f5f5f5;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        outline: 0;
+    }
+
+
+    .ispActionMenu .dropdown-menu > li a:active, .ispActionMenu .dropdown-menu > li a.active {
+        background-color: #d1e9fa !important;
+        border-bottom: 1px solid #8bc9f2 !important;
+        color: #303030;
+    }
+
+    .ispActionMenu.contentMenu .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .ispActionMenu.contentMenu .footer {
+        margin-top: 20px;
+    }
+
+        .ispActionMenu.contentMenu .footer button {
+            margin-left: 9px;
+        }
+
+.ispdashboardWrapper .newAccount {
+    padding: 35px 35px 36px 35px;
+    border-bottom: 1px solid #D2D2D2;
+    margin: 0 auto;
+    margin-top: 11%;
+    background: #fff;
+    width: 350px;
+    text-align: center;
+}
+
+.ispdashboardWrapper .newAccount {
+    padding: 35px 35px 36px 35px;
+    border-bottom: 1px solid #D2D2D2;
+    margin: 0 auto;
+    margin-top: 11%;
+    background: #fff;
+    width: 350px;
+    text-align: center;
+}
+
+    .ispdashboardWrapper .newAccount h4 {
+        font-style: italic;
+        color: #b0b0b0;
+        margin: 0;
+    }
+
+    .ispdashboardWrapper .newAccount p {
+        margin-top: 17px;
+        margin-bottom: 0;
+    }
+
+        .ispdashboardWrapper .newAccount p + p {
+            margin-top: 19px;
+            margin-bottom: 0;
+        }
+
+.ispdashboardWrapper .ispicon_firstAccount::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -16px;
+}
+
+.ispdashboardWrapper .ispicon_firstAccount:hover::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -69px;
+}
+
+.ispdashboardWrapper .ispicon_firstAccount:active:before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -122px;
+}
+
+.map_siteInfo {
+    font-size: 12px;
+    padding: 7px 0px 4px 0px !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dashboardheader {
+    font-size: 13px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 1;
+}
+    .dashboardheader a {
+        cursor:pointer;
+    }

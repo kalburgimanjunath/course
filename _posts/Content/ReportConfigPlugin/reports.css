@@ -1,0 +1,785 @@
+.ps-report-base-content h1, 
+.ps-report-base-content h2, 
+.ps-report-base-content h3, 
+.ps-report-base-content h4, 
+.ps-report-base-content h5, 
+.ps-report-base-content h6{
+    line-height:normal;
+    margin:0 !important;
+}
+
+.ps-report-base-content .cardSettings{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.ps-report-base-content .cardSettings .leftSection,
+.ps-report-base-content .cardSettings .rightSection{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.ps-report-base-content .cardSettings .leftSection{
+    left: 0;
+    right: auto;
+    overflow-y: auto;
+}
+
+.ps-report-base-content .cardSettings .rightSection{
+    left: 25%;
+}
+
+.ps-report-base-content .cardSettings .rightSection .firstSection,
+.ps-report-base-content .cardSettings .rightSection .secondSection,
+.ps-report-base-content .cardSettings .rightSection .thirdSection{
+    position: absolute;
+    top: 0;
+    bottom: 65px;
+    right: auto;
+    overflow-y: auto;
+}
+
+.ps-report-base-content .cardSettings .rightSection .firstSection{
+    left: 0;
+}
+
+.ps-report-base-content .cardSettings .rightSection .secondSection{
+    left: 33.3%;
+}
+
+.ps-report-base-content .cardSettings .rightSection .thirdSection{
+    left: 66.65%;
+    right: 0;
+    border-right: 0px;
+}
+
+@media only screen and (min-width:1025px) and (max-width: 1440px) {
+    .ps-report-base-content .cardSettings .rightSection .firstSection,
+    .ps-report-base-content .cardSettings .rightSection .secondSection,
+    .ps-report-base-content .cardSettings .rightSection .thirdSection{
+        width: 33.333% !important;
+    }
+}
+
+.ps-create-report .reportContent .ps-report-container{
+    top: 63px;
+}
+
+.ps-create-report .ps-report-container {
+    border-top: 1px solid #e7e7e7;
+    padding: 0;
+}
+
+.ps-create-report .ps-event-report-title h1{
+    line-height: normal;
+    margin: 0 !important;
+}
+
+.ps-create-report .card-header{
+    padding: 20px 5px 15px 5px;
+}
+
+.ps-create-report .ps-report-container .ps-column {
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    bottom: 64px;
+    overflow: auto;
+}
+
+.ps-create-report .report-border-bottom {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.ps-create-report .ps-alarms-events.row{
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.ps-create-report .report-label-padding {
+    padding-bottom: 11px;
+    padding-top: 7px;
+    margin: 0;
+}
+
+.ps-create-report .filter-section-middle.report-label-padding {
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.ps-create-report .filter-first-ul .ps-checkbox {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ps-create-report .create-report-footer {
+    z-index: 999;
+    padding: 16px;
+    border-top: 1px solid #e7e7e7;
+    background: #fff;
+    bottom:0;
+    position:absolute;
+}
+
+.ps-create-report .checkbox input[type="checkbox"] {
+    float: left;
+}
+
+.ps-create-report .selectbox .option {
+    border-top: 1px solid #e7e7e7;
+}
+
+.selectize-dropdown [data-selectable], .selectize-dropdown .optgroup-header {
+    padding: 6.5px;
+}
+
+.ps-create-report h2 {
+    margin-bottom: 16px;
+}
+
+.ps-create-report .site-checkbox legand{
+    font-size: 15px;
+}
+
+.ps-create-report .ps-sort-layout li {
+    width: 100%;
+    display: flex;
+}
+
+.ps-create-report .right-inner-addon {
+    width: 100%;
+    margin-right: 1%;
+}
+.ps-create-report .right-inner-addon label {
+    color: #606060;
+    font-family: "HoneywellSansWeb-Medium" !important;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 4px;
+}
+
+.ps-create-report .report-export-data {
+    clear: both;
+    padding: 0;
+    right: 21px;
+    left: auto;
+    height: auto !important;
+    border-radius: 0px;
+}
+
+.ps-create-report .report-export-data li {
+    margin-bottom: 0;
+}
+
+.ps-create-report .report-export-data li {
+    margin-bottom: 0;    
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.ps-create-report .report-export-data li a {
+    padding: 5px 15px;
+    color: #1792e5;
+}
+
+.ps-create-report .report-export-data li a:hover{
+    text-decoration:none;
+}
+
+.ps-create-report .footer-report {
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    position: relative;
+}
+
+.selectColumnContainer {
+    display:none;
+}
+
+.selectColumnContainer.listdown-active {
+    display: block;
+}
+
+.ps-create-report .filter-first-ul > li,
+.ps-create-report .sch_options > li {
+    position: relative;
+}
+
+.ps-create-report .filter-first-ul > li .add-on,
+.ps-create-report .sch_options > li .add-on {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    z-index:2;
+}
+.ps-create-report .reset_cal{
+    position: absolute;
+    right: 35px;
+    top: 33px;
+}
+
+.ps-create-report .radio{
+    margin-bottom: 15px;
+}
+
+select[multiple], select[size] {
+    height: 34px;
+}
+
+select[multiple] option{
+    display: inline-block;
+    margin-right: 8px;
+    padding: 2px 6px;
+    background: #1792e5;
+    color: #fff;
+}
+
+#card-report-section, 
+#event-report-section{
+    display:none;
+}
+
+.ps-report-base-content .ispselectdropdown .isppopup-site label:after{
+    content:none;
+}
+
+.ps-report-base-content .ispselectdropdown .isppopup-site{
+    width:89%;
+    height: auto;
+    max-height: inherit;
+}
+
+.ps-report-base-content .card-report-section .thirdSection .ispselectdropdown .isppopup-site{
+    width:calc(100% - 0px) !important;
+}
+
+.ps-report-base-content .ispselectdropdown .isppopup-site .form-search,
+.ps-report-base-content input[type=search]{
+    width: calc(100% - 0px) !important;
+    margin-top:0;
+}
+
+.ps-report-base-content input[type=search]:focus{   
+    border-color: #1792e5 !important;
+}
+
+.ps-report-base-content .ispselectdropdown .isppopup-site .icon-search .ispicon_search{
+    top: 5px;
+    right: 5px;
+    left: auto;
+}
+
+.ps-report-base-content .ispselectdropdownEmailto .ispicon_dropArrow,
+.ps-report-base-content .ispselectdropdownColumns .ispicon_dropArrow, 
+.ps-report-base-content .ispselectdropdownUsers .ispicon_dropArrow,
+.ps-report-base-content .ispselectdropdownSite .ispicon_dropArrow{
+    position: relative;
+    top: -30px;
+    left: calc(100% - 30px);
+    right: auto;
+}
+
+.ps-report-base-content .layoutSortOrderLi1{
+    margin-top: -25px;
+}
+.ps-report-base-content .layoutSortOrderLi2,
+.ps-report-base-content .layoutSortOrderLi3,
+.ps-report-base-content .layoutButtonLi{
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+}
+
+.ps-report-base-content .alarmAndEventsAccordion{
+    border-top: 1px solid #d0d0d0;
+}
+.ps-report-base-content .alarmAndEventsAccordion li div{
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.ps-report-base-content .alarmAndEventsAccordion li ul li div{
+    padding-left: 60px;
+}
+
+.ps-report-base-content .alarmAndEventsAccordion li div:hover{
+    background: #f5f5f5;
+}
+
+.ps-report-base-content .alarmAndEventsAccordion li div .control-label{
+    margin: 0 !important;
+}
+
+.ps-report-base-content .alarmAndEventsAccordion input[type="checkbox"]{
+    margin: 0 !important;
+    display: inline-block;
+}
+
+.ps-report-base-content #reportDetailsPopupSite{
+    top: 305px !important;
+}
+
+.ps-report-base-content #auditReportUsersPopupSite{
+    top: 0;
+    border: none;
+    position: relative;
+}
+
+.ps-report-base-content #auditReportColumnsPopupSite,
+.ps-report-base-content #eventReportColumnsPopupSite,
+.ps-report-base-content #cardReportColumnsPopupSite{
+    top: 122px !important;
+}
+
+.ps-report-base-content #auditReportEmailtoPopupSite,
+.ps-report-base-content #eventReportEmailtoPopupSite,
+.ps-report-base-content #cardReportEmailtoPopupSite{
+    width: 100%;
+}
+    
+.ps-report-base-content .reportPreviewModal .modal-body{
+    overflow-y: hidden;
+    max-height: 385px;
+    margin-top: 14px;
+    padding-left: 24px;
+    padding-right: 42px;
+}
+
+.ps-report-base-content .reportPreviewModal .modal-body tbody{
+    display: inline-block;
+    max-height: 285px;
+    overflow-y: auto;
+    }
+
+.ps-report-base-content .reportPreviewModal .modal-body thead,
+.ps-report-base-content .reportPreviewModal .modal-body tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Reports List */
+.ps-report-base-content .rightSection.ps-full-container{
+    width: 100% !important;
+    -webkit-transition: width 0.8s;
+    -ms-transition: width 0.8s;
+    transition: width 0.8s;
+    left: 0 !important;
+}
+
+ .ps-report-base-content .rightSection .report-search{
+    width: 200px;
+}
+
+.ps-report-base-content .rightSection .report-search .ispicon_search{
+    position: absolute;
+    top: 7px;
+    left: calc(100% - 135px);
+    right: auto;
+}
+
+.ps-report-base-content .rightSection .report-search .form-search:hover + .ispicon_search::before{
+    background-position: -106px -43px;
+}
+
+.ps-report-base-content .rightSection .sidebar-slide{
+    margin-left:-15px;
+}
+
+.ps-report-base-content .rightSection h3{
+    padding-top: 2px !important;
+}       
+
+.ps-report-base-content .listing-of-reports.main{
+    top: 84px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.ps-report-base-content .btn-close{
+    color: rgba(255, 255, 255, 0.82);
+    padding-left: 5px;
+    cursor:pointer;
+}
+
+.ps-report-base-content .btn-close:hover{
+    color: rgb(255, 255, 255);
+}
+    
+.ps-report-base-content .listing-of-reports .isptablebase{
+    top: 60px;
+    padding: 0 15px 0 20px;
+}
+    
+.ps-report-base-content .listing-of-reports table tr th{
+    background: none;
+}
+
+.ps-report-base-content .listing-of-reports table tr td .ispicon_edit{
+    visibility: hidden;
+}
+
+.ps-report-base-content .listing-of-reports table tr:hover {
+    background: #f5f5f5;
+}
+
+.ps-report-base-content .listing-of-reports table tr:hover .ispicon_edit{
+    visibility: visible;
+}
+
+.ps-report-base-content .listing-of-reports .successText,
+.ps-report-base-content .listing-of-reports .delivery-report-success {
+    color: #7eb338;
+}
+
+.ps-report-base-content .listing-of-reports .delivery-report-fail {
+    color: #ee3124;
+}
+
+.ps-report-base-content .viewmode .layoutSortOrderLi1{
+    margin-top: 0;
+}
+
+.ps-report-base-content .viewmode.reports .btn{
+    display:none;
+}
+
+.ps-report-base-content .viewmode.reports .topSection .ispicon {
+    pointer-events: initial;
+    opacity: initial;
+}
+
+.ps-report-base-content .viewmode input[type="checkbox"]:checked {
+    background-position: -9px -438px;
+}
+
+.ps-report-base-content .viewmode input[type="checkbox"].partial {
+    background-position: -90px -438px;
+}
+
+.ps-report-base-content .status-filter-dropdown-wrapper{
+    cursor:pointer;
+}
+
+.ps-report-base-content .status-filter-dropdown-wrapper .dropdown-menu{
+    clear: both;
+    padding: 0;
+    left:auto;
+    right:auto;
+    height: auto !important;
+    border-radius: 0px;
+}
+
+.ps-report-base-content .status-filter-dropdown-wrapper .dropdown-menu li {
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.ps-report-base-content .status-filter-dropdown-wrapper .dropdown-menu li a {
+    padding: 5px 15px;
+}
+
+.ps-report-base-content .viewmode .create-report-footer{
+    display:none;
+}
+
+.ps-report-base-content .viewmode .cardSettings .rightSection .firstSection,
+.ps-report-base-content .viewmode .cardSettings .rightSection .secondSection,
+.ps-report-base-content .viewmode .cardSettings .rightSection .thirdSection{
+    bottom: 0;
+}
+
+.ps-report-base-content .reportDeliveryModal .modal-body {
+    overflow-y: auto;
+    max-height: 350px;
+    margin-top: -20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.ps-report-base-content .reportDeliveryModal .modal-footer .legend{
+    float:left;
+}
+
+.ps-report-base-content .reportDeliveryModal .modal-footer .legend span{
+    float:left;
+    padding: 6px 8px;
+    margin: 3px 10px;
+}
+
+.ps-report-base-content .reportDeliveryModal .modal-footer .legend span.delivery-report-success{
+    background:#7eb338;
+}
+
+.ps-report-base-content .reportDeliveryModal .modal-footer .legend span.delivery-report-fail{
+    background:#ee3124;
+}
+
+.ps-report-base-content .reportDeliveryModal .delivery_cur {
+    font-size: 15px;
+}
+
+.ps-report-base-content .reportDeliveryModal .delivery-report-success{
+    color: #7eb338;
+}
+
+.ps-report-base-content .reportDeliveryModal .delivery-report-fail {
+    color: #ee3124;
+}
+
+.ps-report-base-content .reportDeliveryModal  .report-delivery-list ul li{
+    padding:5px 0;
+}
+
+.listReportStatus {
+    cursor:pointer;
+}
+
+.listReportType {
+    cursor:pointer;
+}
+
+.listReportName {
+    cursor:pointer;
+}
+
+.reportPreviewModal .modal-dialog {
+    width: 100%;
+    max-width: 90%;
+    margin: 5% auto;
+}
+
+.reportPreviewModal .modal-header{
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reportPreviewModal .modal-body {
+    padding: 0 36px 0 20px;
+}
+
+.reportPreviewModal .modal-body tbody tr td {
+    padding: 10px 5px 10px 10px;
+}
+
+.reportPreviewModal .modal-body tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.reportPreviewModal .modal-body tbody tr:last-child{
+    border-bottom: none;
+}
+
+.reportPreviewModal .modal-body thead tr th{
+    padding: 5px 10px 10px 10px;
+}
+
+.reportPreviewModal .modal-header hr {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+
+.reportCritical{
+    color: #ff0000;
+}
+
+.report-heading-entity .ispselectdropdown .isppopup-site .control-label {
+    padding: 10px 0 10px 0;
+}
+
+.report-heading-entity .ispselectdropdown .isppopup-site .control-label.usersSelectList{
+    padding: 10px 0 10px 30px;
+}
+
+.ps-report-base-content #auditReportUserActionsPopupSite{
+    top: 0;
+    border: none;
+    position: relative;
+}
+
+.ps-report-base-content #auditReportEntitlesPopupSite{
+    top: 0;
+    border: none;
+    position: relative;
+}
+
+.report-heading-entity #auditReportUserActionsPopupSite .control-label.usersSelectList {
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.delete_icon{
+    margin-right: 15px;
+    margin-top: 18px;
+}
+
+.reportEventRetry h3{
+    padding-top: 10px;
+}
+
+.export_acknowledgedIcon {
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+}
+
+#reportListContent .isptablebase > div > div > table > thead > tr > th > div > div:first-child > input[type="checkbox"]{
+    margin: 0;
+    position: relative;
+    right: 4px;
+}
+
+#reportListContent .isptablebase table tbody tr td input[type="checkbox"] {
+    height: 22px;
+}
+
+#reportContent #audit-report-section .firstSection .report-inside-wrap #auditReportUserActionsPopupSite .isppopup-site {
+    position: relative;
+    top: 0;
+    border: none;
+    padding: 0 0 0 30px;
+}
+
+.ispmodal.reportPreviewModal{
+    left: 0 !important;
+}
+
+.removeDisableTextStyle {
+    background:#fff !important;
+}
+
+.report-search .report-searchIcon {
+    right: 17px;
+}
+
+.loader.report-searchIcon {
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    margin-top: 5px;
+    left: calc(100% - 135px);
+    bottom: 5px;
+}
+
+.report-searchIcon {
+    height: 30px;
+    width: 20px;
+    z-index: 1000;
+    position: absolute;
+    right: 10px;
+}
+
+.report-removeSearchIcon {
+    position: absolute;
+    bottom: 6px;
+    left: calc(100% - 165px);
+}
+
+.report-noResultsText {
+    top: 120px;
+    position: absolute;
+    left: 24px;
+}
+
+.reportPreviewModal .modal-header h1 {
+    padding-top: 33px;
+    padding-left: 32px;
+    padding-bottom: 0;
+}
+
+.reportPreviewModal .modal-footer {
+    padding: 16px 36px 16px;
+}
+
+.reportPreviewModal .modal-footer .previewPopupOkButton {
+    position: relative;
+    left: 10px;
+}
+
+
+.cardFilterRadio{
+    position:relative;
+    bottom: 2px;
+}
+
+.ps-report-base-content .viewmode label {
+    pointer-events:none;
+}
+
+.ps-report-base-content .reportFiltersSection,
+.ps-report-base-content .reportLayoutSection,
+.ps-report-base-content .reportScheduleSection{
+    width: 33.3%;
+}
+.cardSettings.viewmode .rightSection .firstSection,
+.cardSettings.viewmode .rightSection .secondSection,
+.cardSettings.viewmode .rightSection .thirdSection {
+    bottom: 0;
+}
+.ps-report-base-content .isptable tbody tr td {
+    cursor: pointer;
+}
+/*#container {
+    width: 300px;
+    height: 400px;
+}*/
+.ps-report-base-content .chart-view {
+    float: left;
+    width: 100%;
+    min-width: 310px;
+    max-width: 600px;
+    height: 400px;
+}
+.ps-report-base-content .eventReportContentTitle{
+    margin-top: 10px;
+}
+.ps-report-base-content .eventAlarmsList {
+    border: none;
+}
+.ps-report-base-content .ispselectdropdown .isppopup-site.eventAlarmsList {
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.report-heading-entity .ispselectdropdown .isppopup-site .eventDashboardSearch .control-label {
+    border-top: 1px solid #ddd;
+}
+.ps-report-base-content .eventDashboardSearch label {
+    padding-left: 0px !important;
+}
+.ps-report-base-content .eventSiteDropdown {
+    padding:0;
+}
+.ps-report-base-content .ispselectdropdown .isppopup-site.eventSiteDropdowncontent {
+    width:100%;
+    border-top: none;
+}
+.ps-report-base-content .eventSiteDropdownicon {
+    right:8px;
+}
+.ps-report-base-content .eventSiteDropdownlabel {
+    border-top:1px solid #ddd;
+}
+.ps-report-base-content .eventReportSitesloadIcon { 
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    margin-top: -2px;
+}
+.reportPreviewModal .modal-body thead tr th.empty-header {
+     width: 7px;
+}
+.reportScheduleDelivery{
+    padding-top: 10px !important;
+}

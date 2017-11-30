@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/SchedulesCSS.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/ispSchedule.css"> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+    <script src="Scripts/lib/alertify.js" type="text/javascript"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+alertify.success('Success message');
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $( document ).ready(function() {
+        $(".ispicon_edit").click(function(){
+            $(".contentContainer").removeClass("viewmode");
+            $(".btn-footer").css("display","block");
+        });
+
+        $("#sorting").click(function(){
+            $(".ispicon_sort").addClass("ispicon_sort_asc");
+            $(".ispicon_sort").removeClass("ispicon_sort");
+            
+        });
+
+        
+
+        // $(".ispicon_collapse").click(function(){
+        //     $(".accordion-root").toggle();
+        //     //$('.scheduleOverview').toggleClass('col-xs-6 col-sm-6 col-md-6 col-lg-6','col-xs-9 col-sm-9 col-md-9 col-lg-9');
+        //     $('.scheduleOverview').toggleClass('col-xs-9 col-sm-9 col-md-9 col-lg-9').css('left','25%');
+            
+        // });
+
+      
+        //$('.SlectBox').SumoSelect();
+
+    });
+
+    function onMenuItemSelect(itemName) {
+    $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+    switch (itemName) {
+    case "SiteOverview":
+    blockUI();
+    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+    unblockUI();
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+    });
+    break;
+    case "AddSite":
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+    break;
+    }
+    }
+     
+    </script>
+
+    
+</head>
+<body>
+                 
+                    
+<div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+</div>
+
+    <div id="page-body">
+        <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="customeroverview.html" class="list-group-item"><span class="ispicon ispicon_sites"></span><span>Site Overview</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                       <!--  <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li> -->
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                       
+                                <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item active"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                       
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="schedule-root">
+            <!-- <link href="~/Content/AccountMgmtPlugin/alarms.css" rel="stylesheet" /> -->
+            <div id="schedule-view" class="scheduleView">
+    <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs">
+<span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Schedules &amp; Holidays
+                        <span class="pull-right" data-bind="visible:currentTab() == 0" style="display: none;">
+                            <a class="ispicon ispicon_plus" data-bind="click: schedule.createSchedule,css: { viewmode: IsAddorEditScheduleViewVisible()}" title="Add New Schedule"></a>
+                            <a class="ispicon ispicon_delete dropdown-toggle" data-toggle="dropdown" title="Delete" data-bind="click: schedule.deleteSchedule"></a>
+                        </span>
+                        <span class="pull-right" data-bind="visible:currentTab() == 1">
+                            <a class="ispicon ispicon_plus" data-bind="click: holiday.createHoliday,css: { viewmode: IsAddorEditHolidayViewVisible()}" title="Add New Holiday"></a>
+                            <a class="ispicon ispicon_delete dropdown-toggle" data-toggle="dropdown" title="Delete" data-bind="click: holiday.deleteHoliday,css: { viewmode: ((holiday.holidays().length <= 0) || IsAddorEditHolidayViewVisible()) ? true: false}">
+                            </a>
+                        </span>
+
+                    </h2>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class=""><a href="#schedule" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true" data-bind="click: switchTab.bind($data, 0)">Schedules</a></li>
+                        <li role="presentation" class="active"><a href="#holidays" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false" data-bind="click: switchTab.bind($data, 1)">Holidays</a></li>
+                    </ul>
+                    <div>
+                        <div class="tab-content">
+                            <div id="schedule" class="tab-pane">
+                                <ul class="list-group scroll-x scroll-y schedulelists" data-bind="foreach: schedule.schedules, lazyScrollBar: schedule.lazyLoading, callback: schedule.loadNextItems">
+                                    <li class="list-group-item readonly active" data-bind="attr: {id: 'item_' + $index()},css: { active: $data.IsHighlighted(), readonly:$data.IsSystemEntity() }" id="item_0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-bind="checked: $data.IsSelected, enable: !$data.IsSystemEntity()" disabled="">
+                                        </div>
+                                        <div class="col-md-10" data-bind="click : $parent.schedule.getSchedule">
+                                            <span class="name" data-bind="text: $data.Name">Always on</span> <br>
+                                            <span class="sensorsList ">
+                                                <span data-bind="text: $data.Description,attr: {title:  $data.Description}" title="Always on">Always on</span><br>
+                                                <span class="pull-right" data-bind="visible: $data.Status()">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                
+                                    <li class="list-group-item readonly" data-bind="attr: {id: 'item_' + $index()},css: { active: $data.IsHighlighted(), readonly:$data.IsSystemEntity() }" id="item_1">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-bind="checked: $data.IsSelected, enable: !$data.IsSystemEntity()" disabled="">
+                                        </div>
+                                        <div class="col-md-10" data-bind="click : $parent.schedule.getSchedule">
+                                            <span class="name" data-bind="text: $data.Name">Never on</span> <br>
+                                            <span class="sensorsList ">
+                                                <span data-bind="text: $data.Description,attr: {title:  $data.Description}" title="Never on">Never on</span><br>
+                                                <span class="pull-right" data-bind="visible: $data.Status()" style="display: none;">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                
+                                    <li class="list-group-item" data-bind="attr: {id: 'item_' + $index()},css: { active: $data.IsHighlighted(), readonly:$data.IsSystemEntity() }" id="item_2">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-bind="checked: $data.IsSelected, enable: !$data.IsSystemEntity()">
+                                        </div>
+                                        <div class="col-md-10" data-bind="click : $parent.schedule.getSchedule">
+                                            <span class="name" data-bind="text: $data.Name">wfdsfsdfs</span> <br>
+                                            <span class="sensorsList ">
+                                                <span data-bind="text: $data.Description,attr: {title:  $data.Description}" title="asdadsa">asdadsa</span><br>
+                                                <span class="pull-right" data-bind="visible: $data.Status()" style="display: none;">Currently ON</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="holidays" class="tab-pane active">
+                                <ul class="list-group scroll-x scroll-y holidaylists" data-bind="foreach: holiday.holidays, lazyScrollBar: holiday.lazyLoading, callback: holiday.loadNextItems">
+                                    <li class="list-group-item active" data-bind="attr: {id: 'item_' + $index()}, css: { active: $data.IsHighlighted()}" id="item_0">
+                                        
+                                        <div class="col-md-10" data-bind="click : $parent.holiday.getHoliday">
+                                            <span>
+                                                <span class="name" data-bind="text: $data.Name ,attr: {title:  $data.Name}" title="131dsfsdfsdf">131dsfsdfsdf</span> <br>
+                                                <span data-bind="text: $data.DateText">December 23, 2016</span><br>
+                                                <span data-bind="visible:!$data.IsEveryYear()">Repeats never</span>
+                                                <span data-bind="visible:$data.IsEveryYear()" style="display: none;">Repeats yearly forever</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+
+                                
+                                    <li class="list-group-item" data-bind="attr: {id: 'item_' + $index()}, css: { active: $data.IsHighlighted()}" id="item_1">
+                                        
+                                        <div class="col-md-10" data-bind="click : $parent.holiday.getHoliday">
+                                            <span>
+                                                <span class="name" data-bind="text: $data.Name ,attr: {title:  $data.Name}" title="adsadsadaxcxc">adsadsadaxcxc</span> <br>
+                                                <span data-bind="text: $data.DateText">December 01, 2016</span><br>
+                                                <span data-bind="visible:!$data.IsEveryYear()">Repeats never</span>
+                                                <span data-bind="visible:$data.IsEveryYear()" style="display: none;">Repeats yearly forever</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+
+                                
+                                    <li class="list-group-item" data-bind="attr: {id: 'item_' + $index()}, css: { active: $data.IsHighlighted()}" id="item_2">
+                                        
+                                        <div class="col-md-10" data-bind="click : $parent.holiday.getHoliday">
+                                            <span>
+                                                <span class="name" data-bind="text: $data.Name ,attr: {title:  $data.Name}" title="dsfsdfsf">dsfsdfsf</span> <br>
+                                                <span data-bind="text: $data.DateText">December 05, 2016</span><br>
+                                                <span data-bind="visible:!$data.IsEveryYear()">Repeats never</span>
+                                                <span data-bind="visible:$data.IsEveryYear()" style="display: none;">Repeats yearly forever</span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview scheduleOverview isptabs pull-left">
+    <div id="manageTimeSchedule">
+        <form id="manageTimeScheduleForm">
+            <div class="row isptabs" data-bind="visible:!IsAddorEditScheduleViewVisible() &amp;&amp; currentTab()==0" style="display: none;">
+                <div class="row">
+                    <h2 class="isppagetitle">
+                        <span id="schedule_Name" name="schedule_Name" data-bind="text: schedule.model.Name">Always on</span>
+                        <span class="pull-right">
+                            <span class="ispicon ispicon_edit viewmode" data-toggle="tooltip" title="Edit" data-bind="click:schedule.editSchedule,css: { viewmode: schedule.model.IsSystemEntity()}"></span>
+                        </span>
+
+                    </h2>
+                    <h4 class="form-group col-md-4 viewmode">
+                        <label class="control-label">Description</label>
+                        <span id="schedule_Description" name="schedule_Description" data-bind="text: schedule.model.Description">Always on</span>
+                    </h4>
+                </div>
+                <h4><b>Schedule Settings</b></h4>
+                <div>
+                    <div>
+                        <svg class="time-chart viewmode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 850 370" data-bind="timeSlotChart: schedule.model.TimeSlots, slotDays: schedule.Days, snapTime: schedule.SnapTime"><g><g><g data-y-index="0"><rect class=" tz-default" x="82.5" y="70" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="85" x2="802" y2="85" data-slider="-1"></line><text x="0" y="90">Monday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="75" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="81" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="81" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="81" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="68" y2="89" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="61" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="63" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="73">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="68" y2="89" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="61" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="63" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="73">11:59 PM</text></g></g></g><g data-y-index="1"><rect class=" tz-default" x="82.5" y="100" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="115" x2="802" y2="115" data-slider="-1"></line><text x="0" y="120">Tuesday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="105" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="111" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="111" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="111" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="98" y2="119" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="91" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="93" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="103">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="98" y2="119" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="91" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="93" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="103">11:59 PM</text></g></g></g><g data-y-index="2"><rect class=" tz-default" x="82.5" y="130" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="145" x2="802" y2="145" data-slider="-1"></line><text x="0" y="150">Wednesday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="135" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="141" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="141" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="141" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="128" y2="149" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="121" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="123" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="133">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="128" y2="149" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="121" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="123" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="133">11:59 PM</text></g></g></g><g data-y-index="3"><rect class=" tz-default" x="82.5" y="160" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="175" x2="802" y2="175" data-slider="-1"></line><text x="0" y="180">Thursday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="165" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="171" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="171" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="171" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="158" y2="179" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="151" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="153" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="163">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="158" y2="179" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="151" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="153" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="163">11:59 PM</text></g></g></g><g data-y-index="4"><rect class=" tz-default" x="82.5" y="190" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="205" x2="802" y2="205" data-slider="-1"></line><text x="0" y="210">Friday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="195" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="201" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="201" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="201" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="188" y2="209" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="181" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="183" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="193">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="188" y2="209" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="181" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="183" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="193">11:59 PM</text></g></g></g><g data-y-index="5"><rect class=" tz-default" x="82.5" y="220" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="235" x2="802" y2="235" data-slider="-1"></line><text x="0" y="240">Saturday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="225" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="231" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="231" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="231" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="218" y2="239" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="211" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="213" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="223">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="218" y2="239" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="211" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="213" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="223">11:59 PM</text></g></g></g><g data-y-index="6"><rect class=" tz-default" x="82.5" y="250" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="265" x2="802" y2="265" data-slider="-1"></line><text x="0" y="270">Sunday</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="255" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="261" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="261" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="261" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="248" y2="269" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="241" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="243" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="253">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="248" y2="269" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="241" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="243" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="253">11:59 PM</text></g></g></g><g data-y-index="7"><rect class=" tz-default" x="82.5" y="280" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="295" x2="802" y2="295" data-slider="-1"></line><text x="0" y="300">H1</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="285" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="291" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="291" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="291" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="278" y2="299" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="271" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="273" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="283">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="278" y2="299" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="271" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="273" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="283">11:59 PM</text></g></g></g><g data-y-index="8"><rect class=" tz-default" x="82.5" y="310" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="325" x2="802" y2="325" data-slider="-1"></line><text x="0" y="330">H2</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="315" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="321" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="321" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="321" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="308" y2="329" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="301" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="303" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="313">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="308" y2="329" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="301" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="303" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="313">11:59 PM</text></g></g></g><g data-y-index="9"><rect class=" tz-default" x="82.5" y="340" height="30" width="719.5" data-slider="-1"></rect><line x1="82.5" y1="355" x2="802" y2="355" data-slider="-1"></line><text x="0" y="360">H3</text><image data-action="delete" xlink:href="content/images/icons/icon_delete.png" class="icon_del" x="817" y="345" height="20" width="20"></image><g data-slider="0"><rect class="tz-frame" x="82.5" y="351" width="719.5" height="8"></rect><rect class="tz-handle" data-handle="1" x="82.5" y="351" width="1" height="8"></rect><rect class="tz-handle" data-handle="0" x="802" y="351" width="1" height="8"></rect><g display="none" class="tz-flag" transform="translate(82.5)"><line class=" tz-default" x1="0" x2="0" y1="338" y2="359" data-handle="1"></line><rect class="tz-flag-strip" x="-52" y="331" width="55" height="16" data-edit="1"></rect><rect class="tz-flag-handle" x="-2" y="333" width="5" height="12" data-handle="1"></rect><text data-edit="1" x="-50" y="343">12:00 AM</text></g><g display="none" class="tz-flag" transform="translate(802)"><line class=" tz-default" x1="0" x2="0" y1="338" y2="359" data-handle="0"></line><rect class="tz-flag-strip" x="-3" y="331" width="55" height="16" data-edit="0"></rect><rect class="tz-flag-handle" x="-2" y="333" width="5" height="12" data-handle="0"></rect><text data-edit="0" x="6" y="343">11:59 PM</text></g></g></g></g><g data-axis="x"><rect x="82.5" y="0" width="719.5" height="55"></rect><text x="30.5" y="20"><tspan x="77.5">12AM</tspan><tspan x="197.5">4AM</tspan><tspan x="317.5">8AM</tspan><tspan x="437.5">12PM</tspan><tspan x="557.5">4PM</tspan><tspan x="677.5">8PM</tspan><tspan x="797.5">11:59 PM</tspan></text><path class=" tz-default" d="M82.5 30l719.5 0M82.5 30l0 25M92.5 30l0 10M102.5 30l0 10M112.5 30l0 18M122.5 30l0 10M132.5 30l0 10M142.5 30l0 18M152.5 30l0 10M162.5 30l0 10M172.5 30l0 18M182.5 30l0 10M192.5 30l0 10M202.5 30l0 25M212.5 30l0 10M222.5 30l0 10M232.5 30l0 18M242.5 30l0 10M252.5 30l0 10M262.5 30l0 18M272.5 30l0 10M282.5 30l0 10M292.5 30l0 18M302.5 30l0 10M312.5 30l0 10M322.5 30l0 25M332.5 30l0 10M342.5 30l0 10M352.5 30l0 18M362.5 30l0 10M372.5 30l0 10M382.5 30l0 18M392.5 30l0 10M402.5 30l0 10M412.5 30l0 18M422.5 30l0 10M432.5 30l0 10M442.5 30l0 25M452.5 30l0 10M462.5 30l0 10M472.5 30l0 18M482.5 30l0 10M492.5 30l0 10M502.5 30l0 18M512.5 30l0 10M522.5 30l0 10M532.5 30l0 18M542.5 30l0 10M552.5 30l0 10M562.5 30l0 25M572.5 30l0 10M582.5 30l0 10M592.5 30l0 18M602.5 30l0 10M612.5 30l0 10M622.5 30l0 18M632.5 30l0 10M642.5 30l0 10M652.5 30l0 18M662.5 30l0 10M672.5 30l0 10M682.5 30l0 25M692.5 30l0 10M702.5 30l0 10M712.5 30l0 18M722.5 30l0 10M732.5 30l0 10M742.5 30l0 18M752.5 30l0 10M762.5 30l0 10M772.5 30l0 18M782.5 30l0 10M792.5 30l0 10M802.5 30l0 25"></path></g></g></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div data-bind="visible:!IsAddorEditHolidayViewVisible() &amp;&amp; currentTab()==1">
+
+                <div id="HolidayOveView">
+                    
+<div id="holidaysOverView" class="tab-pane">
+
+    <div class="row">
+        <h2 class="isppagetitle">
+            <span id="holiday_Name" name="holiday_Name" class="sectionHead1" data-bind="text: holiday.model.Name">131dsfsdfsdf</span>
+            <span class="pull-right">
+                <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit" data-bind="click:holiday.editHoliday,visible:holiday.holidays().length>0"></span>
+            </span>
+        </h2>
+    </div>
+
+    <div class="contentContainer col-md-12 ">
+        <div class="col-sm-12 clear">
+            <h4><b>Details</b></h4>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label class="control-label">Holiday Name<span class="star">*</span></label>
+                <input type="text" name="customerName" id="customerName" class="form-control" data-bind="value: holiday.model.Name">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-4" style="margin-bottom: 0px;">
+                <label class="control-label">Holiday Type*</label>
+                <div class="row">
+                    <div class="col-md-4 nopadding">
+                        <input id="holidayTypeOne" name="holidayType" disabled="disabled" type="radio" class="col-md-1" data-bind="checkedValue:0, checked: holiday.model.HolidayType" value="0">
+                        <span for="radio8">H1</span>
+                    </div>
+                    <div class="col-md-4 nopadding">
+                        <input id="holidayTypeOne" name="holidayType" disabled="disabled" type="radio" class="col-md-1" data-bind="checkedValue:1, checked: holiday.model.HolidayType" value="1">
+                        <span for="radio8">H2</span>
+                    </div>
+                    <div class="col-md-4 nopadding">
+                        <input id="holidayTypeOne" name="holidayType" disabled="disabled" type="radio" class="col-md-1" data-bind="checkedValue:2, checked: holiday.model.HolidayType" value="2">
+                        <span for="radio8">H3</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12 clear">
+            <hr>
+            <h4><b>Occurrence</b></h4>
+        </div> 
+            
+
+<div class="row clear">
+
+            <div class="form-group col-md-4" data-bind="datepicker: holiday.model.Date, datepickerOptions: {pickTime: false}, setDefaultMode : 0">
+                <label class="control-label">Starts on</label>
+                <input type="text" class="form-control" readonly="readonly">
+                <span class="addonbutton">
+                    <span class="ispicon add-on ispicon_calender"></span>
+                </span>
+            </div>
+            <div class="form-group col-md-4">
+
+                <label class="control-label">Repeats</label>
+                <select class="form-control" name="ddlHolidayRepeatOptions" disabled="disabled" data-bind="options: holiday.model.HolidayRepeatOptions, optionsText: function(i) { return i.valuetxt },optionsValue: function(i) { return i.value }, value: holiday.model.IsEveryYear"><option value="">None</option><option value="">Yearly</option></select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    
+                </div>
+            </div></form>
+
+        
+    </div>
+    <div data-bind="visible:IsAddorEditScheduleViewVisible() &amp;&amp; currentTab()==0" style="display: none;">
+
+        <div id="AddSchedule" class="hide"></div>
+    </div>
+    <div data-bind="visible:IsAddorEditHolidayViewVisible() &amp;&amp; currentTab()==1" style="display: none;">
+
+        <div id="AddHoliday" class="hide"></div>
+    </div>
+</div>
+
+    </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>

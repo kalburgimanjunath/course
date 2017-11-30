@@ -1,0 +1,1252 @@
+﻿
+.schedule-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .schedule-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .schedule-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .schedule-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none -moz-box-sizing:none;
+                box-sizing: none;
+            }
+
+                .schedule-root .isptabs .nav li a:hover, .schedule-root .isptabs .nav li a:active, .schedule-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .schedule-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.schedule-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .schedule-root .cardlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .schedule-root .cardlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.schedule-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .schedule-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.schedule-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.schedule-root .listOverview .overviewTab, .schedule-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+.schedule-root .cardlistview .list-group-item.active, .schedule-root .cardlistview .list-group-item.active:hover, .schedule-root .cardlistview .list-group-item.active:focus, .schedule-root .cardlistview .list-group-item:hover {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+}
+
+.schedule-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.schedule-root .cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.schedule-root .scheduleView .overviewTab .table > thead > tr > th, .schedule-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.schedule-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.schedule-root .scheduleView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.schedule-root .scheduleView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.schedule-root .scheduleView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.addSchedule .overviewTab table td, .schedule-root .scheduleView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.schedule-root .scheduleView .overviewTab .ispicon, .schedule-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.addSchedule .overviewTab .sensorsid, .schedule-root .addSchedule .overviewTab .name,
+.addSchedule .name, .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.schedule-root .scheduleView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.schedule-root .scheduleView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.schedule-root .scheduleView .cardlistview .isppagetitle, .schedule-root .scheduleView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.schedule-root .scheduleView .listOverview .isppagetitle {
+    margin-left: 9px;
+    margin-right: 24px;
+}
+
+.schedule-root .scheduleView .list-group-item {
+    padding: 10px 20px;
+}
+
+.scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.schedule-root .scheduleView .checkbox {
+    float: left;
+}
+
+    .schedule-root .scheduleView .checkbox input[type="checkbox"], .schedule-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.schedule-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.schedule-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.schedule-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .schedule-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.schedule-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.schedule-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.schedule-root .viewmode input, .schedule-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.schedule-root .viewmode .btn-footer {
+    display: none;
+}
+
+.schedule-root .btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.schedule-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+.schedule-root .ispicon.inverse::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);
+    /*background-position-y: -39px;
+    background-position-x: -139px;*/
+    width: 24px;
+    margin-top: 2px;
+    margin-left: -25px;
+    position: relative;
+    left: 25px;
+    top: 28px;
+    height: 15px;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .schedule-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .schedule-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .schedule-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.schedule-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.schedule-root .scheduleView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.schedule-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+
+/* ICONS */
+
+.schedule-root .ispicon_plus::before {
+    background-position: -298px -21px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_plus:hover::before {
+    background-position: -298px -42px;
+}
+
+.schedule-root .ispicon_plus:active::before {
+    background-position: -298px -63px;
+}
+
+.schedule-root .ispicon_more::before {
+    background-position: -573px -21px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_more:hover::before {
+    background-position: -573px -42px;
+}
+
+.schedule-root .ispicon_more:active::before {
+    background-position: -573px -63px;
+}
+
+.schedule-root .ispicon_collapse::before {
+    background-position: -128px -24px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_collapse:hover::before {
+    background-position: -128px -45px;
+}
+
+.schedule-root .ispicon_collapse:active::before {
+    background-position: -128px -66px;
+}
+
+.schedule-root .ispicon_edit::before {
+    background-position: -63px -148px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_edit:hover::before {
+    background-position: -63px -169px;
+}
+
+.schedule-root .ispicon_edit:active::before {
+    background-position: -63px -190px;
+}
+
+
+.schedule-root .ispicon::before {
+    background-size: 700px;
+    cursor: pointer;
+}
+
+.schedule-root .ispicon_filter::before {
+    background-position: -362px -21px;
+    margin-right: 3px;
+}
+
+.schedule-root .ispActionMenu:hover {
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active {
+    color: #1272b2;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_filter::before, .schedule-root .ispActionMenu.open .ispicon_filter::before {
+    background-position: -362px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_filter::before {
+    background-position: -362px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_views::before {
+    background-position: -319px -21px;
+    margin-right: 4px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_views::before, .schedule-root .ispActionMenu.open .ispicon_views::before {
+    background-position: -319px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_views::before {
+    background-position: -319px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_action::before {
+    background-position: -382px -21px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_action::before, .schedule-root .ispActionMenu.open .ispicon_action::before {
+    background-position: -382px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_action::before {
+    background-position: -382px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_sort::before {
+    background-position: -340px -21px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_sort::before, .schedule-root .ispActionMenu.open .ispicon_sort::before {
+    background-position: -340px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_sort::before {
+    background-position: -340px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_saveFilter::before {
+    background-position: -22px -149px;
+    margin-right: 3px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_saveFilter::before, .schedule-root .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -22px -170px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -22px -191px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_alarmsCritical::before {
+    background-position: -425px -21px;
+}
+
+.schedule-root .ispicon_alarmsMajor::before {
+    background-position: -425px -42px;
+}
+
+.schedule-root .ispicon_alarmsModerate::before {
+    background-position: -425px -63px;
+}
+
+.schedule-root .ispicon_alarmsDefault:before {
+    background-position: -64px -21px;
+}
+
+.schedule-root .ispicon_cloudDefault::before {
+    background-position: -446px -21px;
+}
+
+.schedule-root .ispicon_cloudModerate::before {
+    background-position: -446px -42px;
+}
+
+.schedule-root .ispicon_cloudMajor::before {
+    background-position: -446px -63px;
+}
+
+.schedule-root .ispicon_cloudCritical::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.schedule-root .ispicon_DoorDefault::before {
+    background-position: -615px -21px;
+}
+
+.schedule-root .ispicon_DoorModerate::before {
+    background-position: -615px -42px;
+}
+
+.schedule-root .ispicon_DoorMajor::before {
+    background-position: -615px -63px;
+}
+
+.schedule-root .ispicon_DoorCritical::before {
+    background-position: -615px -84px;
+}
+
+.schedule-root .ispicon_video::before {
+    background-position: -404px -21px;
+}
+
+.schedule-root .ispicon_video:hover::before {
+    background-position: -404px -42px;
+}
+
+.schedule-root .ispicon_video:active::before {
+    background-position: -404px -63px;
+}
+
+.schedule-root .ispicon_videoModerate::before {
+    background-position: -404px -84px;
+}
+
+.schedule-root .ispicon_videoCritical::before {
+    background-position: -404px -105px;
+}
+
+.schedule-root .ispicon_videoMajor::before {
+    background-position: -404px -126px;
+}
+
+.schedule-root .ispicon_disarmDefault::before {
+    background-position: -660px -21px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -660px -42px;
+}
+
+
+.schedule-root .ispicon_dropArrow::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+.schedule-root .ispicon_dropArrow:hover::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+
+.schedule-root .acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover {
+    background-position: -466px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active {
+    background-position: -466px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_handbar::before {
+    background-position: -64px -125px;
+}
+
+.schedule-root .ispicon_handbar:hover::before {
+    background-position: -42px -105px;
+}
+
+.schedule-root .ispicon_close::before {
+    background-position: -255px -21px;
+}
+
+.schedule-root .ispicon_close:hover::before {
+    background-position: -255px -42px;
+}
+
+.schedule-root .ispicon_close:active::before {
+    background-position: -255px -63px;
+}
+
+
+.schedule-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.schedule-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.schedule-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.schedule-root .scheduleView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.schedule-root .scheduleView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.schedule-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+/* CONTROLLER OVERVVIEW*/
+
+.schedule-root .scheduleOverview .content {
+            padding: 0 10px;
+            /*margin-left: -15px !important;*/
+            background: #f4f4f4;
+            padding-right: 24px;
+            box-shadow: 0 -1px 0 0 #d6d6d6;
+        }
+
+
+.schedule-root .scheduleOverview .leftlist .panel ul .list-group-item.active, .schedule-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .schedule-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+.schedule-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+@media (max-height: 768px) {
+    .schedule-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+    .schedule-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+
+.schedule-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .schedule-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .schedule-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .schedule-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none -moz-box-sizing:none;
+                box-sizing: none;
+            }
+
+                .schedule-root .isptabs .nav li a:hover, .schedule-root .isptabs .nav li a:active, .schedule-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .schedule-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.schedule-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .schedule-root .cardlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .schedule-root .cardlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.schedule-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .schedule-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.schedule-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.schedule-root .listOverview .overviewTab, .schedule-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+.schedule-root .cardlistview .list-group-item.active, .schedule-root .cardlistview .list-group-item.active:hover, .schedule-root .cardlistview .list-group-item.active:focus, .schedule-root .cardlistview .list-group-item:hover {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+}
+
+.schedule-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+}
+
+.schedule-root .cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.schedule-root .scheduleView .overviewTab .table > thead > tr > th, .schedule-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.schedule-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.schedule-root .scheduleView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.schedule-root .scheduleView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.schedule-root .scheduleView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.addSchedule .overviewTab table td, .schedule-root .scheduleView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.schedule-root .scheduleView .overviewTab .ispicon, .schedule-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.addSchedule .overviewTab .sensorsid, .schedule-root .addSchedule .overviewTab .name,
+.addSchedule .name, .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.schedule-root .scheduleView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.schedule-root .scheduleView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.schedule-root .scheduleView .cardlistview .isppagetitle, .schedule-root .scheduleView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.schedule-root .scheduleView .listOverview .isppagetitle {
+    margin-left: 9px;
+    margin-right: 24px;
+}
+
+.schedule-root .scheduleView .list-group-item {
+    padding: 10px 20px;
+}
+
+.scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.schedule-root .scheduleView .checkbox {
+    float: left;
+}
+
+    .schedule-root .scheduleView .checkbox input[type="checkbox"], .schedule-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.schedule-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.schedule-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.schedule-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .schedule-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.schedule-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.schedule-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.schedule-root .viewmode input, .schedule-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.schedule-root .viewmode .btn-footer {
+    display: none;
+}
+
+.schedule-root .btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.schedule-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+.schedule-root .ispicon.inverse::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);
+    /*background-position-y: -39px;
+    background-position-x: -139px;*/
+    width: 24px;
+    margin-top: 2px;
+    margin-left: -25px;
+    position: relative;
+    left: 25px;
+    top: 28px;
+    height: 15px;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .schedule-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .schedule-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .schedule-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.schedule-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.schedule-root .scheduleView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.schedule-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+
+/* ICONS */
+
+.schedule-root .ispicon_plus::before {
+    background-position: -298px -21px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_plus:hover::before {
+    background-position: -298px -42px;
+}
+
+.schedule-root .ispicon_plus:active::before {
+    background-position: -298px -63px;
+}
+
+.schedule-root .ispicon_more::before {
+    background-position: -573px -21px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_more:hover::before {
+    background-position: -573px -42px;
+}
+
+.schedule-root .ispicon_more:active::before {
+    background-position: -573px -63px;
+}
+
+.schedule-root .ispicon_collapse::before {
+    background-position: -128px -24px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_collapse:hover::before {
+    background-position: -128px -45px;
+}
+
+.schedule-root .ispicon_collapse:active::before {
+    background-position: -128px -66px;
+}
+
+.schedule-root .ispicon_edit::before {
+    background-position: -63px -148px;
+    background-size: 780px;
+}
+
+.schedule-root .ispicon_edit:hover::before {
+    background-position: -63px -169px;
+}
+
+.schedule-root .ispicon_edit:active::before {
+    background-position: -63px -190px;
+}
+
+
+.schedule-root .ispicon::before {
+    background-size: 700px;
+    cursor: pointer;
+}
+
+.schedule-root .ispicon_filter::before {
+    background-position: -362px -21px;
+    margin-right: 3px;
+}
+
+.schedule-root .ispActionMenu:hover {
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active {
+    color: #1272b2;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_filter::before, .schedule-root .ispActionMenu.open .ispicon_filter::before {
+    background-position: -362px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_filter::before {
+    background-position: -362px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_views::before {
+    background-position: -319px -21px;
+    margin-right: 4px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_views::before, .schedule-root .ispActionMenu.open .ispicon_views::before {
+    background-position: -319px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_views::before {
+    background-position: -319px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_action::before {
+    background-position: -382px -21px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_action::before, .schedule-root .ispActionMenu.open .ispicon_action::before {
+    background-position: -382px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_action::before {
+    background-position: -382px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_sort::before {
+    background-position: -340px -21px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_sort::before, .schedule-root .ispActionMenu.open .ispicon_sort::before {
+    background-position: -340px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_sort::before {
+    background-position: -340px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_saveFilter::before {
+    background-position: -22px -149px;
+    margin-right: 3px;
+}
+
+.schedule-root .ispActionMenu:hover .ispicon_saveFilter::before, .schedule-root .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -22px -170px;
+    color: #1792e5;
+}
+
+.schedule-root .ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -22px -191px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_alarmsCritical::before {
+    background-position: -425px -21px;
+}
+
+.schedule-root .ispicon_alarmsMajor::before {
+    background-position: -425px -42px;
+}
+
+.schedule-root .ispicon_alarmsModerate::before {
+    background-position: -425px -63px;
+}
+
+.schedule-root .ispicon_alarmsDefault:before {
+    background-position: -64px -21px;
+}
+
+.schedule-root .ispicon_cloudDefault::before {
+    background-position: -446px -21px;
+}
+
+.schedule-root .ispicon_cloudModerate::before {
+    background-position: -446px -42px;
+}
+
+.schedule-root .ispicon_cloudMajor::before {
+    background-position: -446px -63px;
+}
+
+.schedule-root .ispicon_cloudCritical::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.schedule-root .ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.schedule-root .ispicon_DoorDefault::before {
+    background-position: -615px -21px;
+}
+
+.schedule-root .ispicon_DoorModerate::before {
+    background-position: -615px -42px;
+}
+
+.schedule-root .ispicon_DoorMajor::before {
+    background-position: -615px -63px;
+}
+
+.schedule-root .ispicon_DoorCritical::before {
+    background-position: -615px -84px;
+}
+
+.schedule-root .ispicon_video::before {
+    background-position: -404px -21px;
+}
+
+.schedule-root .ispicon_video:hover::before {
+    background-position: -404px -42px;
+}
+
+.schedule-root .ispicon_video:active::before {
+    background-position: -404px -63px;
+}
+
+.schedule-root .ispicon_videoModerate::before {
+    background-position: -404px -84px;
+}
+
+.schedule-root .ispicon_videoCritical::before {
+    background-position: -404px -105px;
+}
+
+.schedule-root .ispicon_videoMajor::before {
+    background-position: -404px -126px;
+}
+
+.schedule-root .ispicon_disarmDefault::before {
+    background-position: -660px -21px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -660px -42px;
+}
+
+
+.schedule-root .ispicon_dropArrow::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+.schedule-root .ispicon_dropArrow:hover::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+
+.schedule-root .acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover {
+    background-position: -466px -42px;
+    color: #1792e5;
+}
+
+.schedule-root .acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active {
+    background-position: -466px -63px;
+    color: #1272b2;
+}
+
+.schedule-root .ispicon_handbar::before {
+    background-position: -64px -125px;
+}
+
+.schedule-root .ispicon_handbar:hover::before {
+    background-position: -42px -105px;
+}
+
+.schedule-root .ispicon_close::before {
+    background-position: -255px -21px;
+}
+
+.schedule-root .ispicon_close:hover::before {
+    background-position: -255px -42px;
+}
+
+.schedule-root .ispicon_close:active::before {
+    background-position: -255px -63px;
+}
+
+
+.schedule-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.schedule-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.schedule-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.schedule-root .scheduleView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.schedule-root .scheduleView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.schedule-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+/* CONTROLLER OVERVVIEW*/
+
+.schedule-root .scheduleOverview .content {
+            padding: 0 10px;
+            /*margin-left: -15px !important;*/
+            background: #f4f4f4;
+            padding-right: 24px;
+            box-shadow: 0 -1px 0 0 #d6d6d6;
+        }
+
+
+.schedule-root .scheduleOverview .leftlist .panel ul .list-group-item.active, .schedule-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .schedule-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+.schedule-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+@media (max-height: 768px) {
+    .schedule-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+    .schedule-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+

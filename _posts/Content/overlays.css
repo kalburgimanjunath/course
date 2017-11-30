@@ -1,0 +1,37 @@
+﻿/*
+    Author:Manju
+    Description:Notifications,loading,popups
+*/
+
+.modal-dialog {
+    padding-top: 70px; /* NEW CHANGE - OLD VALUE 30px */
+}
+
+.modal-content {
+    border: 1px solid #d0d0d0;
+    border-radius: 0;
+    box-shadow: 0 0 10px #000;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+    -o-box-shadow: 0 0 10px #000;
+}
+
+.modal-header {
+    padding: 25px 20px 6px 20px;
+    border-bottom: 0 none;
+}
+
+.modal-body {
+    padding: 9px 20px 0 20px;
+}
+
+.modal-footer {
+    border-top:1px solid #e7e7e7;
+    margin-top:20px;
+    padding:16px 20px 16px;
+}
+
+.modal-footer.formGroup {
+    border-top:1px solid #e7e7e7;
+    margin-top:5px;
+}

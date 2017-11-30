@@ -1,0 +1,222 @@
+<link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+<link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+<link rel="stylesheet" type="text/css" href="css/alarms.css">
+<link rel="stylesheet" type="text/css" href="css/Areas.css">
+<link rel="stylesheet" type="text/css" href="css/dcm.css">
+<link rel="stylesheet" type="text/css" href="css/dcmoverview.css">
+
+<div class="wrapper">
+                    
+                    
+<div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        
+                        
+
+                    </ul>
+                        <div class="menu_user_sec_logout">
+                            <div class="menu_user_sec clearfix">
+                                <div class="menu_user_img">
+                                    <img src="http://lorempixel.com/100/100/people/9/" alt="Siva Baghat">
+                                </div>
+
+                                <div class="menu_user_details col-md-8">
+                                    <h3>Siva Baghat</h3>
+                                    <span>Business Owner</span>
+
+                                </div>
+                                <span class="ispicon ispicon_logout push-right"></span>
+
+                            </div>
+                           <!--  <div class="user_logout">
+                                <a href="#">Logout</a>
+                            </div> -->
+                        </div>
+                </nav>
+
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding ">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <!-- Navigation -->
+    <input type="hidden" id="siteurl" value="/MPC/">
+</div>
+<script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    
+
+</script>
+
+                    
+                </div>
+<style type="text/css">
+	
+	.firstController {
+	    padding: 35px 35px 36px 35px;
+	    border-bottom: 1px solid #D2D2D2;
+	    margin: 0 auto;
+	    margin-top: 16%;
+	    background: #fff;
+	    width: 350px;
+	    text-align: center;
+
+	}
+	.contentBg {
+	    background: #f4f4f4;
+	}
+	.firstController h4 {
+	    font-style: italic;
+	    color: #b0b0b0;
+	    margin: 0;
+	}
+	.firstController p {
+	    margin-top: 17px;
+	    margin-bottom: 0;
+	}
+
+	.ispicon_firstController::before {
+	    background-size: 1980px !important;
+	    width: 40px;
+	    height: 40px;
+	    background-position: -758px -16px;
+	}
+	.ispicon_firstController:hover::before {
+	    background-size: 1980px !important;
+	    width: 40px;
+	    height: 40px;
+	    background-position: -758px -69px;
+	}
+
+	.firsttimeLandingpage{
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
+	    left: 0;
+	}
+	
+</style>
+
+<div class="controllerLanding contentBg firsttimeLandingpage">
+                    <div class="firstController">
+                        <h4>There are no accounts added</h4>
+                        <p>
+                            <span class="ispicon ispicon_firstController">
+                            </span>
+                        </p>
+                        <p><a href="addaccount.html" class="btn btn-primary">Add a new account</a></p>
+                    </div>
+                </div>

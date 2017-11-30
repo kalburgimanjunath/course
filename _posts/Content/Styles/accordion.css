@@ -1,0 +1,82 @@
+﻿
+    .accountcontainer .leftlist {
+        padding-left: 15px;
+        margin-left: -15px;
+        padding-right: 0;
+    }
+
+        .accountcontainer .leftlist h6 {
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            font-size: 14px;
+            color: #1792e5;
+            padding: 4px 4px 4px 10px;
+        }
+
+            .accountcontainer .leftlist h6 .ispicon {
+                margin-right: 5px;
+            }
+
+        .accountcontainer .leftlist .panel-title {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 18px;
+            color: #303030;
+            margin-left: 36px;
+        }
+
+        .accountcontainer .leftlist .panel {
+            border-radius: 0;
+            height: 100%;
+            position: fixed;
+            width: 24%;
+            border-left: 0px solid #e7e7e7;
+            box-shadow: 2px 0px 10px 0 #e7e7e7;
+        }
+
+            .accountcontainer .leftlist .panel ul li a.list-group-item {
+                height: 44px;
+                border-radius: 0;
+                font-family: 'HoneywellSansWeb-Medium' !important;
+                color: #606060;
+                font-size: 14px;
+                padding: 12px 24px;
+            }
+
+                .accountcontainer .leftlist .panel ul li.list-group-item.active, .accountcontainer .leftlist .panel ul li.list-group-item.active:hover, .accountcontainer .leftlist .panel ul li.list-group-item.active:focus, .accountcontainer .leftlist .panel ul li a.list-group-item:hover, .accountcontainer .leftlist .panel ul li a.list-group-item:focus {
+                    background-color: rgba(185,221,243,.3);
+                }
+
+
+
+            .accountcontainer .leftlist .panel ul.dropdown-menu {
+                position: relative;
+                background: initial;
+                box-shadow: none;
+                border: 0;
+                width: 100%;
+                padding: 0;
+            }
+
+                .accountcontainer .leftlist .panel ul.dropdown-menu li {
+                    /*border: none;*/
+                }
+
+                    .accountcontainer .leftlist .panel ul.dropdown-menu li a {
+                        padding-left: 24px;
+                    }
+
+
+        .accountcontainer .leftlist .panel-heading + .list-group li {
+            list-style-type: none;
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            color: #606060;
+            font-size: 14px;
+            border: 1px solid #e7e7e7;
+        }
+
+            .accountcontainer .leftlist .panel-heading + .list-group li .ispicon {
+                margin-right: 8px;
+            }
+
+        .accountcontainer .leftlist .panel-heading {
+            background: #fff;
+        }

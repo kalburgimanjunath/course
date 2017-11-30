@@ -1,0 +1,1643 @@
+<link rel="stylesheet" type="text/css" href="css/dcm.css">
+<style>
+.isptablebase {
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	width: 100%; /*set table width here if using fixed value*/
+	/*min-width: 100%;*/ /*set table width here if using %*/
+	/*height: 188px; */
+	/*set table height here; can be fixed value or %*/
+	/*min-height: 104px;*/ /*if using % height, make this at least large enough to fit scrollbar arrows + captions + thead*/
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 15px;
+	line-height: 20px;
+	padding-top: 24px; /*this determines top caption height*/
+	padding-bottom: 20px; /*this determines bottom caption height*/
+	text-align: left;
+	    top: 0px;
+    bottom: 0;
+    position: absolute;
+}
+.isptablebase * {box-sizing: border-box;}
+.isptablebase > div {
+	position: relative;
+	border-top: 1px solid #f0f0f0; /*top table border*/
+	height: 100%;
+	padding-top: 20px; /*this determines column header height*/
+}
+.isptablebase > div:before {
+	top: 0;
+	/*background: cornflowerblue; */
+	/*column header background color*/
+}
+.isptablebase > div:before,
+.isptablebase > div > div:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 50%;
+	left: 0;
+}
+.isptablebase > div > div {
+	/*min-height: 43px;*/ /*if using % height, make this at least large enough to fit scrollbar arrows*/
+	max-height: 100%;
+	overflow: auto; /*set to auto if using fixed or % width; else scroll*/
+	border: 1px solid #f0f0f0; /*border around table body*/
+}
+.isptablebase > div > div:after {background: white;} /*match page background color*/
+.isptablebase > div > div > table {
+	width: 100%;
+	border-spacing: 0;
+	margin-top: -20px; /*inverse of column header height*/
+	/*margin-right: 17px;*/ /*uncomment if using % width*/
+}
+.isptablebase > div > div > table > caption {
+	position: absolute;
+	top: -20px; /*inverse of caption height*/
+	margin-top: -1px; /*inverse of border-width*/
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+}
+.isptablebase > div > div > table > * > tr > * {padding: 0;}
+.isptablebase > div > div > table > thead {
+	vertical-align: bottom;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.isptablebase > div > div > table > thead th{
+    padding:0;
+}
+.isptablebase > div > div > table > thead > tr > * > div {
+	display: inline-block;
+	padding: 0 6px 0 6px; /*header cell padding*/
+}
+.isptablebase > div > div > table > thead > tr > :first-child:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px; /*match column header height*/
+	border-left: 1px solid black; /*leftmost header border*/
+}
+.isptablebase > div > div > table > thead > tr > * > div[label]:before,
+.isptablebase > div > div > table > thead > tr > * > div > div:first-child,
+.isptablebase > div > div > table > thead > tr > * + :before {
+	position: absolute;
+	top: 0;
+	white-space: pre-wrap;
+	font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 14px;
+    color: #808080;
+}
+.isptablebase > div > div > table > thead > tr > * > div[label]:before,
+.isptablebase > div > div > table > thead > tr > * > div[label]:after {content: attr(label);}
+.isptablebase > div > div > table > thead > tr > * + :before {
+	content: "";
+	display: block;
+	min-height: 20px; /*match column header height*/
+	padding-top: 1px;
+	border-left: 1px solid #f0f0f0; /*borders between header cells*/
+}
+.isptablebase .scrollbarhead {float: right;}
+.isptablebase .scrollbarhead:before {
+	position: absolute;
+	width: 100px;
+	top: -1px; /*inverse border-width*/
+	background: white; /*match page background color*/
+}
+.isptablebase > div > div > table > tbody > tr:after {
+	content: "";
+	display: table-cell;
+	position: relative;
+	padding: 0;
+	border-top: 1px solid #f0f0f0;
+	top: -1px; /*inverse of border width*/
+}
+.isptablebase > div > div > table > tbody {vertical-align: top;}
+.isptablebase > div > div > table > tbody > tr {background: white;}
+.isptablebase > div > div > table > tbody > tr > * {
+	border-bottom: 1px solid #f0f0f0;
+	padding: 0 6px 0 6px;
+	height: 20px; /*match column header height*/
+}
+.isptablebase > div > div > table > tbody:last-of-type > tr:last-child > * {border-bottom: none;}
+/*.isptablebase > div > div > table > tbody > tr:nth-child(even) {background: gainsboro;} */
+/*alternate row color*/
+.isptablebase > div > div > table > tbody > tr > * + * {
+    /*border-left: 1px solid black;*/
+    padding: 12px 12px;} 
+    /*borders between body cells*/
+</style>
+<script>
+/* THIS JAVASCRIPT JUST ADDS ROWS FOR TESTING PURPOSES */
+(function() {
+  for(var n=200, r=document.querySelector("tbody>tr"), p=r.parentNode; n--; p.appendChild(r.cloneNode(true)));
+})();
+</script>
+<div class="isptablebase ">
+		<div>
+			<div class="isptable">
+				<table>
+					<thead>
+					
+						<tr>
+						<th><div label="" ></div></th>
+            <th><div label="Site Name" class="sort"></div></th>
+            <th><div label="Customer Name"></div></th>
+            <th><div label="Controller Type"></div></th>
+            <th><div label="Mac Address"></div></th>
+							<th>
+								<!--more versatile way of doing column label; requires 2 identical copies of label-->
+								<div><div>Status</div><div>NA</div></div>
+							</th>
+              <th class="scrollbarhead"></th> <!--ALWAYS ADD THIS EXTRA CELL AT END OF HEADER ROW-->
+						</tr>
+					</thead>
+						<tbody>
+                                                 <tr class="active">
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr class="active">
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr><tr>
+                                                    <td>
+                                                        <span>
+                                                            <input type="checkbox" value="" id="checkboxundefined">
+                                                        </span>
+                                                    </td>
+                                                    <td >
+                                                        <span class="name" data-bind="text:customerName">Prasanth</span><br>
+                                                    </td>
+                                                    <td >
+                                                        <span >site P</span>
+                                                    </td>
+                                                    <td>
+                                                        Eagle 23223
+                                                    </td>
+                                                    <td>
+                                                        NA
+                                                    </td>
+
+
+                                                    <td title="Battery Low">
+                                                        <span class="status-indicator colorhigh"></span>Battery Low
+                                                    </td>
+
+
+                                                    <td>
+                                                        NA
+                                                    </td>
+                                                    <td style="display:none">
+                                                        <span class="name" >1c62841a-3cc1-e611-80ef-005056a641c6</span>
+                                                    </td>
+                                                    
+                                                </tr>
+
+                                                
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>

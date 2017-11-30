@@ -1,0 +1,861 @@
+﻿/*version 1.0.1*/
+.customeraccessgroup-root .isptabs {
+    /*margin: 24px;*/
+}
+
+    .customeraccessgroup-root .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .customeraccessgroup-root .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Medium" !important;
+        }
+
+            .customeraccessgroup-root .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Medium" !important;
+                font-size: 14px;
+                color: #808080;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+
+                .customeraccessgroup-root .isptabs .nav li a:hover,
+                .customeraccessgroup-root .isptabs .nav li a:active,
+                .customeraccessgroup-root .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .customeraccessgroup-root .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #303030;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+.customeraccessgroup-root .cardlistview {
+    padding: 0px;
+    /*margin-left: -15px;*/
+    /*border-right: 1px solid #e7e7e7;*/
+}
+
+    .customeraccessgroup-root .cardlistview .list-group-item {
+        border-radius: 0;
+    }
+
+    .customeraccessgroup-root .cardlistview .nav.nav-tabs {
+        margin-left: 20px;
+    }
+
+.customeraccessgroup-root .listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .customeraccessgroup-root .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.customeraccessgroup-root .cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.customeraccessgroup-root .cardlistview .ispsearch {
+    background-color: #fff;
+}
+
+.customeraccessgroup-root .listOverview .overviewTab,
+.customeraccessgroup-root .listOverview .settingsTab {
+    max-height: 400px;
+}
+
+.customeraccessgroup-root .cardlistview .name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 15px;
+    color: #303030;
+    /*max-width: 250px;*/
+}
+
+.customeraccessgroup-root .cardlistview .peoplecount {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #606060;
+}
+
+.customeraccessgroup-root .cardlistview .doorcount {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+
+.customeraccessgroup-root .cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #808080;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab .table > thead > tr > th,
+.customeraccessgroup-root .addSchedule .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.customeraccessgroup-root .addSchedule table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.customeraccessgroup-root .addSchedule .overviewTab table td,
+.customeraccessgroup-root .accessgroupView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab .ispicon,
+.customeraccessgroup-root .addSchedule .ispicon {
+    margin-top: 10px;
+}
+
+.customeraccessgroup-root .addSchedule .overviewTab .sensorsid,
+.customeraccessgroup-root .addSchedule .overviewTab .name,
+.customeraccessgroup-root .addSchedule .name,
+.customeraccessgroup-root .addSchedule .sensorsid {
+    margin-left: 10px;
+}
+
+.customeraccessgroup-root .accessgroupView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.customeraccessgroup-root .accessgroupView .table td {
+    border-bottom: 1px solid #dfdfdf !important;
+}
+
+    .customeraccessgroup-root .accessgroupView .table td:first-child {
+        padding-left: 24px;
+        padding: 10px 0 10px 24px;
+    }
+
+.customeraccessgroup-root .accessgroupView .table .nextlevel,
+.customeraccessgroup-root .EditAccessGroup .table .nextlevel {
+    padding: 0px 0 0px 10px !important;
+    border-top: 0px solid #f0f0f0 !important;
+}
+
+
+.customeraccessgroup-root .accgrouptableaccordian .nextlevel .listStickyHeader {
+    background: #fff !important;
+}
+
+.customeraccessgroup-root .EditAccessGroup .accgrouptableaccordian .nextlevel .listStickyHeader {
+    padding: 0;
+    border: 0;
+}
+
+
+    .customeraccessgroup-root .EditAccessGroup .accgrouptableaccordian .nextlevel .listStickyHeader input[type="checkbox"] {
+        margin: 0;
+    }
+
+
+.customeraccessgroup-root .accessgroupView .table td.nextlevel :first-child {
+    padding-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    box-shadow: none;
+}
+
+.customeraccessgroup-root .accessgroupView .table .nextlevel div span,
+.customeraccessgroup-root .EditAccessGroup .table .nextlevel div span {
+    padding-left: 0px;
+}
+
+    .customeraccessgroup-root .accessgroupView .table .nextlevel div span.col-md-4 {
+        padding-left: 21px;
+    }
+
+    .customeraccessgroup-root .EditAccessGroup .table .nextlevel div span.col-md-4 {
+        padding-left: 2px;
+    }
+
+.customeraccessgroup-root .EditAccessGroup .table span.col-md-4:not(.nextlevel) {
+    padding-left: 0;
+}
+
+/*.customeraccessgroup-root .accessgroupView .table td div:not(span){
+padding-left: 12px !important;
+}*/
+
+.customeraccessgroup-root .EditAccessGroup .table td:not(.nextlevel) div span {
+    padding-left: 1px;
+}
+
+.customeraccessgroup-root .EditAccessGroup .table td.nextlevel div:not(span) {
+    padding-left: 0px !important;
+    margin-left: 1px;
+}
+
+.customeraccessgroup-root .EditAccessGroup .dropdown-menu {
+    margin-top: 60px;
+}
+
+.customeraccessgroup-root .EditAccessGroup .table tr td {
+    border-bottom: 1px solid #dfdfdf !important;
+}
+
+.customeraccessgroup-root .customeraccessgroup-root .accessgroupView .table td:first-child div span,
+.customeraccessgroup-root .EditAccessGroup .table td:first-child div span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 14px;
+}
+
+.customeraccessgroup-root .EditAccessGroup .table td:first-child input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.customeraccessgroup-root .accessgroupView .table td .ispicon_schedule,
+.customeraccessgroup-root .EditAccessGroup .table td .ispicon_schedule {
+    width: 27px;
+    padding-right: 13px;
+}
+
+    .customeraccessgroup-root .accessgroupView .table td .ispicon_schedule:before {
+        cursor: default;
+    }
+
+.customeraccessgroup-root .accessgroupView .cardlistview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #202020;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 17px;
+    margin-bottom: 14px;
+}
+
+.customeraccessgroup-root .accessgroupView .table {
+    margin-bottom: 0px;
+}
+
+.customeraccessgroup-root .accessgroupView .listOverview .isppagetitle {
+    /*margin-left: 19px;
+    margin-right: 23px;
+    border-bottom: 1px solid #e7e7e7;
+    margin-top: 17px;
+    padding-bottom: 45.5px;*/
+}
+
+.customeraccessgroup-root .accessgroupView .list-group-item {
+    padding: 10px 20px;
+    border-right: 0px;
+    cursor: pointer;
+}
+
+.customeraccessgroup-root .scheduleList > span + span {
+    margin-left: 5px;
+}
+
+.customeraccessgroup-root .accessgroupView .checkbox {
+    float: left;
+    margin-top: 0;
+}
+
+    .customeraccessgroup-root .accessgroupView .checkbox input[type="checkbox"],
+    .customeraccessgroup-root .addSchedule .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.customeraccessgroup-root .addSchedule .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.customeraccessgroup-root .addSchedule.ispmodal {
+    left: 0 !important;
+}
+
+.customeraccessgroup-root .listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .customeraccessgroup-root .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.customeraccessgroup-root .addSchedule .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.customeraccessgroup-root .btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+
+.customeraccessgroup-root .viewmode div {
+    pointer-events: none;
+}
+
+.customeraccessgroup-root .row {
+    height: 64px;
+}
+
+.customeraccessgroup-root .viewmode input,
+.customeraccessgroup-root .viewmode textarea {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}
+
+.customeraccessgroup-root .viewmode .btn-footer {
+    display: none;
+}
+
+.customeraccessgroup-root .viewmode .accgrouptableaccordian .listStickyHeader .panel-title,
+.customeraccessgroup-root .viewmode .accordian-additional-menu .ispicon_sort {
+    pointer-events: none;
+}
+
+.customeraccessgroup-root .btn-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    /*border-top: 1px solid #dfdfdf;*/
+}
+
+.customeraccessgroup-root .bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .customeraccessgroup-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .customeraccessgroup-root .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .customeraccessgroup-root .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+.customeraccessgroup-root .ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.customeraccessgroup-root .accessgroupView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.customeraccessgroup-root .viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+.customeraccessgroup-root .inputuppercase {
+    text-transform: uppercase;
+}
+
+.customeraccessgroup-root .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+.customeraccessgroup-root .btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.customeraccessgroup-root .accessgroupView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.customeraccessgroup-root .accessgroupView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 30px 10px 10px;
+}
+
+.customeraccessgroup-root .scheduleOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+}
+
+    /* CONTROLLER OVERVVIEW*/
+
+    .customeraccessgroup-root .scheduleOverview .content {
+        padding: 0 10px;
+        background: #f4f4f4;
+        padding-right: 24px;
+        box-shadow: 0 -1px 0 0 #d6d6d6;
+    }
+
+
+    .customeraccessgroup-root .scheduleOverview .leftlist .panel ul .list-group-item.active,
+    .customeraccessgroup-root .ControllerOverview .leftlist .panel ul.list-group-item.active:hover,
+    .customeraccessgroup-root .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+        background: #e1eff9;
+        color: #606060;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .customeraccessgroup-root .scheduleOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+        margin-right: 0px;
+    }
+
+@media (max-height: 768px) {
+    .customeraccessgroup-root .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+
+    .customeraccessgroup-root .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+.customeraccessgroup-root .accessgroupcontainer {
+    top: 60px;
+    position: absolute;
+    width: 98%;
+    bottom: 0px;
+    height: 100%;
+    min-height: 533px;
+}
+
+.customeraccessgroup-root .ispmodal .accgrouptableaccordian {
+    max-height: 250px;
+    position: relative;
+    width: 99%;
+    overflow: hidden;
+}
+
+    .customeraccessgroup-root .ispmodal .accgrouptableaccordian:hover {
+        overflow: auto;
+    }
+
+.customeraccessgroup-root .accgrouptableaccordian .panel-group {
+    margin-bottom: 0;
+}
+
+.customeraccessgroup-root .accessgroupOverview {
+    position: absolute;
+    bottom: 0;
+    top: 0px;
+    padding: 0px;
+    width: calc(76% - 336px);
+    margin: 0px;
+    right: 0px;
+}
+
+.customeraccessgroup-root .accordian-additional-menu {
+    padding: 0 6px 0 0px;
+}
+
+.customeraccessgroup-root .ispmodal .EditAccessGroup .accordian-additional-menu {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.customeraccessgroup-root .accordian-additional-menu b {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 16px;
+    color: #303030;
+    padding: 0;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .listStickyHeader, .accgrouptableaccordian .listStickyHeader.collapsed {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 13px;
+    color: #303030;
+    background: #f2f2f2 !important;
+    border-top: 1px solid #dfdfdf;
+    padding-left: 9px;
+    padding-bottom: 2px;
+    padding-top: 4px;
+}
+
+    .customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .collapsed .ispicon_accordian_droparrow::before {
+        background-position: -396px -142px;
+    }
+
+    .customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .panel-title, .accgrouptableaccordian .listStickyHeader.collapsed .panel-title {
+        font-family: "HoneywellSansWeb-Bold" !important;
+        font-size: 14px;
+        color: #303030;
+        cursor: pointer;
+    }
+
+    .customeraccessgroup-root .accgrouptableaccordian .listStickyHeader h4.panel-title + span[aria-expanded="true"] .ispicon_accordian_droparrow::before {
+        background-position: -396px -140px;
+    }
+
+
+.customeraccessgroup-root .accgrouptableaccordian .collapsed .ispicon_accordian_droparrow::before {
+    background-position: -396px -142px;
+}
+
+
+.customeraccessgroup-root .accgrouptableaccordian .panel-body {
+    padding: 0px 0px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .panel-group .panel {
+    border-radius: 0;
+    border: 0px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .title {
+    font-family: "HoneywellSansWeb-Bold" !important;
+    font-size: 13px;
+    color: #303030;
+    cursor: pointer;
+}
+
+    .customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .title input[type="checkbox"] {
+        margin: 2px 5px;
+    }
+
+        .customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .title input[type="checkbox"] + span {
+            line-height: 24px;
+            margin-left: 6px;
+        }
+
+.customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .datalist {
+    width: auto;
+    min-width: 50%;
+    background-color: inherit;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .listStickyHeader .headerDL {
+    padding-left: 8px;
+    width: 59.4%;
+    /* margin-left: 4px!important; */
+    background-color: inherit;
+    padding-right: 3px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .accordionhead {
+    width: 50%;
+    position: absolute;
+    right: 0px;
+}
+
+    .customeraccessgroup-root .accgrouptableaccordian .accordionhead .custompicker {
+        width: 57.4%;
+        margin-left: 18px !important;
+        background-color: inherit;
+        /*outline: none;
+border: none;*/
+    }
+
+.customeraccessgroup-root .accgrouptableaccordian .secondlevel tr td:first-child {
+    padding-left: 31px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .ispicon_schedule:hover::before {
+    background-position: -492px -11px !important;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .ispicon_schedule,
+.customeraccessgroup-root .accgrouptableaccordian .ispicon_plus {
+    padding: 1px 10px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .secondlevel {
+    margin-left: 24px;
+    margin-bottom: 0px;
+    width: calc(100% - 24px);
+}
+
+    .customeraccessgroup-root .accgrouptableaccordian .secondlevel input[type="checkbox"] {
+        margin-top: 0px;
+    }
+
+    .customeraccessgroup-root .accgrouptableaccordian .secondlevel tr input[type="checkbox"] + span {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+    }
+
+    .customeraccessgroup-root .accgrouptableaccordian .secondlevel tr.thirdlevel input[type="checkbox"] + span {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 14px;
+        color: #303030;
+    }
+
+.customeraccessgroup-root .contentContainer {
+    position: absolute;
+    bottom: 0px;
+    top: 85px;
+    overflow-y: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+    .customeraccessgroup-root .contentContainer:hover {
+        overflow-y: auto;
+    }
+
+.customeraccessgroup-root .viewmode .accgrouptableaccordian .listStickyHeader .title input[type="checkbox"] {
+    display: none;
+}
+
+.customeraccessgroup-root .viewmode .btn-footer {
+    display: none;
+}
+
+.customeraccessgroup-root .nopadding {
+    padding: 0;
+}
+
+.customeraccessgroup-root .lists {
+    width: 336px;
+    float: left;
+    position: absolute;
+    left: 24%;
+    bottom: 0;
+    top: 0;
+}
+
+.customeraccessgroup-root .EditAccessGroup .accordian-additional-menu b {
+    padding: 0px;
+}
+
+
+.customeraccessgroup-root .EditAccessGroup .accessgrouppopupcontainer {
+    max-height: 394px;
+}
+
+    .customeraccessgroup-root .EditAccessGroup .accessgrouppopupcontainer .ispselectdropdown .isppopup-site {
+        width: calc(100% - 30px);
+    }
+
+.customeraccessgroup-root .section-head1 {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #202020;
+    font-size: 22px;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 600px;
+    margin-left: 20px;
+    margin-top: -4px;
+}
+
+.customeraccessgroup-root .listcontainer {
+    position: absolute;
+    top: 133px;
+    bottom: 0px;
+    overflow-y: hidden;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+    .customeraccessgroup-root .listcontainer:hover {
+        overflow-y: auto;
+    }
+
+    .customeraccessgroup-root .listcontainer .listStickyHeader {
+        border-top: 0px;
+        text-align: left;
+        border-top: 2px solid #d0d0d0;
+    }
+
+.customeraccessgroup-root .cardlistview .ispheadersearch {
+    padding-right: 20px;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    height: 43px;
+}
+
+.customeraccessgroup-root .EditAccessGroup .ispicon_sortasc {
+    padding: 5px;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .secondlevel {
+    margin-left: 0px;
+    width: calc(100% - 0px);
+}
+
+.customeraccessgroup-root .accessgroupView .viewmode .table td:first-child {
+    padding: 10px 0 10px 22px !important;
+}
+
+.customeraccessgroup-root .ispmenu {
+    border: 1px solid #d0d0d0;
+    min-width: 200px;
+    padding: 0px;
+}
+
+    .customeraccessgroup-root .ispmenu li {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 14px;
+        color: #303030;
+    }
+
+        .customeraccessgroup-root .ispmenu li a {
+            font-family: 'HoneywellSansWeb-Medium' !important;
+            font-size: 14px;
+            color: #606060;
+            padding: 12px 24px;
+            border-bottom: 1px solid #d0d0d0;
+        }
+
+            .customeraccessgroup-root .ispmenu li a:hover {
+                font-family: 'HoneywellSansWeb-Bold' !important;
+                font-size: 14px;
+                color: #303030;
+                background-color: #e8f4fc;
+            }
+
+    .customeraccessgroup-root .ispmenu.rightalign {
+        top: 50px;
+        right: 20px;
+    }
+
+.customeraccessgroup-root .checkbox input[type="checkbox"] {
+    opacity: 1;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .ispselect {
+    outline: none;
+    border: none;
+    /*-webkit-appearance: none; */
+    /*margin-left: 10px;*/
+    height: 19px;
+    margin-top: 2px;
+}
+
+.customeraccessgroup-root .viewmode .accgrouptableaccordian .ispselect {
+    background-color: initial;
+    height: 24px;
+    /*-webkit-appearance: none;*/
+}
+
+.customeraccessgroup-root .datalist::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+.customeraccessgroup-root .accessgroupView .secondlevel .name {
+    margin-left: 15px;
+    padding-top: 2px !important;
+}
+
+.customeraccessgroup-root .EditAccessGroup .accgrouptableaccordian .secondlevel {
+    margin-left: 0px;
+    width: calc(100% - 0px);
+}
+
+.customeraccessgroup-root .viewmode .accgrouptableaccordian .listStickyHeader .title input[type="checkbox"],
+.customeraccessgroup-root .viewmode .accgrouptableaccordian input[type="checkbox"] {
+    display: none;
+}
+
+.customeraccessgroup-root .accgrouptableaccordian .accordionhead .name {
+    padding-top: 5px;
+    position: absolute;
+}
+
+.viewmode :not(.listStickyHeader) {
+    pointer-events: initial;
+}
+
+.customeraccessgroup-root .ispselectdropdown .isppopup-site .control-label input[type="checkbox"] + span {
+    max-width: 178px;
+}
+
+.customeraccessgroup-root .ispselectdropdown .isppopup-site .control-label {
+    height: 40px;
+}
+
+.ag-delete-icon {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+}
+
+.ag-add-icon {
+    position: absolute;
+    right: 47px;
+    top: 23px;
+}
+
+.ag-edit-icon {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+}
+
+.ag-toggle-icon {
+    position: absolute;
+    right: 20px;
+    top: 80px;
+}
+
+.border-d0d0d0 {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.customeraccessgroup-root .search-icon:before {
+    transform: rotate(90deg);
+}

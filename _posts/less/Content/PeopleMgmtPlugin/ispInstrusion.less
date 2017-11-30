@@ -1,0 +1,1093 @@
+@color_1: #808080;
+@color_2: #303030;
+@color_3: #606060;
+@color_4: #1792e5;
+@color_5: #ccc;
+@color_6: #202020;
+@font_family_1: "HoneywellSansWeb-Medium";
+@font_family_2: "HoneywellSansWeb-Bold";
+@font_family_3: 'HoneywellSansWeb-Bold';
+@font_family_4: 'HoneywellSansWeb-Medium';
+@background_color_1: #e1eff9;
+@background_color_2: #ffffff;
+@border_color_1: #e7e7e7;
+
+/*version 1.0.1*/
+/*.intrusiongroup-root .intrusiongroupView .table td .name,.intrusiongroup-root .EditIntrusionGroup .table td .name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}*/
+/*.intrusiongroup-root .viewmode .accordian-control .listStickyHeader .panel-title,.intrusiongroup-root .viewmode .accordian-additional-menu .ispicon_sort{
+    pointer-events: none;
+}*/
+/* ICONS */
+/*
+.intrusiongroup-root .ispicon_plus::before {
+    background-position: -298px -21px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_plus:hover::before {
+    background-position: -298px -42px;
+}
+
+.intrusiongroup-root .ispicon_plus:active::before {
+    background-position: -298px -63px;
+}
+
+.intrusiongroup-root .ispicon_more::before {
+    background-position: -573px -21px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_more:hover::before {
+    background-position: -573px -42px;
+}
+
+.intrusiongroup-root .ispicon_more:active::before {
+    background-position: -573px -63px;
+}
+
+.intrusiongroup-root .ispicon_collapse::before {
+    background-position: -128px -24px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_collapse:hover::before {
+    background-position: -128px -45px;
+}
+
+.intrusiongroup-root .ispicon_collapse:active::before {
+    background-position: -128px -66px;
+}
+
+.intrusiongroup-root .ispicon_edit::before {
+    background-position: -63px -148px;
+    background-size: 780px;
+}
+
+.intrusiongroup-root .ispicon_edit:hover::before {
+    background-position: -63px -169px;
+}
+
+.intrusiongroup-root .ispicon_edit:active::before {
+    background-position: -63px -190px;
+}
+
+
+.intrusiongroup-root .ispicon::before {
+    background-size: 700px;
+    cursor: pointer;
+}
+
+.intrusiongroup-root .ispicon_filter::before {
+    background-position: -362px -21px;
+    margin-right: 3px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover {
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active {
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_filter::before, .intrusiongroup-root .ispActionMenu.open .ispicon_filter::before {
+    background-position: -362px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_filter::before {
+    background-position: -362px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_views::before {
+    background-position: -319px -21px;
+    margin-right: 4px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_views::before, .intrusiongroup-root .ispActionMenu.open .ispicon_views::before {
+    background-position: -319px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_views::before {
+    background-position: -319px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_action::before {
+    background-position: -382px -21px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_action::before, .intrusiongroup-root .ispActionMenu.open .ispicon_action::before {
+    background-position: -382px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_action::before {
+    background-position: -382px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_sort::before {
+    background-position: -340px -21px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_sort::before, .intrusiongroup-root .ispActionMenu.open .ispicon_sort::before {
+    background-position: -340px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_sort::before {
+    background-position: -340px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_saveFilter::before {
+    background-position: -22px -149px;
+    margin-right: 3px;
+}
+
+.intrusiongroup-root .ispActionMenu:hover .ispicon_saveFilter::before, .intrusiongroup-root .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -22px -170px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -22px -191px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_alarmsCritical::before {
+    background-position: -425px -21px;
+}
+
+.intrusiongroup-root .ispicon_alarmsMajor::before {
+    background-position: -425px -42px;
+}
+
+.intrusiongroup-root .ispicon_alarmsModerate::before {
+    background-position: -425px -63px;
+}
+
+.intrusiongroup-root .ispicon_alarmsDefault:before {
+    background-position: -64px -21px;
+}
+
+.intrusiongroup-root .ispicon_cloudDefault::before {
+    background-position: -446px -21px;
+}
+
+.intrusiongroup-root .ispicon_cloudModerate::before {
+    background-position: -446px -42px;
+}
+
+.intrusiongroup-root .ispicon_cloudMajor::before {
+    background-position: -446px -63px;
+}
+
+.intrusiongroup-root .ispicon_cloudCritical::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.intrusiongroup-root .ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.intrusiongroup-root .ispicon_DoorDefault::before {
+    background-position: -615px -21px;
+}
+
+.intrusiongroup-root .ispicon_DoorModerate::before {
+    background-position: -615px -42px;
+}
+
+.intrusiongroup-root .ispicon_DoorMajor::before {
+    background-position: -615px -63px;
+}
+
+.intrusiongroup-root .ispicon_DoorCritical::before {
+    background-position: -615px -84px;
+}
+
+.intrusiongroup-root .ispicon_video::before {
+    background-position: -404px -21px;
+}
+
+.intrusiongroup-root .ispicon_video:hover::before {
+    background-position: -404px -42px;
+}
+
+.intrusiongroup-root .ispicon_video:active::before {
+    background-position: -404px -63px;
+}
+
+.intrusiongroup-root .ispicon_videoModerate::before {
+    background-position: -404px -84px;
+}
+
+.intrusiongroup-root .ispicon_videoCritical::before {
+    background-position: -404px -105px;
+}
+
+.intrusiongroup-root .ispicon_videoMajor::before {
+    background-position: -404px -126px;
+}
+
+.intrusiongroup-root .ispicon_disarmDefault::before {
+    background-position: -660px -21px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -660px -42px;
+}
+
+
+.intrusiongroup-root .ispicon_dropArrow::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+.intrusiongroup-root .ispicon_dropArrow:hover::before {
+    background-position: -191px -21px;
+    margin-top: 3px;
+}
+
+
+.intrusiongroup-root .acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover {
+    background-position: -466px -42px;
+    color: #1792e5;
+}
+
+.intrusiongroup-root .acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active {
+    background-position: -466px -63px;
+    color: #1272b2;
+}
+
+.intrusiongroup-root .ispicon_handbar::before {
+    background-position: -64px -125px;
+}
+
+.intrusiongroup-root .ispicon_handbar:hover::before {
+    background-position: -42px -105px;
+}
+
+.intrusiongroup-root .ispicon_close::before {
+    background-position: -255px -21px;
+}
+
+.intrusiongroup-root .ispicon_close:hover::before {
+    background-position: -255px -42px;
+}
+
+.intrusiongroup-root .ispicon_close:active::before {
+    background-position: -255px -63px;
+}
+
+*/
+/* NEW ADDITION 24-08-2016*/
+/* CONTROLLER OVERVVIEW*/
+/*.accordian-control .listStickyHeader .collapsed .ispicon_accordian_droparrow::before {
+    background-position: -396px -142px;
+}*/
+/*.collapsed .ispicon_accordian_droparrow::before{
+    background-position: -396px -142px;
+}*/
+/*
+.intrusiongroup-root .itemlistview .listcontainer .listStickyHeader{
+    padding-left: 56px;
+}
+*/
+.intrusiongroup-root {
+	.isptabs {
+		.nav {
+			border-bottom: 1px solid #dfdfdf;
+			li {
+				font-family: @font_family_1 !important;
+				a {
+					font-family: @font_family_1 !important;
+					font-size: 14px;
+					color: @color_1;
+					background: transparent;
+					border: none;
+					outline: none;
+					-webkit-box-sizing: none;
+					-moz-box-sizing: none;
+					box-sizing: none;
+					&:hover {
+						border: none;
+					}
+					&:active {
+						border: none;
+					}
+					&:focus {
+						border: none;
+					}
+				}
+			}
+			li.active {
+				a {
+					font-family: @font_family_2 !important;
+					font-size: 14px;
+					color: @color_2;
+					background: transparent;
+					border-bottom: 4px solid #1792e5;
+				}
+			}
+		}
+	}
+	.itemlistview {
+		padding: 0px;
+		.list-group-item {
+			border-radius: 0;
+			&:hover {
+				background-color: @background_color_1;
+				color: @color_3;
+				border-color: @border_color_1;
+			}
+		}
+		.nav.nav-tabs {
+			margin-left: 20px;
+		}
+		.listStickyHeader {
+			text-align: center;
+		}
+		.listcount {
+			background: #f2f2f2;
+			margin-right: 0;
+			padding: 4px 0px;
+		}
+		.list-group-item.active {
+			background-color: @background_color_1;
+			color: @color_3;
+			border-color: @border_color_1;
+			&:hover {
+				background-color: @background_color_1;
+				color: @color_3;
+				border-color: @border_color_1;
+			}
+			&:focus {
+				background-color: @background_color_1;
+				color: @color_3;
+				border-color: @border_color_1;
+			}
+		}
+		.name {
+			font-family: @font_family_3 !important;
+			font-size: 15px;
+			color: @color_2;
+		}
+		.peoplecount {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+		}
+		.doorcount {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+		}
+		.controllerList {
+			font-family: @font_family_3 !important;
+			font-size: 14px;
+			color: @color_1;
+		}
+		.listcontainer {
+			position: absolute;
+			top: 60px;
+			bottom: 0px;
+			height: 92%;
+			min-height: 500px;
+			overflow-y: auto;
+			width: 100%;
+		}
+	}
+	.listOverview {
+		border-left: 1px solid #e7e7e7;
+		.headerTitle {
+			font-family: @font_family_3 !important;
+			color: @color_2;
+			margin-left: 20px;
+		}
+		.overviewTab {
+			max-height: 400px;
+		}
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+	.listcontainer {
+		.listStickyHeader {
+			border-top: 0px;
+			text-align: center;
+		}
+	}
+	.intrusiongroupView {
+		.overviewTab {
+			.table {
+				>thead {
+					>tr {
+						>th {
+							border-bottom: 0 none;
+						}
+					}
+				}
+			}
+			span.name {
+				font-family: @font_family_3 !important;
+				color: @color_4;
+				font-size: 14px;
+			}
+			span.sensorsid {
+				font-family: @font_family_4 !important;
+				color: @color_3;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			table {
+				th {
+					font-family: @font_family_3 !important;
+					font-size: 14px;
+				}
+				td {
+					span {
+						font-family: @font_family_4 !important;
+						font-size: 14px;
+					}
+				}
+			}
+			.ispicon {
+				margin-top: 10px;
+			}
+			.ispicon_collapse {
+				margin-left: 15px;
+			}
+		}
+		.table {
+			td {
+				border-top: 1px solid #f0f0f0 !important;
+				&:first-child {
+					padding-left: 24px;
+					padding: 10px 0 10px 24px;
+					div {
+						span {
+							font-family: @font_family_4 !important;
+							color: @color_3;
+							font-size: 14px;
+						}
+					}
+				}
+				div {
+					&:not(span) {
+						padding-left: 12px;
+					}
+				}
+				.ispicon_schedule {
+					padding-right: 13px;
+				}
+			}
+			.nextlevel {
+				padding: 0px 0 0px 10px !important;
+				border-top: 0px solid #f0f0f0 !important;
+				div {
+					span {
+						padding-left: 0px;
+					}
+					span.col-md-4 {
+						padding-left: 21px;
+					}
+				}
+			}
+			td.nextlevel {
+				&:first-child {
+					padding-left: 0px;
+					border-top: 0px;
+					border-bottom: 0px;
+					box-shadow: none;
+				}
+			}
+			margin-bottom: 0px;
+		}
+		.itemlistview {
+			.isppagetitle {
+				font-family: @font_family_3 !important;
+				color: @color_2;
+				margin-left: 25px;
+				margin-right: 20px;
+			}
+		}
+		.listOverview {
+			.isppagetitle {
+				margin-left: 20px;
+				margin-right: 20px;
+				border-bottom: 1px solid #e7e7e7;
+				padding-bottom: 15px;
+			}
+		}
+		.list-group-item {
+			padding: 10px 20px;
+			border-right: 0px;
+			cursor: pointer;
+		}
+		.checkbox {
+			float: left;
+			margin-top: 0;
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+			label {
+				&::before {
+					display: none;
+				}
+			}
+		}
+		.btn-group {
+			.btn {
+				&+.btn {
+					margin-left: 8px !important;
+				}
+			}
+		}
+		.btn-footer {
+			position: absolute;
+			bottom: 0;
+			right: -15px;
+			border-top: 1px solid #ccc;
+			left: 0;
+			padding: 10px 30px 10px 10px;
+		}
+	}
+	.addSchedule {
+		.table {
+			>thead {
+				>tr {
+					>th {
+						border-bottom: 0 none;
+					}
+				}
+			}
+		}
+		table {
+			td {
+				border-top: 1px solid #e7e7e7 !important;
+			}
+		}
+		.ispicon {
+			margin-top: 10px;
+		}
+		.overviewTab {
+			.name {
+				margin-left: 10px;
+			}
+		}
+		.checkbox {
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+		}
+		.modal-dialog {
+			width: 700px;
+			padding-top: 10px;
+		}
+		.panel-body {
+			padding: 5px 15px 0 15px;
+		}
+	}
+	.EditIntrusionGroup {
+		.table {
+			.nextlevel {
+				padding: 0px 0 0px 10px !important;
+				border-top: 0px solid #f0f0f0 !important;
+				div {
+					span {
+						padding-left: 0px;
+					}
+				}
+			}
+			td {
+				.ispicon_schedule {
+					padding-right: 13px;
+				}
+			}
+		}
+	}
+	.addSchedule.ispmodal {
+		left: 0 !important;
+	}
+	.listHeader {
+		font-family: @font_family_3 !important;
+		color: @color_2;
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		padding: 15px 0;
+		margin: 0 15px 10px 15px;
+		font-size: 18px;
+		clear: both;
+		&+hr {
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+	}
+	.btn-group {
+		button.moveArea {
+			margin-left: 10px !important;
+		}
+	}
+	.viewmode {
+		input {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			[type="checkbox"] {
+				background: 0;
+			}
+		}
+		textarea {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+		}
+		.btn-footer {
+			display: none;
+		}
+	}
+	.btn-footer {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 15px;
+		border-top: 1px solid #dfdfdf;
+	}
+	.bold {
+		font-family: @font_family_3 !important;
+	}
+	.ispheaderbar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	.inputuppercase {
+		text-transform: uppercase;
+	}
+	.disabledbutton {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+	.btn-default {
+		background-color: @background_color_2 !important;
+		border: 1px solid #d0d0d0 !important;
+		color: @color_5 !important;
+	}
+	.scheduleOverview {
+		position: absolute;
+		right: 15px;
+		bottom: 0;
+		top: 0px;
+		.content {
+			padding: 0 10px;
+			background: #f4f4f4;
+			padding-right: 24px;
+			box-shadow: 0 -1px 0 0 #d6d6d6;
+		}
+		.leftlist {
+			.panel {
+				ul {
+					.list-group-item.active {
+						background: #e1eff9;
+						color: @color_3;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+					.list-group-item {
+						.ispicon.ispicon_downarrow {
+							margin-right: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.ControllerOverview {
+		.leftlist {
+			.panel {
+				ul.list-group-item.active {
+					&:hover {
+						background: #e1eff9;
+						color: @color_3;
+						font-size: 14px;
+						font-family: @font_family_4 !important;
+					}
+				}
+				ul {
+					li.list-group-item.active {
+						&:focus {
+							background: #e1eff9;
+							color: @color_3;
+							font-size: 14px;
+							font-family: @font_family_4 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.accessgroupcontainer {
+		top: 60px;
+		position: absolute;
+		width: 98%;
+		bottom: 0px;
+		height: 100%;
+		min-height: 533px;
+	}
+	.contentContainer {
+		position: absolute;
+		right: 0;
+		bottom: 53px;
+		top: 80px;
+		left: 5px;
+		overflow-y: auto;
+	}
+}
+.addSchedule {
+	.overviewTab {
+		table {
+			td {
+				font-family: @font_family_4 !important;
+				font-size: 14px;
+			}
+		}
+		.sensorsid {
+			margin-left: 10px;
+		}
+	}
+	.name {
+		margin-left: 10px;
+	}
+	.sensorsid {
+		margin-left: 10px;
+	}
+}
+.accordian-control {
+	.nextlevel {
+		.listStickyHeader {
+			background: #fff !important;
+		}
+	}
+	.listStickyHeader {
+		font-family: @font_family_2 !important;
+		font-size: 13px;
+		color: @color_2;
+		background: #f2f2f2 !important;
+		border-top: 1px solid #dfdfdf;
+		padding-left: 9px;
+		.panel-title {
+			font-family: @font_family_2 !important;
+			font-size: 13px;
+			color: @color_2;
+			cursor: pointer;
+		}
+		h4.panel-title {
+			&+span[aria-expanded="true"] {
+				.ispicon_accordian_droparrow {
+					&::before {
+						background-position: -396px -140px;
+					}
+				}
+			}
+		}
+		.title {
+			font-family: @font_family_2 !important;
+			font-size: 13px;
+			color: @color_2;
+			cursor: pointer;
+		}
+	}
+	.listStickyHeader.collapsed {
+		font-family: @font_family_2 !important;
+		font-size: 13px;
+		color: @color_2;
+		background: #f2f2f2 !important;
+		border-top: 1px solid #dfdfdf;
+		padding-left: 9px;
+		.panel-title {
+			font-family: @font_family_2 !important;
+			font-size: 13px;
+			color: @color_2;
+			cursor: pointer;
+		}
+	}
+	.panel-body {
+		padding: 0px 0px;
+	}
+	.panel-group {
+		margin-bottom: 0;
+		.panel {
+			border-radius: 0;
+			border: 0px;
+		}
+	}
+	li {
+		list-style-type: none;
+	}
+}
+.EditIntrusionGroup {
+	.accordian-control {
+		.nextlevel {
+			.listStickyHeader {
+				padding: 0;
+				border: 0;
+				input[type="checkbox"] {
+					margin: 0;
+				}
+			}
+		}
+	}
+	.table {
+		.nextlevel {
+			div {
+				span.col-md-4 {
+					padding-left: 2px;
+				}
+			}
+		}
+		span.col-md-4 {
+			&:not(.nextlevel) {
+				padding-left: 0;
+			}
+		}
+		td {
+			div {
+				padding-left: 22px;
+				input[type="checkbox"] {
+					margin: 0;
+				}
+			}
+			&:not(.nextlevel) {
+				div {
+					span {
+						padding-left: 6px;
+					}
+				}
+			}
+			&:first-child {
+				div {
+					span {
+						font-family: @font_family_4 !important;
+						color: @color_3;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		td.nextlevel {
+			div {
+				&:not(span) {
+					padding-left: 0px !important;
+					margin-left: 1px;
+				}
+			}
+		}
+	}
+	.accordian-additional-menu {
+		b {
+			padding: 0px;
+		}
+	}
+	.accessgrouppopupcontainer {
+		max-height: 394px;
+	}
+	.ispheadersearch {
+		.ispsearch {
+			border-right: 0px solid #d0d0d0;
+		}
+	}
+	.searchbtn {
+		padding-bottom: 24px !important;
+		margin-top: 3px;
+		border-left: 0 !important;
+	}
+}
+.scheduleList {
+	>span {
+		&+span {
+			margin-left: 5px;
+		}
+	}
+}
+.accountcontainer {
+	.overview {
+		.content {
+			background: 0 !important;
+			box-shadow: none !important;
+		}
+	}
+}
+.ispmodal {
+	.accordian-control {
+		max-height: 134px;
+	}
+}
+.accessgroupOverview {
+	position: absolute;
+	right: 15px;
+	bottom: 0;
+	top: 0px;
+	padding: 0 15px 0 0;
+}
+.accordian-additional-menu {
+	padding: 0 6px 0 0px;
+	b {
+		padding: 0 17px;
+		font-family: @font_family_2 !important;
+		font-size: 16px;
+		color: @color_2;
+	}
+}
+.intrusion-root {
+	.viewmode {
+		input {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			background: #f2f2f2;
+		}
+		textarea {
+			font-family: @font_family_4 !important;
+			font-size: 14px;
+			color: @color_3;
+			pointer-events: none;
+			background: #f2f2f2;
+		}
+		.btn-footer {
+			display: none;
+		}
+	}
+}
+.nopadding {
+	padding: 0;
+}
+.lists {
+	width: 25%;
+	float: left;
+	position: absolute;
+	right: 51%;
+	bottom: 0;
+	top: 0;
+}
+.section-head1 {
+	font-family: @font_family_3 !important;
+	color: @color_6;
+	font-size: 22px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.listcontainer {
+	.secondline {
+		span {
+			font-family: @font_family_3 !important;
+			color: @color_3;
+			font-size: 14px;
+		}
+	}
+}
+.searchplaceholder {
+	list-style-type: none;
+	margin-top: -10px;
+	margin-bottom: 0px;
+	>li {
+		float: left;
+		padding: 0 10px;
+	}
+}
+.searchfilterholder {
+	margin-top: 15px;
+}
+.togglemenu {
+	.intrusiongroup-root {
+		position: absolute;
+		left: 70px;
+		top: 0px;
+		bottom: 0px;
+		right: 0px;
+		.itemlistview {
+			left: 0% !important;
+		}
+		.listOverview {
+			left: 25% !important;
+			width: 75% !important;
+		}
+	}
+}
+@media (max-width: 1366px) and (min-width: 1441px) {
+	.intrusiongroup-root {
+		.listOverview {
+			.overviewTab {
+				max-height: 400px;
+			}
+		}
+	}
+	.listOverview {
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+}
+@media screen and (min-width: 1920px) {
+	.intrusiongroup-root {
+		.listOverview {
+			.overviewTab {
+				max-height: 804px;
+			}
+		}
+	}
+	.listOverview {
+		.settingsTab {
+			max-height: 804px;
+		}
+	}
+}
+@monIE:"screen\0";
+@media @monIE{
+	.intrusiongroup-root {
+		.ispicon.inverse {
+			&::before {
+				width: 20px;
+				left: 24px;
+				top: 43px;
+			}
+		}
+	}
+}
+@media (max-height: 768px) {
+	.intrusiongroup-root {
+		.addnewaccount {
+			max-height: 330px;
+			width: 100%;
+		}
+		.ControllerOverview {
+			.overview {
+				.content {
+					width: 98%;
+					max-height: 520px;
+				}
+			}
+		}
+	}
+}

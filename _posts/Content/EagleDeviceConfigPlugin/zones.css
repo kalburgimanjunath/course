@@ -1,0 +1,223 @@
+﻿
+.addDevice .modal-dialog {
+    width: 700px;
+}
+
+.addDevice.ispmodal {
+    left: 0 !important;
+}
+
+.addDevice .chimeZone {
+    margin-top: 0;
+}
+
+    .addDevice .chimeZone > span {
+        padding-top: 3px;
+        margin-left: 10px;
+        float: left;
+    }
+
+.wiredZones{
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0;
+    padding: 0 15px 0 0;
+}
+.wiredZones .overviewHeader {
+    padding-left: 0;
+}
+
+.wiredZones .isppagetitle {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 6px !important;
+}
+
+.wiredZones .overviewHeader .nav-tabs {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.wiredZones .panel-body {
+    padding: 15px 20px !important;
+}
+.wiredZones  .table thead tr th  {
+    border-bottom:0 none;
+}
+.wiredZones table td  {
+     border-top:1px solid #f0f0f0 !important;
+}
+.dcm-root .sensorsTab {
+    margin-top: 24px;
+}
+.dcm-root .deviceControllerIcon {
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+.dcm-root .listgrouppane .panel .status.status_not_registered {
+    color: #606060;
+    padding-top: 7px;
+}
+.dcm-root .deviceStatusList {
+    line-height: 1.8em;
+}
+.dcm-root .listgrouppane .panel .status.status_online{
+    padding-top: 7px;
+}
+.dcm-root .isptable tbody tr {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+.dcm-root .isptable tbody tr td {
+    padding: 4px 0px;
+}
+.dcm-root .isptable thead tr input[type="checkbox"] {
+    position: relative;
+    bottom: 10px;
+}
+.dcm-root .isptable tbody tr input[type="checkbox"] {
+    position: relative;
+    bottom: 0;
+}
+.dcm-root .modal-body .chimeZone input[type="checkbox"] {
+    margin: 4px;
+}
+.dcm-root .ispmodal .modal-footer {
+    margin-top: 0;
+}
+.dcm-root .modal-content {
+    margin: auto;
+}
+.dcm-root .modal-dialog{
+    margin: 3em auto;
+}
+
+.dcm-root .deviceZoneEditIcon {
+    margin-right: 30px;
+}
+.dcm-root .deviceZoneEditIcon {
+    margin-right: 30px;
+}
+.zonesTable .table > tbody > tr > td.zonesCheckboxIcon{
+    padding: 0;
+}
+.zonesTable .table thead,
+.zonesTable .table tbody tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.zonesTable .table tbody{
+    display: inline-block;
+    max-height: 450px;
+    overflow-y: auto;
+}
+.zonesTable .severityCheck{
+	padding: 0;
+}
+.zonesTable thead > tr > th{
+	padding:8px 0;
+}
+
+.dcm-root .severityCheck {
+    width: 8.33%;
+} 
+
+.dcm-root .disableAssociatedDropdown {
+    background-color: #f2f2f2;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+        pointer-events: all !important;
+        cursor: no-drop;
+}
+.viewmode .ispselectdropdown .ispicon_dropArrow {
+    display: none;
+}
+.dcm-root .ispselectdropdown .showpopuponviewmode {
+    pointer-events: inherit;
+    cursor:pointer;
+}
+.dcm-root .ispselectdropdown .isppopup-site {
+    width: calc(100% - 40px);
+}
+.dcm-root .ispselectdropdown .viewmode{
+    pointer-events: inherit;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+}
+.associatedAreasInfoTooltip{
+    position: relative;
+}
+.dcm-root .associatedAreasInfoTooltip:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #d0d0d0;
+    border-width: 7px;
+    margin-left: -30px;
+}
+.dcm-root .associatedAreasInfoTooltip:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #d0d0d0;
+    border-width: 7px;
+    margin-left: -31px;
+}
+.associatedAreasInfoTooltip:after,.associatedAreasInfoTooltip:before {
+    bottom: 94%;
+    left: 70%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.dcm-root .associatedAreasInfo{
+    background: #fff;
+    border: 2px solid #d0d0d0;
+    border-radius: 0;
+    box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    height: 200px;
+    width: 250px;
+    padding: 10px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 2;
+    left: 400px;
+    padding: 24px;
+}
+
+.dcm-root .associatedAreasInfo table{
+    width: 100%;
+}
+.dcm-root .associatedAreasInfo table > tbody > tr{
+    border-bottom: 2px solid #eee;
+}
+
+.dcm-root .associatedAreasInfo table > thead {
+    border-top: 2px solid #d0d0d0;
+    background: #eee;
+}
+
+.dcm-root .associatedAreasInfo table > tbody > tr > td {
+    padding: 8px 10px;
+}
+.dcm-root .associatedAreasInfo table > thead > tr > th {
+    padding: 8px 10px;
+}
+
+.dcm-root .associatedAreasInfo table > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+	
+	
+	

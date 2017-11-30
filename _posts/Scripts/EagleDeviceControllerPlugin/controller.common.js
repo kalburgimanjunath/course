@@ -1,0 +1,3 @@
+﻿window.EagleDeviceControllerPlugin = window.EagleDeviceControllerPlugin || {};
+
+

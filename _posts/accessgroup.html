@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Schedules.css">
+    <link rel="stylesheet" type="text/css" href="css/ispSchedule.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/peopleareas.css">
+    <link rel="stylesheet" type="text/css" href="Content/Styles/selectize.css">
+
+    <!-- jQuery library -->
+    <script src="Scripts/lib/jquery-1.11.0.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="Scripts/lib/bootstrap.min.js"></script>
+
+
+    <script src="sumo-select/jquery.sumoselect.min.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+
+    $( document ).ready(function() {
+         $("#edit").click(function(){
+            $(".contentContainer").removeClass("viewmode");
+        });
+
+      
+        $('.SlectBox').SumoSelect({search: true});
+
+    });
+    
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+    });
+
+   
+
+    function onMenuItemSelect(itemName) {
+    $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+    switch (itemName) {
+    case "SiteOverview":
+    blockUI();
+    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+    unblockUI();
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+    });
+    break;
+    case "AddSite":
+    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+    break;
+    }
+    }
+
+    </script>
+    <style>
+    /*temp fixes*/
+
+    
+
+    .ispmenu {
+        border: 1px solid #d0d0d0;
+        min-width:200px;
+        padding:0px;
+    }
+        .ispmenu li {
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            font-size: 14px;
+            color: #303030;
+        }
+
+            .ispmenu li a {
+                font-family: 'HoneywellSansWeb-Medium' !important;
+                font-size: 14px;
+                color: #606060;
+                padding: 12px 24px;
+                border-bottom: 1px solid #d0d0d0;
+            }
+
+                .ispmenu li a:hover {
+                    font-family: 'HoneywellSansWeb-Bold' !important;
+                    font-size: 14px;
+                    color: #303030;
+                    background-color: #e8f4fc;
+                }
+                .ispmenu.rightalign{
+                    top: 50px;
+                    right: 20px;
+                }
+
+                .checkbox input[type="checkbox"] {
+                    opacity: 1;
+                }
+
+
+
+               
+    </style>
+</head>
+<body>
+
+        <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="dcm.html"><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul>
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="onMenuItemSelect('SignOut')">
+                                <span class="ispicon ispicon_logout"></span>
+                                Sign Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">
+               
+                <form>
+                    <div class="col-xs-10 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <!-- <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li> 
+                                </ul>-->
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <div id="page-body">
+         <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6><span class="ispicon ispicon_backbutton">Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group">
+                        <li><a href="customeroverview.html" class="list-group-item active"><span class="ispicon ispicon_sites"></span><span>Site Overview</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                       
+                                <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="accessgroup-root">
+            <!-- <link href="~/Content/AccountMgmtPlugin/alarms.css" rel="stylesheet" /> -->
+            <div id="accessgroup-view" class="accessgroupView">
+                <!-- LIST VIEW-->
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cardlistview isptabs lists">
+                    <span class="ispicon ispicon_collapse inverse pull-left"></span>
+                    <h2 class="isppagetitle">
+                        Access
+                        <span class="pull-right">
+                            <a class="ispicon ispicon_plus" data-toggle="modal" data-target="#addSchedule" title="Add New"></a>
+                            <a class="ispicon ispicon_delete" title="Delete" data-toggle="modal" data-target="#deletebulk" >
+                                
+                            </a>
+                        </span>
+                    </h2>
+                   
+                    <div>
+                       <!--  <ul>
+                            <li>
+                                Search Placeholder
+                            </li>
+                        </ul> -->
+                        <div class="col-md-12 ispheadersearch">
+               
+                                <form>
+                                    <div class="row pull-left">
+                                        <div class="input-group">
+                                            <div class="input-group-btn search-panel">
+                                                <button type="button" class="btn btn-default dropdown-toggle" >
+                                                    <span id="search_concept"><span class="ispicon ispicon_search"></span> 
+                                                </span></button>
+                                                
+                                            </div>
+                                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                                           <!--  <span class="input-group-btn ">
+                                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_filter"></span></button>
+                                            </span> -->
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="ispicon ispicon_sortasc"></span></button>
+                                                <ul class="dropdown-menu ispmenu" role="menu">
+                                                    <li>
+                                                        <a href="#">Latest first</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">A to Z</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Z to A</a>
+                                                    </li>
+                                                </ul>
+                                                
+
+                                            </span>
+                                                    
+                                            
+                                        </div>
+                                    </div>
+                                   
+                                </form>
+                        </div>
+                        <ul class="list-group scroll-x scroll-y listcontainer">
+                            <li class="listStickyHeader"><b>20 Groups</b>
+                                     </li>
+                            <li class="list-group-item active">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Always Open</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Security</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Master User</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Visitor</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Regular employee</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Group</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Visitor</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Visitor</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-md-10">
+                                    <span class="name">Visitor</span> <br />
+                                    <span class="peoplecount">23 people</span><br />
+                                    <span class="doorcount">12 Door</span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            
+                             
+                        </ul>
+                    </div>
+                </div>
+                <!-- LIST VIEW-->
+                <!-- AREA OVERVIEW-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 listOverview accessgroupOverview isptabs pull-left">
+                    <div class="row ">
+                        <div class="row">
+                            <h2 class="isppagetitle">
+
+                                <span class="section-head1">Contract Employee</span>
+                                <span class="pull-right">
+                                    <span class="ispicon ispicon_edit" data-toggle="tooltip" title="Edit" id="edit"></span>
+                                </span>
+                            </h2>
+                        </div>
+                        
+                        <div>
+                            <div class="contentContainer scroll-x scroll-y col-md-12 viewmode">
+                                <div class="row">
+                                    <div class="form-group col-md-4 nopadding">
+                                        <label class="control-label">Access Group Name</label>
+                                        <input type="text" name="name" id="name" class="form-control" value="Contract Employee">                           
+                                    </div>
+                                </div>
+                            <h4 class="accordian-additional-menu row">
+                                <b>Doors</b>
+                                <span class="pull-right">
+                                    
+                                    <a class="ispicon ispicon_sortasc dropdown-toggle" data-toggle="dropdown" title="More">
+
+                                    <!-- for desc ispicon_sortdesc-->
+                                        
+                                    </a>
+                                    <ul class="dropdown-menu ispmenu rightalign">
+                                        <li><a href="#" class="openall">Expand All</a></li>
+                                        <li><a href="#" class="closeall">Collapse All</a></li>
+                                      </ul>
+
+                            </span>
+                            </h4>
+                        
+                            <ul class="accgrouptableaccordian">
+
+                                <li>
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading listStickyHeader">
+                                            <h4 class="panel-title">
+                                              <span data-toggle="collapse" href="#collapse1">
+                                                <span>
+                                                    <span class="ispicon ispicon_accordian_droparrow"/> 
+                                                </span>
+                                                <span class="title">
+                                                Eagle 
+
+                                                </span>
+                                                </span>
+                                              <span>
+                                              
+                                              </span>
+                                            </h4>
+                                          </div>
+                                          <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                 <div class="table-responsive panel-body">
+                                                                                        <table class="table">
+                                                                                            
+                                                                                            <tbody>
+
+
+                                                                                                <tr>
+                                                                                                    
+                                                                                                    <td>
+                                                                                                            <div>
+                                                                                                                <span for="checkbox1">L_Door1</span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                     <td class="col-md-4">
+                                                                                                        
+                                                                                                        <span class="name scheduleitem" >
+                                                                                                            <a class="ispicon ispicon_schedule"></a>
+                                                                                                                <span class="name">Day Shift</span> <span class="ispicon ispicon_downarrow"></span></span>
+                                                                                                    </td>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    
+                                                                                                    <td>
+                                                                                                            <div>
+                                                                                                                <span for="checkbox1">L_Door1</span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    <td class="col-md-4">
+                                                                                                        
+                                                                                                        <span class="name" scheduleitem>
+                                                                                                            <a class="ispicon ispicon_schedule"></a>
+                                                                                                                <span class="name">Day Shift</span></span>
+                                                                                                    </td>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                </tr>
+                                                                                                
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                                 <li>
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading listStickyHeader">
+                                            <h4 class="panel-title">
+                                              <span data-toggle="collapse" href="#collapse2" class="collapsed">
+                                                <span>
+                                                    <span class="ispicon ispicon_accordian_droparrow"/> 
+                                                </span>
+                                                <span class="title">
+                                                NetAxs 
+                                                </span>
+                                                </span>
+                                              <span>
+                                              
+                                              </span>
+                                            </h4>
+                                          </div>
+                                          <div id="collapse2" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                 <div class="table-responsive panel-body">
+                                                    <table class="table">
+                                                        
+                                                        <tbody>
+
+
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift ;  Evening Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                            </div>
+                            <div class="btn-footer">
+                                <div class="btn-group pull-right" role="group" aria-label="group button">
+                                    <button type="button" class="btn btn-default">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        
+                         
+                       
+                    </div>
+                </div>
+                <!-- Area OVERVIEW-->
+            </div>
+        </div>
+
+
+
+          <div id="addSchedule" class="modal fade ispmodal EditAccessGroup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Create Access Group</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+
+                        <!-- <div class="row form-group col-sm-6">
+                            <label class="control-label">Persona Name</label>
+                            <input class="inputuppercase form-control" type="text">
+                        </div>
+                         <div class="form-group col-sm-6">
+                            <label class="control-label">Authority level</label>
+                            <select class="form-control">
+                                <option>Installer</option>
+                                <option>Service Technican</option>
+                                <option>Master,Manger</option>
+                                <option>Employee</option>
+                                <option>Security Guard</option>
+                                <option>Janitor</option>
+                                <option>Visitor</option>
+                                <option>Duress</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label class="control-label">Schedule</label>
+                            <select class="form-control">
+                                <option>24 Hours</option>
+                                <option>None</option>
+                            </select>
+                        </div> -->
+                       
+                            <div class="col-md-12 accessgrouppopupcontainer">
+                             
+                                <div class="row">
+                                    <div class="form-group col-md-6 nopadding">
+                                        <label class="control-label">Access Group Name</label>
+                                        <input type="text" name="name" id="name" class="form-control" value="Contract Employee">                           
+                                    </div>
+
+                                </div>
+                                <hr/>
+                                 <h4 class="accordian-additional-menu row">
+                                    <b>Doors</b>
+                                    <span class="pull-right">
+                                        
+                                        <a class="ispicon ispicon_sort dropdown-toggle" data-toggle="dropdown" title="More">
+                                            
+                                        </a>
+                                      <!--   <ul class="dropdown-menu ispmenu rightalign">
+                                            <li><a href="#">Expand All</a></li>
+                                            <li><a href="#">Collapse All</a></li>
+                                          </ul>
+ -->
+                                    </span>
+                                </h4>
+                                 <ul class="accgrouptableaccordian scroll-x scroll-y">
+
+                                <li>
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading listStickyHeader">
+                                            <h4 class="panel-title">
+                                              <span data-toggle="collapse" href="#collapse5" class="collapsed">
+                                                <span>
+                                                    <span class="ispicon ispicon_accordian_droparrow"/> 
+                                                </span>
+                                                <span class="title">
+                                                Eagle - 4 Doors
+
+                                                </span>
+                                                </span>
+                                              <span>
+                                              
+                                              </span>
+                                            </h4>
+                                          </div>
+                                          <div id="collapse5" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                 <div class="table-responsive panel-body">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                        <div>
+                                                                            <input type="checkbox">
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                <td class="col-md-4">
+                                                                    
+                                                                    <span class="name scheduleitem">
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <input type="checkbox">
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                <td class="col-md-4">
+                                                                    
+                                                                    <span class="name scheduleitem" >
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                               
+                                 <li>
+                                    <div class="panel-group">
+                                        <div class="panel panel-default">
+                                          <div class="panel-heading listStickyHeader">
+                                            <h4 class="panel-title">
+                                              <span data-toggle="collapse" href="#collapse6">
+                                                <span>
+                                                    <span class="ispicon ispicon_accordian_droparrow"/> 
+                                                </span>
+                                                <span class="title">
+                                                NetAxs - 4 Doors
+                                                </span>
+                                                </span>
+                                              <span>
+                                              
+                                              </span>
+                                            </h4>
+                                          </div>
+                                          <div id="collapse6" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                 <div class="table-responsive panel-body">
+                                                    <table class="table">
+                                                        
+                                                        <tbody>
+
+
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                
+                                                                <td>
+                                                                        <div>
+                                                                            <span for="checkbox1">L_Door1</span>
+                                                                        </div>
+                                                                    </td>
+                                                                 <td class="col-md-4">
+                                                                    
+                                                                    <span class="name" scheduleitem>
+                                                                        <a class="ispicon ispicon_schedule"></a>
+                                                                            <span class="name">Day Shift ;  Evening Shift</span></span>
+                                                                </td>
+                                                                
+                                                                
+                                                                
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                            </div>
+                        </div>  
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="deletebulk" class="modal fade ispmodal deletebulk" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <style>
+                
+
+
+            </style>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Confirm Delete</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-11 deletebulk">
+                             
+                                <div class="row">
+                                    <h3>
+                                        <span>The Access group(s) is used by 86 people and 10 doors.</span> 
+                                        <br/><br/>
+                                        <span>Please pick a replacement if necessary.</span>
+                                    </h3>
+                                    <div class="row">
+                                        <!-- <ul class="deletebulk-items">
+                                            <li>Legal Department</li>
+                                            <li>Meintainance</li>
+                                            <li>Dayshift</li>
+                                            <li>Weekends</li>
+                                            <li>Security</li>
+                                            <li><a href="#" class="viewmore">View 8 More</a></li>
+                                        </ul> -->
+                                        <div class="form-group nopadding deletebulk-items col-md-10 ispselect">
+                                            <label class="control-label">Select a Replacement <span class="star">*</span></label>
+                                            <select class="form-control SlectBox">
+                                                <option>None</option>
+                                                <option>Static Data</option>
+                                                <option>Static Data</option>
+                                                <option>Static Data</option>
+                                                <option>Static Data</option>
+                                                <option>Static Data</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                 
+                            </div>
+                        </div>  
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

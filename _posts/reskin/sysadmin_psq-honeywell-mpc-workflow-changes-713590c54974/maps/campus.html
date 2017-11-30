@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://ck.api-ucp-platform.org/MPCNEW/ -->
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle</title>
+    <link rel="stylesheet" type="text/css" href="../content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../content/css/selectize.css">
+  <!-- <link href="../content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css"> -->
+  <link href="../content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/master.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="../content/css/header.css">
+  <link href="../content/css/maps.css" rel="stylesheet" type="text/css">
+  <link href="../content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <script src="../scripts/jquery-2.2.4.min.js"></script>
+  <script src="../scripts/bootstrap-datetimepicker.min.js"></script>
+  <script src="../content/js/bootstrap.min.js"></script>
+  <script src="../content/js/bootstrap-multiselect.js"></script>
+  <script src="../scripts/jquery.slimscroll.min.js"></script>
+  <script src="../content/js/bootstrap-select.min.js"></script>
+  <script src="../scripts/selectize.js"></script>
+  <script src="../scripts/master.js"></script>
+  </head>
+<body class="">
+   <header>
+    <div class="row ps-global-header" id="page-header">
+      <div class="pagetitle" id="wrapper">
+        <a class="hamburger overlayBgOpacity pagetitleHandleBarShow" id="menu-toggle">
+          <span class="main-icon-bar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </span>
+          <span class="page-header-title">Site Management</span>
+        </a>
+          <div class="main-menu-navigation" id="overlay-menu">
+            <div class="topmenucontent">
+              <div class="nav_img">
+                <a href="" class="close_btn key_cntrl">×</a>
+              </div>
+                <ul class="handbar-profile">
+                  <li>
+                    <div class="col-xs-12 col-sm-8">
+                      <span class="name">Scott Stevens</span><br>
+                      <h4 onclick="onMenuItemSelect('SignOut')" class="signout">Signout</h4>
+                    </div>
+                    <div class="clearfix"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right" id="notification-menu">
+            <div id="navigation-menu">
+              <div class="navbar" style="display: block;">
+                <ul class="nav navbar-nav">
+                  <li id="notifications" class="dropdown">
+                    <a href="" class="dropdown notification-icon">
+                    </a>
+                    <ul class="dropdown-menu dashboard-message" id="dash-message">
+                      <li class="msg-header">
+                        <span class="header" id="header">
+                          Today's Notifications
+                        </span>
+                      </li>
+                      <!-- ko foreach: $data.messages --><!-- /ko -->
+                      <li id="ShowAllNotifications" class="msg" style="display: none;">
+                        <span class="dropdown-menu-sub-footer" href="">Show all </span>
+                      </li>
+                      <li id="msgTitle" class="msg">
+                        <span class="dropdown-menu-sub-footer">Loading</span>
+                      </li>
+                  </ul>
+                </li>
+                <li id="profileoptions" class="dropdown">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle profile-icon">
+                      <!-- <img src='/MPCNEW/Content/images/icon_user.png' /> -->
+                      </a>
+                      <ul class="dropdown-menu dashboard-profile-menu" id="dash-profile" >
+                        <li>
+                          <span class="profile-icon">
+                            <span></span>
+                          </span>
+                          <span class="profile-item-content">
+                            <a href="#" >Profile Details</a>
+                            <span class="menu-divider"></span>
+                          </span>
+                        </li>
+                       <!-- ko foreach: $data.messages -->
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>     
+      </div>
+
+    </div>     
+  </header>
+
+
+  <section class="view" id="viewer" data-complete="true">
+    <div class="row ps-row ps-main-container-map">
+      <div class="col-md-3 col-lg-3 ps-viewer-left-sidebar sidebar-left people_group no-padding">
+        <div class="row ps-row ps-first-row">
+              <div class="col-md-9 col-lg-9 ps-left-header padding">
+                <div class="sidebar-title">
+                  <a href="#" class="icon icon-left-arrow"></a>
+                  <h1>New Campus</h1>
+                </div>
+              </div>
+        </div>
+        <div class="selectColumnContainer select-site-rule popup-site">
+                    <ul class="accordion1" id="accordion1">
+                      <li class="search">
+                        <span class="icon-search customize">
+                          <input type="search" class="form-control form-search" placeholder="Search">
+                          <span class="focus-icon-search customize"></span>
+                        </span>
+                        <a class="pull-left ps-left-header-icons" href="#" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">
+                          <span data-toggle="modal" data-target="#myModal" class="icon icon-arrow tooltipg pull-right customize">
+                          </a>            
+                        </span>
+                        <div class="dropdown-menu ps-dropdown-custom map_list_view">
+						<ul>
+						<li>
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label"> 
+								  <strong class="pull-left icon icon-all-device"></strong>
+								  <input type="checkbox">
+								  <span class="checked"></span>
+								  <strong class="text-for-checkbox">All Devices</strong>
+							  </label>
+                            </span>
+						</li>
+                        <li>						
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label"> 
+							  <strong class="pull-left icon icon-all-camera"></strong>
+							  <input type="checkbox">
+							  <span class="checked"></span>
+							  <strong class="text-for-checkbox">Camera</strong></label>
+                            </span>
+						</li>	
+						<li>	
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label"> 
+							  <strong class="pull-left icon icon-zone-expanders"></strong>
+							  <input type="checkbox">
+							  <span class="checked"></span>
+							  <strong class="text-for-checkbox">Zone Expaders</strong></label>
+                            </span>
+						</li>
+                        <li>						
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label">
+							  <strong class="pull-left icon icon-all-controllers"></strong>
+							  <input type="checkbox">
+							  <span class="checked"></span>
+							  <strong class="text-for-checkbox">Controllers</strong></label>
+                            </span>
+						</li>
+						<li>
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label"> 
+							  <strong class="pull-left icon icon-all-doors"></strong><input type="checkbox">
+							  <span class="checked"></span>
+							  <strong class="text-for-checkbox">Doors</strong></label>
+                            </span>
+						</li>
+						<li>
+                            <span class="ps-checkbox checkbox">
+                              <label class="control-label">
+							  <span class="pull-left icon icon-all-zones"></span>
+							  <input type="checkbox">
+							  <span class="checked"></span>
+							  <strong class="text-for-checkbox">Zones</strong></label>
+                            </span> 
+                        </li>							
+                        </div>
+                      </li>
+                      <li class="ps-checkbox checkbox main-li"> 
+                        <a href="#" class="headings">
+                         <label class="control-label label-padding custom">
+                         <span class="main-li-bold">2 </span><span class="main-li-title">Doors</span>
+                         </label>
+                        
+                      </a>
+                      <ul id="firstLink"  aria-expanded="false">
+                        <li class="ps-checkbox checkbox active">
+                          <a href="#" > 
+                            <label class="control-label label-padding ">
+								<span class="icon-20"></span> 
+								<span class="sub-heading">
+									<span class="title">Main</span>
+									<span class="icon-16"></span>
+									<span class="texts">1 Camera</span>
+									
+								</span>
+                            </label>
+                          </a>
+                        </li>
+                        <li class="ps-checkbox checkbox">
+                          <a href="#" > 
+                            <label class=" control-label label-padding">
+                              <span class="icon-20"></span> 
+                             <span class="sub-heading">
+									<span class="title">Signal</span>
+									<span class="icon-16"></span>
+									<span class="texts">1 Camera</span>
+									
+								</span>
+                            </label>
+                          </a>
+                        </li>                                    
+                      </ul>                                                    
+                    </li>
+                    <li class="ps-checkbox checkbox main-li"> 
+                      <a href="#" class="headings">
+                        
+                        <label class=" control-label label-padding custom">
+                          
+                          <span class="main-li-bold">1 </span><span class="main-li-title">Zone</span>
+                        </label>
+                      
+                    </a>
+                    <ul id="firstLink2"  aria-expanded="false">
+                      <li class="ps-checkbox checkbox">
+                          <a href="#"> 
+                            <label class="control-label label-padding">
+                              <span class="icon-21"></span> 
+                               <span class="sub-heading">
+									<span class="title"> Motion Sensor</span>
+									<span class="icon-16"></span>
+									<span class="texts">1 Camera</span>
+									
+								</span>
+                            </label>
+                          </a>
+                        </li>                                    
+                    </ul>                                                    
+                  </li>
+                  <li class="ps-checkbox checkbox main-li"> 
+                    <a href="#" class="headings">
+                      <span  href="#firstLink3"  aria-expanded="false"> 
+                      <label class=" control-label label-padding custom">
+                        
+                        <span class="main-li-bold">1 </span><span class="main-li-title">Camera</span>
+                      </label>
+                    </span>
+                  </a>
+                  <ul id="firstLink3" aria-expanded="false">
+                    <li class="ps-checkbox checkbox">
+                          <a href="#" > 
+                            <label class=" control-label label-padding custom">
+                              <span class="icon-22"></span> 
+							  <span class="sub-heading">
+                              <span class="title"> Motion Sensor</span>
+							  <span class="icon-16"></span>
+									<span class="texts">1 Camera</span>
+									</span>
+                            </label>
+                          </a>
+                   </li>                                       
+                  </ul>                                                    
+                </li>
+              </ul>
+        </div>       
+      </div>
+      <div id="mapContainer" class="no-padding col-md-9 col-lg-9 map-main-content">
+        <div class="row ps-row ps-rules-first-top-right">
+          <div class="col-md-9 col-lg-9 ps-map-content-title">
+            <a href="#" class="pull-left area-title" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false">Area 1<span class="icon icon-down pull-right"></span></a>
+            
+            <div class="dropdown-menu ps-dropdown-custom map_area_list_view">
+              <ul>
+                <li>All Areas</li>
+                <li>Areas 1</li>
+                <li>Areas 2</li>
+                <li>Areas 3</li>
+              </ul>          
+            </div>
+          </div>
+          <div class="col-md-3 col-lg-3 ps-rules-switcher card-header">
+          </div>
+        </div>
+        <div class="main-map">
+        <div class="background-map">
+          <img src="Maps_04.png">
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

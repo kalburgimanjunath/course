@@ -1,0 +1,1337 @@
+﻿/* GLOABL CSS */
+span, div {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+}
+
+.link {
+    color: #1792e5;
+    cursor: pointer;
+}
+
+.isptabs {
+    /*margin: 24px;*/
+}
+
+    .isptabs .nav {
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+        .isptabs .nav li {
+            font-family: "HoneywellSansWeb-Bold" !important;
+            padding: 0 8px;
+        }
+
+            .isptabs .nav li:first-child {
+                padding: 0 15px 0 0;
+            }
+
+            .isptabs .nav li a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #808080;
+                padding: 8px 0;
+                background: transparent;
+                border: none;
+                outline: none;
+                -webkit-box-sizing: none;
+                -moz-box-sizing: none;
+                box-sizing: none;
+            }
+
+                .isptabs .nav li a:hover, .isptabs .nav li a:active, .isptabs .nav li a:focus {
+                    border: none;
+                }
+
+            .isptabs .nav li.active a {
+                font-family: "HoneywellSansWeb-Bold" !important;
+                font-size: 14px;
+                color: #1792e5;
+                background: transparent;
+                border-bottom: 4px solid #1792e5;
+            }
+
+/* TOP MENU */
+.ispTopmenu {
+    height: 64px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 0;
+    padding: 0 20px 0 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+    .ispTopmenu .title {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        font-size: 18px;
+        color: #303030;
+    }
+
+    .ispTopmenu li {
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-size: 14px;
+        color: #606060;
+        padding: 20px 0 20px 20px;
+    }
+
+/* DROPDOWN MENU */
+.ispActionMenu {
+    cursor: pointer;
+}
+
+    .ispActionMenu li, .ispActionMenu .dropdown-menu {
+        padding: 0;
+    }
+
+    .ispActionMenu .dropdown-menu {
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu.open {
+        font-size: 14px;
+        color: #1792e5;
+    }
+
+    .ispActionMenu.mainMenu.open .dropdown-toggle, .ispActionMenu.mainMenu .dropdown-toggle:hover {
+        color: #303030;
+        font-size: 18px;
+    }
+
+    .ispActionMenu.mainMenu .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a {
+        cursor: pointer;
+        padding: 8px 18px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .ispActionMenu .dropdown-menu > li > a.selected {
+            background-color: #e8f4fc;
+        }
+
+        .ispActionMenu .dropdown-menu > li > a > span {
+            margin-right: 8px;
+        }
+
+    .ispActionMenu .dropdown-menu > li:first-child > a {
+        cursor: pointer;
+        border-top: 0 none;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a:hover, .ispActionMenu .dropdown-menu > li > a:focus {
+        background-color: #f5f5f5;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .ispActionMenu.contentMenu .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .ispActionMenu.contentMenu .footer {
+        margin-top: 20px;
+    }
+
+        .ispActionMenu.contentMenu .footer button {
+            margin-left: 9px;
+        }
+
+.cardlistview .nav.nav-tabs {
+    margin-left: 20px;
+}
+
+.listOverview {
+    border-left: 1px solid #e7e7e7;
+}
+
+    .listOverview .headerTitle {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-left: 20px;
+    }
+
+.cardlistview .listcount {
+    background: #f2f2f2;
+    margin-right: 0;
+    padding: 4px 0px;
+}
+
+.ControllerOverview .tab-content .scroll-y.overviewTab {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 98px;
+    left: 0;
+    overflow-y: auto;
+}
+
+.ControllerOverview.singleController .overviewTab .cardWrapper {
+    width: 33.33% !important;
+    padding-right: 20px !important;
+    float:left;
+}
+
+    .ControllerOverview.singleController .overviewTab .cardWrapper.syncWrapper {
+        width: 33.33% !important;
+        margin-left:0 !important;
+    }
+
+    .ControllerOverview.singleController .overviewTab .cardWrapper.sysStatWrapper {
+        width: 33.33% !important;
+        padding-right: 20px !important;
+    }
+
+    .ControllerOverview.singleController .overviewTab .cardWrapper .controllerStatWrapper, .ControllerOverview.singleController .overviewTab .cardWrapper .controllerConn {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+.ControllerOverview .overviewTab .cardWrapper {
+    width: 100% !important;
+    padding-right: 10px !important;
+}
+
+    .ControllerOverview .overviewTab .cardWrapper.sysStatWrapper {
+        width: 48.8% !important;
+        padding-right: 10px !important;
+    }
+
+.systemStatus {
+    height: 325px;
+}
+
+.ControllerOverview .overviewTab .cardWrapper.syncWrapper {
+    width: 48.5% !important;
+    margin-left: 2.4% !important;
+}
+
+.ControllerOverview .overviewTab .cardWrapper .controllerStatWrapper, .ControllerOverview .overviewTab .cardWrapper .controllerConn {
+    width: 48%;
+}
+
+.ControllerOverview .overviewTab .cardWrapper .controllerConn {
+    margin-left: 4%;
+}
+
+.controllerView .listOverview .overviewTab, .controllerView .listOverview .settingsTab {
+    position: absolute;
+    bottom: 0;
+    top: 101px;
+}
+
+.fwImageUpgrade {
+    color: #f37021;
+    background: #fff;
+    padding: 2px 5px;
+    border: 1px solid #f37021;
+    cursor: pointer;
+    margin-bottom: 20px !important;
+    float: left;
+}
+
+.cardlistview .list-group-item.active, .cardlistview .list-group-item.active:hover, .cardlistview .list-group-item.active:focus {
+    background-color: #e1eff9;
+    color: #606060;
+    border-color: #e7e7e7;
+    border-right: 1px solid #e7e7e7 !important;
+    border-top: 1px solid #d1e9fa !important;
+    border-bottom: 1px solid #d1e9fa;
+}
+
+.cardlistview .list-group-item:hover {
+    background: #f5f5f5;
+}
+
+.cardlistview .controllerList {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+    color: #606060;
+    padding: 0;
+}
+
+    .cardlistview .controllerList .controllersec > div + div {
+        color: #808080;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+    .cardlistview .controllerList .controllersec > div {
+        font-family: 'HoneywellSansWeb-Bold' !important;
+    }
+
+.controllerView .overviewTab .table > thead > tr > th, .addController .table > thead > tr > th {
+    border-bottom: 0 none;
+}
+
+.addController table td {
+    border-top: 1px solid #e7e7e7 !important;
+}
+
+.controllerView .overviewTab span.name {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #1792e5;
+    font-size: 14px;
+}
+
+.controllerView .overviewTab span.sensorsid {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.controllerView .overviewTab table th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    font-size: 14px;
+}
+
+.controllerView .overviewTab table td, .controllerView .overviewTab table td span {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+}
+
+.controllerView .overviewTab .ispicon, .addController .ispicon {
+    margin-top: 10px;
+}
+
+.controllerView .overviewTab .sensorsid, .controllerView .overviewTab .name,
+.addController .name, .addController .sensorsid {
+    margin-left: 10px;
+}
+
+.controllerView .overviewTab .ispicon_collapse {
+    margin-left: 15px;
+}
+
+.controllerView .table td {
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+.controllerView .cardlistview .isppagetitle, .controllerView .listOverview .isppagetitle {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    margin-left: 20px;
+    margin-right: 12px;
+    margin-bottom: 17px;
+}
+
+.controllerView .listOverview .isppagetitle {
+    margin-left: 20px;
+    margin-right: 24px;
+    margin-bottom: 6px;
+}
+
+.controllerView .listOverview .overviewHeader .nav-tabs {
+    padding-left: 20px;
+    margin-right: 0;
+}
+
+.controllerView .list-group-item {
+    padding: 12px 20px 10px 20px;
+}
+
+.controllersList > span + span {
+    margin-left: 5px;
+}
+
+.controllerView .checkbox {
+    float: left;
+}
+
+    .controllerView .checkbox input[type="checkbox"], .addController .checkbox input[type="checkbox"] {
+        opacity: 1 !important;
+        margin-top: 0;
+    }
+
+.addController .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.addController.ispmodal {
+    left: 0 !important;
+}
+
+.listHeader {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0;
+    margin: 0 15px 10px 15px;
+    font-size: 18px;
+    clear: both;
+}
+
+    .listHeader + hr {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+.addController .panel-body {
+    padding: 5px 15px 0 15px;
+}
+
+.btn-group button.moveArea {
+    margin-left: 10px !important;
+}
+
+.controllerView .viewmode input[type="text"], .controllerView .viewmode textarea, .controllerView .viewmode select {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e0e0e0;
+    pointer-events: none;
+    border: 1px solid #e1e1e1;
+    cursor: no-drop;
+}
+
+.viewmode h3 {
+    color: #d0d0d0;
+}
+
+.viewmode .ispicon {
+    pointer-events: none;
+    opacity: .4;
+}
+
+.viewmode .link {
+    color: #e1e1e1;
+    cursor: default;
+}
+
+.viewmode .modalAllAreas {
+    color: #e1e1e1;
+}
+
+.viewmode .switch {
+    cursor: default;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+.controllerView .viewmode .form-group label {
+    color: #e1e1e1;
+    cursor: default;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+.controllerView .viewmode .checkbox {
+    cursor: no-drop;
+    color: #e1e1e1;
+    pointer-events: none;
+}
+
+.controllerView .viewmode input[type="checkbox"] {
+    opacity: .4 !important;
+}
+
+.controllerView .viewmode td {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #e1e1e1;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+.controllerView .viewmode th {
+    color: #e1e1e1;
+    pointer-events: none;
+    cursor: no-drop;
+}
+
+.controllerView .viewmode .btn-footer {
+    display: block;
+}
+
+.btn-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    left: -16px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.bold {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+@media (max-width: 1366px) and (min-width: 1441px) {
+
+    .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .listOverview .overviewTab, .listOverview .settingsTab {
+        max-height: 804px;
+    }
+}
+
+@media screen\0 {
+
+    .ispicon.inverse::before {
+        width: 20px;
+        left: 24px;
+        top: 43px;
+    }
+}
+
+/* AREA SETTINGS */
+
+.ispheaderbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.controllerView .checkbox label::before {
+    display: none;
+}
+
+.accountcontainer .overview .content {
+    background: 0 !important;
+    box-shadow: none !important;
+}
+
+.viewmode input [type="checkbox"] {
+    background: 0;
+}
+
+.settingsTab .form-group {
+    padding-left: 0;
+}
+
+
+/* ADD CONTROLLER */
+.inputuppercase {
+    text-transform: uppercase;
+}
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.panelsection input[type="checkbox"] + span {
+    margin-left: 5px;
+    line-height: 25px;
+}
+
+.panelsection .checkbox input[type="checkbox"], .areaSection .checkbox input[type="radio"] {
+    opacity: 1;
+    z-index: 0;
+}
+
+.panelsection .checkbox label::before {
+    display: none;
+}
+
+.panelType {
+    padding-left: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    color: #303030;
+}
+
+    .panelType input {
+        background: none !important;
+        border: 0 !important;
+        padding-left: 0;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+    }
+
+/*.btn-default {
+    background-color: #ffffff !important;
+    border: 1px solid #d0d0d0 !important;
+    color: #ccc !important;
+}*/
+
+/* LANDING PAGE - WITHOUT CONTROLLERS */
+
+.contentBg {
+    background: #f4f4f4;
+}
+
+/* NEW ADDITION 24-08-2016*/
+.controllerView .btn-group .btn + .btn {
+    margin-left: 8px !important;
+}
+
+.controllerView .cardlistview .ispicon_plus {
+    margin-right: 4px;
+}
+
+.controllerView .cardlistview .list-group-item {
+    border-right: 0 none;
+}
+
+.controllerView .btn-footer {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    padding: 10px 20px 10px 10px;
+}
+
+.ControllerOverview {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0px;
+    padding: 0 15px 0 0;
+}
+
+.controllerLanding {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    top: 0px;
+    padding: 0;
+    left: 24%;
+}
+
+.firstController {
+    padding: 35px 35px 36px 35px;
+    border-bottom: 1px solid #D2D2D2;
+    margin: 0 auto;
+    margin-top: 16%;
+    background: #fff;
+    width: 350px;
+    text-align: center;
+}
+
+    .firstController h4 {
+        font-style: italic;
+        color: #b0b0b0;
+        margin: 0;
+    }
+
+    .firstController p {
+        margin-top: 17px;
+        margin-bottom: 0;
+    }
+
+        .firstController p + p {
+            margin-top: 19px;
+            margin-bottom: 0;
+        }
+
+.ispicon_firstController::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -16px;
+}
+
+.ispicon_firstController:hover::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -69px;
+}
+
+.ispicon_firstController:active:before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -122px;
+}
+
+/* CONTROLLER OVERVVIEW*/
+
+.cardWrapper {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.ControllerOverview .content {
+    padding: 20px;
+    /*margin-left: -15px !important;*/
+    background: #f4f4f4;
+    padding-right: 24px;
+    box-shadow: 0 -1px 0 0 #d6d6d6;
+}
+
+
+.controllerdetails {
+    float: left;
+    width: 100%;
+}
+
+    .controllerdetails .btn-group .btn + .btn {
+        margin-left: 0 !important;
+    }
+
+    .controllerdetails .controllerMode .btn {
+        text-transform: inherit;
+    }
+
+.controllerMode {
+    padding: 0;
+}
+
+    .controllerMode > div {
+        margin-top: 20px !important;
+        padding: 0;
+    }
+
+.controllerdetails .ispicon {
+    margin-right: 2px;
+}
+
+.ControllerOverview .content .panel-info.white > .panel-heading {
+    background: #fff;
+    border: 0;
+    padding: 23px 24px 20px;
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.controllerdetails.controllerStatWrapper .panel-heading {
+    background: #3e657e !important;
+}
+
+    .controllerdetails.controllerStatWrapper .panel-heading p {
+        color: #fff !important;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+
+    .controllerdetails.controllerStatWrapper .panel-heading span {
+        color: #f0f0f0 !important;
+        text-transform: lowercase;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+    }
+
+.controllerdetails.controllerStatWrapper .panel-body {
+    padding-top: 24px !important;
+}
+
+.controllerdetails.controllerStatWrapper .controllerStatus.online, .controllerdetails.controllerStatWrapper .controllerStatus.offline {
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 24px 4px 24px;
+    background: #73b338;
+    width: 100%;
+    float: left;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+.controllerdetails.controllerStatWrapper .controllerStatus.offline {
+    background: #ee3124 !important;
+}
+
+.systemStatusHeader {
+    color: #fff;
+    padding: 10px 24px 10px 24px;
+    background: #73b338;
+    width: 100%;
+    float: left;
+}
+
+    .systemStatusHeader span {
+        text-transform: uppercase;
+    }
+
+    .systemStatusHeader h6 {
+        margin: 5px 0 0 0;
+    }
+
+.fwUpgrade label {
+    margin-right: 10px;
+}
+
+.controllerConn .panel-body > div {
+    margin-bottom: 20px;
+    padding-right: 0 !important;
+}
+
+    .controllerConn .panel-body > div:last-child {
+        margin-bottom: 0;
+    }
+
+.connStatus h5 {
+    margin: 0;
+}
+
+.connStatus {
+    margin-top: 4px;
+    margin-left: 5px;
+}
+
+.scanDevices .panel-body label {
+    float: left;
+}
+
+.scanDevices .panel-body p {
+    text-align: right;
+    font-size: 13px;
+    color: #1792e5;
+}
+
+.scanDevices .panel-body ul li {
+    border-top: 1px solid #e7e7e7;
+    height: 34px;
+    padding: 7px 0;
+    list-style-type: none;
+}
+
+.systemStatus.scanDevices .panel-body ul li:first-child {
+    border-top: 0 none;
+}
+
+.scanDevices .syncLoading {
+    height: 65px;
+}
+
+.scanDevices .ispicon {
+    margin-right: 0;
+}
+
+.syncStatus {
+    margin-left: 10px;
+}
+
+.syncCloudStat {
+    float: left;
+    margin-bottom: 20px;
+}
+
+    .syncCloudStat .ispicon {
+        margin-top: 7px !important;
+        margin-right: 8px;
+    }
+
+.ControllerOverview .content .panel-info.white.controllerdetails > .panel-body {
+    padding: 0px 24px 24px 24px;
+}
+
+.controllerdetails label {
+    color: #808080;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+    .controllerdetails label + p {
+        color: #303030;
+        margin-bottom: 0;
+    }
+
+.controllerdetails .panel-heading, .controllerdetails .panel-body {
+    float: left;
+    width: 100%;
+}
+
+.controllerdetails .panel-title {
+    color: #303030;
+    font-size: 15px;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+    text-transform: uppercase;
+}
+
+.ControllerOverview .content .panel-info.white > .panel-body {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    padding-top: 0;
+}
+
+.ControllerOverview .content .panel-info.white {
+    border-color: transparent;
+    border-bottom: 1px solid #d2d2d2;
+    border-radius: 0;
+}
+
+.ControllerOverview .leftlist .panel ul .list-group-item.active, .ControllerOverview .leftlist .panel ul.list-group-item.active:hover, .ControllerOverview .leftlist .panel ul li.list-group-item.active:focus {
+    background: #e1eff9;
+    color: #606060;
+    font-size: 14px;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+}
+
+.ControllerOverview .leftlist .panel ul .list-group-item .ispicon.ispicon_downarrow {
+    margin-right: 0px;
+}
+
+/*.singleController.ControllerOverview .cardWrapper {
+    width:33.3%;
+    padding:20px 0 20px 15px;
+    float:left;
+}
+
+.ControllerOverview .controllerdetails {
+    width:100%;
+}
+
+.ControllerOverview .cardWrapper {
+    width:50%;
+}*/
+
+/*CONTROLLER OVERVIEW */
+.controllerStatWrapper .panel-heading {
+}
+
+@media (max-height: 768px) {
+    .addnewaccount {
+        max-height: 330px;
+        width: 100%;
+    }
+
+    .ControllerOverview .overview .content {
+        width: 98%;
+        max-height: 520px;
+    }
+}
+
+span, div, td, label {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-weight: normal;
+}
+
+th {
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+
+.link {
+    color: #1792e5 !important;
+    cursor: pointer;
+}
+
+.seeAlllink {
+    color: #1792e5;
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.controllerView .controllerOverview .cardlistview {
+    position: relative;
+}
+
+.controllerView .cardlistview {
+    width: 25%;
+    float: left;
+    position: absolute;
+    right: 51%;
+    bottom: 0;
+    top: 0;
+}
+
+    .controllerView .cardlistview .list-group {
+        overflow-y: auto;
+        position: absolute;
+        bottom: 0;
+        top: 61px;
+        right: 0;
+        left: 0;
+        margin-bottom: 0;
+        border-top: 1px solid #f0f0f0;
+    }
+
+        .controllerView .cardlistview .list-group .list-group-item {
+            border-top: 1px solid #f0f0f0;
+            border-left: 0 none;
+        }
+
+            .controllerView .cardlistview .list-group .list-group-item:first-child {
+                border-top: 0 none;
+                border-left: 0 none;
+            }
+/* RIGHT PANE VIEW */
+
+.controllerView .ControllerOverview {
+    width: 50%;
+}
+
+.cardlistview.singleController {
+    display: none;
+}
+
+.singleController.ControllerOverview {
+    width: 75%;
+}
+
+.controllerView .ispicon.inverse::before {
+    margin-top: 21px;
+}
+
+
+/* COMMS PATH */
+.ipSettings > div {
+    padding-left: 0;
+}
+
+.ControllerOverview .tab-content .commsPath {
+    position: absolute;
+    right: 0;
+    bottom: 53px;
+    top: 102px;
+    left: 0;
+    overflow-y: auto;
+}
+
+.commsPath .checkbox {
+    margin-top: 0;
+}
+
+.commsPath .contentContainer > .form-group {
+    padding-left: 20px;
+}
+
+/*.commsPath .col-md-12, .commsPath .col-md-6, .commsPath .col-sm-12, .commsPath .col-sm-6 {
+    padding: 0;
+}*/
+
+.commsPath .checkbox {
+    padding-left: 15px;
+}
+
+.commsPath h3 {
+    float: left;
+    margin-top: 0;
+    font-family: 'HoneywellSansWeb-Bold' !important;
+}
+
+    .commsPath h3 span {
+        float: left;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+
+.commsPath .panel-body {
+    padding: 5px 0;
+    clear: both;
+}
+
+.alarmReceiverWrapper {
+    padding: 10px 20px 0;
+}
+
+.gsmSettings {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+td.alarmReceiver {
+    padding-top: 10px !important;
+}
+
+td.receiverSwitch {
+    padding: 15px 0 0 35px;
+}
+
+/* TOGGLE SWITCH */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+    .switch input {
+        display: none;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #7eb338;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    left: -7px;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+.ipPortInput div {
+    width: 55%;
+    float: left;
+}
+
+    .ipPortInput div + div {
+        width: 35%;
+        margin-left: 10px;
+    }
+
+.urlInput {
+    width: 96%;
+}
+
+.commsPath td span {
+    padding-top: 7px;
+    float: left;
+}
+
+/* REPORT TAB */
+
+.ControllerOverview .tab-content .scroll-y.reportTab {
+    overflow-y: hidden;
+}
+
+    .ControllerOverview .tab-content .scroll-y.reportTab.viewWrapper {
+        bottom: 0;
+    }
+
+        .ControllerOverview .tab-content .scroll-y.reportTab.viewWrapper + .btn-footer {
+            display: none;
+        }
+
+.ControllerOverview .tab-content .reportTab .scroll-y {
+    top: 74px;
+    bottom: 0px;
+}
+
+.controllerView .reportTab .cardlistview {
+    left: 0;
+    width: 50%;
+    float: left;
+}
+
+.reportData {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    border-left: 1px solid #e7e7e7;
+    padding-top: 24px;
+}
+
+    .reportData > .form-group {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+.ControllerOverview .tab-content .scroll-y {
+    position: absolute;
+    right: 0;
+    bottom: 53px;
+    top: 98px;
+    left: 0;
+    overflow-y: auto;
+}
+
+.reportTab .reportsHeader {
+    padding: 12px 20px 10px 20px;
+}
+
+.reportList .checkbox {
+    margin: 10px 10px 0 0;
+}
+
+.viewmode .seeAllAreas {
+    pointer-events: none;
+    cursor: default;
+}
+
+.reportTab .contentContainer {
+    padding: 20px 0 0 5px;
+}
+
+.partitionWrapper {
+    padding: 0 20px;
+}
+
+.reportTab .partitionWrapper h4 {
+    border-top: 1px solid #e7e7e7;
+    padding-top: 23px;
+    margin-top: 0;
+}
+
+.reportTab .viewmode .partitionWrapper h4 {
+    color: #d0d0d0;
+}
+
+.reportTab .partitionWrapper .checkbox {
+    width: 50%;
+    float: left;
+    margin-top: 15px;
+    padding-left: 15px;
+    margin-bottom: 6px;
+}
+
+.reportTab .checkbox.selectAll {
+    width: auto;
+    margin-top: 0;
+    line-height: 20px;
+}
+
+.reportTab .selectAll span {
+    float: left;
+}
+
+.reportTab .primaryReceiver span {
+    float: left;
+    margin: 5px 0 0 5px;
+}
+
+.reportTab .partitionGroup input {
+    margin: 0 10px 0 0;
+}
+
+.allAreas.ispmodal {
+    left: 0 !important;
+    height: 575px;
+}
+
+.deleteReport.ispmodal, .disableReport.ispmodal {
+    left: 0 !important;
+}
+
+    .deleteReport.ispmodal .modal-body, .disableReport.ispmodal .modal-body {
+        padding-left: 30px;
+    }
+
+.allAreas .modal-dialog {
+    width: 500px;
+    padding-top: 10px;
+}
+
+.allAreaSearch {
+    position: relative;
+    float: left;
+    margin-left: 40px;
+    width: 50%;
+}
+
+    .allAreaSearch .ispicon {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+    }
+
+.allAreas .selectAll {
+    float: left;
+    margin-top: 10px;
+}
+
+    .allAreas .selectAll input {
+        margin: 0 10px 0 0;
+    }
+
+.selectAllArea td input + span {
+    margin: 3px 0 0 10px;
+    float: left;
+}
+
+.allAreas .modal-content {
+    height: 500px;
+}
+
+.allAreas .modal-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.selectAllArea {
+    height: 300px;
+    overflow-y: auto;
+}
+
+    .selectAllArea tr:first-child td {
+        border-top: 0 none;
+    }
+
+    .selectAllArea table tr td {
+        padding-left: 0;
+    }
+
+.selectAllArea {
+    border-top: 1px solid #ddd;
+}
+
+.reportTab .listStickyHeader {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    color: #606060;
+    font-size: 13px;
+    padding: 6px 24px;
+    background: #f2f2f2;
+    position: absolute;
+    top: 43px;
+    left: 0;
+    right: 0;
+}
+/* MEDIA QUERY */
+@media only screen and (max-width: 991px) {
+    .ControllerOverview .content .panel-info.white {
+        width: 100%;
+    }
+
+    .controllerConn .panel-body > div {
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .connStatus {
+        margin-top: 8px;
+        clear: both;
+    }
+}

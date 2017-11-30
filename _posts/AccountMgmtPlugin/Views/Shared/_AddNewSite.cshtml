@@ -1,0 +1,149 @@
+﻿<div class="modal ispmodal fade" id="modal-id-site" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div id="site-view" class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="lineModalLabel">@Resources.Account_Add_New_Site</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row addnewsite">
+                    <div class="col-md-12">
+                        <h3>@Resources.Account_Site_Details</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Site_name</label>
+                            <input type="text" name="name" id="input" data-bind="value: $data.accountModel.Name" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                    </div>
+                    @*<div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Tags<i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" title="Help Content here"></i></label>
+                                <input type="text" name="" id="input" class="form-control" value="Amsterdam,Washington" data-role="tagsinput" required="required" pattern="" title="">
+
+                            </div>
+                        </div>*@
+
+                    @*<div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Regional Time Zone</label>
+                                <select class="selectpicker customselect" data-style="btn-primary">
+                                    <option class="select-item">(GMT5:00) Eastern Time (US & Canada)</option>
+                                </select>
+                            </div>
+                        </div>*@
+                    <h3 class="col-md-12">@Resources.Primary_Contact</h3>
+                    <div class="row col-md-12">
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group pull-right hide">
+                            <div class="checkbox checkbox-primary">
+                                <input id="checkbox2" type="checkbox">
+                                <label for="checkbox2">
+                                    Same as Parent Customer
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="col-md-6">
+                            @*<div class="form-group">
+                                    <label class="control-label">Country</label>
+                                    <select class="selectpicker customselect" data-style="btn-primary">
+                                        <option class="select-item">United States of America</option>
+                                        <option class="select-item">Pakistan</option>
+                                        <option class="select-item">Afganistan</option>
+                                    </select>
+                                </div>*@
+                            <div class="form-group">
+                                <label class="control-label">@Resources.Country</label>
+                                <input type="text" name="country" id="input" data-bind="value: $data.accountModel.ContactInfo.Country" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Resources.Account_Address_Line1</label>
+                                <input type="text" name="addressLine1" id="input" data-bind="value: $data.accountModel.ContactInfo.AddressLine1" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+                            @*<div class="form-group">
+                                    <label class="control-label">Address Line 2</label>
+                                    <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="" placeholder="(Optional)">
+                                </div>*@
+                            <div class="form-group">
+                                <div class="">
+                                    <label class="control-label">@Resources.Account_Zip_Code</label>
+                                    <input type="text" name="zipCode" id="input" data-bind="value: $data.accountModel.ContactInfo.ZipCode" class="form-control" value="" required="required" pattern="" title="">
+                                </div>
+
+                                @*<div class="col-md-5">
+                                        <label class="control-label">Extension</label>
+                                        <input type="text" name="extension" id="input" class="form-control" value=""  pattern="" title="">
+                                    </div>*@
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">@Resources.City</label>
+                                <input type="text" name="city" id="input" data-bind="value:$data.accountModel.ContactInfo.City" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+                            @*<div class="form-group">
+                                    <label class="control-label">State</label>
+                                    <select class="selectpicker customselect" data-style="btn-primary">
+                                        <option class="select-item">New York</option>
+                                    </select>
+                                </div>*@
+                            <div class="form-group">
+                                <label class="control-label">@Resources.Account_State</label>
+                                <input type="text" name="state" id="input" data-bind="value: $data.accountModel.ContactInfo.State" class="form-control" value="" required="required" pattern="" title="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 pull-left">
+                        <h3>@Resources.Site_Admin</h3>
+                    </div>
+                    <div class="row col-md-12">
+                        <hr>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">@Resources.First_Name</label>
+                            <input type="text" name="firstName" id="input" data-bind="value: $data.userModel.FirstName" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Last_Name</label>
+                            <input type="text" name="lastName" id="input" data-bind="value: $data.userModel.LastName" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Email</label>
+                            <input type="text" name="email" id="input" data-bind="value: $data.userModel.UserName" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @*<div class="col-md-7">*@
+                            <label class="control-label">@Resources.Account_OfficePhone</label>
+                            <input type="text" name="phone" id="input" data-bind="value: $data.userModel.WorkPhone" class="form-control" value="" required="required" pattern="" title="">
+                            @*</div>*@
+                            @*<div class="col-md-5">
+                                    <label class="control-label">Extension</label>
+                                    <input type="text" name="phone" id="input" class="form-control" value="" pattern="" title="">
+                              </div>*@
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_CellPhone</label>
+                            <input type="text" name="phone" id="input" data-bind="value: $data.userModel.MobileNumber" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">@Resources.Account_HomePhone</label>
+                            <input type="text" name="phone" id="input" data-bind="value: $data.userModel.Phone" class="form-control" value="" required="required" pattern="" title="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group" role="group" aria-label="group button">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@Resources.Cancel</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" href='#modal-id-site' data-bind="click: $data.saveSite">@Resources.Account_Add_Site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

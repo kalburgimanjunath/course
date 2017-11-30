@@ -1,0 +1,27 @@
+@background_color_1: rgba(249, 249, 249, 0);
+@background_color_2: #e6f3fb00;
+
+.right-inner-addon {
+    position: relative;
+    input {
+        padding-right: 30px;
+    }
+    >span {
+        background-color: @background_color_1 !important;
+        border-bottom: 0;
+        border-left: rgba(249, 249, 249, 0) !important;
+        border-radius: 0;
+        border-top: rgba(249, 249, 249, 0) !important;
+        position: absolute;
+        padding: 25px 12px;
+        right: 0;
+        width: 60px;
+        &:hover {
+            cursor: pointer;
+            left: auto;
+            right: 0;
+            left: auto;
+            background-color: @background_color_2 !important;
+        }
+    }
+}

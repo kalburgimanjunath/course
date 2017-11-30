@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="UTF-8">
+  <title>Card Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" href="images/fav.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+  <link href="content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="content/css/master.css" rel="stylesheet" type="text/css">
+  <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+  <link href="content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+  <link href="content/css/create-report.css" rel="stylesheet" type="text/css">
+  <link href="content/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+  <link href="content/css/custom-bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+  <script src="scripts/jquery-2.2.4.min.js"></script>
+  <script src="content/js/bootstrap.min.js"></script>
+  <script src="content/js/bootstrap-multiselect.js"></script>
+  <script src="content/js/bootstrap-select.min.js"></script>
+  <script src="scripts/jquery.slimscroll.min.js"></script>
+  <script src="scripts/bootstrap-datetimepicker.min.js"></script>
+  <script src="scripts/selectize.js"></script>
+  <script src="scripts/master.js"></script>
+</head>
+<body class="ps-page-card-report ">
+  <!--header starts here-->
+  <header>
+    <nav class="masterhead navbar navbar-default">
+      <div class="header_left navbar-header">
+        <a href="#" class="hamburger close_menu pull-left key_cntrl"></a>
+        <div class="masterhead_logo pull-right"></div>
+      </div>
+      <div class="header_right nav navbar-nav navbar-right">
+        <a href="#" class="alarm pull-left hdr_alrm pw_icon"></a>
+        <a href="#" class="help pull-left hdr_hlp pw_icon"></a>
+      </div>
+    </nav>
+  </header> <!--header ends here-->
+  <!-- Start main-wrapper -->
+  <div class="row ps-card-report-wrapper ps-create-report"> 
+    <div class="col-md-12 ps-event-report-title"> 
+      <h3> New Report </h3>
+    </div> 
+    <!--Start main-container-->
+    <div class="col-md-12 col-lg-12 main-container">
+      <!--Start first column-->   
+      <div class="col-md-3 ps-column pull-left">
+        <div class="form-group event-type">
+          <h2>Report Details</h2>
+          <label>Report Type*</label>
+          <select class="selectbox">
+            <option>Card Report</option>
+            <option>Event Report</option>
+            <option>Audit Report</option>
+          </select> 
+        </div>
+        <div class="form-group">
+          <label>Name*</label>
+          <input type="text" class="form-control"/> 
+        </div>
+      </div> <!--End first column-->
+      <!--Start second column-->
+      <div class="col-md-3 ps-column pull-left">
+        <h2>Filters</h2>
+        <div class="form-group">
+          <input type="radio"/><label>All</label> 
+          <input type="radio"/><label>Card Number Range</label> 
+        </div>
+        <div class="form-group">  
+          <label>Account*</label>
+          <select class="selectbox" >
+            <option>All</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <h5>Activation Date </h5>
+          <div class="form-group">
+            <label>From</label>
+            <input type="value-name" data-provide="datepicker" class="datepicker form-control"/>
+          </div>
+          <div class="form-group"> 
+            <label>To</label>
+            <input type="value-name" data-provide="datepicker" class="datepicker form-control"/>
+          </div>
+        </div>  
+        <div class="form-group">
+          <h5>Expiry Date</h5>
+          <div class="form-group">
+            <label>From</label>
+            <input type="value-name" data-provide="datepicker" class="datepicker form-control"/>
+          </div>
+          <div class="form-group"> 
+            <label>To</label>
+            <input type="value-name" data-provide="datepicker" class="datepicker form-control"/>
+          </div>
+        </div>
+        <div class="form-group">  
+          <label>Timezone*</label>
+          <select class="selectbox">
+            <option>None</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+          </select>
+        </div>  
+        <div class="form-group">  
+          <label>Card Status</label>
+          <select class="selectbox">
+            <option>All</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+          </select>
+        </div> 
+        <div class="form-group">
+          <label>Card Holder Name</label>
+          <input type="text" class="form-control"/> 
+        </div>    
+      </div> <!--End second column-->
+      <!--Start third column-->
+      <div class="col-md-3 ps-column pull-left">
+        <h2>Layout</h2>
+        <div class="form-group">
+          <label>Columns</label>
+          <div class="btn-group bootstrap-select">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="filter-option pull-left">Select or Search users</span>
+              <span class="bs-caret"><span class="caret"></span></span>
+            </a>
+            <div class="dropdown-menu open" role="combobox">
+              <div class="bs-searchbox">
+                <input type="value-name" class="form-control" autocomplete="off" role="value-namebox"/>
+              </div>
+              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                <span class="select-total-count">9 Sites</span>
+                <li class="selected active">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+                <li class="selected">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+                <li class="selected">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </div>
+        <div class="form-group sort-order">
+          <label>Sort order 1</label>
+          <select class="selectbox">
+            <option></option>
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+          </select> 
+          <span class="icon-sort"></span>
+        </div>
+        <div class="form-group sort-order">
+          <label>Sort order 2</label>
+          <select class="selectbox">
+            <option></option>
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+          </select> 
+          <span class="icon-sort"></span>
+        </div>
+        <div class="form-group sort-order">
+          <label>Sort order 3</label>
+          <select class="selectbox">
+            <option></option>
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+          </select> 
+          <span class="icon-sort"></span>
+        </div>
+        <button type="submit" class="btn btn-primary  pull-right">PREVIEW</button>
+        <button type="submit" class="btn btn-primary  pull-right">EXPORT</button>
+      </div> <!--End third column-->
+      <!--Start fourth column-->
+      <div class="col-md-3 ps-column pull-left">
+        <h2>Schedule Delivery</h2>
+        <div class="form-group">
+          <label>Frequency</label>
+          <select class="selectbox">
+            <option>Weekly</option>
+            <option>Yearly</option>
+            <option>Monthly</option>
+            <option>option 4</option>
+          </select> 
+        </div>
+        <div class="form-group">
+          <label>on</label>
+          <input type="value-name" data-provide="datepicker" class="form-control"/>
+        </div>  
+        <div class="form-group">
+          <label>EmailTo</label>
+          <div class="btn-group bootstrap-select">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="filter-option pull-left">Select or Search users</span>
+              <span class="bs-caret"><span class="caret"></span></span>
+            </a>
+            <div class="dropdown-menu open" role="combobox">
+              <div class="bs-searchbox">
+                <input type="value-name" class="form-control" autocomplete="off" role="value-namebox"/>
+              </div>
+              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                <span class="select-total-count">9 Sites</span>
+                <li class="selected active">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+                <li class="selected">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+                <li class="selected">
+                  <span class="ps-checkbox checkbox">
+                    <label class="control-label">
+                      <input type="checkbox"/>site 1
+                      <span></span>
+                    </label>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>  
+      </div><!--Start third column-->
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary pull-right">SAVE</button>
+        <button type="submit" class="btn pull-right btn-default">CANCEL</button>
+      </div>  
+    </div> <!--End main-container-->  
+  </div> <!--End main-wrapper-->
+  <script src="scripts/custom.js"></script>
+</body>
+</html>

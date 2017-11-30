@@ -1,0 +1,442 @@
+/*
+.ps-import-card-holder-details {
+    height: 532px;
+    margin: 5% auto;
+    width: 700px;
+    background-color: #fff;
+    position: relative;
+}
+*/
+
+.ps-import-card-holder-details-1 {
+    margin: 5% auto;
+    width: 700px;
+    background-color: #fff;
+}
+
+.ps-import-card-holder-details header.row {
+    padding: 0;
+}
+
+.ps-import-card-holder-details .row {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
+}
+
+
+/*
+.ps-import-card-holder-details .import-screen-table tr:hover,
+.ps-import-card-holder-details-1 .import-screen-table tr:hover {
+    background: #f0f0f0 !important;
+}
+*/
+
+.ps-import-card-holder-details .import-holder-card-heading,
+.ps-import-card-holder-details-1 .import-holder-card-heading {
+    padding: 0;
+    border-bottom: 0;
+}
+
+.ps-import-card-holder-details .modal-body,
+.ps-import-card-holder-details-1 .modal-body.viewer-popup {
+    padding: 0;
+}
+
+.ps-import-card-holder-details .nav.nav-tabs.pw_tabs li a {
+    padding: 0 0 5px;
+}
+
+.ps-import-card-holder-details .people_details {
+    width: 100%;
+}
+
+.ps-import-card-holder-details h1,
+.ps-import-card-holder-details-1 h1 {
+    color: #202020;
+    font-size: 22px;
+    margin: 0 34px;
+    padding: 31px 0 0;
+}
+
+{
+    color: #202020;
+    font-size: 22px;
+    margin: 0 32px;
+    padding: 31px 0 0;
+}
+
+.ps-import-card-holder-details ul {
+    padding-top: 20px;
+    /*    padding-left: 24px;*/
+}
+
+.ps-import-card-holder-details .import-holder-form {
+    float: left;
+    width: 100%;
+    padding: 20px 0px 24px 36px;
+}
+
+.ps-import-card-holder-details-1 .csv-file-title {
+    margin: 20px 18px 0;
+}
+
+.ps-import-card-holder-details .import-holder-form label {
+    width: 100%;
+}
+
+.ps-import-card-holder-details .import-holder-form .row {
+    padding: 0;
+}
+
+.ps-import-card-holder-details .csv-file {
+    color: #606060;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.ps-import-card-holder-details .form-group {
+    margin-bottom: 0;
+}
+
+.ps-import-card-holder-details .modal-footer {
+    padding: 16px 16px 15px;
+}
+
+.ps-import-card-holder-details .import-holder-form input {
+    margin-left: 0;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-top: 6px;
+    width: 320px;
+}
+
+.ps-import-card-holder-details .row > input {
+    width: 300px;
+}
+
+.ps-import-card-holder-details .btn:first-child {
+    margin-right: 6px;
+}
+
+.ps-import-card-holder-details ul.nav-tabs.pw_tabs {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 0 0;
+    margin: 0 36px;
+}
+
+.ps-import-card-holder-details-1 ul.nav-tabs.pw_tabs {
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0;
+    margin: 0 18px;
+}
+
+.ps-import-card-holder-details footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.ps-import-card-holder-details .import-holder-form .selectize-input {
+    border-radius: 0;
+}
+
+.ps-import-card-holder-details .modal-content,
+.ps-import-card-holder-details-1 .modal-content {
+    border-radius: 0;
+}
+
+
+/* Css for Table by Brahm */
+
+.ps-import-card-holder-details .table.download-status-table {
+    margin-bottom: 0;
+}
+
+.ps-import-card-holder-details .import-screen-table table tbody tr td {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.ps-import-card-holder-details .import-screen-table td.col-sm-4 {
+    padding-bottom: 3px;
+}
+
+.ps-import-card-holder-details .import-screen-table .table-striped>tbody>tr:nth-of-type(odd) {
+    background: none;
+}
+
+.ps-import-card-holder-details .table-header-download {
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+    /*    border-bottom: 1px solid #e6e6e6;*/
+    margin-top: -16px;
+    padding: 0 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ps-import-card-holder-details-1 .table-header-download {
+    padding: 0 16px;
+    height: 250px;
+}
+
+.ps-import-card-holder-details .import-screen-table {
+    background-color: #fff;
+    color: #606060;
+    padding: 0;
+}
+
+.ps-import-card-holder-details-1 .btn-save {
+    margin-right: 10px !important;
+}
+
+
+/*
+.ps-import-card-holder-details .import-screen-table th {
+    color: transparent;
+    border: medium none;
+    color: transparent;
+    font-weight: normal;
+    height: 0;
+    line-height: 0;
+    margin: 0;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    white-space: nowrap;
+    position: initial;
+}
+*/
+
+
+/*
+.ps-import-card-holder-details .import-screen-table td > div {
+    padding-left: 11px;
+}
+.ps-import-card-holder-details .table-background {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+    margin-top: -10px;
+}
+*/
+
+
+/*
+.ps-import-card-holder-details .table-header-download .slimScrollDiv {
+    overflow: visible !important;
+    margin-top: 44px;
+}
+.ps-import-card-holder-details .import-screen-table th div {
+    position: absolute;
+    color: #808080;
+    font-family: "HoneywellSansWeb-Bold" !important;
+    padding: 16px 20px 14px;
+    margin-left: -10px;
+    line-height: normal;
+    z-index: 8;
+    text-align: left;
+    top: -44px;
+    background: #fff;
+    width: 100%;
+}
+*/
+
+.ps-import-card-holder-details-1 .import-screen-table th div {
+    color: #606060;
+    font-family: "HoneywellSansWeb-Bold" !important;
+}
+
+.ps-import-card-holder-details .import-screen-table.scroll-x.scroll-y {
+    border-top: 2px solid #dfdfdf;
+    height: 207px !important;
+}
+
+.ps-import-card-holder-details .import-screen-table .table>thead>tr>th {
+    border-bottom: 0;
+}
+
+.ps-import-card-holder-details .import-screen-table .table tbody tr:first-child td,
+.ps-import-card-holder-details-1 .import-screen-table .table tbody tr:first-child td {
+    border-top: 0;
+    color: #606060;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background: #fff;
+}
+
+.error-status {
+    color: #ee3124;
+    /*    width: 6em;*/
+    /*    text-overflow: ellipsis;*/
+    /*    white-space: nowrap;*/
+    /*    overflow: hidden;*/
+}
+
+
+/* Ends Here For table Css */
+
+.ps-import-card-holder-details .heading-table {
+    padding: 0;
+}
+
+.ps-import-card-holder-details .heading-table h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020
+}
+
+@media screen and (-ms-high-contrast:active),
+all and (-ms-high-contrast:none) {
+    .ps-import-card-holder-details .import-holder-form input {
+        padding: 6px 6px 10px;
+    }
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #707070;
+    }
+}
+
+.ps-import-card-holder-details .event_card_table_content {
+    background-color: #ffffff;
+}
+
+.ps-import-card-holder-details table.event_card_table_content_assocoate {
+    background-color: #ffffff;
+    max-width: 98.5%;
+}
+
+.ps-import-card-holder-details .table.activity_card_table_body {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 0 6px 0 0 !important;
+}
+
+.ps-import-card-holder-details .activity_card_table_body tbody {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 98.5%;
+    margin: 0 0 0 0 !important;
+    display: table;
+    border-bottom: 1px solid #e7e7e7;
+}
+.ps-import-card-holder-details table.event_card_table_content_assocoate {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 0 6px 0 0 !important;
+}
+.ps-import-card-holder-details .event_card_table_content_assocoate thead {
+    border-spacing: 33px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 98.5%;
+    margin: 0 0 0 0 !important;
+    display: table;
+}
+
+.ps-import-card-holder-details .video-settin .mpc .activity_card_table_body tbody tr {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.ps-import-card-holder-details .table.header_tableevent.event_card_table_content thead tr th {
+    line-height: 1.4;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-bottom: 11px;
+}
+
+.ps-import-card-holder-details .table.header_tableevent.event_card_table_content thead tr th {
+    border-bottom: none;
+}
+
+.ps-import-card-holder-details .activity_card_table_body tr,
+.ps-import-card-holder-details .video-settin .mpc .activity_card_table_body th {
+    border-top: #f0f0f0 1px solid;
+    border-bottom: #f0f0f0 1px solid;
+}
+
+.ps-import-card-holder-details .event_card_table_content {
+    background-color: #ffffff;
+}
+
+.ps-import-card-holder-details .activity_card_table .table>thead>tr>th {
+    color: #606060;
+    width: 12.5%;
+    border: 0;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.ps-import-card-holder-details table.activity_card_table_body tbody tr td {
+    padding-left: 20px;
+}
+
+.ps-import-card-holder-details .activity_card_table_body tbody tr td {
+    line-height: 1.4;
+    vertical-align: middle;
+}
+
+.ps-import-card-holder-details .activity_card_table_body tbody tr:hover td {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0 !important;
+    color: #303030;
+}
+
+.ps-import-card-holder-details .col-md-3.col-lg-3.pull-left.padding-20:nth-of-type(4n+4) {
+    padding-right: 0px;
+}
+
+.ps-import-card-holder-details .activity_card_table .table-border {
+    padding: 0 12px 0 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.ps-import-card-holder-details .tab-content {
+    border-left: 1px #e7e7e7 solid;
+}
+
+.ps-import-card-holder-details .activity_card_table_body tr,
+.ps-import-card-holder-details .video-settin .mpc .activity_card_table_body th:first-child {
+    border-top: #fff 1px solid;
+}
+
+@media (min-width: 768px) {
+    .ps-import-card-holder-details.modal-dialog {
+        width: 900px;
+        margin: 30px auto;
+    }
+}
+
+.ps-import-card-holder-details .popup_info_footer {
+    float: left;
+    width: 530px;
+    text-align: left;
+    padding-left: 18px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #606060;
+}
+
+.ps-import-card-holder-details .modal-footer .btn {
+    margin-left: 10px;
+    margin-right: 0px !important;
+}
+
+.ps-import-card-holder-details button.btn.btn-primary.btn-save {
+    margin-right: 10px;
+    margin-left: 7px;
+}
+
+.ps-import-card-holder-details .temp-access {
+    padding-left: 32px !important;
+}

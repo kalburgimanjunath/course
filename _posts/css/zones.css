@@ -1,0 +1,46 @@
+﻿
+.addDevice .modal-dialog {
+    width: 700px;
+    padding-top: 10px;
+}
+
+.addDevice.ispmodal {
+    left: 0 !important;
+}
+
+.addDevice .chimeZone {
+    margin-top: 32px;
+}
+
+    .addDevice .chimeZone > span {
+        padding-top: 3px;
+        margin-left: 10px;
+        float: left;
+    }
+
+.wiredZones .overviewHeader {
+    padding-left: 0;
+}
+
+.wiredZones .isppagetitle {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 6px !important;
+}
+
+.wiredZones .overviewHeader .nav-tabs {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.wiredZones .panel-body {
+    padding: 15px 20px !important;
+}
+
+.wiredZones .table thead tr th {
+    border-bottom: 0 none;
+}
+
+.wiredZones table td {
+    border-top: 1px solid #f0f0f0 !important;
+}

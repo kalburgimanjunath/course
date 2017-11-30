@@ -1,0 +1,16 @@
+﻿Honeywell.ISP.UserDashboard.UserDashboardView = Honeywell.ISP.WebUIFramework.BaseView.inherits({
+    initializeView: function (options) {
+       // this.subscribe(Honeywell.ISP.UserDashboard.events.tab_change_event, this.onViewInitialized, true);
+        this.antiForgeryToken = options.antiForgeryToken;
+    },
+    onViewInitialized: function (options) {
+        this.show(new Honeywell.ISP.UserDashboard.UserDashboardViewModel({
+            viewName: this.viewName,
+            baseUrl: this.baseUrl,
+            //validationContext: new Honeywell.ISP.WebUIFramework.BaseValidationContext(this.viewName, Honeywell.ISP.EagleDevice.AreaValidations.AreaModalForm),
+            antiForgeryToken: this.antiForgeryToken
+        }));
+    },
+    subscribeEvents: function () {
+    }
+});

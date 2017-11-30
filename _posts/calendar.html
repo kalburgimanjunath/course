@@ -1,0 +1,865 @@
+
+ <link rel="stylesheet" type="text/css" href="css/dcm.css">
+<link href="pscss/ico.css" rel="stylesheet">
+<link href="pscss/calendar-search-layout.css" rel="stylesheet">
+<link href="pscss/fullcalendar.css" rel="stylesheet">
+<link href="pscss/controlstyles.css" rel="stylesheet" type="text/css">
+<link href="pscss/calander.css" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="scripts/master.js"></script>
+
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar">
+
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" href="firsttimelandingpage.html">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts </span>
+                            </a>
+                           <!--  <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a ><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul> -->
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="user-management.html">
+                                    <span class="ispicon ispicon_users"></span>
+                                    Users
+                                </a></li>
+                                 <li><a href="user-management.html">
+                                    <span class="ispicon ispicon_rules">Rules</span>
+                                    Users
+                                </a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();" class="active">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        
+                        
+
+                    </ul>
+                        <div class="menu_user_sec_logout">
+                            <div class="menu_user_sec clearfix">
+                                <div class="menu_user_img">
+                                    <img src="http://lorempixel.com/100/100/people/9/" alt="Siva Baghat">
+                                </div>
+
+                                <div class="menu_user_details col-md-8">
+                                    <h3>Siva Baghat</h3>
+                                    <span>Business Owner</span>
+
+                                </div>
+                                <span class="ispicon ispicon_logout push-right pad-110" data-toggle="tooltip" data-placement="left" title="" data-original-title="Log Out"></span>
+
+                            </div>
+                           <!--  <div class="user_logout">
+                                <a href="#">Logout</a>
+                            </div> -->
+                        </div>
+                </nav>
+
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch">               
+                <form>
+                    <div class="col-xs-10 pull-left hide">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="search-box-container col-lg-9 col-md-9 pull-left">
+                        <div class="input-group col-lg-12 col-md-12 mar-b0">                            
+                            <input type="text" class="form-control ispsearch pad-l10 pad-r50 mar-t0" name="x" placeholder="Search...">                            
+                            <span class="ispicon ispicon_close hide"></span>
+                            <span class="ispicon ispicon_search" id="searchIcon"></span>
+                            <span class="loader alarm-searchIcon hide mar-t5"></span>
+                        </div>
+                        <div class="search-dropdown col-lg-12 col-md-12 nopadding hide" id="">
+                            <div class="row no-results hide">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span>No results found</span>
+                                </div>
+                            </div>
+                            <div class="row results-count">
+                                <div class="col col-lg-12 col-md-12 col-sm-12 pad-t10 pad-b10">
+                                    <span class="pull-left nopadding"><span class="bold">3</span> Accounts</span>
+                                    <span class="pull-right nopadding view-all"><a href="javascript:;" class="">View All</a></span>
+                                </div>
+                            </div>
+                            <div class="row results">
+                                <div class="cardlistview col-lg-12 col-md-12 col-sm-12 nopadding">
+                                    <div class="list-group scroll-x scroll-y mar-b0">
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name bold pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                        <div class="list-group-item pad-t15 pad-b15">
+                                            <p class="list-group-item-text site-name">ExSite Name 3</p>
+                                            <p class="list-group-item-text customer-name medium pad-t10 pad-b10">United Hospital</p>
+                                            <p class="list-group-item-text date-time">Jun 18, 2016 10:45 AM</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col-xs-2 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>                            
+                </form>
+        </div>
+
+
+    </div>
+<div class="calndr" cz-shortcut-listen="true">
+    <div class="">
+       
+        <div id="challange">
+            
+            <div class="">
+                
+                <section >
+                    <section class="mpc" id="Calendar" style="" data-complete="true">
+                        <div class="calendar-root ps-calendar">
+                            <div id="calendar-search-view" class="show">
+                                <div class="calendar-Wrapper">
+                                    <div class="calendar-header">
+                                        <nav>
+                                            <div class="calendar-header-ul pull-left"> </div>
+                                        </nav>
+                                    </div>
+                                    <div class="calendar-main-block" style="overflow: hidden;">
+                                        <div id="calendar" class="fc fc-ltr">
+                                            <table class="fc-header">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="fc-header-left"><span class="fc-header-title"><h2><span class="add-on">December 2016</span>
+                                                            <input type="text" style="display:none"> </h2>
+                                                            </span>
+                                                        </td>
+                                                        <td class="fc-header-center"><span class="fc-button fc-button-prev fc-state-default fc-corner-left" unselectable="on"><span class="fc-text-arrow"><b class="cal-header-month-left-arrow"></b></span></span><span class="fc-button fc-button-agendaDay fc-state`default" unselectable="on">Day</span><span class="fc-button fc-button-next fc-state-default fc-corner-right" unselectable="on"><span class="fc-text-arrow"><b class="cal-header-month-right-arrow"></b></span></span>
+                                                        </td>
+                                                        <td class="fc-header-right"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="calndr_day_date">
+                                                <ul class="list-unstyled cal-nav">
+                                                    <li>
+
+                                                        <span class="cal-day">MON</span>
+                                                        <span class="cal-date date-hw_red">1</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">TUE</span>
+                                                        <span class="date-hw_red-o cal-date">2</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">WED</span>
+                                                        <span class="cal-date">3</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">THU</span>
+                                                        <span class="cal-date">5</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">FRI</span>
+                                                        <span class="cal-date">5</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">SAT</span>
+                                                        <span class="cal-date">6</span>
+
+                                                    </li>
+                                                    <li>
+
+                                                        <span class="cal-day">SUN</span>
+                                                        <span class="cal-date date-hw_disabled">7</span>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-psq">
+                                                <ul class="calndr-wrapper scroll-calandar-col-1 calandar-col-1">
+                                                    <li class="calndr-lft calendar-sidebar">
+                                                        <ul class="calndr-timeline">
+                                                            <li><span>12am</span></li>
+                                                            <li><span>1am</span></li>
+                                                            <li><span>2am</span></li>
+                                                            <li><span>3am</span></li>
+                                                            <li><span>4am</span></li>
+                                                            <li><span>5am</span></li>
+                                                            <li><span>6am</span></li>
+                                                            <li><span>7am</span></li>
+                                                            <li><span>8am</span></li>
+                                                            <li><span>9am</span></li>
+                                                            <li><span>10am</span></li>
+                                                            <li><span>11am</span></li>
+                                                            <li><span>12pm</span></li>
+                                                            <li><span>1pm</span></li>
+                                                            <li><span>2pm</span></li>
+                                                            <li><span>3pm</span></li>
+                                                            <li><span>4pm</span></li>
+                                                            <li><span>5pm</span></li>
+                                                            <li><span>6pm</span></li>
+                                                            <li><span>7pm</span></li>
+                                                            <li><span>8pm</span></li>
+                                                            <li><span>9pm</span></li>
+                                                            <li><span>10pm</span></li>
+                                                            <li><span>11pm</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="calndr-rt">
+                                                        <ul class="calndr-alarm-line">
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                            <li class=""><span></span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        <div class="cal-search-footer-notification hide">
+                                            <p id="Calendar_Data_Fetch_From_Cloud">All the data shown above are fetched from cloud</p>
+                                        </div></div>
+                                        <div class="calendar-day-view-wrapper">
+                                            <div class="ppl_main_tab">
+                                                <div class="clearfix">
+                                                    <div class="col-lg-8 col-md-8 col-sm-8" id="header">
+                                                        <ul class="nav nav-tabs pw_tabs">
+                                                            <div class="col-sm-6">
+                                                                <div class="ps-rules-input-group">
+                                                                    <li class="ps-rules-first-input-wrapper">
+                                                                        <div class="form-group">
+                                                                            <span id="device-popoverbtn" data-placement="auto">
+                                                                            <span class="icon_list1i" ></span>
+                                                                            </span>
+                                                                            <label id="lbl-RULE_LABEL_DEVICE" class="control-label pull-left">Site<span class="rsAcCount"></span></label>
+                                                                            <input type="text" placeholder="Main Area + 4" class="form-control readonly arrow-top arrow-down" id="txt_device" readonly>
+                                                                            <!-- <b class=" icon_list1" data-toggle="popover" data-placement="auto" data-ispopovershown="true"></b> -->
+                                                                            <div class="selectColumnContainer popup-site">
+                                                                                <ul class="" id="accordion1">
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink1" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink1" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>                                                                                <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink2" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink2" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>                                                                                <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink3" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink3" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>                                                                                <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink4" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink4" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>                                                                   <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink5" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Health and Status Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink5" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                            <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink21" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>Alarm/Event</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink21" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Video</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li class="ps-checkbox checkbox">
+                                                                                        <a href="#">
+                                                                                            <span data-toggle="collapse" data-parent="#accordion1" href="#firstLink31" class="collapsed" aria-expanded="false"> <span class="collapseIcon icon icon-add pull-left"></span>
+                                                                                            <label class=" control-label label-padding">
+                                                                                                <input id="txbonEventCategorySelection" class="checkbox parent-checkbox" type="checkbox">
+                                                                                                <span></span>
+                                                                                                <legand>System</legand>
+                                                                                            </label>
+                                                                                            </span>
+                                                                                        </a>
+                                                                                        <ul id="firstLink31" class="collapse" aria-expanded="false">
+                                                                                            <li class="ps-checkbox checkbox">
+                                                                                                <a href="#">
+
+                                                                                                    <label class=" control-label label-padding">
+                                                                                                        <input id="txbonEventCategorySelection" class="checkbox" type="checkbox">
+                                                                                                        <span></span>
+                                                                                                        <legand>Access</legand>
+                                                                                                    </label>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pull-right calndr-nav-btn">
+                                                                <button type="button" class="btn btn-calndr-warning active"></button>
+                                                                <button type="button" class="btn btn-calndr-video"></button>
+                                                            </div>
+                                                        </ul>
+                                                        <div class="scroll-calandar-col-2 calandar-col-2">
+                                                            <div class="calndr-table">
+                                                                <table class="table">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                       
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <div class="ico-pos ico-control">
+                                                                                        <i class="ui-icon ui-icon-cam-red-o"></i>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <div class="devicename">Trigger Motion</div>
+                                                                                        <div>Device Name</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>20<span class="small">h</span>&nbsp;50<span class="small">m</span></td>
+                                                                            <td>Site name, Location</td>
+                                                                            <td>07:13 AM</td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 calandar-col-4" id="details">
+                                                        <div class="scroll-calandar-col-3">
+                                                            <div class="calndr-container2">
+                                                                <h2>Trigger Motion in speed for HUE</h2>
+
+                                                                <span class="notification-tage">
+                                                                    <span class="ico-control">
+                                                                        <i class="ico-critical ico-control"></i>
+                                                                    </span>
+                                                                <span class="notification-critical">Critical</span>
+                                                                </span>
+                                                            </div>
+                                                            <p class="door_title">HUE Studio Mn Door, Business Lounge </p>
+                                                            <hr>
+                                                            <p class="heading-cal-info">Site Information</p>
+                                                            <p class="door">
+                                                                Queen Campus 45 Gilby
+                                                                <br> Road Mount Waverley
+                                                                <br> 3149 Victoria Australia
+                                                            </p>
+                                                            <hr>
+                                                            <p class="heading-cal-info">Contact Information</p>
+                                                            <p class="door_contact">Contact: <span class="clndr-contact">6138901012</span> </p>
+                                                            <p class="door_contact">Email: <span class="clndr-contact">Sam.coa@honeywell.com</span> </p>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 calandar-col-4 hide" id="video">
+                                                        <div class="scroll-calandar-col-3">
+                                                            <div class="calndr-container">
+                                                                <h2 class="video">Trigger Motion</h2>
+                                                                <p>HUE Studio Mn Door, Business Lounge... </p>
+                                                                <p>Offsite</p>
+                                                                <form class="sett-config-r">
+                                                                    <div class="sett-video">
+                                                                        <video class="video">
+                                                                            <source src="video/SampleVideo_360x240_5mb.mp4" type="video/mp4">
+                                                                        </video>
+                                                                        <div class="playpause"></div>
+                                                                    </div>
+                                                                    <button type="button" class="btn btn-primary pull-right">Export</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cal-search-footer-notification">
+                                            <p id="Calendar_Data_Fetch_From_Cloud">All the data shown above are fetched from cloud</p>
+                                        </div>
+                                        <div id="calendarPlayerImage" data-playerimage="/MaxproCloud.Shell/Content/images/Honeywell_Blank_220.png"></div>
+                                    </div>
+                                </div>
+                    
+                    </div>
+               
+                </div>
+                </section>
+            </section>
+            </div>
+        </div>
+    </div>
+</div>

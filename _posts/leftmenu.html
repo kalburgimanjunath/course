@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/readme.css">
+    <style type="text/css">
+    .leftmenu{
+            top: 83px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            overflow: auto;
+    }
+    .accountcontainer .leftlist .panel ul li.list-group-item.active, .accountcontainer .leftlist .panel ul li.list-group-item.active:hover, .accountcontainer .leftlist .panel ul li.list-group-item.active:focus, .accountcontainer .leftlist .panel ul li a.list-group-item:hover, .accountcontainer .leftlist .panel ul li a.list-group-item:focus{
+        background-color: #f5f5f5;
+    }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="Content/Styles/icons.css"> -->
+    <link rel="stylesheet" type="text/css" href="out/css/sprite.css">
+    </head>
+    <body class="accountcontainer">
+         <div class="accordion-root accountcontainer">
+            <div id="accordion-pane" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 leftlist">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6>< Dashboard</h6>
+                        <h3 class="panel-title">
+                            Queen Campus
+                        </h3>
+                    </div>
+                    <ul class="list-group leftmenu">
+                        <li><a href="customeroverview.html" class="list-group-item active"><span class="ispicon ispicon_sites"></span><span>Site Overview</span><span class="pull-right">0</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                       
+                                <li><a href="people.html" class="list-group-item"><span class="ispicon ispicon_people"></span><span>People</span><span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item"><span class="ispicon ispicon_cards"></span><span>Badges</span><span class="pull-right">0</span></a></li>
+                                <li><a href="accessgroup.html" class="list-group-item"><span class="ispicon ispicon_access"></span><span>Access Personas</span><span class="pull-right">0</span></a></li>
+                                <li><a href="intrusiongroup.html" class="list-group-item"><span class="ispicon ispicon_intrusion"></span><span>Intrusion Group</span><span class="pull-right">0</span></a></li>
+                                <li><a href="holiday.html" class="list-group-item"><span class="ispicon ispicon_schedule"></span><span>Schedule & holiday</span><span class="pull-right">0</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="list-group-item dropdown-toggle" data-toggle="dropdown">
+                                Schedules & Holidays
+                                <span class="glyphicon-eye-open ispicon ispicon_caret pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="#" class="list-group-item">Schedules<span class="pull-right">0</span></a></li>
+                                <li><a href="#" class="list-group-item">Holidays<span class="pull-right">0</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                        <li><a href="ControllerList.html" class="list-group-item"><span class="ispicon ispicon_Controller"></span><span>Controllers</span></a></li>
+                        <li><a href="dcm.html" class="list-group-item"><span class="ispicon ispicon_PeripheralDevices"></span><span>Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Edge Devices</span><span class="pull-right">0</span></a></li>
+                        <li><a href="#" class="list-group-item"><span class="ispicon ispicon_people"></span><span>Areas</span></a></li>
+                    </ul>
+                    <ul class="list-group" data-bind="template: {name: 'accordion-menuitem-template', foreach: $data.model.MenuItems}">
+        <!-- ko if: $index() != 0 --><!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item active" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_customeroverview" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Overview"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnucustomeroverview">Overview</span>
+                <span class="pull-right hide" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnucustomeroverviewcount">0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false" style="display: none;">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_sites" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Sites"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnusites">Sites</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnusitescount">4</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false" style="display: none;">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_users" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Site Operators"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnuusers">Site Operators</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnuuserscount">0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_schedule" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Schedules &amp; Holidays"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnuschedule">Schedules &amp; Holidays</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnuschedulecount">1 | 0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false" style="display: none;">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_access" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Access Group"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnuaccess">Access Group</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnuaccesscount">0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false" style="display: none;">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_cards" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="Cards"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnucards">Cards</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnucardscount">0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 --><!-- /ko -->
+    
+        <!-- ko if: $index() != 0 -->
+        <hr class="dividerLine" data-bind="visible: $parent.model.MenuItems()[$index()-1].GroupName() != $data.GroupName() ? true : false" style="display: none;">
+        <!-- /ko -->      
+
+        <li class="dropdown" data-bind="css: {open: $data.IsGroupAndExpanded}">
+            <!-- ko if: $data.Items().length == 0 -->
+            <a href="#" class="list-group-item" data-bind="click: $root.onItemSelect, css: {active:($root.currentSelectedItem()==$data.Name())}">
+                <!-- ko if: $data.IsShowIcon() -->
+                <span class="ispicon ispicon_people" data-bind="css: $data.Icon, attr: {title: $data.DisplayName }" title="People"></span>
+                <!-- /ko -->
+                <!-- ko if: !$data.IsShowIcon() --><!-- /ko -->
+                <span data-bind="attr:{id: 'accordionmnu' + $data.Name()},text: $data.DisplayName" id="accordionmnupeople">People</span>
+                <span class="pull-right" data-bind="attr:{id: 'accordionmnu' + $data.Name() + 'count'},text: $data.Count, css:{hide: $data.Name()=='customeroverview'}" id="accordionmnupeoplecount">0</span>
+            </a>
+            <!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && !$data.IsGroupAndExpanded --><!-- /ko -->
+            <!-- ko if: $data.Items().length > 0 && $data.IsGroupAndExpanded --><!-- /ko -->
+        </li>
+
+        <!-- ko if: $index() === $parent.model.MenuItems().length -1 -->
+        <hr class="dividerLine">
+        <!-- /ko -->
+    </ul>
+                </div>
+
+            </div>
+        </div>
+    	
+    </body>
+    </html>

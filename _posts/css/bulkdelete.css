@@ -1,0 +1,46 @@
+
+.deletebulk .modal-dialog{
+    width: 365px;
+}
+
+.deletebulk .modal-header{
+    padding: 28px 20px 0px 33px;
+}
+.deletebulk .modal-header .modal-title{
+
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 24px;
+    color: #101010;
+}
+
+
+.deletebulk .modal-body{
+    padding: 16px 20px 0 20px;
+}
+
+
+.deletebulk .deletebulk-items{
+list-style-type: none;
+margin-top: 16px;
+/*height: 176px;*/
+}
+.deletebulk h3,.deletebulk .deletebulk-items li{
+font-family: 'HoneywellSansWeb-Medium' !important;
+font-size:14px;
+color: #606060;
+}
+
+.deletebulk .deletebulk-items li{
+padding-bottom: 14px;
+}
+
+.deletebulk .deletebulk-items li a.viewmore{
+font-family: 'HoneywellSansWeb-Medium' !important;
+font-size:14px;
+color: #1792e5;
+}
+
+
+.deletebulk .deletebulk-items .SumoSelect{
+width: 93%;
+}

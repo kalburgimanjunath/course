@@ -1,0 +1,519 @@
+<style>
+.tabbed-carousel__nav{position:relative;z-index:3;height:100px;border:1px solid #e5e5e5;border-radius:3px}@media screen and (max-width: 46.8125em){.tabbed-carousel__nav{display:none}}.tabbed-carousel__nav.grid-container--thirds .tabbed-carousel__nav-item{width:33.33%}.tabbed-carousel__nav-item{font-family:"Brandon", Helvetica, Arial, sans-serif;font-weight:500;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:inline-block;height:98px;width:25%;float:left;padding-top:15px;background-color:#f9fafa;text-align:center;-webkit-transition-property:color, background-color;transition-property:color, background-color;-webkit-transition-duration:300ms;transition-duration:300ms;-webkit-transition-timing-function:ease;transition-timing-function:ease}.tabbed-carousel__nav-item::before,.tabbed-carousel__nav-item::after{content:'';position:absolute;left:0;top:0;width:0;height:0;border-top:49px solid transparent;border-left-width:24px;border-left-style:solid;border-left:24px solid #e5e5e5;border-bottom:49px solid transparent;-webkit-transition:border-color 300ms ease;transition:border-color 300ms ease}.tabbed-carousel__nav-item::before{border-left-color:#e5e5e5}.tabbed-carousel__nav-item::after{left:-1px;border-left-color:#f9fafa}.tabbed-carousel__nav-item:first-child{padding-left:0}.tabbed-carousel__nav-item:first-child::before,.tabbed-carousel__nav-item:first-child::after{display:none}.tabbed-carousel__nav-item .icon{display:block;margin:0 auto 10px;fill:#a9a9a9}.tabbed-carousel__nav-item:focus,.tabbed-carousel__nav-item:hover,.tabbed-carousel__nav-item.js-is-active{background:#fff}.segment-online .tabbed-carousel__nav-item:focus .icon,.segment-online .tabbed-carousel__nav-item:hover .icon,.segment-online .tabbed-carousel__nav-item.js-is-active .icon{fill:#ebb129}.segment-pos .tabbed-carousel__nav-item:focus .icon,.segment-pos .tabbed-carousel__nav-item:hover .icon,.segment-pos .tabbed-carousel__nav-item.js-is-active .icon{fill:#368aa9}.segment-mobile .tabbed-carousel__nav-item:focus .icon,.segment-everywhere .tabbed-carousel__nav-item:focus .icon,.segment-mobile .tabbed-carousel__nav-item:hover .icon,.segment-everywhere .tabbed-carousel__nav-item:hover .icon,.segment-mobile .tabbed-carousel__nav-item.js-is-active .icon,.segment-everywhere .tabbed-carousel__nav-item.js-is-active .icon{fill:#7ab55c}.tabbed-carousel__nav-item:focus+.tabbed-carousel__nav-item::after,.tabbed-carousel__nav-item:hover+.tabbed-carousel__nav-item::after,.tabbed-carousel__nav-item.js-is-active+.tabbed-carousel__nav-item::after{border-left-color:#fff}.tabbed-carousel__nav-item.js-is-active{color:#000}.tabbed-carousel__nav-item:focus{outline:none;border-bottom:solid 1px}.pricing-plan{position:relative;border:1px solid #e5e5e5;text-align:center;border-radius:3px;-webkit-transition:border-color 300ms;transition:border-color 300ms}@media screen and (max-width: 46.8125em){.pricing-plan{margin-bottom:2.8125em}.pricing-plan:first-child{margin-bottom:3.75em}.pricing-plan:last-child{margin-bottom:0}}.pricing-plan__superhead{position:absolute;top:-22px;left:-1px;right:-1px;height:44px;background:#fff;border:1px solid #e5e5e5;border-radius:3px 3px 0 0;line-height:44px}.pricing-plan__header{padding:2.8125em 1.875em 1.875em;background:#f9fafa}@media screen and (max-width: 46.8125em){.pricing-plan__header{padding:1.875em 1.5625em}}.pricing-plan__price{font-family:"Brandon", Helvetica, Arial, sans-serif;font-weight:700;-webkit-font-smoothing:antialiased;font-size:4.5em;line-height:1em;color:#000}.pricing-plan__price>sup{font-weight:500;font-size:0.30556em;line-height:2.04545em;vertical-align:top}.pricing-plan__price>abbr{font-weight:300;font-size:0.6em;margin-right:-0.25em}.pricing-plan__price>span{font-family:"Brandon", Helvetica, Arial, sans-serif;font-weight:500;-webkit-font-smoothing:antialiased;font-size:0.33333em}.pricing-plan__rates{font-size:0.875em}.pricing-plan__rates>li{margin-bottom:0.53333em}.pricing-plan--addon{text-align:center}.pricing-disclaimer{margin:0.9375em 0 0;text-align:center;color:#a9a9a9;font-size:0.875em}@media screen and (min-width: 46.875em){.pricing-disclaimer{padding:0 3.75em}}.pricing-plan__disclaimer{margin-bottom:0}.pricing-plan__more{padding:0.9375em;border-top:1px solid #e5e5e5}.pricing-plan__more>p{margin-bottom:5px}.pricing-plan__tooltip{display:inline-block;padding-right:30px}.pricing-plan__tooltip::after{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2040%2040%22%3E%3Cg%20fill=%22%23BBBDBF%22%3E%3Cpath%20d=%22M20%2040C8.972%2040%200%2031.028%200%2020S8.972%200%2020%200s20%208.972%2020%2020-8.972%2020-20%2020zm0-38C10.075%202%202%2010.075%202%2020s8.075%2018%2018%2018%2018-8.075%2018-18S29.925%202%2020%202z%22/%3E%3Ccircle%20cx=%2220%22%20cy=%2211%22%20r=%221.75%22/%3E%3Cpath%20d=%22M20%2032c-.552%200-1-.448-1-1V16c0-.552.448-1%201-1s1%20.448%201%201v15c0%20.552-.448%201-1%201z%22/%3E%3C/g%3E%3C/svg%3E");background-size:100% 100%;position:absolute;top:50%;right:10px;margin-top:-0.5em;width:1em;height:1em;content:''}.pricing-plan__rates .pricing-plan__tooltip::after{top:0;margin-top:0.1875em}.pricing-plan__tooltip .popover{font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-size:13px;line-height:1.5em}@media screen and (max-width: 46.8125em){.pricing-faq__heading{border-bottom:1px solid #e5e5e5;padding-bottom:12px}}.pricing-table{width:100%;margin:30px 0 0;border-spacing:0;border-collapse:collapse;-webkit-text-size-adjust:100%}@media screen and (min-width: 46.875em){.pricing-table{margin-top:60px}}.pricing-table caption{position:static}.pricing-table th,.pricing-table td{padding:10px 15px;border:1px solid #e5e5e5}@media screen and (max-width: 46.8125em){.pricing-table th.js-is-hidden,.pricing-table td.js-is-hidden{display:none;visibility:hidden}}.pricing-table th{background-color:#f8f8f8;font-weight:normal}.pricing-table th[scope="row"]{background-color:transparent}.pricing-table thead th{vertical-align:top;padding-top:20px;padding-bottom:20px}@media screen and (max-width: 46.8125em){.pricing-table thead th:first-child{display:none}}@media screen and (min-width: 46.875em) and (max-width: 61.8125em){.pricing-table thead th{padding-left:5px;padding-right:5px}}.pricing-table tbody a{border-bottom:1px dotted}.pricing-table tbody a:hover,.pricing-table tbody a:focus{color:#000}.pricing-table tbody th{text-align:left}.pricing-table tbody td{text-align:center;width:45%}@media screen and (min-width: 46.875em){.pricing-table tbody th{width:33.33333%}.pricing-table tbody td{width:16.66667%}}@media screen and (min-width: 61.875em){.pricing-table tbody tr:hover th:not([scope="col"]),.pricing-table tbody tr:hover td{background-color:#f9fafa}}.pricing-table tfoot td{padding:15px 0 0;border:0;text-align:center}@media screen and (min-width: 46.875em){.pricing-table tfoot td{padding-top:30px}}.pricing-table .pricing-table__section-heading,.pricing-table p{margin:0}.pricing-table th p:not(.heading--4),.pricing-table tfoot p,.pricing-table .pricing-table__feature-name,.pricing-table .pricing-table__feature-value{font-size:0.8em}@media screen and (min-width: 61.875em){.pricing-table th p:not(.heading--4),.pricing-table tfoot p,.pricing-table .pricing-table__feature-name,.pricing-table .pricing-table__feature-value{font-size:0.875em}}.pricing-table .pricing-table__feature-name .popover__click-trigger{text-align:left}@media screen and (max-width: 46.8125em){.pricing-table .pricing-table__feature-name .popover-wrapper{display:block;width:100%}}.pricing-table .icon--not-in-plan{opacity:0.5}.pricing-table .icon--in-plan{width:25px;height:25px;margin:-6px 0 -7px}.pricing-table .price{font-family:"Brandon", Helvetica, Arial, sans-serif;font-weight:700;-webkit-font-smoothing:antialiased;font-size:3.33333em;color:#30373b;white-space:nowrap}.pricing-table .price::after{content:'';display:table;clear:both}@media screen and (min-width: 61.875em){.pricing-table .price{font-size:2.85714em}}.pricing-table .price sup{margin-top:0.75em;font-size:0.3em}.pricing-table .price sup,.pricing-table .price .price__number{display:inline-block;vertical-align:top}@media screen and (min-width: 46.875em){.pricing-table__feature-value--nowrap{white-space:nowrap}}.plan-tabs{display:table;width:100%;border-collapse:collapse}.plan-tabs li{display:table-cell;border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5}.plan-tabs__tab{display:block;width:100%;padding:1.25em 1em;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;font-size:0.78571em;font-weight:700;text-align:center;white-space:nowrap}.plan-tabs__tab.js-is-active{color:#000;background-color:#f8f8f8}.plan-tabs__tab:focus{outline:0}.plan-arrows{margin-bottom:30px}.plan-arrows::after{content:'';display:table;clear:both}.plan-arrow{font-size:0.8em;font-weight:700;color:#7ab55c}.plan-arrow::before,.plan-arrow::after{display:inline-block;vertical-align:middle;width:1em;height:0.7em;background-repeat:no-repeat;background-size:contain}.plan-arrow::before{margin-right:0.5em;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2011%22%3E%3Cstyle%20type=%22text/css%22%3Ecircle,%20ellipse,%20line,%20path,%20polygon,%20polyline,%20rect,%20text%20%7B%20fill:%20%23000%20!important;%20%7D%3C/style%3E%3Cpath%20fill=%22%23FFF%22%20d=%22M5.5%200c.1%200%20.3%200%20.4.1.1.2.1.6-.1.8L1.2%205.5l4.6%204.6c.2.2.2.5%200%20.7-.2.2-.5.2-.7%200l-5-5c-.1-.2-.1-.5%200-.7l5-5c.1-.1.3-.1.4-.1z%22/%3E%3Cpath%20fill=%22%23FFF%22%20d=%22M.5%205h23c.2%200%20.5.2.5.5s-.3.5-.5.5H.5C.2%206%200%205.8%200%205.5S.2%205%20.5%205z%22/%3E%3C/svg%3E")}.plan-arrow::after{margin-left:0.5em;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2011%22%3E%3Cstyle%20type=%22text/css%22%3Ecircle,%20ellipse,%20line,%20path,%20polygon,%20polyline,%20rect,%20text%20%7B%20fill:%20%23000%20!important;%20%7D%3C/style%3E%3Cpath%20fill=%22%23FFF%22%20d=%22M18.5%2011c-.1%200-.3%200-.4-.1-.2-.2-.2-.5%200-.7l4.6-4.6L18.1%201c-.2-.2-.2-.5%200-.7.2-.2.5-.2.7%200l5%205c.2.2.2.5%200%20.7l-5%205c-.1-.1-.2%200-.3%200z%22/%3E%3Cpath%20fill=%22%23FFF%22%20d=%22M23.5%206H.5C.2%206%200%205.8%200%205.5S.2%205%20.5%205h23c.2%200%20.5.2.5.5s-.3.5-.5.5z%22/%3E%3C/svg%3E")}.plan-arrow--prev{float:left}.plan-arrow--prev::before{content:''}.plan-arrow--next{float:right}.plan-arrow--next::after{content:''}.pricing-plan--addon__plus{width:127px;height:26px;margin-bottom:0.3125em}.segment-plus-link{color:#c39e47}.segment-plus-link:hover{color:#b28e3a}.segment-plus-link:active,.segment-plus-link:focus{color:#aa8837}.modal-container,.modal{-webkit-transition:none;transition:none}.js-plus-modal-template{display:none}.js-plus-modal-is-active{background-color:#f9fafa;color:#767676}.js-plus-modal-is-active .icon-close-white{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2044%2044%22%3E%3Cstyle%20type=%22text/css%22%3Ecircle,%20ellipse,%20line,%20path,%20polygon,%20polyline,%20rect,%20text%20%7B%20fill:%20%23767676%20!important;%20%7D%3C/style%3E%3Cpath%20fill=%22%23767676%22%20d=%22M39.196%2043.3L1.154%205.256l3.89-3.89%2038.04%2038.043z%22/%3E%3Cpath%20fill=%22%23767676%22%20d=%22M.54%2039.413L38.58%201.37l3.89%203.89L4.428%2043.302z%22/%3E%3C/svg%3E%0A")}.plus-modal__content{width:100%}@media screen and (min-width: 61.875em){.plus-modal__content{max-width:50%;margin:0 auto}}.plus-form__fatal-error{display:none}.plus-form__show-fatal-error .plus-form__fatal-error{display:block;color:#c23628}.plus-form__show-fatal-error .plus-form__fatal-error a{color:#000}
+
+</style>
+<table class="pricing-table" id="PricingTable">
+  <caption class="visuallyhidden">Pricing and feature information for all Shopify plans
+</caption>
+  <thead>
+    <tr>
+      <th scope="col">
+        <span class="visuallyhidden">Plan feature</span>
+      </th>
+        <th scope="col" id="p-0" class="js-is-hidden">
+          <p class="heading--4">Basic Shopify</p>
+          <p>All the basics for starting a&nbsp;new business</p>
+        </th>
+        <th scope="col" id="p-1" class="">
+          <p class="heading--4">Shopify</p>
+          <p>Everything you need for a growing business</p>
+        </th>
+        <th scope="col" id="p-2" class="js-is-hidden">
+          <p class="heading--4">Advanced Shopify</p>
+          <p>Advanced features for scaling your business</p>
+        </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+<tr>
+  <th scope="row" id="f-monthly_price">
+    <span class="pricing-table__feature-name">
+      Monthly price
+    </span>
+  </th>
+
+    <td headers="p-0 f-monthly_price" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="price"><span class="visuallyhidden">$29</span><span aria-hidden="true"><sup>$</sup><span class="price__number">29</span></span></span>
+      </span>
+    </td>
+    <td headers="p-1 f-monthly_price" class="">
+      <span class="pricing-table__feature-value">
+        <span class="price"><span class="visuallyhidden">$79</span><span aria-hidden="true"><sup>$</sup><span class="price__number">79</span></span></span>
+      </span>
+    </td>
+    <td headers="p-2 f-monthly_price" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="price"><span class="visuallyhidden">$299</span><span aria-hidden="true"><sup>$</sup><span class="price__number">299</span></span></span>
+      </span>
+    </td>
+</tr>
+
+  </tbody>
+
+
+  <tbody>
+    <tr>
+      <th scope="col" colspan="5">
+        <span class="heading--5 pricing-table__section-heading">
+          Features
+        </span>
+      </th>
+    </tr>
+
+    
+<tr>
+  <th scope="row" id="f-maximum_staff_accounts">
+    <span class="pricing-table__feature-name">
+      Staff accounts
+    </span>
+  </th>
+
+    <td headers="p-0 f-maximum_staff_accounts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        2
+      </span>
+    </td>
+    <td headers="p-1 f-maximum_staff_accounts" class="">
+      <span class="pricing-table__feature-value">
+        5
+      </span>
+    </td>
+    <td headers="p-2 f-maximum_staff_accounts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        15
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-skus">
+    <span class="pricing-table__feature-name">
+      Number of products
+    </span>
+  </th>
+
+    <td headers="p-0 f-skus" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+    <td headers="p-1 f-skus" class="">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+    <td headers="p-2 f-skus" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-storage">
+    <span class="pricing-table__feature-name">
+      File storage
+    </span>
+  </th>
+
+    <td headers="p-0 f-storage" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+    <td headers="p-1 f-storage" class="">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+    <td headers="p-2 f-storage" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        Unlimited
+      </span>
+    </td>
+</tr>
+
+
+
+      
+<tr>
+  <th scope="row" id="f-retail">
+    <span class="pricing-table__feature-name">
+      <a href="/pos/retail">Retail Package</a>
+    </span>
+  </th>
+
+    <td headers="p-0 f-retail" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        + $49
+      </span>
+    </td>
+    <td headers="p-1 f-retail" class="">
+      <span class="pricing-table__feature-value">
+        + $49
+      </span>
+    </td>
+    <td headers="p-2 f-retail" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        + $49
+      </span>
+    </td>
+</tr>
+
+
+    
+<tr>
+  <th scope="row" id="f-support">
+    <span class="pricing-table__feature-name">
+      24/7 support
+    </span>
+  </th>
+
+    <td headers="p-0 f-support" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-1 f-support" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-support" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+
+        
+<tr>
+  <th scope="row" id="f-transaction_fees">
+    <span class="pricing-table__feature-name">
+      Transaction fees
+    </span>
+  </th>
+
+    <td headers="p-0 f-transaction_fees" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        0.0%
+      </span>
+    </td>
+    <td headers="p-1 f-transaction_fees" class="">
+      <span class="pricing-table__feature-value">
+        0.0%
+      </span>
+    </td>
+    <td headers="p-2 f-transaction_fees" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        0.0%
+      </span>
+    </td>
+</tr>
+
+      
+<tr>
+  <th scope="row" id="f-fraud_analysis_nopayments">
+    <span class="pricing-table__feature-name">
+      Fraud analysis
+    </span>
+  </th>
+
+    <td headers="p-0 f-fraud_analysis_nopayments" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-fraud_analysis_nopayments" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-fraud_analysis_nopayments" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+
+    
+<tr>
+  <th scope="row" id="f-order_creation">
+    <span class="pricing-table__feature-name">
+      Manual order creation
+    </span>
+  </th>
+
+    <td headers="p-0 f-order_creation" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-1 f-order_creation" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-order_creation" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-discounts">
+    <span class="pricing-table__feature-name">
+      Discount codes
+    </span>
+  </th>
+
+    <td headers="p-0 f-discounts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-1 f-discounts" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-discounts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-website">
+    <span class="pricing-table__feature-name">
+      Website and blog
+    </span>
+  </th>
+
+    <td headers="p-0 f-website" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-1 f-website" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-website" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-ssl">
+    <span class="pricing-table__feature-name">
+      
+<div class="popover-wrapper--dark pricing-plan__tooltip popover-wrapper js-popover" data-position="right" data-toggle-only-on-click="false">
+    <button type="button" class="popover-trigger" aria-expanded="false" aria-describedby="Popover5">Free SSL certificate</button>
+
+  <div class="popover popover--right" id="Popover5">
+    <div class="popover-content">
+      Every online store includes a free SSL certificate. All traffic to your store is over HTTPS.
+
+</div></div></div>
+
+    </span>
+  </th>
+
+    <td headers="p-0 f-ssl" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-1 f-ssl" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-ssl" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-gift_cards">
+    <span class="pricing-table__feature-name">
+      
+<div class="popover-wrapper--dark pricing-plan__tooltip popover-wrapper js-popover" data-position="right" data-toggle-only-on-click="false">
+    <button type="button" class="popover-trigger" aria-expanded="false" aria-describedby="Popover6">Gift cards</button>
+
+  <div class="popover popover--right" id="Popover6">
+    <div class="popover-content">
+      Expand your customer base and boost holiday sales with physical or digital Gift Cards.
+
+</div></div></div>
+
+    </span>
+  </th>
+
+    <td headers="p-0 f-gift_cards" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-gift_cards" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-gift_cards" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-reports">
+    <span class="pricing-table__feature-name">
+      Professional reports
+    </span>
+  </th>
+
+    <td headers="p-0 f-reports" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-reports" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-reports" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-abandoned_checkouts">
+    <span class="pricing-table__feature-name">
+      
+<div class="popover-wrapper--dark pricing-plan__tooltip popover-wrapper js-popover" data-position="right" data-toggle-only-on-click="false">
+    <button type="button" class="popover-trigger" aria-expanded="false" aria-describedby="Popover7">Abandoned cart recovery</button>
+
+  <div class="popover popover--right" id="Popover7">
+    <div class="popover-content">
+      Recover missed sales by automatically emailing a prefilled cart link and customized message to customers who don’t complete their purchase.
+
+</div></div></div>
+
+    </span>
+  </th>
+
+    <td headers="p-0 f-abandoned_checkouts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-abandoned_checkouts" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+    <td headers="p-2 f-abandoned_checkouts" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-reports_editing">
+    <span class="pricing-table__feature-name">
+      Advanced report builder
+    </span>
+  </th>
+
+    <td headers="p-0 f-reports_editing" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-reports_editing" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-2 f-reports_editing" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+    
+<tr>
+  <th scope="row" id="f-real_time_shipping">
+    <span class="pricing-table__feature-name">
+      
+<div class="popover-wrapper--dark pricing-plan__tooltip popover-wrapper js-popover" data-position="right" data-toggle-only-on-click="false">
+    <button type="button" class="popover-trigger" aria-expanded="false" aria-describedby="Popover8">Real-time carrier shipping</button>
+
+  <div class="popover popover--right" id="Popover8">
+    <div class="popover-content">
+      Save time and money by automatically calculating precise shipping rates based on your product weight, dimensions, and your customers location.
+
+</div></div></div>
+
+    </span>
+  </th>
+
+    <td headers="p-0 f-real_time_shipping" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-1 f-real_time_shipping" class="">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">No</span><span class="icon--not-in-plan" aria-hidden="true">–</span>
+      </span>
+    </td>
+    <td headers="p-2 f-real_time_shipping" class="js-is-hidden">
+      <span class="pricing-table__feature-value">
+        <span class="visuallyhidden">Yes</span><svg class="icon icon--green icon--in-plan" aria-hidden="true"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use> </svg>
+      </span>
+    </td>
+</tr>
+
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="5">
+        <div class="display--mobile plan-arrows" data-arrow-label="{{plan}} plan">
+          <a data-ga-event="Pricing Table - Mobile Arrows" data-ga-action="Arrow click" class="plan-arrow link-scroll-to plan-arrow--prev" href="#PricingTable">Basic Shopify plan</a>
+          <a data-ga-event="Pricing Table - Mobile Arrows" data-ga-action="Arrow click" class="plan-arrow link-scroll-to plan-arrow--next" href="#PricingTable">Advanced Shopify plan</a>
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

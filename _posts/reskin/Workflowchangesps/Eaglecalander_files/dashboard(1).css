@@ -1,0 +1,248 @@
+﻿
+ul li {
+    list-style-type: none;
+}
+
+.ispdashboardWrapper {
+    padding: 20px !important;
+    background: #f0f0f0;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.ispcardLayout {
+    background: #fff;
+    padding: 20px;
+}
+
+    .ispcardLayout .cardtHeader {
+        padding-bottom: 17px;
+    }
+
+    .ispcardLayout .cardHeader span {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #606060;
+    }
+
+    /* SITE CSS */
+
+    .ispcardLayout.siteCard {
+        padding: 0;
+    }
+
+        .ispcardLayout.siteCard .cardHeader {
+            padding: 20px 20px 17px 20px;
+        }
+
+.siteCard .siteMap {
+    height: 200px;
+    background: #f0f0f0;
+}
+
+.siteCard .siteStatCard {
+    float: left;
+    border-bottom: 1px solid #d2d2d2;
+    width:100%;
+}
+
+.siteCard .siteStatHeader {
+    color: #fff;
+    padding: 16px 20px 10px 20px;
+    float: left;
+    width: 100%;
+}
+
+    .siteCard .siteStatHeader.withAlarms {
+        background: #ee3124;
+    }
+
+    .siteCard .siteStatHeader.noAlarms {
+        background: #7eb338;
+    }
+
+    .siteCard .siteStatHeader span.alarmCount {
+        font-size: 26px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #fff;
+        float: left;
+        line-height: 22px;
+    }
+
+    .siteCard .siteStatHeader > p {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #fff;
+        margin: 0;
+        float: left;
+        clear: both;
+    }
+
+        .siteCard .siteStatHeader > p > span {
+            color: #fff !important;
+        }
+
+.siteCard .siteStatList {
+    padding: 0 20px;
+    float: left;
+    width: 100%;
+}
+
+    .siteCard .siteStatList li {
+        border-top: 1px solid #f0f0f0;
+        padding: 12px 0 10px 0;
+        float: left;
+        width: 100%;
+        height: 64px;
+    }
+
+        .siteCard .siteStatList li:first-child {
+            border-top: 0 none;
+        }
+
+    .siteCard .siteStatList .ispicon {
+        margin-right: 8px;
+        float: left;
+    }
+
+        .siteCard .siteStatList .ispicon::before {
+            cursor: default !important;
+        }
+
+    .siteCard .siteStatList li > div + div {
+        margin-top: 10px;
+    }
+
+    .siteCard .siteStatList .siteCritical {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #ee3124;
+        margin-top: 12px;
+        float: left;
+    }
+
+    .siteCard .siteStatList .siteNormal {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #303030;
+        margin-top: 12px;
+        float: left;
+    }
+
+    .siteCard .siteStatList .criticalCount, .siteCard .siteStatList .majorCount {
+        font-size: 13px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #ee3124;
+        float: left;
+        padding-top: 5px;
+        cursor: pointer;
+    }
+
+    .siteCard .siteStatList .majorCount {
+        color: #f47e37 !important;
+    }
+
+    .siteCard .siteStatList .siteMajor {
+        font-size: 15px;
+        font-family: 'HoneywellSansWeb-Bold' !important;
+        color: #f47e37;
+        margin-top: 12px;
+        float: left;
+    }
+
+.mapText {
+    position:relative;
+    top:11px;
+    right:24px;
+    color:#fff;
+    text-align:center;
+}
+
+/* DROP DOWN CSS  - DONT EDIT */
+.ispActionMenu {
+    cursor: pointer;
+}
+
+    .ispActionMenu li, .ispActionMenu .dropdown-menu {
+        padding: 0;
+    }
+
+    .ispActionMenu .dropdown-menu {
+        margin-top: 11px;
+        border-radius: 0;
+        border: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu.open {
+        font-size: 14px;
+        color: #1792e5;
+    }
+
+    .ispActionMenu.mainMenu.open .dropdown-toggle, .ispActionMenu.mainMenu .dropdown-toggle:hover {
+        color: #303030;
+        font-size: 18px;
+    }
+
+    .ispActionMenu.mainMenu .dropdown-menu {
+        margin-top: 8px;
+        min-width: 200px;
+    }
+
+    .ispActionMenu .dropdown-menu > li > a {
+        cursor: pointer;
+        padding: 9px 18px 7px 18px;
+        border-top: 0 none;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    .ispActionMenu .dropdown-menu > li.selected, .ispActionMenu .dropdown-menu > li.selected:hover, .ispActionMenu .dropdown-menu > li.selected:focus {
+        background-color: #d1e9fa;
+        border-bottom: 1px solid #8bc9f2;
+        color: #303030;
+    }
+
+        .ispActionMenu .dropdown-menu > li.selected a:hover, .ispActionMenu .dropdown-menu > li.selected a:focus {
+            background-color: #d1e9fa;
+        }
+
+    .ispActionMenu .dropdown-menu > li > a > span {
+        margin-right: 8px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        color: #606060;
+    }
+
+    .ispActionMenu .dropdown-menu > li:first-child > a {
+        cursor: pointer;
+        border-top: 0 none;
+    }
+
+    .ispActionMenu .dropdown-menu > li:hover, .ispActionMenu .dropdown-menu > li:focus,
+    .ispActionMenu .dropdown-menu > li a:hover, .ispActionMenu .dropdown-menu > li a:focus {
+        background-color: #f5f5f5;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        outline: 0;
+    }
+
+
+    .ispActionMenu .dropdown-menu > li a:active, .ispActionMenu .dropdown-menu > li a.active {
+        background-color: #d1e9fa !important;
+        border-bottom: 1px solid #8bc9f2 !important;
+        color: #303030;
+    }
+
+    .ispActionMenu.contentMenu .dropdown-menu {
+        padding: 20px;
+        width: 300px;
+    }
+
+    .ispActionMenu.contentMenu .footer {
+        margin-top: 20px;
+    }
+
+        .ispActionMenu.contentMenu .footer button {
+            margin-left: 9px;
+        }

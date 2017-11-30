@@ -1,0 +1,1679 @@
+.ps-rules. *, body, html {
+    font-family: 'HoneywellSansWeb-Medium';
+    color: #606060;
+}
+
+.ps-rules.rulesContainer {
+    position: relative;
+    top: 0;
+    bottom: 59px;
+}
+
+.ps-rules.ruleconfigContainer .secondHeader {
+    font-size: 16px;
+    z-index: 100;
+    top: 0;
+    height: 88px;
+    padding: 14px 24px 0 12px !important;
+    border-collapse: separate;
+    background-color: #fff;
+}
+
+.ps-rules .borderRight ul {
+    float: left;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    display:block;
+}
+
+.ps-rules .borderLeft ul {
+    margin-left: 12px;
+}
+
+.ps-rules.ruleconfigContainer .ruleform-control ul li {
+    float: left;
+    width: 100%;
+    max-width: 319px;
+    padding-right: 8px;
+    padding-bottom: 0;
+    padding-left: 13px;
+    list-style-type: none;
+}
+
+.ps-rules.ruleconfigContainer .colHeading {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 24px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    text-transform: capitalize;
+    color: #303030;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ps-rules.ruleconfigContainer .tested span {
+    font-family: 'Open Sans Semibold' !important;
+    font-size: 14px;
+    margin-right: 10px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: #3bad49;
+}
+
+.ps-rules .rulesecondGrid {
+    position: absolute;
+    left: 48.2% !important;
+    padding-right: 24px !important;
+    padding-left: 24px;
+}
+
+.ps-rules.ruleconfigContainer .rulebody.layoutrow {
+    top: 62px;
+    bottom: 0;
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.ps-rules.ruleconfigContainer .show-rules-list {
+    position: absolute;
+    top: 27px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+}
+
+.ps-rules.universal-rules-listContainer {
+    position: absolute;
+    z-index: 100;
+    top: 1px;
+    bottom: 0;
+    display: block;
+    width: 365px;
+    min-width: 365px;
+    padding: 0;
+    border-collapse: separate;
+    background-color: #fff;
+    -webkit-box-shadow: 10px 10px 10px 15px #d7d7d7;
+    -moz-box-shadow: 10px 10px 10px 15px #d7d7d7;
+    box-shadow: 10px 10px 10px 15px #d7d7d7;
+}
+
+.ps-rules.universal-rules-listContainer .header {
+    font-size: 24px;
+    top: 0;
+    width: 100%;
+    height: 39px;
+    height: 39px;
+    padding-top: 16px;
+    padding-left: 24px;
+    text-align: left;
+    color: #777;
+    background-color: #fff;
+}
+
+.ps-rules.ruleconfigContainer .secondGrid {
+    position: absolute;
+    left: 50%;
+}
+
+.ps-rules.ruleconfigContainer:-webkit-autofill {
+    color: #fff !important;
+}
+
+.ps-rules.ruleconfigContainer:focus {
+    outline-style: none;
+    outline-color: transparent;
+}
+
+.ps-rules .customizedReportSelect {
+    width: 118px !important;
+}
+
+.ps-rules .customizedReportSelect:hover, .ps-rules .customizedReportSelect:active, .ps-rules .customizedReportSelect:focus {
+    outline: 0;
+    outline: none;
+}
+
+.ps-rules .timerPlug {
+    width: 236px;
+    padding-right: 27px;
+}
+
+.ps-rules .dividerline {
+    clear: both;
+    border-collapse: separate;
+    border-bottom: 1px solid #e7e7e7;
+    -webkit-box-shadow: -2px 0 4px 2px #e7e7e7;
+    -moz-box-shadow: -2px 0 4px 2px #e7e7e7;
+    box-shadow: -2px 0 4px 2px #e7e7e7;
+}
+
+.ps-rules .bootstrap-timepicker-widget {
+    padding: 24px;
+}
+.no-records {
+      padding: 104px 0 104px 87px;
+}
+
+.ps-rules .bootstrap-timepicker-widget table {
+    border-spacing: 14px;
+    border-collapse: separate;
+}
+
+.ps-rules.ruleconfigContainer .right-inner-addon>span {
+    width: 24px !important;
+    padding: 0 12px 23px 12px !important;
+    cursor: pointer;
+    top: 19px;
+}
+.ps-rules.ruleconfigContainer .right-inner-addon>span.input-group-addon-left {
+    width: 24px !important;
+    padding: 12px 12px 23px 12px !important;
+    cursor: pointer;
+    top: 22px;
+}
+
+.ps-rules.ruleconfigContainer .right-inner-addon>span:hover .icon_list1 {
+    top: 29px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+}
+
+.ps-rules.ruleconfigContainer .icon-list {
+    left: 14px !important;
+    cursor: pointer;
+}
+
+.ps-rules.ruleconfigContainer .seperator {
+    margin-bottom: -5px;
+    padding-right: 0 !important;
+    padding-bottom: 20px;
+}
+
+.ps-rules .no-records {
+    padding: 24px;
+}
+
+.ps-rules.ruleconfigContainer .seperator .row {
+    position: relative;
+    height: 26px;
+    margin-top: 16px;
+}
+
+.ps-rules.ruleconfigContainer .seperator::before {
+    top: 88px;
+    right: auto;
+    left: 0;
+    float: left;
+    width: 100%;
+    margin-right: 11px;
+    content: '';
+    border-top: 0 dotted #d3d3d3;
+}
+
+.ps-rules.ruleconfigContainer .switch_options {
+    position: relative !important;
+    top: 14px;
+    display: block;
+    width: 81.1px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.ps-rules.ruleconfigContainer .totContainer {
+    padding: 5px 10px 5px 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #ccc;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.ps-rules .totContainer .and {
+    padding: 2px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.ps-rules .ruleconfigContainer .mpcform-grid {
+    float: left;
+    width: 48%;
+    min-height: 433px;
+    padding-right: 0 !important;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .ps-rules.ruleconfigContainer .mpcform-grid {
+        min-height: inherit;
+    }
+    .ps-rules .icon_removeRule {
+        top: -19px !important;
+        right: -5px;
+        background: url('../images/sprite_icons.png') no-repeat -191px -6px;
+    }
+    .ps-rules .icon_removeRule:hover {
+        margin-top: 10px;
+        background: url(../images/sprite_icons.png) no-repeat -221px -6px;
+    }
+    .ps-rules .icon_list1o {
+    top: 11px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+}
+
+.ps-rules .icon_list1o:hover {
+    top: 11px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    background-color: #fff;
+}
+}
+
+.ps-rules.ruleconfigContainer .border-left {
+    margin-left: 24px;
+    border-left: 1px solid #e7e7e7;
+}
+
+.ps-rules.ruleconfigContainer .borderRight {
+    bottom: 0 !important;
+    /*    min-height: 803px;*/
+    overflow: auto;
+    /*    height: auto;*/
+    padding-top: 24px;
+    padding-right: 0;
+    padding-bottom: 27px;
+    padding-left: 1px;
+    border-right: 1px solid #e7e7e7;
+}
+
+.ps-rules.ruleconfigContainer .borderLeft {
+    position: relative;
+    bottom: 0 !important;
+    overflow: auto;
+    height: 100%;
+    padding-top: 15px;
+    padding-right: 0;
+    padding-bottom: 27px;
+    padding-left: 0;
+}
+
+.ps-rules.ruleconfigContainer .scroll {
+    position: absolute;
+    top: 88px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.ps-rules .note {
+    position: relative;
+    bottom: 12px;
+}
+
+.ps-rules .note2 {
+    display: inline-block;
+    width: 60%;
+}
+
+.ps-rules.universal-rules-listContainer .rule_align:hover {
+    color: #1792e5;
+}
+
+.ps-rules.universal-rules-listContainer .rule_align {
+    padding-left: 30px;
+}
+
+.ps-rules.ruleconfigContainer .floatLeft {
+    padding-left: 24px;
+    text-align: left;
+}
+
+.ps-rules.ruleconfigContainer .oddContainer {
+    position: relative;
+    display: inline-block;
+    min-width: 24px;
+    height: 48px;
+    border-right: 1px solid #d3d3d3;
+}
+
+.ps-rules.ruleconfigContainer .oddContainer:after {
+    position: absolute !important;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: '';
+    border-top: 1px dotted #d3d3d3;
+}
+
+.ps-rules.ruleconfigContainer .editButton {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+}
+
+.ps-rules.ruleconfigContainer .grid-text1 {
+    font-size: 15px;
+    color: #454545;
+}
+
+.ps-rules.universal-rules-listContainer .rulelistItem .grid-text1 {
+    font-size: 15px;
+    font-weight: normal;
+    color: #454545;
+}
+
+.ps-rules.universal-rules-listContainer .rulelistItem .grid-text2 {
+    font-size: 12px;
+    width: 93%;
+    word-break: break-all;
+    color: #707070;
+}
+
+.ps-rules.ruleconfigContainer .grid-text2 b {
+    font-size: 12px;
+    font-weight: normal;
+    color: #707070;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList {
+    position: relative;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList:hover {
+    overflow-y: scroll;
+    -ms-overflow-y: scroll;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList ul {
+    margin: 0;
+    padding-left: 0;
+    border-color: transparent;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList ul li {
+    padding-right: 0;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList ul li {
+    font-weight: normal;
+    color: #454545;
+}
+
+.ps-rules.universal-rules-listContainer .RulesList ul li:hover {
+    background-color: #e6f3fb !important;
+}
+
+.ps-rules.universal-rules-listContainer .itemSelected {
+    background-color: #e6f3fb !important;
+}
+
+.ps-rules.universal-rules-listContainer .itemNormal {
+    background-color: #fff !important;
+}
+
+.ps-rules.universal-rules-listContainer .rulelistItem {
+    padding-left: 24px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ps-rules .RulesList .leftPaneheading {
+    /*    border-bottom: 1px solid #e7e7e7;*/
+    padding-right: 0;
+}
+
+.ps-rules .RulesList .leftPaneheading span .pull-right {
+    font-size: 12px;
+    color: #9d9d9d;
+}
+
+.ps-rules .online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 10px;
+    background-color: #18a350;
+}
+
+.ps-rules .txtFields {
+    padding: 10px 9px 9px 0;
+}
+
+.ps-rules .RulesList a {
+    text-decoration: none;
+}
+
+.ps-rules .bottomSpace {
+    padding-bottom: 3px;
+}
+
+.ps-rules .rule-status {
+    float: right !important;
+}
+
+.ps-rules .ruleStatusfailed {
+    color: #e33e38;
+}
+
+.ps-rules .ruleStatusactive {
+    color: #3dad49;
+}
+
+.ps-rules .rule-date {
+    float: right !important;
+}
+
+.ps-rules .rules-checkbox {
+    position: relative;
+    top: 22px !important;
+    display: none;
+    float: left;
+    padding-left: 20px;
+}
+
+.ps-rules #tt {
+    display: none;
+}
+
+.ps-rules #tt li {
+    width: 50px;
+    height: 20px !important;
+    padding: 5px;
+    list-style: none;
+}
+
+.ps-rules .remove-button {
+    position: relative;
+    top: -22px;
+    right: -300px;
+    left: auto;
+    display: inline-block;
+    width: 10px;
+    height: 24px;
+}
+
+.ps-rules .remove-button:hover {
+    cursor: pointer;
+    background: transparent !important;
+}
+
+.ps-rules .rulesControls {
+    position: absolute;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    bottom: 44px;
+    display: none;
+    width: 26%;
+    -webkit-animation: movefromtopbottom 200ms linear;
+    -moz-animation: movefromtopbottom 200ms linear;
+    -ms-animation: movefromtopbottom 200ms linear;
+    animation: movefromtopbottom 200ms linear;
+    border: 1px Solid #e7e7e7;
+    background-color: #f5f5f5;
+}
+
+.ps-rules .rulesControls li {
+    line-height: 30px;
+    float: left;
+    min-width: 80px;
+    padding: 5%;
+    list-style-type: none;
+}
+
+@-webkit-keyframes moveFromTop {
+    from {
+        -webkit-transform: translateY(-20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -webkit-transform: translateY(0%);
+        opacity: .7;
+    }
+}
+
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform: translateY(-20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -moz-transform: translateY(0%);
+        opacity: .7;
+    }
+    .ps-rules .icon_list1o {
+    top: 30px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+    }
+}
+
+@-ms-keyframes moveFromTop {
+    from {
+        -ms-transform: translateY(-20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -ms-transform: translateY(0%);
+        opacity: .7;
+    }
+}
+
+@-webkit-keyframes moveFromTopBottom {
+    from {
+        -webkit-transform: translateY(20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -webkit-transform: translateY(0%);
+        opacity: .7;
+    }
+}
+
+@-moz-keyframes moveFromTopBottom {
+    from {
+        -moz-transform: translateY(20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -moz-transform: translateY(0%);
+        opacity: .7;
+    }
+}
+
+@-ms-keyframes moveFromTopBottom {
+    from {
+        -ms-transform: translateY(20%);
+        opacity: 0;
+        background: transparent !important;
+    }
+    to {
+        -ms-transform: translateY(0%);
+        opacity: .7;
+    }
+}
+
+.ps-rules .ruleSearchContainer {
+    position: relative;
+    top: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.ps-rules .ruleSearchContainer input[type=search] {
+    width: auto !important;
+}
+
+.ps-rules .ruleSearchContainer input[type=search]:hover {
+    width: auto !important;
+    margin: 7px 0 12px -6px;
+    cursor: pointer;
+    color: transparent;
+    border: none !important;
+    background: url(../images/icon_searchHover.png) no-repeat right;
+    background-color: rgba(255, 255, 255, 0) !important;
+    background-position: 21px center;
+    background-position-y: 5px;
+    -ms-background-position-y: 5px;
+    -webkit-background-position-y: 5px;
+    -o-background-position-y: 10px;
+}
+
+.ps-rules .ruleSearchContainer input[type=search]:focus, .ps-rules .ruleSearchContainer input[type=search]:active {
+    width: 90% !important;
+    min-width: 25%;
+    margin: 7px 0 12px 20px;
+    color: #d0d0d0;
+    border: 1px solid #1792e5 !important;
+    background-color: #fff !important;
+    background-position: 98% center;
+}
+
+.ps-rules .ruleStatusContainer {
+    position: relative;
+    top: -25px;
+    right: 0;
+    float: right;
+    width: 120px;
+}
+
+.ps-rules.ruleconfigContainer.layoutrow {
+    top: 0;
+    bottom: 0;
+}
+
+.ps-rules .rulesheader.layoutrow {
+    top: 0;
+    height: 47px;
+    margin-right: 24px;
+    margin-left: 24px;
+}
+
+.ps-rules .rulelistfirstheader.layoutrow {
+    top: 0;
+    height: 59px;
+    border-collapse: separate;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ps-rules .rulelistsecondheader.layoutrow {
+    top: 59px;
+    padding: 9px 10px;
+    border-collapse: separate;
+    border-bottom: 1px solid #e7e7e7;
+    background: #f8f8f8;
+}
+
+.ps-rules .rulelistbody.layoutrow {
+    top: 129px;
+    bottom: 0;
+}
+
+.ps-rules .rulesettingsLastListyle {
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
+
+.ps-rules .rulecreatebutton {
+    position: relative !important;
+    top: -15px;
+    left: -11px;
+}
+
+
+.ps-rules #ruleeditbody .field {
+    top: -2px;
+    width: 100%;
+    max-width: 298px;
+    margin-top: 1.5px;
+}
+
+.ps-rules #ruleeditbody .field select {
+    width: 100% !important;
+    -webkit-appearance: carat;
+}
+
+.ps-rules .ruleheader {
+    font-size: 22px;
+    margin-left: 34%;
+    color: #6f7074;
+}
+
+.ps-rules .rulesettingList .rslistItem {
+    width: 100%;
+}
+
+.ps-rules .rulesettingListitem .rslistsubitem {
+    width: 50%;
+}
+
+.ps-rules .switch_viewStyle {
+    font-size: 12px;
+    font-size: 14px;
+    font-weight: normal;
+    position: relative;
+    top: -12px;
+    left: 42%;
+    padding: 3px;
+    padding: 4px 8px;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #0889c4;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.ps-rules .show-rules-list+.tooltip {
+    font-size: 12px !important;
+    z-index: 9999;
+    top: 2px !important;
+    right: 0;
+    left: auto !important;
+    width: auto;
+    min-width: 78px;
+    min-width: 100px;
+    opacity: 1;
+}
+
+.ps-rules .show-rules-list+.tooltip.right .tooltip-arrow, .ps-rules .cursor_Pointer+.tooltip.right .tooltip-arrow {
+    border-right: 0 !important;
+}
+
+.ps-rules .show-rules-list+.tooltip.right .tooltip-inner, .ps-rules .cursor_Pointer+.tooltip.right .tooltip-inner {
+    color: #707070 !important;
+    border: 1px solid #e7e7e7;
+    border-radius: 0 !important;
+    background: #fff !important;
+    padding: 5px;
+}
+
+.ps-rules .formControl-checkbox span.rule-alarm-span {
+    background: url('../images/checkbox.png') 0 -16px;
+    background-repeat: no-repeat;
+    cursor:pointer;
+}
+
+.ps-rules .formControl-checkbox input:checked+span {
+    width: 16px !important;
+    background: url('../images/checkbox.png') 0 0;
+    background-repeat: no-repeat;
+}
+.ps-rules .formControl-checkbox input:checked + span:hover{
+background: url(../images/checkbox.png) no-repeat 0 0 !important;
+}
+.ps-rules .rule-alarm-span {
+    display: block !important;
+    width: 215px !important;
+    padding-top: 0 !important;
+}
+
+.ps-rules .rule-alarm-div {
+    /* right: 0 ; */
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    width: 270px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ps-rules .rule-alarm-div {
+        right: -95px;
+    }
+    .rules_icon_hide {
+        top: 20px !important;
+}
+   .mpc .selectize-control .selectize-dropdown [data-selectable], .mpc .selectize-control .selectize-dropdown .optgroup-header {
+        border-bottom: none !important;
+        padding: 8px !important;
+        padding-left: 14px !important;
+}
+
+
+}
+
+.ps-rules #ruleLimitDialog {
+    left: 57%;
+    width: 359px;
+}
+
+.ps-rules #ruleLimitDialog .ruleLimitText {
+    font-size: 15px;
+    padding-bottom: 32px;
+}
+
+.ps-rules #ruleLimitDialog .modal-footer {
+    border-top: 1px solid #bababa;
+}
+
+.ps-rules #ruleLimitDialog .modal-footer button {
+    margin-top: 14px;
+}
+
+.ps-rules .timeConditionWithin {
+    font-size: 15px;
+    display: block;
+    color: #606060;
+}
+
+.ps-rules #ruleeditbody .field.timeConditionField {
+    display: inline;
+    width: 100px !important;
+}
+
+.ps-rules #timeInSec {
+    width: 70%;
+}
+
+.ps-rules #timeInMin {
+    width: 70%;
+}
+
+@media print {
+    .ps-rules.universal-rules-listContainer {
+        border-left: 1px solid #e7e7e7;
+        box-shadow: none !important;
+    }
+    .ps-rules .rulelistfirstheader.layoutrow {
+        border-left: 1px solid #e7e7e7;
+        box-shadow: none !important;
+    }
+    .ps-rules .rulelistsecondheader.layoutrow {
+        border-left: 1px solid #e7e7e7;
+        box-shadow: none !important;
+    }
+}
+
+.ps-rules.ruleconfigContainer input[readonly], .ps-rules.ruleconfigContainer select[readonly] {
+    color: #0889c5 !important;
+}
+
+.ps-rules .rulesdivider-line {
+    border-right: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 1824px) {
+    .ps-rules.universal-rules-listContainer .leftPaneheading {
+        min-width: 100%;
+    }
+    .ps-rules.universal-rules-listContainer .RulesList ul {
+        min-width: 100%;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .ps-rules #ruleeditbody .field {
+        width: 100% !important;
+    }
+    .ps-rules.ruleconfigContainer .switch_options {
+        position: relative !important;
+        top: 14px;
+        display: block;
+        width: 81.1px;
+        margin-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .ps-rules.ruleconfigContainer .borderRight {
+        bottom: 0 !important;
+        /*        min-height: 462px;*/
+        overflow: auto;
+        /*        height: auto;*/
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+    }
+    .ps-rules .icon_removeRuletimepicker {
+        top: 63px;
+        right: 244px;
+        background: url(../images/sprite_icons.png) no-repeat -191px -6px;
+    }
+    .ps-rules.ruleconfigContainer#ruleconfigContainer .rulefield.field.right-inner-addon {
+        margin-top: 20.5px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ps-rules.ruleconfigContainer .borderRight {
+        bottom: 0 !important;
+        overflow: auto;
+        /*        height: auto;*/
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+        /*        min-height: 556px;*/
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ps-rules.ruleconfigContainer .borderRight {
+        bottom: 0 !important;
+        overflow: auto;
+        /*        height: auto;*/
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+        /*        min-height: 543px;*/
+    }
+}
+
+@media (min-width: 1200px) {
+    .ps-rules.ruleconfigContainer .borderRight {
+        bottom: 0 !important;
+        overflow: auto;
+        /*        height: auto;*/
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+        overflow-x:hidden;
+        /*        min-height: 543px;*/
+    }
+}
+
+@media (min-width: 1900px) {
+    .ps-rules.ruleconfigContainer .borderRight {
+        bottom: 0 !important;
+        overflow: auto;
+        /*        height: auto;*/
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+        /*        min-height: 914px;*/
+    }
+}
+
+.ps-rules #TIMECONDITIONSETTINGS_FOR_IFTHIS .ui-spinner {
+    width: 104px;
+}
+
+.ps-rules #ruleeditbody .field .floatLblDn {
+    overflow: hidden;
+    max-width: 174px;
+    height: 19px;
+    white-space: nowrap;
+}
+
+.ps-rules .header-menu-two-dashboard {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 79px;
+    margin-top: 12px;
+    padding: 9px 12px 0 11px !important;
+    border-collapse: separate;
+    border-bottom: 1px solid #e7e7e7;
+    box-shadow: 0 2px 6px #e7e7e7;
+}
+
+.ps-rules .header-menu-one-dashboard {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 88px;
+    margin-top: 0;
+    padding: 16px 12px 0 11px !important;
+    border-collapse: separate;
+    border-bottom: 1px solid #e7e7e7;
+    box-shadow: 0 2px 6px #e7e7e7;
+}
+
+.ps-rules .footer-menu-dashboard {
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    padding: 17px 12px 16px 24px;
+    border-top: 1px solid #e7e7e7;
+    background-color: #fff;
+}
+
+.ps-rules .rulesdivider-line {
+    position: absolute;
+    top: 16%;
+    bottom: 0;
+    left: 48%;
+    float: left;
+    border: 1px solid #e7e7e7;
+}
+
+.ps-rules .btn-space {
+    margin-right: 10px !important;
+}
+
+.ps-rules .row-layout {
+    float: left;
+    width: 100%;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.ps-rules .rulestyle {
+    position: relative;
+    top: 0;
+    padding-left: 16px;
+}
+
+
+.ps-rules .icon_list1 {
+    top: 29px;
+    right: 1px;
+    left: auto;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+}
+
+.ps-rules .icon_list1:hover {
+    top: 29px;
+    right: 1px;
+    left: auto;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    background-color: #fff;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+ 
+       .ps-rules .icon_list1 {
+        top: 30px !important;
+        right: 1px !important;
+        left: auto !important;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+
+    .ps-rules .icon_list1:hover {
+        top: 30px !important;
+        right: 1px !important;
+        left: auto !important;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+
+     .ps-rules .icon_list1o {
+        top: 7px !important;
+        left: -1px !important;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+
+     .ps-rules .icon_list1o:hover {
+        top: 7px !important;
+    }
+     .ps-rules .icon_list1la {
+        top: 11px !important;
+        left: -1px !important;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+
+    .ps-rules .icon_list1la:hover {
+        top: 11px !important;
+        left: -1px !important;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .ruleSearchContainer input[type=search]:focus {
+    width: 320px !important;
+    height: 32px;
+    margin-top: 7px;
+    margin-left: 14px;
+    cursor: auto;
+    color: #303030;
+    border: 1px solid #66afe9 !important;
+    background-position: 98%;
+    -ms-background-position-y: 3.5px;
+    }
+
+}
+
+
+.ps-rules .icon_list1o {
+    top: 9px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+}
+
+.ps-rules .icon_list1o:hover {
+    top: 9px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    background-color: #fff;
+}
+
+.ps-rules .icon_list1la {
+    top: 10px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+}
+
+.ps-rules .icon_list1la:hover {
+    top: 10px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    background-color: #fff;
+}
+
+.ps-rules ul.devicerules {
+    padding-left: 0;
+}
+
+.ps-rules ul.devicerules-second .timeConditionWithin {
+    display: block;
+}
+
+.ps-rules ul.devicerules li {
+    width: 100%;
+    max-width: 298px;
+    margin-right: 9px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.ps-rules ul.devicerules li:last-child {
+    top: -27px;
+    left: 0;
+    display: block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.ps-rules ul.devicerulestime li:last-child {
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.ps-rules ul.devicerulestime li {
+    top: -33px;
+    display: block;
+    float: left;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.ps-rules ul.devicerulestime {
+    padding-bottom: 26px;
+    padding-left: 11px;
+}
+
+.ps-rules ul.devicerules-second {
+    padding-left: 0;
+}
+
+.ps-rules ul.devicerules-second li {
+    width: 100%;
+    max-width: 298px;
+    margin-right: 17px;
+    vertical-align: top;
+}
+
+.ps-rules ul.devicerules-second li {
+    top: -11px;
+    /* width: 100%; */
+    left: 55px;
+    vertical-align: top;
+}
+
+.ps-rules .spinner-control .ui-spinner .ui-spinner-up {
+    height: 21px !important;
+}
+
+.ps-rules .spinner-control .ui-spinner .ui-spinner-down {
+    position: absolute;
+    top: 22px;
+    height: 28px;
+}
+.ps-rules.universal-rules-listContainer .header:hover b{
+
+}
+.ps-rules .icon_removeRule {
+    top: -20px;
+    right: -20px;
+    background: url('../images/sprite_icons.png') -191px -6px;
+}
+
+.ps-rules .icon_removeRule:hover {
+    margin-top: 10px;
+    background: url(../images/sprite_icons.png) no-repeat -221px -6px; 
+}
+
+.ps-rules .icon_list1, .ps-rules .icon_list1i, .ps-rules .icon_list1o, .ps-rules .icon_list1la, .ps-rules .icon_remove, .ps-rules .icon_hide, .ps-rules .icon_added, .ps-rules .icon_user, .ps-rules .icon_listRules, .ps-rules .icon_removeRule, .ps-rules .icon_eye, .ps-rules .icon_removeRuletimepicker {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+.ps-rules .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ps-rules .row-layout {
+    float: left;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.ps-rules .txtTransform {
+    text-transform: uppercase;
+}
+
+.ps-rules .Item-State-selected {
+    background-color: #fafafa;
+}
+
+.ps-rules .icon_removeRuletimepicker {
+    top: 36px;
+    right: 279px;
+    background: url('../images/sprite_icons.png') no-repeat -191px -6px;
+}
+
+.ps-rules .icon_removeRuletimepicker:hover {
+    background: url(../images/sprite_icons.png) no-repeat -221px -6px;
+    /*    margin-top: 10px;*/
+}
+
+.ps-rules .timestyle {
+    padding-left: 18px;
+}
+
+.ps-rules .devicerulestime .labelalign {
+    vertical-align: bottom;
+}
+
+.ps-rules .devicerulestime .switchtime {
+    left: 55px;
+    margin-top: 0;
+    padding-top: 2px;
+}
+
+.ps-rules .footer-menu-dashboard .buttonGroup .btn:last-child {
+    margin-right: 10px !important;
+}
+
+.ps-rules .ruleSearchContainer input[type=search] {
+    width: 42px !important;
+    margin: 7px 0 12px -6px;
+    cursor: pointer;
+    color: transparent;
+    border: none !important;
+    background: url(../images/icon_search.png) no-repeat right;
+    background-color: rgba(255, 255, 255, 0) !important;
+    background-position: 21px center;
+    background-position-y: 5px;
+    -ms-background-position-y: 5px;
+    -webkit-background-position-y: 5px;
+    -o-background-position-y: 10px;
+}
+
+.ps-rules .ruleSearchContainer input[type=search]:focus {
+    width: 320px !important;
+    height: 32px;
+    margin-top: 7px;
+    margin-left: 14px;
+    cursor: auto;
+    color: #303030;
+    border: 1px solid #66afe9 !important;
+    background-position: 98%;
+}
+
+.ps-rules.ruleconfigContainer input[readonly], .ps-rules.ruleconfigContainer select[readonly] {
+    color: #303030 !important;
+}
+
+.ps-rules .contentWrap .Item-State-checked {
+    background-color: #fafafa !important;
+}
+
+@-moz-document url-prefix() {
+    .ps-rules.ruleconfigContainer .borderRight {
+        position: relative;
+        /* height: auto;*/
+        position: static;
+        bottom: 0 !important;
+        overflow: auto;
+        margin-top: 0 !important;
+        padding-top: 15px;
+        padding-right: 0;
+        padding-bottom: 27px;
+        padding-left: 1px;
+        border-right: 1px solid #e7e7e7;
+        /*        min-height: 429px;*/
+    }
+    .ps-rules .icon_list1 {
+        top: 29px;
+        right: 1px;
+        left: auto;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+        }
+    .ps-rules .icon_list1:hover {
+        top: 29px;
+        right: 1px;
+        left: auto;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .formControl-checkbox p {
+        position: relative;
+        top: -14px;
+        left: 27px;
+        width: 230px;
+        color: #707070;
+    }
+    @media (min-width: 1024px) {
+        .ps-rules.ruleconfigContainer .borderRight {
+            bottom: 0 !important;
+            overflow: auto;
+            /*            height: auto;*/
+            padding-top: 15px;
+            padding-right: 0;
+            padding-bottom: 27px;
+            padding-left: 1px;
+            border-right: 1px solid #e7e7e7;
+            /*            min-height: 556px;*/
+        }
+    }
+    @media (min-width: 1200px) {
+        .ps-rules.ruleconfigContainer .borderRight {
+            bottom: 0 !important;
+            overflow: auto;
+            /*            height: auto;*/
+            padding-top: 15px;
+            padding-right: 0;
+            padding-bottom: 27px;
+            padding-left: 1px;
+            border-right: 1px solid #e7e7e7;
+            /*            min-height: 543px;*/
+        }
+    }
+    @media (min-width: 1900px) {
+        .ps-rules.ruleconfigContainer .borderRight {
+            bottom: 0 !important;
+            overflow: auto;
+            /*            height: auto;*/
+            padding-top: 15px;
+            padding-right: 0;
+            padding-bottom: 27px;
+            padding-left: 1px;
+            border-right: 1px solid #e7e7e7;
+            /*            min-height: 914px;*/
+        }
+    }
+}
+
+.ps-rules .formControl-checkbox p {
+    position: relative;
+    top: -14px;
+    left: 27px;
+    width: 230px;
+    color: #707070;
+    cursor: pointer;
+}
+.ps-rules .icon_list1i {
+    top: 9px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    background-color: #fff;
+    }
+.ps-rules .icon_list1i:hover {
+    top: 9px;
+    left: -1px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    background-color: #fff;
+    }
+
+@-moz-document url-prefix() {
+    .ps-rules .icon_list1 {
+        top: 29px;
+        right: 1px;
+        left: auto;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .icon_list1:hover {
+        top: 29px;
+        right: 1px;
+        left: auto;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .icon_list1o {
+        top: 9px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .icon_list1o:hover {
+        top: 9px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .icon_list1i {
+        top: 10px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .icon_list1i:hover {
+        top: 10px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+    .ps-rules .formControl-checkbox p {
+        position: relative;
+        top: -16px;
+        left: 27px;
+        width: 230px;
+        color: #707070;
+    }
+}
+
+.ps-rules .row-full {
+    top: 0 !important;
+    bottom: 0 !important;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ps-rules .ruleheader .subruleheader, .ps-rules .ruleheader .mainruleheader {
+    position: relative;
+    top: 16px;
+    margin-top: 47px;
+}
+
+.ps-rules mainhead {
+    position: relative;
+    top: 16px;
+    margin-top: 47px;
+}
+
+.ps-rules #ruleconfigContainer .switch_options span {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 8px 8px 4px 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #0889c4;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fff;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.ps-rules .right-inner-addon label {
+    color: #606060 !important;
+}
+
+@media (max-device-width: 1297px) {
+    .ps-rules .icon_list1o {
+        top: 9px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+
+    .ps-rules #ruleeditbody .field {
+        top: -2px;
+        width: 100%;
+        max-width: 298px;
+        padding-bottom: 20px;
+    }
+    .ps-rules .icon_removeRule {
+        top: -40px;
+        right: -32px;
+        background: url('../images/sprite_icons.png') no-repeat -191px -6px;
+    }
+    .ps-rules .icon_removeRule:hover {
+        margin-top: 10px;
+        background: url(../images/sprite_icons.png) no-repeat -221px -6px;
+    }
+}
+
+.ps-rules .icon_list1 {
+    cursor: pointer !important;
+}
+
+.ps-rules .devicerules .spaceBottomStyle {
+    padding-left: 2px;
+}
+
+.ps-rules .show-rules-list .icon_listRules {
+    right: 18px;
+    background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+    top:8px;
+    cursor:pointer;
+}
+.ps-rules .show-rules-list .icon_listRules:hover {
+    right: 18px;
+    background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+    top:8px;
+    cursor:pointer;
+}
+
+.ps-rules input.form-control {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: normal !important;
+    width: 100% !important;
+    padding: 7px 30px 6px 10px !important;
+    color: #606060;
+    border: 1px solid #d0d0d0 !important;
+    outline: none !important;
+    background-color: #fff !important;
+}
+
+#ruleconfigContainer .switch_options span {
+    font-size: 13px;
+    font-weight: normal;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 9px 8px 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #0889c4;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fff;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.rules_icon_hide {
+    top: 17px;
+    cursor:pointer;
+}
+
+.ps-rules.ruleconfigContainer .right-inner-addon>span {
+    width: 24px!important;
+    padding: 28px 12px 6px 12px!important;
+    cursor: pointer;
+    top: 20px;
+}
+.ps-rules.ruleconfigContainer .right-inner-addon>span.input-group-addon-left {
+    width: 24px !important;
+    padding: 12px 12px 23px 12px !important;
+    cursor: pointer;
+    top: 19px;
+}
+.ps-rules.ruleconfigContainer ul#ul_ruleconfig li {
+    margin-left: 10px;
+}
+
+div#div_devicecntr {
+    padding-left: 13.5px;
+}
+
+.ps-rules.selectize-control.form-control.single {
+    float: left !important;
+}
+
+.ps-rules.ruleconfigContainer .spinner-control .ui-spinner-input {
+    margin: 0;
+    margin-right: 22px;
+    margin-left: 0;
+    padding: 0;
+    vertical-align: middle;
+    color: #0889c5;
+    border: none;
+}
+
+.ps-rules.ruleconfigContainer .spinner-control .ui-spinner-button {
+    font-size: .5em;
+    position: absolute;
+    right: 15px;
+    display: block;
+    overflow: hidden;
+    width: 16px;
+    height: 50%;
+    margin: 0 -13px 0 0;
+    padding: 0;
+    cursor: default;
+    text-align: center;
+}
+.mpc .selectize-control {
+    float: left;
+}
+.ps-rules.universal-rules-listContainer .header:hover span.rule_align {
+    cursor: pointer;
+    color: #1792e5;
+}
+.ps-rules.universal-rules-listContainer .header:hover b.rules_icon_hide {
+    background: url(../Images/sprite_icons.png) no-repeat -216px -250px;
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+.ps-rules.universal-rules-listContainer body {
+    line-height: 0 !important;   
+}
+.formcontrol .selectize-input > * {
+    padding: 0 0 0 0 !important;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ps-rules.ruleconfigContainer .right-inner-addon>span {
+        width: 24px!important;
+        padding: 28px 12px 6px 12px!important;
+        cursor: pointer;
+        top: 24px;
+    }
+    .ps-rules .icon_list1i {
+        top: 8px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -191px -41px;
+        background-color: #fff;
+    }
+
+    .ps-rules .icon_list1i:hover {
+        top: 8px;
+        left: -1px;
+        background: url('../Images/sprite_icons.png') no-repeat -221px -41px;
+        background-color: #fff;
+    }
+}
+.ps-rules-popover input[type="checkbox"] {
+    display: none !important;
+}

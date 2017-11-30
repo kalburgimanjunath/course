@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="UTF-8">
+  <title>Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" href="images/fav.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="content/css/bootstrap-3.3.7-dist/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="content/css/selectize.css">
+  <link href="content/css/jquery.jscrollpane.css" rel="stylesheet" type="text/css">
+  <link href="content/css/base.css" rel="stylesheet" type="text/css">
+  <link href="content/css/master.css" rel="stylesheet" type="text/css">
+  <link href="content/css/responsive.css" rel="stylesheet" type="text/css" media="all">
+  <link href="content/css/checkbox.css" rel="stylesheet" type="text/css" media="all">
+  <link href="content/css/ispcommon.css" rel="stylesheet" type="text/css">
+  <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+  <link href="content/css/report.css" rel="stylesheet" type="text/css">
+  <script src="scripts/jquery-2.2.4.min.js"></script>
+  <script src="scripts/jquery.jscrollpane.min.js"></script>
+  <script src="scripts/jquery.mousewheel.js"></script>
+  <script src="content/js/bootstrap.min.js"></script>
+  <script src="scripts/selectize.js"></script>
+  <script src="scripts/jquery.slimscroll.min.js"></script>
+  <script src="scripts/master.js"></script>
+</head>
+<body class="ps-page-report">
+	<!--header starts here-->
+  <header>
+    <nav class="masterhead navbar navbar-default">
+      <div class="header_left navbar-header">
+        <a href="#" class="hamburger close_menu pull-left key_cntrl"></a>
+        <div class="masterhead_logo pull-right"></div>
+      </div>
+      <div class="header_right nav navbar-nav navbar-right">
+        <a href="#" class="alarm pull-left hdr_alrm pw_icon"></a>
+        <a href="#" class="help pull-left hdr_hlp pw_icon"></a>
+      </div>
+    </nav>
+  </header> <!--header ends here-->
+  <!-- Start main-wrapper -->
+  <div class="row ps-row ps-report-wrapper"> 
+  	<div class="people_group sidebar-left col-md-3 col-lg-3">
+  		<div class="col-md-12 ps-report-title"> 
+    		<h1> November 2016 </h1>
+  		</div>
+  		<div class="col-md-12 col-lg-12 ps-report-sub-title">
+  			<h1> Overview </h1>
+  		</div>
+  	</div>
+  	<!--Start main-container-->
+  	<div class="col-md-9 col-lg-9 ps-main-container ps-report-list"> 
+  		<div class="main-container-header">
+  			<h1 class="col-md-6 padding">Scheduled</h1>
+  			<div class="col-md-6 card-header">
+	  			<span class="icon icon-delete pull-right">delete</span>
+	  			<a href="#" class="">	
+						<span class="icon icon-add pull-right">add</span>
+					</a>	
+					<span class="icon-search pull-right">
+						<input type="search" class="form-control" placeholder="Search report"/>
+						<span class="foucs-icon-search"></span>
+					</span>
+				</div>	
+  		</div>
+  		<!--Start ps-report-wrap-detail-->
+  		<div class="ps-report-wrap-detail">
+  		    <div class="content-wrapper">
+  		        <div class="report-title-wrapper">	
+			  		<div class="ps-report-label">
+					    <div class="col-md-3">
+					      <div class="ps-checkbox checkbox pull-left">
+					        <label class="control-label">
+					        	<input type="checkbox"/>
+					        	<span></span>
+					        </label>
+					        <span>Name</span>
+					       </div>
+					    </div>
+					    <div class="col-md-2 ps-col-2">
+					      <a class="ps-a" href="#">Type<span class="down-arrow"><span></a>
+					    </div>
+					    <div class="col-md-2 ps-col-2">
+					      <div class="report-header-label">Schedule</div>
+					    </div>
+					    <div class="col-md-2 ps-col-2">
+					      <div class="report-header-label">Status</div>
+					    </div>
+					    <div class="col-md-2 ps-col-2">
+					      <div class="report-header-label">Delivery(Success/Fail)</div>
+					    </div>       
+				 		</div>
+				 		<!--Start ps-report-detail-->
+					  <div class="ps-report-details  scroll-x scroll-y"> 
+					   	<div class="row-wrap">
+						    <div class="col-md-3">
+						      <div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>
+						    <div class="col-md-2 ps-col-2">
+						      <span class="report-type">Event report</span>
+						    </div>
+						    <div class="col-md-2 ps-col-2">
+						      <span class="schedule">Daily : 10:29:10</span>
+						    </div>
+						    <div class="col-md-2 ps-col-2">
+						      <span class="disable">Disable</span>
+						    </div>
+						    <div class="col-md-2 ps-col-2">
+						      <span class="ps-delivery ps-fail ps-pending">8/3</span>
+						    </div>
+						    <div class="col-md-1 ps-col-2">
+						      <a href="#"><span class="icon-edit">edit</span></a>
+						    </div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>  
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div> 
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div> 
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div> 
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div> 
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div> 
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="disable">Disable</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>  
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="delivery">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">>edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>  
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>  
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>  
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>  
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>
+						  <div class="row-wrap">
+						  	<div class="col-md-3">
+						  		<div class="checkbox ps-checkbox pull-left">
+						      	<label class="control-label">
+					        		<input type="checkbox"/>
+					        		<span></span>
+					        	</label>
+						       	<a class="ps-a" href="#">Event Report Test 01</a>
+						      </div>
+						    </div>  
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="report-type">Event report</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="schedule">Daily : 10:29:10</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="active">Active</span>
+						  	</div>
+						  	<div class="col-md-2 ps-col-2">
+						  		<span class="ps-delivery ps-fail ps-pending">8/3</span>
+						  	</div>
+						  	<div class="col-md-1 ps-col-2">
+						  		<a href="#"><span class="icon-edit">edit</span></a>
+						  	</div>
+						  </div>       
+					  </div> <!--End ps-report-detail-->
+			        </div>  <!--End ps-report-wrap-detail-->
+			    </div> <!-- End Title wrapper --> 
+			</div>  <!-- End Content Wrapper-->
+		</div> <!--End main-container--> 
+  </div> <!--End main-wrapper-->
+  <script src="scripts/custom.js"></script>
+</body>
+</html>

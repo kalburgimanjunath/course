@@ -1,0 +1,437 @@
+@color_1: #FFF;
+@color_2: #303030;
+@color_3: #1792e5;
+@color_4: #606060;
+@color_5: #808080;
+@font_family_1: 'HoneywellSansWeb-Bold';
+@font_family_2: 'HoneywellSansWeb-Medium';
+@background_color_1: #a0a0a0;
+@background_color_2: #fff;
+@border_color_1: #fff;
+@border_color_2: #e7e7e7;
+
+/*version 1.0.1*/
+/*.schedule-root .viewmode input, .schedule-root .viewmode textarea, .schedule-root .viewmode input[type="checkbox"], .schedule-root .viewmode input[type="radio"],.schedule-root .viewmode select, .schedule-root .viewmode .ispicon_calender {
+    background-color: initial;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: none;
+}*/
+/*.schedule-root .viewmode .btn-footer {
+    display: none;
+}*/
+/*.schedule-root .viewmode .ispicon_calender{
+    background: transparent;
+}*/
+/*.schedule-root .cardlistview .list-group-item.active, .schedule-root .cardlistview .list-group-item.active:hover, .schedule-root .cardlistview .list-group-item.active:focus, .schedule-root .cardlistview .list-group-item:hover {
+        background-color: #e1eff9;
+        color: #606060;
+        border-color: #e7e7e7;
+        cursor:pointer;
+    }*/
+/* AREA SETTINGS */
+/*body {
+    overflow-y: auto !important;
+}*/
+.schedule-root {
+	.scroll-x {
+		overflow-x: auto;
+	}
+	.scroll-y {
+		overflow-y: scroll;
+	}
+	.cardlistview {
+		.inactive {
+			font-family: @font_family_1 !important;
+			word-break: initial;
+			font-size: 10px;
+			line-width: 100;
+			line-height: 100%;
+			color: @color_1;
+			display: inline-block;
+			background-color: @background_color_1;
+			text-transform: capitalize;
+			max-width: 43%;
+			padding: 2px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		padding: 0px;
+		position: absolute;
+		left: 24%;
+		top: 0;
+		bottom: 0;
+		.nav.nav-tabs {
+			margin-left: 20px;
+		}
+		.list-group-item {
+			border-radius: 0;
+		}
+		.name {
+			font-family: @font_family_1 !important;
+			font-size: 15px;
+			color: @color_2;
+		}
+		.sensorsList {
+			font-family: @font_family_1 !important;
+			font-size: 14px;
+			color: @color_5;
+			width: 100%;
+			float: left;
+			display: inline-block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			text-align: left;
+		}
+		.listcount {
+			background: #f2f2f2;
+			margin-right: 0;
+			padding: 4px 0px;
+		}
+	}
+	.viewmode {
+		.profile-pic {
+			input[type="file"] {
+				pointer-events: none;
+			}
+		}
+		.checkbox {
+			pointer-events: none;
+		}
+		input {
+			font-family: @font_family_2 !important;
+			font-size: 14px;
+			color: @color_4;
+			pointer-events: none;
+		}
+		textarea {
+			font-family: @font_family_2 !important;
+			font-size: 14px;
+			color: @color_4;
+			pointer-events: none;
+		}
+		.btn-footer {
+			display: none;
+		}
+	}
+	.scheduleOverview {
+		.time-chart {
+			.viewmode {
+				pointer-events: none;
+			}
+		}
+	}
+	.scheduleView {
+		.list-group-item.readonly {
+			background: #f5f5f5;
+		}
+	}
+	.listStickyHeader {
+		padding: 6px 17px;
+		position: absolute;
+		top: 136px;
+		width: 100%;
+	}
+	.schedule-root {
+		.cardlistview {
+			.nav.nav-tabs {
+				margin-left: 0;
+				padding-left: 20px;
+			}
+		}
+	}
+	.selectController {
+		width: 100%;
+		padding: 15px 20px;
+		border-top: 1px solid #e7e7e7;
+	}
+	.listOverview {
+		border-left: 1px solid #e7e7e7;
+		.headerTitle {
+			font-family: @font_family_1 !important;
+			color: @color_2;
+			margin-left: 20px;
+		}
+		.sensorsTab {
+			max-height: 400px;
+		}
+		.settingsTab {
+			max-height: 400px;
+		}
+	}
+	.areaView {
+		.sensorsTab {
+			.table {
+				>thead {
+					>tr {
+						>th {
+							border-bottom: 0 none;
+						}
+					}
+				}
+			}
+			span.name {
+				font-family: @font_family_1 !important;
+				color: @color_3;
+				font-size: 14px;
+			}
+			span.sensorsid {
+				font-family: @font_family_2 !important;
+				color: @color_4;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			table {
+				th {
+					font-family: @font_family_1 !important;
+					font-size: 14px;
+				}
+				td {
+					font-family: @font_family_2 !important;
+					font-size: 14px;
+					span {
+						font-family: @font_family_2 !important;
+						font-size: 14px;
+					}
+				}
+			}
+			.ispicon {
+				margin-top: 10px;
+			}
+			.sensorsid {
+				margin-left: 10px;
+			}
+			.name {
+				margin-left: 10px;
+			}
+			.ispicon_collapse {
+				margin-left: 15px;
+			}
+		}
+		.table {
+			td {
+				border-top: 1px solid #f0f0f0 !important;
+			}
+		}
+		.cardlistview {
+			.isppagetitle {
+				font-family: @font_family_1 !important;
+				color: @color_2;
+				margin-left: 25px;
+				margin-right: 20px;
+			}
+		}
+		.listOverview {
+			.isppagetitle {
+				font-family: @font_family_1 !important;
+				color: @color_2;
+				margin-left: 25px;
+				margin-right: 20px;
+				margin-left: 9px;
+				margin-right: 24px;
+			}
+		}
+		.list-group-item {
+			padding: 10px 20px;
+		}
+		.checkbox {
+			float: left;
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+			label {
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+	.addArea {
+		.table {
+			>thead {
+				>tr {
+					>th {
+						border-bottom: 0 none;
+					}
+				}
+			}
+		}
+		table {
+			td {
+				border-top: 1px solid #e7e7e7 !important;
+			}
+		}
+		.ispicon {
+			margin-top: 10px;
+		}
+		.name {
+			margin-left: 10px;
+		}
+		.sensorsid {
+			margin-left: 10px;
+		}
+		.checkbox {
+			input[type="checkbox"] {
+				opacity: 1 !important;
+				margin-top: 0;
+			}
+		}
+		.modal-dialog {
+			width: 700px;
+			padding-top: 10px;
+		}
+		.panel-body {
+			padding: 5px 15px 0 15px;
+		}
+	}
+	.sensorsList {
+		>span {
+			&+span {
+				margin-left: 5px;
+			}
+		}
+	}
+	.addArea.ispmodal {
+		left: 0 !important;
+	}
+	.listHeader {
+		font-family: @font_family_1 !important;
+		color: @color_2;
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		padding: 15px 0;
+		margin: 0 15px 10px 15px;
+		font-size: 18px;
+		clear: both;
+		&+hr {
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+	}
+	.btn-group {
+		button.moveArea {
+			margin-left: 10px !important;
+		}
+	}
+	.btn-footer {
+		margin-top: 10px;
+		padding-top: 10px;
+		left: -16px;
+		background-color: @background_color_2;
+		border-color: @border_color_1;
+	}
+	.bold {
+		font-family: @font_family_1 !important;
+	}
+	.areaSection {
+		.areaContent {
+			>p {
+				margin: 20px 10px 20px 15px;
+			}
+		}
+		.link {
+			>.add {
+				font-size: 60px;
+			}
+			color: @color_3;
+		}
+		.areaBox {
+			padding: 70px;
+			height: 200px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.contentContainer {
+			border-color: @border_color_2;
+			margin: 10px 0;
+			padding: 10px;
+			background: #fff;
+		}
+		.form-group {
+			padding-left: 0;
+		}
+		.checkbox {
+			input[type="checkbox"] {
+				opacity: 1;
+				z-index: 0;
+			}
+			input[type="radio"] {
+				opacity: 1;
+				z-index: 0;
+			}
+			label {
+				&::before {
+					border: 0;
+				}
+			}
+		}
+	}
+	.ispheaderbar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	.margin10 {
+		margin-top: -10px !important;
+	}
+}
+#schedule-view {
+	.cardlistview {
+		left: 24%;
+	}
+}
+.togglemenu {
+	#schedule-view {
+		.cardlistview {
+			left: 70px;
+		}
+	}
+	.scheduleOverview {
+		left: 30%;
+		width: 70%;
+	}
+}
+.areaListRow {
+	border-radius: 0;
+}
+@media (max-width: 1366px) and (min-width: 1441px) {
+	.schedule-root {
+		.listOverview {
+			.sensorsTab {
+				max-height: 400px;
+			}
+			.settingsTab {
+				max-height: 400px;
+			}
+		}
+	}
+}
+@media screen and (min-width: 1920px) {
+	.schedule-root {
+		.listOverview {
+			.sensorsTab {
+				max-height: 804px;
+			}
+			.settingsTab {
+				max-height: 804px;
+			}
+		}
+	}
+}
+@monIE:"screen\0";
+@media @monIE{
+	.schedule-root {
+		.ispicon.inverse {
+			&::before {
+				width: 20px;
+				left: 24px;
+				top: 43px;
+			}
+		}
+	}
+}

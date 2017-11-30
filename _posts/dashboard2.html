@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Styles/header.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/alarms.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/Areas.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/dcmoverview.css"> -->
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $("#edit").click(function(){
+                $(".contentContainer").removeClass("viewmode");
+            });
+            // $(".wrapper:not('#menu-toggle')").click(function (e) {
+            //     e.preventDefault();
+            //     $("#sidebar-wrapper").toggleClass("active");
+            // });
+          
+            //$('.SlectBox').SumoSelect();
+
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+
+
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+
+        function onMenuItemSelect(itemName) {
+            $('#menu-close').click(); require('presenter').transitionTo($('#ispviews'));
+            switch (itemName) {
+                case "SiteOverview":
+                    blockUI();
+                    ajaxRequest('POST', $('#siteurl').val() + 'AccountMgmt/GetAccountInfo').done(function (result) {
+                        unblockUI();
+                        Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName, id: result.data.Id });
+                    });
+                    break;
+                case "AddSite":
+                    Honeywell.ISP.Navigation.navigate(['26', '27'], 'hamburgermenuselected', { action: itemName });
+                    break;
+            }
+        }
+
+    </script>
+    <script src="sumo-select/jquery.sumoselect.js"></script>
+    <link href="sumo-select/sumoselect.css" rel="stylesheet" />
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.SlectBox').SumoSelect();
+    });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+                    
+                    
+<div id="">
+    <div id="navbar" class="navbar-collapse collapse ispheaderbar hide">
+
+        <ul class="nav hide navbar-nav navbar-left">
+            <li>
+                <a id="menu-toggle" href="#" class="toggle">
+                    <span class="sidebar-brand">
+                        <span class="ispicon ispicon_handbar">
+                        </span>
+                        <span>Eagle</span>
+                    </span>
+                </a>
+                <nav id="sidebar-wrapper" class="">
+                    
+                    <ul class="sidebar-nav" id="ispheader">
+                        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">X</a>
+                        <li class="sidebar-brand card-item" data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <img src="Content/images/Honeywell-logo-Wht-sm.png" width="120">
+                            </a>
+                            <p data-bind="text: $data.PageName"></p>
+                        </li>
+                        <li data-bind="click: $root.navigatepage,css:{'active':$data.IsPageSelected}">
+                            <a href="#top" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_dashboard"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+
+                            <a class="dropdown-toggle" href="firsttimelandingpage.html">
+                                <span class="ispicon ispicon_accounts"></span>
+                                Accounts </span>
+                            </a>
+                           <!--  <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a ><span class="ispicon ispicon_plus"></span>Add New Account</a></li>
+                                <li><a href="dcm.html"><span class="ispicon ispicon_overview"></span>Account Overview</a></li>
+                                <li><a href="customer-list.html" ><span class="ispicon ispicon_overview"></span>Customer List</a></li>
+                            </ul> -->
+                            
+                        </li>
+                       
+                        <li>
+                                <a href="alarms.html">
+                                    <span class="ispicon ispicon_alarmsDefault"></span>Alarms
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#about" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_utility"></span>
+                                Utility Tools
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="ispicon ispicon_company"></span>
+                                My Company <span class="ispicon ispicon_downarrow pull-right"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="user-management.html">Users</a></li>
+                                <li><a href="dcm.html">Roles</a></li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#portfolio" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_centralStation"></span>
+                                Central Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" onclick="$(&quot;#menu-close&quot;).click();">
+                                <span class="ispicon ispicon_sales"></span>
+                                Sales and Support
+                            </a>
+                        </li>
+                        
+                        
+
+                    </ul>
+                        <div class="menu_user_sec_logout">
+                            <div class="menu_user_sec clearfix">
+                                <div class="menu_user_img">
+                                    <img src="http://lorempixel.com/100/100/people/9/" alt="Siva Baghat">
+                                </div>
+
+                                <div class="menu_user_details col-md-8">
+                                    <h3>Siva Baghat</h3>
+                                    <span>Business Owner</span>
+
+                                </div>
+                                <span class="ispicon ispicon_logout push-right"></span>
+
+                            </div>
+                           <!--  <div class="user_logout">
+                                <a href="#">Logout</a>
+                            </div> -->
+                        </div>
+                </nav>
+
+            </li>
+
+        </ul>
+        <div class="pull-right col-xs-4 ispheadersearch nopadding ">
+               
+                <form>
+                    <div class="col-xs-11 pull-left">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span id="search_concept"><span class="ispicon ispicon_accounts"></span> <span class="caret"></span>
+                                </span></button>
+                                <ul class="dropdown-menu ispmenu" role="menu">
+                                  <li><a href="#contains">Contains</a></li>
+                                  <li><a href="#its_equal">It's equal</a></li>
+                                  <li><a href="#greather_than">Greather than &gt;</a></li>
+                                  <li><a href="#less_than">Less than &lt; </a></li>
+                                  <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control ispsearch" name="x" placeholder="Search...">
+                            <span class="input-group-btn ">
+                                <button class="btn btn-default searchbtn" type="button"><span class="ispicon ispicon_search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 pull-right icons">
+                        <span class="ispicon ispicon_alarmsDefault"></span>
+                    </div>
+                            
+                </form>
+        </div>
+
+
+    </div>
+    <div>
+        <nav class="navbar navbar-fixed-top" id="header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div id="sidebar-toggle-button">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+                <div class="brand">
+                    <a href="/samples/dashboards/web-analytics-real-time/">
+                        <span class="hidden-xs-down m-r-3">Web Analytics </span><span class="lead">Real Time</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- /header -->
+
+    <!-- sidebar -->
+    <div class="sidebar-toggle hide" id="sidebar">
+        <ul class="nav nav-sidebar">
+            <li>
+                <a href="/samples/dashboards/web-analytics-real-time/" class="active">
+                    <i class="fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Real Time</span>
+                </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="/samples/dashboards/web-analytics-real-time/overview/">
+                    <i class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i>
+                    <span>Overview</span>
+                </a>
+            </li>
+            <li role="separator" class="divider"></li>
+        </ul>
+    </div>
+    <!-- /sidebar -->
+
+    <!-- page-content-wrapper -->
+    <div class="page-content-toggle" id="page-content-wrapper">
+        <div class="container-fluid">
+
+            <!-- 1st row -->
+            <div class="row m-b-2 hide">
+                <div class="col-lg-4">
+                    <div class="card card-block">
+                        <h4 class="card-title">Active Users</h4>
+                        <div id="users-device-doughnut-chart"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-block">
+                        <h4 class="card-title">Medium</h4>
+                        <div id="users-medium-pie-chart"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-block">
+                        <h4 class="card-title">Categories</h4>
+                        <div id="users-category-pie-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /1st row -->
+
+           
+
+            <!-- 3rd row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-block col-lg-6">
+                        <h4 class="card-title">Page Visits</h4>
+                        <div id="users-state-bar-chart"></div>
+                    </div>
+                     <div class="col-lg-6">
+                        <div class="card card-block" data-toggle="modal" data-target="#deletebulk">
+                            <h4 class="card-title m-b-2">Statictics of Page Visits</h4>
+                            <div id="page-views-per-second-column-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /3rd row -->
+
+             <!-- 2nd row -->
+            <div class="row">
+                <div class="col-lg-6 hide">
+                    <div class="card card-block">
+                        <h4 class="card-title m-b-2">Page Views Per Minute</h4>
+                        <div id="page-views-per-minute-column-chart"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card card-block">
+                        <h4 class="card-title m-b-2"></h4>
+                        <!-- <div id="page-views-per-second-column-chart"></div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- /2nd row -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /page-content-wrapper -->
+
+    </div>
+     <div id="deletebulk" style="display:block hide" class="modal fade ispmodal deletebulk in" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <style>
+                
+
+
+            </style>
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Page wise Error Trends</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-11 deletebulk">
+                             
+                                <div class="row">
+                                    
+                                    <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                    <script type="text/javascript" src="Scripts/real-time.js"></script>
+                                    <img src="https://s-media-cache-ak0.pinimg.com/originals/be/00/1d/be001dc1e64befa71864227600907889.gif" width="102%" height="80%"/>
+                                    
+                                </div>
+                               
+                                 
+                            </div>
+                        </div>  
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    <!-- Navigation -->
+    <input type="hidden" id="siteurl" value="/MPC/">
+</div>
+
+<script>
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    
+
+</script>
+
+                    
+                </div>
+
+</body>
+</html>

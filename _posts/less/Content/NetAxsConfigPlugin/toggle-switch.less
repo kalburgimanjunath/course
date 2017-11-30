@@ -1,0 +1,540 @@
+@color_1: white;
+@color_2: #333;
+@color_3: #868686;
+@color_4: #6f7074;
+@color_5: #0889c4;
+@color_6: #606060;
+@color_7: #fff;
+@background_color_1: #2d3035;
+@background_color_2: #70c66b;
+@background_color_3: #38a3d4;
+@background_color_4: #f5e560;
+@background_color_5: #464747;
+@background_color_6: #666;
+@background_color_7: #0e88b1;
+@background_color_8: white;
+@background_color_9: #fafafa;
+@background_color_10: #fff;
+@background_color_11: #0889c4;
+@border_color_1: #53d76a;
+
+/*
+ * CSS TOGGLE SWITCHES
+ * Unlicense
+ *
+ * Ionuț Colceriu - ghinda.net
+ * https://github.com/ghinda/css-toggle-switch
+ *
+ */
+/* Toggle Switches
+ */
+/* Shared
+ */
+/* Checkbox
+ */
+/* Radio Switch
+ */
+/* Hide by default
+ */
+/* We can't test for a specific feature,
+ * so we only target browsers with support for media queries.
+ */
+/* Checkbox switch
+     */
+/* Radio switch
+     */
+/* Standalone Themes */
+/* Candy Theme
+     * Based on the "Sort Switches / Toggles (PSD)" by Ormal Clarck
+     * http://www.premiumpixels.com/freebies/sort-switches-toggles-psd/
+     */
+/* Android Theme
+     */
+/* iOS Theme
+     */
+/*.switch-3 {
+        width: 250px;
+    }*/
+/* Bugfix for older Webkit, including mobile Webkit. Adapted from
+ * http://css-tricks.com/webkit-sibling-bug/
+ */
+@-webkit-keyframes "webkitSiblingBugfix" {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+.switch-toggle {
+    a {
+        display: none;
+    }
+}
+.switch-light {
+    span {
+        span {
+            display: none;
+        }
+    }
+}
+span.switch-toggle.switch-ios.switch-6 {
+    width: 323px;
+}
+.switch-toggle.switch-6 {
+    label {
+        width: 16.66%;
+    }
+    a {
+        width: 16.66%;
+    }
+}
+@media only screen {
+    .switch-light {
+        position: relative;
+        display: block;
+        overflow: visible;
+        height: 30px;
+        margin-left: 100px;
+        padding: 0;
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        a {
+            display: block;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            right: 50%;
+            display: block;
+            width: 50%;
+            height: 100%;
+            padding: 0;
+        }
+        label {
+            line-height: 30px;
+            vertical-align: middle;
+            position: relative;
+            z-index: 3;
+            display: block;
+            width: 100%;
+        }
+        >span {
+            line-height: 30px;
+            vertical-align: middle;
+            position: absolute;
+            left: -100px;
+            width: 100%;
+            margin: 0;
+            padding-right: 100px;
+            text-align: left;
+            span {
+                position: absolute;
+                z-index: 5;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 50%;
+                margin-left: 100px;
+                text-align: center;
+                &:last-child {
+                    left: 50%;
+                }
+            }
+        }
+        input {
+            &:focus&~a {
+                outline: none;
+            }
+            &:focus&+label {
+                outline: none;
+            }
+            position: absolute;
+            z-index: 5;
+            opacity: 0;
+            &:checked&~a {
+                right: 0;
+            }
+        }
+    }
+    .switch-toggle {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        padding: 0 !important;
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        a {
+            display: inline-block;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            padding: 0;
+        }
+        label {
+            line-height: 18px;
+            vertical-align: middle;
+        }
+        >span {
+            line-height: 18px;
+            vertical-align: middle;
+        }
+        input {
+            &:focus&~a {
+                outline: none;
+            }
+            &:focus&+label {
+                outline: none;
+            }
+            position: absolute;
+            opacity: 0 !important;
+            &:last-of-type {
+                &:checked&~a {
+                    left: 50%;
+                }
+            }
+        }
+        input&+label {
+            position: relative;
+            z-index: 2;
+            float: left;
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            text-align: center;
+        }
+    }
+    .switch-toggle.switch-3 {
+        label {
+            width: 33.33333%;
+        }
+        a {
+            width: 33.33333%;
+        }
+        input {
+            &:checked {
+                &:nth-of-type(2)&~a {
+                    left: 33.33333%;
+                }
+                &:last-of-type&~a {
+                    left: 66.66667%;
+                }
+            }
+        }
+    }
+    .switch-toggle.switch-4 {
+        label {
+            width: 25%;
+        }
+        a {
+            width: 25%;
+        }
+        input {
+            &:checked {
+                &:nth-of-type(2)&~a {
+                    left: 25%;
+                }
+                &:nth-of-type(3)&~a {
+                    left: 50%;
+                }
+                &:last-of-type&~a {
+                    left: 75%;
+                }
+            }
+        }
+    }
+    .switch-toggle.switch-5 {
+        label {
+            width: 20%;
+        }
+        a {
+            width: 20%;
+        }
+        input {
+            &:checked {
+                &:nth-of-type(2)&~a {
+                    left: 20%;
+                }
+                &:nth-of-type(3)&~a {
+                    left: 40%;
+                }
+                &:nth-of-type(4)&~a {
+                    left: 60%;
+                }
+                &:last-of-type&~a {
+                    left: 80%;
+                }
+            }
+        }
+    }
+    .switch-candy {
+        font-weight: bold;
+        text-align: center;
+        color: @color_1;
+        border-radius: 3px;
+        background-color: @background_color_1;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, .3), 0 1px 0 rgba(255, 255, 255, .2);
+        text-shadow: 1px 1px 1px #191b1e;
+        label {
+            -webkit-transition: color .2s ease-out;
+            -moz-transition: color .2s ease-out;
+            transition: color .2s ease-out;
+            color: @color_1;
+        }
+        input {
+            &:checked&+label {
+                color: @color_2;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            }
+        }
+        a {
+            border: 1px solid #333;
+            border-radius: 3px;
+            background-color: @background_color_2;
+            background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0));
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2), inset 0 1px 1px rgba(255, 255, 255, .45);
+        }
+        >span {
+            color: @color_2;
+            text-shadow: none;
+        }
+        span {
+            color: @color_1;
+        }
+    }
+    .switch-candy.switch-candy-blue {
+        a {
+            background-color: @background_color_3;
+        }
+    }
+    .switch-candy.switch-candy-yellow {
+        a {
+            background-color: @background_color_4;
+        }
+    }
+    .switch-android {
+        color: @color_1;
+        border-radius: 1px;
+        background-color: @background_color_5;
+        box-shadow: inset rgba(0, 0, 0, .1) 0 1px 0;
+        label {
+            color: @color_1;
+        }
+        >span {
+            span {
+                -webkit-transition: all .1s;
+                -moz-transition: all .1s;
+                transition: all .1s;
+                opacity: 0;
+                font-size: 85%;
+                text-transform: uppercase;
+                &:first-of-type {
+                    opacity: 1;
+                }
+            }
+        }
+        a {
+            border-radius: 1px;
+            background-color: @background_color_6;
+            box-shadow: inset rgba(255, 255, 255, .2) 0 1px 0, inset rgba(0, 0, 0, .3) 0 -1px 0;
+        }
+    }
+    .switch-android.switch-light {
+        input {
+            &:checked&~a {
+                background-color: @background_color_7;
+            }
+            &:checked&~span {
+                span {
+                    &:first-of-type {
+                        opacity: 0;
+                    }
+                    &:last-of-type {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .switch-android.switch-toggle {
+        font-size: 85%;
+        text-transform: uppercase;
+    }
+    .switch-ios.switch-light {
+        color: @color_3;
+        a {
+            left: 0;
+            width: 30px;
+            background-color: @background_color_8;
+            border: 1px solid lightgrey;
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.025), 0 1px 4px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1);
+            left: 0;
+            width: 30px;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            border: 1px solid lightgrey;
+            border-radius: 100%;
+            background-color: @background_color_8;
+            box-shadow: inset 0 -3px 3px rgba(0, 0, 0, .025), 0 1px 4px rgba(0, 0, 0, .15), 0 4px 4px rgba(0, 0, 0, .1);
+        }
+        >span {
+            span {
+                width: 100%;
+                left: 0;
+                opacity: 0;
+                left: 0;
+                width: 100%;
+                opacity: 0;
+                &:first-of-type {
+                    opacity: 1;
+                    padding-left: 30px;
+                    padding-left: 30px;
+                    opacity: 1;
+                }
+                &:last-of-type {
+                    padding-right: 30px;
+                    padding-right: 30px;
+                }
+            }
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 100px;
+                top: 0;
+                background-color: @background_color_9;
+                border: 1px solid lightgrey;
+                border-radius: 30px;
+                -webkit-transition: all 0.5s ease-out;
+                -moz-transition: all 0.5s ease-out;
+                transition: all 0.5s ease-out;
+                box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0;
+                position: absolute;
+                top: 0;
+                left: 100px;
+                display: block;
+                width: 100%;
+                height: 100%;
+                content: '';
+                -webkit-transition: all .5s ease-out;
+                -moz-transition: all .5s ease-out;
+                transition: all .5s ease-out;
+                border: 1px solid lightgrey;
+                border-radius: 30px;
+                background-color: @background_color_9;
+                box-shadow: inset rgba(0, 0, 0, .1) 0 1px 0;
+            }
+        }
+        input {
+            &:checked {
+                &~a {
+                    left: 100%;
+                    margin-left: -30px;
+                }
+                &~span {
+                    &:before {
+                        border-color: @border_color_1;
+                        box-shadow: inset 0 0 0 30px #53d76a;
+                    }
+                    span {
+                        &:first-of-type {
+                            opacity: 0;
+                        }
+                        &:last-of-type {
+                            opacity: 1;
+                            color: @color_1;
+                        }
+                    }
+                }
+            }
+            &:checked&~a {
+                left: 100%;
+                margin-left: -30px;
+            }
+            &:checked&~span {
+                &:before {
+                    border-color: @border_color_1;
+                    box-shadow: inset 0 0 0 30px #53d76a;
+                }
+                span {
+                    &:first-of-type {
+                        opacity: 0;
+                    }
+                    &:last-of-type {
+                        opacity: 1;
+                        color: @color_1;
+                    }
+                }
+            }
+        }
+    }
+    .switch-ios.switch-toggle {
+        height: 30px;
+        padding: 0 !important;
+        color: @color_4;
+        border: 1px solid #e7e7e7;
+        border-right: none;
+        border-radius: 2px;
+        outline: none;
+        background-color: @background_color_10;
+        box-shadow: none;
+        a {
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            color: @color_5;
+            border-radius: 4px;
+            outline: none;
+            background-color: @background_color_8;
+        }
+        label {
+            padding-top: 8px;
+            cursor: pointer;
+            color: @color_6;
+            border-right: 1px solid #e7e7e7;
+            outline: none;
+        }
+    }
+    .switch-ios {
+        input {
+            &:checked {
+                &+label {
+                    color: @color_7 !important;
+                    border: none;
+                    outline: none;
+                    background-color: @background_color_11;
+                }
+            }
+        }
+    }
+}
+@media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 1280px) {
+    .switch-light {
+        -webkit-animation: webkitSiblingBugfix infinite 1s;
+    }
+    .switch-toggle {
+        -webkit-animation: webkitSiblingBugfix infinite 1s;
+    }
+}

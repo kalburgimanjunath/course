@@ -1,0 +1,2868 @@
+/* "version": "1.0.25" */
+
+.icon-menuCreate-customer {
+    background-image: url('../Images/create-menu-icon.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    top: 4px;
+    background-position: 0 0;
+}
+
+    .icon-menuCreate-customer:hover {
+        background-image: url('../Images/create-menu-icon.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        z-index: 100;
+        top: 4px;
+        background-position: 0 -70px;
+    }
+
+.icon-menuCreate-group {
+    background-image: url('../Images/create-menu-icon.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    top: 4px;
+    background-position: 0 -280px;
+}
+
+    .icon-menuCreate-group:hover {
+        background-image: url('../Images/create-menu-icon.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        z-index: 100;
+        top: 4px;
+        background-position: 0 -350px;
+    }
+
+.icon-menuCreate-site {
+    background-image: url('../Images/create-menu-icon.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    top: 4px;
+    background-position: 0 -420px;
+}
+
+    .icon-menuCreate-site:hover {
+        background-image: url('../Images/create-menu-icon.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        z-index: 100;
+        top: 4px;
+        background-position: 0 -490px;
+    }
+
+.icon-menuCreate-device {
+    background-image: url('../Images/create-menu-icon.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    top: 4px;
+    background-position: 0 -140px;
+}
+
+    .icon-menuCreate-device:hover {
+        background-image: url('../Images/create-menu-icon.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        z-index: 100;
+        top: 4px;
+        background-position: 0 -210px;
+    }
+
+.icon-menuCreate-operator {
+    background-image: url('../Images/create-menu-icon.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    top: 4px;
+    background-position: 0 -560px;
+}
+
+    .icon-menuCreate-operator:hover {
+        background-image: url('../Images/create-menu-icon.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        z-index: 100;
+        top: 4px;
+        background-position: 0 -630px;
+    }
+/*.icon-plus{
+	background: url("../Images/imgs/icon_add.png");
+    background-repeat:no-repeat;
+    width: 20px;
+	height: 20px;
+	display: block;
+}*/
+
+.icon-itemclose {
+    background: url("../Images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 31px;
+    display: inline-block;
+    float: right;
+    background-position: -248px -100px;
+    margin-right: -6px !important;
+}
+
+/*.icon-view-password {
+	background-image: url('../Images/icon_edit.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 21px;
+	top: 16px;
+}
+
+.icon-view-password:hover{
+	background-image: url('../Images/icon_editHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 21px;
+	top: 16px;
+}
+
+.icon-calendar{
+	background-image: url('../Images/icon_calendar.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+    height:20px;
+    left: 21px;
+	top: 16px;
+}
+
+.icon-calendar:hover{
+	background-image: url('../Images/icon_calendarHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 21px;
+	top: 16px;
+}
+
+.icon-sort-ascending{
+	background-image: url('../Images/icon_ascendingNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 21px;
+	top: 16px;
+	background-position:0px 0px;
+}
+
+.icon-sort-ascending:hover{
+	background-image: url('../Images/icon_ascendingHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 21px;
+	top: 16px;
+}
+
+.icon-sort-descending{
+	background-image: url('../Images/icon_descendingNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 14px;
+	top: 16px;
+	background-position:0px 0px;
+}
+
+.icon-sort-descending:hover{
+	background-image: url('../Images/icon_descendingHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 14px;
+	top: 16px;
+}
+
+.icon-list{
+	background-image: url('../Images/icon_listNormal.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 14px;
+	top: 16px;
+	background-position:0px 0px;
+}
+
+.icon-list:hover{
+	background-image: url('../Images/icon_listHover.png'); 
+	display: inline-block;
+	width: 20px;
+	position: absolute;
+	height:20px;
+    left: 14px;
+	top: 16px;
+}*/
+
+.icon-view-password {
+    background-image: url('../Images/icon_edit.png');
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+}
+
+    .icon-view-password:hover {
+        background-image: url('../Images/icon_editHover.png');
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+    }
+
+.icon-calendar {
+    background-image: url('../Images/icon_calendar.png');
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+}
+
+    .icon-calendar:hover {
+        background-image: url('../Images/icon_calendarHover.png');
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+    }
+
+.icon-sort-ascending {
+    background: url('../images/sprite_icons.png') no-repeat -190px -71px;
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+}
+
+    .icon-sort-ascending:hover {
+        background: url('../images/sprite_icons.png') no-repeat -220px -71px;
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+    }
+
+.icon-sort-descending {
+    background: url('../images/sprite_icons.png') no-repeat -190px -101px;
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+}
+
+    .icon-sort-descending:hover {
+        background: url('../images/sprite_icons.png') no-repeat -220px -101px;
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+    }
+
+.icon-list {
+    background: url('../images/sprite_icons.png') no-repeat -191px -42px;
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+}
+
+    .icon-list:hover {
+        background: url('../images/sprite_icons.png') no-repeat -221px -42px;
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+    }
+
+
+.icon-removeRule {
+    background-image: url('../Images/icon_delete.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    margin-left: 16px;
+    background-position: 0;
+}
+
+    .icon-removeRule:hover {
+        background-image: url('../Images/icon_deleteHover.png');
+        display: inline-block;
+        width: 20px;
+        position: relative;
+        height: 20px;
+        margin-left: 16px;
+    }
+
+.icon-added {
+    background-image: url('../Images/icon_added.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    margin-left: 16px;
+}
+
+.icon-dragger {
+    background-image: url('../Images/icon_dragger.png');
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 100;
+    margin-left: 16px;
+}
+
+.icon-listRules {
+    background-image: url('../Images/icon_listNormal.png');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 21px;
+    top: 16px;
+    background-position: 0px 0px;
+}
+
+    .icon-listRules:hover {
+        background-image: url('../Images/icon_listHover.png');
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        left: 21px;
+        top: 16px;
+        background-position: 0px 0px;
+    }
+
+.icon-hide {
+    background: url("../Images/icon_hide.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px !important;
+    position: relative;
+    display: inline-block;
+}
+
+    .icon-hide:hover {
+        background: url("../Images/icon_hideHover.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px !important;
+    }
+
+.sortableIcon {
+    background: url("../Images/icon_dragger.png");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon-added {
+    background-image: url('../Images/icon_added.png');
+    display: inline-block;
+    width: 45px;
+    position: relative;
+    height: 45px;
+    z-index: 1;
+    margin-left: 0 !important;
+    margin-top: -24px;
+    padding-top: 0 !important;
+}
+
+/*
+        ISP icon styles starts here
+        Author:Manjunath
+        Description:ISP related icons
+*/
+
+.ispicon::before, .ispicon_caret::before {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    /*background-image: url('../Images/
+_a.svg');
+    background-size: 218px;*/
+    /*background-image: url('../Images/icon_sprites_24px-01.svg');*/
+    background-image: url('../Images/icon_sprites_24px.svg');
+    // background-size: 1200px !important;
+    content: "";
+    /*background-position: -13px -39px;*/
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.ispicon {
+    cursor: pointer;
+}
+
+    .ispicon.disabled {
+        pointer-events: none;
+        opacity: .4;
+    }
+
+.ispicon_eye {
+    position: relative;
+}
+
+    .ispicon_eye::before {
+        position: absolute;
+        width: 37px;
+        padding: 17px;
+        background-position: -7px -4px;
+        margin-left: 382px;
+    }
+
+    .ispicon_eye:hover::before, .login #Password:hover + .ispicon_eye::before {
+        background-position: -7px -36px;
+    }
+
+    .ispicon_eye:active::before, .login #Password:active + .ispicon_eye::before {
+        background-position: -7px -68px;
+    }
+
+.ispicon_caret::before {
+    background-position: -235px -107px;
+}
+
+.ispicon_caret:hover::before {
+    background-position: -235px -139px;
+}
+
+.ispicon_caret:active::before {
+    background-position: -235px -171px;
+}
+
+.ispicon_handbar::before {
+    background-position: -74px -12px;
+}
+
+.ispicon_handbar:hover::before {
+    background-position: -74px -44px;
+}
+
+.ispicon_handbar:active::before {
+    background-position: -74px -75px;
+}
+
+/*.ispicon_help::before {
+    background-position: -331px -107px;
+}
+
+.ispicon_help:hover::before {
+    background-position: -331px -139px;
+}*/
+
+.ispicon_help:active::before {
+    background-position: -331px -171px;
+}
+
+.ispicon_helpinfo::before {
+    background-position: -620px -140px;
+}
+
+.ispicon_helpinfo:hover::before {
+    background-position: -620px -172px;
+}
+
+.ispicon_helpinfo {
+    height: inherit;
+    position: absolute;
+}
+
+.ispicon_dashboard::before {
+    background-position: -782px -9px;
+}
+
+.ispicon_dashboard:hover::before, .sidebar-nav li a:hover .ispicon_dashboard::before {
+    background-position: -782px -41px;
+}
+
+.ispicon_dashboard:active::before, .sidebar-nav li a:active .ispicon_dashboard::before {
+    background-position: -782px -73px;
+}
+
+.ispicon_VisualManagement::before {
+    background-position: -1167px -9px;
+}
+
+.ispicon_VisualManagement:hover::before, .sidebar-nav li a:hover .ispicon_VisualManagement::before {
+     background-position: -1167px -42px;
+}
+
+.ispicon_VisualManagement:active::before, .sidebar-nav li a:active .ispicon_VisualManagement::before {
+     background-position: -1167px -77px;
+}
+
+.ispicon_accounts::before {
+    background-position: -814px -9px;
+}
+
+.ispicon_accounts:hover::before, .sidebar-nav li a:hover .ispicon_accounts::before {
+    background-position: -814px -41px;
+}
+
+.ispicon_accounts:active::before, .sidebar-nav li a:active .ispicon_accounts::before {
+    background-position: -814px -73px;
+}
+
+.ispicon_utility::before {
+    background-position: -846px -11px;
+}
+
+.ispicon_utility:hover::before, .sidebar-nav li a:hover .ispicon_utility::before {
+    background-position: -846px -43px;
+}
+
+.ispicon_utility:active::before, .sidebar-nav li a:active .ispicon_utility::before {
+    background-position: -846px -75px;
+}
+
+.ispicon_company::before {
+    background-position: -878px -11px;
+}
+
+.ispicon_company:hover::before {
+    background-position: -878px -43px;
+}
+
+.ispicon_company:active::before {
+    background-position: -878px -75px;
+}
+
+.ispicon_centralStation::before {
+    background-position: -910px -11px;
+}
+
+.ispicon_centralStation:hover::before {
+    background-position: -910px -43px;
+}
+
+.ispicon_centralStation:active::before {
+    background-position: -910px -75px;
+}
+
+.ispicon_sales::before {
+    background-position: -942px -11px;
+}
+
+.ispicon_sales:hover::before {
+    background-position: -942px -43px;
+}
+
+.ispicon_sales:active::before {
+    background-position: -942px -75px;
+}
+
+/*.ispicon_logout::before {
+    background-position: -974px -11px;
+}*/
+
+.ispicon_downarrow::before {
+    background-position: -235px -107px;
+}
+
+.ispicon_downarrow:hover::before {
+    background-position: -235px -139px;
+}
+
+.ispicon_downarrow:active::before {
+    background-position: -235px -171px;
+}
+
+.sidebar-nav li.dropdown.open .dropdown-toggle .ispicon_downarrow::before {
+    background-position: -235px -107px;
+}
+
+.ispicon_search::before {
+    background-position: -106px -11px;
+}
+
+.ispicon_search:hover::before {
+    background-position: -106px -43px;
+}
+
+.ispicon_search:active::before {
+    background-position: -106px -75px;
+}
+
+.isplisticon_search:before {
+    background-position: -106px -11px;
+    position: absolute;
+    z-index: 100;
+    margin: 10px 20px;
+    left: 0px;
+}
+
+.isplisticon_search:hover::before {
+    background-position: -106px -43px;
+}
+
+.ispicon_backbutton::before {
+    background-position: -235px -11px;
+    display: none;
+}
+
+.ispicon_backbutton:hover::before, .accountcontainer .leftlist h6:hover .ispicon_backbutton::before {
+    background-position: -235px -43px;
+}
+
+.ispicon_backbutton:active::before, .accountcontainer .leftlist h6:active .ispicon_backbutton::before {
+    background-position: -235px -75px;
+}
+
+.ispicon_overview::before {
+    background-position: -267px -11px;
+}
+
+.ispicon_overview:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_overview::before {
+    background-position: -267px -43px;
+}
+
+.ispicon_overview:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_overview::before {
+    background-position: -267px -75px;
+}
+
+
+.ispicon_customeroverview::before {
+    background-position: -267px -11px;
+}
+
+.ispicon_customeroverview:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_overview::before {
+    background-position: -267px -43px;
+}
+
+.ispicon_customeroverview:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_overview::before {
+    background-position: -267px -75px;
+}
+
+.ispicon_billing::before {
+    background-position: -299px -11px;
+}
+
+.ispicon_billing:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_billing::before {
+    background-position: -299px -43px;
+}
+
+.ispicon_billing:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_billing::before {
+    background-position: -299px -75px;
+}
+
+.ispicon_sites::before {
+    background-position: -42px -976px;
+}
+
+.ispicon_sites:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_sites::before {
+    background-position: -42px -1008px;
+}
+
+.ispicon_sites:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_sites::before {
+    background-position: -40px -1039px;
+}
+
+.ispicon_people::before {
+    background-position: -428px -11px;
+}
+
+.ispicon_people:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_people::before {
+    background-position: -428px -43px;
+}
+
+.ispicon_people:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_people::before {
+    background-position: -428px -75px;
+}
+
+.ispicon_users::before {
+    background-position: -557px -11px;
+}
+
+.ispicon_users:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_users::before {
+    background-position: -10px -1009px;
+}
+
+.ispicon_users:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_users::before {
+    background-position: -10px -1040px;
+}
+
+.ispicon_schedule::before {
+    background-position: -492px -11px;
+}
+
+.ispicon_schedule:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_schedule::before {
+    background-position: -492px -43px;
+}
+
+.ispicon_schedule:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_schedule::before {
+    background-position: -492px -75px;
+}
+
+
+.ispicon_plus::before {
+    background-position: -460px -11px;
+}
+
+.ispicon_plus:hover::before {
+    background-position: -460px -43px;
+}
+
+.ispicon_plus:active::before {
+    background-position: -460px -75px;
+}
+
+.ispicon_more::before {
+    background-position: -106px -107px;
+}
+
+.ispicon_more:hover::before {
+    background-position: -106px -139px;
+}
+
+.ispicon_more:active::before {
+    background-position: -106px -171px;
+}
+
+.ispicon_edit::before {
+    background-position: -138px -107px;
+}
+
+.ispicon_edit:hover::before {
+    background-position: -138px -139px;
+}
+
+.ispicon_edit.active::before {
+    background-position: -138px -171px !important;
+}
+
+.ispicon_edit:active::before {
+    background-position: -138px -171px;
+}
+
+.ispicon_Controller::before, .ispicon_controller::before {
+    background-position: -331px -11px;
+}
+
+.ispicon_Controller:hover::before, .ispicon_controller:hover::before {
+    background-position: -331px -43px;
+}
+
+.ispicon_Controller:active::before, .ispicon_controller:active::before {
+    background-position: -331px -75px;
+}
+
+.ispicon_Controller_online::before {
+    background-position: -492px -590px;
+}
+
+.ispicon_Controller_default::before {
+    background-position: -492px -622px;
+}
+
+.ispicon_Controller_offline::before {
+    background-position: -492px -654px;
+}
+
+.ispicon_PeripheralDevices::before, .ispicon_devices::before, .ispicon_peripheraldevices::before {
+    background-position: -363px -11px;
+}
+
+.ispicon_PeripheralDevices:hover::before, .ispicon_devices:hover::before, .ispicon_peripheraldevices:hover::before {
+    background-position: -363px -43px;
+}
+
+.ispicon_PeripheralDevices:active::before, .ispicon_devices:active::before, .ispicon_peripheraldevices:active::before {
+    background-position: -363px -75px;
+}
+
+.ispicon_Area::before, .ispicon_area::before {
+    background-position: -395px -11px;
+}
+
+.ispicon_Area:hover::before, .ispicon_area:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_area::before {
+    background-position: -395px -43px;
+}
+
+.ispicon_Area:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_area::before {
+    background-position: -395px -75px;
+}
+
+.ispicon_sortasc::before {
+    background-position: -41px -107px;
+}
+
+.ispicon_sortasc:hover::before {
+    background-position: -41px -139px;
+}
+
+.ispicon_sortasc:active::before {
+    background-position: -41px -171px;
+}
+
+.ispicon_sortdesc::before {
+    background-position: -74px -268px;
+}
+
+.ispicon_sortdesc:hover::before {
+    background-position: -74px -300px;
+}
+
+.ispicon_sortdesc:active::before {
+    background-position: -74px -332px;
+}
+
+.ispicon_filter::before {
+    background-position: -9px -107px;
+}
+
+.ispicon_filter:hover::before {
+    background-position: -9px -139px;
+}
+
+.ispicon_filter:active::before {
+    background-position: -9px -171px;
+}
+
+/* NEW ICONS */
+
+.ispicon_collapse::before {
+    background-position: -267px -107px;
+}
+
+.ispicon_collapse:hover::before {
+    background-position: -267px -139px;
+}
+
+.ispicon_collapse:active::before {
+    background-position: -267px -171px;
+}
+
+.ispicon.inverse::before {
+    margin-top: 20px;
+    float: left;
+    width: 20px;
+}
+
+.ispActionMenu:hover .toggleText, .ispActionMenu span:hover, .ispActionMenu.open span {
+    color: #1792e5;
+}
+
+.ispActionMenu.open .searchDropDown span, .ispActionMenu.open .searchDropDown span:hover {
+    color: #303030;
+}
+
+.ispActionMenu:active {
+    color: #1272b2;
+}
+
+.ispActionMenu:hover .ispicon_filter::before, .ispActionMenu.open .ispicon_filter::before {
+    background-position: -9px -139px;
+    color: #1792e5;
+}
+
+.ispActionMenu:active .ispicon_filter::before {
+    background-position: -9px -171px;
+    color: #1272b2;
+}
+
+.ispicon_views::before {
+    background-position: -74px -107px;
+}
+
+.ispActionMenu:hover .ispicon_views::before, .ispActionMenu.open .ispicon_views::before, .ispicon_views:hover::before {
+    background-position: -74px -139px;
+    color: #1792e5;
+}
+
+.ispActionMenu:active .ispicon_views::before, .ispicon_views:active::before {
+    background-position: -74px -171px;
+    color: #1272b2;
+}
+
+.ispicon_action::before {
+    background-position: -42px -236px;
+}
+
+.ispActionMenu:hover .ispicon_action::before, .ispActionMenu.open .ispicon_action::before, .ispicon_action:hover::before, .rowActionsCol:hover .ispicon_action::before, .rowActionsCol:hover {
+    background-position: -42px -268px;
+    color: #1792e5;
+}
+
+.ispActionMenu:active .ispicon_action::before, .ispicon_action:active::before, .rowActionsCol:active .ispicon_action::before, .rowActionsCol:active {
+    background-position: -42px -300px;
+    color: #1272b2;
+}
+
+.ispActionMenu:hover .ispicon_sort::before, .ispActionMenu.open .ispicon_sort::before {
+    background-position: -41px -139px;
+    color: #1792e5;
+}
+
+.ispActionMenu:active .ispicon_sortUp::before {
+    background-position: -41px -171px;
+    color: #1272b2;
+}
+
+.ispicon_saveFilter::before {
+    background-position: -428px -236px;
+    margin-right: 3px;
+}
+
+.ispActionMenu:hover .ispicon_saveFilter::before, .ispActionMenu.open .ispicon_saveFilter::before {
+    background-position: -428px -268px;
+    color: #1792e5;
+}
+
+.ispActionMenu:active .ispicon_saveFilter::before {
+    background-position: -428px -300px;
+    color: #1272b2;
+}
+
+.ispicon_alarmsCritical::before {
+    background-position: -267px -236px;
+}
+
+.ispicon_alarmsMajor::before {
+    background-position: -267px -268px;
+}
+
+.ispicon_alarmsModerate::before {
+    background-position: -267px -300px;
+}
+
+.ispicon_alarmsDefault::before {
+    background-position: -138px -11px;
+}
+
+.ispicon_alarms::before {
+    background-position: -1103px -9px;
+}
+
+.ispicon_alarms:hover::before {
+    background-position: -1103px -41px;
+}
+
+.ispicon_alarms:active::before {
+    background-position: -1103px -73px;
+}
+
+.ispicon_cloudDefault::before {
+    background-position: -299px -236px;
+}
+
+.ispicon_cloudModerate::before {
+    background-position: -299px -332px;
+}
+
+.ispicon_cloudMajor::before {
+    background-position: -299px -300px;
+}
+
+.ispicon_cloudCritical::before {
+    background-position: -299px -268px;
+}
+
+.ispicon_cloudConnModerate::before {
+    background-position: -446px -84px;
+}
+
+.ispicon_cloudConnCritical::before {
+    background-position: -446px -84px;
+}
+
+.ispicon_cloudConnDefault::before {
+    background-position: -446px -105px;
+}
+
+.ispicon_access::before {
+    background-position: -556px -11px;
+}
+
+.ispicon_access:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_access::before {
+    background-position: -556px -43px;
+}
+
+.ispicon_access:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_access::before {
+    background-position: -556px -75px;
+}
+
+.ispicon_intrusion::before {
+    background-position: -588px -11px;
+}
+
+.ispicon_intrusion:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_intrusion::before {
+    background-position: -588px -43px;
+}
+
+.ispicon_intrusion:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_intrusion::before {
+    background-position: -588px -75px;
+}
+
+
+.ispicon_cards::before {
+    background-position: -524px -11px;
+}
+
+.ispicon_cards:hover::before, .accountcontainer .leftlist .panel ul li a.list-group-item:hover .ispicon_cards::before {
+    background-position: -524px -43px;
+}
+
+.ispicon_cards:active::before, .accountcontainer .leftlist .panel ul li a.list-group-item:active .ispicon_cards::before {
+    background-position: -524px -75px;
+}
+
+.ispicon_Door::before, .ispicon_door::before,.ispicon_door_offline_unlocked_unblocked::before {
+    background-position: -235px -235px;
+}
+
+.ispicon_Door_offline::before, .ispicon_door::before {
+    background-position: -235px -236px;
+}
+
+.ispicon_DoorUnLocked::before,
+.ispicon_door::before,
+.ispicon_Door_online::before
+ {
+    background-position: -235px -365px;
+}
+/*.ispicon_Door:hover::before {
+    background-position: -556px -71px;
+}*/
+
+.ispicon_DoorModerate::before {
+    background-position: -235px -332px;
+}
+
+.ispicon_DoorMajor::before {
+    background-position: -235px -300px;
+}
+
+.ispicon_DoorCritical::before,.ispicon_door_online_unlocked_alarm::before,.ispicon_door_offline_unlocked_alarm::before {
+    background-position: -235px -268px;
+}
+
+.ispicon_DoornoAction::before ,.ispicon_door_online_unlocked_unblocked::before{
+    background-position: -235px -364px;
+}
+
+
+.ispicon_DoorClosed::before,.ispicon_door_offline_locked_unblocked::before {
+    background-position: -876px -236px;
+}
+
+.ispicon_DoorClosedCritical::before,.ispicon_door_online_locked_alarm::before,.ispicon_door_offline_locked_alarm::before {
+    background-position: -876px -268px;
+}
+
+
+.ispicon_DoorClosedMajor::before {
+    background-position: -876px -300px;
+}
+
+.ispicon_DoorClosedModerate::before {
+    background-position: -876px -332px;
+}
+.ispicon_troubleDefault::before{
+    background-position:-1135px -236px;
+}
+
+.ispicon_troubleCritical::before {
+    background-position: -910px -268px;
+}
+
+.ispicon_troubleMajor::before {
+    background-position: -910px -300px;
+}
+
+.ispicon_troubleModerate::before {
+    background-position: -910px -332px;
+}
+
+.ispicon_video::before, .ispicon_videoDefault::before {
+    background-position: -331px -236px;
+}
+
+.ispicon_video:hover::before {
+    background-position: -331px -268px;
+}
+
+.ispicon_video:active::before {
+    background-position: -331px -300px;
+}
+
+.ispicon_videoModerate::before {
+    background-position: -331px -397px;
+}
+
+.ispicon_videoCritical::before {
+    background-position: -331px -332px;
+}
+
+.ispicon_videoMajor::before {
+    background-position: -331px -365px;
+}
+
+.ispicon_disarmDefault::before {
+    background-position: -524px -236px;
+}
+
+.ispicon_disarmModerate::before {
+    background-position: -524px -332px;
+}
+
+.ispicon_disarmMajor::before {
+    background-position: -524px -300px;
+}
+
+.ispicon_disarmCritical::before {
+    background-position: -524px -268px;
+}
+
+.ispicon_armDefault::before {
+    background-position: -556px -236px;
+}
+
+.ispicon_armModerate::before {
+    background-position: -556px -332px;
+}
+
+.ispicon_armCritical::before {
+    background-position: -556px -268px;
+}
+
+.ispicon_armMajor::before {
+    background-position: -556px -300px;
+}
+
+.ispicon_floorplan::before {
+    background-position: -620px -8px;
+    /*margin-right: 4px;*/
+}
+
+.ispicon_floorplan:hover::before {
+    background-position: -620px -42px;
+    /*margin-right: 4px;*/
+}
+
+.ispicon_floorplan:active::before {
+    background-position: -620px -74px;
+    /*margin-right: 4px;*/
+}
+
+.ispicon_sidebarSlide:before {
+    background-position: -270px -103px;
+}
+
+.ispicon_sidebarSlide:hover::before {
+    background-position: -270px -135px;
+}
+
+.ispicon_sidebarSlide.active::before {
+    background-position: -270px -167px;
+}
+
+.ispicon_dropArrowUp::before,
+.ispicon_dropArrowUp:hover::before {
+    transform: rotate(180deg);
+}
+
+.ispicon_dropArrow::before,
+.ispicon_dropArrowUp::before {
+    background-position: -235px -107px;
+    margin-top: 3px;
+}
+
+.ispicon_dropArrow:hover::before,
+.ispicon_dropArrowUp:hover::before {
+    background-position: -235px -139px;
+    margin-top: 3px;
+}
+
+.ispicon_dropArrow:hover::before,
+.ispicon_dropArrowUp:hover::before {
+    background-position: -235px -171px;
+    margin-top: 3px;
+}
+
+.ispicon_acknowledged::before,
+.ispicon_tick::before {
+    background-position: -9px -365px;
+}
+
+.ispicon_acknowledgeAll::before {
+    background-position: -137px -236px;
+    margin-right: 5px;
+}
+
+.acknowledgeAll:hover .ispicon_acknowledgeAll::before, .acknowledgeAll:hover, .ispicon_acknowledgeAll:hover::before {
+    background-position: -137px -268px;
+    color: #1792e5;
+}
+
+.acknowledgeAll:active .ispicon_acknowledgeAll::before, .acknowledgeAll:active, .ispicon_acknowledgeAll:active::before {
+    background-position: -137px -300px;
+    color: #1272b2;
+}
+
+.ispicon_clearAll::before {
+    background-position: -170px -236px;
+    margin-right: 5px;
+}
+
+.clearAll:hover .ispicon_clearAll::before, .clearAll:hover, .ispicon_clearAll:hover::before {
+    background-position: -170px -267px;
+    color: #1792e5;
+}
+
+.clearAll:active .ispicon_clearAll::before, .clearAll:active, .ispicon_clearAll:active::before {
+    background-position: -170px -299px;
+    color: #1272b2;
+}
+
+.ispicon_close::before {
+    background-position: -396px -236px;
+}
+
+.ispicon_close:hover::before {
+    background-position: -396px -268px;
+}
+
+.ispicon_close:active::before {
+    background-position: -396px -300px;
+}
+
+.ispicon_frozen::before {
+    background-position: -9px -332px;
+}
+
+.ispicon_closeEvents::before {
+    background-position: -106px -236px;
+}
+
+.ispicon_closeEvents:hover::before {
+    background-position: -106px -268px;
+}
+
+.ispicon_closeEvents:active::before {
+    background-position: -106px -300px;
+}
+
+.ispicon_twowayVoice::before {
+    background-position: -428px -107px;
+}
+
+.ispicon_twowayVoice:hover::before {
+    background-position: -428px -139px;
+}
+
+/*.ispicon_twowayVoice:active::before {
+    background-position: -428px -171px;
+}*/
+
+.ispicon_advProtection::before {
+    background-position: -460px -107px;
+}
+
+.ispicon_advProtection:hover::before {
+    background-position: -460px -139px;
+}
+
+/*.ispicon_advProtection:active::before {
+    background-position: -460px -171px;
+}*/
+
+.ispicon_lyricLock::before {
+    background-position: -492px -107px;
+}
+
+.ispicon_lyricLock:hover::before {
+    background-position: -492px -139px;
+}
+
+.ispicon_lyricUnLock::before {
+    background-position: -492px -171px;
+}
+
+.ispicon_lyricUnLock:active::before {
+    background-position: -492px -203px;
+}
+
+.ispicon_download::before {
+    background-position: -171px -11px;
+}
+
+.ispicon_download:hover::before {
+    background-position: -171px -43px;
+}
+
+.ispicon_download:active::before {
+    background-position: -171px -75px;
+}
+
+.ispicon_upload::before {
+    background-position: -556px -107px;
+}
+
+.ispicon_upload:hover::before {
+    background-position: -556px -139px;
+}
+
+.ispicon_upload:active::before {
+    background-position: -556px -171px;
+}
+
+.ispicon_delete::before {
+    background-position: -588px -107px;
+}
+
+.ispicon_delete:hover::before {
+    background-position: -588px -139px;
+}
+
+.ispicon_delete:active::before {
+    background-position: -588px -171px;
+}
+
+.ispicon_cloudStat::before {
+    background-position: -1033px -168px;
+    width: 36px;
+    height: 36px;
+    background-size: 1900px !important;
+}
+
+.ispicon_batteryFull::before {
+    background-position: -652px -11px;
+    width: 24px;
+}
+
+.ispicon_batteryAvg::before {
+    background-position: -684px -11px;
+    width: 24px;
+}
+
+.ispicon_batteryMed::before {
+    background-position: -716px -11px;
+    width: 24px;
+}
+
+.ispicon_batteryLow::before {
+    background-position: -748px -11px;
+    width: 24px;
+}
+
+.ispicon_batteryOffline::before {
+    background-position: -652px -74px;
+    width: 24px;
+}
+
+.ispicon_batteryDisabled::before {
+    background-position: -748px -42px;
+    width: 24px;
+}
+
+
+
+.ispicon_acConnected::before {
+    background-position: -652px -42px;
+    width: 24px;
+    height: 23px;
+}
+
+.ispicon_acDisconnected::before {
+    background-position: -684px -42px;
+    width: 24px;
+    height: 23px;
+}
+
+.ispicon_acDisabled::before {
+    background-position: -716px -42px;
+    width: 24px;
+    height: 23px;
+}
+
+.ispicon_ethernet::before {
+    background-position: -1084px -168px;
+    width: 36px;
+    height: 36px;
+    background-size: 1900px !important;
+}
+
+.ispicon_fourG::before {
+    background-position: -1136px -168px;
+    width: 36px;
+    height: 36px;
+    background-size: 1900px !important;
+}
+
+.ispicon_print::before {
+    background-position: -203px -11px;
+}
+
+.ispicon_print:hover::before {
+    background-position: -203px -43px;
+}
+
+.ispicon_print:active::before {
+    background-position: -203px -75px;
+}
+
+.ispicon_accordian_droparrow::before {
+    background-position: -396px -108px;
+}
+
+.ispicon_accordian_droparrow:hover::before {
+    background-position: -396px -140px;
+}
+
+.ispicon_accordian_droparrowOpen::before {
+    background-position: -396px -172px;
+}
+
+.ispicon_accordian_droparrowOpen:hover::before {
+    background-position: -396px -204px;
+}
+
+.ispicon_sensorDefault::before {
+    background-position: -363px -236px;
+}
+
+.ispicon_sensorModerate::before {
+    background-position: -363px -332px;
+}
+
+.ispicon_sensorMajor::before {
+    background-position: -363px -300px;
+}
+
+.ispicon_sensorCritical::before {
+    background-position: -363px -268px;
+}
+
+.ispicon_periDefault::before {
+    background-position: -652px -236px;
+}
+
+.ispicon_periModerate::before {
+    background-position: -652px -332px;
+}
+
+.ispicon_periMajor::before {
+    background-position: -652px -300px;
+}
+
+.ispicon_periCritical::before {
+    background-position: -652px -268px;
+}
+
+.ispicon_entryDefault::before {
+    background-position: -684px -236px;
+}
+
+.ispicon_entryModerate::before {
+    background-position: -684px -332px;
+}
+
+.ispicon_entryMajor::before {
+    background-position: -684px -300px;
+}
+
+.ispicon_entryCritical::before {
+    background-position: -684px -268px;
+}
+
+.ispicon_interiorDefault::before {
+    background-position: -716px -236px;
+}
+
+.ispicon_interiorModerate::before {
+    background-position: -716px -332px;
+}
+
+.ispicon_interiorMajor::before {
+    background-position: -716px -300px;
+}
+
+.ispicon_interiorCritical::before {
+    background-position: -716px -268px;
+}
+
+.ispicon_intruderDefault::before {
+    background-position: -748px -236px;
+}
+
+.ispicon_intruderModerate::before {
+    background-position: -748px -332px;
+}
+
+.ispicon_intruderMajor::before {
+    background-position: -748px -300px;
+}
+
+.ispicon_intruderCritical::before {
+    background-position: -750px -268px;
+}
+
+.ispicon_duressDefault::before {
+    background-position: -780px -236px;
+}
+
+.ispicon_duressModerate::before {
+    background-position: -780px -332px;
+}
+
+.ispicon_duressMajor::before {
+    background-position: -780px -300px;
+}
+
+.ispicon_duressCritical::before {
+    background-position: -782px -268px;
+}
+
+.ispicon_fireDefault::before {
+    background-position: -812px -236px;
+}
+
+.ispicon_fireCritical::before {
+    background-position: -816px -268px;
+}
+
+.ispicon_syncFailed::before {
+    background-position: -910px -428px;
+}
+
+
+.ispicon_coDefault::before {
+    background-position: -846px -236px;
+}
+
+.ispicon_coCritical::before {
+    background-position: -846px -268px;
+}
+
+.ispicon_criticalError::before {
+    background-position: -910px -268px;
+}
+
+.ispicon_normalCritical::before {
+    background-position: -910px -236px;
+}
+
+.ispicon_majorError::before {
+    background-position: -910px -300px;
+}
+
+.ispicon_normalMajor::before {
+    background-position: -910px -364px;
+}
+
+.ispicon_moderateError::before {
+    background-position: -910px -332px;
+}
+
+.ispicon_sync::before {
+    background-position: -942px -236px;
+}
+
+.ispicon_sync:hover::before {
+    background-position: -942px -268px;
+}
+
+.ispicon_sync_blue::before {
+    background-position: -942px -268px;
+}
+
+.ispicon_sync:active::before {
+    background-position: -942px -300px;
+}
+
+.ispicon_calender::before {
+    background-position: -170px -107px;
+}
+
+.ispicon_calender:hover::before {
+    background-position: -170px -139px;
+}
+
+.ispicon_calender:active::before {
+    background-position: -170px -171px;
+}
+
+.ispicon_logout::before {
+    background-position: -1007px -9px;
+}
+
+.ispicon_logout:hover::before {
+    background-position: -1007px -41px;
+}
+
+.ispicon_logout:active::before {
+    background-position: -1007px -41px;
+}
+
+@media screen\0 {
+    .ispicon::before, .ispicon_caret::before {
+        height: 22px;
+    }
+}
+
+/* CHECK BOX CSS */
+input[type="checkbox"] {
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    /*background-image: url('../Images/icon_sprites_24px-01.svg');*/
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-size: 1000px;
+    background-position: -9px -330px;
+    -webkit-appearance: none;
+    float: left;
+    outline: 0 !important;
+    opacity: 1 !important;
+}
+
+    input[type="checkbox"]:checked {
+        background-position: -9px -357px;
+    }
+
+    input[type="checkbox"].partial {
+        background-position: -9px -411px;
+    }
+
+input[type="radio"] {
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    /*background-image: url('../Images/icon_sprites_24px-01.svg');*/
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-size: 1000px;
+    background-position: -36px -331px;
+    -webkit-appearance: none;
+    float: left;
+    outline: 0 !important;
+    opacity: 1 !important;
+}
+
+    input[type="radio"]:hover {
+        background-position: -36px -358px;
+    }
+
+    input[type="radio"]:checked {
+        background-position: -36px -385px;
+    }
+
+    input[type="radio"]:disabled {
+        background-position: -36px -412px;
+    }
+
+        input[type="radio"]:disabled:checked {
+            background-position: -36px -438px;
+        }
+
+        input[type="radio"]:disabled:checked {
+            background-position: -36px -438px;
+        }
+
+.ispicon_accPlus::before {
+    background-position: -975px -236px;
+    float: right;
+}
+
+.ispActionMenu .dropdown-menu > li > a:hover .ispicon_accPlus::before, .ispActionMenu .dropdown-menu > li > a:focus .ispicon_accPlus::before {
+    display: block;
+    background-position: -975px -236px;
+    float: right;
+}
+
+.ispActionMenu .dropdown-menu > li > a:hover .ispicon_accPlus:hover::before, .ispActionMenu .dropdown-menu > li > a:focus .ispicon_accPlus:hover::before {
+    display: block;
+    background-position: -975px -268px;
+}
+
+.ispActionMenu .dropdown-menu > li > a:hover .ispicon_accPlus:active::before, .ispActionMenu .dropdown-menu > li > a:focus .ispicon_accPlus:active::before {
+    display: block;
+    background-position: -975px -300px;
+}
+
+.ispicon_accMinus::before {
+    background-position: -1007px -236px;
+    float: right;
+}
+
+.ispicon_accMinus:hover::before {
+    background-position: -1007px -268px;
+}
+
+.ispicon_accMinus:active::before {
+    background-position: -1007px -300px;
+}
+
+.ispicon_mapreset::before {
+    background-position: -1039px -236px;
+}
+
+.ispicon_mapreset:hover::before {
+    background-position: -1039px -268px;
+}
+
+.ispicon_mapreset:active::before {
+    background-position: -1039px -300px;
+}
+
+.ispicon_maprefresh::before {
+    background-position: -1071px -236px;
+}
+
+.ispicon_maprefresh:hover::before {
+    background-position: -1071px -268px;
+}
+
+.ispicon_maprefresh:active::before {
+    background-position: -1071px -300px;
+}
+
+
+.ispicon_walktest::before {
+    background-position: -1103px -235px;
+    width: 24px;
+    height: 24px;
+}
+
+.ispicon_walktestCritical::before {
+    background-position: -1103px -267px;
+    width: 24px;
+    height: 24px;
+}
+
+.ispicon_walktestMajor::before {
+    background-position: -1103px -299px;
+    width: 24px;
+    height: 24px;
+}
+
+.ispicon_walktestModerate::before {
+    background-position: -1103px -331px;
+    width: 24px;
+    height: 24px;
+}
+
+.ispicon_troubleDefault::before {
+    background-position: -1135px -236px;
+}
+
+.ispicon_troubleCritical::before {
+    background-position: -1135px -268px;
+}
+
+.ispicon_troubleMajor::before {
+    background-position: -1135px -300px;
+}
+
+.ispicon_troubleModerate::before {
+    background-position: -1135px -332px;
+}
+
+.ispicon_bypassDefault::before {
+    background-position: -1167px -236px;
+    width: 24px;
+}
+
+.ispicon_bypassCritical::before {
+    background-position: -1167px -268px;
+    width: 24px;
+}
+
+.ispicon_bypassMajor::before {
+    background-position: -1167px -300px;
+    width: 24px;
+}
+
+.ispicon_bypassModerate::before {
+    background-position: -1167px -332px;
+    width: 24px;
+}
+
+.ispicon_restoreDefault::before {
+    background-position: -1039px -236px;
+    width: 24px;
+}
+
+.ispicon_restoreCritical::before {
+    background-position: -1039px -268px;
+    width: 24px;
+}
+
+.ispicon_restoreMajor::before {
+    background-position: -1039px -300px;
+    width: 24px;
+}
+
+.ispicon_restoreModerate::before {
+    background-position: -1167px -332px;
+    width: 24px;
+}
+
+.ispicon_siteCritical::before, .ispicon_siteMajor::before, .ispicon_siteNormal::before {
+   background-position: -75px -549px;
+    /*width: 34px;
+    height: 39px !important;*/
+    position: relative;
+    width:41px;
+    height:50px;
+}
+
+.ispicon_siteMajor::before {
+     background-position: -9px -549px;
+}
+
+.ispicon_siteNormal::before {
+     background-position: -250px -644px;
+}
+
+.ispicon_siteCritical.zoom::before, .ispicon_siteMajor.zoom::before, .ispicon_siteNormal.zoom::before {
+    background-position: -249px -542px;   
+    width:45px;
+    height:56px;
+}
+
+.ispicon_siteMajor.zoom::before {
+     background-position: -192px -542px;  
+}
+
+.ispicon_siteNormal.zoom::before {
+       background-position: -363px -542px;
+}
+
+.ispicon_help::before {
+    background-position: -620px -140px;
+}
+
+.ispicon_help:hover::before {
+    background-position: -620px -172px;
+}
+
+
+.ispselect .SumoSelect > .CaptionCont > label > i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    /*background-image: url('../Images/icon_sprites_24px_a.svg');
+    background-size: 218px;*/
+    /*background-image: url('../Images/icon_sprites_24px-01.svg');*/
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-size: 1200px !important;
+    content: "";
+    background-position: -235px -107px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.ispicon_tablesortasc::before {
+    background-position: -106px -330px;
+}
+
+.ispicon_tablesortasc:hover::before {
+    background-position: -106px -362px;
+}
+
+.ispicon_tablesortasc:active::before {
+    background-position: -106px -394px;
+}
+
+.ispicon_tablesortdesc::before {
+    background-position: -106px -430px;
+}
+
+.ispicon_tablesortdesc:hover::before {
+    background-position: -106px -462px;
+}
+
+.ispicon_tablesortdesc:active::before {
+    background-position: -106px -494px;
+}
+
+.ispicon_default_dealer::before {
+    background-position: -10px -970px;
+}
+
+.ispicon_default_dealer:hover::before {
+    background-position: -10px -1002px;
+}
+
+.ispicon_default_dealer:active::before {
+    background-position: -10px -1034px;
+}
+
+.ispicon_checkboxpartial:checked {
+    background-position: -9px -410px !important;
+}
+
+.ispicon_time::before {
+    background-position: -364px -1071px;
+}
+
+.ispicon_time:hover::before {
+    background-position: -364px -1104px;
+}
+
+.ispicon_time:active::before,
+.ispicon_time.active::before {
+    background-position: -364px -1137px;
+    ;
+}
+
+.ispicon_zone::before {
+    background-position: -363px -235px; /*-396px -1071px*/
+}
+
+.ispicon_zone:hover::before {
+    background-position: -396px -1104px;
+}
+
+.ispicon_zone:active::before,
+.ispicon_zone.active::before {
+    background-position: -396px -1137px;
+}
+
+.ispicon_rules::before {
+    background-position: -1072px -9px;
+}
+
+.ispicon_rules:hover::before {
+    background-position: -1072px -41px;
+}
+
+.ispicon_rules:active::before {
+    background-position: -1072px -73px;
+}
+
+.ispicon_error::before {
+    background-position: -2334px -265px;
+}
+
+.ispicon_error_trouble::before {
+    background-position: -2334px -234px;
+}
+
+.ispicon_error_critical::before {
+    background-position: -2334px -265px;
+}
+
+.ispicon_error_major::before {
+    background-position: -2334px -297px;
+}
+
+.ispicon_error_moderate::before {
+    background-position: -2334px -330px;
+}
+
+.ispicon_showpassword::before {
+    background-position: -8px -6px;
+}
+
+.ispicon_showpassword:hover::before {
+    background-position: -8px -38px;
+}
+
+.ispicon_showpassword:active::before {
+    background-position: -7px -68px;
+}
+
+.ispicon_hidepassword::before {
+    background-position: -42px -8px;
+}
+
+.ispicon_hidepassword:hover::before {
+    background-position: -42px -40px;
+}
+
+.ispicon_hidepassword:active::before {
+    background-position: -44px -68px;
+}
+
+/*.ispicon_handbar::before {
+    background-position: -79px -4px;
+}*/
+
+/*.ispicon_handbar:hover::before{
+    background-position: -79px -36px;
+}
+
+.ispicon_handbar:active::before{
+    background-position: -79px -68px;
+}*/
+
+/*
+.ispicon_search::before {
+    background-position: -112px -4px;
+}
+
+.ispicon_search:hover::before{
+    background-position: -112px -36px;
+}
+
+.ispicon_search:active::before{
+    background-position: -112px -68px;
+}*/
+
+.ispicon_alarm::before {
+    background-position: -138px -10px;
+}
+
+.ispicon_alarm:hover::before {
+    background-position: -138px -42px;
+}
+
+.ispicon_alarm:active::before {
+    background-position: -138px -74px;
+}
+
+.ispicon_netaxs::before {
+    background-position: -492px -590px;
+}
+
+.ispicon_netaxs:hover::before {
+    background-position: -492px -590px;
+}
+
+.ispicon_netaxs:active::before {
+    background-position: -492px -590px;
+}
+
+.ispicon_fpBgIcon::before {
+    background-position: -93px -645px;
+    width: 35px;
+    height: 41px;
+}
+
+.ispicon_fpBgIcon {
+    display: inline-block;
+    position: relative;
+    width: 34px;
+    height: 40px;
+}
+
+.ispicon_fpVideo::before {
+    background-position: -331px -429px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+.ispicon_fpDoor::before {
+    background-position: -235px -396px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+.ispicon_fpSensor::before {
+    background-position: -363px -364px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+.ispicon_fpOutput::before {
+    background-position: -267px -396px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+.ispicon_fpArea::before {
+    background-position: -363px -525px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+/*.ispicon_fpBgIcon:hover::before{
+    zoom:2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpVideo::before{
+    zoom: 2;
+}
+
+.ispicon_fpBgIcon:hover .ispicon_fpDoor::before{
+    zoom: 2;
+}*/
+
+.ispicon_userAlarm::before {
+    background-position: -397px -365px;
+}
+
+.ispicon_userEvent_Default::before {
+    background-position: -397px -364px;
+}
+
+.ispicon_userEvent_critical::before {
+    background-position: -397px -397px;
+}
+
+.ispicon_userEvent_major::before {
+    background-position: -397px -428px;
+}
+
+.ispicon_userEvent_moderate::before {
+    background-position: -397px -461px;
+}
+
+.radio.cicle input[type="checkbox"]:checked {
+    background-position: -36px -385px;
+}
+
+.radio.cicle input[type="checkbox"] {
+    background-position: -36px -331px;
+}
+
+.ispicon_arrow::before {
+    background-position: -234px -9px;
+}
+
+.ispicon_arrow:hover::before {
+    background-position: -234px -9px;
+}
+
+.ispicon_arrow:active::before {
+    background-position: -234px -9px;
+}
+
+.ispicon_arrow.left::before {
+    background-position: -234px -10px;
+}
+
+.ispicon_arrow.left:hover::before {
+    background-position: -234px -42px;
+}
+
+.ispicon_arrow.left:active::before {
+    background-position: -234px -74px;
+}
+
+.ispicon_arrow.right::before {
+    background-position: -202px -330px;
+}
+
+.ispicon_arrow.right:hover::before {
+    background-position: -202px -362px;
+}
+
+.ispicon_arrow.right:active::before {
+    background-position: -202px -394px;
+}
+
+.ispicon_arrow.top::before {
+    background-position: -170px -362px;
+}
+
+.ispicon_arrow.top:hover::before {
+    background-position: -170px -362px;
+}
+
+.ispicon_arrow.top:active::before {
+    background-position: -170px -362px;
+}
+
+.ispicon_caret_solid::before {
+     background-position: -138px -368px;
+}
+
+.ispicon_caret_solid:hover::before,
+.ispicon_caret_solid:active::before
+ {
+     background-position: -138px -400px;
+}
+
+
+.usercards .ispimage-small img[src=""] {
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-position: -226px -111px;
+}
+
+.profile-pic img[src=""] {
+    background-image: url('../Images/icon_sprites_24px.svg');
+    background-position: -512px -63px;
+}
+
+.ispicon_visualmgmt::before {
+    background-position: -1167px -9px;
+}
+
+.ispicon_visualmgmt:hover::before {
+    background-position: -1167px -42px;
+}
+
+.ispicon_visualmgmt:active::before {
+    background-position: -1167px -77px;
+}
+
+.ispicon_reports::before {
+    background-position: -1136px -9px;
+}
+
+.ispicon_reports:hover::before {
+    background-position: -1136px -41px;
+}
+
+.ispicon_reports:active::before {
+    background-position: -1136px -73px;
+}
+
+.ispicon_eventalarm::before {
+    background-position: -1104px -37px;
+}
+
+.ispicon_eventalarm:hover::before {
+    background-position: -1104px -69px;
+}
+
+.ispicon_eventalarm:active::before {
+    background-position: -1104px -102px;
+}
+
+
+.ispicon_firmwaremgmt::before {
+    background-position: -1169px -106px;
+}
+
+.ispicon_firmwaremgmt:hover::before {
+    background-position: -1169px -138px;
+}
+
+.ispicon_firmwaremgmt:active::before {
+    background-position: -1169px -170px;
+}
+
+.ispicon_viewer::before {
+    background-position: -1135px -106px;
+}
+
+.ispicon_viewer:hover::before {
+    background-position: -1135px -138px;
+}
+
+.ispicon_viewer:active::before {
+    background-position: -1135px -170px;
+}
+
+.ispicon_firstController::before {
+    background-position: -758px -16px;
+}
+
+.ispicon_firstController:hover::before {
+    background-position: -758px -69px;
+}
+
+.ispicon_firstController:active:before {
+    background-position: -758px -122px;
+}
+
+
+
+.ispicon40px::before {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+
+.ispicon_firstItem::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -16px;
+}
+
+.ispicon_firstItem:hover::before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -69px;
+}
+
+.ispicon_firstItem:active:before {
+    background-size: 1980px !important;
+    width: 40px;
+    height: 40px;
+    background-position: -758px -122px;
+}
+
+.ispicon_multiplecamera::before {
+    background-position: -653px -363px;
+}
+
+.ispicon_multiplecamera:hover::before {
+    background-position: -653px -395px;
+}
+
+.ispicon_multiplecamera:active::before {
+    background-position: -653px -427px;
+}
+
+
+.ispicon_info::before {
+    background-position: -331px -107px;
+}
+
+.ispicon_info:hover::before {
+    background-position: -331px -139px;
+}
+
+.ispicon_info:active::before {
+    background-position: -331px -171px;
+}
+
+
+.ispicon_salvo_one::before {
+    background-position: -10px -1168px;
+}
+
+.ispicon_salvo_one:hover::before {
+    background-position: -10px -1200px;
+}
+
+.ispicon_salvo_one:active::before {
+    background-position: -10px -1232px;
+}
+
+.ispicon_salvo_two::before {
+    background-position: -42px -1169px;
+}
+
+.ispicon_salvo_two:hover::before {
+    background-position: -42px -1201px;
+}
+
+.ispicon_salvo_two:active::before {
+    background-position: -42px -1233px;
+}
+
+.ispicon_salvo_four::before {
+    background-position: -75px -1071px;
+}
+
+.ispicon_salvo_four:hover::before {
+    background-position: -75px -1103px;
+}
+
+.ispicon_salvo_four:active::before {
+    background-position: -75px -1136px;
+}
+
+.ispicon_salvo_six::before {
+    background-position: -42px -1072px;
+}
+
+.ispicon_salvo_six:hover::before {
+    background-position: -42px -1104px;
+}
+
+.ispicon_salvo_six:active::before {
+    background-position: -42px -1136px;
+}
+
+.ispicon_salvo_eight::before {
+    background-position: -10px -1071px;
+}
+
+.ispicon_salvo_eight:hover::before {
+    background-position: -10px -1103px;
+}
+
+.ispicon_salvo_eight:active::before {
+    background-position: -10px -1135px;
+}
+
+.ispicon_fullscreen::before {
+    background-position: -170px -1071px;
+}
+
+.ispicon_fullscreen:hover::before {
+    background-position: -170px -1103px;
+}
+
+.ispicon_fullscreen:active::before {
+    background-position: -170px -1134px;
+}
+
+.ispicon_viewerCameralive::before {
+    background-position: -108px -1073px;
+}
+
+.ispicon_viewerCameraoffline::before {
+    background-position: -108px -1106px;
+}
+
+.ispicon_viewerremovesalvo::before {
+    background-position: -106px -1137px;
+}
+
+.ispicon_viewercamerarec::before {
+    background-position: -138px -1071px;
+}
+
+.ispicon_viewercamerarec:hover::before {
+    background-position: -138px -1106px;
+}
+
+.ispicon_viewercamerarec:active::before {
+    background-position: -138px -1138px;
+}
+
+.ispicon_recordall::before {
+    background-position: -300px -1071px;
+}
+
+.ispicon_recordall:hover::before {
+    background-position: -300px -1168px;
+}
+
+/*.ispicon_recordall:hover::before {
+    background-position: -300px -1136px;
+}*/
+/*
+.ispicon_recordall:active::before {
+    background-position: -300px -1168px;
+}*/
+
+.ispicon_recordall.active::before {
+    background-position: -300px -1168px;
+}
+
+.ispicon_recordall.on::before {
+    background-position: -300px -1105px;
+}
+
+.ispicon_viewclip::before {
+    background-position: -300px -1200px;
+}
+
+.ispicon_viewclip:hover::before {
+    background-position: -300px -1264px;
+}
+
+.ispicon_viewclip:active::before {
+    background-position: -300px -1264px;
+}
+
+.ispicon_videonotok::before {
+    background-position: -300px -365px;
+}
+
+.ispicon_videonotokmismatch::before {
+    background-position: -300px -365px;
+}
+
+.ispicon_recordedon::before {
+    background-position: -332px -492px;
+}
+
+.ispicon_disable::before {
+    background-position: -299px -396px;
+}
+
+.ispicon_videook::before {
+    background-position: -332px -460px;
+}
+
+.ispicon_videodisabled::before {
+    background-position: -300px -393px;
+}
+
+.ispicon_videookmismatch::before {
+    background-position: -300px -430px;
+}
+
+/*duplicate code*/
+/*.ispicon_videonotokmismatch::before {
+    background-position: -300px -430px;
+}*/
+
+.ispicon_videorecorderon::before {
+    background-position: -332px -492px;
+}
+
+.ispicon_freeze::before {
+    background-position: -717px -364px;
+}
+
+.ispicon_freezeCritical::before {
+    background-position: -717px -398px;
+}
+
+.ispicon_freezeModerate::before {
+    background-position: -717px -430px;
+}
+
+.ispicon_freezeMajor::before {
+    background-position: -717px -461px;
+}
+
+.ispicon_heat::before {
+    background-position: -686px -364px;
+}
+
+.ispicon_heatCritical::before {
+    background-position: -686px -398px;
+}
+
+.ispicon_heatModerate::before {
+    background-position: -686px -430px;
+}
+
+.ispicon_heatMajor::before {
+    background-position: -686px -461px;
+}
+
+.ispicon_medical::before {
+    background-position: -782px -365px;
+}
+
+.ispicon_medicalCritical::before {
+    background-position: -782px -397px;
+}
+
+.ispicon_medicalModerate::before {
+    background-position: -782px -429px;
+}
+
+.ispicon_medicalMajor::before {
+    background-position: -782px -461px;
+}
+
+.ispicon_sprinkler::before {
+    background-position: -812px -236px;
+}
+
+.ispicon_sprinklerCritical::before {
+    background-position: -814px -268px;
+}
+
+.ispicon_tamper::before {
+    background-position: -814px -364px;
+}
+
+.ispicon_tamperCritical::before {
+    background-position: -814px -397px;
+}
+
+.ispicon_tamperModerate::before {
+    background-position: -814px -430px;
+}
+
+.ispicon_tamperMajor::before {
+    background-position: -814px -461px;
+}
+
+.ispicon_untypedCritical::before {
+    background-position: -269px -236px;
+}
+
+.ispicon_untypedModerate::before {
+    background-position: -269px -268px;
+}
+
+.ispicon_untypedMajor::before {
+    background-position: -269px -301px;
+}
+
+.ispicon_water::before {
+    background-position: -750px -364px;
+}
+
+.ispicon_waterCritical::before {
+    background-position: -750px -398px;
+}
+
+.ispicon_waterModerate::before {
+    background-position: -750px -430px;
+}
+
+.ispicon_waterMajor::before {
+    background-position: -750px -461px;
+}
+
+.ispicon_export::before,.ispicon_export.active::before {
+    background-position: -171px -12px;
+}
+
+.ispicon_export:hover::before {
+    background-position: -171px -44px;
+}
+
+.ispicon_wrong::before {
+    background-position: -108px -202px;
+}
+
+.ispicon_burglary::before {
+    background-position: -749px -236px;
+}
+
+.ispicon_burglaryCritical::before {
+    background-position: -749px -268px;
+}
+
+.ispicon_burglaryModerate::before {
+    background-position: -749px -300px;
+}
+
+.ispicon_burglaryMajor::before {
+    background-position: -749px -332px;
+}
+
+.ispicon_panic::before {
+    background-position: -783px -236px;
+}
+
+.ispicon_panicCritical::before {
+    background-position: -783px -268px;
+}
+
+.ispicon_panicModerate::before {
+    background-position: -783px -300px;
+}
+
+.ispicon_panicMajor::before {
+    background-position: -783px -332px;
+}
+
+.ispicon_holdup::before {
+    background-position: -783px -236px;
+}
+
+.ispicon_holdupCritical::before {
+    background-position: -782px -268px;
+}
+
+.ispicon_holdupModerate::before {
+    background-position: -783px -300px;
+}
+
+.ispicon_holdupMajor::before {
+    background-position: -783px -332px;
+}
+
+.ispicon_fire::before {
+    background-position: -816px -236px;
+}
+
+
+
+.ispicon_gas::before {
+    background-position: -846px -236px;
+}
+
+.ispicon_gasCritical::before {
+    background-position: -846px -268px;
+}
+
+.ispicon_gasModerate::before {
+    background-position: -846px -300px;
+}
+
+.ispicon_gasMajor::before {
+    background-position: -846px -332px;
+}
+
+.ispicon_equipmentfault::before {
+    background-position: -911px -236px;
+}
+
+.ispicon_equipmentfaultCritical::before {
+    background-position: -911px -268px;
+}
+
+.ispicon_equipmentfaultModerate::before {
+    background-position: -911px -300px;
+}
+
+.ispicon_equipmentfaultMajor::before {
+    background-position: -911px -332px;
+}
+
+.ispicon_emergency::before {
+    background-position: -782px -365px;
+}
+
+.ispicon_emergencyCritical::before {
+    background-position: -782px -397px;
+}
+
+.ispicon_emergencyModerate::before {
+    background-position: -782px -429px;
+}
+
+.ispicon_emergencyMajor::before {
+    background-position: -782px -461px;
+}
+
+.ispicon_cameraGreen::before {
+    background-position: -331px -461px;
+}
+
+.ispicon_camera::before {
+    background-position: -331px -235px;
+}
+
+.ispicon_vm_critical::before{
+    background-position: -910px -267px;
+}
+
+.ispicon_vm_major::before{
+    background-position: -914px -299px;
+}
+
+.ispicon_extraMore::before{
+    background-position: -360px -104px;
+}
+.ispicon_extraMore:hover::before{
+    background-position: -360px -136px;
+}
+
+.ispicon_vm_acknowledged::before {
+    background-position: -202px -203px;
+}
+
+.ispicon_play_clip::before {
+    background-position: -460px -332px;
+}
+
+.ispicon_play_clip:hover::before {
+    background-position: -460px -267px;
+}
+
+.ispicon_sec_timer::before{
+    background-position: -363px -1072px;
+}
+
+.ispicon_pop_video::before {
+    background-position: -170px -1072px;
+}
+
+.ispicon_pop_video:hover::before {
+    background-position: -170px -1104px;
+}
+
+.ispicon_pop_video:active::before {
+    background-position: -170px -1136px;
+} 
+
+.ispicon_major_warning::before {
+    background-position: -910px -428px;
+} 
+
+
+.ispicon_door_online_locked_unblocked::before{
+    background-position: -876px -364px;
+}
+
+
+.ispicon_door_online_locked_blocked::before, .ispicon_door_online_unlocked_blocked::before{
+    background-position: -876px -396px;
+}
+
+.ispicon_door_offline_locked_blocked::before,.ispicon_door_offline_unlocked_blocked::before{
+    background-position: -876px -492px;
+}
+
+.ispicon_camera_online::before{
+    background-position: -332px -460px;
+}
+.ispicon_camera_recording::before{
+    background-position: -332px -493px;
+}
+.ispicon_camera_disabled::before{
+    background-position: -299px -395px;
+}
+.ispicon_camera_offline::before{
+    background-position: -302px -493px;
+}
+
+
+.ispicon_exitfullscreen::before {
+    background-position: -428px -1071px;
+}
+
+.ispicon_exitfullscreen:hover::before {
+    background-position: -428px -1101px;
+}
+
+.ispicon_door_online_blocked::before{
+    background-position: -428px -1101px;
+}
+
+.ispicon_door_offline_locked_blocked_alarm::before{
+    background-position: -876px -556px;
+}
+
+.ispicon_door_online_locked::before{
+    background-position:-876px -364px;
+}
+
+.ispicon_door_offline_unloacked_blocked_alarm::before{
+background-position:-876px -556px;
+}
+
+.ispicon_offline_unlocked_alarm::before{
+    background-position: -235px -268px;
+}
+
+.ispicon_door_offline_cross::before{
+    background-position: -876px -202px;
+}

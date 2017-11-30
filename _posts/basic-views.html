@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/dcm.css">
+    <link href='Content/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='Content/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <link href="content/css/common-styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/dahuapopup.css">
+    <script src="Scripts/lib/jquery-1.11.0.js"></script>
+    <script src='Content/fullcalendar/fullcalendar.js'></script>
+    <script src='lib/jquery-ui.custom.min.js'></script>
+    <script src="scripts/master.js"></script>
+    <link href="content/css/spinner.css" rel="stylesheet" type="text/css">
+
+    <script>
+        $(document).ready(function () {
+            $("#calendar").click(function (e) {
+                $(".schedulepopup").addClass('hide');
+                $(".copytimepickerpopup").removeClass('hide');
+            });
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+            $('#calendar').fullCalendar({
+                defaultView: 'agendaWeek',
+                header: {
+                    left: '',
+                    center: '',
+                    right: ''
+                },
+                allDaySlot: false,
+                editable: true,
+                columnFormat: 'ddd',
+                events: [{
+                        title: '',
+                        start: new Date(y, m, 1)
+                },
+                    {
+                        title: '',
+                        start: new Date(y, m, d - 5),
+                        end: new Date(y, m, d - 2)
+                }, {
+                        id: 999,
+                        title: '',
+                        start: new Date(y, m, d - 3, 16, 0),
+                        allDay: false
+                }, {
+                        id: 999,
+                        title: '',
+                        start: new Date(y, m, d + 4, 16, 0),
+                        allDay: false
+                }, {
+                        title: '',
+                        start: new Date(y, m, d, 10, 30),
+                        allDay: false
+                }, {
+                        title: '',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false
+                }, {
+                        title: 'Birthday Party',
+                        start: new Date(y, m, d + 1, 19, 0),
+                        end: new Date(y, m, d + 1, 22, 30),
+                        allDay: false
+                }, {
+                        title: 'Click for Google',
+                        start: new Date(y, m, 28),
+                        end: new Date(y, m, 29),
+                        url: 'http://google.com/'
+                }]
+            });
+        });
+    </script>
+
+</head>
+<div class="mpc">
+    <div class="mpc ps-dahua-model schedulepopup">
+        <div class="newdevice">
+            <header class="row">
+                <h1>Time Schedule</h1> </header>
+        </div>
+        <div class="modal-body">
+            <div id='calendar'></div>
+        </div>
+        <footer class="modal-footer">
+            <button class="btn btn-default">Cancel</button>
+            <button class="btn btn-primary">Save</button>
+        </footer>
+    </div>
+    <div class="mpc ps-mpc-model hide copytimepickerpopup">
+            <div class="newdevice">
+                <header class="row">
+                    <h1>Time Schedule</h1> </header>
+            </div>
+            <div class="modal-body">
+                <form autocomplete="off" class="schedular-popup">
+                    <div class="clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group pad-r20">
+                            <label for="macid">Starts</label>
+                            <input type="time" class="form-control" id="" placeholder=""> </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <label for="macid">Ends</label>
+                            <input type="time" class="form-control" id="" placeholder=""> </div>
+                    </div>
+                    <div>
+                        <p>Copy to</p>
+                        <div class="calndr_day_date mar-t10">
+                            <ul class="list-unstyled list-inline cal-nav">
+                                <li>
+
+                                    <span class="cal-date date-hw_blue">M</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="date-hw_gray-o cal-date">T</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="date-hw_gray-o cal-date">W</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">T</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">F</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">S</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">S</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">H1</span>
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">H2</span>
+
+                                </li>
+                                <li>
+
+                                    <span class="cal-date date-hw_gray-o">H3</span>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <footer class="modal-footer">
+                <span class="spinner-control pull-left"><i class="ispicon ispicon_delete"></i></span>
+                <button class="btn btn-default">Cancel</button>
+                <button class="btn btn-primary">Save</button>
+            </footer>
+    </div>
+    </div>
+</html>

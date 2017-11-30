@@ -1,0 +1,6 @@
+.ispsubscription .price-block { border: 1px solid #e5eae8; background-color: #fff; padding: 40px; margin-bottom: 30px; border-radius: 0px 0px 5px 5px; margin-top: -1px; }
+.ispsubscription .price-head { background-color: #f0f4f2; padding: 4px 0px 15px 30px; border-radius: 5px 5px 0px 0px; border: 1px solid #e5eae8; }
+.ispsubscription .price-block ul {padding:0; list-style:none; border-bottom: 1px #d7dcda dashed; margin-bottom: 16px; margin-top: 15px; padding-bottom: 16px; }
+.ispsubscription .price-block ul li { color: #676462; line-height: 24px; font-size: 13px; font-weight: 500; }
+.ispsubscription .price-content { position: relative; }
+.ispsubscription .price-text { color: #272625; /*position: absolute;*/ font-weight: 500; top: -2px; right: 0px; }

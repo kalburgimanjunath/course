@@ -1,0 +1,2791 @@
+﻿#camera_device_list .listgrouppane {
+    top: 124px;
+}
+
+#camera_device_list .list-group-item .camare_status {
+    margin-top: -10px;
+}
+
+.cameraconfig-root .cameraconfig-form .cardlistview,
+.cameraconfig-root .cameraconfig-form .mainview {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    border-right: 1px solid #e7e7e7;
+}
+
+    .cameraconfig-root .cameraconfig-form .cardlistview:hover {
+        overflow-y: auto;
+    }
+
+.cameraconfig-root .cameraconfig-form .cardlistview {
+    left: 24%;
+}
+
+.cameraconfig-root .cameraconfig-form .mainview {
+    right: 0;
+    padding: 0;
+    left: 49%;
+}
+
+#camera_device_list .controllerList .controllersec .status-inline {
+    font-size: 12px;
+    font-family: "HoneywellSansWeb-Bold" !important;
+    padding: 3px 3px 1px 5px;
+}
+
+.togglemenu .cameraconfig-root .cameraconfig-form .cardlistview {
+    left: 70px;
+}
+
+.togglemenu .cameraconfig-root .cameraconfig-form .mainview {
+    margin-left: 70px;
+    left: 25%;
+}
+
+.mpc .dahuacameraroot {
+}
+
+    .mpc .dahuacameraroot .overviewHeader {
+    }
+
+        .mpc .dahuacameraroot .overviewHeader h2.isppagetitle {
+            margin: 24px 20px 16px 20px !important;
+            font-family: 'HoneywellSansWeb-Bold' !important;
+            color: #303030;
+        }
+
+        .mpc .dahuacameraroot .overviewHeader .ispicon_plus {
+            margin-left: 20px;
+        }
+
+    .mpc .dahuacameraroot #dahuacameraparent {
+        min-height: 400px;
+        margin-top: 11px;
+    }
+
+    .mpc .dahuacameraroot .tab-content .tab-pane > div {
+        position: inherit;
+    }
+
+    .mpc .dahuacameraroot .tab-content .tab-pane .dahuacontinuousrecordingwrapper .isptablebase {
+        padding-top: 80px;
+    }
+
+    .mpc .dahuacameraroot .tab-content .tab-pane .dahuamotionrecordingwrapper .isptablebase {
+        padding-top: 120px;
+    }
+
+        .mpc .dahuacameraroot .tab-content .tab-pane .dahuamotionrecordingwrapper .isptablebase .isptable table tbody tr td input {
+            margin-top: 6px;
+        }
+
+    .mpc .dahuacameraroot #dahuaTabs {
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+        .mpc .dahuacameraroot #dahuaTabs .nav li {
+            padding-right: 20px;
+        }
+
+        .mpc .dahuacameraroot #dahuaTabs.nav-tabs > li a:hover {
+            color: #0889C4;
+        }
+
+    .mpc .dahuacameraroot #dahuaTabsContent {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mpc .dahuacameraroot .border {
+        border-right: 1px solid #d6d6d6;
+    }
+
+    .mpc .dahuacameraroot .downButton {
+        clear: both;
+        float: left;
+        display: block;
+        width: 303px;
+        padding-bottom: 14px;
+        padding-top: 22px;
+    }
+
+    .mpc .dahuacameraroot .stitched {
+        color: #fff;
+        width: calc(100% - 10px);
+        height: 187.5px;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1.3em;
+        border: 2px dashed #d6d6d6;
+        font-weight: normal;
+        background-color: rgb(247,247,247);
+        margin: 0 20px 20px 0;
+        position: absolute;
+    }
+
+    .mpc .dahuacameraroot .playHolder {
+        cursor: pointer;
+        height: 100%;
+    }
+
+    .mpc .dahuacameraroot .icon_player {
+        display: block;
+        position: absolute;
+        top: 41%;
+        left: 46%;
+    }
+
+    .mpc .dahuacameraroot .playText {
+        color: #707070;
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 55%;
+        left: 44%;
+    }
+
+    .mpc .dahuacameraroot .downlist-item {
+        position: relative;
+    }
+
+    .mpc .dahuacameraroot .assobtn {
+        margin-top: 24px;
+    }
+
+    .mpc .dahuacameraroot .colHeading {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #3B3B3D;
+        display: block;
+        font-family: 'Open Sans Semibold' !important;
+        padding-bottom: 17px;
+    }
+
+    .mpc .dahuacameraroot .formcontrol .field {
+        position: relative;
+        display: inline-block;
+    }
+
+    .mpc .dahuacameraroot .formcontrol .select-field {
+        width: 303px;
+        line-height: 0px;
+        position: relative;
+        padding-bottom: 0;
+    }
+
+
+    .mpc .dahuacameraroot .formcontrol label.on {
+        color: #4481C4;
+    }
+
+    .mpc .dahuacameraroot .formcontrol label.show {
+        opacity: 1 !important;
+        position: relative !important;
+        -webkit-animation: expand 5s;
+        -moz-animation: expand 5s;
+        -ms-animation: expand 5s;
+        -o-animation: expand 5s;
+        animation: expand 5s;
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -ms-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
+        color: #6f7074;
+        -khtml-opacity: 1 !important;
+        -moz-opacity: 1 !important;
+        opacity: 1 !important;
+        filter: alpha(opacity=NaN);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+        -webkit-transition: opacity;
+        -moz-transition: opacity;
+        -ms-transition: opacity;
+        -o-transition: opacity;
+        transition: opacity;
+        left: 3px;
+        z-index: 2;
+    }
+
+    .mpc .dahuacameraroot .formcontrol .show {
+        display: block !important;
+    }
+
+    /*.dahuacameraroot .formcontrol option {
+    color: black;
+}*/
+
+    .mpc .dahuacameraroot .formcontrol .watermark {
+        color: #aaa;
+    }
+
+    .mpc .dahuacameraroot .formcontrol .selectize-input > * {
+        padding-left: 15px;
+        padding-top: 20px;
+    }
+
+.dahuacameraroot .formcontrol .selectize-control.single .selectize-input {
+    height: 50px;
+    border-color: #D3D3D3 !important;
+    border-bottom: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+}
+
+.mpc .dahuacameraroot #dahuaTabsContent .buttonGroup {
+    border-top: 1px solid #cccccc;
+    clear: both;
+    background: #ffffff;
+    position: absolute;
+    padding: 14px 0;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+    .mpc .dahuacameraroot #dahuaTabsContent .buttonGroup .btn-primary {
+        margin-right: 20px !important;
+        margin-left: 20px !important;
+    }
+
+/*event settings*/
+.mpc .dahuacameraroot #dahuacameraevntrecsetting .colHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+}
+
+.dahuacameraroot #dahuacameraevntrecsetting progress {
+    right: 30%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    height: 30px;
+    width: 25%;
+    position: absolute;
+}
+
+.mpc .dahuacameraroot .recordDetails {
+    float: left;
+    width: 35%;
+    overflow-y: hidden;
+    bottom: 0;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #d3d3d3;
+}
+
+.mpc .dahuacameraroot .scheduleDetails {
+    float: left;
+    width: 30%;
+    position: absolute;
+    left: 30%;
+    top: 0px;
+    bottom: 65px;
+}
+
+.mpc .dahuacameraroot .recordDetails ul li, .scheduleDetails ul li {
+    float: none;
+    /*border-bottom: 1px solid #D3D3D3;*/
+    margin: 0;
+    /*padding: 14px 0 14px 0;*/
+    border-right: none;
+    list-style-type: none;
+}
+
+.mpc .dahuacameraroot .clipDurationDetails {
+    float: left;
+    width: 30%;
+    position: absolute;
+    left: 60%;
+    top: 0px;
+    bottom: 65px;
+    overflow-x: hidden;
+}
+
+    .mpc .dahuacameraroot .clipDurationDetails ul li {
+        list-style-type: none;
+    }
+
+    .mpc .dahuacameraroot .clipDurationDetails .colHeading {
+        border-bottom: 1px solid #D3D3D3;
+        padding-left: 14px;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+        margin-top: 15px;
+    }
+
+    .mpc .dahuacameraroot .clipDurationDetails select {
+        width: 227px !important;
+    }
+
+.mpc .dahuacameraroot .recordDetails:hover, .scheduleDetails:hover, .clipDurationDetails:hover {
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+}
+
+.mpc .dahuacameraroot .continusRecDetails {
+    float: left;
+    width: 35%;
+    -ms-overflow-y: hidden;
+    overflow-y: hidden;
+    bottom: 0;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #d3d3d3;
+}
+
+    .mpc .dahuacameraroot .continusRecDetails ul li {
+        float: none;
+        /*border-bottom: 1px solid #D3D3D3;*/
+        margin: 0;
+        /*padding: 14px 0 14px 0;*/
+        padding: 0;
+        border-right: none;
+        list-style-type: none;
+    }
+
+    .mpc .dahuacameraroot .continusRecDetails:hover {
+        -ms-overflow-y: hidden;
+        overflow-y: hidden;
+    }
+
+.mpc .dahuacameraroot #dahuacameracontinusrecsetting progress, .dahuacameraroot #dahuacameramotionrecsetting progress {
+    right: 30%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    height: 30px;
+    width: 25%;
+    position: absolute;
+}
+
+.mpc .dahuacameraroot .dahuacameraroot #dahuaeventrecordingul input[type="checkbox"] {
+    vertical-align: middle !important;
+    padding-bottom: 5% !important;
+    margin: -1% 2% 0% 0%;
+}
+
+.mpc .dahuacameraroot .clear {
+    clear: both;
+}
+
+.mpc .dahuacameraroot .settingshead {
+    font-size: 15px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    margin-left: 24px;
+}
+
+.mpc .dahuacameraroot .motionsettingshead {
+    margin: 4% 0% 3% 3%;
+}
+
+.mpc .dahuacameraroot .margin_top {
+    margin-top: 36px;
+}
+
+.mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle {
+    margin: 0 !important;
+}
+
+    .mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle .customcheckbox, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle .customcheckbox, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle .customcheckbox, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle .customcheckbox {
+        border-style: none;
+        color: #6F7074;
+        font-size: 13px;
+        margin: 0 !important;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+    }
+
+        .mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle .customcheckbox span, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle .customcheckbox span, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle .customcheckbox span, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle .customcheckbox span {
+            width: 20px;
+            height: 20px;
+            display: block;
+            background: url("../images/icons/checkBox_normal.png");
+            background-repeat: no-repeat;
+        }
+
+        .mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle .customcheckbox input, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle .customcheckbox input, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle .customcheckbox input, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle .customcheckbox input {
+            display: none;
+        }
+
+            .mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle .customcheckbox input:checked + span, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle .customcheckbox input:checked + span, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle .customcheckbox input:checked + span, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle .customcheckbox input:checked + span {
+                background: url("../images/icons/checkBox_press.png");
+                background-repeat: no-repeat;
+            }
+
+    .mpc .dahuacameraroot #dahuaeventrecordingul .checkboxStyle .title, .dahuacameraroot #dahuacontinuousrecordingul .checkboxStyle .title, .dahuacameraroot #dahuamotionrecordingul .checkboxStyle .title, .dahuacameraroot #dahuaenablemotionrec .checkboxStyle .title {
+        display: block;
+        margin: 0 0 0 30px !important;
+        -webkit-word-break: break-all;
+        -moz-word-break: break-all;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        color: #707070;
+        font-size: 15px;
+    }
+
+.mpc .dahuacameraroot .motionleftalign {
+    float: left;
+    width: 29%;
+    padding: 1% 0% 0% 2.5%;
+}
+
+.mpc .dahuacameraroot .motionrightalign {
+    float: left;
+    margin-right: 2%;
+    width: 30%;
+    padding-left: 2%;
+}
+
+.mpc .dahuacameraroot .motioncenteralign {
+    float: left;
+    margin-right: 2%;
+    width: 30%;
+    border: 0px solid #FFF;
+}
+
+.mpc .dahuacameraroot .selectBoxStyle select {
+    width: 220px !important;
+}
+
+.mpc .dahuacameraroot .ulwidth {
+    width: 27% !important;
+}
+
+.mpc .dahuacameraroot .buttonIcon {
+    background: url("../../content/images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -130px -430px;
+}
+
+.mpc .dahuacameraroot .buttonStyle {
+    width: 168px;
+    height: 25px;
+    border: 0px;
+    border-left: 10px solid #EE3124;
+    background: #E6E4E4;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.mpc .dahuacameraroot .regionAlign {
+    margin: 0% 0% 3% 0%;
+}
+
+    .mpc .dahuacameraroot .regionAlign div:first-child {
+        display: inline-block;
+        width: 80px;
+    }
+
+.mpc .dahuacameraroot .buttonStyle div:first-child {
+    float: right;
+    padding-right: 5%;
+}
+
+.mpc .dahuacameraroot .buttonText {
+    width: 120px;
+    display: inline-block;
+}
+
+.mpc .dahuacameraroot .regionContainerAlign {
+    margin: 0% 0% 5% 8%;
+}
+
+/* Schedule Popup */
+
+.mpc .cursor {
+    cursor: pointer;
+}
+
+.mpc #dahuaschedulePopup .formControl-radio {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    top: 4px !important;
+}
+
+.mpc #dahuaschedulePopup.mpcmodel {
+    /*width: 985px;*/
+    width: 975px;
+}
+
+.mpc #dahuaschedulePopup .multipleDay {
+    clear: both;
+}
+
+.mpc #dahuaschedulePopup .multipleDaySubheading {
+    display: block;
+    clear: both;
+    padding-top: 4px;
+    padding-bottom: 12px;
+    font-size: 15px;
+    color: #3b3b3b;
+}
+
+/*.bootstrap-datetimepicker-widget {
+    margin-left: -215px;
+    position: absolute !important;
+    margin-top: 3px;
+}*/
+
+.mpc #dahuaschedulePopup .icon-time {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-position: -190px -160px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+}
+
+    .mpc #dahuaschedulePopup .icon-time:hover {
+        background-position: -220px -160px;
+    }
+
+.mpc #dahuaschedulePopup .right-inner-addon > span {
+    width: 23px;
+    padding: 25px 12px 22px 12px;
+}
+
+.mpc #dahuaschedulePopup input[type="text"] {
+    width: 211px;
+}
+
+.mpc #dahuaschedulePopup .singleDay .radiotext, #dahuaschedulePopup .multipleDay .radiotext {
+    padding-right: 15px;
+    padding-left: 0px;
+    font-size: 15px;
+    color: #3b3b3b;
+    font-family: 'Open Sans Semibold' !important;
+}
+
+.mpc #dahuaschedulePopup .singleDayFilter {
+    padding-top: 16px;
+    list-style-type: none;
+    margin: 0;
+}
+
+.mpc #dahuaschedulePopup label {
+    border-style: none;
+    position: absolute;
+    color: #707070 !important;
+    font-size: 12px !important;
+    /*font-weight: bold;
+    margin-left: 12px;*/
+    /* margin-top: 24px; */
+    margin-top: 0;
+    /*opacity: 1;
+    letter-spacing: 1px;*/
+}
+
+.mpc #dahuaschedulePopup ul.multipleDayFilter, #dahuaschedulePopup ul.multipleDayFilterSecondRow {
+    margin: 0;
+}
+
+.mpc #dahuaschedulePopup select {
+    width: 97%;
+}
+
+.mpc #dahuaschedulePopup.mpcmodel .singleDayFilter li {
+    padding-bottom: 0;
+    float: left;
+}
+
+.mpc #dahuaschedulePopup .select-field {
+    padding-bottom: 1px;
+    margin-top: -1px;
+}
+
+.mpc #dahuaschedulePopup .multipleDay {
+    padding-top: 9px;
+}
+
+.mpc #dahuaschedulePopup.mpcmodel .multipleDayFilter li {
+    padding-bottom: 0px;
+    list-style-type: none;
+    margin: 0;
+    float: left;
+}
+
+#dahuaschedulePopup.mpcmodel .multipleDayFilterSecondRow li {
+    padding-bottom: 0px;
+    list-style-type: none;
+    margin: 0;
+    float: left;
+}
+
+#dahuaschedulePopup .spaceTopStyle {
+    padding-top: 14px;
+}
+
+#dahuaschedulePopup .customErrorSummary {
+    width: 220px;
+    background: #fff;
+}
+
+.dahuacameraroot .enableRecording {
+    margin: 3px 0px 0px 27px;
+}
+/* Schedule Popup */
+
+/*Motion Recording Styles*/
+.dahuacameraroot #dahuamotionRecording .cameradahuaform-grid {
+    width: 25%;
+    float: left;
+    padding: 9px 21px;
+}
+
+.dahuacameraroot #dahuamotionRecording li {
+    list-style-type: none;
+    clear: both;
+}
+
+#dahuamotionRecording li:last-child {
+    margin-bottom: 34px;
+}
+
+#dahuamotionRecording label.formControl-checkbox {
+    height: 10px;
+}
+
+.dahuacameraroot #dahuamotionRecording .formControl-checkbox span {
+    position: relative;
+    z-index: 20;
+}
+
+.dahuacameraroot #dahuamotionRecording legand {
+    padding-left: 10px;
+    position: relative;
+    top: 3px;
+}
+
+.dahuacameraroot #dahuamotionRecording .enableMotionRecording .enableMotionRecordingCheckbox {
+    padding-bottom: 24px;
+}
+
+.dahuacameraroot #dahuamotionRecording .enableMotionRecording .field select {
+    width: 200px;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion {
+    /*position: absolute;
+top: 339px;
+width: 320px;
+height: 240px;*/
+    padding-left: 22px;
+    padding-left: 0px;
+    margin-left: 0px;
+    height: 164px;
+}
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion li {
+        list-style-type: none;
+        clear: both;
+        margin-bottom: 18px;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .MotionRecordingColHeading {
+        font-size: 15px;
+        color: #3B3B3D;
+        padding-bottom: 12px;
+        display: block;
+        font-family: 'Open Sans Semibold' !important;
+        padding-top: 11px;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .stitched_motionRegion {
+        border: 2px dashed #BABABB;
+        width: 320px;
+        height: 240px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        margin-bottom: 24px;
+    }
+
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .icon_player {
+        display: block;
+        position: absolute;
+        top: 26%;
+        left: 49%;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .playText {
+        color: #707070;
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 31%;
+        left: 48%;
+    }
+
+#dahuamotionRecording .enableMotionRecording .field {
+    width: 93%;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionSelection {
+    width: 206px;
+    float: left;
+}
+
+#dahuamotionRecording .enableMotionRecording #dahuamotionrectime {
+    width: 210px;
+}
+
+
+    #dahuamotionRecording .enableMotionRecording #dahuamotionrectime.error {
+        max-width: 200px !important;
+    }
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .right-inner-addon > span {
+    width: 37px;
+    padding: 47px 0px 0px 13px;
+}
+
+#dahuamotionRecording .motionRegion .stitched_motionRegion {
+    border: 2px dashed #BABABB;
+    width: 180px;
+    height: 180px;
+    background-color: #f9f9f9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-bottom: 24px;
+}
+
+#dahuamotionRecording .motionRegion .motionRegionSelection {
+    width: 206px;
+    float: left;
+}
+
+#dahuamotionRecording .motionRegion .right-inner-addon > span {
+    width: 37px;
+    padding: 47px 0px 0px 13px;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionTxtBox {
+    width: 141px;
+    padding-right: 0;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRecordingIndication {
+    float: left;
+    margin-top: 22px;
+    display: inline-block;
+    margin-bottom: 27px;
+}
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconRed {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #E33E38;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconGreen {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #3BAD49;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .motionRecordingIndication .motionRecordingFieldIconBlue {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: #0067A6;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+        margin-right: 10px;
+    }
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionCheckbox {
+    float: left;
+    margin-top: 6px;
+    display: inline-block;
+    margin-top: 19px;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionEditContainer {
+    display: inline-block;
+    margin-top: 20px;
+    float: left;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .icon_edit {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 29px;
+    background-position: -70px -160px;
+    display: inline-block;
+    /* margin-top: 19px; */
+    cursor: pointer;
+}
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .icon_edit:hover {
+        background-position: -100px -160px;
+    }
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .icon_edit.disable {
+        cursor: default !important;
+        background-position: -70px -160px !important;
+    }
+
+        .dahuacameraroot #dahuamotionRecording .motionRegion .icon_edit.disable:hover {
+            background-position: -70px -160px !important;
+        }
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .icon_edit_selected {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 29px;
+    background-position: -100px -160px;
+    display: inline-block;
+}
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionsensitivity {
+    width: 30%;
+    margin-bottom: 0px;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+}
+
+    .dahuacameraroot #dahuamotionRecording .motionRegion .motionRegionsensitivity input {
+        width: 73%;
+    }
+
+.dahuacameraroot #dahuamotionRecording .motionRegion .motionRecordingFieldIcon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+#dahuamotionRecording .motionRegion .motionRegionTxtBox {
+    width: 141px;
+    padding-right: 0;
+}
+
+
+#dahuamotionRecording .motionRegion .motionRecordingIndication {
+    float: left;
+    /* padding-top: 22px; */
+}
+
+#dahuamotionRecording .motionRegion .motionRecordingFieldIcon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+#dahuamotionRecording .dahuamotionRecordingSchedule li {
+    border-bottom: 1px solid #D3D3D3;
+    padding: 14px 0 14px 0;
+}
+
+
+/*.dahuacameraroot #motionRecording .motionRecordingSchedule li:first-child {
+        border-bottom: 1px solid #D3D3D3;
+        padding: 14px 0 14px 0;
+    }*/
+
+.dahuacameraroot #dahuamotionRecording .dahuamotionRecordingSchedule .dahuamotionRecordingScheduleColHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+    margin-top: 11px;
+    margin-left: 28px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BABABA;
+    /*margin-bottom: 13px;*/
+}
+
+.dahuacameraroot .dahuamotionRecordingScheduleColHeading {
+    font-size: 15px;
+    color: #3B3B3D;
+    display: block;
+    font-family: 'Open Sans Semibold' !important;
+    margin-top: 11px;
+    margin-left: 28px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bababa;
+}
+
+.dahuacameraroot #dahuamotionRecording .dahuaform {
+    position: fixed;
+    width: 72%;
+    height: 66%;
+    overflow: scroll;
+}
+
+.dahuacameraroot #dahuamotionRecording .dahuamotionRecordingSchedule {
+    /*position: absolute;*/
+    right: 0px;
+    top: 55px;
+    bottom: 47px;
+}
+
+    .dahuacameraroot #dahuamotionRecording .dahuamotionRecordingSchedule:hover {
+    }
+
+.dahuacameraroot .checkbox-padding {
+    padding-bottom: 16px;
+}
+
+#dahuamotionRecording .dahuamotioRecordingFirstCol {
+    float: left;
+    width: 28%;
+    padding-bottom: 40px;
+    overflow: hidden;
+    width: 32%;
+    float: left;
+    position: absolute;
+    top: 55px;
+    bottom: 58px;
+    overflow: auto;
+    border-right: 1px solid #bababa;
+}
+
+#dahuamotionRecording .dahuamotioRecordingSecondCol {
+    width: 32%;
+    float: left;
+    left: 33%;
+    position: absolute;
+    top: 55px;
+    padding-bottom: 40px;
+    /* left: 28.1%; */
+    bottom: 58px;
+    overflow: auto;
+    border-right: 1px solid #bababa;
+}
+
+#dahuamotionRecording .motioRecordingThirdCol {
+    float: left;
+    width: 31% !important;
+    /* position: absolute !important; */
+    /* top: 0; */
+    padding-bottom: 58px;
+    /* left: 66.1%; */
+    /* bottom: 0; */
+    /*  overflow: hidden;*/
+    overflow: auto;
+    border-left: 1px solid #bababa;
+}
+
+/* #motionRecording .motioRecordingFirstCol:hover, #motionRecording .dahuamotioRecordingSecondCol:hover, #motionRecording .motioRecordingThirdCol:hover {
+        overflow: auto;
+    }*/
+
+#dahuamotionRecording .dahuamotioRecordingFirstCol .enableMotionRecording {
+    position: absolute;
+    top: 55px !important;
+    bottom: 0;
+    border-right: 1px solid #bababa;
+    width: 28%;
+}
+
+/*Motion Recording Styles*/
+
+/*#dahuacameraparent .buttonGroup .progressContainer {
+    width: 55%;
+    position: absolute;
+    right: 24px;
+    height: 30px;
+    top: 14px;
+}
+
+    #dahuacameraparent .buttonGroup .progressContainer progress {
+        right: 24px;
+        border-radius: 2px;
+        height: 30px;
+        width: 25%;
+        position: fixed;
+    }
+
+        #dahuacameraparent .buttonGroup .progressContainer progress::-webkit-progress-bar {
+            background-color: #707070;
+            border-radius: 4px;
+        }
+
+        #dahuacameraparent .buttonGroup .progressContainer progress::-webkit-progress-value {
+            background-color: #3BAD49;
+            border-radius: 4px;
+            background-size: 35px 29px, 100% 100%, 100% 100%;
+        }
+
+    #dahuacameraparent .buttonGroup .progressContainer .progressText {
+        position: relative;
+        top: 5px;
+        display: block;
+        width: 54%;
+        text-align: center;
+        color: #FFFFFF;
+    }*/
+
+/*Toggle Switch Style For Enable Disable*/
+.dahuaToggleSwitch label {
+    font-weight: normal;
+    padding-left: 14px;
+    margin-top: -5px;
+    color: #707070;
+    font-size: 12px;
+}
+
+#dahuaTabsContent .dahuaToggleSwitch .switch_options span {
+    width: 68px !important;
+}
+
+#dahuaTabsContent .dahuaToggleSwitch .switch_options {
+    width: 140px !important;
+    margin-bottom: 22px;
+}
+/*Toggle Switch Style For Enable Disable*/
+
+
+
+.modelLeftSection #create-tree {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid #bababa;
+}
+/*canvas draw*/
+
+.dahuamotioRecordingSecondCol #motionregioncanvas {
+    border: 1px solid #000;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+}
+
+.dahuamotioRecordingSecondCol .vmdregioncanvas {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    display: none;
+}
+
+.dahuamotioRecordingSecondCol #vmdregioncanvas_draw {
+    position: absolute;
+    border: 1px solid #bababa;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 2;
+}
+
+.dahuamotioRecordingSecondCol #container .tryAgainStyle {
+    position: relative;
+    margin-left: 47px;
+    margin-top: 22px;
+    height: 240px;
+    width: 320px;
+}
+
+.dahuamotioRecordingSecondCol #imageView {
+    border: 1px solid #000;
+}
+
+.dahuamotioRecordingSecondCol #imageTemp {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+
+/*.dahuamotioRecordingSecondCol .motionRecordingIndication {
+    float: left;
+    padding-top: 22px;
+}
+
+.dahuamotioRecordingSecondCol .motionRecordingFieldIconRed {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #E33E38;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.dahuamotioRecordingSecondCol .motionRecordingFieldIconGreen {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #3BAD49;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.dahuamotioRecordingSecondCol .motionRecordingFieldIconBlue {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-color: #0067A6;
+    border-radius: 4px;
+    margin-right: 10px;
+}*/
+
+
+.dahuamotioRecordingSecondCol #dahuavmdPlayerId {
+    border: 2px dashed #d3d3d3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    background-color: #F7F7F7;
+}
+
+.dahuamotioRecordingSecondCol .motionRegionCheckbox {
+    float: left;
+    margin-top: 6px;
+}
+
+/*.dahuamotioRecordingSecondCol .icon_edit {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -70px -160px;
+    display: inline-block;
+    margin-top: 20px;
+}*/
+
+/*.dahuamotioRecordingSecondCol .icon_edit_selected {
+    background: url("../images/sprite_icons.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-position: -100px -160px;
+    display: inline-block;
+    margin-top: 20px;
+}*/
+
+
+form#dahuacameramotionrecsetting {
+    margin: 0px;
+    overflow: hidden;
+}
+
+#dahuamotionRecording #dahuacameramotionrecsetting .enableMotionRecordingCheckbox {
+    margin-bottom: 0;
+}
+
+.dahuamotioRecordingSecondCol .doneControl {
+    padding-left: 48px;
+    color: #08c;
+    cursor: pointer;
+    display: none;
+}
+
+/*Player styles for Motion Region*/
+.dahuamotioRecordingSecondCol #container .playercontainer {
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    top: 0;
+}
+
+.dahuamotioRecordingSecondCol #container #panelRequestLive {
+    height: 241px;
+    position: absolute;
+    width: 321px;
+}
+
+.dahuamotioRecordingSecondCol #container .loading-icon {
+    background: url('../images/Honeywell_Blank_220.png') 50% no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    display: none;
+    top: 0px;
+    bottom: 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.dahuamotioRecordingSecondCol #container .videoError {
+    position: relative;
+    font-size: 14px;
+    width: 218px;
+    display: block;
+    padding-left: 32px;
+    padding-top: 15px;
+}
+
+.dahuamotioRecordingSecondCol #container .videoErrorTextStyle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -4px;
+    background-color: #000000;
+    padding-top: 25%;
+    border: 1px solid transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    display: block;
+    padding-left: 27%;
+}
+
+.dahuacameraroot #motionRecording .motionRegion .formControl-checkbox {
+    height: 10px;
+    top: 0px !important;
+}
+
+    .dahuacameraroot #motionRecording .motionRegion .formControl-checkbox span {
+        width: 0px;
+        height: 20px;
+        padding-top: 0px !important;
+    }
+
+.dahuamotioRecordingSecondCol #container .videoErrorTextStyle .videoErrorImage {
+    background: url("../images/sprite_40.png");
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-position: -10px -60px;
+    display: inline-block;
+    margin-left: 48px;
+}
+
+
+.dahuamotioRecordingSecondCol #container .videoErrorTextStyle .videoErrorText {
+    display: block;
+    font-size: 12px;
+    color: #D3D3D3;
+}
+
+.dahuamotioRecordingSecondCol #container .tryAgainStyle {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 1px;
+    display: inline-flex;
+    color: #d3d3d3;
+    padding-left: 18px;
+}
+
+.dahuamotioRecordingSecondCol #container .icon_tryagain {
+    background: url("../images/sprite_icons.png");
+    background-position: -40px -430px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 8px;
+}
+/*Player styles for Motion Region*/
+
+/*Progress Bar styles for MPCA*/
+#dahuaTabsContent progress::-moz-progress-bar {
+    background-color: #3BAD49;
+}
+
+#dahuaTabsContent progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    /* behavior: url(./border-radius.htc); For IE, download and customize htc file http://curved-corner.googlecode.com/files/border-radius.htc */
+    border: 1px solid #707070;
+    background-color: #707070;
+}
+
+#dahuaTabsContent progress {
+    color: #3BAD49;
+}
+/*Progress Bar styles for MPCA*/
+
+/*Event recording trigger label style*/
+#dahuaeventrecordingul .checkboxStyle .title {
+    cursor: default;
+}
+/*Event recording trigger label style*/
+
+#dahuaschedulePopup select[disabled] {
+    background-color: transparent !important;
+}
+
+.field #dahuacameraRCDPreEvnt + .tooltip.bottom .tooltip-arrow, .field #dahuacameraRCDOnsPstEvnt + .tooltip.bottom .tooltip-arrow, .field #dahuacameraRCDOffPstEvnt + .tooltip.bottom .tooltip-arrow {
+    left: 251px !important;
+}
+
+#dahuaCamerasetting .cameradahuaform-grid .secondary-button.assobtn {
+    margin-top: 0;
+}
+
+.mpc .dahuacameraroot .dahuaManualCameraAddStyle {
+    padding-bottom: 22px;
+}
+
+    .mpc .dahuacameraroot .dahuaManualCameraAddStyle .formControl-checkbox {
+        height: 10px;
+        top: 2px !important;
+    }
+
+    .mpc .dahuacameraroot .dahuaManualCameraAddStyle .dahuaManualCameraTitle {
+        margin: 3px 0 0 27px;
+        display: inline-block;
+        color: #707070;
+    }
+
+@-moz-document url-prefix() {
+    .mpc .dahuacameraroot #dahuaTabsContent .scroll-y {
+        overflow: auto;
+    }
+
+        .mpc .dahuacameraroot #dahuaTabsContent .scroll-y:hover {
+            overflow-y: auto;
+        }
+
+    .mpc .dahua-create-edit .mpc .dahuacameraroot #dahuaTabsContent .scroll-y {
+        overflow: auto;
+    }
+
+    .mpc .dahuacameraroot #dahuaTabsContent .scroll-y:hover {
+        overflow-y: auto;
+    }
+}
+
+/* create and edit */
+.mpc .dahua-create-edit {
+    padding: 0px;
+    overflow: hidden;
+}
+
+    .mpc .dahua-create-edit .main_container {
+        background: #fff;
+        height: calc(100% - 60px);
+        margin-top: 60px !important;
+    }
+
+    .mpc .dahua-create-edit .btn {
+        margin: 0;
+    }
+
+    .mpc .dahua-create-edit .config-rtl {
+        padding: 0px;
+    }
+
+    .mpc .dahua-create-edit .config-lft {
+        border-right: #e7e7e7 solid 1px;
+        /*overflow: auto;*/
+        padding: 0px;
+    }
+
+
+    /*footer*/
+
+    .mpc .dahua-create-edit .padding-sections {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .mpc .dahua-create-edit .footer {
+        position: fixed;
+        height: 64px;
+        background-color: #ffffff;
+        bottom: 0;
+        border-top: #e7e7e7 1px solid;
+        width: calc(100% - 340px);
+    }
+
+    .mpc .dahua-create-edit div.footer-button {
+        padding: 16px 16px 0 0;
+    }
+
+    .mpc .dahua-create-edit .footer .footer-button .btn:last-child {
+        margin-right: 10px !important;
+    }
+
+    .mpc .dahua-create-edit ppl-list {
+        overflow: auto;
+    }
+
+    .mpc .dahua-create-edit .scroll-rtl,
+    .mpc .dahua-create-edit .scroll-rtr {
+        padding-bottom: 20px;
+    }
+
+    .mpc .dahua-create-edit div.sett-video {
+        padding-bottom: 0;
+        height: 212px;
+    }
+
+    .mpc .dahua-create-edit video.video {
+        width: 100%;
+    }
+
+    .mpc .dahua-create-edit .video--wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+        .mpc .dahua-create-edit .video--wrapper:hover {
+            cursor: pointer;
+        }
+
+    .mpc .dahua-create-edit div.playpause {
+        position: relative;
+        left: 128px;
+        right: 0;
+        top: -147px;
+        bottom: 0%;
+        height: 46px;
+        width: 46px;
+        background: url(../../images/play.png) no-repeat center center;
+        background-size: 46px 46px;
+    }
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .mpc .dahua-create-edit div.playpause {
+        position: relative;
+        left: 73px;
+        right: 0;
+        top: -104px;
+        bottom: 0%;
+        height: 46px;
+        width: 46px;
+        background: url(../../images/play.png) no-repeat center center;
+        background-size: 46px 46px;
+    }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    .mpc .dahua-create-edit div.playpause {
+        position: relative;
+        left: 230px;
+        right: 0;
+        top: -215px;
+        bottom: 0%;
+        height: 46px;
+        width: 46px;
+        background: url(../../images/play.png) no-repeat center center;
+        background-size: 46px 46px;
+    }
+}
+
+.mpc .dahua-create-edit .video-pre {
+    width: 43%;
+    padding-bottom: 4px;
+}
+
+.mpc .dahua-create-edit .row.hr {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.mpc .dahua-create-edit .spinner-control {
+    width: 100%;
+}
+
+    .mpc .dahua-create-edit .spinner-control .ui-widget input,
+    .mpc .dahua-create-edit .spinner-control .ui-widget select,
+    .mpc .dahua-create-edit .spinner-control .ui-widget textarea,
+    .mpc .dahua-create-edit .spinner-control .ui-widget button {
+        font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+        color: #0889C5;
+        margin-top: 0px !important;
+        padding: 0px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control input[type=number] {
+        padding-left: 8px !important;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner-input {
+        color: #0889C5;
+        padding: 0;
+        margin: 0 0;
+        vertical-align: middle;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner-input {
+        color: #0889C5;
+        padding: 0;
+        margin: auto;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-widget input,
+    .mpc .dahua-create-edit .spinner-control .ui-widget select,
+    .mpc .dahua-create-edit .spinner-control .ui-widget textarea,
+    .mpc .dahua-create-edit .spinner-control .ui-widget button {
+        font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+        border: 1px solid #d0d0d0;
+        color: #606060;
+        margin-top: 0px !important;
+        padding: 0px;
+        margin-right: auto;
+    }
+
+    .mpc .dahua-create-edit .spinner-control input[type=number],
+    .mpc .dahua-create-edit .ui-spinner {
+        width: 100%;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-icon-triangle-1-n:hover {
+        background-position: -462px -285px;
+        height: 5px;
+        top: 7px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner-button {
+        width: 16px;
+        height: 50%;
+        font-size: .5em;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        position: absolute;
+        cursor: default;
+        display: block;
+        overflow: hidden;
+        right: 2px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner .ui-icon {
+        position: absolute;
+        margin-top: -2px;
+        left: -2px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-widget-content {
+        color: #333333;
+        margin-top: 0;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner .ui-spinner-down {
+        top: 10px;
+        position: absolute;
+        height: 28px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-spinner-up {
+        top: 0;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-corner-all,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-top,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-left,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-tl {
+        border-top-left-radius: 0px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-corner-all,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-top,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-right,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-tr {
+        border-top-right-radius: 0px;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-corner-all,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-bottom,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-left,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-bl {
+        border-bottom-left-radius: 0;
+    }
+
+    .mpc .dahua-create-edit .spinner-control .ui-corner-all,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-bottom,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-right,
+    .mpc .dahua-create-edit .spinner-control .ui-corner-br {
+        border-bottom-right-radius: 0;
+    }
+
+.mpc .dahua-create-edit .rule-alarm-span {
+    cursor: pointer;
+    left: -7px;
+    position: absolute;
+    top: -1px;
+}
+
+.mpc .dahua-create-edit .checkbox {
+    padding-left: 0;
+}
+
+    .mpc .dahua-create-edit .checkbox legand {
+        color: #707070;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: 'HoneywellSansWeb-Medium' !important;
+        font-weight: normal;
+        position: relative;
+        padding-left: 10px;
+        line-height: 20px;
+    }
+
+.mpc .dahua-create-edit .formControl-checkbox {
+    border-style: none;
+    color: #6F7074;
+    margin: 0 !important;
+    position: relative;
+    width: auto;
+    padding-right: 10px;
+}
+
+.mpc .dahua-create-edit .checkbox-form-control {
+    padding: 0 0 20px 9px !important;
+}
+
+.mpc .dahua-create-edit h2.form-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #303030;
+    padding-bottom: 14px !important;
+}
+
+.mpc .dahua-create-edit label.label-heading {
+    padding-top: 15px;
+    font-weight: normal;
+    color: #606060;
+}
+
+.mpc .dahua-create-edit .sett-video {
+    padding-top: 20px;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.mpc .dahua-create-edit .scroll_shadow {
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.2);
+}
+
+.mpc .dahua-create-edit ul.nav-tabs.pw_tabs {
+    padding: 17px 17px 0px 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.mpc .dahua-create-edit .nav-tabs.pw_tabs {
+    border: none;
+}
+
+.mpc .dahua-create-edit .ppl_main_tab {
+    height: 52px;
+}
+
+.mpc .dahua-create-edit ul.nav-tabs.pw_tabs {
+    padding: 17px 17px 0px 20px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.mpc .dahua-create-edit .nav-tabs.pw_tabs {
+    border: none;
+}
+
+.mpc .dahua-create-edit .nav.nav-tabs.pw_tabs li {
+    margin: 0 20px 0 0;
+}
+
+    .mpc .dahua-create-edit .nav.nav-tabs.pw_tabs li.active a {
+        background: none;
+        border: none;
+        color: #1792e5;
+        border-bottom: 4px solid #1792e5;
+    }
+
+    .mpc .dahua-create-edit .nav.nav-tabs.pw_tabs li a {
+        border-bottom: 2px solid transparent;
+    }
+
+.mpc .dahua-create-edit .people_group {
+    width: 340px;
+    border-right: 1px solid #e7e7e7;
+    padding: 0;
+}
+
+.mpc .dahua-create-edit .people_group_right {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+}
+
+.mpc .dahua-create-edit .people_title {
+    position: relative;
+}
+
+.mpc .dahua-create-edit .recordingClipDuration {
+    margin-top: 185px;
+}
+
+.mpc .dahua-create-edit .field.form-group.timeConditionField.spinner-control {
+    margin-top: -2px;
+}
+
+.mpc .dahua-create-edit .switch_btn input[type="radio"],
+.mpc .dahua-create-edit .switch_btn input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    opacity: 0;
+    position: absolute !important;
+    z-index: -1;
+}
+
+    .mpc .dahua-create-edit .switch_btn input[type='checkbox']:checked + label {
+        background: #90ba51;
+    }
+
+.mpc .dahua-create-edit .switch_btn label {
+    text-indent: -999px;
+    margin: 0;
+    width: 36px;
+    height: 20px;
+    background: #e5e5e5;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mpc .dahua-create-edit .switch_btn input[type='checkbox']:checked + label:after {
+    left: 17px;
+    border-color: #799d43;
+}
+
+.mpc .dahua-create-edit .switch_btn label:after {
+    content: ' ';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: block;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    box-shadow: 1px 1px 4px rgba(221, 221, 221, 0.5);
+}
+
+.mpc .dahua-create-edit .switch_options {
+    display: inline-block;
+    border: 1px solid #1792e5;
+    margin-bottom: -5px;
+}
+
+    .mpc .dahua-create-edit .switch_options span {
+        font-size: 13px;
+        font-weight: normal;
+        display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 0 16px;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: #1792e5;
+        line-height: 1;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        background: #fff;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        height: 26px;
+        line-height: 30px;
+    }
+
+        .mpc .dahua-create-edit .switch_options span.selected {
+            color: #fff;
+            border-color: #fff;
+            background: #1792e5;
+        }
+
+.mpc .dahua-create-edit .padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mpc .dahuacameraroot .dahuaconfigwrapper {
+    right: 0;
+    left: 0;
+    position: inherit !important;
+}
+
+    .mpc .dahuacameraroot .dahuaconfigwrapper input[type=number]::-webkit-inner-spin-button,
+    .mpc .dahuacameraroot .dahuaconfigwrapper input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: default-button;
+        margin: 0;
+    }
+
+    .mpc .dahuacameraroot .dahuaconfigwrapper .secLabel {
+        color: #707070;
+        font-size: 12px;
+        left: 59px;
+        top: 16px;
+        position: absolute;
+    }
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .row.content {
+    position: absolute;
+    top: 102px;
+    bottom: 0;
+    overflow-x: auto;
+}
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .row.content .slider.round {
+        margin-left: 0;
+    }
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown {
+    position: absolute;
+    width: calc(100% - 10px);
+}
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown .isppopup-site {
+        top: 53px;
+        width: calc(100% - 0px);
+    }
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown .ispicon_dropArrow {
+        top: 25px;
+        right: 5px;
+    }
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown .search input {
+        width: calc(100% - 0px) !important;
+        margin: 0px 0px 0px 0px;
+        text-indent: 20px !important;
+        border: 0 !important;
+        color: #606060;
+        padding-left: 10px !important;
+    }
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown .icon-search {
+        padding: 3px 0 3px 0;
+    }
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .ispselectdropdown .search .ispicon_search {
+        left: 5px;
+        top: 10px;
+    }
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .isppopup-site .control-label {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .isppopup-site .control-label input[type="checkbox"] + span {
+        margin-left: 0;
+    }
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .isppopup-site .checkbox legand {
+    padding: 0 0 0 25px;
+    margin: 0;
+    top: -14px;
+}
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .isppopup-site .collapse-box {
+    padding: 4px 0 7px 0;
+}
+
+    .mpc .dahua-create-edit .dahuaconfigwrapper .video-button-btm .isppopup-site .collapse-box .control-label {
+        padding: 9px 0 0 0;
+        margin: 0 !important;
+    }
+
+.mpc .dahua-create-edit .dahuaiowrapper-container {
+    position: absolute !important;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+    padding-left: 20px;
+}
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container h3.bold {
+        color: #303030;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .row:nth-child(1),
+    .mpc .dahua-create-edit .dahuaiowrapper-container .row:nth-child(2) {
+        height: 270px;
+        width: 97%;
+        padding-top: 20px;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .row:nth-child(2) {
+        top: 270px;
+        margin-bottom: 60px;
+        padding-top: 9px;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .row .isptablebase {
+        height: 200px;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        top: 56px;
+        width: 97%;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .row:nth-child(2) .isptablebase {
+        top: 315px;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .ioTriggerStatus .online,
+    .mpc .dahua-create-edit .dahuaiowrapper-container .ioTriggerStatus .offline {
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .ioTriggerStatus .online {
+        background-color: #18a350;
+    }
+
+    .mpc .dahua-create-edit .dahuaiowrapper-container .ioTriggerStatus .offline {
+        background-color: #e33e38;
+    }
+
+.mpc .dahua-create-edit .dahuacontinuewrapper .isptablebase {
+    top: 116px;
+    width: 96%;
+}
+
+.mpc .dahua-create-edit .dahuamotionwrapper .formControl-checkbox span {
+    margin: 0;
+}
+
+.mpc .dahua-create-edit .dahuamotionwrapper .isptablebase {
+    top: 152px;
+    width: 96%;
+}
+
+.mpc .dahua-create-edit .dahuaconfigwrapper .checkbox {
+    padding-left: 0;
+}
+
+.mpc .dahua-create-edit .dahuaeventwrapper .row.content {
+    position: absolute;
+    top: 96px;
+    bottom: 60px;
+    overflow-y: auto;
+}
+
+.mpc .dahua-create-edit .dahuaeventwrapper .checkbox {
+    padding: 10px 0px;
+}
+
+    .mpc .dahua-create-edit .dahuaeventwrapper .checkbox .formControl-checkbox {
+        padding-left: 0;
+    }
+
+        .mpc .dahua-create-edit .dahuaeventwrapper .checkbox .formControl-checkbox span {
+            margin-left: 0;
+        }
+
+.mpc .dahua-create-edit .dahuastoragewrapper .row.content {
+    position: absolute;
+    top: 96px;
+    bottom: 60px;
+    overflow-y: auto;
+}
+
+.mpc .dahua-create-edit .dahuastoragewrapper .ispprogress {
+    height: 20px;
+    background-color: #ddd;
+}
+
+    .mpc .dahua-create-edit .dahuastoragewrapper .ispprogress .progress-bar-striped.pink {
+        height: 20px;
+        -moz-animation: initial;
+        -o-animation: initial;
+        animation: initial;
+        -webkit-animation: initial;
+    }
+
+.mpc .dahua-create-edit .form-group label.switch::after,
+.mpc .dahua-create-edit .form-group .checkbox label::after {
+    content: '';
+}
+
+.mpc .dahua-create-edit .form-group .checkbox input[type="checkbox"] + span {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.mpc .dahua-create-edit .form-group .checkbox label.formControl-checkbox {
+    padding: 0;
+    width: 100%;
+}
+
+.mpc .dahua-create-edit .nofooter .btn-primary,
+.mpc .dahua-create-edit .viewmode .btn-primary {
+    color: #fff;
+    background-color: #8bc9f2;
+    border-color: #8bc9f2;
+    border-radius: 0;
+}
+
+.mpc .dahua-create-edit .viewmode .spinner-control .ui-widget input {
+    border: 0px solid #d0d0d0;
+}
+
+.mpc .dahua-create-edit .nofooter .btn-default,
+.mpc .dahua-create-edit .viewmode .btn-default,
+.mpc .dahua-create-edit .viewmode button,
+.mpc .dahua-create-edit .viewmode .btn-default {
+    background-color: #ffffff !important;
+    border-color: #e1e1e1 !important;
+    color: #e1e1e1 !important;
+}
+
+.mpc .dahua-create-edit .viewmode .form-group,
+.mpc .dahua-create-edit .viewmode .form-control,
+.mpc .dahua-create-edit .viewmode .nofooter .btn-default,
+.mpc .dahua-create-edit .viewmode .nofooter .btn-primary,
+.mpc .dahua-create-edit .viewmode .btn-default,
+.mpc .dahua-create-edit .viewmode .btn-primary,
+.mpc .dahua-create-edit .viewmode .formControl-checkbox span,
+.mpc .dahua-create-edit .viewmode .rule-alarm-span,
+.mpc .dahua-create-edit .viewmode video.video,
+.mpc .dahua-create-edit .form-control[disabled] {
+    pointer-events: none;
+}
+
+.mpc .dahua-create-edit .viewmode .form-control,
+.mpc .dahua-create-edit .form-control[disabled] {
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+    color: #606060;
+}
+
+.cameraconfig-root .ps-disabled-switcher {
+    position: relative;
+    right: 10px;
+}
+
+.cameraconfig-root .deviceCameraCancelButton {
+    color: #1792e5 !important;
+    font-family: "HoneywellSansWeb-Bold" !important;
+    border: 1px solid #8bc9f2 !important;
+}
+
+    .cameraconfig-root .deviceCameraCancelButton:hover {
+        background: #edf5f9 !important;
+        border: 1px solid #8bc9f2 !important;
+    }
+
+.cameraconfig-root .recordingClipDuration .CameraPreEvent {
+    margin-top: 24px !important;
+}
+
+.cameraconfig-root .row.hr.discoveryButton {
+    margin-top: 16px;
+}
+
+.videoErrorTextStyle .video-try-again {
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    top: 35%;
+    right: 0px;
+    bottom: 0px;
+}
+
+.associationmodal {
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 400px;
+    color: #707070;
+    font-size: 13px;
+    left: 0;
+    margin-top: 20%;
+}
+
+.dahuatimemanagement-root .time-chart {
+    position: relative;
+    min-height: 306px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding-right: 10px;
+}
+
+    .dahuatimemanagement-root .time-chart [data-y-index] text, [data-axis="x"] text {
+        fill: #707070;
+        stroke: none;
+    }
+
+    .dahuatimemanagement-root .time-chart [data-handle] {
+        cursor: e-resize;
+    }
+
+    .dahuatimemanagement-root .time-chart [data-axis="x"] rect {
+        fill: #fff;
+        cursor: pointer;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-flag rect, .tz-flag line {
+        fill: #888888;
+        /*stroke: #000000;*/
+        stroke-width: 2;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-flag text {
+        font-size: 10px;
+        fill: #fff;
+        cursor: default;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-default {
+        fill: #fff;
+        stroke: #555555;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-flag .tz-flag-strip {
+        stroke: none;
+    }
+
+    .dahuatimemanagement-root .time-chart rect[data-slider='-1'] {
+        stroke: none;
+    }
+
+    .dahuatimemanagement-root .time-chart line[data-slider='-1'] {
+        stroke: #66CCFF;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-handle {
+        fill: #000000;
+    }
+
+    .dahuatimemanagement-root .time-chart .tz-frame {
+        fill: #3BAD49;
+    }
+
+    .dahuatimemanagement-root .time-chart [data-selected] .tz-frame {
+        fill: #3BAD49;
+    }
+
+.dahuatimemanagement-root .time-input {
+    background: #888;
+    position: relative;
+    display: none;
+}
+
+    .dahuatimemanagement-root .time-input input, .time-input label {
+        font-size: 10px;
+        vertical-align: top;
+        background: none;
+        color: #fff;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .dahuatimemanagement-root .time-input input {
+        width: 28%;
+        border: 0 none;
+        outline: none;
+        line-height: 0.8px;
+    }
+
+    .dahuatimemanagement-root .time-input label {
+        position: static;
+        width: 2%;
+    }
+
+    .dahuatimemanagement-root .time-input input.meridiem-field {
+        width: 32%;
+    }
+
+.dahuatimemanagement-root .callout {
+    background: #333;
+    min-height: 50px;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    display: none;
+}
+
+.dahuatimemanagement-root .callout-arrow {
+    border: solid 10px transparent;
+    border-top-color: #333;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 100%;
+    left: 46%;
+}
+
+.dahuatimemanagement-root .callout label {
+    border-bottom: solid 1px #888;
+    padding-bottom: 2px;
+    position: static;
+    color: #fff;
+}
+
+.dahuatimemanagement-root .callout ul {
+    margin-left: 0;
+}
+
+    .dahuatimemanagement-root .callout ul li {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: -moz-inline-box;
+        font-size: 0.7em;
+        padding-top: 8px;
+        padding-bottom: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+        .dahuatimemanagement-root .callout ul li.selected {
+            color: #888;
+        }
+
+.dahuatimemanagement-root input.error {
+    position: static;
+}
+
+.dahuatimemanagement-root .holiday-config label {
+    position: relative;
+}
+
+.dahuatimemanagement-root .holiday-mode > label {
+    display: inline-block;
+}
+
+.dahuatimemanagement-root .holiday-config span {
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.dahuatimemanagement-root input[type="date"] {
+    margin-top: 31px;
+}
+/*.dahuatimemanagement-root .nav-tabs li {
+    margin-bottom:0
+}
+
+.dahuatimemanagement-root .nav-tabs .active {
+    border-bottom: 2px solid #08a0bc;
+}
+
+.dahuatimemanagement-root .nav-tabs .active a {
+    border: none;
+    color:#428bca;
+    padding-top:8px
+}
+*/
+
+/*Tab Style*/
+.dahuatimemanagement-root .nav-tabs {
+    height: 43px;
+    border-bottom: 1px solid #d6d6d6;
+    font-family: "Open Sans Regular";
+    margin-left: 23px;
+    padding-top: 11px;
+    margin-bottom: 22px;
+}
+
+    .dahuatimemanagement-root .nav-tabs .active {
+        border-bottom: 2px solid #0889C4;
+        padding-bottom: 5px;
+    }
+
+    .dahuatimemanagement-root .nav-tabs > li {
+        margin-right: 26px;
+    }
+
+        .dahuatimemanagement-root .nav-tabs > li a {
+            padding-left: 0;
+            padding-right: 0;
+            color: #707070;
+            background-color: #FFFFFF;
+            border-color: #FFFFFF;
+            outline: medium none;
+        }
+
+            .dahuatimemanagement-root .nav-tabs > li a:hover {
+                background: none;
+                border: none;
+                padding-top: 9px;
+                padding-left: 1px;
+                padding-right: 1px;
+                color: #0889C4;
+            }
+
+    .dahuatimemanagement-root .nav-tabs .active a {
+        border: 1px solid transparent;
+        color: #0889C4 !important;
+        /* padding-top: 7px; */
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+        .dahuatimemanagement-root .nav-tabs .active a:hover {
+            padding-bottom: 9px;
+        }
+
+/*Tab Style*/
+.dahuatimemanagement-root .link-tab-content .button-row {
+    margin-top: 15px;
+}
+
+.dahuatimemanagement-root .link-tab-content .table-hover .formControl-checkbox span {
+    position: relative;
+    padding-top: 0;
+    top: -13px;
+    height: 20px;
+}
+/***Add styles from here***/
+.dahuatimemanagement-root .table-hover tbody tr:hover > td {
+    background: #E6F3FC;
+}
+
+.dahuatimemanagement-root input[type="date"] {
+    width: 217px;
+}
+
+.dahuatimemanagement-root input[type="password"], .dahuatimemanagement-root input[type="text"], .dahuatimemanagement-root input[type="number"], .dahuatimemanagement-root input[type="email"], .dahuatimemanagement-root input[type="date"] {
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+    font-size: 15px;
+    color: #707070;
+}
+
+    .dahuatimemanagement-root input[type="password"]:focus, .dahuatimemanagement-root input[type="text"]:focus, .dahuatimemanagement-root input[type="number"]:focus, .dahuatimemanagement-root input[type="email"]:focus, .dahuatimemanagement-root input[type="date"]:focus {
+        color: #0067A6;
+    }
+
+.dahuatimemanagement-root .formControl-radio span {
+    vertical-align: middle;
+    padding-right: 20px;
+    min-width: 80px;
+    width: auto;
+    padding-left: 26px;
+}
+
+.dahuatimemanagement-root .formControl-radio {
+    display: inline-block;
+    padding-bottom: 24px;
+}
+/*.dahuatimemanagement-root .nav-tabs > li > a, .dahuatimemanagement-root .nav-pills > li > a, .dahuatimemanagement-root .link-tab-content a {
+padding: 7px 12px 8px 12px;
+text-decoration: none;
+outline: medium none;
+}
+.dahuatimemanagement-root .nav-tabs > li > a:hover {
+color: #428bca;
+text-decoration: none;
+background:none !important;
+border:none;
+border-color: transparent transparent #08a0bc transparent;
+border-bottom: 0px solid #08a0bc !important; 
+height:20px;
+}*/
+
+
+.dahuatimemanagement-root .table-hover {
+    margin-top: 7px;
+}
+
+    .dahuatimemanagement-root .table-hover td, .dahuatimemanagement-root .table-hover th {
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+        .dahuatimemanagement-root .table-hover td:nth-child(1), .dahuatimemanagement-root .table-hover th:nth-child(1) {
+            width: 25px;
+        }
+
+        .dahuatimemanagement-root .table-hover td:nth-child(2), .dahuatimemanagement-root .table-hover th:nth-child(2) {
+            width: 30%;
+        }
+
+        .dahuatimemanagement-root .table-hover td:nth-child(3), .dahuatimemanagement-root .table-hover th:nth-child(3) {
+            width: 40%;
+        }
+
+        .dahuatimemanagement-root .table-hover td:nth-child(4), .dahuatimemanagement-root .table-hover th:nth-child(4) {
+            /*width:5%;*/
+        }
+
+/***Add styles end here***/
+#dahuatimeManagement .table > thead > tr > th {
+    border-bottom: 1px solid #A7A7A8;
+    border-right: 1px solid #D3D3D3;
+    border-top: 1px solid #BABABB !important;
+    font-size: 14px;
+    color: #707070;
+    vertical-align: middle;
+    font-weight: normal;
+    padding-left: 14px;
+    padding-right: 8px;
+    -webkit-word-break: break-all;
+    -moz-word-break: break-all;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    height: 42px;
+}
+
+    #dahuatimeManagement .table > thead > tr > th:first-child {
+        padding-left: 8px;
+        padding-top: 4px;
+    }
+
+    #dahuatimeManagement .table > thead > tr > th:last-child {
+        border-right: none;
+    }
+
+#dahuatimeManagement .table > tbody > tr > td {
+    border-bottom: 1px solid #BABABB !important;
+    padding-top: 11px;
+    padding-bottom: 6px;
+    vertical-align: middle;
+    -ms-word-break: break-word;
+    word-break: break-word;
+}
+
+    #dahuatimeManagement .table > tbody > tr > td + span {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+#dahuatimeManagement {
+    padding: 0px;
+}
+
+.dahuatimemanagement-root .field input.error {
+    position: absolute;
+}
+
+#holidaymodal_form .field {
+    margin-bottom: 0;
+    float: none;
+}
+
+#holidaymodal .spacingEveryDay {
+    padding-top: 13px;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#holidaymodal .holiday-mode {
+    padding-top: 10px;
+    padding-bottom: 12px;
+    /*border-bottom: 1px solid #d3d3d3;*/
+    width: 107%;
+    margin-bottom: 5px;
+}
+
+#holidaymodal_form .createHolidayHeading {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3B3B3D;
+    display: block;
+    font-family: "Open Sans Semibold" !important;
+    padding-top: 7px;
+    padding-bottom: 13px;
+}
+
+#holidaymodal_form .formControl-radio {
+    top: 0px;
+    padding-bottom: 0;
+}
+
+#holidaymodal.mpcmodel {
+    width: 390px;
+    left: 55%;
+}
+
+#holidaymodal_form .formControl-radio span {
+    padding-right: 0;
+}
+
+
+
+.daylightsaving {
+}
+
+    .daylightsaving .recordList {
+        float: left;
+        width: 35%;
+        -ms-overflow-y: hidden;
+        overflow-y: hidden;
+        bottom: 0;
+        position: absolute;
+        top: 122px;
+        border-right: 1px solid #d3d3d3;
+    }
+
+        .daylightsaving .recordList:hover {
+            -ms-overflow-y: hidden;
+            overflow-y: hidden;
+        }
+
+    .daylightsaving .recordListHead {
+        font-size: 15px;
+        border-bottom: 1px solid #d3d3d3;
+        margin-left: 24px;
+        top: 72px;
+        padding: 5px 0px 0px 25px;
+        border-bottom: 1px solid #d6d6d6;
+        height: 44px;
+    }
+
+    .daylightsaving .recordList .checkbox-list {
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+        .daylightsaving .recordList .checkbox-list li {
+            float: none;
+            margin: 0;
+            border-right: none;
+            list-style-type: none;
+        }
+
+            .daylightsaving .recordList .checkbox-list li .checkboxStyle {
+                margin: 0 !important;
+                padding: 12px 0 12px 0 !important;
+                border-bottom: 1px solid #d6d6d6;
+            }
+
+                .daylightsaving .recordList .checkbox-list li .checkboxStyle .customcheckbox {
+                    border-style: none;
+                    color: #6F7074;
+                    font-size: 13px;
+                    margin: 0 !important;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                }
+
+                .daylightsaving .recordList .checkbox-list li .checkboxStyle > .title {
+                    margin: 3px 0px 0px 27px !important;
+                }
+
+    .daylightsaving .recordList .checkboxStyle .customcheckbox input {
+        /*display: none;*/
+    }
+
+        .daylightsaving .recordList .checkboxStyle .customcheckbox input:checked + span {
+            /*background: url("../images/checkBox_press.png");*/
+            background: url('../../Content/sprite_icons.png') no-repeat -612px -72px;
+            /*background-repeat: no-repeat;*/
+            width: 16px;
+            height: 17px;
+        }
+
+    .daylightsaving .recordList .checkboxStyle .customcheckbox span {
+        width: 20px;
+        height: 20px;
+        display: block;
+        /*margin-top: -20px;*/
+        /*background: url("../images/checkBox_normal.png");*/
+        background: url('../../Content/sprite_icons.png') no-repeat -612px -12px;
+        background-repeat: no-repeat;
+    }
+
+    .daylightsaving .rightFields {
+        margin-left: 39%;
+        margin-top: 57px;
+    }
+
+    .daylightsaving .add-on {
+        width: 39px !important;
+        height: 39px !important;
+        z-index: 100;
+        right: 0;
+        border-right: none;
+        border-top: none;
+        position: absolute;
+    }
+
+    .daylightsaving .icon-calendar {
+        background-image: url('../../Content/sprite_icons.png');
+        display: inline-block;
+        width: 20px;
+        position: absolute;
+        height: 32px;
+        left: 15px;
+        background-position: -190px -120px;
+        margin-top: -10px;
+    }
+
+#holidaymodal_form .add-on {
+    width: 25px !important;
+    height: 39px !important;
+    z-index: 100;
+    right: 0;
+    border-right: none;
+    border-top: none;
+}
+
+    #holidaymodal_form .add-on .icon-calendar {
+        background: url("../images/sprite_icons.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        background-position: -190px -130px;
+        position: absolute;
+        left: 14px;
+        top: 13px;
+        cursor: pointer;
+    }
+
+        #holidaymodal_form .add-on .icon-calendar:hover {
+            background-position: -220px -130px;
+        }
+
+/*#scheduleListForm .ternary-button, #holidayListForm .ternary-button {
+    margin-left: 24px;
+}*/
+
+#dahuascheduleListForm .row, #holidayListForm .row {
+    margin-bottom: 15px;
+}
+
+#dahuascheduleListForm .scheduleListTableWrapper {
+    margin-right: 22px;
+    padding-left: 22px;
+}
+
+#holidayListForm .holidayListTableWrapper {
+    margin-right: 22px;
+    padding-left: 22px;
+}
+
+
+#holidaymodal_form .singleHolidayContent {
+    margin-top: 16px;
+}
+
+.dahuatimemanagement-root .mpcmodel footer {
+    position: static;
+    padding: 0px 24px 11px 24px;
+}
+
+.dahuatimemanagement-root .mpcmodel section {
+    padding: 24px 24px 5px 24px;
+}
+
+#dahuamanageTimeSchedule {
+    left: 43%;
+}
+
+.dahuatimemanagement-root .callout ul li label {
+    border-bottom: solid 0px #888;
+    padding-bottom: 2px;
+    position: static;
+    color: #fff;
+    font-size: 9px;
+}
+
+.dahuatimemanagement-root .callout .formControl-checkbox span {
+    background: url('../images/sprite_icons.png') no-repeat -612px -132px !important;
+    padding: 0 0 10px 0;
+    cursor: pointer;
+    height: 11px !important;
+}
+
+.dahuatimemanagement-root .callout .formControl-checkbox input:checked + span {
+    background: url('../images/sprite_icons.png') no-repeat -612px -192px !important;
+}
+
+.dahuatimemanagement-root .icon_del {
+    cursor: pointer;
+}
+
+.dahuamanageTimeScheduleholder .modal-dialog {
+    width: 750px;
+    top: 10px;
+    left: -9%;
+}
+
+#dahuacameraparent .cameraconfigmotionwrapper {
+    margin-left: 20px;
+    margin-top: 10px;
+}
