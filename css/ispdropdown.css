@@ -1,0 +1,260 @@
+﻿.viewmode .ispdropdown .newform-control, .ispdropdown .newform-control.disabled {
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px;
+    color: #606060;
+    pointer-events: initial;
+    background-color: #f2f2f2;
+    border: 0;
+}
+
+.ispdropdown .newform-control:hover,.ispdropdown .newform-control:focus{
+    border:1px solid #d0d0d0;
+}
+
+.ispselectdropdown .newform-control {
+    padding: 6px 0px 0 12px;
+}
+
+/*.ispselectdropdown .ispicon_dropArrow {
+    position: initial;
+    float: right;
+}*/
+
+.ispdropdown .newform-control .displaytext {
+    width: calc(100% - 30px);
+    display: inline-block;
+    cursor: pointer;
+}
+
+    .ispdropdown .newform-control .displaytext span {
+        max-width: 100%;
+        width: auto;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    .ispdropdown .newform-control .displaytext a {
+        max-width: 0px;
+        width: auto;
+    }
+
+    .ispdropdown .newform-control .displaytext.moretext span {
+        max-width: 70%;
+    }
+
+    .ispdropdown .newform-control .displaytext.moretext a {
+        max-width: 30%;
+    }
+
+.ispdropdown-popup {
+    position: absolute;
+    top: 57px;
+    border: 1px solid #e7e7e7;
+    z-index: 1051;
+    background: #fff;
+    max-height: none;
+    overflow: inherit;
+    width: calc(100% - 30px);
+}
+
+.ispdropdown-popup > ul {
+    max-height: 246px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.ispdropdown-popup .accordion li {
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 100%;
+    border-bottom: none;
+    outline: none;
+}
+
+
+
+.ispdropdown-popup .accordion li div {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.ispdropdown-popup .accordion li:hover,
+.ispdropdown-popup .accordion li:focus {
+    text-decoration: none;
+    background: #ecf6fd;
+}
+
+.ispdropdown-popup li div label input[type="checkbox"] {
+    position: relative !important;
+    z-index: initial;
+    margin-top: 0;
+}
+
+.ispdropdown-popup > ul .ellipsis {
+    width: calc(100% - 30px);
+}
+
+.ispdropdown-popup .popup-footer {
+    border-top: 1px solid #e7e7e7;
+}
+
+.ispdropdown-popup .form-search {
+    background: none !important;
+    text-indent: 0px !important;
+    width: calc(100% - 50px) !important;
+    float: right;
+    height: 32px !important;
+    padding-right: 9px !important;
+    border: 0px;
+    padding-left: 0px;
+}
+
+.ispdropdown-popup .icon-search {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.ispdropdown-popup .icon-search .ispicon_search {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+.ispdropdown-popup .accordion .results-count {
+    background: #f5f5f5;
+}
+
+.ispdropdown-popup .accordion .results-count span {
+    color: #606060;
+    padding-right:10px;
+}
+
+    .ispdropdown-popup .control-label {
+        line-height: inherit;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 8px 0 8px 20px;
+        color: #707070;
+        /* max-height: 32px; */
+        min-height: 32px
+    }
+
+.ispdropdown-popup .control-label input[type="checkbox"] {
+    margin: 0;
+}
+
+.ispdropdown-popup .control-label input[type="checkbox"] + span {
+    vertical-align: initial;
+    word-break: break-all;
+}
+
+.ispdropdown .icon-unsort {
+    background-position: -693px -214px !important;
+}
+
+.ispdropdown-popup .form-search:focus + .ispicon_search::before,
+.ispdropdown-popup .form-search:hover + .ispicon_search::before {
+    background-position: -106px -43px;
+}
+
+.ispdropdown .icon-search ::-webkit-input-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.ispdropdown .icon-search :-moz-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.ispdropdown .icon-search ::-moz-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.ispdropdown .icon-search :-ms-input-placeholder {
+    color: #d0d0d0 !important;
+    font-family: 'HoneywellSansWeb-Medium' !important;
+    font-size: 14px !important;
+}
+
+.ispdropdown-popup .excess-items {
+    background: #fff;
+    border: 2px solid #d0d0d0;
+    border-radius: 0;
+    box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -moz-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -webkit-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    -o-box-shadow: 1px 5px 4px -2px #d6d6d6;
+    height: 200px;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    padding: 24px;
+}
+
+.ispdropdown-popup .excess-items table {
+        width: 100%;
+}
+
+.ispdropdown-popup .excess-items table > tbody > tr {
+    border-bottom: 2px solid #eee;
+}
+
+.ispdropdown-popup .excess-items table > thead {
+    border-top: 2px solid #d0d0d0;
+    background: #eee;
+}
+
+.ispdropdown-popup .excess-items table > tbody > tr > td {
+    padding: 8px 10px;
+}
+
+.ispdropdown-popup .excess-items table > thead > tr > th {
+    padding: 8px 10px;
+}
+
+.ispdropdown-popup .excess-items table > tbody > tr:last-child {
+    border-bottom: none;
+}
+
+.ispdropdown-popup .excess-items table tr span {
+    color: #606060;
+    cursor: auto;
+}
+
+
+
+/*old mpc code fixes*/
+.mpc dropdown .form-control {
+    padding: 7px 0px 0px 12px;
+}
+
+.mpc dropdown .ispicon_newdropArrow{
+    margin-top: -5px;
+}
+
+.ispdropdown .form-control .ispicon_newdropArrow{
+    margin-top: -5px;
+    margin-right: -5px;
+}
+
+.ispdropdown .form-control {
+    margin-bottom: 10px;
+}
+
+.ispdropdown .newform-control {
+    padding-right:0;
+}
+
+dropdown:focus{
+    outline: none;
+}
+

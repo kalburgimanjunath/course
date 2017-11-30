@@ -1,0 +1,83 @@
+<div class="main-menu-navigation show-menu" id="overlay-menu" ng-show="myVar">
+    <div class="topmenucontent" role="menu" aria-labelledby="dLabel">
+        <div class="div_nav_img nav_img">
+
+        </div>
+        <ul class="main-menu-ul" data-bind="foreach: items">
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_dashboard" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenudashboard">Dashboard</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_rules" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenurules">Rules</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_reports" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenureports">Reports</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_firmwaremgmt" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenufirmwaremgmt">Firmware</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_viewer" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuviewer">Viewer</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_alarms" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenualarms">Alarms</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_VisualManagement" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuVisualManagement">Visual Management</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_company" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenucompany">My Company</p>
+            </li>
+        
+            <li class="card-item" data-menu-key="dashboard" data-bind="click: $parent.onMenuItemSelect, css: {active: IsSelected}">
+                <header class="count">
+                    <span class="ispicon ispicon_Subscriptions" data-bind="css: Icon"></span>
+                </header>
+                <p data-bind="attr:{id: 'hamburgermenu' + Name()}, text: PageTitle" id="hamburgermenuSubscriptions">Subscriptions</p>
+            </li>
+        </ul>
+        <div class="menu_user_sec_logout">
+            <div class="menu_user_sec clearfix">
+                <div class="menu_user_img">
+                    <img data-bind="attr: {src: photoUrl}" src="">
+                </div>
+                <div class="menu_user_details col-md-8" data-menu-key="profile" data-bind="hamburgermenuselect: onItemSelect">
+                    <h3 data-bind="text: userInfo.FullName, attr: { title: userInfo.FullName }" maxtext="16" class="ellipsis" title="sa sa">sa sa</h3>
+                    <span data-bind="text: userInfo.RoleName">Admin</span>
+                </div>
+                <span class="ispicon ispicon_logout push-right logout" title="Logout" data-menu-key="signout" data-bind="hamburgermenuselect: onItemSelect"></span>
+            </div>
+        </div>
+    </div>
+</div>
