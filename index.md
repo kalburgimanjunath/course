@@ -18,3 +18,6 @@ ClickBank, Comission Junction - Setting up an affiiate program, Best money makin
  
 Course 7: Web Analytics & Measurement
 Google Analytics - advanced google analytics implementation, filters and profiles, goals, funnel tracking, custom segmentations, dashboard creations for social media, analytical dashboards for mobile marketing, Excel plug-ins and reporting, Custom SEO reporting, PPC report templates, SiteCounter, Google Analytics Qualified Certification (optional)
+
+
+
